@@ -417,6 +417,159 @@
             font-size: 0.875rem;
             color: var(--gray);
         }
+
+        /* Content Transformation Section */
+        .transformation-visual {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .no-skills {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+        
+        .transformation-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .transform-box {
+            background: var(--off-white);
+            border: 2px solid var(--border-light);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 250px;
+            transition: all 0.3s;
+        }
+        
+        .transform-box:hover {
+            border-color: var(--purple);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--purple-glow);
+        }
+        
+        .transform-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .transform-box h4 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+        
+        .transform-box ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .transform-box ul li {
+            margin-bottom: 0.5rem;
+            color: var(--black-soft);
+            font-size: 0.95rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .transform-box ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--purple);
+            font-weight: bold;
+        }
+        
+        .transform-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .transform-arrow span {
+            font-size: 0.875rem;
+            color: var(--purple);
+            font-weight: 700;
+        }
+        
+        .arrow {
+            font-size: 2rem;
+            color: var(--purple);
+            font-weight: bold;
+        }
+        
+        .real-example {
+            background: linear-gradient(135deg, rgba(139, 0, 255, 0.05) 0%, rgba(139, 0, 255, 0.02) 100%);
+            border: 1px solid var(--purple);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 3rem 0 2rem;
+        }
+        
+        .real-example h5 {
+            font-size: 0.875rem;
+            color: var(--purple);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .real-example p {
+            font-size: 1.125rem;
+            color: var(--black);
+            margin: 0;
+        }
+        
+        .example-arrow {
+            color: var(--purple);
+            font-weight: bold;
+            margin: 0 1rem;
+        }
+        
+        .imagine-text {
+            font-size: 1.25rem;
+            color: var(--black);
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .transformation-flow {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .transform-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+            
+            .transform-box {
+                max-width: 100%;
+                width: 100%;
+            }
+            
+            .real-example p {
+                font-size: 1rem;
+            }
+            
+            .imagine-text {
+                font-size: 1.125rem;
+            }
+        }
         
         /* Availability indicator */
         .availability {
@@ -571,23 +724,45 @@
 
     <!-- Main content -->
     <main id="main-content">
-        <!-- Value Props -->
-        <section class="value-props" aria-label="Key benefits">
-            <div class="value-prop">
-                <div class="value-prop-icon" aria-hidden="true">🚀</div>
-                <h4>Launch in 30 Days</h4>
-                <p>From zero to live in one month. No technical skills needed.</p>
+        <!-- Content Transformation -->
+        <section class="transformation-visual" aria-label="How it works">
+            <p class="no-skills">✨ No website design, coding, or technical skills required - we take care of all the hard stuff - you just share and guide the process</p>
+            
+            <div class="transformation-flow">
+                <div class="transform-box">
+                    <div class="transform-icon">🎥</div>
+                    <h4>Your Content</h4>
+                    <ul>
+                        <li>1 hour video interview</li>
+                        <li>Podcast episode</li>
+                        <li>Webinar recording</li>
+                        <li>Course materials</li>
+                    </ul>
+                </div>
+                
+                <div class="transform-arrow">
+                    <span>24 hours</span>
+                    <div class="arrow">→</div>
+                </div>
+                
+                <div class="transform-box">
+                    <div class="transform-icon">🌐</div>
+                    <h4>Your Website</h4>
+                    <ul>
+                        <li>10+ SEO pages</li>
+                        <li>Full deployment</li>
+                        <li>Mobile optimized</li>
+                        <li>Revenue ready!</li>
+                    </ul>
+                </div>
             </div>
-            <div class="value-prop">
-                <div class="value-prop-icon" aria-hidden="true">💰</div>
-                <h4>$50K+ Annual Value</h4>
-                <p>Turn your knowledge into sustainable passive income.</p>
+            
+            <div class="real-example">
+                <h5>Real Example:</h5>
+                <p><strong>From:</strong> 1 YouTube Video <span class="example-arrow">→</span> <strong>To:</strong> ViewsGrowth.com (10+ pages, fully deployed)</p>
             </div>
-            <div class="value-prop">
-                <div class="value-prop-icon" aria-hidden="true">🏆</div>
-                <h4>You Own Everything</h4>
-                <p>100% ownership of your digital assets. Forever.</p>
-            </div>
+            
+            <p class="imagine-text">Just imagine what we could do with 10 hours of your content and a month together!</p>
         </section>
 
         <!-- Products Section -->
