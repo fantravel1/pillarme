@@ -295,6 +295,25 @@
         .price.pulse {
             animation: pricePulse 2s ease-in-out infinite;
         }
+
+        .price-plus {
+            margin-left: 1rem;
+        }
+        
+        /* Optional: Adjust for mobile if needed */
+        @media (max-width: 768px) {
+            .product-card.featured .price {
+                font-size: 2rem;
+            }
+            
+            .price-plus {
+                margin-left: 0.5rem;
+            }
+            
+            .price small {
+                font-size: 0.875rem;
+            }
+        }
         
         @keyframes pricePulse {
             0%, 100% { transform: scale(1); }
@@ -587,8 +606,8 @@
                     <h3>Foundation Package</h3>
                     <p>The perfect starting point for thought leaders ready to build their digital empire.</p>
                     <div class="price pulse">
-                        $100 <small>one-time setup</small><br>
-                        + $25<small>/month</small>
+                        <span>$100 <small>one-time setup</small></span>
+                        <span class="price-plus">+ $25<small>/month</small></span>
                     </div>
                     <p style="font-size: 1.125rem; margin-bottom: 2rem;">✓ Professional website setup<br>✓ SEO & mobile optimization<br>✓ Usage-based traffic analytics</p>
                     <button class="btn" id="foundation-checkout" aria-label="Get started with Foundation Package">Get Started Now →</button>
