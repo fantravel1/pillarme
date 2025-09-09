@@ -687,6 +687,311 @@
         .link-back:hover {
             text-decoration: underline;
         }
+
+        /* Pause scroll on hover */
+        .domains-scroll-wrapper:hover .domains-scroll {
+            animation-play-state: paused;
+        }
+
+        /* Ultra-Premium Domains Banner */
+        .ultra-premium-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            padding: 2rem 0;
+            margin: 4rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+            border-top: 2px solid #FFD700;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .ultra-premium-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: shimmer 8s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .highlight-price-gold {
+            color: #FFD700;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-domains-gold {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 0.875rem 2.5rem;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 800;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-domains-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        .domains-scroll-ultra {
+            display: flex;
+            gap: 2rem;
+            animation: scrollUltra 35s linear infinite;
+            width: fit-content;
+        }
+
+        @keyframes scrollUltra {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .domain-item-gold {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 1px solid #FFD700;
+            color: #FFD700;
+            padding: 0.625rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .domain-item-gold:hover {
+            background: #FFD700;
+            color: #000;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        .ultra-premium-note {
+            text-align: center;
+            color: rgba(255, 215, 0, 0.8);
+            font-size: 0.875rem;
+            margin: 1rem 0 0;
+            font-style: italic;
+        }
+
+        .domains-scroll-wrapper:hover .domains-scroll-ultra {
+            animation-play-state: paused;
+        }
+
+        /* DIY Toolkits Section */
+        .diy-toolkits {
+            padding: 8rem 2rem 6rem;
+            background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
+            position: relative;
+        }
+
+        .toolkit-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .toolkit-card {
+            background: var(--white);
+            border: 2px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .toolkit-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px var(--purple-glow);
+        }
+
+        .toolkit-card.featured-toolkit {
+            border-color: var(--purple);
+            background: linear-gradient(135deg, rgba(139, 0, 255, 0.03) 0%, rgba(139, 0, 255, 0.01) 100%);
+        }
+
+        .toolkit-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--purple);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .toolkit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .toolkit-card h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .toolkit-tagline {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .toolkit-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--purple);
+            margin: 1rem 0 1.5rem;
+        }
+
+        .toolkit-price small {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .toolkit-description {
+            flex: 1;
+            margin-bottom: 2rem;
+        }
+
+        .toolkit-description h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .toolkit-description p {
+            font-size: 0.95rem;
+            color: var(--black-soft);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .toolkit-description ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: item;
+        }
+
+        .toolkit-description ol li {
+            counter-increment: item;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--black-soft);
+            padding-left: 1.75rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .toolkit-description ol li:before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--purple);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-toolkit {
+            background: var(--purple);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-toolkit:hover {
+            background: var(--purple-darker);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--purple-glow-strong);
+        }
+
+        .toolkit-cta {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            border: 2px dashed var(--purple);
+        }
+
+        .toolkit-cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        /* Responsive updates */
+        @media (max-width: 768px) {
+            .ultra-premium-banner {
+                padding: 1.5rem 0;
+            }
+
+            .ultra-premium-note {
+                padding: 0 1rem;
+            }
+
+            .domains-scroll-ultra {
+                animation-duration: 25s;
+            }
+
+            .toolkit-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .toolkit-card {
+                padding: 2rem;
+            }
+
+            .toolkit-cta {
+                padding: 2rem;
+                margin-top: 3rem;
+            }
+        }
         
         /* Mobile menu */
         .mobile-menu {
@@ -1102,6 +1407,154 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Ultra-Premium Domains Banner -->
+        <section class="ultra-premium-banner" aria-label="Ultra-premium domain rental">
+            <div class="domains-container">
+                <div class="domains-header">
+                    <h2>ULTRA-PREMIUM RENTALS from <span class="highlight-price-gold">$500/month</span></h2>
+                    <a href="/domains#ultra-premium" class="btn-domains-gold" aria-label="View ultra-premium domains">View Ultra-Premium →</a>
+                </div>
+                
+                <div class="domains-scroll-wrapper">
+                    <div class="domains-scroll-ultra" aria-label="Ultra-premium domain examples">
+                        <div class="domain-item-gold">Guuru.com</div>
+                        <div class="domain-item-gold">Aeroo.com</div>
+                        <div class="domain-item-gold">NFTDL.com</div>
+                        <div class="domain-item-gold">GoldMadeEasy.com</div>
+                        <div class="domain-item-gold">VideoGameLive.com</div>
+                        <div class="domain-item-gold">SelectMovie.com</div>
+                        <div class="domain-item-gold">FastConcert.com</div>
+                        <div class="domain-item-gold">HotParks.com</div>
+                        <div class="domain-item-gold">DJMeet.com</div>
+                        <div class="domain-item-gold">TVCeleb.com</div>
+                        <div class="domain-item-gold">Guuru.com</div>
+                        <div class="domain-item-gold">Aeroo.com</div>
+                        <div class="domain-item-gold">NFTDL.com</div>
+                        <div class="domain-item-gold">GoldMadeEasy.com</div>
+                        <div class="domain-item-gold">VideoGameLive.com</div>
+                    </div>
+                </div>
+            </div>
+            <p class="ultra-premium-note">*5-letter domains & existing high-traffic mega-sites</p>
+        </section>
+
+        <!-- DIY AI Toolkits Section -->
+        <section class="diy-toolkits" aria-label="Do-It-Yourself AI Toolkits">
+            <div class="toolkit-container">
+                <h2>Do-It-Yourself AI Toolkits & Design</h2>
+                <p class="section-subtitle">Professional tools to build your digital empire yourself — or level up what we build for you</p>
+                
+                <div class="toolkit-grid">
+                    <!-- Perplexity.AI -->
+                    <article class="toolkit-card">
+                        <div class="toolkit-icon">🔍</div>
+                        <h3>Perplexity.AI</h3>
+                        <p class="toolkit-tagline">AI-Powered Research Assistant</p>
+                        <div class="toolkit-price">$20<small>/month</small></div>
+                        <div class="toolkit-description">
+                            <h4>Perfect For:</h4>
+                            <p>Deep research, fact-checking, and content ideation with cited sources</p>
+                            <h4>Quick Start:</h4>
+                            <ol>
+                                <li>Sign up at perplexity.ai</li>
+                                <li>Ask research questions naturally</li>
+                                <li>Get answers with real citations</li>
+                                <li>Export findings to your content</li>
+                            </ol>
+                        </div>
+                        <a href="https://perplexity.ai" class="btn-toolkit" target="_blank" rel="noopener">Try Perplexity →</a>
+                    </article>
+        
+                    <!-- Jasper AI -->
+                    <article class="toolkit-card featured-toolkit">
+                        <div class="toolkit-badge">MOST POPULAR</div>
+                        <div class="toolkit-icon">✏️</div>
+                        <h3>Jasper AI</h3>
+                        <p class="toolkit-tagline">AI Content Creation Platform</p>
+                        <div class="toolkit-price">$59<small>/month</small></div>
+                        <div class="toolkit-description">
+                            <h4>Perfect For:</h4>
+                            <p>Blog posts, marketing copy, social media content at scale</p>
+                            <h4>Quick Start:</h4>
+                            <ol>
+                                <li>Choose a template (blog, ads, etc.)</li>
+                                <li>Input your topic and tone</li>
+                                <li>Generate multiple variations</li>
+                                <li>Edit and publish anywhere</li>
+                            </ol>
+                        </div>
+                        <a href="https://jasper.ai" class="btn-toolkit" target="_blank" rel="noopener">Try Jasper →</a>
+                    </article>
+        
+                    <!-- Freepik -->
+                    <article class="toolkit-card">
+                        <div class="toolkit-icon">🎨</div>
+                        <h3>Freepik</h3>
+                        <p class="toolkit-tagline">Premium Stock & AI Images</p>
+                        <div class="toolkit-price">$12<small>/month</small></div>
+                        <div class="toolkit-description">
+                            <h4>Perfect For:</h4>
+                            <p>Professional images, vectors, videos, and AI-generated visuals</p>
+                            <h4>Quick Start:</h4>
+                            <ol>
+                                <li>Search or use AI image generator</li>
+                                <li>Download in multiple formats</li>
+                                <li>Edit colors/elements directly</li>
+                                <li>Use commercially everywhere</li>
+                            </ol>
+                        </div>
+                        <a href="https://freepik.com" class="btn-toolkit" target="_blank" rel="noopener">Try Freepik →</a>
+                    </article>
+        
+                    <!-- Canva -->
+                    <article class="toolkit-card">
+                        <div class="toolkit-icon">🖼️</div>
+                        <h3>Canva Pro</h3>
+                        <p class="toolkit-tagline">All-in-One Design Platform</p>
+                        <div class="toolkit-price">$15<small>/month</small></div>
+                        <div class="toolkit-description">
+                            <h4>Perfect For:</h4>
+                            <p>Social media graphics, presentations, videos, and brand kits</p>
+                            <h4>Quick Start:</h4>
+                            <ol>
+                                <li>Pick from 600K+ templates</li>
+                                <li>Customize with drag-and-drop</li>
+                                <li>Use Magic AI tools</li>
+                                <li>Export or schedule posts</li>
+                            </ol>
+                        </div>
+                        <a href="https://canva.com" class="btn-toolkit" target="_blank" rel="noopener">Try Canva →</a>
+                    </article>
+        
+                    <!-- Dynadot -->
+                    <article class="toolkit-card">
+                        <div class="toolkit-icon">🌍</div>
+                        <h3>Dynadot</h3>
+                        <p class="toolkit-tagline">Premium Domain Registration</p>
+                        <div class="toolkit-price">$9<small>/year .com</small></div>
+                        <div class="toolkit-description">
+                            <h4>Perfect For:</h4>
+                            <p>Securing your own premium domains with advanced tools</p>
+                            <h4>Quick Start:</h4>
+                            <ol>
+                                <li>Search available domains</li>
+                                <li>Use bulk search for ideas</li>
+                                <li>Set up forwarding/hosting</li>
+                                <li>Enable privacy protection</li>
+                            </ol>
+                        </div>
+                        <a href="https://dynadot.com" class="btn-toolkit" target="_blank" rel="noopener">Try Dynadot →</a>
+                    </article>
+                </div>
+                
+                <div class="toolkit-cta">
+                    <p>🚀 <strong>Pro Tip:</strong> Combine these tools with our Foundation Package for maximum impact. We'll show you exactly how to use each one for your niche!</p>
+                    <a href="#products" class="btn">Get Professional Setup First →</a>
+                </div>
+            </div>
+        </section>
+        
     </main>
 
     <!-- Loading State -->
