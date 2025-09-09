@@ -1,1944 +1,840 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PILLAR - Transform Your Expertise into $50K+/Year Digital Assets | Expert Web Development</title>
-    <meta name="description" content="PILLAR Media & Entertainment helps thought leaders build profitable web assets. Launch in 30 days, earn $50K-$250K/year. Professional websites from $100 setup + $25/month.">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://pillarme.com/">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="image" href="/images/hero.webp" type="image/webp">
-    
-    <!-- Preconnect to external origins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://js.stripe.com">
-    
-    <!-- Critical CSS inline (minified) -->
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;padding:1rem 0;border-bottom:1px solid #e5e5e5}nav .container{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.5rem;font-weight:900;color:#8b00ff;text-decoration:none}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center}h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;letter-spacing:-2px;margin-bottom:1.5rem;background:linear-gradient(135deg,#000 0%,#8b00ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}.hero p{font-size:1.375rem;color:#666;max-width:650px;margin:0 auto 3rem}.btn{display:inline-block;padding:1.25rem 3rem;background:#8b00ff;color:#fff;text-decoration:none;border-radius:10px;font-weight:700;font-size:1.125rem;transition:all .3s;border:none;cursor:pointer;min-height:48px}
-    </style>
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="PILLAR - Transform Your Expertise into Digital Legacy">
-    <meta property="og:description" content="Build profitable, traffic-heavy web assets that amplify your voice and expertise. Professional websites from $100 setup.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pillarme.com/">
-    <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="PILLAR Media & Entertainment">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PILLAR - Your Expertise is Worth $50K+/Year Online">
-    <meta name="twitter:description" content="Build profitable web assets that last forever. Launch in 30 days, profit next month.">
-    <meta name="twitter:image" content="https://pillarme.com/images/twitter-card.jpg">
-    <meta name="twitter:image:alt" content="PILLAR Media & Entertainment - Transform expertise into digital assets">
-    
-    <!-- Additional SEO meta tags -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="PILLAR Media & Entertainment">
-    <meta name="keywords" content="web development, digital assets, thought leadership, content monetization, website builder, expert websites">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    
-    <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#8B00FF">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "PILLAR Media & Entertainment",
-        "url": "https://pillarme.com",
-        "logo": "https://pillarme.com/images/logo.png",
-        "description": "PILLAR helps thought leaders and industry experts build profitable web assets",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "availableLanguage": "English"
-        },
-        "sameAs": []
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PILLAR - Transform Your Expertise into $50K+/Year Digital Assets | Expert Web Development</title>
+  <meta name="description" content="PILLAR Media & Entertainment helps thought leaders build profitable web assets. Launch in 30 days, earn $50K-$250K/year. Professional websites from $100 setup + $25/month.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="/images/hero.webp" type="image/webp">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://js.stripe.com">
+
+  <!-- Critical CSS -->
+  <style>
+    /* ===== Root + layout guards (fixes “footer in header” look) ===== */
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --nav-h:72px;      /* << fixed nav height for offsets */
+      --content-max:1200px;
     }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "PILLAR Media & Entertainment",
-        "url": "https://pillarme.com",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://pillarme.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+      padding-top:var(--nav-h); /* << prevent hero from hiding under fixed nav */
     }
-    </script>
-    
-    <!-- Async load non-critical CSS -->
-    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
-    
-    <!-- Load Inter font with display swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Full CSS for non-critical styles -->
-    <style>
-        :root {
-            --white: #FFFFFF;
-            --off-white: #FAFAFA;
-            --black: #000000;
-            --black-soft: #1a1a1a;
-            --purple: #8B00FF;
-            --purple-dark: #6B00CC;
-            --purple-darker: #5500AA;
-            --purple-glow: rgba(139, 0, 255, 0.15);
-            --purple-glow-strong: rgba(139, 0, 255, 0.25);
-            --gray: #666666;
-            --gray-light: #999999;
-            --border-light: #E5E5E5;
-            --green-success: #10B981;
-        }
-        
-        /* Navigation improvements */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            color: var(--black);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-            padding: 0.5rem;
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--purple);
-            transition: width 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--purple);
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        .logo:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Hero optimizations */
-        .hero {
-            background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--purple-glow) 0%, transparent 60%);
-            pointer-events: none;
-            opacity: 0.3;
-        }
-        
-        .hero > div {
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Trust badge */
-        .trust-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--green-success);
-            margin-bottom: 2rem;
-            padding: 0.5rem 1rem;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 50px;
-        }
-        
-        .trust-badge::before {
-            content: '✔';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: var(--green-success);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 20px;
-            font-weight: bold;
-        }
-        
-        /* Products section */
-        .products {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .product-card {
-            background: var(--off-white);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
-        }
-        
-        .product-card:hover {
-            border-color: var(--purple);
-            box-shadow: 0 20px 60px var(--purple-glow);
-            transform: translateY(-8px);
-        }
-        
-        .product-card.featured {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, rgba(139, 0, 255, 0.05) 0%, rgba(139, 0, 255, 0.02) 100%);
-            text-align: center;
-            padding: 4rem 3rem;
-            border: 2px solid var(--purple);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--purple);
-            color: white;
-            padding: 0.25rem 3rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transform: rotate(45deg);
-        }
-        
-        .product-card h3 {
-            font-size: 1.75rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-            color: var(--black);
-        }
-        
-        .product-card p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-        
-        .product-card ul {
-            color: var(--black-soft);
-            list-style: none;
-            padding: 0;
-        }
-        
-        .product-card ul li {
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--purple);
-            margin: 1.5rem 0;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .price small {
-            font-size: 1.125rem;
-            color: var(--gray);
-            font-weight: 500;
-        }
-        
-        .price.pulse {
-            animation: pricePulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pricePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        /* Enhanced buttons with accessibility */
-        .btn {
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px var(--purple-glow);
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn:hover {
-            background: var(--purple-darker);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px var(--purple-glow-strong);
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 3px solid var(--purple);
-            color: var(--purple);
-            box-shadow: none;
-        }
-        
-        .btn-secondary:hover {
-            background: var(--purple);
-            color: var(--white);
-            border-color: var(--purple);
-            box-shadow: 0 8px 30px var(--purple-glow-strong);
-        }
-        
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .btn:disabled:hover {
-            transform: none;
-            box-shadow: none;
-            background: var(--purple);
-        }
-        
-        /* Section headings */
-        h2 {
-            font-size: 3rem;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: -1.5px;
-            color: var(--black);
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin: 0 auto 3rem;
-            line-height: 1.7;
-        }
-        
-        /* Value props */
-        .value-props {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .value-prop {
-            text-align: center;
-            max-width: 250px;
-        }
-        
-        .value-prop-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .value-prop h4 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .value-prop p {
-            font-size: 0.875rem;
-            color: var(--gray);
-        }
-
-        /* Content Transformation Section */
-        .transformation-visual {
-            max-width: 900px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-        
-        .no-skills {
-            font-size: 1.125rem;
-            color: var(--gray);
-            margin-bottom: 3rem;
-            line-height: 1.7;
-        }
-        
-        .transformation-flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .transform-box {
-            background: var(--off-white);
-            border: 2px solid var(--border-light);
-            border-radius: 16px;
-            padding: 2rem;
-            max-width: 250px;
-            transition: all 0.3s;
-        }
-        
-        .transform-box:hover {
-            border-color: var(--purple);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px var(--purple-glow);
-        }
-        
-        .transform-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .transform-box h4 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--black);
-        }
-        
-        .transform-box ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        
-        .transform-box ul li {
-            margin-bottom: 0.5rem;
-            color: var(--black-soft);
-            font-size: 0.95rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-        
-        .transform-box ul li:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--purple);
-            font-weight: bold;
-        }
-        
-        .transform-arrow {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .transform-arrow span {
-            font-size: 0.875rem;
-            color: var(--purple);
-            font-weight: 700;
-        }
-        
-        .arrow {
-            font-size: 2rem;
-            color: var(--purple);
-            font-weight: bold;
-        }
-        
-        .real-example {
-            background: linear-gradient(135deg, rgba(139, 0, 255, 0.05) 0%, rgba(139, 0, 255, 0.02) 100%);
-            border: 1px solid var(--purple);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 3rem 0 2rem;
-        }
-        
-        .real-example h5 {
-            font-size: 0.875rem;
-            color: var(--purple);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-        }
-        
-        .real-example p {
-            font-size: 1.125rem;
-            color: var(--black);
-            margin: 0;
-        }
-        
-        .example-arrow {
-            color: var(--purple);
-            font-weight: bold;
-            margin: 0 1rem;
-        }
-        
-        .imagine-text {
-            font-size: 1.25rem;
-            color: var(--black);
-            font-weight: 600;
-            margin-top: 2rem;
-        }
-
-        /* Premium Domains Banner - Sleek Version */
-        .premium-domains-banner {
-            background: var(--black);
-            padding: 1.5rem 0;
-            margin: 4rem 0 0 0;
-            position: relative;
-            overflow: hidden;
-            border-top: 1px solid var(--purple);
-            border-bottom: 1px solid var(--purple);
-        }
-
-        .domains-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .domains-header {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .domains-header h2 {
-            font-size: 1.5rem;
-            margin: 0;
-            color: var(--white);
-            font-weight: 700;
-            text-align: left;
-            letter-spacing: -0.5px;
-        }
-
-        .highlight-price {
-            color: var(--purple);
-            font-weight: 900;
-        }
-
-        .btn-domains {
-            background: var(--purple);
-            color: white;
-            padding: 0.75rem 2rem;
-            font-size: 0.875rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .btn-domains:hover {
-            background: var(--purple-darker);
-            transform: scale(1.05);
-        }
-
-        /* Domains Scrolling - Single Line */
-        .domains-scroll-wrapper {
-            flex: 1;
-            overflow: hidden;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        }
-
-        .domains-scroll {
-            display: flex;
-            gap: 1.5rem;
-            animation: scroll 40s linear infinite;
-            width: fit-content;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .domain-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(139, 0, 255, 0.3);
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.875rem;
-            white-space: nowrap;
-            transition: all 0.3s;
-            flex-shrink: 0;
-        }
-
-        .domain-item:hover {
-            border-color: var(--purple);
-            background: var(--purple);
-            transform: scale(1.05);
-        }
-
-        /* Alternative Pricing Section */
-        .alt-pricing {
-            padding: 10rem 2rem;
-            background: var(--off-white);
-        }
-
-        .alt-pricing-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .alt-grid {
-            margin-top: 3rem;
-        }
-
-        .custom-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #666, #444);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .product-card.featured-alt {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, rgba(102, 102, 102, 0.05) 0%, rgba(102, 102, 102, 0.02) 100%);
-            text-align: center;
-            padding: 4rem 3rem;
-            border: 2px solid var(--gray);
-        }
-
-        .comparison-note {
-            text-align: center;
-            margin-top: 4rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid var(--border-light);
-        }
-
-        .comparison-note p {
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
-        }
-
-        .link-back {
-            color: var(--purple);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .link-back:hover {
-            text-decoration: underline;
-        }
-
-        /* Pause scroll on hover */
-        .domains-scroll-wrapper:hover .domains-scroll {
-            animation-play-state: paused;
-        }
-
-        /* Ultra-Premium Domains Banner */
-        .ultra-premium-banner {
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-            padding: 2rem 0;
-            margin: 0rem 0 6rem;
-            position: relative;
-            overflow: hidden;
-            border-top: 2px solid #FFD700;
-            border-bottom: 2px solid #FFD700;
-        }
-
-        .ultra-premium-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            animation: shimmer 8s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        .highlight-price-gold {
-            color: #FFD700;
-            font-weight: 900;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        .btn-domains-gold {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
-            padding: 0.875rem 2.5rem;
-            font-size: 0.9rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            font-weight: 800;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        .btn-domains-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
-        }
-
-        .domains-scroll-ultra {
-            display: flex;
-            gap: 2rem;
-            animation: scrollUltra 35s linear infinite;
-            width: fit-content;
-        }
-
-        @keyframes scrollUltra {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .domain-item-gold {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border: 1px solid #FFD700;
-            color: #FFD700;
-            padding: 0.625rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            white-space: nowrap;
-            transition: all 0.3s;
-            flex-shrink: 0;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-
-        .domain-item-gold:hover {
-            background: #FFD700;
-            color: #000;
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-        }
-
-        .ultra-premium-note {
-            text-align: center;
-            color: rgba(255, 215, 0, 0.8);
-            font-size: 0.875rem;
-            margin: 1rem 0 0;
-            font-style: italic;
-        }
-
-        .domains-scroll-wrapper:hover .domains-scroll-ultra {
-            animation-play-state: paused;
-        }
-
-        /* DIY Toolkits Section */
-        .diy-toolkits {
-            padding: 8rem 2rem 6rem;
-            background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
-            position: relative;
-        }
-
-        .toolkit-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .toolkit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .toolkit-card {
-            background: var(--white);
-            border: 2px solid var(--border-light);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.3s;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .toolkit-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px var(--purple-glow);
-        }
-
-        .toolkit-card.featured-toolkit {
-            border-color: var(--purple);
-            background: linear-gradient(135deg, rgba(139, 0, 255, 0.03) 0%, rgba(139, 0, 255, 0.01) 100%);
-        }
-
-        .toolkit-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: var(--purple);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .toolkit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .toolkit-card h3 {
-            font-size: 1.75rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            color: var(--black);
-        }
-
-        .toolkit-tagline {
-            color: var(--gray);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .toolkit-price {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--purple);
-            margin: 1rem 0 1.5rem;
-        }
-
-        .toolkit-price small {
-            font-size: 1rem;
-            color: var(--gray);
-            font-weight: 500;
-        }
-
-        .toolkit-description {
-            flex: 1;
-            margin-bottom: 2rem;
-        }
-
-        .toolkit-description h4 {
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--purple);
-            margin-bottom: 0.5rem;
-        }
-
-        .toolkit-description p {
-            font-size: 0.95rem;
-            color: var(--black-soft);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .toolkit-description ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            counter-reset: item;
-        }
-
-        .toolkit-description ol li {
-            counter-increment: item;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--black-soft);
-            padding-left: 1.75rem;
-            position: relative;
-            line-height: 1.5;
-        }
-
-        .toolkit-description ol li:before {
-            content: counter(item);
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: var(--purple);
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn-toolkit {
-            background: var(--purple);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-toolkit:hover {
-            background: var(--purple-darker);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px var(--purple-glow-strong);
-        }
-
-        .toolkit-cta {
-            margin-top: 4rem;
-            text-align: center;
-            padding: 3rem;
-            background: white;
-            border-radius: 20px;
-            border: 2px dashed var(--purple);
-        }
-
-        .toolkit-cta p {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            color: var(--black);
-        }
-
-        /* Responsive updates */
-        @media (max-width: 768px) {
-            .ultra-premium-banner {
-                padding: 1.5rem 0;
-            }
-
-            .ultra-premium-note {
-                padding: 0 1rem;
-            }
-
-            .domains-scroll-ultra {
-                animation-duration: 25s;
-            }
-
-            .toolkit-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .toolkit-card {
-                padding: 2rem;
-            }
-
-            .toolkit-cta {
-                padding: 2rem;
-                margin-top: 3rem;
-            }
-        }
-        
-        /* Mobile menu */
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
-            min-width: 48px;
-            min-height: 48px;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Loading state */
-        .loading {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--white);
-            padding: 2rem 3rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            color: var(--purple);
-            font-size: 1.2rem;
-            z-index: 2000;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: flex;
-                color: var(--purple);
-                font-size: 1.5rem;
-            }
-            
-            .product-card.featured {
-                grid-column: 1;
-                padding: 3rem 2rem;
-            }
-            
-            .hero::before {
-                width: 400px;
-                height: 400px;
-            }
-            
-            .value-props {
-                gap: 2rem;
-            }
-            
-            .btn {
-                padding: 1rem 2rem;
-                font-size: 1rem;
-            }
-
-            .domains-container {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-
-            .domains-header {
-                flex-direction: column;
-            }
-
-            .domains-header h2 {
-                font-size: 1.25rem;
-                text-align: center;
-            }
-
-            .domains-scroll {
-                animation-duration: 30s;
-            }
-            
-            .product-card.featured-alt {
-                padding: 3rem 2rem;
-            }
-            
-            .comparison-note {
-                padding: 1.5rem;
-            }
-
-            .transformation-flow {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .transform-arrow {
-                transform: rotate(90deg);
-                margin: 1rem 0;
-            }
-            
-            .transform-box {
-                max-width: 100%;
-                width: 100%;
-            }
-            
-            .real-example p {
-                font-size: 1rem;
-            }
-            
-            .imagine-text {
-                font-size: 1.125rem;
-            }
-        }
-        
-        /* Print styles */
-        @media print {
-            nav, .btn, .loading {
-                display: none !important;
-            }
-            
-            body {
-                color: #000;
-                background: #fff;
-            }
-        }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            :root {
-                --purple: #6B00CC;
-                --gray: #333333;
-            }
-        }
-        
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Focus visible for keyboard navigation */
-        :focus-visible {
-            outline: 3px solid var(--purple);
-            outline-offset: 2px;
-        }
-        
-        /* Skip to main content link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--purple);
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-        
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* Pause scroll on hover */
-        .domains-scroll-wrapper:hover .domains-scroll {
-            animation-play-state: paused;
-        }
-
-        /* SEO Content Section */
-        .seo-content {
-            padding: 6rem 2rem;
-            background: var(--white);
-            border-top: 1px solid var(--border-light);
-        }
-        
-        .seo-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .seo-content h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--black);
-        }
-        
-        .seo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .seo-block h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 1rem;
-        }
-        
-        .seo-block p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--black-soft);
-        }
-        
-        .inline-link {
-            color: var(--purple);
-            text-decoration: none;
-            border-bottom: 1px solid var(--purple);
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-        
-        .inline-link:hover {
-            border-bottom-width: 2px;
-            color: var(--purple-darker);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--black);
-            color: var(--white);
-            padding: 4rem 2rem 2rem;
-            margin-top: 0;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-main {
-            display: flex;
-            justify-content: space-between;
-            gap: 4rem;
-            margin-bottom: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-brand {
-            flex: 1;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--purple);
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-tagline {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.125rem;
-        }
-        
-        .footer-nav {
-            flex: 2;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        
-        .footer-column h4 {
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-        
-        .footer-column a {
-            display: block;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            padding: 0.25rem 0;
-            transition: color 0.3s;
-        }
-        
-        .footer-column a:hover {
-            color: var(--purple);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.875rem;
-        }
-        
-        .footer-bottom p {
-            margin: 0.5rem 0;
-        }
-        
-        /* Responsive footer and SEO section */
-        @media (max-width: 768px) {
-            .footer-main {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .footer-nav {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .seo-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .seo-content h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    /* Ensure anchor targets are visible below fixed nav */
+    section, header.hero, main, [id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
+
+    /* ===== Navigation ===== */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;position:relative;padding:.5rem;min-height:48px;display:flex;align-items:center}
+    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    nav a:hover{color:var(--purple)}
+    nav a:hover::after{width:100%}
+    .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
+
+    /* ===== Hero (header) ===== */
+    header.hero{
+      min-height:calc(100vh - var(--nav-h)); /* << don’t swallow the footer visually */
+      display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;
+      background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative
+    }
+    header.hero::before{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;
+      background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);pointer-events:none;opacity:.3
+    }
+    header.hero > div{position:relative;z-index:1}
+    h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;letter-spacing:-2px;margin-bottom:1.5rem;background:linear-gradient(135deg,#000 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
+    .hero p{font-size:1.375rem;color:#666;max-width:650px;margin:0 auto 3rem}
+    .trust-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;color:var(--green-success);margin-bottom:2rem;padding:.5rem 1rem;background:rgba(16,185,129,.1);border-radius:50px}
+    .trust-badge::before{content:'✔';display:inline-block;width:20px;height:20px;background:var(--green-success);color:#fff;border-radius:50%;text-align:center;line-height:20px;font-weight:bold}
+
+    /* ===== Buttons ===== */
+    .btn{display:inline-block;padding:1.25rem 3rem;background:var(--purple);color:#fff;text-decoration:none;border-radius:10px;font-weight:700;font-size:1.125rem;transition:all .3s;border:none;cursor:pointer;min-height:48px;position:relative;overflow:hidden;box-shadow:0 4px 15px var(--purple-glow)}
+    .btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}
+    .btn:hover{background:var(--purple-darker);transform:translateY(-3px);box-shadow:0 8px 30px var(--purple-glow-strong)}
+    .btn:hover::before{left:100%}
+    .btn-secondary{background:transparent;border:3px solid var(--purple);color:var(--purple);box-shadow:none}
+    .btn-secondary:hover{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 8px 30px var(--purple-glow-strong)}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+    .btn:disabled:hover{transform:none;box-shadow:none;background:var(--purple)}
+
+    /* ===== Sections / shared ===== */
+    h2{font-size:3rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
+    .section-subtitle{text-align:center;color:var(--gray);font-size:1.25rem;max-width:650px;margin:0 auto 3rem;line-height:1.7}
+
+    /* Transformation */
+    .transformation-visual{max-width:900px;margin:4rem auto;padding:0 2rem;text-align:center}
+    .no-skills{font-size:1.125rem;color:var(--gray);margin-bottom:3rem;line-height:1.7}
+    .transformation-flow{display:flex;align-items:center;justify-content:center;gap:2rem;margin:3rem 0}
+    .transform-box{background:var(--off-white);border:2px solid var(--border-light);border-radius:16px;padding:2rem;max-width:250px;transition:all .3s}
+    .transform-box:hover{border-color:var(--purple);transform:translateY(-5px);box-shadow:0 10px 30px var(--purple-glow)}
+    .transform-icon{font-size:3rem;margin-bottom:1rem}
+    .transform-box h4{font-size:1.25rem;font-weight:800;margin-bottom:1rem;color:var(--black)}
+    .transform-box ul{list-style:none;padding:0;text-align:left}
+    .transform-box ul li{margin-bottom:.5rem;color:var(--black-soft);font-size:.95rem;padding-left:1rem;position:relative}
+    .transform-box ul li:before{content:'•';position:absolute;left:0;color:var(--purple);font-weight:bold}
+    .transform-arrow{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+    .transform-arrow span{font-size:.875rem;color:var(--purple);font-weight:700}
+    .arrow{font-size:2rem;color:var(--purple);font-weight:bold}
+
+    /* Products / Pricing */
+    .products{padding:6rem 2rem;max-width:var(--content-max);margin:0 auto}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem}
+    .product-card{background:var(--off-white);border:1px solid var(--border-light);border-radius:16px;padding:2rem;transition:all .3s;cursor:pointer;position:relative}
+    .product-card:hover{border-color:var(--purple);box-shadow:0 20px 60px var(--purple-glow);transform:translateY(-8px)}
+    .product-card.featured{grid-column:1 / -1;background:linear-gradient(135deg,rgba(139,0,255,.05) 0%,rgba(139,0,255,.02) 100%);text-align:center;padding:4rem 3rem;border:2px solid var(--purple);position:relative;overflow:hidden}
+    .product-card.featured::before{content:'MOST POPULAR';position:absolute;top:20px;right:-30px;background:var(--purple);color:#fff;padding:.25rem 3rem;font-size:.75rem;font-weight:700;letter-spacing:1px;transform:rotate(45deg)}
+    .product-card h3{font-size:1.75rem;font-weight:800;margin-bottom:.75rem;color:var(--black)}
+    .product-card p{color:var(--gray);margin-bottom:1.5rem;font-size:1.05rem}
+    .product-card ul{color:var(--black-soft);list-style:none;padding:0}
+    .product-card ul li{margin-bottom:.75rem;font-size:1rem}
+    .price{font-size:2.5rem;font-weight:900;color:var(--purple);margin:1.5rem 0;position:relative;display:inline-block}
+    .price small{font-size:1.125rem;color:var(--gray);font-weight:500}
+    .price.pulse{animation:pricePulse 2s ease-in-out infinite}
+    @keyframes pricePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+    /* Premium Domains banner */
+    .premium-domains-banner{background:var(--black);padding:1.5rem 0;margin:4rem 0 0 0;position:relative;overflow:hidden;border-top:1px solid var(--purple);border-bottom:1px solid var(--purple)}
+    .domains-container{max-width:var(--content-max);margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:3rem}
+    .domains-header{flex-shrink:0;display:flex;align-items:center;gap:2rem}
+    .domains-header h2{font-size:1.5rem;margin:0;color:#fff;font-weight:700;text-align:left;letter-spacing:-.5px}
+    .highlight-price{color:var(--purple);font-weight:900}
+    .btn-domains{background:var(--purple);color:#fff;padding:.75rem 2rem;font-size:.875rem;border-radius:50px;text-decoration:none;display:inline-block;transition:all .3s;font-weight:700;white-space:nowrap}
+    .btn-domains:hover{background:var(--purple-darker);transform:scale(1.05)}
+    .domains-scroll-wrapper{flex:1;overflow:hidden;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}
+    .domains-scroll{display:flex;gap:1.5rem;animation:scroll 40s linear infinite;width:fit-content}
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .domain-item{background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);color:#fff;padding:.5rem 1.5rem;border-radius:50px;font-weight:600;font-size:.875rem;white-space:nowrap;transition:all .3s;flex-shrink:0}
+    .domain-item:hover{border-color:var(--purple);background:var(--purple);transform:scale(1.05)}
+    .domains-scroll-wrapper:hover .domains-scroll{animation-play-state:paused}
+
+    /* Alternative pricing (custom domain) */
+    .alt-pricing{padding:10rem 2rem;background:var(--off-white)}
+    .alt-pricing-container{max-width:var(--content-max);margin:0 auto}
+    .alt-grid{margin-top:3rem}
+    .custom-badge{display:inline-block;background:linear-gradient(135deg,#666,#444);color:#fff;padding:.25rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:1px;margin-bottom:1rem}
+    .product-card.featured-alt{grid-column:1 / -1;background:linear-gradient(135deg,rgba(102,102,102,.05) 0%,rgba(102,102,102,.02) 100%);text-align:center;padding:4rem 3rem;border:2px solid var(--gray)}
+    .comparison-note{text-align:center;margin-top:4rem;padding:2rem;background:#fff;border-radius:16px;border:1px solid var(--border-light)}
+    .comparison-note p{font-size:1.125rem;margin-bottom:1rem}
+    .link-back{color:var(--purple);text-decoration:none;font-weight:600;transition:all .3s}
+    .link-back:hover{text-decoration:underline}
+
+    /* Ultra-premium banner */
+    .ultra-premium-banner{background:linear-gradient(135deg,#1a1a1a 0%,#000 100%);padding:2rem 0;margin:0 0 6rem;position:relative;overflow:hidden;border-top:2px solid #FFD700;border-bottom:2px solid #FFD700}
+    .ultra-premium-banner::before{content:'';position:absolute;top:0;left:-100%;width:200%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,215,0,.1),transparent);animation:shimmer 8s infinite}
+    @keyframes shimmer{0%{left:-100%}100%{left:100%}}
+    .highlight-price-gold{color:#FFD700;font-weight:900;text-shadow:0 0 20px rgba(255,215,0,.5)}
+    .btn-domains-gold{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:.875rem 2.5rem;font-size:.9rem;border-radius:50px;text-decoration:none;display:inline-block;transition:all .3s;font-weight:800;white-space:nowrap;box-shadow:0 4px 15px rgba(255,215,0,.4)}
+    .btn-domains-gold:hover{transform:scale(1.05);box-shadow:0 6px 25px rgba(255,215,0,.6)}
+    .domains-scroll-ultra{display:flex;gap:2rem;animation:scrollUltra 35s linear infinite;width:fit-content}
+    @keyframes scrollUltra{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .domain-item-gold{background:linear-gradient(135deg,rgba(255,215,0,.15) 0%,rgba(255,215,0,.05) 100%);border:1px solid #FFD700;color:#FFD700;padding:.625rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;white-space:nowrap;transition:all .3s;flex-shrink:0;text-shadow:0 0 10px rgba(255,215,0,.3)}
+    .domain-item-gold:hover{background:#FFD700;color:#000;transform:scale(1.1);box-shadow:0 0 20px rgba(255,215,0,.8)}
+    .ultra-premium-note{text-align:center;color:rgba(255,215,0,.8);font-size:.875rem;margin:1rem 0 0;font-style:italic}
+    .domains-scroll-wrapper:hover .domains-scroll-ultra{animation-play-state:paused}
+
+    /* DIY Toolkits */
+    .diy-toolkits{padding:8rem 2rem 6rem;background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative}
+    .toolkit-container{max-width:var(--content-max);margin:0 auto}
+    .toolkit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin-top:3rem}
+    .toolkit-card{background:#fff;border:2px solid var(--border-light);border-radius:20px;padding:2.5rem;transition:all .3s;position:relative;display:flex;flex-direction:column}
+    .toolkit-card:hover{border-color:var(--purple);transform:translateY(-8px);box-shadow:0 20px 60px var(--purple-glow)}
+    .toolkit-card.featured-toolkit{border-color:var(--purple);background:linear-gradient(135deg,rgba(139,0,255,.03) 0%,rgba(139,0,255,.01) 100%)}
+    .toolkit-badge{position:absolute;top:-10px;right:20px;background:var(--purple);color:#fff;padding:.25rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:1px}
+    .toolkit-icon{font-size:3rem;margin-bottom:1rem;display:block}
+    .toolkit-card h3{font-size:1.75rem;font-weight:800;margin-bottom:.5rem;color:var(--black)}
+    .toolkit-tagline{color:var(--gray);font-size:1rem;margin-bottom:1rem}
+    .toolkit-price{font-size:2.5rem;font-weight:900;color:var(--purple);margin:1rem 0 1.5rem}
+    .toolkit-price small{font-size:1rem;color:var(--gray);font-weight:500}
+    .toolkit-description{flex:1;margin-bottom:2rem}
+    .toolkit-description h4{font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:.5rem}
+    .toolkit-description p{font-size:.95rem;color:var(--black-soft);margin-bottom:1rem;line-height:1.6}
+    .toolkit-description ol{list-style:none;padding:0;margin:0;counter-reset:item}
+    .toolkit-description ol li{counter-increment:item;margin-bottom:.5rem;font-size:.875rem;color:var(--black-soft);padding-left:1.75rem;position:relative;line-height:1.5}
+    .toolkit-description ol li:before{content:counter(item);position:absolute;left:0;top:0;background:var(--purple);color:#fff;width:20px;height:20px;border-radius:50%;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .btn-toolkit{background:var(--purple);color:#fff;padding:1rem 2rem;border-radius:10px;text-decoration:none;font-weight:700;text-align:center;transition:all .3s;display:inline-block}
+    .btn-toolkit:hover{background:var(--purple-darker);transform:translateY(-2px);box-shadow:0 10px 30px var(--purple-glow-strong)}
+    .toolkit-cta{margin-top:4rem;text-align:center;padding:3rem;background:#fff;border-radius:20px;border:2px dashed var(--purple)}
+    .toolkit-cta p{font-size:1.125rem;margin-bottom:2rem;color:var(--black)}
+
+    /* SEO content */
+    .seo-content{padding:6rem 2rem;background:#fff;border-top:1px solid var(--border-light)}
+    .seo-container{max-width:var(--content-max);margin:0 auto}
+    .seo-content h2{font-size:2.5rem;text-align:center;margin-bottom:3rem;color:var(--black)}
+    .seo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+    .seo-block h3{font-size:1.5rem;font-weight:700;color:var(--black);margin-bottom:1rem}
+    .seo-block p{font-size:1rem;line-height:1.8;color:var(--black-soft)}
+    .inline-link{color:var(--purple);text-decoration:none;border-bottom:1px solid var(--purple);transition:all .3s;font-weight:600}
+    .inline-link:hover{border-bottom-width:2px;color:var(--purple-darker)}
+
+    /* Footer */
+    footer.footer{background:var(--black);color:#fff;padding:4rem 2rem 2rem;margin-top:0}
+    .footer-container{max-width:var(--content-max);margin:0 auto}
+    .footer-main{display:flex;justify-content:space-between;gap:4rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
+    .footer-brand{flex:1}
+    .footer-logo{font-size:2rem;font-weight:900;color:var(--purple);text-decoration:none;display:inline-block;margin-bottom:1rem}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:1.125rem}
+    .footer-nav{flex:2;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .footer-column h4{font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;color:#fff}
+    .footer-column a{display:block;color:rgba(255,255,255,.7);text-decoration:none;padding:.25rem 0;transition:color .3s}
+    .footer-column a:hover{color:var(--purple)}
+    .footer-bottom{text-align:center;color:rgba(255,255,255,.5);font-size:.875rem}
+    .footer-bottom p{margin:.5rem 0}
+
+    /* Skip link + focus */
+    .skip-link{position:absolute;top:-40px;left:0;background:var(--purple);color:#fff;padding:8px;text-decoration:none;z-index:100}
+    .skip-link:focus{top:0}
+    :focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+
+    /* Loading */
+    .loading{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem 3rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);color:var(--purple);font-size:1.2rem;z-index:2000}
+
+    /* Responsive */
+    @media (max-width:768px){
+      nav ul{display:none}
+      .mobile-menu{display:flex;color:var(--purple);font-size:1.5rem}
+      .product-card.featured{grid-column:1;padding:3rem 2rem}
+      header.hero::before{width:400px;height:400px}
+      .btn{padding:1rem 2rem;font-size:1rem}
+      .domains-container{flex-direction:column;gap:1.5rem;text-align:center}
+      .domains-header{flex-direction:column}
+      .domains-header h2{font-size:1.25rem;text-align:center}
+      .domains-scroll{animation-duration:30s}
+      .product-card.featured-alt{padding:3rem 2rem}
+      .comparison-note{padding:1.5rem}
+      .transformation-flow{flex-direction:column;gap:1.5rem}
+      .transform-arrow{transform:rotate(90deg);margin:1rem 0}
+      .transform-box{max-width:100%;width:100%}
+      .footer-main{flex-direction:column;gap:2rem}
+      .footer-nav{grid-template-columns:1fr;gap:1.5rem}
+      .seo-grid{grid-template-columns:1fr}
+      .seo-content h2{font-size:2rem}
+    }
+
+    /* Print / a11y prefs */
+    @media print{nav,.btn,.loading{display:none !important} body{color:#000;background:#fff}}
+    @media (prefers-contrast:high){:root{--purple:#6B00CC;--gray:#333}}
+    @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+  </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PILLAR - Transform Your Expertise Into Digital Legacy">
+  <meta property="og:description" content="Build profitable, traffic-heavy web assets that amplify your voice and expertise. Professional websites from $100 setup.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/">
+  <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="PILLAR Media & Entertainment">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PILLAR - Your Expertise is Worth $50K+/Year Online">
+  <meta name="twitter:description" content="Build profitable web assets that last forever. Launch in 30 days, profit next month.">
+  <meta name="twitter:image" content="https://pillarme.com/images/twitter-card.jpg">
+  <meta name="twitter:image:alt" content="PILLAR Media & Entertainment - Transform expertise into digital assets">
+
+  <!-- Robots/Sitemap -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="PILLAR Media & Entertainment">
+  <meta name="keywords" content="web development, digital assets, thought leadership, content monetization, website builder, expert websites">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#8B00FF">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"PILLAR Media & Entertainment",
+    "url":"https://pillarme.com",
+    "logo":"https://pillarme.com/images/logo.png",
+    "description":"PILLAR helps thought leaders and industry experts build profitable web assets",
+    "contactPoint":{"@type":"ContactPoint","contactType":"sales","availableLanguage":"English"},
+    "sameAs":[]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"PILLAR Media & Entertainment",
+    "url":"https://pillarme.com",
+    "potentialAction":{"@type":"SearchAction","target":"https://pillarme.com/search?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
+
+  <!-- Async non-critical CSS -->
+  <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-    
+
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Navigation -->
-    <nav role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== NAV ===== -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
+      <ul>
+        <li><a href="#products" aria-label="View our products">Products</a></li>
+        <li><a href="/topsites" aria-label="Top Websites">Top Sites</a></li>
+        <li><a href="/domains" aria-label="Top Websites">Domains</a></li>
+        <li><a href="/insights" aria-label="Read our insights">Insights</a></li>
+        <li><a href="/about" aria-label="Learn about us">About</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="hero" role="banner" id="hero">
+    <div>
+      <div class="trust-badge">Trusted by 12,000+ Content Creators & Industry Experts</div>
+      <h1 id="rotating-headline">Your Expertise is Worth $50K+/Year Online. We Build It.</h1>
+      <p>We build profitable web empires for industry experts who refuse to be invisible anymore. Launch this month. Profit forever.</p>
+      <button class="btn" id="starter-checkout" aria-label="Start building your digital asset today for $125">Start Building Today - $125</button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main-content">
+    <!-- Content Transformation -->
+    <section class="transformation-visual" aria-label="How it works" id="how-it-works">
+      <div class="transformation-flow">
+        <div class="transform-box">
+          <div class="transform-icon">🎥</div>
+          <h4>Your Content</h4>
+          <ul>
+            <li>1 hour video interview</li>
+            <li>Podcast episode</li>
+            <li>Webinar recording</li>
+            <li>Course materials</li>
+          </ul>
+        </div>
+        <div class="transform-arrow">
+          <span>WITHIN 24 HOURS</span>
+          <div class="arrow">→</div>
+        </div>
+        <div class="transform-box">
+          <div class="transform-icon">🌐</div>
+          <h4>Your Website</h4>
+          <ul>
+            <li>10+ SEO pages</li>
+            <li>Full deployment</li>
+            <li>Mobile optimized</li>
+            <li>Revenue ready!</li>
+          </ul>
+        </div>
+      </div>
+      <p class="no-skills">✨ No website design, coding, or technical skills required - we take care of all the hard stuff - you just share and guide the process</p>
+    </section>
+
+    <!-- Products / Pricing -->
+    <section class="products" id="products" aria-label="Our products and pricing">
+      <h2>Choose Your Growth Path</h2>
+      <p class="section-subtitle">Professional packages designed to amplify your expertise and build lasting digital wealth</p>
+
+      <div class="product-grid">
+        <!-- Featured Starter Package -->
+        <article class="product-card featured">
+          <h3>Foundation Package</h3>
+          <p>The perfect starting point for thought leaders ready to build their digital empire.</p>
+          <div class="price pulse">
+            <span>$100 <small>one-time setup</small></span>
+            <span class="price-plus">+ $25<small>/month</small></span>
+          </div>
+          <p style="font-size:1.125rem;margin-bottom:2rem;">✓ Professional website setup<br>✓ SEO & mobile optimization<br>✓ 30-day money-back guarantee</p>
+          <button class="btn" id="foundation-checkout" aria-label="Get started with Foundation Package">Get Started Now →</button>
+          <p style="font-size:.875rem;color:var(--gray);margin-top:.5rem;">*On one of our premium domains</p>
+        </article>
+
+        <!-- Growth Packages -->
+        <article class="product-card">
+          <h3>Growth Accelerator</h3>
+          <p>Scale your impact with AI-powered content and expert guidance</p>
+          <div class="price">+$400<small>/month</small></div>
+          <ul>
+            <li>✓ 4 AI content pushes/month</li>
+            <li>✓ Advanced SEO optimization</li>
+            <li>✓ FREE 3-hour consultation ($500 value)</li>
+            <li>✓ Priority support & updates</li>
+          </ul>
+          <button class="btn btn-secondary" disabled aria-label="Growth Accelerator - available after setup">Available After Setup</button>
+          <p style="font-size:.8rem;color:var(--gray);margin-top:.5rem;">*6-month commitment</p>
+        </article>
+
+        <article class="product-card">
+          <h3>Authority Builder</h3>
+          <p>Dominate your industry with multi-site presence</p>
+          <div class="price">+$1000<small>/month</small></div>
+          <ul>
+            <li>✓ 8 AI content pushes/month</li>
+            <li>✓ Multiple free consultations</li>
+            <li>✓ Multi-site management</li>
+            <li>✓ White-glove service</li>
+          </ul>
+          <button class="btn btn-secondary" disabled aria-label="Authority Builder - available after setup">Available After Setup</button>
+        </article>
+
+        <article class="product-card">
+          <h3>Empire Package</h3>
+          <p>Maximum reach across all channels</p>
+          <div class="price">+$5000<small>/month</small></div>
+          <ul>
+            <li>✓ Daily AI content creation</li>
+            <li>✓ Weekly social media content</li>
+            <li>✓ Dedicated growth team</li>
+            <li>✓ Unlimited consultations</li>
+          </ul>
+          <button class="btn btn-secondary" disabled aria-label="Empire Package - available after setup">Available After Setup</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Premium Domains -->
+    <section class="premium-domains-banner" aria-label="Premium domain rental">
+      <div class="domains-container">
+        <div class="domains-header">
+          <h2>Premium Domains from <span class="highlight-price">$25/month</span></h2>
+          <a href="/domains" class="btn-domains" aria-label="View all premium domains">View All Domains →</a>
+        </div>
+
+        <div class="domains-scroll-wrapper">
+          <div class="domains-scroll" aria-label="Premium domain examples">
+            <div class="domain-item">NYCPremium.com</div>
+            <div class="domain-item">GoldMadeEasy.com</div>
+            <div class="domain-item">TVCeleb.com</div>
+            <div class="domain-item">FanTravel.com</div>
+            <div class="domain-item">GoToDad.com</div>
+            <div class="domain-item">NFTDL.com</div>
+            <div class="domain-item">RunPlayer.com</div>
+            <div class="domain-item">HerClip.com</div>
+            <div class="domain-item">VideoGameLive.com</div>
+            <div class="domain-item">SelectMovie.com</div>
+            <div class="domain-item">FastConcert.com</div>
+            <div class="domain-item">SmallExpenses.com</div>
+            <div class="domain-item">BankSize.com</div>
+            <div class="domain-item">TravelGambling.com</div>
+            <div class="domain-item">MenuTopics.com</div>
+            <div class="domain-item">HotParks.com</div>
+            <div class="domain-item">DailyBeaches.com</div>
+            <div class="domain-item">GameLibraries.com</div>
+            <div class="domain-item">TeamworkFitness.com</div>
+            <div class="domain-item">HikeFan.com</div>
+            <div class="domain-item">TokyoCeleb.com</div>
+            <div class="domain-item">WeatherTests.com</div>
+            <div class="domain-item">HistoryAwards.com</div>
+            <div class="domain-item">FreeConvention.com</div>
+            <div class="domain-item">ThriftHotels.com</div>
+            <div class="domain-item">DJCeleb.com</div>
+            <div class="domain-item">Guuru.com</div>
+            <div class="domain-item">HotVenues.com</div>
+            <div class="domain-item">DJMeet.com</div>
+            <div class="domain-item">Aeroo.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alternative Pricing (Custom Domain) -->
+    <section class="alt-pricing" id="custom-domain-pricing" aria-label="Custom domain pricing">
+      <div class="alt-pricing-container">
+        <h2>Prefer Your Own Domain? No Problem!</h2>
+        <p class="section-subtitle">Build on your existing domain with our competitive custom pricing. Same powerful features, on a domain you own, host, update, and maintain.</p>
+
+        <div class="product-grid alt-grid">
+          <article class="product-card">
+            <div class="custom-badge">CUSTOM DOMAIN</div>
+            <h3>Foundation Custom</h3>
+            <p>Professional setup on your domain</p>
+            <div class="price"><span>$500 <small>one-time setup</small></span></div>
             <ul>
-                <li><a href="#products" aria-label="View our products">Products</a></li>
-                <li><a href="/topsites" aria-label="Top Websites">Top Sites</a></li>
-                <li><a href="/domains" aria-label="Top Websites">Domains</a></li>
-                <li><a href="/insights" aria-label="Read our insights">Insights</a></li>
-                <li><a href="/about" aria-label="Learn about us">About</a></li>
+              <li>✓ Your domain configuration</li>
+              <li>✓ Professional website setup</li>
+              <li>✓ SEO & mobile optimization</li>
+              <li>✓ Usage-based analytics</li>
             </ul>
-            <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+            <button class="btn btn-secondary" id="custom-foundation" aria-label="Get started with custom domain foundation">Start with Your Domain</button>
+          </article>
+
+          <article class="product-card">
+            <div class="custom-badge">CUSTOM DOMAIN</div>
+            <h3>Growth Custom</h3>
+            <p>Scale faster on your own domain</p>
+            <div class="price">+$2,000<small>/month</small></div>
+            <ul>
+              <li>✓ 4 AI content pushes/month</li>
+              <li>✓ Advanced SEO for your domain</li>
+              <li>✓ FREE consultation ($500 value)</li>
+              <li>✓ Priority custom support</li>
+            </ul>
+            <button class="btn btn-secondary" disabled aria-label="Growth custom - available after setup">Available After Setup</button>
+            <p style="font-size:.8rem;color:var(--gray);margin-top:.5rem;">*6-month commitment</p>
+          </article>
+
+          <article class="product-card">
+            <div class="custom-badge">CUSTOM DOMAIN</div>
+            <h3>Authority Custom</h3>
+            <p>Multi-domain empire builder</p>
+            <div class="price">+$5,000<small>/month</small></div>
+            <ul>
+              <li>✓ 8 AI content pushes/month</li>
+              <li>✓ Multiple domain management</li>
+              <li>✓ Unlimited consultations</li>
+              <li>✓ White-glove custom service</li>
+            </ul>
+            <button class="btn btn-secondary" disabled aria-label="Authority custom - available after setup">Available After Setup</button>
+          </article>
+
+          <article class="product-card featured-alt">
+            <h3>Empire Custom</h3>
+            <p>Ultimate custom domain solution</p>
+            <div class="price">+$25,000<small>/month</small></div>
+            <ul>
+              <li>✓ Daily AI content creation</li>
+              <li>✓ Weekly social media content</li>
+              <li>✓ Dedicated growth team</li>
+              <li>✓ Complete brand domination</li>
+            </ul>
+            <button class="btn btn-secondary" disabled aria-label="Empire custom - available after setup">Available After Setup</button>
+          </article>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero" role="banner">
-        <div>
-            <div class="trust-badge">Trusted by 12,000+ Content Creators & Industry Experts</div>
-            <h1 id="rotating-headline">Your Expertise is Worth $50K+/Year Online. We Build It.</h1>
-            <p>We build profitable web empires for industry experts who refuse to be invisible anymore. Launch this month. Profit forever.</p>
-            <button class="btn" id="starter-checkout" aria-label="Start building your digital asset today for $125">Start Building Today - $125</button>
+        <div class="comparison-note">
+          <p>💡 <strong>Smart Tip:</strong> Save up to 80% by using our premium domains. Get instant authority and better SEO results!</p>
+          <a href="#products" class="link-back">See Premium Domain Pricing →</a>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <!-- Main content -->
-    <main id="main-content">
-        <!-- Content Transformation -->
-        <section class="transformation-visual" aria-label="How it works">            
-            <div class="transformation-flow">
-                <div class="transform-box">
-                    <div class="transform-icon">🎥</div>
-                    <h4>Your Content</h4>
-                    <ul>
-                        <li>1 hour video interview</li>
-                        <li>Podcast episode</li>
-                        <li>Webinar recording</li>
-                        <li>Course materials</li>
-                    </ul>
-                </div>
-                
-                <div class="transform-arrow">
-                    <span>WITHIN 24 HOURS</span>
-                    <div class="arrow">→</div>
-                </div>
-                
-                <div class="transform-box">
-                    <div class="transform-icon">🌐</div>
-                    <h4>Your Website</h4>
-                    <ul>
-                        <li>10+ SEO pages</li>
-                        <li>Full deployment</li>
-                        <li>Mobile optimized</li>
-                        <li>Revenue ready!</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p class="no-skills">✨ No website design, coding, or technical skills required - we take care of all the hard stuff - you just share and guide the process</p>
-            
-        </section>
-
-        <!-- Products Section -->
-        <section class="products" id="products" aria-label="Our products and pricing">
-            <h2>Choose Your Growth Path</h2>
-            <p class="section-subtitle">Professional packages designed to amplify your expertise and build lasting digital wealth</p>
-            
-            <div class="product-grid">
-                <!-- Featured Starter Package -->
-                <article class="product-card featured">
-                    <h3>Foundation Package</h3>
-                    <p>The perfect starting point for thought leaders ready to build their digital empire.</p>
-                    <div class="price pulse">
-                        <span>$100 <small>one-time setup</small></span>
-                        <span class="price-plus">+ $25<small>/month</small></span>
-                    </div>
-                    <p style="font-size: 1.125rem; margin-bottom: 2rem;">✓ Professional website setup<br>✓ SEO & mobile optimization<br>✓ 30-day money-back guarantee</p>
-                    <button class="btn" id="foundation-checkout" aria-label="Get started with Foundation Package">Get Started Now →</button>
-                    <p style="font-size: 0.875rem; color: var(--gray); margin-top: 0.5rem;">*On one of our premium domains</p>
-                </article>
-
-                <!-- Growth Packages -->
-                <article class="product-card">
-                    <h3>Growth Accelerator</h3>
-                    <p>Scale your impact with AI-powered content and expert guidance</p>
-                    <div class="price">+$400<small>/month</small></div>
-                    <ul>
-                        <li>✓ 4 AI content pushes/month</li>
-                        <li>✓ Advanced SEO optimization</li>
-                        <li>✓ FREE 3-hour consultation ($500 value)</li>
-                        <li>✓ Priority support & updates</li>
-                    </ul>
-                    <button class="btn btn-secondary" disabled aria-label="Growth Accelerator - available after setup">Available After Setup</button>
-                    <p style="font-size: 0.8rem; color: var(--gray); margin-top: 0.5rem;">*6-month commitment</p>
-                </article>
-
-                <article class="product-card">
-                    <h3>Authority Builder</h3>
-                    <p>Dominate your industry with multi-site presence</p>
-                    <div class="price">+$1000<small>/month</small></div>
-                    <ul>
-                        <li>✓ 8 AI content pushes/month</li>
-                        <li>✓ Multiple free consultations</li>
-                        <li>✓ Multi-site management</li>
-                        <li>✓ White-glove service</li>
-                    </ul>
-                    <button class="btn btn-secondary" disabled aria-label="Authority Builder - available after setup">Available After Setup</button>
-                </article>
-
-                <article class="product-card">
-                    <h3>Empire Package</h3>
-                    <p>Maximum reach across all channels</p>
-                    <div class="price">+$5000<small>/month</small></div>
-                    <ul>
-                        <li>✓ Daily AI content creation</li>
-                        <li>✓ Weekly social media content</li>
-                        <li>✓ Dedicated growth team</li>
-                        <li>✓ Unlimited consultations</li>
-                    </ul>
-                    <button class="btn btn-secondary" disabled aria-label="Empire Package - available after setup">Available After Setup</button>
-                </article>
-            </div>
-        </section>
-
-        <!-- Premium Domains Banner Section -->
-        <section class="premium-domains-banner" aria-label="Premium domain rental">
-            <div class="domains-container">
-                <div class="domains-header">
-                    <h2>Premium Domains from <span class="highlight-price">$25/month</span></h2>
-                    <a href="/domains" class="btn-domains" aria-label="View all premium domains">View All Domains →</a>
-                </div>
-                
-                <div class="domains-scroll-wrapper">
-                    <div class="domains-scroll" aria-label="Premium domain examples">
-                        <div class="domain-item">NYCPremium.com</div>
-                        <div class="domain-item">GoldMadeEasy.com</div>
-                        <div class="domain-item">TVCeleb.com</div>
-                        <div class="domain-item">FanTravel.com</div>
-                        <div class="domain-item">GoToDad.com</div>
-                        <div class="domain-item">NFTDL.com</div>
-                        <div class="domain-item">RunPlayer.com</div>
-                        <div class="domain-item">HerClip.com</div>
-                        <div class="domain-item">VideoGameLive.com</div>
-                        <div class="domain-item">SelectMovie.com</div>
-                        <div class="domain-item">FastConcert.com</div>
-                        <div class="domain-item">SmallExpenses.com</div>
-                        <div class="domain-item">BankSize.com</div>
-                        <div class="domain-item">TravelGambling.com</div>
-                        <div class="domain-item">MenuTopics.com</div>
-                        <div class="domain-item">HotParks.com</div>
-                        <div class="domain-item">DailyBeaches.com</div>
-                        <div class="domain-item">GameLibraries.com</div>
-                        <div class="domain-item">TeamworkFitness.com</div>
-                        <div class="domain-item">HikeFan.com</div>
-                        <div class="domain-item">TokyoCeleb.com</div>
-                        <div class="domain-item">WeatherTests.com</div>
-                        <div class="domain-item">HistoryAwards.com</div>
-                        <div class="domain-item">FreeConvention.com</div>
-                        <div class="domain-item">ThriftHotels.com</div>
-                        <div class="domain-item">DJCeleb.com</div>
-                        <div class="domain-item">Guuru.com</div>
-                        <div class="domain-item">HotVenues.com</div>
-                        <div class="domain-item">DJMeet.com</div>
-                        <div class="domain-item">Aeroo.com</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Alternative Pricing Section -->
-        <section class="alt-pricing" id="custom-domain-pricing" aria-label="Custom domain pricing">
-            <div class="alt-pricing-container">
-                <h2>Prefer Your Own Domain? No Problem!</h2>
-                <p class="section-subtitle">Build on your existing domain with our competitive custom pricing. Same powerful features, on a domain you own, host, update, and maintain.</p>
-                
-                <div class="product-grid alt-grid">
-                    <!-- Custom Domain Foundation -->
-                    <article class="product-card">
-                        <div class="custom-badge">CUSTOM DOMAIN</div>
-                        <h3>Foundation Custom</h3>
-                        <p>Professional setup on your domain</p>
-                        <div class="price">
-                            <span>$500 <small>one-time setup</small></span>
-                        </div>
-                        <ul>
-                            <li>✓ Your domain configuration</li>
-                            <li>✓ Professional website setup</li>
-                            <li>✓ SEO & mobile optimization</li>
-                            <li>✓ Usage-based analytics</li>
-                        </ul>
-                        <button class="btn btn-secondary" id="custom-foundation" aria-label="Get started with custom domain foundation">Start with Your Domain</button>
-                    </article>
-
-                    <!-- Custom Domain Growth -->
-                    <article class="product-card">
-                        <div class="custom-badge">CUSTOM DOMAIN</div>
-                        <h3>Growth Custom</h3>
-                        <p>Scale faster on your own domain</p>
-                        <div class="price">+$2,000<small>/month</small></div>
-                        <ul>
-                            <li>✓ 4 AI content pushes/month</li>
-                            <li>✓ Advanced SEO for your domain</li>
-                            <li>✓ FREE consultation ($500 value)</li>
-                            <li>✓ Priority custom support</li>
-                        </ul>
-                        <button class="btn btn-secondary" disabled aria-label="Growth custom - available after setup">Available After Setup</button>
-                        <p style="font-size: 0.8rem; color: var(--gray); margin-top: 0.5rem;">*6-month commitment</p>
-                    </article>
-
-                    <!-- Custom Domain Authority -->
-                    <article class="product-card">
-                        <div class="custom-badge">CUSTOM DOMAIN</div>
-                        <h3>Authority Custom</h3>
-                        <p>Multi-domain empire builder</p>
-                        <div class="price">+$5,000<small>/month</small></div>
-                        <ul>
-                            <li>✓ 8 AI content pushes/month</li>
-                            <li>✓ Multiple domain management</li>
-                            <li>✓ Unlimited consultations</li>
-                            <li>✓ White-glove custom service</li>
-                        </ul>
-                        <button class="btn btn-secondary" disabled aria-label="Authority custom - available after setup">Available After Setup</button>
-                    </article>
-
-                    <!-- Custom Domain Empire -->
-                    <article class="product-card featured-alt">
-                        <h3>Empire Custom</h3>
-                        <p>Ultimate custom domain solution</p>
-                        <div class="price">+$25,000<small>/month</small></div>
-                        <ul>
-                            <li>✓ Daily AI content creation</li>
-                            <li>✓ Weekly social media content</li>
-                            <li>✓ Dedicated growth team</li>
-                            <li>✓ Complete brand domination</li>
-                        </ul>
-                        <button class="btn btn-secondary" disabled aria-label="Empire custom - available after setup">Available After Setup</button>
-                    </article>
-                </div>
-                
-                <div class="comparison-note">
-                    <p>💡 <strong>Smart Tip:</strong> Save up to 80% by using our premium domains. Get instant authority and better SEO results!</p>
-                    <a href="#products" class="link-back">See Premium Domain Pricing →</a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Ultra-Premium Domains Banner -->
-        <section class="ultra-premium-banner" aria-label="Ultra-premium domain rental">
-            <div class="domains-container">
-                <div class="domains-header">
-                    <h2>ULTRA-PREMIUM RENTALS from <span class="highlight-price-gold">$500/month</span></h2>
-                    <a href="/domains#ultra-premium" class="btn-domains-gold" aria-label="View ultra-premium domains">View Ultra-Premium →</a>
-                </div>
-                
-                <div class="domains-scroll-wrapper">
-                    <div class="domains-scroll-ultra" aria-label="Ultra-premium domain examples">
-                        <div class="domain-item-gold">Guuru.com</div>
-                        <div class="domain-item-gold">Aeroo.com</div>
-                        <div class="domain-item-gold">NFTDL.com</div>
-                        <div class="domain-item-gold">Fantravel.com</div>
-                        <div class="domain-item-gold">TVCeleb.com</div>
-                        <div class="domain-item-gold">DJMeet.com</div>
-                        <div class="domain-item-gold">Guuru.com</div>
-                        <div class="domain-item-gold">Aeroo.com</div>
-                        <div class="domain-item-gold">NFTDL.com</div>
-                        <div class="domain-item-gold">Fantravel.com</div>
-                        <div class="domain-item-gold">TVCeleb.com</div>
-                        <div class="domain-item-gold">DJMeet.com</div>
-                    </div>
-                </div>
-            </div>
-            <p class="ultra-premium-note">*5-letter domains & existing high-traffic mega-sites</p>
-        </section>
-
-        <!-- DIY AI Toolkits Section -->
-        <section class="diy-toolkits" aria-label="Do-It-Yourself AI Toolkits">
-            <div class="toolkit-container">
-                <h2>Do-It-Yourself AI Toolkits & Design</h2>
-                <p class="section-subtitle">Professional tools to build your digital empire yourself — or level up what we build for you</p>
-                
-                <div class="toolkit-grid">
-                    <!-- Claude Max 
-                    <article class="toolkit-card">
-                        <div class="toolkit-icon">🤖</div>
-                        <h3>Claude Max</h3>
-                        <p class="toolkit-tagline">Ultimate AI Research & Writing Assistant</p>
-                        <div class="toolkit-price">$200<small>/month</small></div>
-                        <div class="toolkit-description">
-                            <h4>Perfect For:</h4>
-                            <p>Heavy-duty research, book writing, complex analysis, and enterprise projects</p>
-                            <h4>Quick Start:</h4>
-                            <ol>
-                                <li>Sign up for Claude Max tier</li>
-                                <li>Get 10x more usage limits</li>
-                                <li>Access priority processing</li>
-                                <li>Upload massive documents</li>
-                            </ol>
-                        </div>
-                        <a href="https://claude.ai" class="btn-toolkit" target="_blank" rel="noopener">Try Claude Max →</a>
-                    </article>
-                    -->
-        
-                    <!-- Jasper AI -->
-                    <article class="toolkit-card featured-toolkit">
-                        <div class="toolkit-badge">MOST POPULAR</div>
-                        <div class="toolkit-icon">✏️</div>
-                        <h3>Jasper AI</h3>
-                        <p class="toolkit-tagline">AI Content Creation Platform</p>
-                        <div class="toolkit-price">$59<small>/month</small></div>
-                        <div class="toolkit-description">
-                            <h4>Perfect For:</h4>
-                            <p>Blog posts, marketing copy, social media content at scale</p>
-                            <h4>Quick Start:</h4>
-                            <ol>
-                                <li>Choose a template (blog, ads, etc.)</li>
-                                <li>Input your topic and tone</li>
-                                <li>Generate multiple variations</li>
-                                <li>Edit and publish anywhere</li>
-                            </ol>
-                        </div>
-                        <a href="https://jasper.ai" class="btn-toolkit" target="_blank" rel="noopener">Try Jasper →</a>
-                    </article>
-        
-                    <!-- Freepik -->
-                    <article class="toolkit-card">
-                        <div class="toolkit-icon">🎨</div>
-                        <h3>Freepik</h3>
-                        <p class="toolkit-tagline">Premium Stock & AI Images</p>
-                        <div class="toolkit-price">$30<small>/month</small></div>
-                        <div class="toolkit-description">
-                            <h4>Perfect For:</h4>
-                            <p>Professional images, vectors, videos, and AI-generated visuals</p>
-                            <h4>Quick Start:</h4>
-                            <ol>
-                                <li>Search or use AI image generator</li>
-                                <li>Download in multiple formats</li>
-                                <li>Edit colors/elements directly</li>
-                                <li>Use commercially everywhere</li>
-                            </ol>
-                        </div>
-                        <a href="https://freepik.com" class="btn-toolkit" target="_blank" rel="noopener">Try Freepik →</a>
-                    </article>
-        
-                    <!-- Canva -->
-                    <article class="toolkit-card">
-                        <div class="toolkit-icon">🖼️</div>
-                        <h3>Canva Pro</h3>
-                        <p class="toolkit-tagline">All-in-One Design Platform</p>
-                        <div class="toolkit-price">$15<small>/month</small></div>
-                        <div class="toolkit-description">
-                            <h4>Perfect For:</h4>
-                            <p>Social media graphics, presentations, videos, and brand kits</p>
-                            <h4>Quick Start:</h4>
-                            <ol>
-                                <li>Pick from 600K+ templates</li>
-                                <li>Customize with drag-and-drop</li>
-                                <li>Use Magic AI tools</li>
-                                <li>Export or schedule posts</li>
-                            </ol>
-                        </div>
-                        <a href="https://canva.com" class="btn-toolkit" target="_blank" rel="noopener">Try Canva →</a>
-                    </article>
-        
-                    <!-- Dynadot -->
-                    <article class="toolkit-card">
-                        <div class="toolkit-icon">🌍</div>
-                        <h3>Dynadot</h3>
-                        <p class="toolkit-tagline">Premium Domain Registration</p>
-                        <div class="toolkit-price">$11<small>/year .com</small></div>
-                        <div class="toolkit-description">
-                            <h4>Perfect For:</h4>
-                            <p>Securing your own premium domains with advanced tools</p>
-                            <h4>Quick Start:</h4>
-                            <ol>
-                                <li>Search available domains</li>
-                                <li>Use bulk search for ideas</li>
-                                <li>Set up forwarding/hosting</li>
-                                <li>Enable privacy protection</li>
-                            </ol>
-                        </div>
-                        <a href="https://dynadot.com" class="btn-toolkit" target="_blank" rel="noopener">Try Dynadot →</a>
-                    </article>
-                </div>
-                
-                <div class="toolkit-cta">
-                    <p>💡 <strong>Pro Tip:</strong> Why spend $500+ per month on AI tools you'll struggle to master when our Growth Accelerator package gives you done-for-you results for just $400/month?</p>
-                    <a href="#products" class="btn">Skip the Line - Get Growth Accelerator →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEO Content Section - Trust & Authority -->
-        <section class="seo-content" aria-label="Why choose PILLAR Media">
-            <div class="seo-container">
-                <h2>Transform Your Expertise Into Digital Assets with PILLAR Media & Entertainment</h2>
-                <div class="seo-grid">
-                    <div class="seo-block">
-                        <h3>Industry Leaders Trust PILLAR for Web Development</h3>
-                        <p>Since 2020, PILLAR has helped 12,000+ experts build profitable websites. Our AI transforms your videos, podcasts, and courses into SEO-optimized web assets working 24/7. <a href="/insights" class="inline-link">Read our expert insights</a> on digital transformation.</p>
-                    </div>
-                    <div class="seo-block">
-                        <h3>Professional Websites from $100 Setup + $25/Month</h3>
-                        <p>Skip the $10,000+ agency fees. Launch on premium domains like Guuru.com for instant authority. Everything included: mobile design, SEO optimization, content management, and analytics.</p>
-                    </div>
-                    <div class="seo-block">
-                        <h3>Your Content Becomes Your Digital Empire</h3>
-                        <p>Transform any video or webinar into 10+ SEO pages within 30 days. No coding required—you share expertise, we handle everything. <a href="/insights/content-transformation-guide" class="inline-link">Learn how it works</a>.</p>
-                    </div>
-                    <div class="seo-block">
-                        <h3>Ready to Build Your $100K/Year Digital Asset?</h3>
-                        <p>Join thousands already earning with PILLAR. Perfect for consultants, coaches, and industry veterans ready to scale. Start with our Foundation Package today. <a href="/showcase" class="inline-link">See success stories</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <a href="/" class="footer-logo" aria-label="PILLAR home">PILLAR</a>
-                    <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
-                </div>
-                <nav class="footer-nav" aria-label="Footer navigation">
-                    <div class="footer-column">
-                        <h4>Products</h4>
-                        <a href="#products">Foundation Package</a>
-                        <a href="#products">Growth Plans</a>
-                        <a href="/domains">Premium Domains</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="/about">About PILLAR</a>
-                        <a href="/showcase">Success Stories</a>
-                        <a href="/insights">Expert Insights</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Support</h4>
-                        <a href="/contact">Contact Us</a>
-                        <a href="/faq">FAQ</a>
-                        <a href="/terms">Terms of Service</a>
-                    </div>
-                </nav>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 PILLAR Media & Entertainment. All rights reserved.</p>
-                <p class="footer-address">Transforming digital landscapes from Los Angeles to the world.</p>
-            </div>
+    <!-- Ultra-Premium Domains -->
+    <section class="ultra-premium-banner" aria-label="Ultra-premium domain rental">
+      <div class="domains-container">
+        <div class="domains-header">
+          <h2>ULTRA-PREMIUM RENTALS from <span class="highlight-price-gold">$500/month</span></h2>
+          <a href="/domains#ultra-premium" class="btn-domains-gold" aria-label="View ultra-premium domains">View Ultra-Premium →</a>
         </div>
-    </footer>
 
-    <!-- Loading State -->
-    <div class="loading" role="status" aria-live="polite" aria-hidden="true">Processing your order...</div>
+        <div class="domains-scroll-wrapper">
+          <div class="domains-scroll-ultra" aria-label="Ultra-premium domain examples">
+            <div class="domain-item-gold">Guuru.com</div>
+            <div class="domain-item-gold">Aeroo.com</div>
+            <div class="domain-item-gold">NFTDL.com</div>
+            <div class="domain-item-gold">Fantravel.com</div>
+            <div class="domain-item-gold">TVCeleb.com</div>
+            <div class="domain-item-gold">DJMeet.com</div>
+            <div class="domain-item-gold">Guuru.com</div>
+            <div class="domain-item-gold">Aeroo.com</div>
+            <div class="domain-item-gold">NFTDL.com</div>
+            <div class="domain-item-gold">Fantravel.com</div>
+            <div class="domain-item-gold">TVCeleb.com</div>
+            <div class="domain-item-gold">DJMeet.com</div>
+          </div>
+        </div>
+      </div>
+      <p class="ultra-premium-note">*5-letter domains & existing high-traffic mega-sites</p>
+    </section>
 
-    <!-- Stripe script with async loading -->
-    <script src="https://js.stripe.com/v3/" async></script>
-    
-    <!-- Main JavaScript deferred -->
-    <script defer>
-        // Wait for Stripe to load
-        let stripeLoaded = false;
-        const checkStripe = setInterval(() => {
-            if (typeof Stripe !== 'undefined') {
-                stripeLoaded = true;
-                clearInterval(checkStripe);
-            }
-        }, 100);
+    <!-- DIY AI Toolkits -->
+    <section class="diy-toolkits" aria-label="Do-It-Yourself AI Toolkits">
+      <div class="toolkit-container">
+        <h2>Do-It-Yourself AI Toolkits & Design</h2>
+        <p class="section-subtitle">Professional tools to build your digital empire yourself — or level up what we build for you</p>
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        <div class="toolkit-grid">
+          <!-- Jasper -->
+          <article class="toolkit-card featured-toolkit">
+            <div class="toolkit-badge">MOST POPULAR</div>
+            <div class="toolkit-icon">✏️</div>
+            <h3>Jasper AI</h3>
+            <p class="toolkit-tagline">AI Content Creation Platform</p>
+            <div class="toolkit-price">$59<small>/month</small></div>
+            <div class="toolkit-description">
+              <h4>Perfect For:</h4>
+              <p>Blog posts, marketing copy, social media content at scale</p>
+              <h4>Quick Start:</h4>
+              <ol>
+                <li>Choose a template (blog, ads, etc.)</li>
+                <li>Input your topic and tone</li>
+                <li>Generate multiple variations</li>
+                <li>Edit and publish anywhere</li>
+              </ol>
+            </div>
+            <a href="https://jasper.ai" class="btn-toolkit" target="_blank" rel="noopener">Try Jasper →</a>
+          </article>
+
+          <!-- Freepik -->
+          <article class="toolkit-card">
+            <div class="toolkit-icon">🎨</div>
+            <h3>Freepik</h3>
+            <p class="toolkit-tagline">Premium Stock & AI Images</p>
+            <div class="toolkit-price">$30<small>/month</small></div>
+            <div class="toolkit-description">
+              <h4>Perfect For:</h4>
+              <p>Professional images, vectors, videos, and AI-generated visuals</p>
+              <h4>Quick Start:</h4>
+              <ol>
+                <li>Search or use AI image generator</li>
+                <li>Download in multiple formats</li>
+                <li>Edit colors/elements directly</li>
+                <li>Use commercially everywhere</li>
+              </ol>
+            </div>
+            <a href="https://freepik.com" class="btn-toolkit" target="_blank" rel="noopener">Try Freepik →</a>
+          </article>
+
+          <!-- Canva -->
+          <article class="toolkit-card">
+            <div class="toolkit-icon">🖼️</div>
+            <h3>Canva Pro</h3>
+            <p class="toolkit-tagline">All-in-One Design Platform</p>
+            <div class="toolkit-price">$15<small>/month</small></div>
+            <div class="toolkit-description">
+              <h4>Perfect For:</h4>
+              <p>Social media graphics, presentations, videos, and brand kits</p>
+              <h4>Quick Start:</h4>
+              <ol>
+                <li>Pick from 600K+ templates</li>
+                <li>Customize with drag-and-drop</li>
+                <li>Use Magic AI tools</li>
+                <li>Export or schedule posts</li>
+              </ol>
+            </div>
+            <a href="https://canva.com" class="btn-toolkit" target="_blank" rel="noopener">Try Canva →</a>
+          </article>
+
+          <!-- Dynadot -->
+          <article class="toolkit-card">
+            <div class="toolkit-icon">🌍</div>
+            <h3>Dynadot</h3>
+            <p class="toolkit-tagline">Premium Domain Registration</p>
+            <div class="toolkit-price">$11<small>/year .com</small></div>
+            <div class="toolkit-description">
+              <h4>Perfect For:</h4>
+              <p>Securing your own premium domains with advanced tools</p>
+              <h4>Quick Start:</h4>
+              <ol>
+                <li>Search available domains</li>
+                <li>Use bulk search for ideas</li>
+                <li>Set up forwarding/hosting</li>
+                <li>Enable privacy protection</li>
+              </ol>
+            </div>
+            <a href="https://dynadot.com" class="btn-toolkit" target="_blank" rel="noopener">Try Dynadot →</a>
+          </article>
+        </div>
+
+        <div class="toolkit-cta">
+          <p>💡 <strong>Pro Tip:</strong> Why spend $500+ per month on AI tools you'll struggle to master when our Growth Accelerator package gives you done-for-you results for just $400/month?</p>
+          <a href="#products" class="btn">Skip the Line - Get Growth Accelerator →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content" aria-label="Why choose PILLAR Media">
+      <div class="seo-container">
+        <h2>Transform Your Expertise Into Digital Assets with PILLAR Media & Entertainment</h2>
+        <div class="seo-grid">
+          <div class="seo-block">
+            <h3>Industry Leaders Trust PILLAR for Web Development</h3>
+            <p>Since 2020, PILLAR has helped 12,000+ experts build profitable websites. Our AI transforms your videos, podcasts, and courses into SEO-optimized web assets working 24/7. <a href="/insights" class="inline-link">Read our expert insights</a> on digital transformation.</p>
+          </div>
+          <div class="seo-block">
+            <h3>Professional Websites from $100 Setup + $25/Month</h3>
+            <p>Skip the $10,000+ agency fees. Launch on premium domains like Guuru.com for instant authority. Everything included: mobile design, SEO optimization, content management, and analytics.</p>
+          </div>
+          <div class="seo-block">
+            <h3>Your Content Becomes Your Digital Empire</h3>
+            <p>Transform any video or webinar into 10+ SEO pages within 30 days. No coding required—you share expertise, we handle everything. <a href="/insights/content-transformation-guide" class="inline-link">Learn how it works</a>.</p>
+          </div>
+          <div class="seo-block">
+            <h3>Ready to Build Your $100K/Year Digital Asset?</h3>
+            <p>Join thousands already earning with PILLAR. Perfect for consultants, coaches, and industry veterans ready to scale. Start with our Foundation Package today. <a href="/showcase" class="inline-link">See success stories</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo" id="site-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="PILLAR home">PILLAR</a>
+          <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-column">
+            <h4>Products</h4>
+            <a href="#products">Foundation Package</a>
+            <a href="#products">Growth Plans</a>
+            <a href="/domains">Premium Domains</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="/about">About PILLAR</a>
+            <a href="/showcase">Success Stories</a>
+            <a href="/insights">Expert Insights</a>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <a href="/contact">Contact Us</a>
+            <a href="/faq">FAQ</a>
+            <a href="/terms">Terms of Service</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PILLAR Media & Entertainment. All rights reserved.</p>
+        <p class="footer-address">Transforming digital landscapes from Los Angeles to the world.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Loading State -->
+  <div class="loading" role="status" aria-live="polite" aria-hidden="true">Processing your order...</div>
+
+  <!-- Stripe -->
+  <script src="https://js.stripe.com/v3/" async></script>
+
+  <!-- Main JS -->
+  <script defer>
+    // Stripe gate
+    let stripeLoaded = false;
+    const checkStripe = setInterval(() => {
+      if (typeof Stripe !== 'undefined') { stripeLoaded = true; clearInterval(checkStripe); }
+    }, 100);
+
+    // Smooth scroll for same-page anchors (kept defensive)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click',e=>{
+        const href = anchor.getAttribute('href');
+        const target = href && document.querySelector(href);
+        if(!target) return;
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    mobileMenu?.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!isExpanded));
+      navList.style.display = isExpanded ? 'none' : 'flex';
+    });
+
+    // Checkout handlers
+    document.getElementById('starter-checkout')?.addEventListener('click', handleCheckout);
+    document.getElementById('foundation-checkout')?.addEventListener('click', handleCheckout);
+
+    async function handleCheckout(){
+      if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
+      const loadingEl = document.querySelector('.loading');
+      if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
+      try{
+        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // TODO: replace
+        const { error } = await stripe.redirectToCheckout({
+          lineItems:[{ price:'price_YOUR_STARTER_PRICE_ID', quantity:1 }], // TODO: replace
+          mode:'subscription',
+          successUrl: window.location.origin + '/success',
+          cancelUrl: window.location.origin
         });
+        if(error){ console.error('Stripe checkout error:', error); alert('Checkout error. Please try again.'); }
+      }catch(err){
+        console.error('Checkout error:', err); alert('Something went wrong. Please try again.');
+      }finally{
+        if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
+      }
+    }
 
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navList = document.querySelector('nav ul');
-        
-        mobileMenu?.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            navList.style.display = isExpanded ? 'none' : 'flex';
+    // Custom domain checkout
+    document.getElementById('custom-foundation')?.addEventListener('click', async function(){
+      if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
+      const loadingEl = document.querySelector('.loading');
+      if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
+      try{
+        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // TODO: replace
+        const { error } = await stripe.redirectToCheckout({
+          lineItems:[{ price:'price_YOUR_CUSTOM_FOUNDATION_PRICE_ID', quantity:1 }], // TODO: replace
+          mode:'subscription',
+          successUrl: window.location.origin + '/success?type=custom',
+          cancelUrl: window.location.origin + '#custom-domain-pricing'
         });
+        if(error){ console.error('Stripe checkout error:', error); alert('Checkout error. Please try again.'); }
+      }catch(err){
+        console.error('Checkout error:', err); alert('Something went wrong. Please try again.');
+      }finally{
+        if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
+      }
+    });
 
-        // Checkout buttons
-        document.getElementById('starter-checkout')?.addEventListener('click', handleCheckout);
-        document.getElementById('foundation-checkout')?.addEventListener('click', handleCheckout);
+    // Back link smooth scroll
+    document.querySelector('.link-back')?.addEventListener('click', e=>{
+      e.preventDefault();
+      document.querySelector('#products')?.scrollIntoView({behavior:'smooth'});
+    });
 
-        async function handleCheckout() {
-            if (!stripeLoaded) {
-                alert('Payment system is loading. Please try again in a moment.');
-                return;
-            }
+    // Rotating headlines
+    const headlines=[
+      "Your Expertise is Worth $50K+/Year Online. We Build It.",
+      "Turn Your Knowledge Into $10K/Month. Starting Today.",
+      "Your Ideas Generate $100K+/Year. We Make It Happen.",
+      "Convert Your Expertise to $5-15K Monthly Revenue. Now.",
+      "We Build $1M Digital Assets. You Own Everything.",
+      "From Zero to $10K/Month. Your Knowledge. Our System.",
+      "Stop Consulting for $500. Start Earning $50K Passively.",
+      "30 Days to $5K/Month. Your Expertise. Automated.",
+      "Launch This Month. Profit Next Month. Scale Forever.",
+      "Your Knowledge = $250K Asset. Still Waiting?",
+      "Every Expert Needs a $100K Website. Where's Yours?"
+    ];
+    let currentHeadline=0;
+    const headlineElement=document.getElementById('rotating-headline');
+    function rotateHeadline(){
+      if(!headlineElement) return;
+      currentHeadline=(currentHeadline+1)%headlines.length;
+      headlineElement.style.opacity='0';
+      setTimeout(()=>{ headlineElement.textContent=headlines[currentHeadline]; headlineElement.style.opacity='1'; },500);
+    }
+    setInterval(rotateHeadline,4000);
 
-            // Show loading state
-            const loadingEl = document.querySelector('.loading');
-            if (loadingEl) {
-                loadingEl.style.display = 'block';
-                loadingEl.setAttribute('aria-hidden', 'false');
-            }
-            
-            try {
-                const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // Replace with your key
-                
-                const { error } = await stripe.redirectToCheckout({
-                    lineItems: [{
-                        price: 'price_YOUR_STARTER_PRICE_ID', // Replace with your price ID
-                        quantity: 1
-                    }],
-                    mode: 'subscription',
-                    successUrl: window.location.origin + '/success',
-                    cancelUrl: window.location.origin
-                });
-                
-                if (error) {
-                    console.error('Stripe checkout error:', error);
-                    alert('Checkout error. Please try again.');
-                }
-            } catch (err) {
-                console.error('Checkout error:', err);
-                alert('Something went wrong. Please try again.');
-            } finally {
-                if (loadingEl) {
-                    loadingEl.style.display = 'none';
-                    loadingEl.setAttribute('aria-hidden', 'true');
-                }
-            }
-        }
-
-        // Add checkout functionality for custom domain packages
-        document.getElementById('custom-foundation')?.addEventListener('click', async function() {
-            if (!stripeLoaded) {
-                alert('Payment system is loading. Please try again in a moment.');
-                return;
-            }
-
-            const loadingEl = document.querySelector('.loading');
-            if (loadingEl) {
-                loadingEl.style.display = 'block';
-                loadingEl.setAttribute('aria-hidden', 'false');
-            }
-            
-            try {
-                const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY');
-                
-                const { error } = await stripe.redirectToCheckout({
-                    lineItems: [{
-                        price: 'price_YOUR_CUSTOM_FOUNDATION_PRICE_ID', // Custom domain price ID
-                        quantity: 1
-                    }],
-                    mode: 'subscription',
-                    successUrl: window.location.origin + '/success?type=custom',
-                    cancelUrl: window.location.origin + '#custom-domain-pricing'
-                });
-                
-                if (error) {
-                    console.error('Stripe checkout error:', error);
-                    alert('Checkout error. Please try again.');
-                }
-            } catch (err) {
-                console.error('Checkout error:', err);
-                alert('Something went wrong. Please try again.');
-            } finally {
-                if (loadingEl) {
-                    loadingEl.style.display = 'none';
-                    loadingEl.setAttribute('aria-hidden', 'true');
-                }
-            }
-        });
-
-        // Smooth scroll to custom pricing when clicking comparison link
-        document.querySelector('.link-back')?.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#products').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Rotating Headlines with better performance
-        const headlines = [
-            "Your Expertise is Worth $50K+/Year Online. We Build It.",
-            "Turn Your Knowledge Into $10K/Month. Starting Today.",
-            "Your Ideas Generate $100K+/Year. We Make It Happen.",
-            "Convert Your Expertise to $5-15K Monthly Revenue. Now.",
-            "We Build $1M Digital Assets. You Own Everything.",
-            "From Zero to $10K/Month. Your Knowledge. Our System.",
-            "Stop Consulting for $500. Start Earning $50K Passively.",
-            "30 Days to $5K/Month. Your Expertise. Automated.",
-            "Launch This Month. Profit Next Month. Scale Forever.",
-            "Your Knowledge = $250K Asset. Still Waiting?",
-            "Every Expert Needs a $100K Website. Where's Yours?"
-        ];
-
-        let currentHeadline = 0;
-        const headlineElement = document.getElementById('rotating-headline');
-
-        function rotateHeadline() {
-            if (!headlineElement) return;
-            
-            currentHeadline = (currentHeadline + 1) % headlines.length;
-            headlineElement.style.opacity = '0';
-            
-            setTimeout(() => {
-                headlineElement.textContent = headlines[currentHeadline];
-                headlineElement.style.opacity = '1';
-            }, 500);
-        }
-
-        // Rotate every 4 seconds
-        setInterval(rotateHeadline, 4000);
-
-        // Lazy load images
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src || img.src;
-            });
-        }
-    </script>
+    // Lazy-load helper
+    if('loading' in HTMLImageElement.prototype){
+      const images=document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img=>{ img.src = img.dataset.src || img.src; });
+    }
+  </script>
 </body>
 </html>
+
