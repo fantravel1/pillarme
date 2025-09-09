@@ -252,6 +252,18 @@
             letter-spacing: 1px;
             transform: rotate(45deg);
         }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--green-success);
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50px;
+        }
         
         .product-card h3 {
             font-size: 1.75rem;
@@ -295,7 +307,7 @@
         .price.pulse {
             animation: pricePulse 2s ease-in-out infinite;
         }
-        
+
         @keyframes pricePulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
