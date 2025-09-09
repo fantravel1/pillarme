@@ -1156,6 +1156,156 @@
         .domains-scroll-wrapper:hover .domains-scroll {
             animation-play-state: paused;
         }
+
+        /* SEO Content Section */
+        .seo-content {
+            padding: 6rem 2rem;
+            background: var(--white);
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .seo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .seo-content h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--black);
+        }
+        
+        .seo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .seo-block h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        
+        .seo-block p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--black-soft);
+        }
+        
+        .inline-link {
+            color: var(--purple);
+            text-decoration: none;
+            border-bottom: 1px solid var(--purple);
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .inline-link:hover {
+            border-bottom-width: 2px;
+            color: var(--purple-darker);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            margin-top: 0;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-brand {
+            flex: 1;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--purple);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.125rem;
+        }
+        
+        .footer-nav {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-column h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            padding: 0.25rem 0;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--purple);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+        
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive footer and SEO section */
+        @media (max-width: 768px) {
+            .footer-main {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .footer-nav {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .seo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .seo-content h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1555,6 +1705,67 @@
                 </div>
             </div>
         </section>
+
+        <!-- SEO Content Section - Trust & Authority -->
+        <section class="seo-content" aria-label="Why choose PILLAR Media">
+            <div class="seo-container">
+                <h2>Transform Your Expertise Into Profitable Digital Assets with PILLAR Media & Entertainment</h2>
+                <div class="seo-grid">
+                    <div class="seo-block">
+                        <h3>Industry Leaders Trust PILLAR for Web Development</h3>
+                        <p>Since 2021, PILLAR Media & Entertainment has helped over 12,000 thought leaders, consultants, coaches, and industry experts build profitable websites that generate $50,000 to $250,000+ annually. Our AI-powered content transformation system converts your existing knowledge—videos, podcasts, courses, and expertise—into SEO-optimized web assets that work 24/7 to build your authority and passive income. <a href="/insights" class="inline-link">Read our expert insights</a> on digital transformation.</p>
+                    </div>
+                    <div class="seo-block">
+                        <h3>Professional Websites from $100 Setup + $25/Month</h3>
+                        <p>Unlike traditional web development agencies charging $10,000+ upfront, PILLAR makes professional website creation accessible to every expert ready to monetize their knowledge online. Launch on premium domains like Guuru.com or Aeroo.com for instant authority, or bring your own domain. Our Foundation Package includes everything: mobile-responsive design, SEO optimization, content management, and usage-based analytics.</p>
+                    </div>
+                    <div class="seo-block">
+                        <h3>Your Content Becomes Your Digital Empire</h3>
+                        <p>Stop trading time for money. That one-hour interview, webinar recording, or course you created? We transform it into 10+ SEO pages, deploy it on a premium domain, and optimize it for revenue generation—all within 30 days. No coding, no design skills, no technical knowledge required. You share your expertise; we handle the digital transformation. <a href="/insights/content-transformation-guide" class="inline-link">Learn how content transformation works</a>.</p>
+                    </div>
+                    <div class="seo-block">
+                        <h3>Ready to Build Your $100K/Year Digital Asset?</h3>
+                        <p>Join thousands of experts who've already launched profitable web empires with PILLAR. Whether you're a consultant tired of hourly billing, a coach ready to scale beyond 1-on-1 sessions, or an industry veteran with decades of knowledge to share, we have the tools and expertise to amplify your voice online. Start today with our Foundation Package and grow into multi-site authority status. <a href="/showcase" class="inline-link">See success stories</a> from our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-container">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <a href="/" class="footer-logo" aria-label="PILLAR home">PILLAR</a>
+                        <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+                    </div>
+                    <nav class="footer-nav" aria-label="Footer navigation">
+                        <div class="footer-column">
+                            <h4>Products</h4>
+                            <a href="#products">Foundation Package</a>
+                            <a href="#products">Growth Plans</a>
+                            <a href="/domains">Premium Domains</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <a href="/about">About PILLAR</a>
+                            <a href="/showcase">Success Stories</a>
+                            <a href="/insights">Expert Insights</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Support</h4>
+                            <a href="/contact">Contact Us</a>
+                            <a href="/faq">FAQ</a>
+                            <a href="/terms">Terms of Service</a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+                    <p class="footer-address">Transforming digital landscapes from Los Angeles to the world.</p>
+                </div>
+            </div>
+        </footer>
         
     </main>
 
