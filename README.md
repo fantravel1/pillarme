@@ -4,7 +4,7 @@
 **Company**: PILLAR Media & Entertainment (PillarME.com)  
 **Mission**: Transform expertise into profitable digital assets for thought leaders, industry experts, and underrepresented voices  
 **Stack**: Simple HTML/CSS/JS for GitHub Pages deployment  
-**Current Status**: Homepage complete, ready for portfolio/insights/about pages
+**Current Status**: Homepage complete, ready for showcase/domains/insights/about pages
 
 ## Design Specifications
 
@@ -87,7 +87,8 @@ const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY');
 ```
 pillarme.com/
 ├── index.html          ✅ Complete
-├── portfolio.html      ⏳ Next priority
+├── showcase.html       ⏳ Next priority
+├── domains.html        ⏳ List of Available Rentals
 ├── insights.html       📝 Articles listing
 ├── about.html          📧 Contact/professional
 ├── success.html        💳 Post-Stripe checkout
@@ -104,10 +105,13 @@ pillarme.com/
 ## Next Development Steps
 
 ### Immediate Priorities
-1. **Portfolio Page**
-   - Two sections: Published sites | Available for rent
+1A. **Showcase Page**
+   - Two sections: Published sites | Top Available for rent
    - Include traffic metrics, revenue potential
-   - Filterable by industry/demographic
+  
+1B. **Domains Page**
+   - Two sections: All Available for rent by category
+   - Include value metrics, revenue potential
 
 2. **Insights Page**
    - Article listing with previews
