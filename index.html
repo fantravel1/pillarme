@@ -247,13 +247,14 @@
 
     /* Responsive */
     @media (max-width:768px){
-      nav ul{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:#FFFFFF;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:999;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+      nav ul{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#FFFFFF !important;background-color:#FFFFFF !important;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:999;box-shadow:0 2px 20px rgba(0,0,0,.15);backdrop-filter:none !important;opacity:1 !important}
       nav ul.active{display:flex}
-      nav ul li{width:100%;text-align:center}
-      nav ul a{font-size:1.5rem;font-weight:600;width:100%;padding:1rem 0;display:block}
+      nav ul li{width:100%;text-align:center;background:transparent}
+      nav ul a{font-size:1.5rem;font-weight:600;width:100%;padding:1rem 0;display:block;background:transparent}
       nav ul a::after{display:none} /* Remove underline effect on mobile */
-      .mobile-menu{display:flex;color:var(--purple);font-size:1.5rem}
+      .mobile-menu{display:flex;color:var(--purple);font-size:1.5rem;outline:none}
       .mobile-menu:hover{background:transparent;color:var(--purple)} /* Prevent tint change */
+      .mobile-menu:focus{outline:none}
       .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
       .product-card.featured{grid-column:1;padding:3rem 2rem}
       header.hero::before{width:400px;height:400px}
