@@ -191,6 +191,18 @@
     .skip-link:focus{top:0}
     :focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 
+    /* Footer */
+    footer{background:#000;color:#fff;padding:4rem 2rem 3rem;margin-top:6rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;text-align:center}
+    .footer-logo{font-size:2rem;font-weight:900;color:var(--purple);margin-bottom:1rem;letter-spacing:2px}
+    .footer-tagline{color:rgba(255,255,255,.8);font-size:1.125rem;margin-bottom:3rem}
+    .footer-links{display:flex;justify-content:center;gap:3rem;margin-bottom:3rem}
+    .footer-links a{color:rgba(255,255,255,.7);text-decoration:none;font-weight:500;transition:color .3s;padding:.5rem}
+    .footer-links a:hover{color:var(--purple)}
+    .footer-bottom p{color:rgba(255,255,255,.5);font-size:.875rem;line-height:1.6}
+    .footer-bottom p:first-child{margin-bottom:.5rem}
+    @media (max-width:768px){.footer-links{flex-wrap:wrap;gap:1.5rem}}
+
     /* Loading */
     .loading{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem 3rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);color:var(--purple);font-size:1.2rem;z-index:2000}
 
@@ -677,6 +689,28 @@
       </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">PILLAR</div>
+        <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+      </div>
+      
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#products">Products</a>
+        <a href="/domains">Domains</a>
+        <a href="/about">About</a>
+        <a href="mailto:hello@pillarme.com">Contact</a>
+      </nav>
+      
+      <div class="footer-bottom">
+        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+        <p>Transforming digital landscapes from Los Angeles to the world.</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Loading State -->
   <div class="loading" role="status" aria-live="polite" aria-hidden="true">Processing your order...</div>
