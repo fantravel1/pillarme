@@ -247,14 +247,17 @@
 
     /* Responsive */
     @media (max-width:768px){
-      nav ul{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#FFFFFF !important;background-color:#FFFFFF !important;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:999;box-shadow:0 2px 20px rgba(0,0,0,.15);backdrop-filter:none !important;opacity:1 !important}
-      nav ul.active{display:flex}
-      nav ul li{width:100%;text-align:center;background:transparent}
-      nav ul a{font-size:1.5rem;font-weight:600;width:100%;padding:1rem 0;display:block;background:transparent}
-      nav ul a::after{display:none} /* Remove underline effect on mobile */
-      .mobile-menu{display:flex;color:var(--purple);font-size:1.5rem;outline:none}
-      .mobile-menu:hover{background:transparent;color:var(--purple)} /* Prevent tint change */
-      .mobile-menu:focus{outline:none}
+      /* Hide desktop nav */
+      nav ul{display:none}
+      /* Mobile menu when active */
+      nav ul.active{display:flex;position:fixed;top:71px;left:0;right:0;height:calc(100vh - 71px);background-color:#FFFFFF;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:4rem;gap:2rem;z-index:998;overflow-y:auto}
+      nav ul li{width:100%;text-align:center;list-style:none}
+      nav ul a{font-size:1.375rem;font-weight:600;color:var(--black);padding:1rem 2rem;display:block;text-decoration:none}
+      nav ul a::after{display:none}
+      nav ul a:hover{color:var(--purple);background:transparent}
+      /* Mobile menu button */
+      .mobile-menu{display:flex;background:none;border:none;color:var(--purple);font-size:1.5rem;padding:.5rem;cursor:pointer}
+      .mobile-menu:hover{background:none;color:var(--purple)}
       .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
       .product-card.featured{grid-column:1;padding:3rem 2rem}
       header.hero::before{width:400px;height:400px}
