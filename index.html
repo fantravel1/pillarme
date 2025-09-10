@@ -885,7 +885,10 @@
     const checkStripe = setInterval(() => {
       if (typeof Stripe !== 'undefined') { stripeLoaded = true; clearInterval(checkStripe); }
     }, 100);
-
+  
+    // >>> ADD THIS: define your publishable key once <<<
+    const STRIPE_PUBLISHABLE_KEY = 'pk_live_51S2vUCJeHAducPhTXzQLx1XrXhJUMz9eEgrRAHDRToxyveueEeLRARfLYhZQu57r4JD253keBGfdDTSidfeMzE2H009wOgUuEB';
+  
     // Smooth scroll for same-page anchors (kept defensive)
     document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
       anchor.addEventListener('click',e=>{
@@ -896,7 +899,7 @@
         target.scrollIntoView({behavior:'smooth',block:'start'});
       });
     });
-
+  
     // Mobile menu toggle
     const mobileMenu = document.querySelector('.mobile-menu');
     const navList = document.querySelector('nav ul');
@@ -915,7 +918,7 @@
         mobileMenu.setAttribute('aria-expanded', 'false');
       });
     });
-
+  
     // Checkout handlers
     document.getElementById('starter-checkout')?.addEventListener('click', handleCheckout);
     document.getElementById('foundation-checkout')?.addEventListener('click', handleCheckout);
@@ -925,14 +928,14 @@
     document.getElementById('growth-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_GROWTH_CUSTOM_PRICE_ID'));
     document.getElementById('authority-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_AUTHORITY_CUSTOM_PRICE_ID'));
     document.getElementById('empire-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_EMPIRE_CUSTOM_PRICE_ID'));
-
+  
     // Generic tier checkout function
     async function handleTierCheckout(priceId){
       if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
       const loadingEl = document.querySelector('.loading');
       if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
       try{
-        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // TODO: replace
+        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY); // use constant
         const { error } = await stripe.redirectToCheckout({
           lineItems:[{ price: priceId, quantity:1 }],
           mode:'subscription',
@@ -946,13 +949,13 @@
         if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
       }
     }
-
+  
     async function handleCheckout(){
       if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
       const loadingEl = document.querySelector('.loading');
       if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
       try{
-        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // TODO: replace
+        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY); // use constant
         const { error } = await stripe.redirectToCheckout({
           lineItems:[{ price:'price_YOUR_STARTER_PRICE_ID', quantity:1 }], // TODO: replace
           mode:'subscription',
@@ -966,14 +969,14 @@
         if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
       }
     }
-
+  
     // Custom domain checkout
     document.getElementById('custom-foundation')?.addEventListener('click', async function(){
       if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
       const loadingEl = document.querySelector('.loading');
       if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
       try{
-        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // TODO: replace
+        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY); // use constant
         const { error } = await stripe.redirectToCheckout({
           lineItems:[{ price:'price_YOUR_CUSTOM_FOUNDATION_PRICE_ID', quantity:1 }], // TODO: replace
           mode:'subscription',
@@ -987,13 +990,13 @@
         if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
       }
     });
-
+  
     // Back link smooth scroll
     document.querySelector('.link-back')?.addEventListener('click', e=>{
       e.preventDefault();
       document.querySelector('#products')?.scrollIntoView({behavior:'smooth'});
     });
-
+  
     // Rotating headlines
     const headlines=[
       "Your Expertise is Worth $50K+/Year Online. We Build It.",
@@ -1017,7 +1020,7 @@
       setTimeout(()=>{ headlineElement.textContent=headlines[currentHeadline]; headlineElement.style.opacity='1'; },500);
     }
     setInterval(rotateHeadline,4000);
-
+  
     // Lazy-load helper
     if('loading' in HTMLImageElement.prototype){
       const images=document.querySelectorAll('img[loading="lazy"]');
