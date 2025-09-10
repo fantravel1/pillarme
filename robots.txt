@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /api/
+Disallow: /api/stripe/
+Disallow: /checkout/
+Disallow: /server-sitemap.xml
+Disallow: /_next/
+
+Allow: /public/
+
+Sitemap: https://pillarme.com/sitemap.xml
