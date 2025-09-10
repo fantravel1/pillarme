@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domain Rental: Access $1M Domains for $1,000/Month | PILLAR Media</title>
+  <meta name="description" content="With premium domains selling for $100K-$30M, rental provides 90% of ownership benefits at 1-5% of the cost. Learn how smart businesses leverage premium domains without capital investment.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/insights/domain-rental-strategy">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
+  
+  <style>
+    /* Root Variables */
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --gold:#FFD700;--gold-glow:rgba(255,215,0,.2);
+      --nav-h:72px;--content-max:1200px;
+    }
+    
+    /* Base styles same as previous */
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+      padding-top:var(--nav-h);
+    }
+    
+    /* Navigation */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;position:relative;padding:.5rem;min-height:48px;display:flex;align-items:center}
+    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    nav a:hover{color:var(--purple)}
+    nav a:hover::after{width:100%}
+    .mobile-menu{display:none}
+    
+    /* Hero styles */
+    .article-hero{background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);padding:4rem 2rem 3rem;position:relative;overflow:hidden}
+    .article-hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,var(--gold-glow) 0%,transparent 60%);pointer-events:none;opacity:.3}
+    .article-hero-content{max-width:800px;margin:0 auto;position:relative;z-index:1}
+    .article-category{display:inline-block;background:var(--gold);color:var(--black);padding:.375rem 1rem;border-radius:50px;font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1rem}
+    h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-2px;margin-bottom:1.5rem;color:var(--black);line-height:1.2}
+    .article-meta{display:flex;align-items:center;gap:2rem;color:var(--gray);font-size:1rem}
+    
+    /* Content styles */
+    .article-content{max-width:720px;margin:0 auto;padding:4rem 2rem}
+    .article-content h2{font-size:2rem;font-weight:800;margin:3rem 0 1.5rem;color:var(--black);letter-spacing:-1px}
+    .article-content h3{font-size:1.5rem;font-weight:700;margin:2.5rem 0 1rem;color:var(--black)}
+    .article-content p{font-size:1.125rem;line-height:1.8;margin-bottom:1.5rem;color:var(--black-soft)}
+    .article-content ul,.article-content ol{margin:1.5rem 0;padding-left:2rem;font-size:1.125rem;line-height:1.8;color:var(--black-soft)}
+    .article-content li{margin-bottom:.75rem}
+    .article-content a{color:var(--purple);text-decoration:none;border-bottom:1px solid var(--purple);transition:all .3s;font-weight:600}
+    .article-content a:hover{border-bottom-width:2px;color:var(--purple-darker)}
+    
+    /* ROI Calculator */
+    .roi-calculator{
+      background:linear-gradient(135deg,rgba(255,215,0,.08) 0%,rgba(255,215,0,.02) 100%);
+      border:2px solid var(--gold);padding:3rem;border-radius:20px;margin:3rem 0
+    }
+    .roi-calculator h3{
+      font-size:1.75rem;font-weight:800;margin-bottom:2rem;color:var(--black);text-align:center
+    }
+    .roi-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-bottom:2rem
+    }
+    .roi-item{text-align:center}
+    .roi-label{
+      display:block;font-size:.875rem;color:var(--gray);margin-bottom:.5rem;
+      text-transform:uppercase;letter-spacing:.5px
+    }
+    .roi-value{
+      font-size:2rem;font-weight:900;color:var(--gold);
+      text-shadow:0 0 20px var(--gold-glow)
+    }
+    .roi-result{
+      text-align:center;padding:2rem;background:#fff;border-radius:16px;margin-top:2rem
+    }
+    .roi-result strong{
+      font-size:2.5rem;color:var(--green-success);display:block;margin-bottom:.5rem
+    }
+    
+    /* Rental Benefits Grid */
+    .benefits-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem;margin:3rem 0
+    }
+    .benefit-card{
+      background:#fff;border:2px solid var(--border-light);padding:2rem;
+      border-radius:16px;text-align:center;transition:all .3s
+    }
+    .benefit-card:hover{
+      border-color:var(--gold);transform:translateY(-5px);
+      box-shadow:0 15px 40px var(--gold-glow)
+    }
+    .benefit-icon{
+      font-size:3rem;margin-bottom:1rem;display:block
+    }
+    .benefit-title{
+      font-size:1.25rem;font-weight:800;margin-bottom:.5rem;color:var(--black)
+    }
+    .benefit-text{
+      font-size:.95rem;color:var(--gray);line-height:1.6
+    }
+    
+    /* Common components */
+    .highlight-box{background:linear-gradient(135deg,rgba(139,0,255,.05) 0%,rgba(139,0,255,.02) 100%);border-left:4px solid var(--purple);padding:2rem;margin:2rem 0;border-radius:0 16px 16px 0}
+    .data-table{overflow-x:auto;margin:2rem 0}
+    .data-table table{width:100%;border-collapse:collapse;font-size:1rem;background:#fff;box-shadow:0 5px 20px rgba(0,0,0,.05);border-radius:12px;overflow:hidden}
+    .data-table th{background:var(--purple);color:#fff;padding:1rem;text-align:left;font-weight:700}
+    .data-table td{padding:1rem;border-bottom:1px solid var(--border-light)}
+    
+    /* Footer and responsive */
+    footer{background:#000;color:#fff;padding:3rem 2rem}
+    @media (max-width:768px){
+      nav ul{display:none}
+      .mobile-menu{display:flex;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
+      .roi-grid{grid-template-columns:1fr}
+      .benefits-grid{grid-template-columns:1fr}
+    }
+  </style>
+  
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
+      <ul>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/topsites">Top Sites</a></li>
+        <li><a href="/domains">Domains</a></li>
+        <li><a href="/insights">Insights</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <header class="article-hero">
+    <div class="article-hero-content">
+      <span class="article-category">Domain Authority</span>
+      <h1>Domain Rental: Access $1M Domains for $1,000/Month</h1>
+      <div class="article-meta">
+        <span>💎 10 min read</span>
+        <span>💰 Domain Economics</span>
+        <span>🚀 Business Strategy</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <article class="article-content">
+    <p><strong>With 99.9% of premium domains already claimed and commanding prices from $100,000 to $30 million, most businesses face an impossible choice: operate with a weak domain that hemorrhages revenue, or invest life-changing capital in a digital asset.</strong></p>
+
+    <p>The data reveals a third path—domain rental provides 90%+ of premium domain benefits at 1-5% of the purchase cost, making world-class domains accessible to businesses that understand the mathematics of online success.</p>
+
+    <h2>The Premium Domain Shortage Crisis</h2>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Domain Type</th>
+            <th>Availability</th>
+            <th>Typical Price Range</th>
+            <th>Annual Rental Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single-word .com</td>
+            <td>0% available</td>
+            <td>$500K - $30M</td>
+            <td>$10K - $600K</td>
+          </tr>
+          <tr>
+            <td>Two-word premium</td>
+            <td>1% available</td>
+            <td>$100K - $5M</td>
+            <td>$2K - $100K</td>
+          </tr>
+          <tr>
+            <td>Three-letter .com</td>
+            <td>0.1% available</td>
+            <td>$50K - $1M</td>
+            <td>$1K - $20K</td>
+          </tr>
+          <tr>
+            <td>Category leader</td>
+            <td>0% available</td>
+            <td>$250K - $10M</td>
+            <td>$5K - $200K</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Recent sales confirm the inaccessibility: Voice.com sold for $30 million, Cars.com valued at $872 million in total company value, and even modest category domains like Arch.com command $701,000. Tesla paid $11 million for Tesla.com because they calculated the ROI justified the expense.</p>
+
+    <h2>The Rental Solution Mathematics</h2>
+
+    <div class="roi-calculator">
+      <h3>🧮 Domain Rental ROI Calculator</h3>
+      <div class="roi-grid">
+        <div class="roi-item">
+          <span class="roi-label">Domain Purchase Price</span>
+          <span class="roi-value">$500,000</span>
+        </div>
+        <div class="roi-item">
+          <span class="roi-label">Annual Rental (2-4%)</span>
+          <span class="roi-value">$10-20K</span>
+        </div>
+        <div class="roi-item">
+          <span class="roi-label">Monthly Rental Cost</span>
+          <span class="roi-value">$833-1,667</span>
+        </div>
+        <div class="roi-item">
+          <span class="roi-label">Conversion Increase</span>
+          <span class="roi-value">14-40%</span>
+        </div>
+      </div>
+      <div class="roi-result">
+        <strong>30-90 Days</strong>
+        <p>Typical payback period through improved conversions alone</p>
+      </div>
+    </div>
+
+    <h2>Why Domain Rental Works</h2>
+
+    <p>The psychology and performance benefits of premium domains operate identically whether owned or rented. Users form website credibility judgments in 50 milliseconds, before consciously processing ownership structures. A customer typing "shoes.com" experiences the same trust signals regardless of backend arrangements.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">⚡</span>
+        <h4 class="benefit-title">Instant Authority</h4>
+        <p class="benefit-text">Launch with credibility that takes years to build organically</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">💰</span>
+        <h4 class="benefit-title">Capital Preservation</h4>
+        <p class="benefit-text">Invest in growth, not static assets</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🔄</span>
+        <h4 class="benefit-title">Total Flexibility</h4>
+        <p class="benefit-text">Pivot, upgrade, or scale without sunk costs</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">📈</span>
+        <h4 class="benefit-title">Test & Optimize</h4>
+        <p class="benefit-text">Try premium domains before million-dollar commitments</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🎯</span>
+        <h4 class="benefit-title">Direct Traffic</h4>
+        <p class="benefit-text">50-70% type-in visitors = free customers</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🚀</span>
+        <h4 class="benefit-title">SEO Advantage</h4>
+        <p class="benefit-text">Rank higher, convert better, grow faster</p>
+      </div>
+    </div>
+
+    <h2>Real-World Rental Economics</h2>
+
+    <div class="highlight-box">
+      <h4>💼 Case Study: E-commerce Business</h4>
+      <p><strong>Scenario:</strong> $100K monthly revenue on generic domain</p>
+      <ul>
+        <li><strong>Current conversion:</strong> 2.8% at $119 average order</li>
+        <li><strong>Premium domain rental:</strong> $3,000/month</li>
+        <li><strong>New conversion rate:</strong> 3.8% (+36% improvement)</li>
+        <li><strong>Additional monthly revenue:</strong> $36,000</li>
+        <li><strong>ROI:</strong> 1,200% return on rental investment</li>
+      </ul>
+    </div>
+
+    <p>The mathematics become even more compelling when factoring in reduced marketing costs. Premium domains generate 50-70% direct traffic, dramatically reducing paid acquisition expenses. A business spending $10,000 monthly on Google Ads often covers rental costs entirely through direct traffic savings.</p>
+
+    <h2>Rental Structure Options</h2>
+
+    <p>Modern domain rental agreements accommodate sophisticated business needs:</p>
+
+    <h3>Standard Rental</h3>
+    <ul>
+      <li>Fixed monthly or annual payments</li>
+      <li>1-5% of domain value annually</li>
+      <li>Full DNS and email control</li>
+      <li>99.99% uptime guarantees</li>
+    </ul>
+
+    <h3>Revenue Share Models</h3>
+    <ul>
+      <li>Base fee plus percentage of revenue</li>
+      <li>Aligns costs with business success</li>
+      <li>Lower initial payments</li>
+      <li>Scales with growth</li>
+    </ul>
+
+    <h3>Rent-to-Own Options</h3>
+    <ul>
+      <li>Portion of rent applies to purchase</li>
+      <li>Predetermined purchase prices</li>
+      <li>Build equity while testing</li>
+      <li>Exit options at milestones</li>
+    </ul>
+
+    <h2>The Hidden Financial Advantages</h2>
+
+    <p>Domain rental creates multiple financial benefits beyond the obvious:</p>
+
+    <ol>
+      <li><strong>Tax Efficiency:</strong> Rental payments are immediately deductible operating expenses vs 15-year amortization for purchases</li>
+      <li><strong>Balance Sheet:</strong> Keep assets off books for better financial ratios</li>
+      <li><strong>Cash Flow:</strong> Preserve capital for revenue-generating activities</li>
+      <li><strong>Risk Mitigation:</strong> No asset depreciation or liquidity concerns</li>
+    </ol>
+
+    <h2>Implementation Timeline</h2>
+
+    <h3>Week 1: Selection & Negotiation</h3>
+    <ul>
+      <li>Identify target premium domains</li>
+      <li>Evaluate traffic and brand fit</li>
+      <li>Negotiate rental terms</li>
+      <li>Structure legal agreements</li>
+    </ul>
+
+    <h3>Week 2: Technical Setup</h3>
+    <ul>
+      <li>DNS configuration (2-24 hours)</li>
+      <li>SSL certificate installation</li>
+      <li>Email routing setup</li>
+      <li>301 redirects from old domain</li>
+    </ul>
+
+    <h3>Week 3-4: Optimization</h3>
+    <ul>
+      <li>Update all marketing materials</li>
+      <li>Notify customers of premium upgrade</li>
+      <li>Monitor conversion improvements</li>
+      <li>Capitalize on direct traffic</li>
+    </ul>
+
+    <h2>The Strategic Advantage</h2>
+
+    <p>Domain rental provides strategic options impossible with ownership:</p>
+
+    <ul>
+      <li><strong>Multi-domain testing:</strong> Run A/B tests with different premium domains</li>
+      <li><strong>Seasonal domains:</strong> Rent category leaders for peak seasons</li>
+      <li><strong>Market expansion:</strong> Test new markets without domain investment</li>
+      <li><strong>Progressive upgrades:</strong> Start with good, upgrade to great as revenue grows</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>⚠️ The Window Is Closing</h4>
+      <p>Every day, fewer premium domains remain available at any price. Smart businesses recognize that rental agreements signed today provide competitive moats tomorrow. Early movers secure:</p>
+      <ul>
+        <li>Lower rental rates before market education</li>
+        <li>Longer terms with stable pricing</li>
+        <li>First choice of premium inventory</li>
+        <li>Grandfather rights against future increases</li>
+      </ul>
+    </div>
+
+    <h2>The Bottom Line</h2>
+
+    <p>Domain rental democratizes premium digital real estate. Rather than choosing between a forgettable generic domain or an unaffordable premium one, businesses can access world-class domains that transform their economics.</p>
+
+    <p>The benefits are immediate and measurable:</p>
+    <ul>
+      <li>14-40% higher conversion rates</li>
+      <li>50-70% free direct traffic</li>
+      <li>3-5X customer lifetime value</li>
+      <li>46% faster trust building</li>
+    </ul>
+
+    <p><strong>At 1-5% of purchase cost with 30-90 day payback periods, the question isn't whether to rent a premium domain—it's how quickly you can secure one before competitors discover this strategy.</strong></p>
+  </article>
+
+  <!-- Video Section -->
+  <section class="video-section" style="background:var(--off-white);padding:4rem 2rem;margin-top:4rem">
+    <div class="video-container" style="max-width:800px;margin:0 auto;text-align:center">
+      <h3 style="font-size:2rem;font-weight:800;margin-bottom:1rem">Domain Rental Explained</h3>
+      <div class="video-placeholder" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border-radius:16px">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;text-align:center">
+          <div style="width:80px;height:80px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem">▶</div>
+          <p>Video content coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources-section" style="max-width:800px;margin:4rem auto;padding:0 2rem">
+    <h3 style="font-size:1.75rem;font-weight:800;margin-bottom:2rem">Domain Rental Resources</h3>
+    <div class="resource-list" style="display:grid;gap:1rem">
+      <div class="resource-item" style="background:#fff;border:2px solid var(--border-light);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem">
+        <div style="font-size:1.5rem">💰</div>
+        <div>
+          <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.25rem">Domain Valuation Tools</h4>
+          <p style="font-size:.875rem;color:var(--gray);margin:0">Estimate domain values and rental rates</p>
+          <a href="https://www.estibot.com/" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:none;font-weight:600">Check Valuations →</a>
+        </div>
+      </div>
+
+      <div class="resource-item" style="background:#fff;border:2px solid var(--border-light);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem">
+        <div style="font-size:1.5rem">📊</div>
+        <div>
+          <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.25rem">Premium Domain Marketplace</h4>
+          <p style="font-size:.875rem;color:var(--gray);margin:0">Browse available premium domains</p>
+          <a href="https://www.afternic.com/" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:none;font-weight:600">View Inventory →</a>
+        </div>
+      </div>
+
+      <div class="resource-item" style="background:#fff;border:2px solid var(--border-light);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem">
+        <div style="font-size:1.5rem">📈</div>
+        <div>
+          <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.25rem">Domain Sales History</h4>
+          <p style="font-size:.875rem;color:var(--gray);margin:0">Research comparable domain transactions</p>
+          <a href="https://namebio.com/" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:none;font-weight:600">View Sales Data →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta" style="background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);padding:4rem 2rem;text-align:center;color:#fff;margin-top:6rem">
+    <h3 style="font-size:2.5rem;font-weight:900;margin-bottom:1rem;color:#fff">Your Premium Domain Awaits</h3>
+    <p style="font-size:1.25rem;margin-bottom:2rem;opacity:.9">Browse 1,500+ premium domains available for immediate rental</p>
+    <a href="/domains" style="background:#fff;color:var(--purple);padding:1.25rem 3rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:1.125rem;display:inline-block">Explore Premium Domains →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container" style="max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem">
+      <div class="footer-left" style="display:flex;align-items:baseline;gap:1rem">
+        <div class="footer-logo" style="font-size:1.5rem;font-weight:900;color:var(--purple)">PILLAR</div>
+        <p class="footer-tagline" style="color:rgba(255,255,255,.7);font-size:.875rem">Transform Expertise Into Digital Wealth</p>
+      </div>
+      <div class="footer-links" style="display:flex;gap:2.5rem">
+        <a href="/#products" style="color:rgba(255,255,255,.9);text-decoration:none">Web Design</a>
+        <a href="/domains" style="color:rgba(255,255,255,.9);text-decoration:none">Premium Domains</a>
+        <a href="/about" style="color:rgba(255,255,255,.9);text-decoration:none">Corporate Information</a>
+      </div>
+      <div class="footer-copyright" style="width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)">
+        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    mobileMenu?.addEventListener('click', function() {
+      navList.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
