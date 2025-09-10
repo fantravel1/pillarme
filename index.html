@@ -74,8 +74,6 @@
     .btn:hover::before{left:100%}
     .btn-secondary{background:transparent;border:3px solid var(--purple);color:var(--purple);box-shadow:none}
     .btn-secondary:hover{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 8px 30px var(--purple-glow-strong)}
-    .btn:disabled{opacity:.5;cursor:not-allowed}
-    .btn:disabled:hover{transform:none;box-shadow:none;background:var(--purple)}
 
     /* ===== Sections / shared ===== */
     h2{font-size:3rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
@@ -425,8 +423,8 @@
             <li>✓ FREE 3-hour consultation ($500 value)</li>
             <li>✓ Priority support & updates</li>
           </ul>
-          <button class="btn btn-secondary" disabled aria-label="Growth Accelerator - available after setup">Available After Setup</button>
-          <p style="font-size:.8rem;color:var(--gray);margin-top:.5rem;">*6-month commitment</p>
+          <button class="btn btn-secondary" id="growth-checkout" aria-label="Subscribe to Growth Accelerator">Subscribe Now →</button>
+          <p style="font-size:.8rem;color:var(--gray);margin-top:.5rem;">*6-month commitment for money-back guarantee</p>
         </article>
 
         <article class="product-card">
@@ -439,7 +437,7 @@
             <li>✓ Multi-site management</li>
             <li>✓ White-glove service</li>
           </ul>
-          <button class="btn btn-secondary" disabled aria-label="Authority Builder - available after setup">Available After Setup</button>
+          <button class="btn btn-secondary" id="authority-checkout" aria-label="Subscribe to Authority Builder">Subscribe Now →</button>
         </article>
 
         <article class="product-card">
@@ -452,7 +450,7 @@
             <li>✓ Dedicated growth team</li>
             <li>✓ Unlimited consultations</li>
           </ul>
-          <button class="btn btn-secondary" disabled aria-label="Empire Package - available after setup">Available After Setup</button>
+          <button class="btn btn-secondary" id="empire-checkout" aria-label="Subscribe to Empire Package">Subscribe Now →</button>
         </article>
       </div>
     </section>
@@ -534,8 +532,7 @@
               <li>✓ FREE consultation ($500 value)</li>
               <li>✓ Priority custom support</li>
             </ul>
-            <button class="btn btn-secondary" disabled aria-label="Growth custom - available after setup">Available After Setup</button>
-            <p style="font-size:.8rem;color:var(--gray);margin-top:.5rem;">*6-month commitment</p>
+            <button class="btn btn-secondary" id="growth-custom-checkout" aria-label="Subscribe to Growth Custom">Subscribe Now →</button>
           </article>
 
           <article class="product-card">
@@ -549,7 +546,7 @@
               <li>✓ Unlimited consultations</li>
               <li>✓ White-glove custom service</li>
             </ul>
-            <button class="btn btn-secondary" disabled aria-label="Authority custom - available after setup">Available After Setup</button>
+            <button class="btn btn-secondary" id="authority-custom-checkout" aria-label="Subscribe to Authority Custom">Subscribe Now →</button>
           </article>
 
           <article class="product-card featured-alt">
@@ -562,7 +559,7 @@
               <li>✓ Dedicated growth team</li>
               <li>✓ Complete brand domination</li>
             </ul>
-            <button class="btn btn-secondary" disabled aria-label="Empire custom - available after setup">Available After Setup</button>
+            <button class="btn btn-secondary" id="empire-custom-checkout" aria-label="Subscribe to Empire Custom">Subscribe Now →</button>
           </article>
         </div>
 
@@ -789,6 +786,33 @@
     // Checkout handlers
     document.getElementById('starter-checkout')?.addEventListener('click', handleCheckout);
     document.getElementById('foundation-checkout')?.addEventListener('click', handleCheckout);
+    document.getElementById('growth-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_GROWTH_PRICE_ID'));
+    document.getElementById('authority-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_AUTHORITY_PRICE_ID'));
+    document.getElementById('empire-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_EMPIRE_PRICE_ID'));
+    document.getElementById('growth-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_GROWTH_CUSTOM_PRICE_ID'));
+    document.getElementById('authority-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_AUTHORITY_CUSTOM_PRICE_ID'));
+    document.getElementById('empire-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_EMPIRE_CUSTOM_PRICE_ID'));
+
+    // Generic tier checkout function
+    async function handleTierCheckout(priceId){
+      if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
+      const loadingEl = document.querySelector('.loading');
+      if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
+      try{
+        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // TODO: replace
+        const { error } = await stripe.redirectToCheckout({
+          lineItems:[{ price: priceId, quantity:1 }],
+          mode:'subscription',
+          successUrl: window.location.origin + '/success',
+          cancelUrl: window.location.origin
+        });
+        if(error){ console.error('Stripe checkout error:', error); alert('Checkout error. Please try again.'); }
+      }catch(err){
+        console.error('Checkout error:', err); alert('Something went wrong. Please try again.');
+      }finally{
+        if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
+      }
+    }
 
     async function handleCheckout(){
       if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
