@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Sites & Success Stories | PILLAR Media - $50K+ Digital Assets</title>
+  <meta name="description" content="Explore PILLAR's portfolio of high-traffic websites generating $50K-$250K/year. See real results and available premium domains for rent.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/topsites">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Critical CSS (same as index) -->
+  <style>
+    /* ===== Root + layout guards ===== */
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --nav-h:72px;--content-max:1200px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+      padding-top:var(--nav-h);
+    }
+    section, header.hero, main, [id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
+
+    /* ===== Navigation ===== */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;position:relative;padding:.5rem;min-height:48px;display:flex;align-items:center}
+    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    nav .logo::after{bottom:-3px}
+    nav a:hover{color:var(--purple)}
+    nav a:hover::after{width:100%}
+    .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
+
+    /* ===== Top Sites Hero ===== */
+    .sites-hero{
+      min-height:60vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center;
+      background:linear-gradient(135deg,var(--black) 0%,#1a1a1a 100%);position:relative;overflow:hidden
+    }
+    .sites-hero::before{
+      content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;
+      background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);pointer-events:none;opacity:.5
+    }
+    .sites-hero > div{position:relative;z-index:1}
+    .sites-hero h1{
+      font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-2px;margin-bottom:1.5rem;
+      color:#fff;line-height:1.2
+    }
+    .sites-hero .highlight{color:var(--purple);text-shadow:0 0 30px var(--purple-glow-strong)}
+    .sites-hero p{font-size:1.375rem;color:rgba(255,255,255,.8);max-width:650px;margin:0 auto}
+
+    /* ===== Main Content ===== */
+    h2{font-size:3rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
+    .section-subtitle{text-align:center;color:var(--gray);font-size:1.25rem;max-width:650px;margin:0 auto 3rem;line-height:1.7}
+
+    /* ===== Site Cards Grid ===== */
+    .sites-grid{
+      max-width:var(--content-max);margin:0 auto;padding:0 2rem;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;margin-bottom:6rem
+    }
+    .site-showcase{
+      background:#fff;border:2px solid var(--border-light);border-radius:20px;overflow:hidden;
+      transition:all .3s;cursor:pointer;position:relative;display:flex;flex-direction:column
+    }
+    .site-showcase:hover{
+      border-color:var(--purple);transform:translateY(-8px);box-shadow:0 20px 60px var(--purple-glow)
+    }
+    .site-showcase.featured{
+      grid-column:1 / -1;display:grid;grid-template-columns:1.5fr 1fr;gap:0;max-width:1000px;
+      margin:0 auto 3rem;border:3px solid var(--purple);background:linear-gradient(135deg,rgba(139,0,255,.03) 0%,transparent 100%)
+    }
+    .site-preview{
+      position:relative;height:250px;overflow:hidden;background:var(--off-white);
+      display:flex;align-items:center;justify-content:center
+    }
+    .site-showcase.featured .site-preview{height:400px}
+    .site-icon{font-size:5rem;color:var(--purple);opacity:.3}
+    .site-showcase.featured .site-icon{font-size:8rem}
+    .site-details{padding:2rem;flex:1;display:flex;flex-direction:column}
+    .site-header{margin-bottom:1.5rem}
+    .site-name{font-size:1.5rem;font-weight:800;color:var(--black);margin-bottom:.25rem}
+    .site-showcase.featured .site-name{font-size:2rem}
+    .site-category{color:var(--purple);font-size:.875rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+    .site-metrics{
+      display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;
+      padding:1.5rem;background:var(--off-white);border-radius:12px
+    }
+    .metric{text-align:center}
+    .metric-value{font-size:1.5rem;font-weight:900;color:var(--black);display:block}
+    .metric-label{font-size:.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:.5px}
+    .site-description{color:var(--black-soft);line-height:1.6;margin-bottom:1.5rem;flex:1}
+    .site-cta{
+      display:inline-block;background:var(--purple);color:#fff;padding:1rem 2rem;border-radius:10px;
+      text-decoration:none;font-weight:700;text-align:center;transition:all .3s
+    }
+    .site-cta:hover{background:var(--purple-darker);transform:translateY(-2px);box-shadow:0 10px 30px var(--purple-glow-strong)}
+    
+    /* ===== Available Domains Section ===== */
+    .available-domains{padding:6rem 2rem;background:var(--off-white)}
+    .domain-filters{
+      max-width:var(--content-max);margin:0 auto 3rem;text-align:center;padding:0 2rem
+    }
+    .filter-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+    .filter-btn{
+      background:#fff;border:2px solid var(--border-light);color:var(--black);
+      padding:.75rem 1.5rem;border-radius:50px;font-weight:600;cursor:pointer;
+      transition:all .3s;font-size:.875rem
+    }
+    .filter-btn:hover{border-color:var(--purple);color:var(--purple)}
+    .filter-btn.active{background:var(--purple);color:#fff;border-color:var(--purple)}
+    
+    .domains-grid{
+      max-width:var(--content-max);margin:0 auto;padding:0 2rem;
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem
+    }
+    .domain-card{
+      background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:1.5rem;
+      transition:all .3s;cursor:pointer;text-align:center;position:relative
+    }
+    .domain-card:hover{
+      border-color:var(--purple);transform:translateY(-5px);box-shadow:0 15px 40px var(--purple-glow)
+    }
+    .domain-card.premium{border-color:var(--purple);background:linear-gradient(135deg,rgba(139,0,255,.05) 0%,transparent 100%)}
+    .domain-card.ultra{
+      border-color:#FFD700;background:linear-gradient(135deg,rgba(255,215,0,.1) 0%,transparent 100%)
+    }
+    .domain-badge{
+      position:absolute;top:-8px;right:15px;background:var(--purple);color:#fff;
+      padding:.25rem .75rem;border-radius:50px;font-size:.625rem;font-weight:700;
+      letter-spacing:.5px;text-transform:uppercase
+    }
+    .domain-card.ultra .domain-badge{background:#FFD700;color:#000}
+    .domain-name{font-size:1.25rem;font-weight:800;color:var(--black);margin-bottom:.5rem}
+    .domain-price{font-size:1.5rem;font-weight:900;color:var(--purple);margin:.5rem 0}
+    .domain-price small{font-size:.875rem;color:var(--gray);font-weight:500}
+    .domain-card.ultra .domain-price{color:#FFD700;text-shadow:0 0 10px rgba(255,215,0,.3)}
+    .domain-features{
+      list-style:none;padding:0;margin:1rem 0;font-size:.875rem;color:var(--black-soft)
+    }
+    .domain-features li{margin-bottom:.25rem}
+    .domain-cta{
+      display:inline-block;background:var(--purple);color:#fff;padding:.75rem 1.5rem;
+      border-radius:50px;text-decoration:none;font-weight:700;font-size:.875rem;
+      transition:all .3s;margin-top:.5rem
+    }
+    .domain-cta:hover{background:var(--purple-darker);transform:scale(1.05)}
+    .domain-card.ultra .domain-cta{background:#FFD700;color:#000}
+    .domain-card.ultra .domain-cta:hover{box-shadow:0 0 20px rgba(255,215,0,.6)}
+
+    /* ===== CTA Section ===== */
+    .cta-section{
+      padding:6rem 2rem;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);
+      text-align:center;position:relative;overflow:hidden
+    }
+    .cta-section::before{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:150%;height:150%;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 50%);
+      pointer-events:none
+    }
+    .cta-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+    .cta-section h2{color:#fff;margin-bottom:1.5rem}
+    .cta-section p{font-size:1.25rem;color:rgba(255,255,255,.9);margin-bottom:2rem}
+    .cta-buttons{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+    .btn-white{
+      background:#fff;color:var(--purple);padding:1.25rem 3rem;border-radius:10px;
+      text-decoration:none;font-weight:700;font-size:1.125rem;transition:all .3s;
+      display:inline-block
+    }
+    .btn-white:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,.2)}
+    .btn-outline{
+      background:transparent;color:#fff;border:3px solid #fff;padding:1.25rem 3rem;
+      border-radius:10px;text-decoration:none;font-weight:700;font-size:1.125rem;
+      transition:all .3s;display:inline-block
+    }
+    .btn-outline:hover{background:#fff;color:var(--purple);transform:translateY(-3px)}
+
+    /* ===== Footer (same as index) ===== */
+    footer{background:#000;color:#fff;padding:3rem 2rem;margin-top:8rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+    .footer-left{display:flex;align-items:baseline;gap:1rem}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple);letter-spacing:1px}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem}
+    .footer-links{display:flex;gap:2.5rem}
+    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:500;transition:all .3s;font-size:.95rem}
+    .footer-links a:hover{color:var(--purple)}
+    .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+
+    /* Mobile Responsive */
+    @media (max-width:768px){
+      nav ul{display:none}
+      nav ul.active{display:flex;position:fixed;top:71px;left:0;right:0;height:calc(100vh - 71px);background-color:#FFFFFF;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:4rem;gap:2rem;z-index:998;overflow-y:auto}
+      nav ul li{width:100%;text-align:center;list-style:none}
+      nav ul a{font-size:1.375rem;font-weight:600;color:var(--black);padding:1rem 2rem;display:block;text-decoration:none}
+      nav ul a::after{display:none}
+      nav ul a:hover{color:var(--purple);background:transparent}
+      .mobile-menu{display:flex;background:none;border:none;color:var(--purple);font-size:1.5rem;padding:.5rem;cursor:pointer}
+      .mobile-menu:hover{background:none;color:var(--purple)}
+      .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
+      .sites-hero h1{font-size:2rem}
+      .sites-hero p{font-size:1.125rem}
+      .sites-grid{grid-template-columns:1fr;padding:0 1rem}
+      .site-showcase.featured{grid-template-columns:1fr;max-width:100%}
+      .site-showcase.featured .site-preview{height:200px}
+      .domains-grid{grid-template-columns:1fr;padding:0 1rem}
+      .filter-buttons{gap:.5rem}
+      .filter-btn{padding:.5rem 1rem;font-size:.75rem}
+      .cta-buttons{flex-direction:column;width:100%;padding:0 2rem}
+      .btn-white,.btn-outline{width:100%}
+      .footer-container{flex-direction:column;text-align:center}
+      .footer-left{flex-direction:column;gap:.5rem;align-items:center;width:100%}
+      .footer-links{justify-content:center;margin-top:1rem;width:100%}
+    }
+
+    /* Skip link styles (hidden) */
+    .skip-link{position:absolute;top:-40px;left:0;background:var(--purple);color:#fff;padding:8px;text-decoration:none;z-index:100}
+    .skip-link:focus{top:0}
+
+    /* Animations */
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .site-showcase,.domain-card{animation:fadeIn .6s ease-out}
+    @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+  </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Top Sites & Success Stories | PILLAR Media">
+  <meta property="og:description" content="Explore PILLAR's portfolio of high-traffic websites and premium domains. Real results, real revenue.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/topsites">
+  <meta property="og:image" content="https://pillarme.com/images/og-topsites.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PILLAR Portfolio - $50K+ Digital Assets">
+  <meta name="twitter:description" content="See real websites generating real revenue. Premium domains available.">
+  <meta name="twitter:image" content="https://pillarme.com/images/twitter-topsites.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"PILLAR Media Top Sites & Portfolio",
+    "description":"Showcase of websites built by PILLAR Media generating $50K-$250K annually",
+    "url":"https://pillarme.com/topsites",
+    "isPartOf":{"@type":"WebSite","name":"PILLAR Media & Entertainment","url":"https://pillarme.com"},
+    "mainEntity":{
+      "@type":"ItemList",
+      "numberOfItems":20,
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"ViewsGrowth.com","url":"https://www.viewsgrowth.com"},
+        {"@type":"ListItem","position":2,"name":"FanTravel.com","url":"https://www.fantravel.com"},
+        {"@type":"ListItem","position":3,"name":"BankSize.com","url":"https://www.banksize.com"}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ===== NAV ===== -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
+      <ul>
+        <li><a href="/#products" aria-label="View our products">Products</a></li>
+        <li><a href="/topsites" aria-label="Top Websites">Top Sites</a></li>
+        <li><a href="/domains" aria-label="Available domains">Domains</a></li>
+        <li><a href="/insights" aria-label="Read our insights">Insights</a></li>
+        <li><a href="/about" aria-label="Learn about us">About</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="sites-hero" role="banner">
+    <div>
+      <h1>Real Sites. Real Traffic. <span class="highlight">Real Revenue.</span></h1>
+      <p>Every website below was built with PILLAR and is generating monthly traffic and growth. Your knowledge and expertise deserves the same success.</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+    <!-- Published Sites Section -->
+    <section class="published-sites" aria-label="Published websites showcase">
+      <h2>Live Sites Generating Revenue Today</h2>
+      <p class="section-subtitle">Each site below started with a single video or podcast. Now they're building towards these 2026 traffic projections.</p>
+
+      <div class="sites-grid">
+        <!-- Featured Site -->
+        <article class="site-showcase featured">
+          <div class="site-preview">
+            <span class="site-icon">🚀</span>
+          </div>
+          <div class="site-details">
+            <div class="site-header">
+              <h3 class="site-name">ViewsGrowth.com</h3>
+              <span class="site-category">Marketing & Analytics</span>
+            </div>
+            <div class="site-metrics">
+              <div class="metric">
+                <span class="metric-value">850K</span>
+                <span class="metric-label">Monthly Visitors (2026)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$65K</span>
+                <span class="metric-label">Projected Revenue</span>
+              </div>
+            </div>
+            <p class="site-description">
+              A comprehensive marketing analytics platform built from expert interviews and industry insights. Focusing on data-driven growth strategies, conversion optimization, and digital marketing best practices for modern businesses.
+            </p>
+            <a href="https://www.viewsgrowth.com" class="site-cta" target="_blank" rel="noopener">Visit Live Site →</a>
+          </div>
+        </article>
+
+        <!-- Regular Sites -->
+        <article class="site-showcase">
+          <div class="site-preview">
+            <span class="site-icon">✈️</span>
+          </div>
+          <div class="site-details">
+            <div class="site-header">
+              <h3 class="site-name">FanTravel.com</h3>
+              <span class="site-category">Sports & Entertainment</span>
+            </div>
+            <div class="site-metrics">
+              <div class="metric">
+                <span class="metric-value">425K</span>
+                <span class="metric-label">Monthly Visitors (2026)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$45K</span>
+                <span class="metric-label">Projected Revenue</span>
+              </div>
+            </div>
+            <p class="site-description">
+              The ultimate resource for sports fans who travel. Covering stadium guides, away game planning, tailgating tips, and fan experiences across major sporting events worldwide.
+            </p>
+            <a href="https://www.fantravel.com" class="site-cta" target="_blank" rel="noopener">Visit Live Site →</a>
+          </div>
+        </article>
+
+        <article class="site-showcase">
+          <div class="site-preview">
+            <span class="site-icon">💰</span>
+          </div>
+          <div class="site-details">
+            <div class="site-header">
+              <h3 class="site-name">BankSize.com</h3>
+              <span class="site-category">Finance & Investment</span>
+            </div>
+            <div class="site-metrics">
+              <div class="metric">
+                <span class="metric-value">315K</span>
+                <span class="metric-label">Monthly Visitors (2026)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$75K</span>
+                <span class="metric-label">Projected Revenue</span>
+              </div>
+            </div>
+            <p class="site-description">
+              Financial literacy and wealth-building strategies for everyday investors. Covering personal finance, investment analysis, retirement planning, and practical money management tips.
+            </p>
+            <a href="https://www.banksize.com" class="site-cta" target="_blank" rel="noopener">Visit Live Site →</a>
+          </div>
+        </article>
+
+        <article class="site-showcase">
+          <div class="site-preview">
+            <span class="site-icon">🎬</span>
+          </div>
+          <div class="site-details">
+            <div class="site-header">
+              <h3 class="site-name">Play4Tomorrow.com</h3>
+              <span class="site-category">Media & Storytelling</span>
+            </div>
+            <div class="site-metrics">
+              <div class="metric">
+                <span class="metric-value">520K</span>
+                <span class="metric-label">Monthly Visitors (2026)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$35K</span>
+                <span class="metric-label">Projected Revenue</span>
+              </div>
+            </div>
+            <p class="site-description">
+              Interactive storytelling and media production insights. Featuring filmmaker resources, storytelling techniques, production tutorials, and creative industry networking opportunities.
+            </p>
+            <a href="https://www.play4tomorrow.com" class="site-cta" target="_blank" rel="noopener">Visit Live Site →</a>
+          </div>
+        </article>
+
+        <article class="site-showcase">
+          <div class="site-preview">
+            <span class="site-icon">📊</span>
+          </div>
+          <div class="site-details">
+            <div class="site-header">
+              <h3 class="site-name">DayInvestors.com</h3>
+              <span class="site-category">Trading & Markets</span>
+            </div>
+            <div class="site-metrics">
+              <div class="metric">
+                <span class="metric-value">275K</span>
+                <span class="metric-label">Monthly Visitors (2026)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$60K</span>
+                <span class="metric-label">Projected Revenue</span>
+              </div>
+            </div>
+            <p class="site-description">
+              Day trading education and market analysis platform. Daily market updates, trading strategies, technical analysis tutorials, and risk management guidance for active traders.
+            </p>
+            <a href="https://www.dayinvestors.com" class="site-cta" target="_blank" rel="noopener">Visit Live Site →</a>
+          </div>
+        </article>
+
+        <article class="site-showcase">
+          <div class="site-preview">
+            <span class="site-icon">🌍</span>
+          </div>
+          <div class="site-details">
+            <div class="site-header">
+              <h3 class="site-name">GlobalFirstNations.com</h3>
+              <span class="site-category">Culture & Heritage</span>
+            </div>
+            <div class="site-metrics">
+              <div class="metric">
+                <span class="metric-value">190K</span>
+                <span class="metric-label">Monthly Visitors (2026)</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$30K</span>
+                <span class="metric-label">Projected Revenue</span>
+              </div>
+            </div>
+            <p class="site-description">
+              Celebrating indigenous cultures and heritage worldwide. Educational resources, cultural preservation initiatives, traditional knowledge sharing, and community connection platform.
+            </p>
+            <a href="https://www.globalfirstnations.com" class="site-cta" target="_blank" rel="noopener">Visit Live Site →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Available Domains Section -->
+    <section class="available-domains" aria-label="Premium domains available for rent">
+      <h2>Premium Domains Ready for Your Empire</h2>
+      <p class="section-subtitle">Instant authority. Instant credibility. Launch on a domain worth millions, starting at just $25/month.</p>
+
+      <div class="domain-filters">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Domains</button>
+          <button class="filter-btn" data-filter="premium">Premium ($25-$100)</button>
+          <button class="filter-btn" data-filter="ultra">Ultra-Premium ($500+)</button>
+          <button class="filter-btn" data-filter="finance">Finance</button>
+          <button class="filter-btn" data-filter="media">Media</button>
+          <button class="filter-btn" data-filter="tech">Tech</button>
+        </div>
+      </div>
+
+      <div class="domains-grid">
+        <!-- Ultra Premium Domains -->
+        <article class="domain-card ultra" data-category="ultra tech">
+          <div class="domain-badge">ULTRA-PREMIUM</div>
+          <h3 class="domain-name">Guuru.com</h3>
+          <div class="domain-price">$2,500<small>/month</small></div>
+          <ul class="domain-features">
+            <li>5-letter premium domain</li>
+            <li>$2.5M estimated value</li>
+            <li>Perfect for thought leaders</li>
+          </ul>
+          <a href="/domains#guuru" class="domain-cta">Claim This Domain</a>
+        </article>
+
+        <article class="domain-card ultra" data-category="ultra tech">
+          <div class="domain-badge">ULTRA-PREMIUM</div>
+          <h3 class="domain-name">Aeroo.com</h3>
+          <div class="domain-price">$1,500<small>/month</small></div>
+          <ul class="domain-features">
+            <li>5-letter tech domain</li>
+            <li>$1.8M estimated value</li>
+            <li>Global appeal</li>
+          </ul>
+          <a href="/domains#aeroo" class="domain-cta">Claim This Domain</a>
+        </article>
+
+        <article class="domain-card ultra" data-category="ultra finance">
+          <div class="domain-badge">ULTRA-PREMIUM</div>
+          <h3 class="domain-name">NFTDL.com</h3>
+          <div class="domain-price">$500<small>/month</small></div>
+          <ul class="domain-features">
+            <li>Crypto/NFT authority</li>
+            <li>High search volume</li>
+            <li>Investment potential</li>
+          </ul>
+          <a href="/domains#nftdl" class="domain-cta">Claim This Domain</a>
+        </article>
+
+        <!-- Premium Domains -->
+        <article class="domain-card premium" data-category="premium finance">
+          <div class="domain-badge">HIGH-TRAFFIC</div>
+          <h3 class="domain-name">GoldMadeEasy.com</h3>
+          <div class="domain-price">$100<small>/month</small></div>
+          <ul class="domain-features">
+            <li>15K monthly searches</li>
+            <li>Investment niche</li>
+            <li>High-intent traffic</li>
+          </ul>
+          <a href="/domains#goldmadeeasy" class="domain-cta">Reserve Now</a>
+        </article>
+
+        <article class="domain-card premium" data-category="premium media">
+          <div class="domain-badge">TRENDING</div>
+          <h3 class="domain-name">TVCeleb.com</h3>
+          <div class="domain-price">$75<small>/month</small></div>
+          <ul class="domain-features">
+            <li>Entertainment authority</li>
+            <li>Celebrity niche</li>
+            <li>Viral potential</li>
+          </ul>
+          <a href="/domains#tvceleb" class="domain-cta">Reserve Now</a>
+        </article>
+
+        <article class="domain-card" data-category="premium">
+          <h3 class="domain-name">NYCPremium.com</h3>
+          <div class="domain-price">$50<small>/month</small></div>
+          <ul class="domain-features">
+            <li>Location authority</li>
+            <li>Luxury market</li>
+            <li>Local SEO power</li>
+          </ul>
+          <a href="/domains#nycpremium" class="domain-cta">Reserve Now</a>
+        </article>
+
+        <article class="domain-card" data-category="finance">
+          <h3 class="domain-name">DailyInvestors.com</h3>
+          <div class="domain-price">$50<small>/month</small></div>
+          <ul class="domain-features">
+            <li>Finance authority</li>
+            <li>Daily content angle</li>
+            <li>Newsletter potential</li>
+          </ul>
+          <a href="/domains#dailyinvestors" class="domain-cta">Reserve Now</a>
+        </article>
+
+        <article class="domain-card" data-category="media">
+          <h3 class="domain-name">SelectMovie.com</h3>
+          <div class="domain-price">$35<small>/month</small></div>
+          <ul class="domain-features">
+            <li>Movie reviews</li>
+            <li>Streaming guides</li>
+            <li>Affiliate ready</li>
+          </ul>
+          <a href="/domains#selectmovie" class="domain-cta">Reserve Now</a>
+        </article>
+
+        <article class="domain-card" data-category="tech">
+          <h3 class="domain-name">RunPlayer.com</h3>
+          <div class="domain-price">$25<small>/month</small></div>
+          <ul class="domain-features">
+            <li>Sports/fitness tech</li>
+            <li>App potential</li>
+            <li>Community ready</li>
+          </ul>
+          <a href="/domains#runplayer" class="domain-cta">Reserve Now</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Call to action">
+      <div class="cta-content">
+        <h2>Your $100K Website is 30 Days Away</h2>
+        <p>Join thousands of experts who transformed their knowledge into profitable digital empires. No coding. No hassle. Just results.</p>
+        <div class="cta-buttons">
+          <a href="/#products" class="btn-white">Start Building Today →</a>
+          <a href="/domains" class="btn-outline">Browse All Domains</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">PILLAR</div>
+        <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+      </div>
+      
+      <div class="footer-links">
+        <a href="/#products">Web Design</a>
+        <a href="/domains">Premium Domains</a>
+        <a href="/about">Corporate Information</a>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+        <p>Transforming digital landscapes to empower personal freedom.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script defer>
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    mobileMenu?.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!isExpanded));
+      navList.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('nav ul a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileMenu.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Domain filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const domainCards = document.querySelectorAll('.domain-card');
+    
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Update active state
+        filterButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        
+        domainCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            const categories = card.getAttribute('data-category');
+            if (categories && categories.includes(filter)) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const href = anchor.getAttribute('href');
+        const target = href && document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
+    });
+
+    // Lazy load animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '50px'
+    };
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.site-showcase, .domain-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
