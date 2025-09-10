@@ -108,6 +108,22 @@
     .transform-arrow span{font-size:.875rem;color:var(--purple);font-weight:700}
     .arrow{font-size:2rem;color:var(--purple);font-weight:bold}
 
+    /* Top Sites Showcase Banner */
+    .top-sites-banner{background:linear-gradient(135deg,var(--black) 0%,#1a1a1a 100%);padding:4rem 2rem;margin:4rem 0;position:relative;overflow:hidden}
+    .top-sites-banner::before{content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;background:radial-gradient(circle,rgba(139,0,255,.1) 0%,transparent 50%);pointer-events:none}
+    .sites-container{max-width:var(--content-max);margin:0 auto;text-align:center;position:relative;z-index:1}
+    .sites-header h2{font-size:2.5rem;font-weight:900;color:#fff;margin-bottom:.5rem;letter-spacing:-1px}
+    .sites-subtitle{font-size:1.125rem;color:rgba(255,255,255,.7);margin-bottom:3rem}
+    .sites-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-bottom:3rem}
+    .site-card{background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);border-radius:16px;padding:2rem 1.5rem;text-decoration:none;transition:all .3s;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .site-card:hover{background:rgba(139,0,255,.1);border-color:var(--purple);transform:translateY(-5px);box-shadow:0 15px 40px rgba(139,0,255,.3)}
+    .site-icon{font-size:2.5rem;margin-bottom:1rem}
+    .site-card h3{font-size:1.125rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+    .site-card p{font-size:.875rem;color:rgba(255,255,255,.6)}
+    .btn-view-all{display:inline-block;background:var(--purple);color:#fff;padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s}
+    .btn-view-all:hover{background:var(--purple-darker);transform:translateY(-2px);box-shadow:0 10px 30px var(--purple-glow-strong)}
+    @media (max-width:768px){.sites-grid{grid-template-columns:repeat(2,1fr);gap:1rem}.site-card{padding:1.5rem 1rem}}
+
     /* Products / Pricing */
     .products{padding:6rem 2rem;max-width:var(--content-max);margin:0 auto}
     .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem}
@@ -400,6 +416,62 @@
         </div>
       </div>
       <p class="no-skills">✨ No website design, coding, or technical skills required - we take care of all the hard stuff - you just share and guide the process</p>
+    </section>
+
+    <!-- Top Sites Showcase Banner -->
+    <section class="top-sites-banner" aria-label="Featured websites built by PILLAR">
+      <div class="sites-container">
+        <div class="sites-header">
+          <h2>See Our Work in Action</h2>
+          <p class="sites-subtitle">Real websites generating real revenue for real experts</p>
+        </div>
+        
+        <div class="sites-grid">
+          <a href="https://www.viewsgrowth.com" class="site-card" target="_blank" rel="noopener">
+            <div class="site-icon">📈</div>
+            <h3>ViewsGrowth</h3>
+            <p>Marketing & Analytics</p>
+          </a>
+          
+          <a href="https://www.fantravel.com" class="site-card" target="_blank" rel="noopener">
+            <div class="site-icon">✈️</div>
+            <h3>FanTravel</h3>
+            <p>Sports & Entertainment</p>
+          </a>
+          
+          <a href="https://www.banksize.com" class="site-card" target="_blank" rel="noopener">
+            <div class="site-icon">💰</div>
+            <h3>BankSize</h3>
+            <p>Finance & Investment</p>
+          </a>
+          
+          <a href="https://www.dayinvestors.com" class="site-card" target="_blank" rel="noopener">
+            <div class="site-icon">📊</div>
+            <h3>Day Investors</h3>
+            <p>Trading & Markets</p>
+          </a>
+          
+          <a href="https://www.globalfirstnations.com" class="site-card" target="_blank" rel="noopener">
+            <div class="site-icon">🌍</div>
+            <h3>Global First Nations</h3>
+            <p>Culture & Heritage</p>
+          </a>
+          
+          <a href="https://www.freedesignthinking.com" class="site-card" target="_blank" rel="noopener">
+            <div class="site-icon">💡</div>
+            <h3>Free Design Thinking</h3>
+            <p>Innovation & Strategy</p>
+          </a>
+          
+          <a href="https://www.jamesfrancisthorpe.com" class="site-card" target="_blank" rel="noopener">
+            <div class="site-icon">👔</div>
+            <h3>James Francis Thorpe</h3>
+            <p>Executive Coaching</p>
+          </a>
+        </div>
+        
+        <a href="/topsites" class="btn-view-all">View All Success Stories →</a>
+      </div>
     </section>
 
     <!-- Products / Pricing -->
