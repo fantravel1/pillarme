@@ -191,17 +191,25 @@
     .skip-link:focus{top:0}
     :focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 
-    /* Footer */
-    footer{background:#000;color:#fff;padding:4rem 2rem 3rem;margin-top:6rem}
-    .footer-container{max-width:var(--content-max);margin:0 auto;text-align:center}
-    .footer-logo{font-size:2rem;font-weight:900;color:var(--purple);margin-bottom:1rem;letter-spacing:2px}
-    .footer-tagline{color:#fff;font-size:1.125rem;margin-bottom:3rem;opacity:.9}
-    .footer-links{display:flex;justify-content:center;gap:3rem;margin-bottom:3rem}
-    .footer-links a{color:#fff;text-decoration:none;font-weight:500;transition:color .3s;opacity:.9}
-    .footer-links a:hover{color:var(--purple);opacity:1}
-    .footer-copyright{color:#fff;font-size:.875rem;line-height:1.6;opacity:.6}
-    .footer-copyright:first-of-type{margin-bottom:.5rem}
-    @media (max-width:768px){.footer-links{flex-wrap:wrap;gap:1.5rem}}
+    /* Footer - Horizontal Layout */
+    footer{background:#000;color:#fff;padding:3rem 2rem;margin-top:8rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+    .footer-left{display:flex;align-items:baseline;gap:1rem}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple);letter-spacing:1px}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem}
+    .footer-links{display:flex;gap:2.5rem}
+    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:500;transition:all .3s;font-size:.95rem}
+    .footer-links a:hover{color:var(--purple)}
+    .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+    .footer-copyright:last-child{margin-top:.25rem}
+    
+    /* Mobile */
+    @media (max-width:768px){
+      .footer-container{flex-direction:column;text-align:center}
+      .footer-left{flex-direction:column;gap:.5rem;text-align:center}
+      .footer-links{justify-content:center;margin-top:1rem}
+      .footer-copyright{margin-top:1.5rem;padding-top:1.5rem}
+    }
 
     /* Loading */
     .loading{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem 3rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);color:var(--purple);font-size:1.2rem;z-index:2000}
@@ -693,8 +701,10 @@
   <!-- Footer -->
   <footer role="contentinfo" aria-label="Site footer">
     <div class="footer-container">
-      <div class="footer-logo">PILLAR</div>
-      <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+      <div class="footer-left">
+        <div class="footer-logo">PILLAR</div>
+        <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+      </div>
       
       <div class="footer-links">
         <a href="#products">Web Design</a>
@@ -702,8 +712,10 @@
         <a href="/about">More About Us</a>
       </div>
       
-      <p class="footer-copyright">© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
-      <p class="footer-copyright">Transforming digital landscapes to empower personal freedom.</p>
+      <div class="footer-copyright">
+        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+        <p>Transforming digital landscapes to empower personal freedom.</p>
+      </div>
     </div>
   </footer>
 
