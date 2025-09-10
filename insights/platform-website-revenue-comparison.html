@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform vs Website: The 10-40x Revenue Multiple Nobody Talks About | PILLAR Media</title>
+  <meta name="description" content="Across every major platform, websites deliver 10-40x higher ad revenue while creators keep 94-97% versus platform cuts of 30-70%. See the exact mathematics.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/insights/platform-website-revenue-comparison">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
+  
+  <style>
+    /* Root and base styles remain same as previous articles */
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --red:#DC2626;--red-glow:rgba(220,38,38,.15);
+      --nav-h:72px;--content-max:1200px;
+    }
+    
+    /* Navigation and common styles same as previous */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#fff;color:#000;line-height:1.7;padding-top:var(--nav-h)}
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;position:relative;padding:.5rem;display:flex;align-items:center}
+    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    nav a:hover{color:var(--purple)}
+    nav a:hover::after{width:100%}
+    .mobile-menu{display:none}
+    
+    /* Article specific styles */
+    .article-hero{background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);padding:4rem 2rem 3rem;position:relative;overflow:hidden}
+    .article-hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);pointer-events:none;opacity:.3}
+    .article-hero-content{max-width:800px;margin:0 auto;position:relative;z-index:1}
+    .article-category{display:inline-block;background:var(--purple);color:#fff;padding:.375rem 1rem;border-radius:50px;font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1rem}
+    h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-2px;margin-bottom:1.5rem;color:var(--black);line-height:1.2}
+    .article-meta{display:flex;align-items:center;gap:2rem;color:var(--gray);font-size:1rem}
+    
+    /* Platform comparison grid */
+    .platform-grid{
+      display:grid;gap:1.5rem;margin:3rem 0
+    }
+    .platform-card{
+      background:#fff;border:2px solid var(--border-light);border-radius:16px;
+      padding:2rem;display:grid;grid-template-columns:1fr 2fr;gap:2rem;
+      transition:all .3s;align-items:center
+    }
+    .platform-card:hover{
+      border-color:var(--purple);transform:translateY(-5px);
+      box-shadow:0 15px 40px var(--purple-glow)
+    }
+    .platform-logo{
+      font-size:3rem;text-align:center
+    }
+    .platform-data h4{
+      font-size:1.25rem;font-weight:800;margin-bottom:1rem;color:var(--black)
+    }
+    .platform-stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+      font-size:.875rem
+    }
+    .stat-item{text-align:center}
+    .stat-item strong{display:block;font-size:1.25rem;color:var(--purple)}
+    .stat-item span{color:var(--gray);font-size:.75rem}
+    
+    /* Revenue comparison chart */
+    .revenue-chart{
+      background:var(--black);color:#fff;padding:3rem;border-radius:20px;
+      margin:3rem 0;overflow:hidden
+    }
+    .revenue-bars{
+      display:grid;gap:1.5rem;margin-top:2rem
+    }
+    .revenue-bar{
+      display:grid;grid-template-columns:120px 1fr 100px;align-items:center;gap:1rem
+    }
+    .bar-label{font-weight:700}
+    .bar-track{
+      background:rgba(255,255,255,.1);height:30px;border-radius:15px;
+      position:relative;overflow:hidden
+    }
+    .bar-fill{
+      height:100%;background:var(--purple);border-radius:15px;
+      transition:width 1s ease-out;position:relative
+    }
+    .bar-value{
+      text-align:right;font-weight:700;color:var(--green-success)
+    }
+    
+    /* Warning box */
+    .warning-box{
+      background:linear-gradient(135deg,rgba(220,38,38,.05) 0%,rgba(220,38,38,.02) 100%);
+      border-left:4px solid var(--red);padding:2rem;margin:2rem 0;
+      border-radius:0 16px 16px 0
+    }
+    .warning-box h4{
+      font-size:1.25rem;font-weight:800;margin-bottom:1rem;color:var(--red)
+    }
+    
+    /* Common styles */
+    .article-content{max-width:720px;margin:0 auto;padding:4rem 2rem}
+    .article-content h2{font-size:2rem;font-weight:800;margin:3rem 0 1.5rem;color:var(--black)}
+    .article-content p{font-size:1.125rem;line-height:1.8;margin-bottom:1.5rem;color:var(--black-soft)}
+    .article-content ul{margin:1.5rem 0;padding-left:2rem;font-size:1.125rem}
+    .highlight-box{background:linear-gradient(135deg,rgba(139,0,255,.05) 0%,rgba(139,0,255,.02) 100%);border-left:4px solid var(--purple);padding:2rem;margin:2rem 0}
+    
+    /* Footer and responsive same */
+    footer{background:#000;color:#fff;padding:3rem 2rem}
+    @media (max-width:768px){
+      nav ul{display:none}
+      .mobile-menu{display:flex;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
+      .platform-card{grid-template-columns:1fr}
+      .revenue-bar{grid-template-columns:1fr;gap:.5rem;text-align:center}
+    }
+  </style>
+  
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
+      <ul>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/topsites">Top Sites</a></li>
+        <li><a href="/domains">Domains</a></li>
+        <li><a href="/insights">Insights</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <header class="article-hero">
+    <div class="article-hero-content">
+      <span class="article-category">Monetization Strategies</span>
+      <h1>Platform vs Website: The 10-40x Revenue Multiple Nobody Talks About</h1>
+      <div class="article-meta">
+        <span>💸 15 min read</span>
+        <span>📊 Platform Analysis</span>
+        <span>🚀 Revenue Strategy</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <article class="article-content">
+    <p><strong>The creator economy has reached $212 billion, yet 91% of creators earn less than $100,000 annually. This paradox reveals a fundamental truth: platforms promise creator wealth but deliver pennies on the dollar compared to owned websites.</strong></p>
+
+    <p>Across every major platform—Facebook, Instagram, TikTok, YouTube, Twitter/X, LinkedIn, and beyond—the data shows websites deliver 10-40x higher ad revenue while creators keep 94-97% versus platform cuts of 30-70%.</p>
+
+    <h2>The Platform-by-Platform Breakdown</h2>
+
+    <div class="platform-grid">
+      <!-- Facebook -->
+      <div class="platform-card">
+        <div class="platform-logo">📘</div>
+        <div class="platform-data">
+          <h4>Facebook / Meta</h4>
+          <div class="platform-stats">
+            <div class="stat-item">
+              <strong>$2-5</strong>
+              <span>per 1K views</span>
+            </div>
+            <div class="stat-item">
+              <strong>1.37%</strong>
+              <span>organic reach</span>
+            </div>
+            <div class="stat-item">
+              <strong>30%</strong>
+              <span>platform cut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YouTube -->
+      <div class="platform-card">
+        <div class="platform-logo">📺</div>
+        <div class="platform-data">
+          <h4>YouTube</h4>
+          <div class="platform-stats">
+            <div class="stat-item">
+              <strong>$1.65</strong>
+              <span>per 1K views</span>
+            </div>
+            <div class="stat-item">
+              <strong>45%</strong>
+              <span>platform cut</span>
+            </div>
+            <div class="stat-item">
+              <strong>0.05%</strong>
+              <span>conversion rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TikTok -->
+      <div class="platform-card">
+        <div class="platform-logo">🎵</div>
+        <div class="platform-data">
+          <h4>TikTok</h4>
+          <div class="platform-stats">
+            <div class="stat-item">
+              <strong>$0.40-1</strong>
+              <span>per 1K views</span>
+            </div>
+            <div class="stat-item">
+              <strong>90-98%</strong>
+              <span>dependency risk</span>
+            </div>
+            <div class="stat-item">
+              <strong>50-90%</strong>
+              <span>commission cuts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="platform-card">
+        <div class="platform-logo">📷</div>
+        <div class="platform-data">
+          <h4>Instagram</h4>
+          <div class="platform-stats">
+            <div class="stat-item">
+              <strong>4%</strong>
+              <span>organic reach</span>
+            </div>
+            <div class="stat-item">
+              <strong>$2,700</strong>
+              <span>avg sponsored post</span>
+            </div>
+            <div class="stat-item">
+              <strong>30%</strong>
+              <span>subscription cut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Twitter/X -->
+      <div class="platform-card">
+        <div class="platform-logo">🐦</div>
+        <div class="platform-data">
+          <h4>Twitter/X</h4>
+          <div class="platform-stats">
+            <div class="stat-item">
+              <strong>$8.50</strong>
+              <span>per 1M views</span>
+            </div>
+            <div class="stat-item">
+              <strong>95%</strong>
+              <span>revenue drops</span>
+            </div>
+            <div class="stat-item">
+              <strong>3-10%</strong>
+              <span>actual share</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="platform-card">
+        <div class="platform-logo">💼</div>
+        <div class="platform-data">
+          <h4>LinkedIn</h4>
+          <div class="platform-stats">
+            <div class="stat-item">
+              <strong>$0</strong>
+              <span>creator revenue</span>
+            </div>
+            <div class="stat-item">
+              <strong>$5.26</strong>
+              <span>per click cost</span>
+            </div>
+            <div class="stat-item">
+              <strong>Limited</strong>
+              <span>monetization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>The Website Revenue Revolution</h2>
+
+    <div class="revenue-chart">
+      <h3 style="color:#fff;margin-bottom:1rem">Revenue Per 1,000 Views: Platforms vs Websites</h3>
+      <div class="revenue-bars">
+        <div class="revenue-bar">
+          <span class="bar-label">TikTok</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:5%"></div>
+          </div>
+          <span class="bar-value">$0.40-1</span>
+        </div>
+        <div class="revenue-bar">
+          <span class="bar-label">YouTube</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:8%"></div>
+          </div>
+          <span class="bar-value">$1.65</span>
+        </div>
+        <div class="revenue-bar">
+          <span class="bar-label">Facebook</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:15%"></div>
+          </div>
+          <span class="bar-value">$2-5</span>
+        </div>
+        <div class="revenue-bar">
+          <span class="bar-label">Website Ads</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:70%;background:var(--green-success)"></div>
+          </div>
+          <span class="bar-value">$19-31</span>
+        </div>
+        <div class="revenue-bar">
+          <span class="bar-label">Premium Sites</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:100%;background:var(--gold)"></div>
+          </div>
+          <span class="bar-value">$31-38+</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>The Hidden Costs of Platform Dependency</h2>
+
+    <p>Beyond the raw revenue numbers, platform dependency creates cascading financial impacts:</p>
+
+    <div class="warning-box">
+      <h4>⚠️ The True Cost of Multi-Platform Creation</h4>
+      <ul>
+        <li><strong>Time Investment:</strong> 40-60 hours/week vs 20-30 for single focus</li>
+        <li><strong>Tool Costs:</strong> $500-2,000/month for scheduling, analytics, editing</li>
+        <li><strong>Content Formats:</strong> 5-7 different types required</li>
+        <li><strong>Efficiency Loss:</strong> 25-40% from context switching</li>
+      </ul>
+      <p><strong>Real Cost:</strong> At $50/hour value, that's $10,000-12,000/month in time alone</p>
+    </div>
+
+    <h2>Platform Risks Multiply Daily</h2>
+
+    <p>The instability of platform income becomes clear when examining recent changes:</p>
+
+    <ul>
+      <li><strong>Facebook:</strong> Organic reach collapsed from 16% to 1.37% in 5 years</li>
+      <li><strong>Instagram:</strong> 18% engagement drop year-over-year</li>
+      <li><strong>TikTok:</strong> Facing bans affecting 37% of creators</li>
+      <li><strong>Twitter/X:</strong> 95% ad revenue drops during "adpocalypse"</li>
+      <li><strong>YouTube:</strong> Demonetization affects even educational content</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>🎯 The 42% Reality Check</h4>
+      <p>42% of creators would lose $50,000+ annually if their primary platform disappeared tomorrow. This isn't paranoia—it's mathematical reality based on:</p>
+      <ul>
+        <li>No email list access</li>
+        <li>No customer data ownership</li>
+        <li>No content portability</li>
+        <li>No algorithm control</li>
+      </ul>
+    </div>
+
+    <h2>Website Economics: The Complete Picture</h2>
+
+    <p>Websites flip the entire economic model in creators' favor:</p>
+
+    <h3>Revenue Streams Comparison</h3>
+    
+    <ul>
+      <li><strong>Display Advertising:</strong> $19-38 RPM (vs platform's $0.40-8.50)</li>
+      <li><strong>Email Marketing:</strong> $36-44 ROI per $1 (vs social's $2.80)</li>
+      <li><strong>Affiliate Commissions:</strong> 2-3% conversion (vs 0.05% on platforms)</li>
+      <li><strong>Digital Products:</strong> Keep 94-97% (vs 30-70% platform cuts)</li>
+      <li><strong>Memberships:</strong> 100% retention (vs 30% platform share)</li>
+    </ul>
+
+    <h2>Success Patterns: From Platform to Profit</h2>
+
+    <p>Every successful creator follows the same trajectory:</p>
+
+    <ol>
+      <li><strong>Discovery Phase:</strong> Use platforms to build initial audience</li>
+      <li><strong>Conversion Phase:</strong> Drive platform traffic to owned properties</li>
+      <li><strong>Monetization Phase:</strong> Implement multiple revenue streams</li>
+      <li><strong>Scale Phase:</strong> Reinvest profits into growth</li>
+    </ol>
+
+    <div class="case-study" style="background:var(--black);color:#fff;padding:3rem;border-radius:20px;margin:3rem 0">
+      <h3 style="color:#fff;margin-bottom:1.5rem">📊 Real Creator Transformations</h3>
+      <p><strong>Pat Flynn:</strong> $7,906 → $2.17M annually (website-focused)</p>
+      <p><strong>Amy Porterfield:</strong> Facebook expert → $130M business (owned courses)</p>
+      <p><strong>Marie Forleo:</strong> Social presence → 8-figure empire (website-based)</p>
+      <p style="color:var(--gold);font-weight:700;margin-top:1rem">Pattern: 3-10X revenue increase post-platform-to-website transition</p>
+    </div>
+
+    <h2>The Mathematical Conclusion</h2>
+
+    <p>The evidence is overwhelming and consistent across every platform:</p>
+
+    <ul>
+      <li><strong>Websites generate 10-40X higher revenue</strong> per view</li>
+      <li><strong>Creators keep 94-97%</strong> vs platform's 30-70% cuts</li>
+      <li><strong>Email converts 38X better</strong> than platform traffic</li>
+      <li><strong>SEO provides 22:1 ROI</strong> vs paid platform promotion</li>
+    </ul>
+
+    <p>The creator economy's future belongs to those who understand this fundamental truth: platforms are discovery tools, not business models. Use them to build audiences, but monetize through owned properties where mathematics work in your favor.</p>
+
+    <p><strong>Every day spent building on platforms instead of owned websites is money left on the table. The math has spoken. The only question is when you'll listen.</strong></p>
+  </article>
+
+  <!-- Video Section -->
+  <section class="video-section" style="background:var(--off-white);padding:4rem 2rem;margin-top:4rem">
+    <div class="video-container" style="max-width:800px;margin:0 auto;text-align:center">
+      <h3 style="font-size:2rem;font-weight:800;margin-bottom:1rem">Platform Economics Deep Dive</h3>
+      <div class="video-placeholder" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border-radius:16px">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;text-align:center">
+          <div style="width:80px;height:80px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem">▶</div>
+          <p>Video content coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources-section" style="max-width:800px;margin:4rem auto;padding:0 2rem">
+    <h3 style="font-size:1.75rem;font-weight:800;margin-bottom:2rem">Platform Revenue Research</h3>
+    <div class="resource-list" style="display:grid;gap:1rem">
+      <div class="resource-item" style="background:#fff;border:2px solid var(--border-light);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem">
+        <div style="font-size:1.5rem">💰</div>
+        <div>
+          <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.25rem">Creator Economy Report 2024</h4>
+          <p style="font-size:.875rem;color:var(--gray);margin:0">Latest data on creator earnings across platforms</p>
+          <a href="https://influencermarketinghub.com/creator-economy-report/" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:none;font-weight:600">Access Report →</a>
+        </div>
+      </div>
+
+      <div class="resource-item" style="background:#fff;border:2px solid var(--border-light);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem">
+        <div style="font-size:1.5rem">📊</div>
+        <div>
+          <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.25rem">Platform Revenue Calculator</h4>
+          <p style="font-size:.875rem;color:var(--gray);margin:0">Compare your potential earnings across platforms</p>
+          <a href="https://socialblade.com/youtube/youtube-money-calculator" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:none;font-weight:600">Try Calculator →</a>
+        </div>
+      </div>
+
+      <div class="resource-item" style="background:#fff;border:2px solid var(--border-light);padding:1.5rem;border-radius:12px;display:flex;align-items:center;gap:1rem">
+        <div style="font-size:1.5rem">📈</div>
+        <div>
+          <h4 style="font-size:1.125rem;font-weight:700;margin-bottom:.25rem">Website Monetization Guide</h4>
+          <p style="font-size:.875rem;color:var(--gray);margin:0">Complete guide to website revenue optimization</p>
+          <a href="https://www.monumetric.com/monetization-guide" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:none;font-weight:600">Download Guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta" style="background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);padding:4rem 2rem;text-align:center;color:#fff;margin-top:6rem">
+    <h3 style="font-size:2.5rem;font-weight:900;margin-bottom:1rem;color:#fff">Stop Building Someone Else's Empire</h3>
+    <p style="font-size:1.25rem;margin-bottom:2rem;opacity:.9">Build your own website. Keep 94-97% of revenue. Scale without limits.</p>
+    <a href="/#products" style="background:#fff;color:var(--purple);padding:1.25rem 3rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:1.125rem;display:inline-block">Start Your Digital Empire →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container" style="max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem">
+      <div class="footer-left" style="display:flex;align-items:baseline;gap:1rem">
+        <div class="footer-logo" style="font-size:1.5rem;font-weight:900;color:var(--purple)">PILLAR</div>
+        <p class="footer-tagline" style="color:rgba(255,255,255,.7);font-size:.875rem">Transform Expertise Into Digital Wealth</p>
+      </div>
+      <div class="footer-links" style="display:flex;gap:2.5rem">
+        <a href="/#products" style="color:rgba(255,255,255,.9);text-decoration:none">Web Design</a>
+        <a href="/domains" style="color:rgba(255,255,255,.9);text-decoration:none">Premium Domains</a>
+        <a href="/about" style="color:rgba(255,255,255,.9);text-decoration:none">Corporate Information</a>
+      </div>
+      <div class="footer-copyright" style="width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)">
+        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+        <p>Transforming digital landscapes to empower personal freedom.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    mobileMenu?.addEventListener('click', function() {
+      navList.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
