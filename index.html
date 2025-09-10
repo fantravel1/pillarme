@@ -227,8 +227,11 @@
 
     /* Responsive */
     @media (max-width:768px){
-      nav ul{display:none}
+      nav ul{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:3rem;z-index:999}
+      nav ul.active{display:flex}
+      nav ul a{font-size:1.5rem;font-weight:700}
       .mobile-menu{display:flex;color:var(--purple);font-size:1.5rem}
+      .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
       .product-card.featured{grid-column:1;padding:3rem 2rem}
       header.hero::before{width:400px;height:400px}
       .btn{padding:1rem 2rem;font-size:1rem}
@@ -781,7 +784,17 @@
     mobileMenu?.addEventListener('click', function() {
       const isExpanded = this.getAttribute('aria-expanded') === 'true';
       this.setAttribute('aria-expanded', String(!isExpanded));
-      navList.style.display = isExpanded ? 'none' : 'flex';
+      navList.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('nav ul a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileMenu.setAttribute('aria-expanded', 'false');
+      });
     });
 
     // Checkout handlers
