@@ -51,7 +51,7 @@
     nav .logo::after{bottom:-3px}
     nav a:hover{color:var(--purple)}
     nav a:hover::after{width:100%}
-    .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
+    .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
 
     /* ===== Hero (header) ===== */
     header.hero{
@@ -247,10 +247,12 @@
 
     /* Responsive */
     @media (max-width:768px){
-      nav ul{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:3rem;z-index:999}
+      nav ul{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:#fff;flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:999;border-top:1px solid var(--border-light)}
       nav ul.active{display:flex}
-      nav ul a{font-size:1.5rem;font-weight:700}
+      nav ul a{font-size:1.25rem;font-weight:600}
+      nav ul a::after{display:none} /* Remove underline effect on mobile */
       .mobile-menu{display:flex;color:var(--purple);font-size:1.5rem}
+      .mobile-menu:hover{background:transparent;color:var(--purple)} /* Prevent tint change */
       .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
       .product-card.featured{grid-column:1;padding:3rem 2rem}
       header.hero::before{width:400px;height:400px}
