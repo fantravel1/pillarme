@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Essentials -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | PILLAR Media — Building a Worthwhile Internet</title>
-  <meta name="description" content="PILLAR Media & Entertainment: global partners, cutting-edge AI, and decades of expertise building trustworthy, high-performance web assets.">
+  <meta name="description" content="PILLAR Media & Entertainment: the 'why' behind our work — real projects like GlobalFirstNations.com and FanTravel.com, powered by partners, creators, and advanced AI. We even finance people with a vision.">
+
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://pillarme.com/about">
 
-  <!-- Preload critical resources -->
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
-
-  <!-- Preconnect -->
+  <!-- Preload & Fonts (mirrors other pages) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Critical CSS (mirrors other pages) -->
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="About PILLAR Media — Building a Worthwhile Internet">
+  <meta property="og:description" content="Our purpose, our projects, and why we invest in people with a vision.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/about">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About PILLAR Media — Building a Worthwhile Internet">
+  <meta name="twitter:description" content="Our purpose, our projects, and why we invest in people with a vision.">
+
+  <!-- Critical CSS (same family as other pages) -->
   <style>
     /* ===== Root + layout guards ===== */
     :root{
@@ -49,7 +60,7 @@
     nav a:hover::after{width:100%}
     .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
 
-    /* ===== About Hero (same visual language as insights hero) ===== */
+    /* ===== Hero ===== */
     .about-hero{
       min-height:40vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem 3rem;text-align:center;
       background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative
@@ -63,25 +74,37 @@
       font-size:clamp(2.5rem,5vw,3.5rem);font-weight:900;letter-spacing:-2px;margin-bottom:1rem;
       background:linear-gradient(135deg,#000 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2
     }
-    .hero p{font-size:1.25rem;color:#666;max-width:650px;margin:0 auto}
+    .hero p{font-size:1.25rem;color:#666;max-width:750px;margin:0 auto}
 
-    /* ===== Main Content (section styles match your pages) ===== */
-    h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
-    .section-subtitle{text-align:center;color:var(--gray);font-size:1.125rem;max-width:650px;margin:0 auto 3rem;line-height:1.7}
+    /* ===== Sections ===== */
     .section{padding:4rem 2rem}
+    h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
+    .section-subtitle{text-align:center;color:var(--gray);font-size:1.125rem;max-width:720px;margin:0 auto 3rem;line-height:1.7}
 
-    /* ===== Highlights Grid (mirrors card style) ===== */
+    /* ===== Purpose / Why cards ===== */
+    .purpose{
+      max-width:var(--content-max);margin:0 auto;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start
+    }
+    .purpose .card{
+      background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;transition:.3s
+    }
+    .purpose .card:hover{border-color:var(--purple);box-shadow:0 15px 45px var(--purple-glow)}
+    .purpose h3{font-size:1.375rem;font-weight:800;color:var(--purple);margin-bottom:.5rem}
+    .purpose p{color:var(--black-soft)}
+    .purpose a{color:var(--purple);font-weight:700;text-decoration:none}
+    .purpose a:hover{text-decoration:underline}
+
+    /* ===== Highlights (same card style as other pages) ===== */
     .highlights{
       max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem
     }
-    .highlight-card{
-      background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden
-    }
+    .highlight-card{background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;transition:all .3s}
     .highlight-card:hover{border-color:var(--purple);transform:translateY(-8px);box-shadow:0 20px 60px var(--purple-glow)}
     .highlight-title{color:var(--purple);font-weight:800;margin-bottom:.5rem}
     .highlight-text{color:var(--black-soft);font-size:1rem;line-height:1.6}
 
-    /* ===== Credibility strip (same pattern as CTA/strips) ===== */
+    /* ===== Credibility strip ===== */
     .cred-strip{padding:6rem 2rem;background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
     .cred-inner{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
     .cred-card{background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:1.5rem;text-align:center;transition:all .3s}
@@ -89,7 +112,7 @@
     .cred-head{font-weight:900;margin-bottom:.25rem}
     .cred-sub{color:var(--gray);font-size:.95rem}
 
-    /* ===== CTA Section (exact style family) ===== */
+    /* ===== CTA ===== */
     .cta-section{
       padding:6rem 2rem;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);
       text-align:center;position:relative;overflow:hidden;color:#fff
@@ -108,7 +131,7 @@
     }
     .btn-white:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,.2)}
 
-    /* ===== Footer (exact pattern) ===== */
+    /* ===== Footer ===== */
     footer{background:#000;color:#fff;padding:3rem 2rem}
     .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
     .footer-left{display:flex;align-items:baseline;gap:1rem}
@@ -119,7 +142,10 @@
     .footer-links a:hover{color:var(--purple)}
     .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
 
-    /* Mobile Responsive (same rules) */
+    /* ===== Mobile ===== */
+    @media (max-width:992px){
+      .purpose{grid-template-columns:1fr}
+    }
     @media (max-width:768px){
       nav ul{display:none}
       nav ul.active{display:flex;position:fixed;top:71px;left:0;right:0;height:calc(100vh - 71px);background-color:#FFFFFF;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:4rem;gap:2rem;z-index:998;overflow-y:auto}
@@ -140,29 +166,10 @@
       .footer-links{justify-content:center;margin-top:1rem;width:100%}
     }
 
-    /* Skip link styles (hidden) */
+    /* Skip link (hidden until focus) */
     .skip-link{position:absolute;top:-40px;left:0;background:var(--purple);color:#fff;padding:8px;text-decoration:none;z-index:100}
     .skip-link:focus{top:0}
-
-    /* Animations (same family) */
-    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    .highlight-card,.cred-card{animation:fadeIn .6s ease-out}
-    @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
   </style>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="About PILLAR Media — Building a Worthwhile Internet">
-  <meta property="og:description" content="Global partners, advanced AI, and decades of expertise. We build trustworthy, high-performance web assets.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pillarme.com/about">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About PILLAR Media — Building a Worthwhile Internet">
-  <meta name="twitter:description" content="Global partners, advanced AI, and decades of expertise. We build trustworthy, high-performance web assets.">
-
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -171,7 +178,7 @@
     "@type":"AboutPage",
     "name":"About PILLAR Media & Entertainment",
     "url":"https://pillarme.com/about",
-    "description":"Global partners, advanced AI, and decades of expertise building trustworthy, high-performance web assets.",
+    "description":"Our purpose, our projects, and why we invest in people with a vision.",
     "isPartOf":{"@type":"WebSite","name":"PILLAR Media & Entertainment","url":"https://pillarme.com"}
   }
   </script>
@@ -180,7 +187,7 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- ===== NAV (exact markup) ===== -->
+  <!-- ===== NAV (unchanged) ===== -->
   <nav role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
@@ -199,34 +206,74 @@
   <header class="about-hero hero" role="banner">
     <div>
       <h1>Making the Internet Worthwhile Again</h1>
-      <p>We’re rebuilding the web into what it was always meant to be: a space of trust, creativity, and shared prosperity—powered by global partners, advanced AI, and decades of expertise.</p>
+      <p>We’re rebuilding the web into what it was always meant to be: a space of trust, creativity, and shared prosperity. At PILLAR, this isn’t just business—it’s a mission to empower the stories that matter most.</p>
     </div>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
+  <!-- ===== MAIN ===== -->
   <main id="main-content">
-    <!-- Who We Are -->
-    <section class="section" aria-label="Who we are">
-      <h2>Who We Are</h2>
-      <p class="section-subtitle">We don’t just build websites — we create systems of trust, value, and growth.</p>
+    <!-- PURPOSE / WHY WE BUILD -->
+    <section class="section" aria-label="Why we build">
+      <h2>Why We Build</h2>
+      <p class="section-subtitle">The internet should be worth your time—and worth your trust. Our purpose shows up in the projects we back and the people we invest in.</p>
 
-      <div class="highlights" aria-label="Company strengths">
-        <article class="highlight-card">
-          <div class="highlight-title">🌍 Global Network</div>
-          <p class="highlight-text">Trusted alliances with forward-thinking organizations, institutions, and creators across every region, ensuring our solutions scale with cultural intelligence and local impact.</p>
+      <div class="purpose">
+        <article class="card" aria-label="GlobalFirstNations project">
+          <h3>GlobalFirstNations.com — Culture, Care, and Storytelling</h3>
+          <p>
+            <a href="https://globalfirstnations.com" target="_blank" rel="noopener">GlobalFirstNations.com</a> is growing into a kid-friendly, decolonized space for Indigenous culture and storytelling—guided by creators, cultural leaders, and a thriving community of volunteers and educators. It’s a living example of how the web can protect heritage, celebrate identity, and teach the next generation with dignity.
+          </p>
         </article>
-        <article class="highlight-card">
-          <div class="highlight-title">🤖 Cutting-Edge AI</div>
-          <p class="highlight-text">We harness the world’s most advanced AI — responsibly and transparently — to design tools and platforms that keep people, not algorithms, at the center.</p>
+
+        <article class="card" aria-label="FanTravel project">
+          <h3>FanTravel.com — The Journey Matters</h3>
+          <p>
+            <a href="https://fantravel.com" target="_blank" rel="noopener">FanTravel.com</a> elevates diverse voices on how to reach the world’s favorite events—spotlighting local routes, real budgets, and fan experiences that make travel accessible and joyful. It’s the internet at its best: practical, welcoming, and human.
+          </p>
         </article>
-        <article class="highlight-card">
-          <div class="highlight-title">📈 Decades of Expertise</div>
-          <p class="highlight-text">Our leadership team and partners bring 20+ years across media, technology, and entrepreneurship, combining proven strategies with a bold vision for the future.</p>
+      </div>
+
+      <div class="purpose" style="margin-top:2rem">
+        <article class="card" aria-label="Builder financing">
+          <h3>We Invest in People — Builder Financing</h3>
+          <p>
+            When someone has a real vision, we help make it real. PILLAR offers flexible financing options for creators, communities, and institutions with a mission. We’re that serious about making the internet great again—one trusted, high-performance site at a time.
+          </p>
+        </article>
+        <article class="card" aria-label="How we work">
+          <h3>Systems of Trust, Value, and Growth</h3>
+          <p>
+            We don’t just ship websites—we design durable systems powered by advanced AI, ethical design, and decades of operating experience. The result: platforms that scale responsibly and serve people first.
+          </p>
         </article>
       </div>
     </section>
 
-    <!-- Credibility strip -->
+    <!-- WHO WE ARE (flows after purpose) -->
+    <section class="section" aria-label="Who we are">
+      <h2>Who We Are</h2>
+      <p class="section-subtitle">A global network of builders, strategists, and innovators working across continents to transform how the internet serves people.</p>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section" aria-label="Company strengths">
+      <div class="highlights">
+        <article class="highlight-card">
+          <div class="highlight-title">🌍 Global Network</div>
+          <p class="highlight-text">Trusted alliances with forward-thinking organizations, institutions, and creators across every region—solutions built with cultural intelligence and local impact.</p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-title">🤖 Cutting-Edge AI</div>
+          <p class="highlight-text">We harness the world’s most advanced AI—responsibly and transparently—to design tools and platforms that keep people, not algorithms, at the center.</p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-title">📈 Decades of Expertise</div>
+          <p class="highlight-text">20+ years across media, technology, and entrepreneurship—combining proven strategies with a bold vision for the future.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CRED STRIP -->
     <section class="cred-strip" aria-label="Credentials">
       <div class="cred-inner">
         <div class="cred-card">
@@ -252,7 +299,7 @@
     <section class="cta-section" aria-label="Contact PILLAR">
       <div class="cta-content">
         <h2>Let’s Build What’s Next</h2>
-        <p>Whether you’re a creator with a vision, a company seeking growth, or an institution shaping the future, we’d love to connect. Collaboration is how we build.</p>
+        <p>Creator with a vision? Company seeking growth? Institution shaping the future? We’d love to partner with you. Together, we can make the internet worth belonging to again.</p>
         <a class="btn-white" href="mailto:contact@pillarme.com">Contact Us</a>
       </div>
     </section>
