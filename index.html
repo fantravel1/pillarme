@@ -191,7 +191,7 @@
     .skip-link:focus{top:0}
     :focus-visible{outline:3px solid var(--purple);outline-offset:2px}
 
-    /* Footer - Horizontal Layout */
+    /* Footer - Horizontal Layout (Fixed for mobile centering) */
     footer{background:#000;color:#fff;padding:3rem 2rem;margin-top:8rem}
     .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
     .footer-left{display:flex;align-items:baseline;gap:1rem}
@@ -203,11 +203,11 @@
     .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
     .footer-copyright:last-child{margin-top:.25rem}
     
-    /* Mobile */
+    /* Mobile - Fixed centering */
     @media (max-width:768px){
       .footer-container{flex-direction:column;text-align:center}
-      .footer-left{flex-direction:column;gap:.5rem;text-align:center}
-      .footer-links{justify-content:center;margin-top:1rem}
+      .footer-left{flex-direction:column;gap:.5rem;align-items:center;width:100%}
+      .footer-links{justify-content:center;margin-top:1rem;width:100%}
       .footer-copyright{margin-top:1.5rem;padding-top:1.5rem}
     }
 
@@ -709,7 +709,7 @@
       <div class="footer-links">
         <a href="#products">Web Design</a>
         <a href="/domains">Premium Domains</a>
-        <a href="/about">More About Us</a>
+        <a href="/about">Corporate Information</a>
       </div>
       
       <div class="footer-copyright">
