@@ -145,50 +145,22 @@ const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY');
 
 ### File Structure Plan
 ```
-pillarme.com/
-├── index.html          ✅ COMPLETE with all sections
-├── showcase.html       ⏳ Next priority
-├── domains.html        ⏳ List of Available Rentals
-├── insights.html       📝 Articles listing
-├── about.html          🔧 Contact/professional
-├── success.html        💳 Post-Stripe checkout
-├── css/
-│   └── styles.css      🎨 Extract from HTML
-├── js/
-│   └── main.js         🚀 Stripe + interactions
-├── insights/           📚 Individual articles
-│   ├── seo-fundamentals.html
-│   └── minority-web-impact.html
-└── CNAME              🌐 Contains: pillarme.com
+pillarme-main/
+├── index.html               # Homepage
+├── about.html               # About page
+├── account.html             # Stripe/Account page
+├── domains.html             # Domains page
+├── insights.html            # Insights landing page
+├── insights/                # Individual insights/articles
+├── stripe-success-page.html # Payment success page
+├── topsites.html            # SEO experiment page
+├── images/                  # Image assets
+├── hero.webp                # Hero image
+├── CNAME                    # Custom domain config
+├── sitemap.xml              # SEO sitemap
+├── robots.txt               # Robots file (protects Stripe/API routes)
+└── README.md                # This file
 ```
-
-## Next Development Steps
-
-### Immediate Priorities
-1. **Stripe Integration**
-   - Add publishable key
-   - Create all 8 price IDs in Stripe dashboard
-   - Test checkout flow
-
-2. **Showcase Page**
-   - Two sections: Published sites | Top Available for rent
-   - Include traffic metrics, revenue potential
-  
-3. **Domains Page**
-   - All available domains organized by category
-   - Include value metrics, revenue potential
-   - Filter/search functionality
-
-4. **Insights Page**
-   - Article listing with previews
-   - Categories/tags for navigation
-   - SEO-optimized individual article pages
-
-5. **About Page**
-   - Professional company overview
-   - Contact form
-   - Team/founder information
-   - Mission statement emphasis
 
 ### Future Enhancements
 - User accounts/dashboard (start with Stripe customer portal)
@@ -199,17 +171,6 @@ pillarme.com/
 - Social proof/testimonials section
 
 ## Important Notes for Next Session
-
-### Quick Context for Next Session:
-"Working on PillarME.com - homepage is now COMPLETE with:
-- Full mobile menu implementation
-- Top sites showcase slider featuring 7 live examples
-- All pricing tiers as immediate 'Subscribe Now'
-- Video section placeholder ready for content
-- 🌐 emoji favicon
-- Ready for Stripe integration with 8 price IDs needed
-
-Next steps: Either integrate Stripe keys OR build showcase/domains pages"
 
 ### Key Decisions Made:
 - Target audience: Thought leaders, experts, underrepresented voices
@@ -232,10 +193,10 @@ Next steps: Either integrate Stripe keys OR build showcase/domains pages"
 - [x] Semantic HTML structure
 - [x] Mobile responsive
 - [x] Clear URL structure
-- [ ] Fast loading (optimize images when added)
-- [ ] Internal linking strategy (pending additional pages)
-- [ ] Sitemap.xml
-- [ ] Robots.txt
+- [x] Fast loading (optimize images when added)
+- [x] Internal linking strategy (pending additional pages)
+- [x] Sitemap.xml
+- [x] Robots.txt
 
 ## Copy-Paste Context for AI:
 ```
@@ -245,7 +206,7 @@ Current state:
 - Homepage COMPLETE with white background and purple (#8B00FF) branding
 - Full mobile menu with overlay effect
 - Rotating headlines focusing on monetary value ($50K-$250K+ potential)
-- Pricing: $100 setup + $25/month base, with add-ons up to $5000/month
+- Pricing: $125/month base, with add-ons up to $5000/month
 - Custom domain pricing at 5x rates
 - Top sites showcase featuring 7 live examples
 - Using simple HTML/CSS/JS for GitHub Pages deployment
