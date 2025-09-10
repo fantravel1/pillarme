@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Empire Insights | PILLAR Media - Data-Driven Growth Strategies</title>
+  <meta name="description" content="Research-backed insights on monetization, premium domains, and building profitable web empires. Learn why websites outperform platforms by 10-40x.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/insights">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Critical CSS (same as index plus article cards) -->
+  <style>
+    /* ===== Root + layout guards ===== */
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --blue-future:#0066CC;--gold:#FFD700;
+      --nav-h:72px;--content-max:1200px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+      padding-top:var(--nav-h);
+    }
+    section, header.hero, main, [id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
+
+    /* ===== Navigation ===== */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;position:relative;padding:.5rem;min-height:48px;display:flex;align-items:center}
+    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    nav .logo::after{bottom:-3px}
+    nav a:hover{color:var(--purple)}
+    nav a:hover::after{width:100%}
+    .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
+
+    /* ===== Insights Hero ===== */
+    .insights-hero{
+      min-height:40vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem 3rem;text-align:center;
+      background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative
+    }
+    .insights-hero::before{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;
+      background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);pointer-events:none;opacity:.3
+    }
+    .insights-hero > div{position:relative;z-index:1}
+    h1{font-size:clamp(2.5rem,5vw,3.5rem);font-weight:900;letter-spacing:-2px;margin-bottom:1rem;background:linear-gradient(135deg,#000 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
+    .hero p{font-size:1.25rem;color:#666;max-width:650px;margin:0 auto}
+
+    /* ===== Main Content ===== */
+    h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
+    .section-subtitle{text-align:center;color:var(--gray);font-size:1.125rem;max-width:650px;margin:0 auto 3rem;line-height:1.7}
+
+    /* ===== Article Grid ===== */
+    .articles-section{padding:4rem 2rem 6rem}
+    .articles-grid{
+      max-width:var(--content-max);margin:0 auto;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem
+    }
+    .article-card{
+      background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;
+      transition:all .3s;text-decoration:none;display:flex;flex-direction:column;
+      position:relative;overflow:hidden
+    }
+    .article-card:hover{
+      border-color:var(--purple);transform:translateY(-8px);
+      box-shadow:0 20px 60px var(--purple-glow)
+    }
+    .article-card.featured{
+      grid-column:1 / -1;max-width:800px;margin:0 auto 2rem;
+      background:linear-gradient(135deg,rgba(139,0,255,.03) 0%,transparent 100%);
+      border:3px solid var(--purple)
+    }
+    .category-pill{
+      display:inline-block;padding:.375rem 1rem;border-radius:50px;font-size:.75rem;
+      font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff;
+      margin-bottom:1rem
+    }
+    .category-monetization{background:var(--purple)}
+    .category-domains{background:var(--gold);color:var(--black)}
+    .category-future{background:var(--blue-future)}
+    .article-title{
+      font-size:1.5rem;font-weight:800;color:var(--black);margin-bottom:.75rem;
+      line-height:1.3
+    }
+    .article-excerpt{
+      color:var(--gray);margin-bottom:1.5rem;flex:1;font-size:1rem;line-height:1.6
+    }
+    .article-meta{
+      display:flex;align-items:center;justify-content:space-between;
+      padding-top:1rem;border-top:1px solid var(--border-light)
+    }
+    .read-time{color:var(--gray-light);font-size:.875rem}
+    .read-link{
+      color:var(--purple);font-weight:600;font-size:.875rem;
+      display:flex;align-items:center;gap:.5rem;transition:all .3s
+    }
+    .article-card:hover .read-link{gap:.75rem}
+
+    /* Domain authority cards */
+    .article-card.domains:hover{
+      border-color:var(--gold);box-shadow:0 20px 60px rgba(255,215,0,.2)
+    }
+    /* Future-proof cards */
+    .article-card.future:hover{
+      border-color:var(--blue-future);box-shadow:0 20px 60px rgba(0,102,204,.15)
+    }
+
+    /* ===== Facts Section ===== */
+    .facts-section{
+      padding:6rem 2rem;background:var(--black);color:#fff;position:relative;overflow:hidden
+    }
+    .facts-section::before{
+      content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;
+      background:radial-gradient(circle,var(--purple-glow) 0%,transparent 50%);
+      pointer-events:none
+    }
+    .facts-container{
+      max-width:var(--content-max);margin:0 auto;position:relative;z-index:1
+    }
+    .facts-section h2{color:#fff;margin-bottom:3rem}
+    .facts-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:3rem 2rem;margin-bottom:4rem
+    }
+    .fact-group{padding:0 1rem}
+    .fact-group h3{
+      font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:var(--purple);
+      display:flex;align-items:center;gap:.5rem
+    }
+    .fact-icon{font-size:1.5rem}
+    .fact-list{list-style:none;padding:0}
+    .fact-list li{
+      margin-bottom:1rem;padding-left:1.5rem;position:relative;color:rgba(255,255,255,.9);
+      font-size:1rem;line-height:1.6
+    }
+    .fact-list li:before{
+      content:'→';position:absolute;left:0;color:var(--purple);font-weight:bold
+    }
+    .fact-highlight{
+      color:#fff;font-weight:700;background:rgba(139,0,255,.2);
+      padding:0 .25rem;border-radius:3px
+    }
+    .facts-cta{
+      text-align:center;padding:3rem;background:rgba(255,255,255,.05);
+      border-radius:20px;border:2px solid var(--purple)
+    }
+    .facts-cta p{
+      font-size:1.25rem;margin-bottom:2rem;color:rgba(255,255,255,.9)
+    }
+    .btn-facts{
+      background:var(--purple);color:#fff;padding:1.25rem 3rem;border-radius:10px;
+      text-decoration:none;font-weight:700;font-size:1.125rem;transition:all .3s;
+      display:inline-block
+    }
+    .btn-facts:hover{
+      background:var(--purple-darker);transform:translateY(-3px);
+      box-shadow:0 15px 40px var(--purple-glow-strong)
+    }
+
+    /* ===== Footer ===== */
+    footer{background:#000;color:#fff;padding:3rem 2rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+    .footer-left{display:flex;align-items:baseline;gap:1rem}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple);letter-spacing:1px}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem}
+    .footer-links{display:flex;gap:2.5rem}
+    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:500;transition:all .3s;font-size:.95rem}
+    .footer-links a:hover{color:var(--purple)}
+    .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+
+    /* Mobile */
+    @media (max-width:768px){
+      nav ul{display:none}
+      nav ul.active{display:flex;position:fixed;top:71px;left:0;right:0;height:calc(100vh - 71px);background-color:#FFFFFF;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:4rem;gap:2rem;z-index:998;overflow-y:auto}
+      nav ul li{width:100%;text-align:center;list-style:none}
+      nav ul a{font-size:1.375rem;font-weight:600;color:var(--black);padding:1rem 2rem;display:block;text-decoration:none}
+      nav ul a::after{display:none}
+      nav ul a:hover{color:var(--purple);background:transparent}
+      .mobile-menu{display:flex;background:none;border:none;color:var(--purple);font-size:1.5rem;padding:.5rem;cursor:pointer}
+      .mobile-menu:hover{background:none;color:var(--purple)}
+      .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
+      .articles-grid{grid-template-columns:1fr;padding:0 1rem}
+      .article-card.featured{max-width:100%}
+      .facts-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-container{flex-direction:column;text-align:center}
+      .footer-left{flex-direction:column;gap:.5rem;align-items:center;width:100%}
+      .footer-links{justify-content:center;margin-top:1rem;width:100%;flex-direction:column;gap:1rem}
+    }
+  </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Digital Empire Insights | PILLAR Media">
+  <meta property="og:description" content="Research-backed strategies for building profitable web empires. Learn why websites outperform platforms by 10-40x.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/insights">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PILLAR Insights - Data-Driven Digital Success">
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ===== NAV ===== -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
+      <ul>
+        <li><a href="/#products" aria-label="View our products">Products</a></li>
+        <li><a href="/topsites" aria-label="Top Websites">Top Sites</a></li>
+        <li><a href="/domains" aria-label="Available domains">Domains</a></li>
+        <li><a href="/insights" aria-label="Read our insights">Insights</a></li>
+        <li><a href="/about" aria-label="Learn about us">About</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="insights-hero" role="banner">
+    <div>
+      <h1>Insights That Build Digital Empires</h1>
+      <p>Data-driven strategies for thought leaders ready to monetize their expertise</p>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+    <!-- Articles Grid -->
+    <section class="articles-section" aria-label="Research articles">
+      <div class="articles-grid">
+        <!-- Featured Article -->
+        <article class="article-card featured">
+          <span class="category-pill category-monetization">Monetization Strategies</span>
+          <h2 class="article-title">The $91,500 Question: Why YouTube Creators Leave Money on the Table</h2>
+          <p class="article-excerpt">YouTube creators earn $1.65 per 1,000 views while websites generate $4.85-$9.70. Discover why successful creators drive traffic from YouTube to owned properties for 73% more revenue and 38x higher conversions.</p>
+          <div class="article-meta">
+            <span class="read-time">12 min read</span>
+            <a href="/insights/youtube-website-monetization" class="read-link">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- Regular Articles -->
+        <article class="article-card domains">
+          <span class="category-pill category-domains">Domain Authority</span>
+          <h3 class="article-title">Premium Domain Mathematics: 14-40% Higher Conversions Guaranteed</h3>
+          <p class="article-excerpt">100% of single-word .com domains are taken, yet the data shows premium domains deliver 14-40% higher conversions, 50-70% direct traffic, and 3-5x customer lifetime value.</p>
+          <div class="article-meta">
+            <span class="read-time">8 min read</span>
+            <a href="/insights/premium-domain-conversion-data" class="read-link">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <span class="category-pill category-monetization">Monetization Strategies</span>
+          <h3 class="article-title">Platform vs Website: The 10-40x Revenue Multiple Nobody Talks About</h3>
+          <p class="article-excerpt">Across every major platform, websites deliver 10-40x higher ad revenue while creators keep 94-97% versus platform cuts of 30-70%. See the exact mathematics.</p>
+          <div class="article-meta">
+            <span class="read-time">15 min read</span>
+            <a href="/insights/platform-website-revenue-comparison" class="read-link">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="article-card domains">
+          <span class="category-pill category-domains">Domain Authority</span>
+          <h3 class="article-title">Domain Rental: Access $1M Domains for $1,000/Month</h3>
+          <p class="article-excerpt">With premium domains selling for $100K-$30M, rental provides 90% of ownership benefits at 1-5% of the cost. Learn how smart businesses leverage premium domains without capital investment.</p>
+          <div class="article-meta">
+            <span class="read-time">10 min read</span>
+            <a href="/insights/domain-rental-strategy" class="read-link">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="article-card future">
+          <span class="category-pill category-future">Future-Proof Web</span>
+          <h3 class="article-title">AI Won't Replace Your Website: The Immutable Laws of Digital Ownership</h3>
+          <p class="article-excerpt">While others panic about AI, smart creators understand: AI needs websites as training data, can't replace direct customer relationships, and actually amplifies content creation opportunities.</p>
+          <div class="article-meta">
+            <span class="read-time">10 min read</span>
+            <a href="/insights/ai-search-website-future" class="read-link">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <span class="category-pill category-monetization">Monetization Strategies</span>
+          <h3 class="article-title">Creator Economy Truth: Why 91% Earn Under $100K</h3>
+          <p class="article-excerpt">Despite $212 billion in creator economy value, 91% of creators earn less than $100K. Discover why website-first strategies separate the 9% who succeed from those who struggle.</p>
+          <div class="article-meta">
+            <span class="read-time">10 min read</span>
+            <a href="/insights/creator-economy-website-strategy" class="read-link">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section class="facts-section" aria-label="Key research findings">
+      <div class="facts-container">
+        <h2>The Data That Changes Everything</h2>
+        <div class="facts-grid">
+          <div class="fact-group">
+            <h3><span class="fact-icon">💰</span> YouTube vs Website Revenue</h3>
+            <ul class="fact-list">
+              <li>Websites generate <span class="fact-highlight">$4.85-$9.70</span> per 1,000 visitors vs YouTube's $1.65</li>
+              <li>Email marketing delivers <span class="fact-highlight">$36 ROI</span> per $1 spent vs social's $2.80</li>
+              <li>Website visitors convert at <span class="fact-highlight">38X higher rates</span> than YouTube viewers</li>
+            </ul>
+          </div>
+
+          <div class="fact-group">
+            <h3><span class="fact-icon">🌐</span> Premium Domain Impact</h3>
+            <ul class="fact-list">
+              <li><span class="fact-highlight">14-40% higher conversions</span> on premium domains vs generic URLs</li>
+              <li>Premium domains receive <span class="fact-highlight">50-70% direct traffic</span> (free visitors)</li>
+              <li>Users are <span class="fact-highlight">46% more likely to trust</span> businesses on premium domains</li>
+            </ul>
+          </div>
+
+          <div class="fact-group">
+            <h3><span class="fact-icon">📊</span> Platform Reality Check</h3>
+            <ul class="fact-list">
+              <li>Facebook organic reach collapsed to <span class="fact-highlight">1.37%</span> of followers</li>
+              <li>Creators keep <span class="fact-highlight">94-97%</span> on websites vs 30-70% on platforms</li>
+              <li><span class="fact-highlight">42% of creators</span> would lose $50K+ if their platform disappeared</li>
+            </ul>
+          </div>
+
+          <div class="fact-group">
+            <h3><span class="fact-icon">💎</span> Domain Rental Economics</h3>
+            <ul class="fact-list">
+              <li>Access premium domains at <span class="fact-highlight">1-5% of purchase price</span> annually</li>
+              <li>Premium domain benefits pay for themselves in <span class="fact-highlight">30-90 days</span></li>
+              <li><span class="fact-highlight">99% of two-word .coms</span> taken—rental is the only option</li>
+            </ul>
+          </div>
+
+          <div class="fact-group">
+            <h3><span class="fact-icon">🤖</span> AI & Website Future</h3>
+            <ul class="fact-list">
+              <li>AI needs quality websites for training—<span class="fact-highlight">websites become MORE valuable</span></li>
+              <li>Email lists remain highest ROI channel—<span class="fact-highlight">AI can't replace ownership</span></li>
+              <li>Every "death of websites" prediction failed—<span class="fact-highlight">websites got stronger</span></li>
+            </ul>
+          </div>
+
+          <div class="fact-group">
+            <h3><span class="fact-icon">🚀</span> Creator Success Patterns</h3>
+            <ul class="fact-list">
+              <li>Only <span class="fact-highlight">9% earn $100K+</span> relying on platforms alone</li>
+              <li>Pat Flynn: $7,906 → <span class="fact-highlight">$2.17M annually</span> with website strategy</li>
+              <li>Website-first creators see <span class="fact-highlight">3-10X revenue increase</span> post-transition</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="facts-cta">
+          <p>The evidence is overwhelming. Your expertise deserves better than platform dependency.</p>
+          <a href="/#products" class="btn-facts">Build Your $100K Website →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">PILLAR</div>
+        <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+      </div>
+      
+      <div class="footer-links">
+        <a href="/#products">Web Design</a>
+        <a href="/domains">Premium Domains</a>
+        <a href="/about">Corporate Information</a>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+        <p>Transforming digital landscapes to empower personal freedom.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script defer>
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    mobileMenu?.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!isExpanded));
+      navList.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('nav ul a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileMenu.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
