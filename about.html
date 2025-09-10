@@ -4,8 +4,8 @@
   <!-- Essentials -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | PILLAR Media — Building a Worthwhile Internet</title>
-  <meta name="description" content="PILLAR Media & Entertainment: the 'why' behind our work — real projects like GlobalFirstNations.com and FanTravel.com, powered by partners, creators, and advanced AI. We even finance people with a vision.">
+  <title>About PILLAR Media | Building Digital Empires Since 2024</title>
+  <meta name="description" content="PILLAR Media & Entertainment transforms expertise into profitable digital assets. 100+ websites built, $50K-$250K annual revenue potential. Learn our story, mission, and vision.">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
@@ -20,13 +20,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="About PILLAR Media — Building a Worthwhile Internet">
-  <meta property="og:description" content="Our purpose, our projects, and why we invest in people with a vision.">
+  <meta property="og:title" content="About PILLAR Media - Building Digital Empires Since 2024">
+  <meta property="og:description" content="100+ experts transformed. Premium domains. AI-powered systems. Learn how we're rebuilding the World Wide Web for global audiences.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pillarme.com/about">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About PILLAR Media — Building a Worthwhile Internet">
-  <meta name="twitter:description" content="Our purpose, our projects, and why we invest in people with a vision.">
+  <meta name="twitter:title" content="The PILLAR Story - Digital Transformation at Scale">
+  <meta name="twitter:description" content="From zero to 100+ digital empires in one year. Discover how PILLAR revolutionizes online presence.">
 
   <!-- Critical CSS (same family as other pages) -->
   <style>
@@ -62,47 +62,97 @@
 
     /* ===== Hero ===== */
     .about-hero{
-      min-height:40vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem 3rem;text-align:center;
+      min-height:50vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;
       background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative
     }
     .about-hero::before{
-      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;
       background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);pointer-events:none;opacity:.3
     }
     .about-hero > div{position:relative;z-index:1}
     h1{
-      font-size:clamp(2.5rem,5vw,3.5rem);font-weight:900;letter-spacing:-2px;margin-bottom:1rem;
+      font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-2px;margin-bottom:1.5rem;
       background:linear-gradient(135deg,#000 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2
     }
-    .hero p{font-size:1.25rem;color:#666;max-width:750px;margin:0 auto}
+    .hero p{font-size:1.375rem;color:#666;max-width:800px;margin:0 auto 2rem}
+    .hero-stats{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-top:3rem}
+    .stat{text-align:center}
+    .stat-number{font-size:2.5rem;font-weight:900;color:var(--purple);display:block;line-height:1}
+    .stat-label{font-size:.875rem;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:.5rem}
 
     /* ===== Sections ===== */
-    .section{padding:4rem 2rem}
+    .section{padding:6rem 2rem}
     h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
-    .section-subtitle{text-align:center;color:var(--gray);font-size:1.125rem;max-width:720px;margin:0 auto 3rem;line-height:1.7}
+    .section-subtitle{text-align:center;color:var(--gray);font-size:1.25rem;max-width:720px;margin:0 auto 3rem;line-height:1.7}
 
-    /* ===== Purpose / Why cards ===== */
-    .purpose{display:flex;flex-wrap:nowrap;justify-content:center;gap:1.5rem;max-width:var(--content-max);margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-    .purpose::-webkit-scrollbar{display:none}
-    .purpose .card{flex:1 0 22%;min-width:260px;max-width:320px;padding:1.75rem;border:1.5px solid var(--border-light);border-radius:14px;background:#fff;box-shadow:0 6px 20px var(--purple-glow);transition:all .3s ease}
-    .purpose .card:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 12px 30px var(--purple-glow)}
-    .purpose .card h3{margin-bottom:.5rem;font-size:1.25rem;font-weight:800;color:var(--purple)}
-    .purpose .card p{margin:0;color:var(--black-soft);line-height:1.6}
+    /* ===== Story Timeline ===== */
+    .timeline{max-width:900px;margin:0 auto;position:relative;padding:2rem 0}
+    .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--purple);transform:translateX(-50%)}
+    .timeline-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem;position:relative}
+    .timeline-item:nth-child(even){flex-direction:row-reverse}
+    .timeline-content{width:45%;padding:2rem;background:#fff;border:2px solid var(--border-light);border-radius:16px;position:relative;transition:all .3s}
+    .timeline-content:hover{border-color:var(--purple);box-shadow:0 15px 40px var(--purple-glow);transform:translateY(-5px)}
+    .timeline-dot{position:absolute;width:20px;height:20px;background:var(--purple);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;box-shadow:0 0 0 5px #fff,0 0 0 7px var(--purple)}
+    .timeline-year{font-size:1.25rem;font-weight:900;color:var(--purple);margin-bottom:.5rem}
+    .timeline-title{font-size:1.125rem;font-weight:700;margin-bottom:.5rem;color:var(--black)}
+    .timeline-description{font-size:.95rem;color:var(--black-soft);line-height:1.6}
 
-    /* ===== Highlights (same card style as other pages) ===== */
-    .highlights{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
-    .highlight-card{background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;transition:all .3s}
-    .highlight-card:hover{border-color:var(--purple);transform:translateY(-8px);box-shadow:0 20px 60px var(--purple-glow)}
-    .highlight-title{color:var(--purple);font-weight:800;margin-bottom:.5rem}
-    .highlight-text{color:var(--black-soft);font-size:1rem;line-height:1.6}
+    /* ===== Mission Cards ===== */
+    .mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;max-width:var(--content-max);margin:0 auto}
+    .mission-card{background:#fff;border:2px solid var(--border-light);border-radius:20px;padding:2.5rem;transition:all .3s;position:relative;overflow:hidden}
+    .mission-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:var(--purple);transform:translateY(-100%);transition:transform .3s}
+    .mission-card:hover::before{transform:translateY(0)}
+    .mission-card:hover{border-color:var(--purple);transform:translateY(-8px);box-shadow:0 20px 60px var(--purple-glow)}
+    .mission-icon{font-size:3rem;margin-bottom:1rem;display:block}
+    .mission-card h3{font-size:1.5rem;font-weight:800;margin-bottom:1rem;color:var(--black)}
+    .mission-card p{color:var(--black-soft);line-height:1.6;margin-bottom:1rem}
+    .mission-list{list-style:none;padding:0;margin-top:1rem}
+    .mission-list li{padding-left:1.5rem;position:relative;margin-bottom:.5rem;font-size:.95rem;color:var(--black-soft)}
+    .mission-list li:before{content:'✓';position:absolute;left:0;color:var(--purple);font-weight:bold}
 
-    /* ===== Credibility strip ===== */
-    .cred-strip{padding:6rem 2rem;background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
-    .cred-inner{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-    .cred-card{background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:1.5rem;text-align:center;transition:all .3s}
-    .cred-card:hover{border-color:var(--purple);box-shadow:0 15px 40px var(--purple-glow)}
-    .cred-head{font-weight:900;margin-bottom:.25rem}
-    .cred-sub{color:var(--gray);font-size:.95rem}
+    /* ===== Team/Leadership ===== */
+    .leadership{background:var(--off-white);padding:6rem 2rem}
+    .leadership-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem;max-width:var(--content-max);margin:0 auto}
+    .leader-card{background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+    .leader-card:hover{border-color:var(--purple);transform:translateY(-5px);box-shadow:0 15px 40px var(--purple-glow)}
+    .leader-avatar{width:120px;height:120px;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);border-radius:50%;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff}
+    .leader-name{font-size:1.25rem;font-weight:800;margin-bottom:.25rem;color:var(--black)}
+    .leader-title{color:var(--purple);font-size:.875rem;font-weight:600;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.5px}
+    .leader-bio{color:var(--black-soft);font-size:.95rem;line-height:1.6}
+
+    /* ===== Values Grid ===== */
+    .values-section{background:#fff;padding:6rem 2rem}
+    .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:var(--content-max);margin:0 auto}
+    .value-item{text-align:center;padding:2rem;border-radius:16px;background:var(--off-white);transition:all .3s}
+    .value-item:hover{transform:translateY(-5px);box-shadow:0 15px 40px var(--purple-glow);background:linear-gradient(135deg,rgba(139,0,255,.05) 0%,transparent 100%)}
+    .value-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+    .value-title{font-size:1.125rem;font-weight:700;margin-bottom:.5rem;color:var(--black)}
+    .value-description{font-size:.875rem;color:var(--black-soft);line-height:1.6}
+
+    /* ===== Process Section ===== */
+    .process-section{background:var(--black);color:#fff;padding:6rem 2rem;position:relative;overflow:hidden}
+    .process-section::before{content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;background:radial-gradient(circle,var(--purple-glow) 0%,transparent 50%);pointer-events:none}
+    .process-container{max-width:var(--content-max);margin:0 auto;position:relative;z-index:1}
+    .process-section h2{color:#fff;margin-bottom:3rem}
+    .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+    .process-step{background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);border-radius:16px;padding:2rem;text-align:center;position:relative;transition:all .3s}
+    .process-step:hover{background:rgba(139,0,255,.1);border-color:var(--purple);transform:translateY(-5px);box-shadow:0 15px 40px var(--purple-glow-strong)}
+    .step-number{width:60px;height:60px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;margin:0 auto 1.5rem}
+    .step-title{font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:#fff}
+    .step-description{color:rgba(255,255,255,.8);line-height:1.6}
+
+    /* ===== Impact Numbers ===== */
+    .impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:var(--content-max);margin:3rem auto}
+    .impact-card{background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+    .impact-card:hover{background:rgba(139,0,255,.1);border-color:var(--purple);transform:scale(1.05)}
+    .impact-number{font-size:2.5rem;font-weight:900;color:var(--purple);margin-bottom:.5rem}
+    .impact-label{font-size:.875rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px}
+
+    /* ===== Partners Section ===== */
+    .partners-section{padding:6rem 2rem;background:#fff}
+    .partners-logos{display:flex;justify-content:center;align-items:center;gap:4rem;flex-wrap:wrap;margin-top:3rem;opacity:.6}
+    .partner-logo{height:60px;filter:grayscale(100%);transition:all .3s}
+    .partner-logo:hover{filter:grayscale(0%);transform:scale(1.1)}
 
     /* ===== CTA ===== */
     .cta-section{
@@ -135,9 +185,6 @@
     .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
 
     /* ===== Mobile ===== */
-    @media (max-width:992px){
-      .purpose{grid-template-columns:1fr}
-    }
     @media (max-width:768px){
       nav ul{display:none}
       nav ul.active{display:flex;position:fixed;top:71px;left:0;right:0;height:calc(100vh - 71px);background-color:#FFFFFF;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:4rem;gap:2rem;z-index:998;overflow-y:auto}
@@ -150,12 +197,19 @@
       .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
       h1{font-size:2rem}
       .hero p{font-size:1.125rem}
-      .highlights{grid-template-columns:1fr;padding:0 1rem}
-      .cred-inner{grid-template-columns:1fr;padding:0 1rem}
-      .cta-content{padding:0 1rem}
+      .hero-stats{gap:2rem}
+      .stat-number{font-size:2rem}
+      .timeline::before{display:none}
+      .timeline-item{flex-direction:column !important;margin-bottom:2rem}
+      .timeline-content{width:100%}
+      .timeline-dot{display:none}
+      .mission-grid,.leadership-grid,.values-grid,.process-steps{grid-template-columns:1fr}
+      .impact-grid{grid-template-columns:repeat(2,1fr)}
+      .partners-logos{gap:2rem}
+      .partner-logo{height:40px}
       .footer-container{flex-direction:column;text-align:center}
       .footer-left{flex-direction:column;gap:.5rem;align-items:center;width:100%}
-      .footer-links{justify-content:center;margin-top:1rem;width:100%}
+      .footer-links{justify-content:center;margin-top:1rem;width:100%;flex-direction:column;gap:1rem}
     }
 
     /* Skip link (hidden until focus) */
@@ -170,7 +224,7 @@
     "@type":"AboutPage",
     "name":"About PILLAR Media & Entertainment",
     "url":"https://pillarme.com/about",
-    "description":"Our purpose, our projects, and why we invest in people with a vision.",
+    "description":"Learn about PILLAR Media's mission to transform expertise into profitable digital assets",
     "isPartOf":{"@type":"WebSite","name":"PILLAR Media & Entertainment","url":"https://pillarme.com"}
   }
   </script>
@@ -197,102 +251,347 @@
   <!-- ===== HERO ===== -->
   <header class="about-hero hero" role="banner">
     <div>
-      <h1>Making the Internet Worthwhile Again</h1>
-      <p>We’re rebuilding the web into what it was always meant to be: a space of trust, creativity, and shared prosperity. At PILLAR, this isn’t just business—it’s a mission to empower the stories that matter most.</p>
+      <h1>We Build Digital Empires for the Builders of Tomorrow</h1>
+      <p>Since early 2024, PILLAR has transformed how experts, creators, and visionaries establish their digital presence. We believe every voice deserves a platform that matches their ambition—not just a website, but a revenue-generating asset that works 24/7.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Websites Launched</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">1,500+</span>
+          <span class="stat-label">Premium Domains</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">30 Days</span>
+          <span class="stat-label">Launch Guarantee</span>
+        </div>
+      </div>
     </div>
   </header>
 
   <!-- ===== MAIN ===== -->
   <main id="main-content">
-    <!-- PURPOSE / WHY WE BUILD -->
-    <section class="section" aria-label="Why we build">
-      <h2>Why We Build</h2>
-      <p class="section-subtitle">The internet should be worth your time—and worth your trust. Our purpose shows up in the projects we back and the people we invest in.</p>
+    <!-- STORY TIMELINE -->
+    <section class="section" aria-label="Our journey">
+      <h2>The PILLAR Journey</h2>
+      <p class="section-subtitle">From a bold vision to the industry leader in AI-powered web transformation</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">Early 2024</div>
+            <h3 class="timeline-title">FanTravel Launched</h3>
+            <p class="timeline-description">Recognized the gap between expertise and online presence for global audiences. Launched with a mission to democratize content for people outside of the mainstream.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
 
-      <div class="purpose">
-        <article class="card" aria-label="GlobalFirstNations project">
-          <h3>GlobalFirstNations.com — Culture, Care, and Storytelling</h3>
-          <p>
-            <a href="https://globalfirstnations.com" target="_blank" rel="noopener">GlobalFirstNations.com</a> is growing into a kid-friendly, decolonized space for Indigenous culture and storytelling—guided by creators, cultural leaders, and a thriving community of volunteers and educators. It’s a living example of how the web can protect heritage, celebrate identity, and teach the next generation with dignity.
-          </p>
-        </article>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">2024</div>
+            <h3 class="timeline-title">AI Integration and New Brands</h3>
+            <p class="timeline-description">Pioneered AI-powered content transformation, turning 1 website into a dozen. First to market with brands that cater to global audiences.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
 
-        <article class="card" aria-label="FanTravel project">
-          <h3>FanTravel.com — The Journey Matters</h3>
-          <p>
-            <a href="https://fantravel.com" target="_blank" rel="noopener">FanTravel.com</a> elevates diverse voices on how to reach the world’s favorite events—spotlighting local routes, real budgets, and fan experiences that make travel accessible and joyful. It’s the internet at its best: practical, welcoming, and human.
-          </p>
-        </article>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">2025</div>
+            <h3 class="timeline-title">Premium Domain Network</h3>
+            <p class="timeline-description">Acquired 1,500+ premium domains worth millions. Introduced revolutionary rental model at 1-5% of purchase price, making instant authority accessible.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">Now</div>
+            <h3 class="timeline-title">Scale & Impact</h3>
+            <p class="timeline-description">Acquiring over 10,000 websites. Launched Builder Financing program, investing directly in visionary creators and underrepresented voices.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">2026</div>
+            <h3 class="timeline-title">Digital Empire Standard</h3>
+            <p class="timeline-description">100,000+ active website goal all generating collective revenue of $100M+. Established as the gold standard for web development and knowledge mapping.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
       </div>
+    </section>
 
-      <div class="purpose" style="margin-top:2rem">
-        <article class="card" aria-label="Builder financing">
-          <h3>We Invest in People — Builder Financing</h3>
-          <p>
-            When someone has a real vision, we help make it real. PILLAR offers flexible financing options for creators, communities, and institutions with a mission. We’re that serious about making the internet great again—one trusted, high-performance site at a time.
-          </p>
+    <!-- MISSION & VISION -->
+    <section class="section" aria-label="Our mission">
+      <h2>Building More Than Websites</h2>
+      <p class="section-subtitle">We are actively rebuilding the World Wide Web with sustainable digital ecosystems that amplify regional expertise and generate lasting wealth</p>
+
+      <div class="mission-grid">
+        <article class="mission-card">
+          <span class="mission-icon">🎯</span>
+          <h3>Our Mission</h3>
+          <p>Transform every expert's knowledge into a profitable digital asset that generates $50K-$250K annually, while preserving the authenticity and trust that made them successful offline.</p>
+          <ul class="mission-list">
+            <li>Democratize premium web development</li>
+            <li>Make $10K agency solutions accessible for $125</li>
+            <li>Enable passive income through expertise</li>
+            <li>Build lasting digital legacies</li>
+          </ul>
         </article>
-        <article class="card" aria-label="How we work">
-          <h3>Systems of Trust, Value, and Growth</h3>
-          <p>
-            We don’t just ship websites—we design durable systems powered by advanced AI, ethical design, and decades of operating experience. The result: platforms that scale responsibly and serve people first.
-          </p>
+
+        <article class="mission-card">
+          <span class="mission-icon">🔮</span>
+          <h3>Our Vision</h3>
+          <p>A future where every thought leader, creator, and expert owns their digital destiny—free from platform dependency, algorithm changes, and revenue caps.</p>
+          <ul class="mission-list">
+            <li>100,000 digital empires by 2030</li>
+            <li>$1 billion in creator revenue generated</li>
+            <li>Premium domains accessible to all</li>
+            <li>AI that amplifies, never replaces, expertise</li>
+          </ul>
+        </article>
+
+        <article class="mission-card">
+          <span class="mission-icon">⚡</span>
+          <h3>Our Difference</h3>
+          <p>While others build websites, we engineer revenue systems. Our AI doesn't just create content—it transforms your expertise into strategic digital assets.</p>
+          <ul class="mission-list">
+            <li>30-day launch guarantee</li>
+            <li>No coding or technical skills required</li>
+            <li>94-97% revenue retention vs 30-70% on platforms</li>
+            <li>Premium domains included, not extra</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <!-- WHO WE ARE (flows after purpose) -->
-    <section class="section" aria-label="Who we are">
-      <h2>Who We Are</h2>
-      <p class="section-subtitle">A global network of builders, strategists, and innovators working across continents to transform how the internet serves people.</p>
-    </section>
+    <!-- LEADERSHIP TEAM -->
+    <section class="leadership" aria-label="Leadership team">
+      <h2>The Visionaries Behind PILLAR</h2>
+      <p class="section-subtitle">Serial entrepreneurs and technologists united by a mission to democratize digital success</p>
 
-    <!-- HIGHLIGHTS -->
-    <section class="section" aria-label="Company strengths">
-      <div class="highlights">
-        <article class="highlight-card">
-          <div class="highlight-title">🌍 Global Network</div>
-          <p class="highlight-text">Trusted alliances with forward-thinking organizations, institutions, and creators across every region—solutions built with cultural intelligence and local impact.</p>
+      <div class="leadership-grid">
+        <article class="leader-card">
+          <div class="leader-avatar">👔</div>
+          <h3 class="leader-name">Executive Leadership</h3>
+          <p class="leader-title">Strategic Vision</p>
+          <p class="leader-bio">Decades of experience building and scaling digital businesses. Former executives from Fortune 500 companies who saw the link between web design and people empowerment.</p>
         </article>
-        <article class="highlight-card">
-          <div class="highlight-title">🤖 Cutting-Edge AI</div>
-          <p class="highlight-text">We harness the world’s most advanced AI—responsibly and transparently—to design tools and platforms that keep people, not algorithms, at the center.</p>
+
+        <article class="leader-card">
+          <div class="leader-avatar">🤖</div>
+          <h3 class="leader-name">AI Engineering Team</h3>
+          <p class="leader-title">Innovation Engine</p>
+          <p class="leader-bio">Pioneers in content transformation technology. Our proprietary AI system processes 100,000+ websites and pieces of content daily - finding gaps, opportunities, and strategic depolyments.</p>
         </article>
-        <article class="highlight-card">
-          <div class="highlight-title">📈 Decades of Expertise</div>
-          <p class="highlight-text">20+ years across media, technology, and entrepreneurship—combining proven strategies with a bold vision for the future.</p>
+
+        <article class="leader-card">
+          <div class="leader-avatar">🌍</div>
+          <h3 class="leader-name">Global Network</h3>
+          <p class="leader-title">World-Class Partners</p>
+          <p class="leader-bio">Strategic alliances across continents. From Silicon Valley to mountains fo Peru, our network ensures cutting-edge solutions with regional expertise and diversity.</p>
         </article>
       </div>
     </section>
 
-    <!-- CRED STRIP -->
-    <section class="cred-strip" aria-label="Credentials">
-      <div class="cred-inner">
-        <div class="cred-card">
-          <div class="cred-head">Global Partnerships</div>
-          <div class="cred-sub">Cross-industry collaborations powering trusted digital ecosystems</div>
+    <!-- CORE VALUES -->
+    <section class="values-section" aria-label="Core values">
+      <h2>Values That Drive Every Decision</h2>
+      <p class="section-subtitle">Our principles shape how we build, who we serve, and the future we create</p>
+
+      <div class="values-grid">
+        <article class="value-item">
+          <span class="value-icon">🤝</span>
+          <h3 class="value-title">Accessibility First</h3>
+          <p class="value-description">Premium solutions shouldn't require premium budgets. We've made $10K agency work available for $125.</p>
+        </article>
+
+        <article class="value-item">
+          <span class="value-icon">⏱️</span>
+          <h3 class="value-title">Speed Without Sacrifice</h3>
+          <p class="value-description">30-day launches that don't compromise on quality. Your expertise deserves to be live, not languishing.</p>
+        </article>
+
+        <article class="value-item">
+          <span class="value-icon">💎</span>
+          <h3 class="value-title">Premium by Default</h3>
+          <p class="value-description">Every site launches on domains worth thousands. We believe in starting strong, not upgrading later.</p>
+        </article>
+
+        <article class="value-item">
+          <span class="value-icon">🌱</span>
+          <h3 class="value-title">Sustainable Growth</h3>
+          <p class="value-description">Building assets that appreciate, not depreciate. Your site gets more valuable every month.</p>
+        </article>
+
+        <article class="value-item">
+          <span class="value-icon">🎨</span>
+          <h3 class="value-title">Authenticity Preserved</h3>
+          <p class="value-description">AI amplifies your voice, never replaces it. Every site reflects the unique expertise of its owner.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS & TECHNOLOGY -->
+    <section class="process-section" aria-label="Our process">
+      <div class="process-container">
+        <h2>The Technology Behind the Magic</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,.8);text-align:center;margin-bottom:3rem">How we transform expertise into revenue in 30 days or less</p>
+
+        <div class="process-steps">
+          <article class="process-step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Content Analysis</h3>
+            <p class="step-description">Our AI analyzes your videos, podcasts, or documents, extracting key insights, expertise patterns, and monetization opportunities.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Strategic Architecture</h3>
+            <p class="step-description">We map your knowledge to SEO opportunities, creating 10+ pages that capture high-intent traffic and convert visitors into revenue.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Premium Domain Match</h3>
+            <p class="step-description">Select from 1,500+ domains worth millions. Launch with instant authority and 14-40% higher conversion rates from day one.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">AI Content Generation</h3>
+            <p class="step-description">Our proprietary system creates SEO-optimized, expertise-rich content that ranks, converts, and maintains your authentic voice.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">5</div>
+            <h3 class="step-title">Revenue Optimization</h3>
+            <p class="step-description">Built-in monetization from ads to affiliates to direct sales. Every page designed to generate income while you sleep.</p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">6</div>
+            <h3 class="step-title">Launch & Scale</h3>
+            <p class="step-description">Go live in 30 days with ongoing AI content updates. Your site grows stronger every month with our growth packages.</p>
+          </article>
         </div>
-        <div class="cred-card">
-          <div class="cred-head">High-Performance Delivery</div>
-          <div class="cred-sub">Mobile-first, SEO-optimized, Lighthouse-ready builds</div>
+
+        <!-- Impact Numbers -->
+        <div class="impact-grid">
+          <article class="impact-card">
+            <div class="impact-number">2,500+</div>
+            <div class="impact-label">Pages Created</div>
+          </article>
+          <article class="impact-card">
+            <div class="impact-number">500K+</div>
+            <div class="impact-label">Monthly Visitors</div>
+          </article>
+          <article class="impact-card">
+            <div class="impact-number">$5M+</div>
+            <div class="impact-label">Revenue Potential</div>
+          </article>
+          <article class="impact-card">
+            <div class="impact-number">15 Countries</div>
+            <div class="impact-label">Global Reach</div>
+          </article>
         </div>
-        <div class="cred-card">
-          <div class="cred-head">Security & Reliability</div>
-          <div class="cred-sub">Modern hosting, privacy-minded analytics, and resilient uptime</div>
-        </div>
-        <div class="cred-card">
-          <div class="cred-head">Ethical AI</div>
-          <div class="cred-sub">Human-centered design, transparent methods, measurable outcomes</div>
-        </div>
+      </div>
+    </section>
+
+    <!-- FLAGSHIP PROJECTS -->
+    <section class="section" aria-label="Flagship projects">
+      <h2>Projects That Define Our Purpose</h2>
+      <p class="section-subtitle">Real websites making real impact—from cultural preservation to financial literacy</p>
+
+      <div class="mission-grid">
+        <article class="mission-card">
+          <span class="mission-icon">🌍</span>
+          <h3>GlobalFirstNations.com</h3>
+          <p>Our flagship cultural preservation project, becoming the world's first kid-friendly, decolonized space for Indigenous culture and storytelling.</p>
+          <ul class="mission-list">
+            <li>50K+ monthly visitors by 2026</li>
+            <li>100+ cultural stories preserved</li>
+            <li>Educational partnerships in 5 countries</li>
+            <li>Community-driven content creation</li>
+          </ul>
+        </article>
+
+        <article class="mission-card">
+          <span class="mission-icon">✈️</span>
+          <h3>FanTravel.com</h3>
+          <p>Revolutionizing sports tourism by connecting fans worldwide with insider travel guides, local routes, and authentic experiences.</p>
+          <ul class="mission-list">
+            <li>1M+ monthly visitors projected</li>
+            <li>Coverage of 500+ global venues</li>
+            <li>$150K annual revenue target</li>
+            <li>Fan-submitted content platform</li>
+          </ul>
+        </article>
+
+        <article class="mission-card">
+          <span class="mission-icon">💰</span>
+          <h3>BankSize.com</h3>
+          <p>Demystifying global banking systems with accessible financial literacy content that empowers individuals to build wealth intelligently.</p>
+          <ul class="mission-list">
+            <li>Financial education for all levels</li>
+            <li>Global banking system explained</li>
+            <li>Practical wealth-building strategies</li>
+            <li>Multi-language expansion planned</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- BUILDER FINANCING -->
+    <section class="section" style="background:var(--off-white)" aria-label="Builder financing">
+      <h2>We Invest in People, Not Just Projects</h2>
+      <p class="section-subtitle">Our Builder Financing program puts capital behind creators with vision</p>
+
+      <div class="mission-grid">
+        <article class="mission-card">
+          <span class="mission-icon">🚀</span>
+          <h3>Startup Financing</h3>
+          <p>Can't afford the $125 setup fee? We'll finance qualified creators with strong visions and proven expertise. Your success is our investment.</p>
+        </article>
+
+        <article class="mission-card">
+          <span class="mission-icon">🤝</span>
+          <h3>Revenue Share Options</h3>
+          <p>Partner with us on a revenue share basis. We build, you grow, we both win. Perfect for high-potential projects with limited initial capital.</p>
+        </article>
+
+        <article class="mission-card">
+          <span class="mission-icon">🎯</span>
+          <h3>Mission-Driven Support</h3>
+          <p>Special programs for underrepresented voices, cultural preservation projects, and initiatives that make the internet more equitable.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="partners-section" aria-label="Our partners">
+      <h2>Powered by Industry Leaders</h2>
+      <p class="section-subtitle">Strategic partnerships that ensure cutting-edge technology and global scale</p>
+      
+      <div class="partners-logos">
+        <!-- Placeholder for partner logos -->
+        <div class="partner-logo" style="width:120px;height:60px;background:var(--border-light);border-radius:8px"></div>
+        <div class="partner-logo" style="width:120px;height:60px;background:var(--border-light);border-radius:8px"></div>
+        <div class="partner-logo" style="width:120px;height:60px;background:var(--border-light);border-radius:8px"></div>
+        <div class="partner-logo" style="width:120px;height:60px;background:var(--border-light);border-radius:8px"></div>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section" aria-label="Contact PILLAR">
       <div class="cta-content">
-        <h2>Let’s Build What’s Next</h2>
-        <p>Creator with a vision? Company seeking growth? Institution shaping the future? We’d love to partner with you. Together, we can make the internet worth belonging to again.</p>
-        <a class="btn-white" href="mailto:contact@pillarme.com">Contact Us</a>
+        <h2>Your Digital Empire Awaits</h2>
+        <p>Join 100+ experts who've transformed their knowledge into thriving online businesses. Launch in 30 days, profit forever.</p>
+        <a class="btn-white" href="/#products">Start Building Today →</a>
       </div>
     </section>
   </main>
@@ -302,7 +601,7 @@
     <div class="footer-container">
       <div class="footer-left">
         <span class="footer-logo">PILLAR</span>
-        <span class="footer-tagline">Building an Internet Worthwhile</span>
+        <span class="footer-tagline">Building Digital Empires Since 2024</span>
       </div>
       <div class="footer-links">
         <a href="/#products">Web Design</a>
@@ -310,8 +609,9 @@
         <a href="/about">Corporate Information</a>
       </div>
     </div>
-    <div class="footer-copyright">
-      © 2025 PILLAR Media & Entertainment. All rights reserved.
+    <div class="footer-copyright" style="text-align:center;width:100%;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)">
+      <p style="margin:0">© 2025 PILLAR Media & Entertainment. All rights reserved.</p>
+      <p style="margin:.25rem 0 0 0">Transforming digital landscapes to empower personal freedom.</p>
     </div>
   </footer>
 
@@ -322,7 +622,17 @@
     if (btn && menu) {
       btn.addEventListener('click', () => {
         const open = menu.classList.toggle('active');
+        btn.classList.toggle('active');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      
+      // Close menu when clicking a link
+      document.querySelectorAll('nav ul a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('active');
+          btn.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+        });
       });
     }
   </script>
