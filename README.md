@@ -76,7 +76,7 @@
 
 ### Pricing Structure
 1. **Foundation Package** (Featured)
-   - $100 setup fee + $25/month
+   - $125/month
    - Includes usage-based traffic monitoring
    - SEO/mobile optimization
    - 30-day money-back guarantee
