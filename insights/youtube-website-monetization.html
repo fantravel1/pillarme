@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The $91,500 Question: Why YouTube Creators Leave Money on the Table | PILLAR Media</title>
+  <meta name="description" content="YouTube creators earn $1.65 per 1,000 views while websites generate $4.85-$9.70. Discover why successful creators drive traffic from YouTube to owned properties for 73% more revenue.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/insights/youtube-website-monetization">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Critical CSS -->
+  <style>
+    /* ===== Root Variables ===== */
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --nav-h:72px;--content-max:1200px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+      padding-top:var(--nav-h);
+    }
+    
+    /* Navigation */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;position:relative;padding:.5rem;min-height:48px;display:flex;align-items:center}
+    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    nav .logo::after{bottom:-3px}
+    nav a:hover{color:var(--purple)}
+    nav a:hover::after{width:100%}
+    .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
+    
+    /* Article Hero */
+    .article-hero{
+      background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);
+      padding:4rem 2rem 3rem;position:relative;overflow:hidden
+    }
+    .article-hero::before{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:600px;height:600px;background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);
+      pointer-events:none;opacity:.3
+    }
+    .article-hero-content{
+      max-width:800px;margin:0 auto;position:relative;z-index:1
+    }
+    .article-category{
+      display:inline-block;background:var(--purple);color:#fff;
+      padding:.375rem 1rem;border-radius:50px;font-size:.875rem;
+      font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1rem
+    }
+    h1{
+      font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-2px;
+      margin-bottom:1.5rem;color:var(--black);line-height:1.2
+    }
+    .article-meta{
+      display:flex;align-items:center;gap:2rem;color:var(--gray);font-size:1rem
+    }
+    .article-meta span{display:flex;align-items:center;gap:.5rem}
+    
+    /* Article Content */
+    .article-content{
+      max-width:720px;margin:0 auto;padding:4rem 2rem
+    }
+    .article-content h2{
+      font-size:2rem;font-weight:800;margin:3rem 0 1.5rem;color:var(--black);
+      letter-spacing:-1px;line-height:1.3
+    }
+    .article-content h3{
+      font-size:1.5rem;font-weight:700;margin:2.5rem 0 1rem;color:var(--black)
+    }
+    .article-content p{
+      font-size:1.125rem;line-height:1.8;margin-bottom:1.5rem;color:var(--black-soft)
+    }
+    .article-content ul,.article-content ol{
+      margin:1.5rem 0;padding-left:2rem;font-size:1.125rem;line-height:1.8;color:var(--black-soft)
+    }
+    .article-content li{margin-bottom:.75rem}
+    .article-content a{
+      color:var(--purple);text-decoration:none;border-bottom:1px solid var(--purple);
+      transition:all .3s;font-weight:600
+    }
+    .article-content a:hover{
+      border-bottom-width:2px;color:var(--purple-darker)
+    }
+    
+    /* Highlight Box */
+    .highlight-box{
+      background:linear-gradient(135deg,rgba(139,0,255,.05) 0%,rgba(139,0,255,.02) 100%);
+      border-left:4px solid var(--purple);padding:2rem;margin:2rem 0;
+      border-radius:0 16px 16px 0
+    }
+    .highlight-box h4{
+      font-size:1.25rem;font-weight:800;margin-bottom:1rem;color:var(--purple)
+    }
+    .highlight-box p{margin-bottom:1rem}
+    .highlight-box ul{margin:0;padding-left:1.5rem}
+    
+    /* Data Table */
+    .data-table{
+      overflow-x:auto;margin:2rem 0
+    }
+    .data-table table{
+      width:100%;border-collapse:collapse;font-size:1rem;
+      background:#fff;box-shadow:0 5px 20px rgba(0,0,0,.05);
+      border-radius:12px;overflow:hidden
+    }
+    .data-table th{
+      background:var(--purple);color:#fff;padding:1rem;text-align:left;
+      font-weight:700;letter-spacing:.5px
+    }
+    .data-table td{
+      padding:1rem;border-bottom:1px solid var(--border-light)
+    }
+    .data-table tr:last-child td{border-bottom:none}
+    .data-table tr:nth-child(even){background:var(--off-white)}
+    .data-table .highlight{
+      color:var(--purple);font-weight:700
+    }
+    
+    /* Video Section */
+    .video-section{
+      background:var(--off-white);padding:4rem 2rem;margin-top:4rem
+    }
+    .video-container{
+      max-width:800px;margin:0 auto;text-align:center
+    }
+    .video-container h3{
+      font-size:2rem;font-weight:800;margin-bottom:1rem;color:var(--black)
+    }
+    .video-placeholder{
+      position:relative;padding-bottom:56.25%;height:0;overflow:hidden;
+      background:#000;border-radius:16px;margin:2rem 0;
+      display:flex;align-items:center;justify-content:center
+    }
+    .video-placeholder-content{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      color:#fff;text-align:center
+    }
+    .play-button{
+      width:80px;height:80px;background:var(--purple);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;
+      font-size:2rem;cursor:pointer;transition:all .3s
+    }
+    .play-button:hover{
+      transform:scale(1.1);box-shadow:0 10px 30px var(--purple-glow-strong)
+    }
+    
+    /* Resources Section */
+    .resources-section{
+      max-width:800px;margin:4rem auto;padding:0 2rem
+    }
+    .resources-section h3{
+      font-size:1.75rem;font-weight:800;margin-bottom:2rem;color:var(--black)
+    }
+    .resource-list{
+      display:grid;gap:1rem
+    }
+    .resource-item{
+      background:#fff;border:2px solid var(--border-light);padding:1.5rem;
+      border-radius:12px;transition:all .3s;display:flex;align-items:center;gap:1rem
+    }
+    .resource-item:hover{
+      border-color:var(--purple);transform:translateY(-3px);
+      box-shadow:0 10px 30px var(--purple-glow)
+    }
+    .resource-icon{
+      font-size:1.5rem;color:var(--purple)
+    }
+    .resource-content h4{
+      font-size:1.125rem;font-weight:700;margin-bottom:.25rem;color:var(--black)
+    }
+    .resource-content p{
+      font-size:.875rem;color:var(--gray);margin:0
+    }
+    .resource-content a{
+      color:var(--purple);text-decoration:none;font-weight:600
+    }
+    
+    /* CTA Section */
+    .article-cta{
+      background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);
+      padding:4rem 2rem;text-align:center;color:#fff;margin-top:6rem
+    }
+    .article-cta h3{
+      font-size:2.5rem;font-weight:900;margin-bottom:1rem;color:#fff
+    }
+    .article-cta p{
+      font-size:1.25rem;margin-bottom:2rem;opacity:.9
+    }
+    .btn-white{
+      background:#fff;color:var(--purple);padding:1.25rem 3rem;border-radius:10px;
+      text-decoration:none;font-weight:700;font-size:1.125rem;transition:all .3s;
+      display:inline-block
+    }
+    .btn-white:hover{
+      transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,.2)
+    }
+    
+    /* Footer */
+    footer{background:#000;color:#fff;padding:3rem 2rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+    .footer-left{display:flex;align-items:baseline;gap:1rem}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple);letter-spacing:1px}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem}
+    .footer-links{display:flex;gap:2.5rem}
+    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:500;transition:all .3s;font-size:.95rem}
+    .footer-links a:hover{color:var(--purple)}
+    .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+    
+    /* Mobile */
+    @media (max-width:768px){
+      nav ul{display:none}
+      nav ul.active{display:flex;position:fixed;top:71px;left:0;right:0;height:calc(100vh - 71px);background:#fff;flex-direction:column;align-items:center;padding-top:2rem;gap:2rem;z-index:998}
+      .mobile-menu{display:flex}
+      .article-meta{flex-direction:column;gap:1rem;align-items:flex-start}
+      .data-table{font-size:.875rem}
+      .data-table th,.data-table td{padding:.5rem}
+      .footer-container{flex-direction:column;text-align:center}
+      .footer-links{flex-direction:column;gap:1rem}
+    }
+  </style>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="The $91,500 Question: Why YouTube Creators Leave Money on the Table">
+  <meta property="og:description" content="YouTube creators earn $1.65 per 1,000 views while websites generate $4.85-$9.70. Discover the 73% revenue increase strategy.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pillarme.com/insights/youtube-website-monetization">
+  
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
+      <ul>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/topsites">Top Sites</a></li>
+        <li><a href="/domains">Domains</a></li>
+        <li><a href="/insights">Insights</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <header class="article-hero">
+    <div class="article-hero-content">
+      <span class="article-category">Monetization Strategies</span>
+      <h1>The $91,500 Question: Why YouTube Creators Leave Money on the Table</h1>
+      <div class="article-meta">
+        <span>📊 12 min read</span>
+        <span>💰 Revenue Optimization</span>
+        <span>🚀 Creator Success</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <article class="article-content">
+    <p><strong>Every year, YouTube creators collectively leave millions on the table by ignoring a simple truth: while YouTube pays $1.65 per 1,000 views, websites generate $4.85-$9.70 per 1,000 visitors.</strong> That's not a typo—it's a 3-6X revenue multiple that separates struggling creators from those building sustainable empires.</p>
+
+    <p>The mathematics become even more compelling when you factor in conversion rates. YouTube's platform converts at a dismal 0.05%, while websites achieve 1.9%—a staggering 38X improvement. This isn't about abandoning YouTube; it's about using it correctly as a discovery engine while monetizing through owned properties.</p>
+
+    <h2>The Revenue Reality Check</h2>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>YouTube</th>
+            <th>Your Website</th>
+            <th>Revenue Multiple</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Revenue per 1,000 views</td>
+            <td>$1.65</td>
+            <td class="highlight">$4.85-$9.70</td>
+            <td class="highlight">3-6X</td>
+          </tr>
+          <tr>
+            <td>Conversion rate</td>
+            <td>0.05%</td>
+            <td class="highlight">1.9%</td>
+            <td class="highlight">38X</td>
+          </tr>
+          <tr>
+            <td>Revenue retention</td>
+            <td>55%</td>
+            <td class="highlight">94-97%</td>
+            <td class="highlight">1.7X</td>
+          </tr>
+          <tr>
+            <td>Email marketing ROI</td>
+            <td>N/A</td>
+            <td class="highlight">$36 per $1</td>
+            <td class="highlight">3,600%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Let's translate this into real numbers. With 1 million YouTube views, you pocket approximately $1,650 after YouTube's 45% cut. The same million visitors to your website generates between $4,850 and $9,700—while you keep 94-97% instead of YouTube's 55%.</p>
+
+    <h2>Why YouTube Sabotages Your Success</h2>
+
+    <p>YouTube's business model depends on keeping viewers on their platform, not helping you build a business. While your video plays, YouTube actively works against your interests by:</p>
+
+    <ul>
+      <li><strong>Showing competitor videos</strong> in the sidebar and end screens</li>
+      <li><strong>Recommending unrelated content</strong> that pulls viewers away</li>
+      <li><strong>Burying your links</strong> in descriptions viewers rarely expand</li>
+      <li><strong>Limiting external links</strong> unless you have 1,000+ subscribers</li>
+      <li><strong>Prioritizing watch time</strong> over your business objectives</li>
+    </ul>
+
+    <p>Meanwhile, your website provides complete control. No competitor distractions. No algorithm pushing visitors elsewhere. Just your content, your offers, and conversion funnels optimized for your specific goals.</p>
+
+    <h2>The Creator Success Blueprint</h2>
+
+    <div class="highlight-box">
+      <h4>🎯 The Hybrid Model That Works</h4>
+      <p>Successful creators don't choose between YouTube and websites—they leverage both strategically:</p>
+      <ul>
+        <li><strong>YouTube:</strong> Discovery engine for new audiences</li>
+        <li><strong>Website:</strong> Conversion and monetization engine</li>
+        <li><strong>Email:</strong> Relationship and retention engine</li>
+      </ul>
+    </div>
+
+    <p>Pat Flynn exemplifies this model perfectly. Starting with just $7,906 in 2008, he built to $2.17 million annually by using YouTube to demonstrate expertise while driving traffic to his Smart Passive Income website. His December 2017 affiliate earnings alone reached $105,619—impossible through YouTube's monetization.</p>
+
+    <p>Graham Stephan pushes this further, generating $6 million annually with 50% from YouTube ads and 50% from courses sold to his YouTube-cultivated audience. The key? His real revenue acceleration came not from more views but from converting viewers into customers through owned channels.</p>
+
+    <h2>The Mathematics of Missed Opportunity</h2>
+
+    <p>Consider a realistic scenario for a creator with 100,000 monthly YouTube views:</p>
+
+    <div class="highlight-box">
+      <h4>📊 Revenue Comparison: Same Audience, Different Strategy</h4>
+      <p><strong>YouTube-Only Strategy:</strong></p>
+      <ul>
+        <li>100,000 views × $1.65 RPM = $165</li>
+        <li>After YouTube's 45% cut = $91</li>
+        <li><strong>Monthly revenue: $91</strong></li>
+      </ul>
+      <p><strong>Website-First Strategy:</strong></p>
+      <ul>
+        <li>Convert 10% to website visitors = 10,000 visitors</li>
+        <li>10,000 × $7 RPM average = $700</li>
+        <li>Plus email list monetization = $500</li>
+        <li>Plus affiliate commissions = $300</li>
+        <li><strong>Monthly revenue: $1,500+</strong></li>
+      </ul>
+      <p><strong>Result: 16X revenue increase from the same audience</strong></p>
+    </div>
+
+    <h2>Email: The Hidden Goldmine</h2>
+
+    <p>While YouTube provides zero access to viewer emails, websites enable the most profitable marketing channel available. Email marketing delivers $36-44 ROI per dollar spent—a 3,600% return that dwarfs any social platform.</p>
+
+    <p>The conversion statistics prove the point:</p>
+    <ul>
+      <li>Email traffic converts at <strong>2.66% on average</strong></li>
+      <li>Outperforms social media by <strong>60%</strong></li>
+      <li>Beats paid search by <strong>77%</strong></li>
+      <li>Generates <strong>3-5X higher lifetime value</strong> than platform followers</li>
+    </ul>
+
+    <p>Ali Abdaal leverages this perfectly, earning $27,000 weekly in passive income primarily from courses sold to his email list. His Part-Time YouTuber Academy, priced at $1,495 per student, generated a $400,000 single-day launch—impossible without email marketing to his YouTube-cultivated audience.</p>
+
+    <h2>The Platform Risk Reality</h2>
+
+    <p>Beyond revenue, platform dependency creates existential risks:</p>
+
+    <ul>
+      <li><strong>77% of creators</strong> worry about platform dependency</li>
+      <li><strong>42% would lose $50,000+ annually</strong> if their platform disappeared</li>
+      <li><strong>70% acknowledge</strong> algorithm changes could devastate their business</li>
+      <li><strong>20-50% monthly revenue fluctuations</strong> from algorithm updates</li>
+    </ul>
+
+    <p>The 2017 "Adpocalypse" proved these aren't hypothetical risks. Creators saw earnings drop 80% overnight. The Armchair Historian, despite creating school-appropriate content, faced constant demonetization—until launching their own membership site that attracted 1,000+ paying members in three days.</p>
+
+    <h2>Implementation: Your 90-Day Transformation</h2>
+
+    <p>The path from YouTube dependency to owned-asset wealth follows a proven progression:</p>
+
+    <h3>Days 1-30: Foundation</h3>
+    <ul>
+      <li>Launch professional website on premium domain</li>
+      <li>Install email capture with compelling lead magnet</li>
+      <li>Create resource pages for affiliate products mentioned in videos</li>
+      <li>Set up basic analytics and conversion tracking</li>
+    </ul>
+
+    <h3>Days 31-60: Integration</h3>
+    <ul>
+      <li>Add website CTAs to all new videos</li>
+      <li>Create video-specific landing pages</li>
+      <li>Launch email nurture sequence</li>
+      <li>Test and optimize conversion funnels</li>
+    </ul>
+
+    <h3>Days 61-90: Acceleration</h3>
+    <ul>
+      <li>Launch first paid product or course</li>
+      <li>Implement retargeting campaigns</li>
+      <li>Add multiple monetization streams</li>
+      <li>Scale successful funnels</li>
+    </ul>
+
+    <h2>The Bottom Line</h2>
+
+    <p>The mathematics are undeniable. Creators who strategically drive traffic from YouTube to owned websites see:</p>
+
+    <ul>
+      <li><strong>3-6X higher ad revenue</strong> per view</li>
+      <li><strong>38X better conversion rates</strong></li>
+      <li><strong>3,600% ROI</strong> from email marketing</li>
+      <li><strong>Complete control</strong> over their business destiny</li>
+    </ul>
+
+    <p>The question isn't whether to build a website—it's how quickly you can start capturing the revenue you're currently leaving on YouTube's table. Every day you delay costs real money. A creator with just 100,000 monthly YouTube views loses approximately $1,400 monthly by not implementing this strategy.</p>
+
+    <p><strong>The choice is yours: continue working for YouTube's algorithm at $1.65 per thousand views, or build your own empire at 3-6X the revenue. The math has spoken.</strong></p>
+  </article>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <div class="video-container">
+      <h3>Learn More: YouTube to Website Strategy</h3>
+      <div class="video-placeholder">
+        <div class="video-placeholder-content">
+          <div class="play-button">▶</div>
+          <p>Video content coming soon</p>
+        </div>
+      </div>
+      <!-- Placeholder for YouTube embed:
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      -->
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources-section">
+    <h3>Additional Resources</h3>
+    <div class="resource-list">
+      <div class="resource-item">
+        <div class="resource-icon">📊</div>
+        <div class="resource-content">
+          <h4>YouTube Creator Report 2024</h4>
+          <p>Comprehensive analysis of creator earnings and platform trends</p>
+          <a href="https://www.thinkwithgoogle.com/intl/en-apac/consumer-insights/consumer-trends/youtube-creator-economy/" target="_blank" rel="noopener">Read Report →</a>
+        </div>
+      </div>
+
+      <div class="resource-item">
+        <div class="resource-icon">💰</div>
+        <div class="resource-content">
+          <h4>Website Monetization Calculator</h4>
+          <p>Calculate your potential revenue from website vs platform strategy</p>
+          <a href="https://www.monumetric.com/rpm-calculator/" target="_blank" rel="noopener">Try Calculator →</a>
+        </div>
+      </div>
+
+      <div class="resource-item">
+        <div class="resource-icon">📧</div>
+        <div class="resource-content">
+          <h4>Email Marketing ROI Statistics</h4>
+          <p>Latest data on email marketing performance and benchmarks</p>
+          <a href="https://www.litmus.com/blog/infographic-the-roi-of-email-marketing/" target="_blank" rel="noopener">View Stats →</a>
+        </div>
+      </div>
+
+      <div class="resource-item">
+        <div class="resource-icon">🎯</div>
+        <div class="resource-content">
+          <h4>Pat Flynn's Affiliate Marketing Guide</h4>
+          <p>Learn from someone who generates $1M+ annually from affiliates</p>
+          <a href="https://www.smartpassiveincome.com/guide/affiliate-marketing-strategies/" target="_blank" rel="noopener">Access Guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="article-cta">
+    <h3>Ready to 10X Your Creator Revenue?</h3>
+    <p>Stop leaving money on YouTube's table. Build your revenue-generating website today.</p>
+    <a href="/#products" class="btn-white">Start Building Your Empire →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">PILLAR</div>
+        <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
+      </div>
+      <div class="footer-links">
+        <a href="/#products">Web Design</a>
+        <a href="/domains">Premium Domains</a>
+        <a href="/about">Corporate Information</a>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
+        <p>Transforming digital landscapes to empower personal freedom.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu script -->
+  <script>
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    mobileMenu?.addEventListener('click', function() {
+      navList.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
