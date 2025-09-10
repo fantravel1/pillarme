@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to PILLAR - Setup Complete</title>
+  <meta name="description" content="Your digital empire journey begins now. Check your email for next steps.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/success">
+  
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --nav-h:72px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+      display:flex;flex-direction:column;min-height:100vh;padding-top:var(--nav-h);
+    }
+    
+    /* Navigation */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    .nav-container{max-width:1200px;margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    
+    /* Success Content */
+    .success-container{
+      flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 2rem;
+      background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative
+    }
+    .success-container::before{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:800px;height:800px;background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);
+      pointer-events:none;opacity:.3
+    }
+    .success-content{
+      position:relative;z-index:1;text-align:center;max-width:650px;margin:0 auto;
+      background:#fff;padding:3rem;border-radius:20px;border:2px solid var(--border-light);
+      box-shadow:0 20px 60px rgba(0,0,0,.1)
+    }
+    .success-icon{
+      width:80px;height:80px;background:var(--green-success);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;
+      font-size:2.5rem;color:#fff
+    }
+    h1{font-size:2.5rem;font-weight:900;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
+    .success-message{font-size:1.25rem;color:var(--gray);margin-bottom:2rem;line-height:1.7}
+    .next-steps{
+      background:var(--off-white);padding:2rem;border-radius:16px;margin:2rem 0;text-align:left
+    }
+    .next-steps h2{font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:var(--black)}
+    .step{
+      display:flex;align-items:flex-start;margin-bottom:1rem;gap:1rem
+    }
+    .step-number{
+      width:30px;height:30px;background:var(--purple);color:#fff;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;
+      flex-shrink:0
+    }
+    .step-content{flex:1;color:var(--black-soft)}
+    .loading-spinner{
+      display:inline-block;width:20px;height:20px;border:2px solid var(--purple-glow);
+      border-top-color:var(--purple);border-radius:50%;animation:spin 1s linear infinite;
+      vertical-align:middle;margin-left:.5rem
+    }
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    .btn-dashboard{
+      display:inline-block;background:var(--purple);color:#fff;padding:1rem 2.5rem;
+      border-radius:10px;text-decoration:none;font-weight:700;transition:all .3s;
+      margin-top:1rem
+    }
+    .btn-dashboard:hover{background:var(--purple-darker);transform:translateY(-2px);box-shadow:0 10px 30px var(--purple-glow-strong)}
+    .support{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border-light);font-size:.875rem;color:var(--gray)}
+    .support a{color:var(--purple);text-decoration:none;font-weight:600}
+    .support a:hover{text-decoration:underline}
+    
+    /* Mobile */
+    @media (max-width:768px){
+      .success-content{padding:2rem}
+      h1{font-size:2rem}
+      .success-message{font-size:1.125rem}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav role="navigation">
+    <div class="nav-container">
+      <a href="/" class="logo">PILLAR</a>
+    </div>
+  </nav>
+
+  <!-- Success Content -->
+  <main class="success-container">
+    <div class="success-content">
+      <div class="success-icon">✓</div>
+      <h1>Welcome to PILLAR!</h1>
+      <p class="success-message">Your payment was successful. Your digital empire journey begins now.</p>
+      
+      <div class="next-steps">
+        <h2>What happens next?</h2>
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <strong>Check your email</strong> - You'll receive setup instructions within 5 minutes
+            <span class="loading-spinner" id="email-spinner"></span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <strong>Schedule your onboarding</strong> - Book a 30-minute call with our team
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <strong>Choose your domain</strong> - Browse our premium domains or bring your own
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <strong>Share your content</strong> - Send us your video, podcast, or documents
+          </div>
+        </div>
+      </div>
+      
+      <a href="#" class="btn-dashboard" id="dashboard-link">Access Your Dashboard →</a>
+      
+      <div class="support">
+        Need help? Contact us at <a href="mailto:support@pillarme.com">support@pillarme.com</a>
+        <br>or check your Stripe customer portal for billing details.
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Get session ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+    
+    if (sessionId) {
+      // Store for analytics/tracking
+      console.log('Checkout session:', sessionId);
+      
+      // You can fetch session details from your backend here
+      // fetchSessionDetails(sessionId);
+    }
+    
+    // Remove email spinner after 3 seconds
+    setTimeout(() => {
+      const spinner = document.getElementById('email-spinner');
+      if (spinner) spinner.style.display = 'none';
+    }, 3000);
+    
+    // Update dashboard link to Stripe customer portal
+    document.getElementById('dashboard-link').addEventListener('click', async (e) => {
+      e.preventDefault();
+      // In production, this would call your backend to create a portal session
+      alert('Customer portal integration coming soon. Check your email for management links.');
+    });
+  </script>
+</body>
+</html>
