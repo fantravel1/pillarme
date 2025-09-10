@@ -880,23 +880,41 @@
 
   <!-- Main JS -->
   <script defer>
-    // Stripe gate
+    // Stripe initialization
     let stripeLoaded = false;
     const checkStripe = setInterval(() => {
-      if (typeof Stripe !== 'undefined') { stripeLoaded = true; clearInterval(checkStripe); }
+      if (typeof Stripe !== 'undefined') { 
+        stripeLoaded = true; 
+        clearInterval(checkStripe); 
+      }
     }, 100);
   
-    // >>> ADD THIS: define your publishable key once <<<
+    // Your Stripe configuration
     const STRIPE_PUBLISHABLE_KEY = 'pk_live_51S2vUCJeHAducPhTXzQLx1XrXhJUMz9eEgrRAHDRToxyveueEeLRARfLYhZQu57r4JD253keBGfdDTSidfeMzE2H009wOgUuEB';
+    
+    // Your actual Stripe Price IDs
+    const STRIPE_PRICE_IDS = {
+      // Standard subscriptions
+      foundation: 'price_1S5lA9JeHAducPhTJ8d5wW52',         // $125/month
+      growth: 'price_1S5lDiJeHAducPhT4z9OsKuf',             // $425/month
+      authority: 'price_1S5lHDJeHAducPhT2hFMEgP2',          // $1000/month
+      empire: 'price_1S5lFIJeHAducPhTKgBGKVWE',             // $5000/month
+      
+      // Custom pricing
+      custom_foundation: 'price_1S5lIxJeHAducPhTn5319Pgr',   // $500 one-time
+      custom_growth: 'price_1S5lGUJeHAducPhTFSC6ECWz',       // $2000/month
+      custom_authority: 'price_1S5lHDJeHAducPhT2hFMEgP2',    // $5000/month (same as regular authority)
+      custom_empire: 'price_1S5lHsJeHAducPhTNUosbrsv'        // $25000/month
+    };
   
-    // Smooth scroll for same-page anchors (kept defensive)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-      anchor.addEventListener('click',e=>{
+    // Smooth scroll for same-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
         const href = anchor.getAttribute('href');
         const target = href && document.querySelector(href);
-        if(!target) return;
+        if (!target) return;
         e.preventDefault();
-        target.scrollIntoView({behavior:'smooth',block:'start'});
+        target.scrollIntoView({behavior: 'smooth', block: 'start'});
       });
     });
   
@@ -919,86 +937,106 @@
       });
     });
   
-    // Checkout handlers
-    document.getElementById('starter-checkout')?.addEventListener('click', handleCheckout);
-    document.getElementById('foundation-checkout')?.addEventListener('click', handleCheckout);
-    document.getElementById('growth-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_GROWTH_PRICE_ID'));
-    document.getElementById('authority-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_AUTHORITY_PRICE_ID'));
-    document.getElementById('empire-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_EMPIRE_PRICE_ID'));
-    document.getElementById('growth-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_GROWTH_CUSTOM_PRICE_ID'));
-    document.getElementById('authority-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_AUTHORITY_CUSTOM_PRICE_ID'));
-    document.getElementById('empire-custom-checkout')?.addEventListener('click', () => handleTierCheckout('price_YOUR_EMPIRE_CUSTOM_PRICE_ID'));
-  
-    // Generic tier checkout function
-    async function handleTierCheckout(priceId){
-      if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
+    // Generic subscription checkout handler
+    async function handleSubscriptionCheckout(priceId) {
+      if (!stripeLoaded || !priceId) { 
+        alert('Payment system is loading. Please try again in a moment.'); 
+        return; 
+      }
+      
       const loadingEl = document.querySelector('.loading');
-      if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
-      try{
-        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY); // use constant
+      if (loadingEl) { 
+        loadingEl.style.display = 'block'; 
+        loadingEl.setAttribute('aria-hidden', 'false'); 
+      }
+      
+      try {
+        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
         const { error } = await stripe.redirectToCheckout({
-          lineItems:[{ price: priceId, quantity:1 }],
-          mode:'subscription',
-          successUrl: window.location.origin + '/success',
-          cancelUrl: window.location.origin
+          lineItems: [{ price: priceId, quantity: 1 }],
+          mode: 'subscription',
+          successUrl: window.location.origin + '/success?session_id={CHECKOUT_SESSION_ID}',
+          cancelUrl: window.location.origin,
+          billingAddressCollection: 'required',
+          allowPromotionCodes: true
         });
-        if(error){ console.error('Stripe checkout error:', error); alert('Checkout error. Please try again.'); }
-      }catch(err){
-        console.error('Checkout error:', err); alert('Something went wrong. Please try again.');
-      }finally{
-        if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
+        
+        if (error) { 
+          console.error('Stripe checkout error:', error); 
+          alert('Checkout error: ' + (error.message || 'Please try again.')); 
+        }
+      } catch(err) {
+        console.error('Checkout error:', err); 
+        alert('Something went wrong. Please try again.');
+      } finally {
+        if (loadingEl) { 
+          loadingEl.style.display = 'none'; 
+          loadingEl.setAttribute('aria-hidden', 'true'); 
+        }
       }
     }
   
-    async function handleCheckout(){
-      if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
+    // One-time payment handler (Custom Foundation Setup)
+    async function handleOneTimeCheckout(priceId) {
+      if (!stripeLoaded || !priceId) { 
+        alert('Payment system is loading. Please try again in a moment.'); 
+        return; 
+      }
+      
       const loadingEl = document.querySelector('.loading');
-      if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
-      try{
-        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY); // use constant
+      if (loadingEl) { 
+        loadingEl.style.display = 'block'; 
+        loadingEl.setAttribute('aria-hidden', 'false'); 
+      }
+      
+      try {
+        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
         const { error } = await stripe.redirectToCheckout({
-          lineItems:[{ price:'price_YOUR_STARTER_PRICE_ID', quantity:1 }], // TODO: replace
-          mode:'subscription',
-          successUrl: window.location.origin + '/success',
-          cancelUrl: window.location.origin
+          lineItems: [{ price: priceId, quantity: 1 }],
+          mode: 'payment', // Note: 'payment' for one-time charges
+          successUrl: window.location.origin + '/success?session_id={CHECKOUT_SESSION_ID}&type=custom',
+          cancelUrl: window.location.origin + '#custom-domain-pricing',
+          billingAddressCollection: 'required'
         });
-        if(error){ console.error('Stripe checkout error:', error); alert('Checkout error. Please try again.'); }
-      }catch(err){
-        console.error('Checkout error:', err); alert('Something went wrong. Please try again.');
-      }finally{
-        if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
+        
+        if (error) { 
+          console.error('Stripe checkout error:', error); 
+          alert('Checkout error: ' + (error.message || 'Please try again.')); 
+        }
+      } catch(err) {
+        console.error('Checkout error:', err); 
+        alert('Something went wrong. Please try again.');
+      } finally {
+        if (loadingEl) { 
+          loadingEl.style.display = 'none'; 
+          loadingEl.setAttribute('aria-hidden', 'true'); 
+        }
       }
     }
   
-    // Custom domain checkout
-    document.getElementById('custom-foundation')?.addEventListener('click', async function(){
-      if(!stripeLoaded){ alert('Payment system is loading. Please try again in a moment.'); return; }
-      const loadingEl = document.querySelector('.loading');
-      if(loadingEl){ loadingEl.style.display='block'; loadingEl.setAttribute('aria-hidden','false'); }
-      try{
-        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY); // use constant
-        const { error } = await stripe.redirectToCheckout({
-          lineItems:[{ price:'price_YOUR_CUSTOM_FOUNDATION_PRICE_ID', quantity:1 }], // TODO: replace
-          mode:'subscription',
-          successUrl: window.location.origin + '/success?type=custom',
-          cancelUrl: window.location.origin + '#custom-domain-pricing'
-        });
-        if(error){ console.error('Stripe checkout error:', error); alert('Checkout error. Please try again.'); }
-      }catch(err){
-        console.error('Checkout error:', err); alert('Something went wrong. Please try again.');
-      }finally{
-        if(loadingEl){ loadingEl.style.display='none'; loadingEl.setAttribute('aria-hidden','true'); }
-      }
-    });
+    // Button click handlers - Foundation Package ($125/month)
+    document.getElementById('starter-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.foundation));
+    document.getElementById('foundation-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.foundation));
+    
+    // Other subscription packages
+    document.getElementById('growth-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.growth));
+    document.getElementById('authority-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.authority));
+    document.getElementById('empire-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.empire));
+    
+    // Custom domain options
+    document.getElementById('custom-foundation')?.addEventListener('click', () => handleOneTimeCheckout(STRIPE_PRICE_IDS.custom_foundation));
+    document.getElementById('growth-custom-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.custom_growth));
+    document.getElementById('authority-custom-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.custom_authority));
+    document.getElementById('empire-custom-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.custom_empire));
   
     // Back link smooth scroll
-    document.querySelector('.link-back')?.addEventListener('click', e=>{
+    document.querySelector('.link-back')?.addEventListener('click', e => {
       e.preventDefault();
-      document.querySelector('#products')?.scrollIntoView({behavior:'smooth'});
+      document.querySelector('#products')?.scrollIntoView({behavior: 'smooth'});
     });
   
     // Rotating headlines
-    const headlines=[
+    const headlines = [
       "Your Expertise is Worth $50K+/Year Online. We Build It.",
       "Turn Your Knowledge Into $10K/Month. Starting Today.",
       "Your Ideas Generate $100K+/Year. We Make It Happen.",
@@ -1011,20 +1049,27 @@
       "Your Knowledge = $250K Asset. Still Waiting?",
       "Every Expert Needs a $100K Website. Where's Yours?"
     ];
-    let currentHeadline=0;
-    const headlineElement=document.getElementById('rotating-headline');
-    function rotateHeadline(){
-      if(!headlineElement) return;
-      currentHeadline=(currentHeadline+1)%headlines.length;
-      headlineElement.style.opacity='0';
-      setTimeout(()=>{ headlineElement.textContent=headlines[currentHeadline]; headlineElement.style.opacity='1'; },500);
+    let currentHeadline = 0;
+    const headlineElement = document.getElementById('rotating-headline');
+    
+    function rotateHeadline() {
+      if (!headlineElement) return;
+      currentHeadline = (currentHeadline + 1) % headlines.length;
+      headlineElement.style.opacity = '0';
+      setTimeout(() => { 
+        headlineElement.textContent = headlines[currentHeadline]; 
+        headlineElement.style.opacity = '1'; 
+      }, 500);
     }
-    setInterval(rotateHeadline,4000);
+    
+    setInterval(rotateHeadline, 4000);
   
     // Lazy-load helper
-    if('loading' in HTMLImageElement.prototype){
-      const images=document.querySelectorAll('img[loading="lazy"]');
-      images.forEach(img=>{ img.src = img.dataset.src || img.src; });
+    if ('loading' in HTMLImageElement.prototype) {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img => { 
+        img.src = img.dataset.src || img.src; 
+      });
     }
   </script>
 </body>
