@@ -147,6 +147,33 @@
     .domain-item.tier-ultra .domain-price{color:var(--gold);font-weight:700}
     .domain-item.tier-ultra:hover{box-shadow:0 10px 30px var(--gold-glow)}
     
+    /* ===== NEW: Rent Me Hover Effect ===== */
+    .domain-item::after{
+      content:'Click to Rent';
+      position:absolute;
+      top:50%;left:50%;
+      transform:translate(-50%,-50%) scale(0.8);
+      background:var(--purple);
+      color:#fff;
+      padding:.5rem 1.5rem;
+      border-radius:50px;
+      font-weight:700;
+      font-size:.875rem;
+      opacity:0;
+      transition:all .3s;
+      pointer-events:none;
+      box-shadow:0 5px 20px rgba(139,0,255,.3);
+    }
+    .domain-item:hover::after{
+      opacity:1;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    .domain-item.tier-ultra::after{
+      background:var(--gold);
+      color:#000;
+      box-shadow:0 5px 20px rgba(255,215,0,.5);
+    }
+    
     /* Featured domains */
     .featured-domains{
       padding:4rem 2rem;background:var(--black);color:#fff;margin-bottom:4rem
@@ -158,7 +185,8 @@
     }
     .featured-card{
       background:rgba(255,255,255,.05);border:2px solid var(--purple);border-radius:20px;
-      padding:2rem;text-align:center;transition:all .3s;position:relative;overflow:hidden
+      padding:2rem;text-align:center;transition:all .3s;position:relative;overflow:hidden;
+      cursor:pointer;
     }
     .featured-card::before{
       content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
@@ -212,6 +240,147 @@
     .footer-links a:hover{color:var(--purple)}
     .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
 
+    /* Modal styles */
+    .rental-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-content h2 {
+      color: var(--black);
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .price-display {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--purple);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-display.gold {
+      color: var(--gold);
+    }
+
+    .modal-info {
+      background: var(--off-white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .modal-info p {
+      margin-bottom: 1rem;
+      color: var(--gray);
+    }
+
+    .domain-display {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 2px solid var(--border-light);
+    }
+
+    .domain-display code {
+      flex: 1;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--purple);
+      font-family: monospace;
+    }
+
+    .copy-btn {
+      background: var(--purple);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover {
+      background: var(--purple-darker);
+      transform: scale(1.05);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn-proceed {
+      background: var(--purple);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-proceed:hover {
+      background: var(--purple-darker);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px var(--purple-glow);
+    }
+
+    .btn-cancel {
+      background: transparent;
+      color: var(--gray);
+      border: 2px solid var(--border-light);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-cancel:hover {
+      border-color: var(--gray);
+      color: var(--black);
+    }
+
     /* Mobile */
     @media (max-width:768px){
       nav ul{display:none}
@@ -231,6 +400,23 @@
       .footer-container{flex-direction:column;text-align:center}
       .footer-left{flex-direction:column;gap:.5rem;align-items:center}
       .footer-links{flex-direction:column;gap:1rem}
+      .domain-item::after{font-size:.75rem;padding:.4rem 1rem}
+      .modal-content {
+        padding: 2rem;
+        margin: 1rem;
+      }
+      .modal-content h2 {
+        font-size: 1.5rem;
+      }
+      .domain-display {
+        flex-direction: column;
+      }
+      .modal-actions {
+        flex-direction: column;
+      }
+      .btn-proceed, .btn-cancel {
+        width: 100%;
+      }
     }
   </style>
 
@@ -317,32 +503,36 @@
       <div class="featured-container">
         <h2>Ultra-Premium Domains</h2>
         <div class="featured-grid">
-          <article class="featured-card ultra">
-            <h3 class="featured-domain">Guuru.com</h3>
-            <div class="featured-price">$2,500<small>/month</small></div>
-            <p class="featured-value">Estimated value: $2.5M+</p>
-            <a href="#contact" class="featured-cta">Claim This Domain</a>
-          </article>
-          
-          <article class="featured-card ultra">
-            <h3 class="featured-domain">Aeroo.com</h3>
-            <div class="featured-price">$1,500<small>/month</small></div>
-            <p class="featured-value">Estimated value: $1.8M+</p>
-            <a href="#contact" class="featured-cta">Claim This Domain</a>
-          </article>
-          
-          <article class="featured-card">
+          <!-- NFTDL.com - NOW GOLD TIER $1,000 -->
+          <article class="featured-card ultra" data-domain="NFTDL.com" data-price="$1,000/month">
             <h3 class="featured-domain">NFTDL.com</h3>
-            <div class="featured-price">$500<small>/month</small></div>
+            <div class="featured-price">$1,000<small>/month</small></div>
             <p class="featured-value">Crypto/NFT Authority</p>
-            <a href="#contact" class="featured-cta">Reserve Now</a>
+            <a href="#" class="featured-cta">Claim This Domain</a>
           </article>
           
-          <article class="featured-card">
+          <!-- Aeroo.com - GOLD TIER $1,000 -->
+          <article class="featured-card ultra" data-domain="Aeroo.com" data-price="$1,000/month">
+            <h3 class="featured-domain">Aeroo.com</h3>
+            <div class="featured-price">$1,000<small>/month</small></div>
+            <p class="featured-value">Estimated value: $1.8M+</p>
+            <a href="#" class="featured-cta">Claim This Domain</a>
+          </article>
+          
+          <!-- Guuru.com - NOW PURPLE TIER $500 -->
+          <article class="featured-card" data-domain="Guuru.com" data-price="$500/month">
+            <h3 class="featured-domain">Guuru.com</h3>
+            <div class="featured-price">$500<small>/month</small></div>
+            <p class="featured-value">Estimated value: $2.5M+</p>
+            <a href="#" class="featured-cta">Reserve Now</a>
+          </article>
+          
+          <!-- DJMeet.com stays the same -->
+          <article class="featured-card" data-domain="DJMeet.com" data-price="$400/month">
             <h3 class="featured-domain">DJMeet.com</h3>
             <div class="featured-price">$400<small>/month</small></div>
             <p class="featured-value">Music Industry Leader</p>
-            <a href="#contact" class="featured-cta">Reserve Now</a>
+            <a href="#" class="featured-cta">Reserve Now</a>
           </article>
         </div>
       </div>
@@ -440,9 +630,10 @@
               <span class="domain-name">SmallExpenses.com</span>
               <span class="domain-price">$25/mo</span>
             </div>
+            <!-- NFTDL.com - UPDATED TO $1,000 -->
             <div class="domain-item tier-ultra" data-name="nftdl.com">
               <span class="domain-name">NFTDL.com</span>
-              <span class="domain-price">$500/mo</span>
+              <span class="domain-price">$1,000/mo</span>
             </div>
             <div class="domain-item" data-name="portfolionft.com">
               <span class="domain-name">PortfolioNFT.com</span>
@@ -566,9 +757,10 @@
             <span class="category-count">30+ domains</span>
           </div>
           <div class="domain-grid">
+            <!-- Aeroo.com - ALREADY CORRECTLY SHOWING $1,000 -->
             <div class="domain-item tier-ultra" data-name="aeroo.com">
               <span class="domain-name">Aeroo.com</span>
-              <span class="domain-price">$1,500/mo</span>
+              <span class="domain-price">$1,000/mo</span>
             </div>
             <div class="domain-item tier-premium" data-name="siliconvalleygiants.com">
               <span class="domain-name">SiliconValleyGiants.com</span>
@@ -646,9 +838,10 @@
             <span class="category-count">85+ domains</span>
           </div>
           <div class="domain-grid">
-            <div class="domain-item tier-ultra" data-name="guuru.com">
+            <!-- Guuru.com - UPDATED TO PURPLE TIER $500 -->
+            <div class="domain-item tier-premium" data-name="guuru.com">
               <span class="domain-name">Guuru.com</span>
-              <span class="domain-price">$2,500/mo</span>
+              <span class="domain-price">$500/mo</span>
             </div>
             <div class="domain-item" data-name="historicleaders.com">
               <span class="domain-name">HistoricLeaders.com</span>
@@ -922,6 +1115,108 @@
 
   <!-- Main JS -->
   <script>
+    // Stripe payment links - UPDATED WITH ALL 3 LINKS
+    const DOMAIN_PAYMENT_LINK = 'https://buy.stripe.com/fZuaEYg8Cb33a8LgqF8AE03'; // Standard $25/month
+    const ULTRA_PREMIUM_1_LINK = 'https://buy.stripe.com/7sY3cw3lQb33cgTdet8AE04'; // Purple ultra-premium $500/month
+    const ULTRA_PREMIUM_2_LINK = 'https://buy.stripe.com/9B6dRa3lQ7QR3Kndet8AE05'; // Gold ultra-premium $1000/month
+
+    // Domain rental modal function
+    function rentDomain(domainName, price) {
+      // Determine if this is a gold tier domain
+      const priceMatch = price.match(/\$?([\d,]+)/);
+      const isGoldTier = priceMatch && parseInt(priceMatch[1].replace(',', '')) >= 1000;
+      
+      // Create modal
+      const modal = document.createElement('div');
+      modal.className = 'rental-modal';
+      modal.innerHTML = `
+        <div class="modal-content">
+          <h2>Ready to rent ${domainName}?</h2>
+          <p class="price-display${isGoldTier ? ' gold' : ''}">${price}</p>
+          <div class="modal-info">
+            <p><strong>Important:</strong> You'll need to enter this domain name on the next page.</p>
+            <div class="domain-display">
+              <code>${domainName}</code>
+              <button class="copy-btn" onclick="copyDomain('${domainName}')">📋 Copy</button>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn-proceed" onclick="proceedToPayment('${domainName}', '${price}')">Continue to Payment →</button>
+            <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    // Copy domain function
+    window.copyDomain = function(domainName) {
+      navigator.clipboard.writeText(domainName).then(() => {
+        const copyBtn = document.querySelector('.copy-btn');
+        copyBtn.textContent = '✓ Copied!';
+        copyBtn.style.background = 'var(--green-success)';
+        copyBtn.style.color = 'white';
+      }).catch(err => {
+        // Fallback
+        const textArea = document.createElement('textarea');
+        textArea.value = domainName;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        const copyBtn = document.querySelector('.copy-btn');
+        copyBtn.textContent = '✓ Copied!';
+      });
+    }
+
+    // Proceed to payment - UPDATED WITH SMART ROUTING
+    window.proceedToPayment = function(domainName, priceString) {
+      // Copy one more time
+      navigator.clipboard.writeText(domainName).catch(() => {
+        const textArea = document.createElement('textarea');
+        textArea.value = domainName;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      });
+      
+      // Store in sessionStorage
+      sessionStorage.setItem('selectedDomain', domainName);
+      sessionStorage.setItem('domainTimestamp', new Date().toISOString());
+      
+      // Determine which payment link to use based on price
+      let paymentUrl = DOMAIN_PAYMENT_LINK; // Default $25
+      
+      // Extract price amount
+      const priceMatch = priceString.match(/\$?([\d,]+)/);
+      if (priceMatch) {
+        const price = parseInt(priceMatch[1].replace(',', ''));
+        
+        // Ultra-premium domains (gold tier) - $1000
+        if (price >= 1000 || domainName === 'NFTDL.com' || domainName === 'Aeroo.com') {
+          paymentUrl = ULTRA_PREMIUM_2_LINK;
+        }
+        // Ultra-premium domains (purple tier) - $500
+        else if (price === 500 || domainName === 'Guuru.com') {
+          paymentUrl = ULTRA_PREMIUM_1_LINK;
+        }
+        // Special cases for other high-value domains ($400-$999)
+        else if (price >= 400 && price < 1000) {
+          paymentUrl = ULTRA_PREMIUM_1_LINK; // Use $500 tier link
+        }
+      }
+      
+      // Redirect
+      window.location.href = paymentUrl;
+    }
+
+    // Close modal
+    window.closeModal = function() {
+      const modal = document.querySelector('.rental-modal');
+      if (modal) modal.remove();
+    }
+
     // Mobile menu
     const mobileMenu = document.querySelector('.mobile-menu');
     const navList = document.querySelector('nav ul');
@@ -991,6 +1286,43 @@
       if (e.key === 'Enter') {
         performSearch();
       }
+    });
+
+    // Make all domain items clickable
+    document.addEventListener('DOMContentLoaded', function() {
+      // Regular domain items
+      document.querySelectorAll('.domain-item').forEach(item => {
+        const domainName = item.querySelector('.domain-name').textContent;
+        const price = item.querySelector('.domain-price').textContent;
+        
+        item.onclick = () => rentDomain(domainName, price);
+      });
+      
+      // Featured cards (whole card clickable except CTA)
+      document.querySelectorAll('.featured-card').forEach(card => {
+        const domainName = card.getAttribute('data-domain');
+        const price = card.getAttribute('data-price');
+        
+        card.onclick = (e) => {
+          // Don't trigger if clicking the CTA button
+          if (!e.target.classList.contains('featured-cta')) {
+            rentDomain(domainName, price);
+          }
+        };
+        
+        // Handle CTA clicks separately
+        const cta = card.querySelector('.featured-cta');
+        cta.onclick = (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          rentDomain(domainName, price);
+        };
+      });
+    });
+
+    // ESC key to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
     });
   </script>
 </body>
