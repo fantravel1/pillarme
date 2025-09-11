@@ -131,9 +131,29 @@
     .domain-item:hover{
       border-color:var(--purple);transform:translateY(-3px);box-shadow:0 10px 30px var(--purple-glow)
     }
+    
+    /* NEW: Domain details structure */
+    .domain-details{
+      flex:1;display:flex;flex-direction:column;gap:3px
+    }
     .domain-name{font-size:1.125rem;font-weight:700;color:var(--black)}
+    .domain-meta{
+      font-size:0.75rem;color:var(--gray-light);display:flex;gap:0.5rem;
+      align-items:center
+    }
+    .domain-value{color:var(--gray)}
+    .separator{opacity:0.4}
+    .domain-savings{color:var(--purple);font-weight:500}
     .domain-price{
-      font-size:.875rem;font-weight:600;color:var(--purple);white-space:nowrap
+      font-size:1rem;font-weight:700;color:var(--purple);white-space:nowrap;
+      align-self:flex-start;margin-top:4px
+    }
+    
+    /* Mobile: Hide separator and savings on all mobile devices */
+    @media (max-width: 768px) {
+      .separator, .domain-savings {
+        display: none;
+      }
     }
     
     /* Domain tiers */
@@ -146,9 +166,10 @@
       border-color:var(--gold)
     }
     .domain-item.tier-ultra .domain-price{color:var(--gold);font-weight:700}
+    .domain-item.tier-ultra .domain-savings{color:var(--gold)}
     .domain-item.tier-ultra:hover{box-shadow:0 10px 30px var(--gold-glow)}
     
-    /* ===== NEW: Rent Me Hover Effect ===== */
+    /* ===== Rent Me Hover Effect ===== */
     .domain-item::after{
       content:'Click to Rent';
       position:absolute;
@@ -208,9 +229,11 @@
     .featured-card.ultra .featured-price{color:var(--gold);text-shadow:0 0 20px var(--gold-glow)}
     .featured-price small{font-size:1rem;font-weight:500;color:rgba(255,255,255,.7)}
     .featured-value{font-size:1rem;color:rgba(255,255,255,.6);margin-bottom:2rem}
+    .featured-savings{font-size:0.875rem;color:rgba(255,255,255,.8);font-weight:600;margin-top:0.5rem}
     .featured-cta{
       display:inline-block;background:var(--purple);color:#fff;padding:1rem 2.5rem;
-      border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s
+      border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s;
+      margin-top:1rem
     }
     .featured-cta:hover{background:var(--purple-darker);transform:scale(1.05)}
     .featured-card.ultra .featured-cta{background:var(--gold);color:#000}
@@ -306,6 +329,20 @@
       margin-bottom: 1rem;
       color: var(--gray);
     }
+    
+    .modal-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .value-highlight {
+      font-size: 1.125rem;
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    .savings-highlight {
+      color: var(--green-success);
+    }
 
     .domain-display {
       display: flex;
@@ -315,6 +352,7 @@
       padding: 1rem;
       border-radius: 8px;
       border: 2px solid var(--border-light);
+      margin-top: 1rem;
     }
 
     .domain-display code {
@@ -418,6 +456,9 @@
       .btn-proceed, .btn-cancel {
         width: 100%;
       }
+      .domain-meta {
+        font-size: 0.7rem;
+      }
     }
   </style>
 
@@ -505,42 +546,47 @@
         <h2>Ultra-Premium Domains</h2>
         <div class="featured-grid">
           <!-- NFTDL.com - NOW GOLD TIER $1,000 -->
-          <article class="featured-card ultra" data-domain="NFTDL.com" data-price="$1,000/month">
+          <article class="featured-card ultra" data-domain="NFTDL.com" data-price="$1,000/month" data-value="1500000">
             <h3 class="featured-domain">NFTDL.com</h3>
             <div class="featured-price">$1,000<small>/month</small></div>
-            <p class="featured-value">Crypto/NFT Authority</p>
+            <p class="featured-value">Estimated value: $1.5M+</p>
+            <p class="featured-savings">Save 99.92% vs buying</p>
             <a href="#" class="featured-cta">Claim This Domain</a>
           </article>
           
           <!-- Aeroo.com - GOLD TIER $1,000 -->
-          <article class="featured-card ultra" data-domain="Aeroo.com" data-price="$1,000/month">
+          <article class="featured-card ultra" data-domain="Aeroo.com" data-price="$1,000/month" data-value="1500000">
             <h3 class="featured-domain">Aeroo.com</h3>
             <div class="featured-price">$1,000<small>/month</small></div>
             <p class="featured-value">Estimated value: $1.5M+</p>
+            <p class="featured-savings">Save 99.92% vs buying</p>
             <a href="#" class="featured-cta">Claim This Domain</a>
           </article>
           
           <!-- Guuru.com - NOW PURPLE TIER $500 -->
-          <article class="featured-card" data-domain="Guuuru.com" data-price="$500/month">
+          <article class="featured-card" data-domain="Guuuru.com" data-price="$500/month" data-value="500000">
             <h3 class="featured-domain">Guuuru.com</h3>
             <div class="featured-price">$500<small>/month</small></div>
             <p class="featured-value">Estimated value: $500k+</p>
+            <p class="featured-savings">Save 99.88% vs buying</p>
             <a href="#" class="featured-cta">Reserve Now</a>
           </article>
           
           <!-- DJMeet.com stays the same -->
-          <article class="featured-card" data-domain="DJMeet.com" data-price="$500/month">
+          <article class="featured-card" data-domain="DJMeet.com" data-price="$500/month" data-value="250000">
             <h3 class="featured-domain">DJMeet.com</h3>
             <div class="featured-price">$500<small>/month</small></div>
-            <p class="featured-value">Music Industry Leader</p>
+            <p class="featured-value">Estimated value: $250k+</p>
+            <p class="featured-savings">Save 99.76% vs buying</p>
             <a href="#" class="featured-cta">Reserve Now</a>
           </article>
 
           <!-- TVCeleb.com stays the same -->
-          <article class="featured-card" data-domain="TVCeleb.com" data-price="$500/month">
+          <article class="featured-card" data-domain="TVCeleb.com" data-price="$500/month" data-value="350000">
             <h3 class="featured-domain">TVCeleb.com</h3>
             <div class="featured-price">$500<small>/month</small></div>
-            <p class="featured-value">Fandom Megasite</p>
+            <p class="featured-value">Estimated value: $350k+</p>
+            <p class="featured-savings">Save 99.83% vs buying</p>
             <a href="#" class="featured-cta">Reserve Now</a>
           </article>
         </div>
@@ -557,72 +603,191 @@
             <span class="category-count">150+ domains</span>
           </div>
           <div class="domain-grid">
-            <div class="domain-item" data-name="nyc-premium.com">
-              <span class="domain-name">NYCPremium.com</span>
+            <div class="domain-item" data-name="nyc-premium.com" data-value="75000">
+              <div class="domain-details">
+                <span class="domain-name">NYCPremium.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $75,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="tokyoceleb.com">
-              <span class="domain-name">TokyoCeleb.com</span>
+            <div class="domain-item" data-name="tokyoceleb.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">TokyoCeleb.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="thrifthotels.com">
-              <span class="domain-name">ThriftHotels.com</span>
+            <div class="domain-item" data-name="thrifthotels.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">ThriftHotels.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="dailybeaches.com">
-              <span class="domain-name">DailyBeaches.com</span>
+            <div class="domain-item" data-name="dailybeaches.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">DailyBeaches.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="hotparks.com">
-              <span class="domain-name">HotParks.com</span>
+            <div class="domain-item" data-name="hotparks.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">HotParks.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="fastconcert.com">
-              <span class="domain-name">FastConcert.com</span>
+            <div class="domain-item" data-name="fastconcert.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">FastConcert.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="cheapfan.com">
-              <span class="domain-name">CheapFan.com</span>
+            <div class="domain-item" data-name="cheapfan.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">CheapFan.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="wealthyshopping.com">
-              <span class="domain-name">WealthyShopping.com</span>
+            <div class="domain-item" data-name="wealthyshopping.com" data-value="60000">
+              <div class="domain-details">
+                <span class="domain-name">WealthyShopping.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $60,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="billionairecasual.com">
-              <span class="domain-name">BillionaireCasual.com</span>
+            <div class="domain-item" data-name="billionairecasual.com" data-value="80000">
+              <div class="domain-details">
+                <span class="domain-name">BillionaireCasual.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $80,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="hotvenues.com">
-              <span class="domain-name">HotVenues.com</span>
+            <div class="domain-item" data-name="hotvenues.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">HotVenues.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="hikefan.com">
-              <span class="domain-name">HikeFan.com</span>
+            <div class="domain-item" data-name="hikefan.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">HikeFan.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="travelgambling.com">
-              <span class="domain-name">TravelGambling.com</span>
+            <div class="domain-item" data-name="travelgambling.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">TravelGambling.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="travelceleb.com">
-              <span class="domain-name">TravelCeleb.com</span>
+            <div class="domain-item" data-name="travelceleb.com" data-value="55000">
+              <div class="domain-details">
+                <span class="domain-name">TravelCeleb.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $55,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="fanhostel.com">
-              <span class="domain-name">FanHostel.com</span>
+            <div class="domain-item" data-name="fanhostel.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">FanHostel.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="dormtravel.com">
-              <span class="domain-name">DormTravel.com</span>
+            <div class="domain-item" data-name="dormtravel.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">DormTravel.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="realitytvtravel.com">
-              <span class="domain-name">RealityTVTravel.com</span>
+            <div class="domain-item" data-name="realitytvtravel.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">RealityTVTravel.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="ticketsecret.com">
-              <span class="domain-name">TicketSecret.com</span>
+            <div class="domain-item" data-name="ticketsecret.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">TicketSecret.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
           </div>
@@ -635,36 +800,92 @@
             <span class="category-count">25+ domains</span>
           </div>
           <div class="domain-grid">
-            <div class="domain-item tier-premium" data-name="banksize.com">
-              <span class="domain-name">BankSize.com</span>
+            <div class="domain-item tier-premium" data-name="banksize.com" data-value="150000">
+              <div class="domain-details">
+                <span class="domain-name">BankSize.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $150,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item tier-premium" data-name="goldmadeeasy.com">
-              <span class="domain-name">GoldMadeEasy.com</span>
+            <div class="domain-item tier-premium" data-name="goldmadeeasy.com" data-value="120000">
+              <div class="domain-details">
+                <span class="domain-name">GoldMadeEasy.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $120,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="dayinvestors.com">
-              <span class="domain-name">DayInvestors.com</span>
+            <div class="domain-item" data-name="dayinvestors.com" data-value="75000">
+              <div class="domain-details">
+                <span class="domain-name">DayInvestors.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $75,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="smallexpenses.com">
-              <span class="domain-name">SmallExpenses.com</span>
+            <div class="domain-item" data-name="smallexpenses.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">SmallExpenses.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="portfolionft.com">
-              <span class="domain-name">PortfolioNFT.com</span>
+            <div class="domain-item" data-name="portfolionft.com" data-value="90000">
+              <div class="domain-details">
+                <span class="domain-name">PortfolioNFT.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $90,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.7% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="currencyrating.com">
-              <span class="domain-name">CurrencyRating.com</span>
+            <div class="domain-item tier-premium" data-name="currencyrating.com" data-value="200000">
+              <div class="domain-details">
+                <span class="domain-name">CurrencyRating.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $200,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.7% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$525/mo</span>
             </div>
-            <div class="domain-item" data-name="yourbestmoney.com">
-              <span class="domain-name">YourBestMoney.com</span>
+            <div class="domain-item" data-name="yourbestmoney.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">YourBestMoney.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="studentloanu.com">
-              <span class="domain-name">StudentLoanU.com</span>
+            <div class="domain-item" data-name="studentloanu.com" data-value="60000">
+              <div class="domain-details">
+                <span class="domain-name">StudentLoanU.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $60,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
           </div>
@@ -677,60 +898,136 @@
             <span class="category-count">40+ domains</span>
           </div>
           <div class="domain-grid">
-            <div class="domain-item tier-premium" data-name="runplayer.com">
-              <span class="domain-name">RunPlayer.com</span>
+            <div class="domain-item tier-premium" data-name="runplayer.com" data-value="80000">
+              <div class="domain-details">
+                <span class="domain-name">RunPlayer.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $80,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="teamworkfitness.com">
-              <span class="domain-name">TeamworkFitness.com</span>
+            <div class="domain-item" data-name="teamworkfitness.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">TeamworkFitness.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="tennisopens.com">
-              <span class="domain-name">TennisOpens.com</span>
+            <div class="domain-item" data-name="tennisopens.com" data-value="65000">
+              <div class="domain-details">
+                <span class="domain-name">TennisOpens.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $65,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="herobasketball.com">
-              <span class="domain-name">HeroBasketball.com</span>
+            <div class="domain-item" data-name="herobasketball.com" data-value="55000">
+              <div class="domain-details">
+                <span class="domain-name">HeroBasketball.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $55,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="hockeyclasses.com">
-              <span class="domain-name">HockeyClasses.com</span>
+            <div class="domain-item" data-name="hockeyclasses.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">HockeyClasses.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="heavierweight.com">
-              <span class="domain-name">HeavierWeight.com</span>
+            <div class="domain-item" data-name="heavierweight.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">HeavierWeight.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="boxerpride.com">
-              <span class="domain-name">BoxerPride.com</span>
+            <div class="domain-item" data-name="boxerpride.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">BoxerPride.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="allstaryoga.com">
-              <span class="domain-name">AllStarYoga.com</span>
+            <div class="domain-item" data-name="allstaryoga.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">AllStarYoga.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="girlpilates.com">
-              <span class="domain-name">GirlPilates.com</span>
+            <div class="domain-item" data-name="girlpilates.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">GirlPilates.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="athleticplayers.com">
-              <span class="domain-name">AthleticPlayhers.com</span>
+            <div class="domain-item" data-name="athleticplayers.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">AthleticPlayers.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="dailyathletics.com">
-              <span class="domain-name">DailyAthletics.com</span>
+            <div class="domain-item" data-name="dailyathletics.com" data-value="55000">
+              <div class="domain-details">
+                <span class="domain-name">DailyAthletics.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $55,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="herobasketball.com">
-              <span class="domain-name">HeroBasketball.com</span>
-              <span class="domain-price">$25/mo</span>
-            </div>
-            <div class="domain-item" data-name="nowbmx.com">
-              <span class="domain-name">NowBMX.com</span>
-              <span class="domain-price">$25/mo</span>
-            </div>
-            <div class="domain-item" data-name="allstaryoga.com">
-              <span class="domain-name">AllStarYoga.com</span>
+            <div class="domain-item" data-name="nowbmx.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">NowBMX.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
           </div>
@@ -743,44 +1040,114 @@
             <span class="category-count">80+ domains</span>
           </div>
           <div class="domain-grid">
-            <div class="domain-item tier-premium" data-name="menutopics.com">
-              <span class="domain-name">MenuTopics.com</span>
+            <div class="domain-item tier-premium" data-name="menutopics.com" data-value="100000">
+              <div class="domain-details">
+                <span class="domain-name">MenuTopics.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $100,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.7% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="eataffordable.com">
-              <span class="domain-name">EatAffordable.com</span>
+            <div class="domain-item" data-name="eataffordable.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">EatAffordable.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="customgrilling.com">
-              <span class="domain-name">CustomGrilling.com</span>
+            <div class="domain-item" data-name="customgrilling.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">CustomGrilling.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="luxuryspices.com">
-              <span class="domain-name">LuxurySpices.com</span>
+            <div class="domain-item" data-name="luxuryspices.com" data-value="65000">
+              <div class="domain-details">
+                <span class="domain-name">LuxurySpices.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $65,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="bartipping.com">
-              <span class="domain-name">BarTipping.com</span>
+            <div class="domain-item" data-name="bartipping.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">BarTipping.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="brunchef.com">
-              <span class="domain-name">BrunchChef.com</span>
+            <div class="domain-item" data-name="brunchchef.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">BrunchChef.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="hummusheaven.com">
-              <span class="domain-name">HummusHeaven.com</span>
+            <div class="domain-item" data-name="hummusheaven.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">HummusHeaven.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="yogurtgirl.com">
-              <span class="domain-name">YogurtGirl.com</span>
+            <div class="domain-item" data-name="yogurtgirl.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">YogurtGirl.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="nearmehinese.com">
-              <span class="domain-name">NearMeChinese.com</span>
+            <div class="domain-item" data-name="nearmechinese.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">NearMeChinese.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="vegansalt.com">
-              <span class="domain-name">VeganSalt.com</span>
+            <div class="domain-item" data-name="vegansalt.com" data-value="18000">
+              <div class="domain-details">
+                <span class="domain-name">VeganSalt.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $18,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
           </div>
@@ -793,40 +1160,103 @@
             <span class="category-count">30+ domains</span>
           </div>
           <div class="domain-grid">
-            <div class="domain-item tier-premium" data-name="siliconvalleygiants.com">
-              <span class="domain-name">SiliconValleyGiants.com</span>
+            <div class="domain-item tier-premium" data-name="siliconvalleygiants.com" data-value="150000">
+              <div class="domain-details">
+                <span class="domain-name">SiliconValleyGiants.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $150,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="engineeringengineer.com">
-              <span class="domain-name">EngineeringEngineer.com</span>
+            <div class="domain-item" data-name="engineeringengineer.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">EngineeringEngineer.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="machinemachines.com">
-              <span class="domain-name">MachineMachines.com</span>
+            <div class="domain-item" data-name="machinemachines.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">MachineMachines.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="labhow.com">
-              <span class="domain-name">LabHow.com</span>
+            <div class="domain-item" data-name="labhow.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">LabHow.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="bestofrobot.com">
-              <span class="domain-name">BestOfRobot.com</span>
+            <div class="domain-item" data-name="bestofrobot.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">BestOfRobot.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="mobilebuilds.com">
-              <span class="domain-name">MobileBuilds.com</span>
+            <div class="domain-item" data-name="mobilebuilds.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">MobileBuilds.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="lostwebsites.com">
-              <span class="domain-name">LostWebsites.com</span>
+            <div class="domain-item" data-name="lostwebsites.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">LostWebsites.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="realgiantrobots.com">
-              <span class="domain-name">RealGiantRobots.com</span>
+            <div class="domain-item" data-name="realgiantrobots.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">RealGiantRobots.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="buildingaxles.com">
-              <span class="domain-name">BuildingAxles.com</span>
+            <div class="domain-item" data-name="buildingaxles.com" data-value="15000">
+              <div class="domain-details">
+                <span class="domain-name">BuildingAxles.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $15,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
           </div>
@@ -839,44 +1269,114 @@
             <span class="category-count">25+ domains</span>
           </div>
            <div class="domain-grid">
-            <div class="domain-item tier-premium" data-name="selectmovie.com">
-              <span class="domain-name">SelectMovie.com</span>
+            <div class="domain-item tier-premium" data-name="selectmovie.com" data-value="120000">
+              <div class="domain-details">
+                <span class="domain-name">SelectMovie.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $120,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="herclip.com">
-              <span class="domain-name">HerClip.com</span>
+            <div class="domain-item" data-name="herclip.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">HerClip.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="videoamelive.com">
-              <span class="domain-name">VideoGameLive.com</span>
+            <div class="domain-item" data-name="videogamelive.com" data-value="60000">
+              <div class="domain-details">
+                <span class="domain-name">VideoGameLive.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $60,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="gamelibraries.com">
-              <span class="domain-name">GameLibraries.com</span>
+            <div class="domain-item" data-name="gamelibraries.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">GameLibraries.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="festivalmovie.com">
-              <span class="domain-name">FestivalMovie.com</span>
+            <div class="domain-item" data-name="festivalmovie.com" data-value="55000">
+              <div class="domain-details">
+                <span class="domain-name">FestivalMovie.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $55,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="toptenblogs.com">
-              <span class="domain-name">TopTenBlogs.com</span>
+            <div class="domain-item" data-name="toptenblogs.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">TopTenBlogs.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="academyoffilm.com">
-              <span class="domain-name">AcademyOfFilm.com</span>
+            <div class="domain-item" data-name="academyoffilm.com" data-value="75000">
+              <div class="domain-details">
+                <span class="domain-name">AcademyOfFilm.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $75,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="favoriteimage.com">
-              <span class="domain-name">FavoriteImage.com</span>
+            <div class="domain-item" data-name="favoriteimage.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">FavoriteImage.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="tvlast.com">
-              <span class="domain-name">TVLast.com</span>
+            <div class="domain-item" data-name="tvlast.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">TVLast.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="movieceleb.com">
-              <span class="domain-name">MovieCeleb.com</span>
+            <div class="domain-item" data-name="movieceleb.com" data-value="65000">
+              <div class="domain-details">
+                <span class="domain-name">MovieCeleb.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $65,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
           </div>
@@ -889,240 +1389,653 @@
             <span class="category-count">85+ domains</span>
           </div>
           <div class="domain-grid">
-            <div class="domain-item" data-name="historicleaders.com">
-              <span class="domain-name">HistoricLeaders.com</span>
+            <div class="domain-item" data-name="historicleaders.com" data-value="85000">
+              <div class="domain-details">
+                <span class="domain-name">HistoricLeaders.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $85,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="thedalai.com">
-              <span class="domain-name">TheDalai.com</span>
+            <div class="domain-item" data-name="thedalai.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">TheDalai.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="historyawards.com">
-              <span class="domain-name">HistoryAwards.com</span>
+            <div class="domain-item" data-name="historyawards.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">HistoryAwards.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="historyinsiders.com">
-              <span class="domain-name">HistoryInsiders.com</span>
+            <div class="domain-item" data-name="historyinsiders.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">HistoryInsiders.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="civilizationancient.com">
-              <span class="domain-name">CivilizationAncient.com</span>
+            <div class="domain-item" data-name="civilizationancient.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">CivilizationAncient.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="romanlegends.com">
-              <span class="domain-name">RomanLegends.com</span>
+            <div class="domain-item" data-name="romanlegends.com" data-value="60000">
+              <div class="domain-details">
+                <span class="domain-name">RomanLegends.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $60,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="ancestrality.com">
-              <span class="domain-name">Ancestrality.com</span>
+            <div class="domain-item" data-name="ancestrality.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">Ancestrality.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="ancientpetra.com">
-              <span class="domain-name">AncientPetra.com</span>
+            <div class="domain-item" data-name="ancientpetra.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">AncientPetra.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="greatestancientstructures.com">
-              <span class="domain-name">GreatestAncientStructures.com</span>
+            <div class="domain-item" data-name="greatestancientstructures.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">GreatestAncientStructures.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="exploreaztec.com">
-              <span class="domain-name">ExploreAztec.com</span>
+            <div class="domain-item" data-name="exploreaztec.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">ExploreAztec.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="discoverzhou.com">
-              <span class="domain-name">DiscoverZhou.com</span>
+            <div class="domain-item" data-name="discoverzhou.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">DiscoverZhou.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="discovergaul.com">
-              <span class="domain-name">DiscoverGaul.com</span>
+            <div class="domain-item" data-name="discovergaul.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">DiscoverGaul.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="discoverbabylon.com">
-              <span class="domain-name">DiscoverBabylon.com</span>
+            <div class="domain-item" data-name="discoverbabylon.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">DiscoverBabylon.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="discoverberber.com">
-              <span class="domain-name">DiscoverBerber.com</span>
+            <div class="domain-item" data-name="discoverberber.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">DiscoverBerber.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="discovercarthage.com">
-              <span class="domain-name">DiscoverCarthage.com</span>
+            <div class="domain-item" data-name="discovercarthage.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">DiscoverCarthage.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="famousleaders.org">
-              <span class="domain-name">FamousLeaders.org</span>
+            <div class="domain-item" data-name="famousleaders.org" data-value="70000">
+              <div class="domain-details">
+                <span class="domain-name">FamousLeaders.org</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $70,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="historicleaders.org">
-              <span class="domain-name">HistoricLeaders.org</span>
+            <div class="domain-item" data-name="historicleaders.org" data-value="70000">
+              <div class="domain-details">
+                <span class="domain-name">HistoricLeaders.org</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $70,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="greatamericanleaders.com">
-              <span class="domain-name">GreatAmericanLeaders.com</span>
+            <div class="domain-item" data-name="greatamericanleaders.com" data-value="80000">
+              <div class="domain-details">
+                <span class="domain-name">GreatAmericanLeaders.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $80,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="greatamericanleaders.org">
-              <span class="domain-name">GreatAmericanLeaders.org</span>
+            <div class="domain-item" data-name="greatamericanleaders.org" data-value="65000">
+              <div class="domain-details">
+                <span class="domain-name">GreatAmericanLeaders.org</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $65,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="lyritual.com">
-              <span class="domain-name">Lyritual.com</span>
+            <div class="domain-item" data-name="lyritual.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">Lyritual.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="girlawards.com">
-              <span class="domain-name">GirlAwards.com</span>
+            <div class="domain-item" data-name="girlawards.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">GirlAwards.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="rightsforkids.com">
-              <span class="domain-name">RightsForKids.com</span>
+            <div class="domain-item" data-name="rightsforkids.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">RightsForKids.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="quotekid.com">
-              <span class="domain-name">QuoteKid.com</span>
+            <div class="domain-item" data-name="quotekid.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">QuoteKid.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="singerawards.com">
-              <span class="domain-name">SingerAwards.com</span>
+            <div class="domain-item" data-name="singerawards.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">SingerAwards.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="dailyspeeches.com">
-              <span class="domain-name">DailySpeeches.com</span>
+            <div class="domain-item" data-name="dailyspeeches.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">DailySpeeches.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="badquote.com">
-              <span class="domain-name">BadQuote.com</span>
+            <div class="domain-item" data-name="badquote.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">BadQuote.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="governmentservant.com">
-              <span class="domain-name">GovernmentServant.com</span>
+            <div class="domain-item" data-name="governmentservant.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">GovernmentServant.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="sanctuarygovernment.com">
-              <span class="domain-name">SanctuaryGovernment.com</span>
+            <div class="domain-item" data-name="sanctuarygovernment.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">SanctuaryGovernment.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="culturalequality.com">
-              <span class="domain-name">CulturalEquality.com</span>
+            <div class="domain-item" data-name="culturalequality.com" data-value="55000">
+              <div class="domain-details">
+                <span class="domain-name">CulturalEquality.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $55,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="communityresponsibilites.com">
-              <span class="domain-name">CommunityResponsibilites.com</span>
+            <div class="domain-item" data-name="communityresponsibilites.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">CommunityResponsibilites.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="governmentlibrary.com">
-              <span class="domain-name">GovernmentLibrary.com</span>
+            <div class="domain-item" data-name="governmentlibrary.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">GovernmentLibrary.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="leaderleadership.com">
-              <span class="domain-name">LeaderLeadership.com</span>
+            <div class="domain-item" data-name="leaderleadership.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">LeaderLeadership.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="activistleaders.com">
-              <span class="domain-name">ActivistLeaders.com</span>
+            <div class="domain-item" data-name="activistleaders.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">ActivistLeaders.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="freeneighbors.com">
-              <span class="domain-name">FreeNeighbors.com</span>
+            <div class="domain-item" data-name="freeneighbors.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">FreeNeighbors.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="effectivecommunity.com">
-              <span class="domain-name">EffectiveCommunity.com</span>
+            <div class="domain-item" data-name="effectivecommunity.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">EffectiveCommunity.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="lawthos.com">
-              <span class="domain-name">LawThos.com</span>
+            <div class="domain-item" data-name="lawthos.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">LawThos.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="governkind.com">
-              <span class="domain-name">GovernKind.com</span>
+            <div class="domain-item" data-name="governkind.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">GovernKind.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="easydialogue.com">
-              <span class="domain-name">EasyDialogue.com</span>
+            <div class="domain-item" data-name="easydialogue.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">EasyDialogue.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="queerpoetics.com">
-              <span class="domain-name">QueerPoetics.com</span>
+            <div class="domain-item" data-name="queerpoetics.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">QueerPoetics.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="humancolour.com">
-              <span class="domain-name">HumanColour.com</span>
+            <div class="domain-item" data-name="humancolour.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">HumanColour.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="slayhabit.com">
-              <span class="domain-name">SlayHabit.com</span>
+            <div class="domain-item" data-name="slayhabit.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">SlayHabit.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="slayhabits.com">
-              <span class="domain-name">SlayHabits.com</span>
+            <div class="domain-item" data-name="slayhabits.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">SlayHabits.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="buildethics.com">
-              <span class="domain-name">BuildEthics.com</span>
+            <div class="domain-item" data-name="buildethics.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">BuildEthics.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="truthmarches.com">
-              <span class="domain-name">TruthMarches.com</span>
+            <div class="domain-item" data-name="truthmarches.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">TruthMarches.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="freedomisduty.com">
-              <span class="domain-name">FreedomIsDuty.com</span>
+            <div class="domain-item" data-name="freedomisduty.com" data-value="50000">
+              <div class="domain-details">
+                <span class="domain-name">FreedomIsDuty.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $50,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.4% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="speakxtruth.com">
-              <span class="domain-name">SpeakXTruth.com</span>
+            <div class="domain-item" data-name="speakxtruth.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">SpeakXTruth.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="wisdomality.com">
-              <span class="domain-name">Wisdomality.com</span>
+            <div class="domain-item" data-name="wisdomality.com" data-value="20000">
+              <div class="domain-details">
+                <span class="domain-name">Wisdomality.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $20,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.5% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="panfrika.com">
-              <span class="domain-name">Panfrika.com</span>
+            <div class="domain-item" data-name="panfrika.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">Panfrika.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="growingequal.com">
-              <span class="domain-name">GrowingEqual.com</span>
+            <div class="domain-item" data-name="growingequal.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">GrowingEqual.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="carefulplanet.com">
-              <span class="domain-name">CarefulPlanet.com</span>
+            <div class="domain-item" data-name="carefulplanet.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">CarefulPlanet.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="presidentialrepublic.com">
-              <span class="domain-name">PresidentialRepublic.com</span>
+            <div class="domain-item" data-name="presidentialrepublic.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">PresidentialRepublic.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="livesfree.com">
-              <span class="domain-name">LivesFree.com</span>
+            <div class="domain-item" data-name="livesfree.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">LivesFree.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="magicpractices.com">
-              <span class="domain-name">MagicPractices.com</span>
+            <div class="domain-item" data-name="magicpractices.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">MagicPractices.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="readjaneausten.com">
-              <span class="domain-name">ReadJaneAusten.com</span>
+            <div class="domain-item" data-name="readjaneausten.com" data-value="40000">
+              <div class="domain-details">
+                <span class="domain-name">ReadJaneAusten.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $40,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="autismaids.com">
-              <span class="domain-name">AutismAids.com</span>
+            <div class="domain-item" data-name="autismaids.com" data-value="30000">
+              <div class="domain-details">
+                <span class="domain-name">AutismAids.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $30,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="africawiki.com">
-              <span class="domain-name">AfricaWiki.com</span>
+            <div class="domain-item" data-name="africawiki.com" data-value="75000">
+              <div class="domain-details">
+                <span class="domain-name">AfricaWiki.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $75,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.6% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="migrantpeople.com">
-              <span class="domain-name">MigrantPeople.com</span>
+            <div class="domain-item" data-name="migrantpeople.com" data-value="25000">
+              <div class="domain-details">
+                <span class="domain-name">MigrantPeople.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $25,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">98.8% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="girlaward.com">
-              <span class="domain-name">GirlAward.com</span>
+            <div class="domain-item" data-name="girlaward.com" data-value="35000">
+              <div class="domain-details">
+                <span class="domain-name">GirlAward.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $35,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.1% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
-            <div class="domain-item" data-name="gayinstitute.com">
-              <span class="domain-name">GayInstitute.com</span>
+            <div class="domain-item" data-name="gayinstitute.com" data-value="45000">
+              <div class="domain-details">
+                <span class="domain-name">GayInstitute.com</span>
+                <span class="domain-meta">
+                  <span class="domain-value">Value: $45,000</span>
+                  <span class="separator">•</span>
+                  <span class="domain-savings">99.3% Savings</span>
+                </span>
+              </div>
               <span class="domain-price">$25/mo</span>
             </div>
           </div>
@@ -1166,11 +2079,16 @@
     const ULTRA_PREMIUM_1_LINK = 'https://buy.stripe.com/7sY3cw3lQb33cgTdet8AE04'; // Purple ultra-premium $500/month
     const ULTRA_PREMIUM_2_LINK = 'https://buy.stripe.com/9B6dRa3lQ7QR3Kndet8AE05'; // Gold ultra-premium $1000/month
 
-    // Domain rental modal function
-    function rentDomain(domainName, price) {
+    // Domain rental modal function - UPDATED WITH VALUE INFO
+    function rentDomain(domainName, price, domainValue) {
       // Determine if this is a gold tier domain
       const priceMatch = price.match(/\$?([\d,]+)/);
       const isGoldTier = priceMatch && parseInt(priceMatch[1].replace(',', '')) >= 1000;
+      
+      // Calculate savings percentage
+      const monthlyPrice = parseInt(priceMatch[1].replace(',', ''));
+      const value = parseInt(domainValue);
+      const savingsPercent = ((value - (monthlyPrice * 12)) / value * 100).toFixed(1);
       
       // Create modal
       const modal = document.createElement('div');
@@ -1180,6 +2098,8 @@
           <h2>Ready to rent ${domainName}?</h2>
           <p class="price-display${isGoldTier ? ' gold' : ''}">${price}</p>
           <div class="modal-info">
+            <p class="value-highlight">Estimated Value: $${value.toLocaleString()}</p>
+            <p class="savings-highlight">You save ${savingsPercent}% vs buying!</p>
             <p><strong>Important:</strong> You'll need to enter this domain name on the next page.</p>
             <div class="domain-display">
               <code>${domainName}</code>
@@ -1199,7 +2119,7 @@
     window.copyDomain = function(domainName) {
       navigator.clipboard.writeText(domainName).then(() => {
         const copyBtn = document.querySelector('.copy-btn');
-        copyBtn.textContent = '✓ Copied!';
+        copyBtn.textContent = '✔ Copied!';
         copyBtn.style.background = 'var(--green-success)';
         copyBtn.style.color = 'white';
       }).catch(err => {
@@ -1211,7 +2131,7 @@
         document.execCommand('copy');
         document.body.removeChild(textArea);
         const copyBtn = document.querySelector('.copy-btn');
-        copyBtn.textContent = '✓ Copied!';
+        copyBtn.textContent = '✔ Copied!';
       });
     }
 
@@ -1334,25 +2254,27 @@
       }
     });
 
-    // Make all domain items clickable
+    // Make all domain items clickable - UPDATED WITH VALUE DATA
     document.addEventListener('DOMContentLoaded', function() {
       // Regular domain items
       document.querySelectorAll('.domain-item').forEach(item => {
         const domainName = item.querySelector('.domain-name').textContent;
         const price = item.querySelector('.domain-price').textContent;
+        const value = item.getAttribute('data-value') || '50000'; // Default value if not set
         
-        item.onclick = () => rentDomain(domainName, price);
+        item.onclick = () => rentDomain(domainName, price, value);
       });
       
       // Featured cards (whole card clickable except CTA)
       document.querySelectorAll('.featured-card').forEach(card => {
         const domainName = card.getAttribute('data-domain');
         const price = card.getAttribute('data-price');
+        const value = card.getAttribute('data-value') || '1000000'; // Default high value for featured
         
         card.onclick = (e) => {
           // Don't trigger if clicking the CTA button
           if (!e.target.classList.contains('featured-cta')) {
-            rentDomain(domainName, price);
+            rentDomain(domainName, price, value);
           }
         };
         
@@ -1361,7 +2283,7 @@
         cta.onclick = (e) => {
           e.preventDefault();
           e.stopPropagation();
-          rentDomain(domainName, price);
+          rentDomain(domainName, price, value);
         };
       });
     });
