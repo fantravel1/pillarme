@@ -460,6 +460,15 @@
         font-size: 0.7rem;
       }
     }
+
+    /* Long Domain Name Shrinker */
+    .domain-name.long {font-size:0.95rem;letter-spacing:-0.02em;}
+    .domain-name.x-long {font-size:0.85rem;letter-spacing:-0.03em;}
+    @media (max-width: 768px) {
+      .domain-name.long {font-size:0.875rem}
+      .domain-name.x-long {font-size:0.8rem;}
+    }
+    
   </style>
 
   <!-- Open Graph -->
@@ -2263,6 +2272,18 @@
         const value = item.getAttribute('data-value') || '50000'; // Default value if not set
         
         item.onclick = () => rentDomain(domainName, price, value);
+      });
+
+      // FONT SIZE ADJUSTMENT for Long Domains
+      document.querySelectorAll('.domain-name').forEach(el => {
+        const text = el.textContent;
+        const length = text.replace('.com', '').replace('.org', '').length; // Count without TLD
+        
+        if (length >= 23) {
+          el.classList.add('x-long');
+        } else if (length >= 18) {
+          el.classList.add('long');
+        }
       });
       
       // Featured cards (whole card clickable except CTA)
