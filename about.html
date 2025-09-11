@@ -216,12 +216,21 @@
       .timeline-content{width:100%}
       .timeline-dot{display:none}
       .mission-grid,.leadership-grid,.values-grid,.process-steps{grid-template-columns:1fr}
-      .impact-grid{grid-template-columns:repeat(2,1fr)}
+      .process-steps{gap:1.5rem}
+      .process-step{width:100%;max-width:100%;padding:1.5rem}
+      .impact-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+      .impact-card{padding:1.5rem 1rem}
+      .impact-number{font-size:2rem}
       .partners-logos{gap:2rem}
       .partner-logo{height:40px}
       .footer-container{flex-direction:column;text-align:center}
       .footer-left{flex-direction:column;gap:.5rem;align-items:center;width:100%}
       .footer-links{justify-content:center;margin-top:1rem;width:100%;flex-direction:column;gap:1rem}
+    }
+    
+    /* Very small screens */
+    @media (max-width:360px){
+      .impact-grid{grid-template-columns:1fr}
     }
 
     /* Skip link (hidden until focus) */
