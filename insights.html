@@ -185,6 +185,12 @@
     .footer-links a:hover{color:var(--purple)}
     .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
 
+    /* Mobile Overflow Fix */
+    .insights-hero, .facts-section {
+      overflow: hidden;
+      position: relative;
+    }
+    
     /* Mobile */
     @media (max-width:768px){
       nav ul{display:none}
