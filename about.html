@@ -219,8 +219,9 @@
       .process-steps{gap:1.5rem}
       .process-step{width:100%;max-width:100%;padding:1.5rem}
       .impact-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
-      .impact-card{padding:1.5rem 1rem}
-      .impact-number{font-size:2rem}
+      .impact-card{padding:1rem;min-width:0}
+      .impact-number{font-size:1.75rem}
+      .impact-label{font-size:.75rem}
       .partners-logos{gap:2rem}
       .partner-logo{height:40px}
       .footer-container{flex-direction:column;text-align:center}
@@ -228,9 +229,11 @@
       .footer-links{justify-content:center;margin-top:1rem;width:100%;flex-direction:column;gap:1rem}
     }
     
-    /* Very small screens */
-    @media (max-width:360px){
+    /* Small phones (iPhone SE, etc) */
+    @media (max-width:400px){
       .impact-grid{grid-template-columns:1fr}
+      .process-section h2{font-size:2rem}
+      .section-subtitle{font-size:1.1rem}
     }
 
     /* Skip link (hidden until focus) */
