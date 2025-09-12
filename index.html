@@ -273,7 +273,10 @@
     /* Loading */
     .loading{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem 3rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);color:var(--purple);font-size:1.2rem;z-index:2000}
 
-    /* Responsive */
+    /* Mobile Overflow Fix */
+    .hero, .first-launch-section, .top-sites-banner, .ultra-premium-banner{overflow:hidden;position:relative}    
+    
+    /* Mobile Responsive */
     @media (max-width:768px){
       /* Hide desktop nav */
       nav ul{display:none}
