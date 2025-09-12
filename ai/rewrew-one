@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Bookkeeping For Startups | RewRew</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 1.5rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .logo-arrow {
+            color: #FFB800;
+            font-size: 2rem;
+            transform: rotate(-45deg);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: #1a1a1a;
+            transition: all 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-tag {
+            color: #FFB800;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .lead-text {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: #666666;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 400;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #333333;
+        }
+
+        .arrow-icon {
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover .arrow-icon {
+            transform: translateX(3px);
+        }
+
+        /* Service Cards */
+        .services {
+            margin-top: 6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-top: 6rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .content-section p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .benefits-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #4a4a4a;
+            font-size: 1.125rem;
+        }
+
+        .benefits-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #FFB800;
+            font-size: 1.5rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: #f8f8f8;
+            padding: 4rem;
+            margin-top: 6rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.125rem;
+            color: #666666;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 6rem;
+            padding: 3rem 2rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-info {
+            color: #666666;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            z-index: 2000;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .close-menu {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+        }
+
+        .mobile-menu-links li {
+            margin: 1.5rem 0;
+        }
+
+        .mobile-menu-links a {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .lead-text {
+                font-size: 1.125rem;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <span class="logo-arrow">↗</span>
+            <span>RewRew</span>
+        </a>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="/" class="logo">
+                <span class="logo-arrow">↗</span>
+                <span>RewRew</span>
+            </a>
+            <span class="close-menu" id="closeMenu">×</span>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#bookkeeping">Bookkeeping</a></li>
+            <li><a href="#compliance">Compliance</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="section-tag">BOOKKEEPING</div>
+        
+        <h1>Cloud Bookkeeping For Startups</h1>
+        
+        <p class="lead-text">
+            No matter where you are in your journey, every business needs solid financial data to make smart decisions and keep investors in the loop. But if getting accurate numbers is eating up too much of your time and energy, it's time to bring in a bookkeeping partner. Our team of startup-savvy bookkeepers will keep your financials accurate and up to date—so you can spend less time on spreadsheets and more time growing your business.
+        </p>
+        
+        <a href="#contact" class="cta-button">
+            Schedule a conversation
+            <span class="arrow-icon">→</span>
+        </a>
+
+        <!-- Services -->
+        <div class="services" id="services">
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Accurate Financial Records</h3>
+                <p>Keep your business compliant and focused on growth with precise bookkeeping services.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Comprehensive Compliance Support</h3>
+                <p>Navigate complex regulations effortlessly with our expert compliance services.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Scalable Financial Solutions</h3>
+                <p>Adapt our services as your business grows, ensuring continuous financial efficiency.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Proactive Financial Guidance</h3>
+                <p>Receive actionable insights and regular financial check-ups to stay ahead of challenges.</p>
+            </div>
+        </div>
+
+        <!-- Bookkeeping Section -->
+        <div class="content-section" id="bookkeeping">
+            <h2>Comprehensive Bookkeeping Services in Southwestern Ontario</h2>
+            <p>RewRew offers detailed bookkeeping services designed to keep your financial records accurate and up-to-date. Our team ensures that all your transactions are recorded correctly, providing you with the clarity needed to make informed business decisions.</p>
+            <p>By leveraging our expertise, you can focus on your core operations while we handle the financial intricacies. Our services include managing accounts payable and receivable, bank reconciliations, and generating financial reports, all tailored to meet your specific needs.</p>
+            
+            <ul class="benefits-list">
+                <li>Maintain accurate and up-to-date financial records</li>
+                <li>Ensure compliance with government regulations</li>
+                <li>Free up time to focus on core business activities</li>
+                <li>Access detailed financial reports for informed decision-making</li>
+                <li>Tailored bookkeeping solutions that scale with your business</li>
+            </ul>
+        </div>
+
+        <!-- Compliance Section -->
+        <div class="content-section" id="compliance">
+            <h2>Expert Compliance Services in Southwestern Ontario</h2>
+            <p>Our compliance services are designed to help businesses navigate the complex regulatory environment with ease. RewRew's team of experts stays abreast of the latest compliance requirements to ensure your business remains in good standing.</p>
+            <p>By partnering with us, you can minimize the risk of non-compliance and focus on growing your business.</p>
+            
+            <ul class="benefits-list">
+                <li>Stay compliant with changing regulations</li>
+                <li>Reduce the risk of financial penalties</li>
+                <li>Comprehensive reporting to meet regulatory standards</li>
+                <li>Peace of mind with proactive compliance management</li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <h2>Stay ahead of financial challenges with insights from RewRew.</h2>
+            <p>Subscribe to our newsletter for the latest updates on bookkeeping and compliance services in Woodstock. Benefit from expert advice and stay informed about industry trends.</p>
+            <a href="https://www.rewrew.ca/?fuseaction=member.registerShort" class="cta-button">
+                Sign Up Now for Exclusive Financial Insights
+                <span class="arrow-icon">→</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-info">
+            RewRew is a financial services provider based in Woodstock, serving clients in Windsor, London, Kitchener-Waterloo-Cambridge, Hamilton, and Guelph.
+        </p>
+        <p style="color: #999; font-size: 0.875rem;">© 2025 RewRew. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
