@@ -81,6 +81,43 @@
     h2{font-size:3rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
     .section-subtitle{text-align:center;color:var(--gray);font-size:1.25rem;max-width:650px;margin:0 auto 3rem;line-height:1.7}
 
+    /* First Launch Package Section */
+    .first-launch-section{background:linear-gradient(135deg,var(--black) 0%,#1a1a1a 100%);padding:4rem 2rem;position:relative;overflow:hidden}
+    .first-launch-section::before{content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;background:radial-gradient(circle at center,rgba(139,0,255,.15) 0%,transparent 50%);animation:launchGlow 20s ease-in-out infinite}
+    @keyframes launchGlow{0%,100%{transform:translateX(0) scale(1);opacity:0.5}50%{transform:translateX(25%) scale(1.2);opacity:0.8}}
+    .first-launch-container{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+    .launch-badge{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,var(--purple),var(--purple-darker));color:#fff;padding:0.5rem 1.5rem;border-radius:50px;font-size:0.875rem;font-weight:700;letter-spacing:1px;margin-bottom:1.5rem;animation:badgePulse 2s ease-in-out infinite}
+    @keyframes badgePulse{0%,100%{transform:scale(1);box-shadow:0 4px 15px var(--purple-glow)}50%{transform:scale(1.05);box-shadow:0 6px 20px var(--purple-glow-strong)}}
+    .launch-icon{font-size:1.2rem}
+    .first-launch-section h2{font-size:2.5rem;color:#fff;margin-bottom:1rem;text-align:left}
+    .launch-price{color:var(--purple);font-weight:900;text-shadow:0 0 20px var(--purple-glow)}
+    .launch-subtitle{font-size:1.25rem;color:rgba(255,255,255,.8);margin-bottom:2rem}
+    .cost-comparison{display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;margin:2rem 0 3rem;padding:2rem;background:rgba(139,0,255,.05);border-radius:16px;border:1px solid rgba(139,0,255,.2)}
+    .comparison-item{text-align:center}
+    .comparison-label{display:block;font-size:0.875rem;color:rgba(255,255,255,.7);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.5px}
+    .comparison-price{display:block;font-size:2.5rem;font-weight:900;margin-bottom:0.25rem}
+    .comparison-price.old{color:#ff4444;text-decoration:line-through;opacity:0.8}
+    .comparison-price.new{color:var(--green-success);text-shadow:0 0 20px rgba(16,185,129,.5)}
+    .comparison-detail{display:block;font-size:0.875rem;color:rgba(255,255,255,.6)}
+    .vs{font-weight:700;color:rgba(255,255,255,.3);font-size:1.25rem}
+    .comparison-item.highlight{transform:scale(1.1)}
+    .launch-features{display:grid;gap:1rem;margin-bottom:2rem}
+    .feature-item{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.9);font-size:1.05rem}
+    .feature-item .check{display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--green-success);color:#fff;border-radius:50%;font-weight:bold;flex-shrink:0}
+    .btn-launch{background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);padding:1.25rem 3rem;font-size:1.25rem;box-shadow:0 10px 30px var(--purple-glow-strong)}
+    .btn-launch:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 40px var(--purple-glow-strong)}
+    .launch-note{color:rgba(255,255,255,.6);font-size:0.875rem;margin-top:1rem}
+    .launch-visual{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .launch-countdown{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;width:100%;max-width:400px}
+    .countdown-item{text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:all .3s}
+    .countdown-item:hover{background:rgba(255,255,255,.08);border-color:rgba(139,0,255,.3);transform:translateY(-3px)}
+    .countdown-item.highlight{background:rgba(139,0,255,.1);border-color:var(--purple)}
+    .countdown-number{display:block;font-size:2rem;font-weight:900;color:#fff;margin-bottom:0.25rem}
+    .countdown-item.highlight .countdown-number{color:var(--purple);text-shadow:0 0 20px var(--purple-glow)}
+    .countdown-label{display:block;font-size:0.75rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:0.5px}
+    .launch-comparison{color:rgba(255,255,255,.5);font-size:0.875rem;font-style:italic}
+    @media (max-width:768px){.first-launch-container{grid-template-columns:1fr;text-align:center}.first-launch-section h2{font-size:2rem;text-align:center}.cost-comparison{grid-template-columns:1fr;gap:1.5rem}.vs{text-align:center}.comparison-item.highlight{transform:scale(1);padding:1rem;background:rgba(16,185,129,.1);border-radius:12px}.launch-visual{margin-top:2rem}.launch-countdown{grid-template-columns:1fr;max-width:250px}.feature-item{justify-content:center}}
+
     /* How it Works Video Section */
     .how-it-works-video{padding:6rem 2rem 3rem;background:#fff}
     .video-container{max-width:900px;margin:0 auto}
@@ -377,6 +414,82 @@
       <button class="btn" id="starter-checkout" aria-label="Start building your digital asset today for $125">Start Building Today - $125</button>
     </div>
   </header>
+
+  <!-- First Launch Package Section -->
+  <section class="first-launch-section" aria-label="First Launch Package special offer">
+    <div class="first-launch-container">
+      <div class="first-launch-content">
+        <div class="launch-badge">
+          <span class="launch-icon">🚀</span>
+          SAVE $4,400 IN YEAR ONE
+        </div>
+        <h2>First Launch Package: <span class="launch-price">$50/month</span></h2>
+        <p class="launch-subtitle">Why pay $5,000 upfront when you can launch for less?</p>
+        
+        <div class="cost-comparison">
+          <div class="comparison-item">
+            <span class="comparison-label">Typical Website Cost</span>
+            <span class="comparison-price old">$5,000+</span>
+            <span class="comparison-detail">Upfront payment required</span>
+          </div>
+          <div class="vs">VS</div>
+          <div class="comparison-item highlight">
+            <span class="comparison-label">First Launch Package</span>
+            <span class="comparison-price new">$600/year</span>
+            <span class="comparison-detail">Just $50/month</span>
+          </div>
+        </div>
+        
+        <div class="launch-features">
+          <div class="feature-item">
+            <span class="check">✓</span>
+            <span>Complete website in 30 days</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">✓</span>
+            <span>Professional design included</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">✓</span>
+            <span>1 monthly content update</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">✓</span>
+            <span>Mobile + SEO ready</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">✓</span>
+            <span>No technical skills needed</span>
+          </div>
+        </div>
+        
+        <div class="launch-cta">
+          <button class="btn btn-launch" id="first-launch-checkout">
+            Save $4,400 - Start Today →
+          </button>
+          <p class="launch-note">30-day money-back guarantee • No hidden fees</p>
+        </div>
+      </div>
+      
+      <div class="launch-visual">
+        <div class="launch-countdown">
+          <div class="countdown-item">
+            <span class="countdown-number">0</span>
+            <span class="countdown-label">Setup Fees</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number">30</span>
+            <span class="countdown-label">Days to Live</span>
+          </div>
+          <div class="countdown-item highlight">
+            <span class="countdown-number">$50</span>
+            <span class="countdown-label">Per Month</span>
+          </div>
+        </div>
+        <p class="launch-comparison">Compare to $125/month Foundation Package</p>
+      </div>
+    </div>
+  </section>
 
   <!-- How it Works Video Section -->
   <section class="how-it-works-video" id="how-it-works-video" aria-label="How PILLAR works video">
@@ -915,6 +1028,10 @@
     
     // Your actual Stripe Price IDs
     const STRIPE_PRICE_IDS = {
+
+      // First Launch Package
+      first_launch: 'price_1S6LxjJeHAducPhTV7PQJrYX',      //$50/month
+      
       // Standard subscriptions
       foundation: 'price_1S5lA9JeHAducPhTJ8d5wW52',         // $125/month
       growth: 'price_1S5lDiJeHAducPhT4z9OsKuf',             // $425/month
@@ -1033,6 +1150,9 @@
         }
       }
     }
+
+    // Add First Launch Package handler
+    document.getElementById('first-launch-checkout')?.addEventListener('click', () => {handleSubscriptionCheckout(STRIPE_PRICE_IDS.first_launch);
   
     // Button click handlers - Foundation Package ($125/month)
     document.getElementById('starter-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.foundation));
