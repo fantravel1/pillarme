@@ -13,9 +13,19 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://pillarme.com/about">
 
+  <!-- PWA / Mobile App -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PILLAR">
+
   <!-- Preload & Fonts (mirrors other pages) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -247,6 +257,19 @@
       .section-subtitle{font-size:1.1rem}
     }
 
+    /* Mobile touch optimizations */
+    button, a, input, textarea, select{touch-action:manipulation;-webkit-tap-highlight-color:rgba(139,0,255,.1)}
+    @supports (-webkit-touch-callout:none){body{-webkit-text-size-adjust:100%}}
+
+    /* Ensure minimum touch targets on mobile */
+    @media (max-width:768px){
+      button, a, input[type="submit"], input[type="button"]{min-height:44px;min-width:44px}
+    }
+
+    /* Accessibility enhancements */
+    @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+    @media (prefers-contrast:high){:root{--purple:#6B00CC;--gray:#333}}
+
     /* Skip link (hidden until focus) */
     .skip-link{position:absolute;top:-40px;left:0;background:var(--purple);color:#fff;padding:8px;text-decoration:none;z-index:100}
     .skip-link:focus{top:0}
@@ -259,8 +282,27 @@
     "@type":"AboutPage",
     "name":"About PILLAR Media & Entertainment",
     "url":"https://pillarme.com/about",
-    "description":"Learn about PILLAR Media's mission to transform expertise into profitable digital assets",
-    "isPartOf":{"@type":"WebSite","name":"PILLAR Media & Entertainment","url":"https://pillarme.com"}
+    "description":"Learn about PILLAR Media's mission to transform expertise into profitable digital assets. 100+ websites built, $50K-$250K revenue potential.",
+    "isPartOf":{"@type":"WebSite","name":"PILLAR Media & Entertainment","url":"https://pillarme.com"},
+    "mainEntity":{
+      "@type":"Organization",
+      "name":"PILLAR Media & Entertainment",
+      "url":"https://pillarme.com",
+      "foundingDate":"2024",
+      "description":"Building digital empires for thought leaders since 2024",
+      "numberOfEmployees":"10-50",
+      "knowsAbout":["Web Development","AI Content Creation","Premium Domains","Digital Marketing","SEO"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://pillarme.com"},
+      {"@type":"ListItem","position":2,"name":"About","item":"https://pillarme.com/about"}
+    ]
   }
   </script>
 </head>
