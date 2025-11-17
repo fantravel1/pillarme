@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domain ROI Calculator: Buy vs Rent Premium Domains | PILLAR Media</title>
+  <meta name="description" content="Calculate the true ROI of renting vs buying premium domains. Interactive calculator shows break-even analysis, cash flow comparison, and 5-year projections for domain investments.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/domain-roi-calculator">
+
+  <!-- PWA / Mobile App -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#8B00FF">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Domain ROI Calculator: Buy vs Rent Premium Domains">
+  <meta property="og:description" content="Interactive calculator showing why renting premium domains delivers better ROI than buying. See 5-year projections, break-even analysis, and cash flow comparisons.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/domain-roi-calculator">
+  <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Domain ROI Calculator: Buy vs Rent - See The Math">
+  <meta name="twitter:description" content="Why rent domains at 1-5% of purchase price? Our calculator shows the ROI comparison.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Domain ROI Calculator",
+    "description": "Calculate ROI for buying vs renting premium domains",
+    "url": "https://pillarme.com/domain-roi-calculator",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;
+      --green:#10B981;--green-light:#D1FAE5;
+      --red:#EF4444;--red-light:#FEE2E2;
+      --blue:#3B82F6;--gold:#FFD700;
+      --nav-h:72px;--content-max:1200px;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Inter",sans-serif;
+      background:#fff;color:#000;line-height:1.7;padding-top:var(--nav-h);-webkit-font-smoothing:antialiased;
+    }
+
+    /* Navigation */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;padding:.5rem}
+    nav a:hover{color:var(--purple)}
+    .mobile-menu{display:none}
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);
+      color:#fff;padding:6rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+      background:radial-gradient(circle at 30% 50%,rgba(255,255,255,.1),transparent 50%);
+      pointer-events:none;
+    }
+    .hero-content{max-width:900px;margin:0 auto;position:relative;z-index:1}
+    h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:1.5rem;line-height:1.1}
+    .hero p{font-size:1.25rem;opacity:.95;max-width:700px;margin:0 auto 2rem}
+    .hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:3rem;flex-wrap:wrap}
+    .hero-stat{text-align:center}
+    .hero-stat-number{font-size:2.5rem;font-weight:900;display:block;color:var(--gold)}
+    .hero-stat-label{font-size:.875rem;opacity:.9;text-transform:uppercase;letter-spacing:.5px}
+
+    /* Main Container */
+    .main-container{max-width:var(--content-max);margin:0 auto;padding:4rem 2rem}
+
+    /* Calculator Section */
+    .calculator-section{background:#fff;border-radius:20px;padding:3rem;margin-bottom:3rem;box-shadow:0 10px 40px rgba(0,0,0,.08)}
+
+    h2{font-size:2rem;font-weight:800;margin-bottom:1rem;color:var(--black)}
+    .section-subtitle{color:var(--gray);margin-bottom:2rem}
+
+    /* Input Group */
+    .input-group{margin-bottom:2rem}
+    label{display:block;font-weight:600;margin-bottom:.5rem;color:var(--black-soft)}
+    .input-with-prefix{position:relative;display:flex;align-items:center}
+    .prefix{position:absolute;left:1rem;font-weight:600;color:var(--gray);pointer-events:none}
+    input[type="number"],input[type="range"],select{
+      width:100%;padding:1rem 1rem 1rem 2.5rem;border:2px solid var(--border-light);
+      border-radius:10px;font-size:1.125rem;font-weight:600;transition:all .3s;
+    }
+    input[type="number"]:focus,select:focus{
+      outline:none;border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-glow);
+    }
+    select{padding-left:1rem}
+
+    /* Range Slider */
+    input[type="range"]{padding:0;appearance:none;height:8px;background:var(--border-light);border:none;border-radius:10px}
+    input[type="range"]::-webkit-slider-thumb{
+      appearance:none;width:24px;height:24px;background:var(--purple);
+      border-radius:50%;cursor:pointer;box-shadow:0 2px 8px rgba(139,0,255,.3);
+    }
+    input[type="range"]::-moz-range-thumb{
+      width:24px;height:24px;background:var(--purple);border:none;
+      border-radius:50%;cursor:pointer;box-shadow:0 2px 8px rgba(139,0,255,.3);
+    }
+    .range-value{font-size:1.5rem;font-weight:800;color:var(--purple);margin-top:.5rem}
+
+    /* Comparison Cards */
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+    .comparison-card{
+      padding:2rem;border-radius:16px;border:3px solid;position:relative;overflow:hidden;
+    }
+    .comparison-card.buy{border-color:var(--red);background:var(--red-light)}
+    .comparison-card.rent{border-color:var(--green);background:var(--green-light)}
+    .comparison-badge{
+      position:absolute;top:1rem;right:1rem;padding:.25rem .75rem;
+      border-radius:50px;font-size:.75rem;font-weight:700;text-transform:uppercase;
+    }
+    .comparison-card.buy .comparison-badge{background:var(--red);color:#fff}
+    .comparison-card.rent .comparison-badge{background:var(--green);color:#fff}
+
+    .comparison-title{font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;color:var(--black)}
+    .cost-item{display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid rgba(0,0,0,.1)}
+    .cost-item:last-child{border-bottom:2px solid rgba(0,0,0,.2);font-weight:700;font-size:1.125rem}
+    .cost-label{color:var(--black-soft)}
+    .cost-value{font-weight:700}
+    .cost-value.negative{color:var(--red)}
+    .cost-value.positive{color:var(--green)}
+
+    .total-cost{font-size:2rem;font-weight:900;margin-top:1rem;text-align:center}
+    .total-cost.buy{color:var(--red)}
+    .total-cost.rent{color:var(--green)}
+
+    /* Savings Banner */
+    .savings-banner{
+      background:linear-gradient(135deg,var(--green) 0%,#059669 100%);
+      color:#fff;padding:2rem;border-radius:16px;text-align:center;margin:2rem 0;
+    }
+    .savings-banner h3{color:#fff;font-size:1.5rem;margin-bottom:.5rem}
+    .savings-amount{font-size:3rem;font-weight:900;margin:.5rem 0}
+    .savings-percent{font-size:1.25rem;opacity:.9}
+
+    /* Chart Container */
+    .chart-section{margin:3rem 0}
+    .chart-container{
+      background:#fff;padding:2rem;border-radius:16px;
+      box-shadow:0 4px 20px rgba(0,0,0,.06);
+    }
+    .chart-bars{display:flex;align-items:flex-end;gap:1rem;height:300px;margin:2rem 0}
+    .chart-bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+    .bar{width:100%;border-radius:8px 8px 0 0;transition:all .3s;position:relative}
+    .bar.buy-bar{background:linear-gradient(to top,var(--red),#FCA5A5)}
+    .bar.rent-bar{background:linear-gradient(to top,var(--green),#6EE7B7)}
+    .bar-value{
+      position:absolute;top:-30px;left:50%;transform:translateX(-50%);
+      font-weight:700;font-size:.875rem;white-space:nowrap;
+    }
+    .bar-label{margin-top:.5rem;font-size:.875rem;font-weight:600;text-align:center}
+
+    /* Key Points */
+    .key-points{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;margin:3rem 0;
+    }
+    .key-point{
+      background:var(--off-white);padding:1.5rem;border-radius:12px;
+      border-left:4px solid var(--purple);
+    }
+    .key-point-icon{font-size:2rem;margin-bottom:.5rem}
+    .key-point h4{font-size:1.125rem;font-weight:700;margin-bottom:.5rem;color:var(--black)}
+    .key-point p{color:var(--gray);font-size:.95rem}
+
+    /* CTA */
+    .cta-section{
+      background:linear-gradient(135deg,var(--purple),var(--purple-darker));
+      color:#fff;padding:3rem;border-radius:20px;text-align:center;margin-top:4rem;
+    }
+    .cta-section h2{color:#fff;margin-bottom:1rem}
+    .cta-section p{font-size:1.125rem;opacity:.95;margin-bottom:2rem}
+    .btn{
+      display:inline-block;padding:1.25rem 3rem;background:#fff;color:var(--purple);
+      text-decoration:none;border-radius:10px;font-weight:700;font-size:1.125rem;
+      transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.2);
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(0,0,0,.3)}
+
+    /* Footer */
+    footer{background:#000;color:#fff;padding:3rem 2rem;margin-top:6rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;text-align:center}
+    .footer-links{display:flex;gap:2rem;justify-content:center;margin-top:1rem}
+    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none}
+    .footer-links a:hover{color:var(--purple)}
+
+    /* Mobile */
+    @media (max-width:768px){
+      .comparison{grid-template-columns:1fr}
+      .hero-stats{gap:2rem}
+      .chart-bars{height:250px}
+      h1{font-size:2rem}
+      .savings-amount{font-size:2rem}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav role="navigation">
+    <div class="container">
+      <a href="/" class="logo">PILLAR</a>
+      <ul>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/domains">Domains</a></li>
+        <li><a href="/insights">Insights</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Domain ROI Calculator: Buy vs Rent</h1>
+      <p>Why pay $100,000 upfront when you can access the same premium domain for $1,000/month? See the real math behind domain rental ROI.</p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number">90%</span>
+          <span class="hero-stat-label">Capital Saved</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">1-5%</span>
+          <span class="hero-stat-label">Of Purchase Price</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">Same</span>
+          <span class="hero-stat-label">Authority & SEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <!-- Calculator -->
+    <section class="calculator-section">
+      <h2>📊 Calculate Your ROI</h2>
+      <p class="section-subtitle">Adjust the values below to see how domain rental compares to purchasing</p>
+
+      <div class="input-group">
+        <label for="domainValue">Domain Purchase Price</label>
+        <div class="input-with-prefix">
+          <span class="prefix">$</span>
+          <input type="number" id="domainValue" value="100000" min="1000" step="1000">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="rentalRate">Monthly Rental Rate (% of value)</label>
+        <input type="range" id="rentalRate" min="0.5" max="5" step="0.5" value="1">
+        <div class="range-value"><span id="rateDisplay">1.0</span>% = $<span id="monthlyRent">1,000</span>/month</div>
+      </div>
+
+      <div class="input-group">
+        <label for="timeframe">Timeframe (Years)</label>
+        <select id="timeframe">
+          <option value="1">1 Year</option>
+          <option value="2">2 Years</option>
+          <option value="3">3 Years</option>
+          <option value="5" selected>5 Years</option>
+          <option value="10">10 Years</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="setupCost">One-Time Setup Cost (Buying)</label>
+        <div class="input-with-prefix">
+          <span class="prefix">$</span>
+          <input type="number" id="setupCost" value="5000" min="0" step="500">
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <div class="comparison">
+      <div class="comparison-card buy">
+        <div class="comparison-badge">BUYING</div>
+        <h3 class="comparison-title">Purchase Domain</h3>
+
+        <div class="cost-item">
+          <span class="cost-label">Domain Purchase</span>
+          <span class="cost-value" id="buyDomainCost">$100,000</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Setup & Transfer</span>
+          <span class="cost-value" id="buySetupCost">$5,000</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Annual Renewal</span>
+          <span class="cost-value" id="buyRenewalCost">$60</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Opportunity Cost <small>(5% APY)</small></span>
+          <span class="cost-value negative" id="buyOpportunityCost">$26,250</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label"><strong>TOTAL COST</strong></span>
+          <span class="cost-value" id="buyTotal">$131,560</span>
+        </div>
+
+        <div class="total-cost buy" id="buyTotalLarge">$131,560</div>
+      </div>
+
+      <div class="comparison-card rent">
+        <div class="comparison-badge">RECOMMENDED</div>
+        <h3 class="comparison-title">Rent Domain</h3>
+
+        <div class="cost-item">
+          <span class="cost-label">Initial Payment</span>
+          <span class="cost-value" id="rentInitial">$1,000</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Monthly Rental (<span id="rentMonths">60</span> months)</span>
+          <span class="cost-value" id="rentMonthly">$60,000</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Capital Preserved</span>
+          <span class="cost-value positive" id="rentCapitalSaved">$100,000</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label">Investment Returns <small>(5% APY)</small></span>
+          <span class="cost-value positive" id="rentInvestmentGain">$16,250</span>
+        </div>
+        <div class="cost-item">
+          <span class="cost-label"><strong>NET COST</strong></span>
+          <span class="cost-value" id="rentTotal">$44,750</span>
+        </div>
+
+        <div class="total-cost rent" id="rentTotalLarge">$44,750</div>
+      </div>
+    </div>
+
+    <!-- Savings Banner -->
+    <div class="savings-banner">
+      <h3>💰 Total Savings with Rental</h3>
+      <div class="savings-amount" id="totalSavings">$86,810</div>
+      <div class="savings-percent">That's <span id="savingsPercent">66</span>% less than buying!</div>
+    </div>
+
+    <!-- 5-Year Projection Chart -->
+    <section class="chart-section">
+      <div class="chart-container">
+        <h2>📈 5-Year Cost Projection</h2>
+        <p class="section-subtitle">Cumulative costs over time (including opportunity costs)</p>
+
+        <div class="chart-bars">
+          <div class="chart-bar">
+            <div class="bar buy-bar" id="bar-year1" style="height:30%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 1</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar buy-bar" id="bar-year2" style="height:45%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 2</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar buy-bar" id="bar-year3" style="height:60%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 3</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar buy-bar" id="bar-year4" style="height:80%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 4</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar buy-bar" id="bar-year5" style="height:100%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 5</div>
+          </div>
+        </div>
+
+        <div class="chart-bars">
+          <div class="chart-bar">
+            <div class="bar rent-bar" id="bar-rent-year1" style="height:20%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 1</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar rent-bar" id="bar-rent-year2" style="height:25%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 2</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar rent-bar" id="bar-rent-year3" style="height:30%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 3</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar rent-bar" id="bar-rent-year4" style="height:35%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 4</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar rent-bar" id="bar-rent-year5" style="height:40%">
+              <div class="bar-value"></div>
+            </div>
+            <div class="bar-label">Year 5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Points -->
+    <section class="key-points">
+      <div class="key-point">
+        <div class="key-point-icon">💰</div>
+        <h4>Preserve Capital</h4>
+        <p>Keep 90-95% of capital available for revenue-generating activities like marketing, hiring, or product development.</p>
+      </div>
+
+      <div class="key-point">
+        <div class="key-point-icon">📈</div>
+        <h4>Same SEO Value</h4>
+        <p>Rental domains provide identical SEO authority, trust signals, and direct traffic as purchased domains.</p>
+      </div>
+
+      <div class="key-point">
+        <div class="key-point-icon">🔄</div>
+        <h4>Flexibility</h4>
+        <p>Test domains before committing. Switch if business direction changes. No 6-figure sunk cost.</p>
+      </div>
+
+      <div class="key-point">
+        <div class="key-point-icon">⚡</div>
+        <h4>Instant Launch</h4>
+        <p>Start using premium domains immediately. No waiting for transfer approvals or escrow clearance.</p>
+      </div>
+
+      <div class="key-point">
+        <div class="key-point-icon">🎯</div>
+        <h4>Better ROI</h4>
+        <p>Invest saved capital into business growth. 5% annual returns compound to significant value over time.</p>
+      </div>
+
+      <div class="key-point">
+        <div class="key-point-icon">🛡️</div>
+        <h4>Lower Risk</h4>
+        <p>If business doesn't work out, you've saved 90%+ vs buying. Exit strategy is simple: stop renting.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Ready to Access Premium Domains?</h2>
+      <p>Browse 1,500+ premium domains available for rent. Launch your digital empire today.</p>
+      <a href="/domains" class="btn">Browse Premium Domains →</a>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo" style="font-size:1.5rem;font-weight:900;color:var(--purple)">PILLAR</div>
+      <p style="opacity:.7;margin:.5rem 0">Transform Expertise Into Digital Wealth</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/domains">Domains</a>
+        <a href="/insights">Insights</a>
+        <a href="/about">About</a>
+      </div>
+      <p style="opacity:.4;margin-top:2rem;font-size:.875rem">© 2025 PILLAR Media & Entertainment</p>
+    </div>
+  </footer>
+
+  <script>
+    // Calculator Logic
+    const domainValue = document.getElementById('domainValue');
+    const rentalRate = document.getElementById('rentalRate');
+    const timeframe = document.getElementById('timeframe');
+    const setupCost = document.getElementById('setupCost');
+    const rateDisplay = document.getElementById('rateDisplay');
+    const monthlyRent = document.getElementById('monthlyRent');
+
+    function calculate() {
+      const value = parseFloat(domainValue.value);
+      const rate = parseFloat(rentalRate.value);
+      const years = parseInt(timeframe.value);
+      const setup = parseFloat(setupCost.value);
+      const months = years * 12;
+
+      // Update rate display
+      rateDisplay.textContent = rate.toFixed(1);
+      const monthly = (value * rate / 100);
+      monthlyRent.textContent = monthly.toLocaleString();
+
+      // BUYING costs
+      const buyDomain = value;
+      const buySetup = setup;
+      const buyRenewal = 12 * years; // $12/year typical
+      const opportunityCost = buyDomain * 0.05 * years; // 5% APY
+      const buyTotalCost = buyDomain + buySetup + buyRenewal + opportunityCost;
+
+      // RENTING costs
+      const rentInitialCost = monthly;
+      const rentMonthlyCost = monthly * months;
+      const capitalPreserved = buyDomain;
+      const investmentGain = capitalPreserved * 0.05 * years; // 5% APY
+      const rentNetCost = rentInitialCost + rentMonthlyCost - investmentGain;
+
+      // Update UI - Buying
+      document.getElementById('buyDomainCost').textContent = '$' + buyDomain.toLocaleString();
+      document.getElementById('buySetupCost').textContent = '$' + buySetup.toLocaleString();
+      document.getElementById('buyRenewalCost').textContent = '$' + buyRenewal.toLocaleString();
+      document.getElementById('buyOpportunityCost').textContent = '$' + opportunityCost.toLocaleString();
+      document.getElementById('buyTotal').textContent = '$' + buyTotalCost.toLocaleString();
+      document.getElementById('buyTotalLarge').textContent = '$' + buyTotalCost.toLocaleString();
+
+      // Update UI - Renting
+      document.getElementById('rentInitial').textContent = '$' + rentInitialCost.toLocaleString();
+      document.getElementById('rentMonths').textContent = months;
+      document.getElementById('rentMonthly').textContent = '$' + rentMonthlyCost.toLocaleString();
+      document.getElementById('rentCapitalSaved').textContent = '$' + capitalPreserved.toLocaleString();
+      document.getElementById('rentInvestmentGain').textContent = '$' + investmentGain.toLocaleString();
+      document.getElementById('rentTotal').textContent = '$' + rentNetCost.toLocaleString();
+      document.getElementById('rentTotalLarge').textContent = '$' + rentNetCost.toLocaleString();
+
+      // Savings
+      const savings = buyTotalCost - rentNetCost;
+      const savingsPercent = ((savings / buyTotalCost) * 100).toFixed(0);
+      document.getElementById('totalSavings').textContent = '$' + savings.toLocaleString();
+      document.getElementById('savingsPercent').textContent = savingsPercent;
+
+      // Update chart
+      updateChart(buyDomain, monthly, years, opportunityCost, investmentGain);
+    }
+
+    function updateChart(buyValue, monthlyRent, years, opportunityCost, investmentGain) {
+      const maxYears = 5;
+      const yearlyOpportunityCost = opportunityCost / years;
+      const yearlyInvestmentGain = investmentGain / years;
+
+      for (let i = 1; i <= maxYears; i++) {
+        const buyCost = buyValue + (yearlyOpportunityCost * i);
+        const rentCost = (monthlyRent * 12 * i) - (yearlyInvestmentGain * i);
+
+        const maxCost = Math.max(buyCost, buyValue + (yearlyOpportunityCost * maxYears));
+        const buyHeight = (buyCost / maxCost) * 100;
+        const rentHeight = (rentCost / maxCost) * 100;
+
+        const buyBar = document.getElementById(`bar-year${i}`);
+        const rentBar = document.getElementById(`bar-rent-year${i}`);
+
+        if (buyBar) {
+          buyBar.style.height = buyHeight + '%';
+          buyBar.querySelector('.bar-value').textContent = '$' + Math.round(buyCost/1000) + 'K';
+        }
+
+        if (rentBar) {
+          rentBar.style.height = rentHeight + '%';
+          rentBar.querySelector('.bar-value').textContent = '$' + Math.round(rentCost/1000) + 'K';
+        }
+      }
+    }
+
+    // Event listeners
+    domainValue.addEventListener('input', calculate);
+    rentalRate.addEventListener('input', calculate);
+    timeframe.addEventListener('change', calculate);
+    setupCost.addEventListener('input', calculate);
+
+    // Initial calculation
+    calculate();
+
+    // Mobile menu
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    mobileMenu?.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
