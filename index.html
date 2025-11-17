@@ -10,6 +10,15 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://pillarme.com/">
 
+  <!-- PWA / Mobile App -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PILLAR">
+
   <!-- Preload critical resources -->
   <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="/images/hero.webp" type="image/webp">
@@ -18,6 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://js.stripe.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
   <!-- Critical CSS -->
   <style>
@@ -308,6 +318,15 @@
       .seo-content h2{font-size:2rem}
     }
 
+    /* Mobile touch optimizations */
+    button, a, input, textarea, select{touch-action:manipulation;-webkit-tap-highlight-color:rgba(139,0,255,.1)}
+    @supports (-webkit-touch-callout:none){body{-webkit-text-size-adjust:100%}}
+
+    /* Ensure minimum touch targets on mobile */
+    @media (max-width:768px){
+      button, a, input[type="submit"], input[type="button"]{min-height:44px;min-width:44px}
+    }
+
     /* Print / a11y prefs */
     @media print{nav,.btn,.loading{display:none !important} body{color:#000;background:#fff}}
     @media (prefers-contrast:high){:root{--purple:#6B00CC;--gray:#333}}
@@ -356,9 +375,12 @@
     "name":"PILLAR Media & Entertainment",
     "url":"https://pillarme.com",
     "logo":"https://pillarme.com/images/logo.png",
-    "description":"PILLAR helps thought leaders and industry experts build profitable web assets",
+    "description":"PILLAR helps thought leaders and industry experts build profitable web assets. Launch in 30 days, earn $50K-$250K/year.",
     "contactPoint":{"@type":"ContactPoint","contactType":"sales","availableLanguage":"English"},
-    "sameAs":[]
+    "sameAs":["https://twitter.com/pillarme","https://linkedin.com/company/pillarme"],
+    "address":{"@type":"PostalAddress","addressCountry":"US"},
+    "founder":{"@type":"Person","name":"PILLAR Leadership"},
+    "foundingDate":"2024"
   }
   </script>
   <script type="application/ld+json">
@@ -368,6 +390,57 @@
     "name":"PILLAR Media & Entertainment",
     "url":"https://pillarme.com",
     "potentialAction":{"@type":"SearchAction","target":"https://pillarme.com/search?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How much does a PILLAR website cost?",
+        "acceptedAnswer":{"@type":"Answer","text":"PILLAR websites start at $100 setup + $25/month for premium domain rental. Our First Launch Package is just $50/month and includes everything you need to get started."}
+      },
+      {
+        "@type":"Question",
+        "name":"How long does it take to launch a website?",
+        "acceptedAnswer":{"@type":"Answer","text":"We guarantee your website launches within 30 days. Many sites go live within 24-48 hours with our First Launch Package."}
+      },
+      {
+        "@type":"Question",
+        "name":"Do I need technical skills to use PILLAR?",
+        "acceptedAnswer":{"@type":"Answer","text":"No technical skills required. We handle all the coding, design, and deployment. You just share your expertise and we transform it into a professional website."}
+      },
+      {
+        "@type":"Question",
+        "name":"What's included in the premium domain rental?",
+        "acceptedAnswer":{"@type":"Answer","text":"Premium domain rental includes a high-value domain (worth $500-$50,000+), full DNS management, SSL certificate, and professional email setup. Rent premium domains for 1-5% of their purchase price."}
+      },
+      {
+        "@type":"Question",
+        "name":"Can I use my own domain?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes! We offer custom domain packages starting at $500 one-time setup. However, our premium domain rental option provides instant authority at a fraction of the cost."}
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "serviceType":"Professional Website Development",
+    "provider":{"@type":"Organization","name":"PILLAR Media & Entertainment"},
+    "areaServed":"Worldwide",
+    "hasOfferCatalog":{
+      "@type":"OfferCatalog",
+      "name":"Web Development Services",
+      "itemListElement":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Foundation Package"},"price":"125","priceCurrency":"USD"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Growth Accelerator"},"price":"425","priceCurrency":"USD"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Authority Builder"},"price":"1000","priceCurrency":"USD"}
+      ]
+    }
   }
   </script>
 
