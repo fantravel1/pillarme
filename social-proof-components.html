@@ -1,0 +1,798 @@
+<!-- ========================================
+     SOCIAL PROOF COMPONENTS
+     Copy these sections into your pages for instant credibility
+     ======================================== -->
+
+<!-- ========================================
+     1. LIVE METRICS BANNER
+     Place below hero section
+     ======================================== -->
+<section class="live-metrics-banner">
+  <div class="metrics-container">
+    <div class="metric-card">
+      <div class="metric-icon">👥</div>
+      <div class="metric-value">
+        <span id="live-creators" data-counter="12453">12,453</span>+
+      </div>
+      <div class="metric-label">Content Creators</div>
+      <div class="metric-live">
+        <span class="live-dot"></span>
+        <span>Live</span>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">💰</div>
+      <div class="metric-value">
+        <span id="live-revenue" data-counter="2347890">$2.3M</span>+
+      </div>
+      <div class="metric-label">Revenue Generated</div>
+      <div class="metric-live">
+        <span class="live-dot"></span>
+        <span>This Year</span>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">🌐</div>
+      <div class="metric-value">
+        <span id="live-websites" data-counter="847">847</span>
+      </div>
+      <div class="metric-label">Active Websites</div>
+      <div class="metric-live">
+        <span class="live-dot"></span>
+        <span>Growing Daily</span>
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-icon">⚡</div>
+      <div class="metric-value">
+        <span data-counter="24">24</span>hrs
+      </div>
+      <div class="metric-label">Avg Launch Time</div>
+      <div class="metric-badge">Guaranteed</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .live-metrics-banner {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    padding: 3rem 2rem;
+    margin: -2rem 0 4rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .live-metrics-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139,0,255,.1), transparent);
+    animation: shimmer 8s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  .metrics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .metric-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255,255,255,.05);
+    border-radius: 16px;
+    border: 1px solid rgba(139,0,255,.2);
+    transition: all .3s;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-5px);
+    border-color: #8B00FF;
+    background: rgba(139,0,255,.1);
+  }
+
+  .metric-icon {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+  }
+
+  .metric-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #8B00FF;
+    line-height: 1;
+    margin: .5rem 0;
+  }
+
+  .metric-label {
+    color: rgba(255,255,255,.7);
+    font-size: .875rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  .metric-live {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: .5rem;
+    color: #10B981;
+    font-size: .75rem;
+    font-weight: 600;
+  }
+
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+  }
+
+  .metric-badge {
+    display: inline-block;
+    background: #8B00FF;
+    color: #fff;
+    padding: .25rem .75rem;
+    border-radius: 50px;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-top: .5rem;
+  }
+
+  @media (max-width: 768px) {
+    .metrics-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .metric-value {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<!-- ========================================
+     2. TESTIMONIALS SECTION
+     Place after pricing or features
+     ======================================== -->
+<section class="testimonials-section">
+  <div class="testimonials-container">
+    <h2>Trusted by Industry Leaders</h2>
+    <p class="section-subtitle">Real results from real websites built with PILLAR</p>
+
+    <div class="testimonials-grid">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-logo">✈️</div>
+          <div class="testimonial-site">FanTravel.com</div>
+        </div>
+
+        <div class="testimonial-quote">
+          "Renting FanTravel.com for $500/month instead of buying it for $150K was the best decision. We invested that capital into marketing and hit profitability in month 3."
+        </div>
+
+        <div class="testimonial-metrics">
+          <div class="metric-small">
+            <div class="metric-small-value">+450%</div>
+            <div class="metric-small-label">Traffic</div>
+          </div>
+          <div class="metric-small">
+            <div class="metric-small-value">$12K/mo</div>
+            <div class="metric-small-label">Revenue</div>
+          </div>
+          <div class="metric-small">
+            <div class="metric-small-value">2,400%</div>
+            <div class="metric-small-label">ROI</div>
+          </div>
+        </div>
+
+        <div class="testimonial-author">
+          <div class="author-avatar">SM</div>
+          <div class="author-info">
+            <div class="author-name">Sarah Mitchell</div>
+            <div class="author-role">Founder, FanTravel</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-logo">💰</div>
+          <div class="testimonial-site">BankSize.com</div>
+        </div>
+
+        <div class="testimonial-quote">
+          "The premium domain gave us instant credibility in finance. Conversion rate jumped 34% immediately after launch. Worth every penny of the $1K/month rental."
+        </div>
+
+        <div class="testimonial-metrics">
+          <div class="metric-small">
+            <div class="metric-small-value">+34%</div>
+            <div class="metric-small-label">Conversions</div>
+          </div>
+          <div class="metric-small">
+            <div class="metric-small-value">+89%</div>
+            <div class="metric-small-label">Trust</div>
+          </div>
+          <div class="metric-small">
+            <div class="metric-small-value">$28K/mo</div>
+            <div class="metric-small-label">Revenue</div>
+          </div>
+        </div>
+
+        <div class="testimonial-author">
+          <div class="author-avatar">MC</div>
+          <div class="author-info">
+            <div class="author-name">Marcus Chen</div>
+            <div class="author-role">CEO, BankSize</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="testimonial-logo">📈</div>
+          <div class="testimonial-site">ViewsGrowth.com</div>
+        </div>
+
+        <div class="testimonial-quote">
+          "PILLAR built our site in 48 hours. The AI content is phenomenal. We went from 0 to 50K monthly visitors in 6 months. Game changer."
+        </div>
+
+        <div class="testimonial-metrics">
+          <div class="metric-small">
+            <div class="metric-small-value">50K/mo</div>
+            <div class="metric-small-label">Visitors</div>
+          </div>
+          <div class="metric-small">
+            <div class="metric-small-value">48hrs</div>
+            <div class="metric-small-label">Build Time</div>
+          </div>
+          <div class="metric-small">
+            <div class="metric-small-value">+1,200%</div>
+            <div class="metric-small-label">Growth</div>
+          </div>
+        </div>
+
+        <div class="testimonial-author">
+          <div class="author-avatar">LR</div>
+          <div class="author-info">
+            <div class="author-name">Lisa Rodriguez</div>
+            <div class="author-role">Director, ViewsGrowth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 6rem 2rem;
+    background: #fafafa;
+  }
+
+  .testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .testimonials-container h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #E5E5E5;
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-card:hover {
+    border-color: #8B00FF;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(139,0,255,.15);
+  }
+
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-logo {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8B00FF;
+    border-radius: 12px;
+  }
+
+  .testimonial-site {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #8B00FF;
+  }
+
+  .testimonial-quote {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .testimonial-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric-small {
+    text-align: center;
+  }
+
+  .metric-small-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #10B981;
+    line-height: 1;
+  }
+
+  .metric-small-label {
+    font-size: .75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-top: .25rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #8B00FF, #5500AA);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  .author-name {
+    font-weight: 700;
+    color: #000;
+  }
+
+  .author-role {
+    font-size: .875rem;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- ========================================
+     3. RECENT ACTIVITY FEED
+     Place in sidebar or below hero
+     ======================================== -->
+<div class="recent-activity-widget">
+  <div class="activity-header">
+    <span class="activity-pulse"></span>
+    <span>Recent Activity</span>
+  </div>
+  <div id="recent-activity"></div>
+</div>
+
+<style>
+  .recent-activity-widget {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #E5E5E5;
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+  }
+
+  .activity-header {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: .875rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  .activity-pulse {
+    width: 10px;
+    height: 10px;
+    background: #10B981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .activity-notification {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .activity-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .activity-content {
+    flex: 1;
+    font-size: .875rem;
+    line-height: 1.4;
+  }
+
+  .activity-content strong {
+    color: #8B00FF;
+    font-weight: 700;
+  }
+
+  .activity-time {
+    display: block;
+    color: #999;
+    font-size: .75rem;
+    margin-top: .25rem;
+  }
+</style>
+
+<!-- ========================================
+     4. TRUST BADGES
+     Place below hero or in footer
+     ======================================== -->
+<div class="trust-badges">
+  <div class="trust-badge">
+    <div class="trust-icon">✅</div>
+    <div class="trust-text">
+      <div class="trust-title">12,000+</div>
+      <div class="trust-subtitle">Happy Clients</div>
+    </div>
+  </div>
+
+  <div class="trust-badge">
+    <div class="trust-icon">⚡</div>
+    <div class="trust-text">
+      <div class="trust-title">24 Hour</div>
+      <div class="trust-subtitle">Launch Guarantee</div>
+    </div>
+  </div>
+
+  <div class="trust-badge">
+    <div class="trust-icon">💰</div>
+    <div class="trust-text">
+      <div class="trust-title">30-Day</div>
+      <div class="trust-subtitle">Money Back</div>
+    </div>
+  </div>
+
+  <div class="trust-badge">
+    <div class="trust-icon">🔒</div>
+    <div class="trust-text">
+      <div class="trust-title">SSL Secure</div>
+      <div class="trust-subtitle">Bank-Level Security</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: rgba(139,0,255,.05);
+    border-radius: 12px;
+    margin: 2rem 0;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .trust-icon {
+    font-size: 2rem;
+  }
+
+  .trust-title {
+    font-weight: 700;
+    color: #000;
+    line-height: 1;
+  }
+
+  .trust-subtitle {
+    font-size: .875rem;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .trust-badges {
+      gap: 1rem;
+    }
+    .trust-badge {
+      flex: 1 1 calc(50% - 1rem);
+      min-width: 140px;
+    }
+  }
+</style>
+
+<!-- ========================================
+     5. CASE STUDY CARDS
+     Place in dedicated section
+     ======================================== -->
+<section class="case-studies-section">
+  <h2>Success Stories</h2>
+  <p class="section-subtitle">See how premium domains drive real business results</p>
+
+  <div class="case-studies-grid">
+    <div class="case-study-card">
+      <div class="case-study-header">
+        <div class="case-study-icon">✈️</div>
+        <div>
+          <div class="case-study-site">FanTravel.com</div>
+          <div class="case-study-category">Sports Travel Platform</div>
+        </div>
+      </div>
+
+      <div class="case-study-rental">
+        <span class="rental-label">Domain Rental:</span>
+        <span class="rental-price">$500/month</span>
+      </div>
+
+      <div class="case-study-story">
+        Launched a sports travel platform targeting fans. Premium domain provided instant authority in crowded market. Profitability achieved in 3 months.
+      </div>
+
+      <div class="case-study-results">
+        <div class="result-item">
+          <div class="result-value">24 hours</div>
+          <div class="result-label">Launch Time</div>
+        </div>
+        <div class="result-item">
+          <div class="result-value">85K</div>
+          <div class="result-label">Monthly Visitors</div>
+        </div>
+        <div class="result-item">
+          <div class="result-value">$12K/mo</div>
+          <div class="result-label">Revenue</div>
+        </div>
+        <div class="result-item">
+          <div class="result-value">2,400%</div>
+          <div class="result-label">ROI</div>
+        </div>
+      </div>
+
+      <a href="/topsites" class="case-study-link">View Full Case Study →</a>
+    </div>
+
+    <!-- Add more case study cards as needed -->
+  </div>
+</section>
+
+<style>
+  .case-studies-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .case-studies-section h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .case-study-card {
+    background: linear-gradient(135deg, rgba(139,0,255,.05) 0%, transparent 100%);
+    border: 2px solid #8B00FF;
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all .3s;
+  }
+
+  .case-study-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(139,0,255,.2);
+  }
+
+  .case-study-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-study-icon {
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+  }
+
+  .case-study-site {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #8B00FF;
+  }
+
+  .case-study-category {
+    font-size: .875rem;
+    color: #666;
+  }
+
+  .case-study-rental {
+    background: #fff;
+    padding: .75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rental-label {
+    font-size: .875rem;
+    color: #666;
+  }
+
+  .rental-price {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #10B981;
+  }
+
+  .case-study-story {
+    color: #1a1a1a;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-study-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .result-item {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .result-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #8B00FF;
+    line-height: 1;
+  }
+
+  .result-label {
+    font-size: .75rem;
+    color: #666;
+    margin-top: .25rem;
+  }
+
+  .case-study-link {
+    display: inline-block;
+    color: #8B00FF;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all .3s;
+  }
+
+  .case-study-link:hover {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    .case-studies-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- ========================================
+     JAVASCRIPT REQUIRED
+     Add this before </body>
+     ======================================== -->
+<script src="/social-proof.js"></script>

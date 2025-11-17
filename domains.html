@@ -522,6 +522,7 @@
         <li><a href="/#products" aria-label="View our products">Products</a></li>
         <li><a href="/topsites" aria-label="Top Websites">Top Sites</a></li>
         <li><a href="/domains" aria-label="Available domains">Domains</a></li>
+        <li><a href="/domain-roi-calculator" aria-label="ROI Calculator">ROI Calculator</a></li>
         <li><a href="/insights" aria-label="Read our insights">Insights</a></li>
         <li><a href="/about" aria-label="Learn about us">About</a></li>
       </ul>
@@ -534,8 +535,72 @@
     <div>
       <h1>1,500+ Premium Domains Available</h1>
       <p>Instant authority. Instant credibility. Launch on a domain worth millions for as little as $25/month.</p>
+      <div class="hero-cta-buttons">
+        <a href="#domains" class="btn-primary">Browse Domains</a>
+        <a href="/domain-roi-calculator" class="btn-secondary-hero">Calculate ROI →</a>
+      </div>
     </div>
   </header>
+
+  <style>
+    .hero-cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 1.25rem 3rem;
+      background: #8B00FF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: all .3s;
+      box-shadow: 0 4px 15px rgba(139,0,255,.15);
+    }
+
+    .btn-primary:hover {
+      background: #5500AA;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(139,0,255,.25);
+    }
+
+    .btn-secondary-hero {
+      display: inline-block;
+      padding: 1.25rem 3rem;
+      background: transparent;
+      border: 3px solid #8B00FF;
+      color: #8B00FF;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: all .3s;
+    }
+
+    .btn-secondary-hero:hover {
+      background: #8B00FF;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(139,0,255,.25);
+    }
+
+    @media (max-width: 768px) {
+      .hero-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-primary, .btn-secondary-hero {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 
   <!-- ===== SEARCH ===== -->
   <section class="search-section" aria-label="Domain search">
@@ -2375,5 +2440,8 @@
       if (e.key === 'Escape') closeModal();
     });
   </script>
+
+  <!-- Social Proof Scripts -->
+  <script src="/social-proof.js" defer></script>
 </body>
 </html>
