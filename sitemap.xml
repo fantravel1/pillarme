@@ -7,98 +7,148 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://pillarme.com/</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main Pages - High Priority -->
+  <!-- Main Navigation Pages - High Priority -->
   <url>
-    <loc>https://pillarme.com/about</loc>
-    <lastmod>2025-01-17</lastmod>
+    <loc>https://pillarme.com/domains</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://pillarme.com/how-it-works</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://pillarme.com/domains</loc>
-    <lastmod>2025-01-17</lastmod>
+    <loc>https://pillarme.com/ai-services</loc>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://pillarme.com/get-started</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://pillarme.com/faq</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pillarme.com/support</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/insights</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pillarme.com/about</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/topsites</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pillarme.com/domain-roi-calculator</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Insights Articles - High Value SEO Content -->
   <url>
     <loc>https://pillarme.com/insights/ai-search-website-future</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/insights/creator-economy-website-strategy</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/insights/platform-website-revenue-comparison</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/insights/youtube-website-monetization</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/insights/premium-domain-conversion-data</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/insights/domain-rental-strategy</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- AI Service Pages -->
+  <!-- AI Demo/Portfolio Pages -->
   <url>
     <loc>https://pillarme.com/ai/rewrew-one</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://pillarme.com/ai/rewrew-two</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Account page excluded from sitemap (private, has noindex) -->
+  <!-- Utility Pages (lower priority) -->
+  <url>
+    <loc>https://pillarme.com/stripe-success-page</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Account page excluded from sitemap (private, requires login) -->
 
 </urlset>
