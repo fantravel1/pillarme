@@ -1007,7 +1007,7 @@
                 <h2>Request a Free Consultation</h2>
                 <p>Take the first step towards financial excellence</p>
             </div>
-            <form class="consultation-form">
+            <form class="consultation-form" id="consultation-form" action="https://formspree.io/f/meejrnwe" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name *</label>
@@ -1069,5 +1069,53 @@
             <p class="copyright">© 2025 RewRew Financial. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('consultation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const submitBtn = form.querySelector('.form-submit');
+            const originalBtnText = submitBtn.textContent;
+
+            // Collect form data
+            const formData = new FormData(form);
+            formData.append('_subject', 'New Consultation Request - RewRew Financial');
+
+            // Show loading state
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            // Submit to Formspree
+            fetch('https://formspree.io/f/meejrnwe', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 3rem; color: #fff;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">✓</div>
+                            <h3 style="color: #D4AF37; margin-bottom: 1rem;">Thank You!</h3>
+                            <p style="opacity: 0.9;">Your consultation request has been submitted.<br>We'll contact you within 24 hours.</p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+                alert('Oops! There was a problem submitting your request. Please try again.');
+            });
+        });
+    </script>
 </body>
 </html>

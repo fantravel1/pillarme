@@ -604,7 +604,7 @@
             </div>
         </div>
 
-        <form class="form-container" id="intake-form">
+        <form class="form-container" id="intake-form" action="https://formspree.io/f/meejrnwe" method="POST">
             <!-- Section 1: Basic Information -->
             <div class="form-section">
                 <h2><span class="icon">👤</span> About You</h2>
@@ -885,36 +885,54 @@
         document.getElementById('intake-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
+            const form = this;
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+
             // Collect form data
-            const formData = new FormData(this);
-            const data = {};
+            const formData = new FormData(form);
 
-            formData.forEach((value, key) => {
-                if (data[key]) {
-                    if (Array.isArray(data[key])) {
-                        data[key].push(value);
-                    } else {
-                        data[key] = [data[key], value];
-                    }
-                } else {
-                    data[key] = value;
-                }
-            });
-
-            // Collect selected content types
+            // Collect selected content types and add to form data
             const selectedTypes = [];
             document.querySelectorAll('.content-type.selected').forEach(el => {
                 selectedTypes.push(el.querySelector('span').textContent);
             });
-            data.contentTypes = selectedTypes;
+            formData.append('contentTypes', selectedTypes.join(', '));
+            formData.append('_subject', 'New Get Started Submission - PILLAR');
 
-            console.log('Form submitted:', data);
+            // Show loading state
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
 
-            // Show success message
-            alert('Thank you! Your information has been submitted. We\'ll be in touch within 24 hours to start your journey!');
-
-            // In production, this would send to your backend
-            // fetch('/api/intake', { method: 'POST', body: JSON.stringify(data) })
+            // Submit to Formspree
+            fetch('https://formspree.io/f/meejrnwe', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 3rem;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🎉</div>
+                            <h2 style="color: var(--purple-light); margin-bottom: 1rem;">Thank You!</h2>
+                            <p style="color: #aaa; font-size: 1.1rem;">Your information has been submitted successfully.<br>We'll be in touch within 24 hours to start your journey!</p>
+                            <a href="domains.html" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: var(--purple); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600;">Browse Domains</a>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+                alert('Oops! There was a problem submitting your form. Please try again.');
+            });
         });
 
         // File upload feedback
