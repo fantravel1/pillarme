@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Content Services | Transform Your Content Into Web Assets | PILLAR</title>
+  <meta name="description" content="Powerful AI content transformation. Buy daily, weekly, monthly, or one-time AI power to turn your videos, podcasts, and docs into SEO-optimized web content.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  <link rel="canonical" href="https://pillarme.com/ai-services">
+
+  <!-- PWA / Mobile App -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#8B00FF">
+
+  <style>
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --blue:#3B82F6;--orange:#F59E0B;--gold:#FFD700;
+      --nav-h:72px;--content-max:1200px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#fff;color:#000;line-height:1.7;padding-top:var(--nav-h)}
+
+    /* Navigation */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;padding:.5rem}
+    nav a:hover{color:var(--purple)}
+    .mobile-menu{display:none;cursor:pointer;background:none;border:none;font-size:1.5rem;color:var(--purple)}
+
+    /* Hero */
+    .hero{padding:6rem 2rem 4rem;text-align:center;background:linear-gradient(135deg,var(--black) 0%,#1a1a1a 100%);color:#fff;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(139,0,255,.2) 0%,transparent 60%);pointer-events:none}
+    .hero>*{position:relative;z-index:1}
+    .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:1.5rem}
+    .hero h1 span{background:linear-gradient(135deg,var(--purple) 0%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{font-size:1.25rem;color:rgba(255,255,255,.8);max-width:700px;margin:0 auto 2rem}
+    .hero-badges{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:.5rem 1rem;border-radius:50px;font-size:.875rem}
+    .hero-badge.green{color:var(--green-success);border-color:var(--green-success)}
+
+    /* What is AI Content */
+    .what-section{padding:6rem 2rem;max-width:var(--content-max);margin:0 auto}
+    .what-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem}
+    .section-subtitle{text-align:center;color:var(--gray);font-size:1.125rem;max-width:650px;margin:0 auto 3rem}
+
+    .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+    .what-card{text-align:center;padding:2rem}
+    .what-icon{font-size:4rem;margin-bottom:1.5rem}
+    .what-arrow{display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--purple)}
+    .what-card h3{font-size:1.25rem;font-weight:700;margin-bottom:.75rem}
+    .what-card p{color:var(--gray);font-size:.95rem}
+    .what-card ul{list-style:none;padding:0;text-align:left;margin-top:1rem}
+    .what-card ul li{padding:.25rem 0;font-size:.9rem;color:var(--black-soft)}
+    .what-card ul li::before{content:'✓ ';color:var(--green-success);font-weight:bold}
+
+    /* AI Pricing */
+    .pricing-section{padding:6rem 2rem;background:var(--off-white)}
+    .pricing-container{max-width:var(--content-max);margin:0 auto}
+    .pricing-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem}
+
+    .pricing-toggle{display:flex;justify-content:center;gap:1rem;margin:2rem 0 3rem;flex-wrap:wrap}
+    .toggle-btn{padding:.75rem 1.5rem;border:2px solid var(--border-light);background:#fff;border-radius:50px;cursor:pointer;font-weight:600;transition:all .3s}
+    .toggle-btn:hover,.toggle-btn.active{border-color:var(--purple);background:var(--purple);color:#fff}
+
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+    .price-card{background:#fff;border:2px solid var(--border-light);border-radius:20px;padding:2.5rem;transition:all .3s;position:relative}
+    .price-card:hover{border-color:var(--purple);transform:translateY(-8px);box-shadow:0 20px 60px var(--purple-glow)}
+    .price-card.featured{border-color:var(--purple);background:linear-gradient(135deg,rgba(139,0,255,.03) 0%,rgba(139,0,255,.01) 100%)}
+    .price-card.featured::before{content:'BEST VALUE';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;padding:.25rem 1.5rem;border-radius:50px;font-size:.75rem;font-weight:700}
+    .price-card.gold{border-color:var(--gold)}
+    .price-card.gold::before{content:'ENTERPRISE';background:linear-gradient(135deg,var(--gold),var(--orange));color:#000}
+
+    .price-tier{display:inline-block;background:rgba(139,0,255,.1);color:var(--purple);padding:.25rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;margin-bottom:1rem}
+    .price-card h3{font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
+    .price-card .tagline{color:var(--gray);font-size:.95rem;margin-bottom:1.5rem}
+    .price-amount{font-size:3rem;font-weight:900;color:var(--purple);margin-bottom:.25rem}
+    .price-amount small{font-size:1rem;color:var(--gray);font-weight:500}
+    .price-card.gold .price-amount{color:var(--gold)}
+    .price-note{font-size:.875rem;color:var(--gray);margin-bottom:1.5rem}
+
+    .price-features{list-style:none;padding:0;margin-bottom:2rem}
+    .price-features li{padding:.75rem 0;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:.75rem}
+    .price-features li:last-child{border-bottom:none}
+    .price-features li::before{content:'✓';color:var(--green-success);font-weight:bold;flex-shrink:0}
+
+    .btn{display:inline-block;width:100%;padding:1rem 2rem;background:var(--purple);color:#fff;text-decoration:none;border-radius:10px;font-weight:700;text-align:center;transition:all .3s;border:none;cursor:pointer;font-size:1rem}
+    .btn:hover{background:var(--purple-darker);transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--orange));color:#000}
+    .btn-gold:hover{box-shadow:0 10px 30px rgba(255,215,0,.4)}
+    .btn-outline{background:transparent;border:2px solid var(--purple);color:var(--purple)}
+    .btn-outline:hover{background:var(--purple);color:#fff}
+
+    /* What You Get */
+    .output-section{padding:6rem 2rem}
+    .output-container{max-width:var(--content-max);margin:0 auto}
+    .output-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:3rem}
+
+    .output-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+    .output-card{background:var(--off-white);border:1px solid var(--border-light);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+    .output-card:hover{border-color:var(--purple);transform:translateY(-5px)}
+    .output-icon{font-size:3rem;margin-bottom:1rem}
+    .output-card h3{font-size:1.125rem;font-weight:700;margin-bottom:.5rem}
+    .output-card p{color:var(--gray);font-size:.9rem}
+
+    /* How AI Works */
+    .how-ai-section{padding:6rem 2rem;background:var(--black);color:#fff}
+    .how-ai-container{max-width:var(--content-max);margin:0 auto}
+    .how-ai-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem;color:#fff}
+    .how-ai-section .section-subtitle{color:rgba(255,255,255,.7)}
+
+    .process-flow{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:4rem;flex-wrap:wrap}
+    .process-step{flex:1;min-width:200px;text-align:center;padding:2rem;background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);border-radius:16px}
+    .process-step:hover{border-color:var(--purple);background:rgba(139,0,255,.1)}
+    .process-number{width:50px;height:50px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.25rem;margin:0 auto 1rem}
+    .process-step h3{font-size:1.125rem;font-weight:700;margin-bottom:.5rem}
+    .process-step p{font-size:.875rem;color:rgba(255,255,255,.7)}
+    .process-arrow{font-size:2rem;color:var(--purple)}
+
+    /* Use Cases */
+    .usecases-section{padding:6rem 2rem}
+    .usecases-container{max-width:var(--content-max);margin:0 auto}
+    .usecases-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:3rem}
+
+    .usecase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+    .usecase-card{border:2px solid var(--border-light);border-radius:16px;padding:2rem;transition:all .3s}
+    .usecase-card:hover{border-color:var(--purple);box-shadow:0 10px 40px var(--purple-glow)}
+    .usecase-card h3{font-size:1.25rem;font-weight:700;margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+    .usecase-card h3 span{font-size:1.5rem}
+    .usecase-card p{color:var(--gray);margin-bottom:1rem}
+    .usecase-card .example{background:var(--off-white);padding:1rem;border-radius:8px;font-size:.875rem;color:var(--black-soft)}
+    .usecase-card .example strong{color:var(--purple)}
+
+    /* CTA */
+    .cta-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);text-align:center}
+    .cta-section h2{font-size:2.5rem;font-weight:900;color:#fff;margin-bottom:1rem}
+    .cta-section p{color:rgba(255,255,255,.9);font-size:1.25rem;max-width:600px;margin:0 auto 2rem}
+    .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn-white{background:#fff;color:var(--purple)}
+    .btn-white:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    .btn-ghost{background:transparent;border:2px solid #fff;color:#fff}
+    .btn-ghost:hover{background:#fff;color:var(--purple)}
+
+    /* Footer */
+    footer{background:#000;color:#fff;padding:3rem 2rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple)}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;transition:color .3s}
+    .footer-links a:hover{color:var(--purple)}
+
+    @media (max-width:768px){
+      nav ul{display:none}
+      .mobile-menu{display:block}
+      .what-grid{grid-template-columns:1fr}
+      .what-arrow{transform:rotate(90deg)}
+      .process-flow{flex-direction:column}
+      .process-arrow{transform:rotate(90deg)}
+      .footer-container{flex-direction:column;text-align:center}
+      .footer-links{justify-content:center}
+      .cta-buttons{flex-direction:column;align-items:center}
+      .cta-buttons .btn{width:auto;padding:1rem 2rem}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">PILLAR</a>
+      <ul>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/ai-services">AI Services</a></li>
+        <li><a href="/domains">Domains</a></li>
+        <li><a href="/get-started">Get Started</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>AI-Powered <span>Content Transformation</span></h1>
+    <p>Turn your videos, podcasts, and documents into SEO-optimized web content. Buy AI power your way - one-time, daily, weekly, or monthly.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">🤖 100,000+ pieces generated daily</span>
+      <span class="hero-badge green">✓ No technical skills needed</span>
+      <span class="hero-badge">⚡ Results in 24-48 hours</span>
+    </div>
+  </header>
+
+  <!-- What is AI Content Transformation -->
+  <section class="what-section">
+    <h2>What is AI Content Transformation?</h2>
+    <p class="section-subtitle">We take your existing content and use AI to multiply it into web-ready assets</p>
+
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-icon">📹</div>
+        <h3>Your Content</h3>
+        <p>Send us what you've already created</p>
+        <ul>
+          <li>YouTube videos</li>
+          <li>Podcast episodes</li>
+          <li>Course materials</li>
+          <li>Webinars</li>
+          <li>Documents</li>
+        </ul>
+      </div>
+
+      <div class="what-arrow">→</div>
+
+      <div class="what-card">
+        <div class="what-icon">🤖</div>
+        <h3>AI Processing</h3>
+        <p>Our AI analyzes and transforms</p>
+        <ul>
+          <li>Transcription</li>
+          <li>Topic extraction</li>
+          <li>SEO optimization</li>
+          <li>Tone matching</li>
+          <li>Formatting</li>
+        </ul>
+      </div>
+
+      <div class="what-arrow">→</div>
+
+      <div class="what-card">
+        <div class="what-icon">✨</div>
+        <h3>Web-Ready Content</h3>
+        <p>Receive polished, publish-ready assets</p>
+        <ul>
+          <li>Blog articles</li>
+          <li>Landing pages</li>
+          <li>Social posts</li>
+          <li>Email copy</li>
+          <li>Meta descriptions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Pricing -->
+  <section class="pricing-section" id="pricing">
+    <div class="pricing-container">
+      <h2>AI Power - Your Way</h2>
+      <p class="section-subtitle">Choose the pricing model that fits your needs. No website required - just pure AI content power.</p>
+
+      <div class="pricing-grid">
+        <!-- One-Time -->
+        <div class="price-card">
+          <span class="price-tier">ONE-TIME</span>
+          <h3>Content Blast</h3>
+          <p class="tagline">Perfect for a single project</p>
+          <div class="price-amount">$99<small>/project</small></div>
+          <p class="price-note">One-time payment, no subscription</p>
+          <ul class="price-features">
+            <li>1 video OR 1 podcast transformed</li>
+            <li>5 SEO blog articles generated</li>
+            <li>10 social media posts</li>
+            <li>Meta descriptions included</li>
+            <li>48-hour delivery</li>
+          </ul>
+          <a href="/get-started?plan=blast" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <!-- Daily -->
+        <div class="price-card">
+          <span class="price-tier">DAILY</span>
+          <h3>Power Day</h3>
+          <p class="tagline">24 hours of unlimited AI</p>
+          <div class="price-amount">$49<small>/day</small></div>
+          <p class="price-note">Unlimited generation for 24 hours</p>
+          <ul class="price-features">
+            <li>Unlimited content pieces</li>
+            <li>Process multiple videos/podcasts</li>
+            <li>Blog posts, social, emails</li>
+            <li>Priority processing</li>
+            <li>Same-day delivery</li>
+          </ul>
+          <a href="/get-started?plan=daily" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <!-- Weekly -->
+        <div class="price-card featured">
+          <span class="price-tier">WEEKLY</span>
+          <h3>Sprint Week</h3>
+          <p class="tagline">7 days of content creation</p>
+          <div class="price-amount">$199<small>/week</small></div>
+          <p class="price-note">Save $144 vs daily rate</p>
+          <ul class="price-features">
+            <li>Unlimited content for 7 days</li>
+            <li>Dedicated AI processing queue</li>
+            <li>Content calendar planning</li>
+            <li>Multiple formats & platforms</li>
+            <li>Email support included</li>
+            <li>Revisions included</li>
+          </ul>
+          <a href="/get-started?plan=weekly" class="btn">Get Started</a>
+        </div>
+
+        <!-- Monthly -->
+        <div class="price-card">
+          <span class="price-tier">MONTHLY</span>
+          <h3>Content Engine</h3>
+          <p class="tagline">Ongoing content machine</p>
+          <div class="price-amount">$399<small>/month</small></div>
+          <p class="price-note">Best for consistent publishing</p>
+          <ul class="price-features">
+            <li>8 AI content pushes/month</li>
+            <li>40+ blog articles</li>
+            <li>80+ social media posts</li>
+            <li>Monthly content strategy call</li>
+            <li>Priority support</li>
+            <li>Analytics dashboard</li>
+          </ul>
+          <a href="/get-started?plan=monthly" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="price-card gold">
+          <span class="price-tier">ENTERPRISE</span>
+          <h3>AI Unlimited</h3>
+          <p class="tagline">For agencies & high-volume needs</p>
+          <div class="price-amount">Custom</div>
+          <p class="price-note">Tailored to your scale</p>
+          <ul class="price-features">
+            <li>Unlimited content generation</li>
+            <li>API access available</li>
+            <li>White-label options</li>
+            <li>Dedicated account manager</li>
+            <li>Custom AI training on your brand</li>
+            <li>SLA guarantees</li>
+          </ul>
+          <a href="/get-started?plan=enterprise" class="btn btn-gold">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="output-section">
+    <div class="output-container">
+      <h2>What Our AI Creates For You</h2>
+      <div class="output-grid">
+        <div class="output-card">
+          <div class="output-icon">📝</div>
+          <h3>Blog Articles</h3>
+          <p>SEO-optimized long-form content with headers, meta tags, and internal linking</p>
+        </div>
+        <div class="output-card">
+          <div class="output-icon">📱</div>
+          <h3>Social Posts</h3>
+          <p>Platform-specific content for Twitter, LinkedIn, Instagram, and Facebook</p>
+        </div>
+        <div class="output-card">
+          <div class="output-icon">📧</div>
+          <h3>Email Copy</h3>
+          <p>Newsletter content, drip sequences, and promotional emails</p>
+        </div>
+        <div class="output-card">
+          <div class="output-icon">🎯</div>
+          <h3>Landing Pages</h3>
+          <p>High-converting page copy with headlines, CTAs, and benefit statements</p>
+        </div>
+        <div class="output-card">
+          <div class="output-icon">🔍</div>
+          <h3>SEO Content</h3>
+          <p>Meta descriptions, title tags, alt text, and keyword-optimized copy</p>
+        </div>
+        <div class="output-card">
+          <div class="output-icon">📊</div>
+          <h3>Content Summaries</h3>
+          <p>Executive summaries, key takeaways, and highlight reels</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How AI Works -->
+  <section class="how-ai-section">
+    <div class="how-ai-container">
+      <h2>How It Works</h2>
+      <p class="section-subtitle">From your content to published assets in 3 simple steps</p>
+
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <h3>Upload Content</h3>
+          <p>Share your video links, audio files, or documents through our portal</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <h3>AI Processes</h3>
+          <p>Our AI transcribes, analyzes, and transforms your content</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <h3>Receive Assets</h3>
+          <p>Get polished, publish-ready content delivered to your inbox</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="usecases-section">
+    <div class="usecases-container">
+      <h2>Perfect For</h2>
+      <div class="usecase-grid">
+        <div class="usecase-card">
+          <h3><span>🎙️</span> Podcasters</h3>
+          <p>Turn every episode into a content goldmine</p>
+          <div class="example">
+            <strong>Example:</strong> 1 podcast episode → 3 blog posts + 10 social clips + newsletter content
+          </div>
+        </div>
+        <div class="usecase-card">
+          <h3><span>🎬</span> YouTubers</h3>
+          <p>Repurpose videos across all platforms</p>
+          <div class="example">
+            <strong>Example:</strong> 1 YouTube video → 5 blog articles + Twitter thread + LinkedIn post
+          </div>
+        </div>
+        <div class="usecase-card">
+          <h3><span>📚</span> Course Creators</h3>
+          <p>Generate marketing content from your lessons</p>
+          <div class="example">
+            <strong>Example:</strong> Course module → Lead magnet + Email sequence + Landing page
+          </div>
+        </div>
+        <div class="usecase-card">
+          <h3><span>🎤</span> Speakers</h3>
+          <p>Extend the life of every presentation</p>
+          <div class="example">
+            <strong>Example:</strong> Keynote recording → Thought leadership articles + Social content
+          </div>
+        </div>
+        <div class="usecase-card">
+          <h3><span>💼</span> Consultants</h3>
+          <p>Scale your expertise without more hours</p>
+          <div class="example">
+            <strong>Example:</strong> Client call recording → Case study + Blog post + Sales content
+          </div>
+        </div>
+        <div class="usecase-card">
+          <h3><span>🏢</span> Agencies</h3>
+          <p>Deliver more content without more headcount</p>
+          <div class="example">
+            <strong>Example:</strong> Client assets → Full content calendar + Reports + Deliverables
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Multiply Your Content?</h2>
+    <p>Start transforming your videos, podcasts, and documents into web-ready content today.</p>
+    <div class="cta-buttons">
+      <a href="/get-started" class="btn btn-white">Start Free Consultation</a>
+      <a href="#pricing" class="btn btn-ghost">View Pricing</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">PILLAR</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/ai-services">AI Services</a>
+        <a href="/domains">Domains</a>
+        <a href="/faq">FAQ</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.mobile-menu')?.addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
