@@ -100,7 +100,14 @@
       --red:#EF4444;--red-light:#FEE2E2;
       --blue:#3B82F6;--blue-light:#DBEAFE;
       --gold:#FFD700;--orange:#F59E0B;
-      --nav-h:72px;--content-max:1200px;
+      --nav-h:64px;--content-max:1200px;
+      /* Theme-aware nav/footer variables (light theme) */
+      --nav-bg:rgba(255,255,255,.95);
+      --nav-border:var(--border-light);
+      --link-color:var(--black);
+      --link-hover:var(--purple);
+      --footer-bg:#000;
+      --footer-border:rgba(255,255,255,.1);
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -110,15 +117,19 @@
       background:#fff;color:#000;line-height:1.7;padding-top:var(--nav-h);-webkit-font-smoothing:antialiased;
     }
 
-    /* Navigation */
-    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
-    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    /* Navigation (Unified Style) */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--nav-bg);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;border-bottom:1px solid var(--nav-border)}
+    .logo{font-size:1.5rem;font-weight:700;color:var(--purple);text-decoration:none;transition:transform .2s}
     .logo:hover{transform:scale(1.05)}
-    nav ul{display:flex;list-style:none;gap:2rem}
-    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;padding:.5rem}
-    nav a:hover{color:var(--purple)}
-    .mobile-menu{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{color:var(--link-color);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .3s;position:relative;padding:.5rem}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    .nav-links a:hover,.nav-links a.active{color:var(--link-hover)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:.5rem 1rem!important;border-radius:6px;font-weight:600}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--purple-dark)!important}
+    .mobile-menu-btn{display:none;background:none;border:none;color:var(--purple);font-size:1.5rem;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
 
     /* Hero */
     .hero{
@@ -290,15 +301,25 @@
     }
     .btn:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(139,0,255,.5);background:var(--purple-dark)}
 
-    /* Footer */
-    footer{background:#000;color:#fff;padding:3rem 2rem;margin-top:6rem}
-    .footer-container{max-width:var(--content-max);margin:0 auto;text-align:center}
-    .footer-links{display:flex;gap:2rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
-    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none}
+    /* Footer (Unified Style) */
+    footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem;margin-top:4rem;border-top:1px solid var(--footer-border)}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple)}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem;margin-top:.25rem}
+    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+    .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:500;transition:all .3s;font-size:.9rem}
     .footer-links a:hover{color:var(--purple)}
+    .footer-copy{color:rgba(255,255,255,.4);font-size:.8rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--footer-border)}
 
     /* Mobile */
     @media (max-width:768px){
+      .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1rem 0;gap:0;z-index:998;border-bottom:1px solid var(--nav-border)}
+      .nav-links.active{display:flex}
+      .nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem}
+      .nav-links a::after{display:none}
+      .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}
+      .mobile-menu-btn{display:flex}
+      .mobile-menu-btn.active{transform:rotate(90deg);transition:transform .3s}
       .traffic-options{grid-template-columns:repeat(2,1fr)}
       .comparison-cards{grid-template-columns:1fr}
       .revenue-breakdown{grid-template-columns:1fr}
@@ -306,8 +327,6 @@
       .tier-revenue{text-align:center}
       h1{font-size:2rem}
       .revenue-amount{font-size:2.5rem}
-      nav ul{display:none}
-      .mobile-menu{display:block}
       .settings-grid{grid-template-columns:1fr}
     }
   </style>
@@ -315,17 +334,18 @@
 
 <body>
   <!-- Navigation -->
-  <nav role="navigation">
-    <div class="container">
-      <a href="/" class="logo">PILLAR</a>
-      <ul>
-        <li><a href="/#products">Products</a></li>
-        <li><a href="/domains">Domains</a></li>
-        <li><a href="/insights">Insights</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-      <button class="mobile-menu" aria-label="Menu">☰</button>
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo" aria-label="PILLAR home">PILLAR</a>
+    <div class="nav-links">
+      <a href="domains.html">Domains</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="ai-services.html">AI Services</a>
+      <a href="get-started.html">Get Started</a>
+      <a href="faq.html">FAQ</a>
+      <a href="insights.html">Insights</a>
+      <a href="domains.html" class="nav-cta">Browse Domains</a>
     </div>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
   </nav>
 
   <!-- Hero -->
@@ -593,17 +613,19 @@
   </div>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="footer-container">
-      <div class="footer-logo" style="font-size:1.5rem;font-weight:900;color:var(--purple)">PILLAR</div>
-      <p style="opacity:.7;margin:.5rem 0">Transform Expertise Into Digital Wealth</p>
+      <div class="footer-logo">PILLAR</div>
+      <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
       <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/domains">Domains</a>
-        <a href="/insights">Insights</a>
-        <a href="/about">About</a>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="ai-services.html">AI Services</a>
+        <a href="domains.html">Domains</a>
+        <a href="faq.html">FAQ</a>
+        <a href="support.html">Support</a>
       </div>
-      <p style="opacity:.4;margin-top:2rem;font-size:.875rem">© 2025 PILLAR Media & Entertainment</p>
+      <p class="footer-copy">© 2025 PILLAR. All rights reserved.</p>
     </div>
   </footer>
 
@@ -791,19 +813,22 @@
     updateComparison();
 
     // Mobile menu
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navList = document.querySelector('nav ul');
-    mobileMenu?.addEventListener('click', () => {
-      navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
-      navList.style.position = 'absolute';
-      navList.style.top = '72px';
-      navList.style.left = '0';
-      navList.style.right = '0';
-      navList.style.background = '#fff';
-      navList.style.flexDirection = 'column';
-      navList.style.padding = '1rem 2rem';
-      navList.style.boxShadow = '0 4px 20px rgba(0,0,0,.1)';
-    });
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   </script>
 </body>
 </html>

@@ -33,7 +33,14 @@
       --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
       --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
       --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
-      --nav-h:72px;--content-max:1200px;
+      --nav-h:64px;--content-max:1200px;
+      /* Theme-aware nav/footer variables (light theme) */
+      --nav-bg:rgba(255,255,255,.95);
+      --nav-border:var(--border-light);
+      --link-color:var(--black);
+      --link-hover:var(--purple);
+      --footer-bg:#000;
+      --footer-border:rgba(255,255,255,.1);
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -44,18 +51,19 @@
     }
     section, header.hero, main, [id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
 
-    /* ===== Navigation ===== */
-    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
-    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none;transition:transform .2s}
+    /* Navigation (Unified Style) */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--nav-bg);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;border-bottom:1px solid var(--nav-border)}
+    .logo{font-size:1.5rem;font-weight:700;color:var(--purple);text-decoration:none;transition:transform .2s}
     .logo:hover{transform:scale(1.05)}
-    nav ul{display:flex;list-style:none;gap:2rem}
-    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;position:relative;padding:.5rem;min-height:48px;display:flex;align-items:center}
-    nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
-    nav .logo::after{bottom:-3px}
-    nav a:hover{color:var(--purple)}
-    nav a:hover::after{width:100%}
-    .mobile-menu{display:none;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center;background:transparent;border:none;color:var(--purple);font-size:1.5rem}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{color:var(--link-color);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .3s;position:relative;padding:.5rem}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    .nav-links a:hover,.nav-links a.active{color:var(--link-hover)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:.5rem 1rem!important;border-radius:6px;font-weight:600}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--purple-dark)!important}
+    .mobile-menu-btn{display:none;background:none;border:none;color:var(--purple);font-size:1.5rem;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
 
     /* ===== Top Sites Hero ===== */
     .sites-hero{
@@ -201,28 +209,25 @@
     }
     .btn-outline:hover{background:#fff;color:var(--purple);transform:translateY(-3px)}
 
-    /* ===== Footer (same as index) ===== */
-    footer{background:#000;color:#fff;padding:3rem 2rem}
-    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
-    .footer-left{display:flex;align-items:baseline;gap:1rem}
-    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple);letter-spacing:1px}
-    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem}
-    .footer-links{display:flex;gap:2.5rem}
-    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;font-weight:500;transition:all .3s;font-size:.95rem}
+    /* Footer (Unified Style) */
+    footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem;margin-top:4rem;border-top:1px solid var(--footer-border)}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple)}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem;margin-top:.25rem}
+    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+    .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:500;transition:all .3s;font-size:.9rem}
     .footer-links a:hover{color:var(--purple)}
-    .footer-copyright{width:100%;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+    .footer-copy{color:rgba(255,255,255,.4);font-size:.8rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--footer-border)}
 
     /* Mobile Responsive */
     @media (max-width:768px){
-      nav ul{display:none}
-      nav ul.active{display:flex;position:fixed;top:71px;left:0;right:0;height:calc(100vh - 71px);background-color:#FFFFFF;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:4rem;gap:2rem;z-index:998;overflow-y:auto}
-      nav ul li{width:100%;text-align:center;list-style:none}
-      nav ul a{font-size:1.375rem;font-weight:600;color:var(--black);padding:1rem 2rem;display:block;text-decoration:none}
-      nav ul a::after{display:none}
-      nav ul a:hover{color:var(--purple);background:transparent}
-      .mobile-menu{display:flex;background:none;border:none;color:var(--purple);font-size:1.5rem;padding:.5rem;cursor:pointer}
-      .mobile-menu:hover{background:none;color:var(--purple)}
-      .mobile-menu.active{transform:rotate(90deg);transition:transform .3s}
+      .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1rem 0;gap:0;z-index:998;border-bottom:1px solid var(--nav-border)}
+      .nav-links.active{display:flex}
+      .nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem}
+      .nav-links a::after{display:none}
+      .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}
+      .mobile-menu-btn{display:flex}
+      .mobile-menu-btn.active{transform:rotate(90deg);transition:transform .3s}
       .sites-hero h1{font-size:2rem}
       .sites-hero p{font-size:1.125rem}
       .sites-grid{grid-template-columns:1fr;padding:0 1rem}
@@ -233,9 +238,6 @@
       .filter-btn{padding:.5rem 1rem;font-size:.75rem}
       .cta-buttons{flex-direction:column;width:100%;padding:0 2rem}
       .btn-white,.btn-outline{width:100%}
-      .footer-container{flex-direction:column;text-align:center}
-      .footer-left{flex-direction:column;gap:.5rem;align-items:center;width:100%}
-      .footer-links{justify-content:center;margin-top:1rem;width:100%}
     }
 
     /* Skip link styles (hidden) */
@@ -326,17 +328,17 @@
 <body>
   <!-- ===== NAV ===== -->
   <nav role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <a href="/" class="logo" aria-label="PILLAR home">PILLAR</a>
-      <ul>
-        <li><a href="/#products" aria-label="View our products">Products</a></li>
-        <li><a href="/topsites" aria-label="Top Websites">Top Sites</a></li>
-        <li><a href="/domains" aria-label="Available domains">Domains</a></li>
-        <li><a href="/insights" aria-label="Read our insights">Insights</a></li>
-        <li><a href="/about" aria-label="Learn about us">About</a></li>
-      </ul>
-      <button class="mobile-menu" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+    <a href="index.html" class="logo" aria-label="PILLAR home">PILLAR</a>
+    <div class="nav-links">
+      <a href="domains.html">Domains</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="ai-services.html">AI Services</a>
+      <a href="get-started.html">Get Started</a>
+      <a href="faq.html">FAQ</a>
+      <a href="insights.html">Insights</a>
+      <a href="domains.html" class="nav-cta">Browse Domains</a>
     </div>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
   </nav>
 
   <!-- ===== HERO ===== -->
@@ -770,46 +772,41 @@
   </main>
 
   <!-- Footer -->
-  <footer role="contentinfo" aria-label="Site footer">
+  <footer role="contentinfo">
     <div class="footer-container">
-      <div class="footer-left">
-        <div class="footer-logo">PILLAR</div>
-        <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
-      </div>
-      
+      <div class="footer-logo">PILLAR</div>
+      <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
       <div class="footer-links">
-        <a href="/#products">Web Design</a>
-        <a href="/domains">Premium Domains</a>
-        <a href="/about">Corporate Information</a>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="ai-services.html">AI Services</a>
+        <a href="domains.html">Domains</a>
+        <a href="faq.html">FAQ</a>
+        <a href="support.html">Support</a>
       </div>
-      
-      <div class="footer-copyright">
-        <p>© 2024 PILLAR Media & Entertainment. All rights reserved.</p>
-        <p>Transforming digital landscapes to empower personal freedom.</p>
-      </div>
+      <p class="footer-copy">© 2025 PILLAR. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Main JS -->
   <script defer>
     // Mobile menu toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navList = document.querySelector('nav ul');
-    mobileMenu?.addEventListener('click', function() {
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!isExpanded));
-      navList.classList.toggle('active');
-      this.classList.toggle('active');
-    });
-    
-    // Close menu when clicking a link
-    document.querySelectorAll('nav ul a').forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        mobileMenu.setAttribute('aria-expanded', 'false');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
-    });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     // Domain filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
