@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works | Your 14-Day Website Journey | PILLAR</title>
+  <meta name="description" content="See exactly how we transform your expertise into a $50K+ digital asset in just 14 days. Step-by-step process from onboarding to launch.">
+  <meta name="keywords" content="website building process, 14 day website, AI website builder, content transformation, PILLAR process">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <link rel="canonical" href="https://pillarme.com/how-it-works">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How It Works | Your 14-Day Website Journey | PILLAR">
+  <meta property="og:description" content="See exactly how we transform your expertise into a $50K+ digital asset in just 14 days.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/how-it-works">
+  <meta property="og:site_name" content="PILLAR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How It Works | Your 14-Day Website Journey">
+  <meta name="twitter:description" content="Transform your expertise into a $50K+ digital asset in just 14 days.">
+
+  <!-- Schema.org HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Build Your Website with PILLAR in 14 Days",
+    "description": "Step-by-step process to transform your content into a professional website",
+    "totalTime": "P14D",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Welcome & Onboarding",
+        "text": "Complete intake form and share your content, brand assets, and vision.",
+        "position": 1
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Strategy & Analysis",
+        "text": "We analyze your content and develop your website strategy and architecture.",
+        "position": 2
+      },
+      {
+        "@type": "HowToStep",
+        "name": "AI Content Transformation",
+        "text": "Our AI transforms your videos, podcasts, and docs into SEO-optimized web content.",
+        "position": 3
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Review & Revisions",
+        "text": "You review your website and we make any requested revisions.",
+        "position": 4
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Launch",
+        "text": "Your website goes live on your premium domain with full analytics.",
+        "position": 5
+      }
+    ]
+  }
+  </script>
+
+  <!-- PWA / Mobile App -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#8B00FF">
+
+  <style>
+    :root{
+      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
+      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
+      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
+      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
+      --nav-h:72px;--content-max:1200px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#fff;color:#000;line-height:1.7;padding-top:var(--nav-h)}
+
+    /* Navigation */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
+    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none}
+    nav ul{display:flex;list-style:none;gap:2rem}
+    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;padding:.5rem}
+    nav a:hover{color:var(--purple)}
+    .mobile-menu{display:none;cursor:pointer;background:none;border:none;font-size:1.5rem;color:var(--purple)}
+
+    /* Hero */
+    .hero{padding:6rem 2rem 4rem;text-align:center;background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%)}
+    .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:1.5rem;background:linear-gradient(135deg,#000 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{font-size:1.25rem;color:var(--gray);max-width:700px;margin:0 auto 2rem}
+    .guarantee-badge{display:inline-flex;align-items:center;gap:.75rem;background:rgba(16,185,129,.1);color:var(--green-success);padding:.75rem 1.5rem;border-radius:50px;font-weight:600}
+    .guarantee-badge::before{content:'✓';background:var(--green-success);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem}
+
+    /* Timeline */
+    .timeline-section{padding:6rem 2rem;max-width:var(--content-max);margin:0 auto}
+    .timeline-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem}
+    .section-subtitle{text-align:center;color:var(--gray);font-size:1.125rem;max-width:600px;margin:0 auto 4rem}
+
+    .timeline{position:relative;padding:2rem 0}
+    .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--purple) 0%,var(--green-success) 100%);transform:translateX(-50%);border-radius:2px}
+
+    .timeline-item{display:flex;align-items:flex-start;margin-bottom:4rem;position:relative}
+    .timeline-item:nth-child(odd){flex-direction:row-reverse}
+    .timeline-item:nth-child(odd) .timeline-content{text-align:right;padding-right:4rem;padding-left:0}
+    .timeline-item:nth-child(even) .timeline-content{padding-left:4rem}
+
+    .timeline-marker{position:absolute;left:50%;transform:translateX(-50%);width:60px;height:60px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1.25rem;box-shadow:0 4px 20px var(--purple-glow-strong);z-index:1}
+    .timeline-item.completed .timeline-marker{background:var(--green-success)}
+
+    .timeline-content{flex:1;max-width:calc(50% - 50px)}
+    .timeline-day{display:inline-block;background:var(--purple);color:#fff;padding:.25rem 1rem;border-radius:50px;font-size:.875rem;font-weight:600;margin-bottom:1rem}
+    .timeline-content h3{font-size:1.5rem;font-weight:800;margin-bottom:.75rem;color:var(--black)}
+    .timeline-content p{color:var(--gray);margin-bottom:1rem;line-height:1.8}
+    .timeline-content ul{list-style:none;padding:0}
+    .timeline-content ul li{padding:.5rem 0;color:var(--black-soft);position:relative;padding-left:1.5rem}
+    .timeline-content ul li::before{content:'✓';position:absolute;left:0;color:var(--green-success);font-weight:bold}
+
+    /* What You Provide */
+    .provide-section{padding:6rem 2rem;background:var(--black);color:#fff}
+    .provide-container{max-width:var(--content-max);margin:0 auto}
+    .provide-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem;color:#fff}
+    .provide-section .section-subtitle{color:rgba(255,255,255,.7)}
+
+    .provide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
+    .provide-card{background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);border-radius:16px;padding:2rem;transition:all .3s}
+    .provide-card:hover{border-color:var(--purple);transform:translateY(-5px)}
+    .provide-icon{font-size:3rem;margin-bottom:1rem}
+    .provide-card h3{font-size:1.25rem;font-weight:700;margin-bottom:.75rem;color:#fff}
+    .provide-card p{color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:1rem}
+    .provide-formats{display:flex;flex-wrap:wrap;gap:.5rem}
+    .format-tag{background:rgba(139,0,255,.2);color:var(--purple);padding:.25rem .75rem;border-radius:50px;font-size:.75rem;font-weight:600}
+
+    /* What We Deliver */
+    .deliver-section{padding:6rem 2rem;background:var(--off-white)}
+    .deliver-container{max-width:var(--content-max);margin:0 auto}
+    .deliver-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:3rem}
+
+    .deliver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+    .deliver-card{background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;transition:all .3s}
+    .deliver-card:hover{border-color:var(--purple);box-shadow:0 10px 40px var(--purple-glow)}
+    .deliver-card h3{font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:var(--black);display:flex;align-items:center;gap:.75rem}
+    .deliver-card h3 span{font-size:1.5rem}
+    .deliver-card ul{list-style:none;padding:0}
+    .deliver-card ul li{padding:.5rem 0;color:var(--black-soft);border-bottom:1px solid var(--border-light)}
+    .deliver-card ul li:last-child{border-bottom:none}
+
+    /* Process Steps */
+    .steps-section{padding:6rem 2rem}
+    .steps-container{max-width:var(--content-max);margin:0 auto}
+    .steps-section h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:3rem}
+
+    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+    .step-card{text-align:center;padding:2rem}
+    .step-number{width:60px;height:60px;background:var(--purple);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;margin:0 auto 1.5rem;box-shadow:0 4px 20px var(--purple-glow)}
+    .step-card h3{font-size:1.25rem;font-weight:700;margin-bottom:.75rem}
+    .step-card p{color:var(--gray);font-size:.95rem}
+
+    /* CTA */
+    .cta-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);text-align:center}
+    .cta-section h2{font-size:2.5rem;font-weight:900;color:#fff;margin-bottom:1rem}
+    .cta-section p{color:rgba(255,255,255,.9);font-size:1.25rem;max-width:600px;margin:0 auto 2rem}
+    .btn{display:inline-block;padding:1.25rem 3rem;background:#fff;color:var(--purple);text-decoration:none;border-radius:10px;font-weight:700;font-size:1.125rem;transition:all .3s}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    .btn-secondary{background:transparent;border:2px solid #fff;color:#fff;margin-left:1rem}
+    .btn-secondary:hover{background:#fff;color:var(--purple)}
+
+    /* Footer */
+    footer{background:#000;color:#fff;padding:3rem 2rem}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple)}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;transition:color .3s}
+    .footer-links a:hover{color:var(--purple)}
+
+    @media (max-width:768px){
+      nav ul{display:none}
+      .mobile-menu{display:block}
+      .timeline::before{left:30px}
+      .timeline-item,.timeline-item:nth-child(odd){flex-direction:column;padding-left:80px}
+      .timeline-marker{left:30px}
+      .timeline-content,.timeline-item:nth-child(odd) .timeline-content{max-width:100%;text-align:left;padding:0}
+      .footer-container{flex-direction:column;text-align:center}
+      .footer-links{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">PILLAR</a>
+      <ul>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/ai-services">AI Services</a></li>
+        <li><a href="/domains">Domains</a></li>
+        <li><a href="/get-started">Get Started</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+      <button class="mobile-menu" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Your 14-Day Journey to a<br>$50K+ Digital Asset</h1>
+    <p>From first call to live website, here's exactly what happens when you partner with PILLAR. No surprises, no confusion - just a clear path to your digital empire.</p>
+    <div class="guarantee-badge">14-Day Launch Guarantee or Your Money Back</div>
+  </header>
+
+  <!-- Quick Steps Overview -->
+  <section class="steps-section">
+    <div class="steps-container">
+      <h2>The Simple 5-Step Process</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Choose Your Plan</h3>
+          <p>Pick a pricing tier and premium domain that fits your brand and goals.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Onboarding Call</h3>
+          <p>30-minute strategy session to understand your vision and content.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Share Your Content</h3>
+          <p>Send us your videos, podcasts, or documents. We handle the rest.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>AI Transformation</h3>
+          <p>Our AI converts your content into SEO-optimized web pages.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h3>Launch & Grow</h3>
+          <p>Your site goes live with ongoing AI content updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Timeline -->
+  <section class="timeline-section">
+    <h2>Your 14-Day Timeline</h2>
+    <p class="section-subtitle">Here's exactly what happens each day from the moment you sign up</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 1</span>
+          <h3>Welcome & Onboarding</h3>
+          <p>Within 2 hours of signing up, you'll receive your welcome email with a link to schedule your onboarding call.</p>
+          <ul>
+            <li>Welcome email with next steps</li>
+            <li>Calendar link for 30-min strategy call</li>
+            <li>Brand questionnaire to complete</li>
+            <li>Content upload portal access</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 2-3</span>
+          <h3>Strategy & Content Collection</h3>
+          <p>We conduct your onboarding call and you share your existing content with us.</p>
+          <ul>
+            <li>30-minute video strategy session</li>
+            <li>Domain selection finalized</li>
+            <li>Content review & AI planning</li>
+            <li>Site architecture designed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 4-7</span>
+          <h3>AI Content Transformation</h3>
+          <p>Our AI system processes your content and generates your first batch of web pages.</p>
+          <ul>
+            <li>Video/podcast transcription</li>
+            <li>AI content generation (10+ pages)</li>
+            <li>SEO optimization applied</li>
+            <li>Visual design implementation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 8-10</span>
+          <h3>Review & Refinement</h3>
+          <p>You review your site and we make any requested adjustments.</p>
+          <ul>
+            <li>Preview link sent for your review</li>
+            <li>Feedback collection (up to 2 rounds)</li>
+            <li>Content adjustments made</li>
+            <li>Final design polish</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item completed">
+        <div class="timeline-marker">5</div>
+        <div class="timeline-content">
+          <span class="timeline-day">Day 11-14</span>
+          <h3>Launch & Go Live</h3>
+          <p>Your website launches on your premium domain with everything configured.</p>
+          <ul>
+            <li>Domain DNS configured</li>
+            <li>SSL certificate installed</li>
+            <li>Professional email setup</li>
+            <li>Analytics tracking enabled</li>
+            <li>Your site is LIVE!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Provide -->
+  <section class="provide-section">
+    <div class="provide-container">
+      <h2>What You Need to Provide</h2>
+      <p class="section-subtitle">Don't worry - we make this easy. Here's what we need from you.</p>
+
+      <div class="provide-grid">
+        <div class="provide-card">
+          <div class="provide-icon">🎬</div>
+          <h3>Video Content</h3>
+          <p>YouTube videos, course content, webinars, interviews, or any video where you share your expertise.</p>
+          <div class="provide-formats">
+            <span class="format-tag">YouTube links</span>
+            <span class="format-tag">MP4 files</span>
+            <span class="format-tag">Vimeo</span>
+            <span class="format-tag">Loom</span>
+          </div>
+        </div>
+
+        <div class="provide-card">
+          <div class="provide-icon">🎙️</div>
+          <h3>Podcast Episodes</h3>
+          <p>Podcast episodes, audio interviews, or voice recordings of your insights and stories.</p>
+          <div class="provide-formats">
+            <span class="format-tag">MP3 files</span>
+            <span class="format-tag">Spotify links</span>
+            <span class="format-tag">Apple Podcasts</span>
+            <span class="format-tag">RSS feed</span>
+          </div>
+        </div>
+
+        <div class="provide-card">
+          <div class="provide-icon">📄</div>
+          <h3>Written Content</h3>
+          <p>Existing blog posts, course materials, ebooks, guides, or any written expertise you've created.</p>
+          <div class="provide-formats">
+            <span class="format-tag">PDF</span>
+            <span class="format-tag">Word docs</span>
+            <span class="format-tag">Google Docs</span>
+            <span class="format-tag">Notion</span>
+          </div>
+        </div>
+
+        <div class="provide-card">
+          <div class="provide-icon">🎨</div>
+          <h3>Brand Assets</h3>
+          <p>Your logo, brand colors, photos of yourself, and any visual assets you want on your site.</p>
+          <div class="provide-formats">
+            <span class="format-tag">Logo (PNG/SVG)</span>
+            <span class="format-tag">Photos</span>
+            <span class="format-tag">Colors</span>
+            <span class="format-tag">Fonts</span>
+          </div>
+        </div>
+
+        <div class="provide-card">
+          <div class="provide-icon">📝</div>
+          <h3>Brand Questionnaire</h3>
+          <p>A simple form about your business, target audience, goals, and the tone you want for your site.</p>
+          <div class="provide-formats">
+            <span class="format-tag">10 minutes</span>
+            <span class="format-tag">Online form</span>
+          </div>
+        </div>
+
+        <div class="provide-card">
+          <div class="provide-icon">💬</div>
+          <h3>30-Min Call</h3>
+          <p>A video call where we learn about your vision and ensure we're aligned on your goals.</p>
+          <div class="provide-formats">
+            <span class="format-tag">Zoom</span>
+            <span class="format-tag">Google Meet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Deliver -->
+  <section class="deliver-section">
+    <div class="deliver-container">
+      <h2>What You Get Delivered</h2>
+
+      <div class="deliver-grid">
+        <div class="deliver-card">
+          <h3><span>🌐</span> Premium Website</h3>
+          <ul>
+            <li>10+ SEO-optimized pages</li>
+            <li>Mobile-responsive design</li>
+            <li>Fast loading speeds</li>
+            <li>Professional layout</li>
+            <li>Contact forms & CTAs</li>
+          </ul>
+        </div>
+
+        <div class="deliver-card">
+          <h3><span>🔗</span> Premium Domain</h3>
+          <ul>
+            <li>Your chosen premium domain</li>
+            <li>DNS fully configured</li>
+            <li>SSL certificate (HTTPS)</li>
+            <li>Professional email addresses</li>
+            <li>Domain authority benefits</li>
+          </ul>
+        </div>
+
+        <div class="deliver-card">
+          <h3><span>🤖</span> AI Content</h3>
+          <ul>
+            <li>AI-transformed blog posts</li>
+            <li>SEO-optimized articles</li>
+            <li>Engaging headlines & copy</li>
+            <li>Meta descriptions</li>
+            <li>Social media snippets</li>
+          </ul>
+        </div>
+
+        <div class="deliver-card">
+          <h3><span>📊</span> Analytics & Tracking</h3>
+          <ul>
+            <li>Google Analytics setup</li>
+            <li>Traffic monitoring</li>
+            <li>Performance tracking</li>
+            <li>Monthly reports (Growth+)</li>
+          </ul>
+        </div>
+
+        <div class="deliver-card">
+          <h3><span>🔄</span> Ongoing Updates</h3>
+          <ul>
+            <li>1-8 AI content pushes/month</li>
+            <li>Fresh content regularly</li>
+            <li>SEO improvements</li>
+            <li>Technical maintenance</li>
+          </ul>
+        </div>
+
+        <div class="deliver-card">
+          <h3><span>🎯</span> Support & Strategy</h3>
+          <ul>
+            <li>Email support</li>
+            <li>Strategy consultations (Growth+)</li>
+            <li>Content calendar planning</li>
+            <li>Growth recommendations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Join 250+ creators who've transformed their expertise into thriving digital assets.</p>
+    <a href="/get-started" class="btn">Get Started Now</a>
+    <a href="/#products" class="btn btn-secondary">View Pricing</a>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">PILLAR</div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/ai-services">AI Services</a>
+        <a href="/domains">Domains</a>
+        <a href="/faq">FAQ</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.mobile-menu')?.addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

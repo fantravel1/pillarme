@@ -17,8 +17,14 @@ Disallow: /stripe-success-page
 Allow: /public/
 Allow: /insights/
 Allow: /domains
+Allow: /how-it-works
+Allow: /ai-services
+Allow: /get-started
+Allow: /faq
+Allow: /support
 Allow: /about
 Allow: /topsites
+Allow: /domain-roi-calculator
 Allow: /ai/
 
 # Sitemap location

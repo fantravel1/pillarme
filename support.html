@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - PILLAR | Get Help & Contact Us</title>
+    <meta name="description" content="Need help with PILLAR? Contact our support team, browse help resources, or check our service status. We're here to help you succeed.">
+    <meta name="keywords" content="PILLAR support, customer service, help center, contact us, website help, domain support">
+    <link rel="canonical" href="https://pillarme.com/support">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PILLAR Support - We're Here to Help">
+    <meta property="og:description" content="Get help with your PILLAR website, domain, or AI services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pillarme.com/support">
+    <meta property="og:site_name" content="PILLAR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PILLAR Support">
+    <meta name="twitter:description" content="Get help with your PILLAR website, domain, or AI services.">
+
+    <!-- Schema.org ContactPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "PILLAR Support",
+        "description": "Get help with your PILLAR website, domain, or AI services",
+        "url": "https://pillarme.com/support",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "PILLAR",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": "support@pillar.me",
+                "availableLanguage": "English"
+            }
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6B46C1">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --purple: #6B46C1;
+            --purple-light: #9F7AEA;
+            --purple-dark: #553C9A;
+            --gold: #D69E2E;
+            --green: #38A169;
+            --red: #E53E3E;
+            --nav-h: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-h);
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple-light);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple-light);
+        }
+
+        .nav-cta {
+            background: var(--purple);
+            color: #fff !important;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover {
+            background: var(--purple-light) !important;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: calc(var(--nav-h) + 2rem);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--purple-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Status Banner */
+        .status-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(56, 161, 105, 0.1);
+            border: 1px solid rgba(56, 161, 105, 0.3);
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .status-banner.degraded {
+            background: rgba(214, 158, 46, 0.1);
+            border-color: rgba(214, 158, 46, 0.3);
+        }
+
+        .status-banner.down {
+            background: rgba(229, 62, 62, 0.1);
+            border-color: rgba(229, 62, 62, 0.3);
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--green);
+            animation: pulse 2s infinite;
+        }
+
+        .status-banner.degraded .status-dot {
+            background: var(--gold);
+        }
+
+        .status-banner.down .status-dot {
+            background: var(--red);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status-text {
+            color: var(--green);
+            font-weight: 500;
+        }
+
+        .status-banner.degraded .status-text {
+            color: var(--gold);
+        }
+
+        .status-banner.down .status-text {
+            color: var(--red);
+        }
+
+        /* Quick Help Cards */
+        .quick-help {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .help-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .help-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.2);
+        }
+
+        .help-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-card p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Main Grid */
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .contact-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--purple-light);
+        }
+
+        .contact-section > p {
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #ccc;
+        }
+
+        .form-group label .required {
+            color: var(--red);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group select option {
+            background: #1a1a2e;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--purple);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--purple-light);
+        }
+
+        /* Info Section */
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .info-card h3 {
+            color: var(--purple-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h3 .icon {
+            font-size: 1.2rem;
+        }
+
+        /* Response Times */
+        .response-times {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .response-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .response-item .priority {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .priority-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .priority-dot.critical {
+            background: var(--red);
+        }
+
+        .priority-dot.high {
+            background: #ED8936;
+        }
+
+        .priority-dot.normal {
+            background: var(--gold);
+        }
+
+        .priority-dot.low {
+            background: var(--green);
+        }
+
+        .response-item .time {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Methods */
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            background: rgba(107, 70, 193, 0.2);
+            color: #fff;
+        }
+
+        .contact-method .icon {
+            font-size: 1.3rem;
+        }
+
+        .contact-method span {
+            flex: 1;
+        }
+
+        .contact-method .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            background: rgba(56, 161, 105, 0.2);
+            color: var(--green);
+            border-radius: 4px;
+        }
+
+        /* Hours */
+        .hours-list {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .hours-list p {
+            margin-bottom: 0.5rem;
+        }
+
+        .hours-list strong {
+            color: #fff;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            margin-top: 3rem;
+        }
+
+        .resources-section h2 {
+            font-size: 1.5rem;
+            color: var(--purple-light);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .resource-card:hover {
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .resource-card h3 {
+            color: #fff;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-card p {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card ul {
+            list-style: none;
+        }
+
+        .resource-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-card ul li a {
+            color: var(--purple-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-card ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .resource-card ul li a::before {
+            content: "→";
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, rgba(229, 62, 62, 0.1), rgba(214, 158, 46, 0.1));
+            border: 1px solid rgba(229, 62, 62, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .emergency-banner .icon {
+            font-size: 2.5rem;
+        }
+
+        .emergency-banner .content h3 {
+            color: var(--red);
+            margin-bottom: 0.25rem;
+        }
+
+        .emergency-banner .content p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .emergency-banner .content a {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--purple-light);
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .emergency-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            padding: 1.5rem;
+            background: rgba(56, 161, 105, 0.1);
+            border: 1px solid var(--green);
+            border-radius: 8px;
+            text-align: center;
+            color: var(--green);
+        }
+
+        .success-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">PILLAR</a>
+        <div class="nav-links">
+            <a href="domains.html">Domains</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="ai-services.html">AI Services</a>
+            <a href="get-started.html">Get Started</a>
+            <a href="faq.html">FAQ</a>
+            <a href="domains.html" class="nav-cta">Browse Domains</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <h1>How Can We Help?</h1>
+            <p>Our team is here to support you every step of the way. Find answers, get in touch, or check our service status.</p>
+        </div>
+
+        <!-- System Status -->
+        <div class="status-banner">
+            <div class="status-dot"></div>
+            <span class="status-text">All Systems Operational</span>
+        </div>
+
+        <!-- Quick Help Links -->
+        <div class="quick-help">
+            <a href="faq.html" class="help-card">
+                <div class="icon">❓</div>
+                <h3>FAQ</h3>
+                <p>Find answers to common questions</p>
+            </a>
+            <a href="how-it-works.html" class="help-card">
+                <div class="icon">📖</div>
+                <h3>How It Works</h3>
+                <p>Understand our 14-day process</p>
+            </a>
+            <a href="get-started.html" class="help-card">
+                <div class="icon">🚀</div>
+                <h3>Get Started</h3>
+                <p>Begin your website journey</p>
+            </a>
+            <a href="ai-services.html" class="help-card">
+                <div class="icon">🤖</div>
+                <h3>AI Services</h3>
+                <p>Explore our AI content options</p>
+            </a>
+        </div>
+
+        <!-- Main Support Grid -->
+        <div class="support-grid">
+            <!-- Contact Form -->
+            <div class="contact-section">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                <form id="support-form" action="https://formspree.io/f/meejrnwe" method="POST">
+                    <div class="form-group">
+                        <label>Your Name <span class="required">*</span></label>
+                        <input type="text" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Domain (if applicable)</label>
+                        <input type="text" name="domain" placeholder="yourdomain.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Topic <span class="required">*</span></label>
+                        <select name="topic" required>
+                            <option value="">Select a topic...</option>
+                            <option value="billing">Billing & Payments</option>
+                            <option value="domain">Domain Questions</option>
+                            <option value="website">Website Issues</option>
+                            <option value="ai">AI Services</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="sales">Sales Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Priority</label>
+                        <select name="priority">
+                            <option value="normal">Normal</option>
+                            <option value="high">High - Affecting my business</option>
+                            <option value="critical">Critical - Site is down</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message <span class="required">*</span></label>
+                        <textarea name="message" required placeholder="Please describe your question or issue in detail..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div class="success-message" id="success-message">
+                    <strong>Message Sent!</strong><br>
+                    We've received your message and will respond within our SLA timeframe. Check your email for confirmation.
+                </div>
+            </div>
+
+            <!-- Info Sidebar -->
+            <div class="info-section">
+                <!-- Response Times -->
+                <div class="info-card">
+                    <h3><span class="icon">⏱️</span> Response Times</h3>
+                    <div class="response-times">
+                        <div class="response-item">
+                            <div class="priority">
+                                <span class="priority-dot critical"></span>
+                                <span>Critical</span>
+                            </div>
+                            <span class="time">< 2 hours</span>
+                        </div>
+                        <div class="response-item">
+                            <div class="priority">
+                                <span class="priority-dot high"></span>
+                                <span>High</span>
+                            </div>
+                            <span class="time">< 4 hours</span>
+                        </div>
+                        <div class="response-item">
+                            <div class="priority">
+                                <span class="priority-dot normal"></span>
+                                <span>Normal</span>
+                            </div>
+                            <span class="time">< 24 hours</span>
+                        </div>
+                        <div class="response-item">
+                            <div class="priority">
+                                <span class="priority-dot low"></span>
+                                <span>General</span>
+                            </div>
+                            <span class="time">< 48 hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Methods -->
+                <div class="info-card">
+                    <h3><span class="icon">📞</span> Other Ways to Reach Us</h3>
+                    <div class="contact-methods">
+                        <a href="mailto:support@pillar.me" class="contact-method">
+                            <span class="icon">📧</span>
+                            <span>support@pillar.me</span>
+                            <span class="badge">24/7</span>
+                        </a>
+                        <a href="mailto:sales@pillar.me" class="contact-method">
+                            <span class="icon">💼</span>
+                            <span>sales@pillar.me</span>
+                        </a>
+                        <a href="#" class="contact-method">
+                            <span class="icon">💬</span>
+                            <span>Live Chat</span>
+                            <span class="badge">Online</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hours -->
+                <div class="info-card">
+                    <h3><span class="icon">🕐</span> Support Hours</h3>
+                    <div class="hours-list">
+                        <p><strong>Email Support:</strong> 24/7</p>
+                        <p><strong>Live Chat:</strong> Mon-Fri, 9am-6pm EST</p>
+                        <p><strong>Emergency Support:</strong> 24/7 for critical issues</p>
+                        <p style="margin-top: 1rem; color: #888; font-size: 0.85rem;">
+                            * Critical issues = site completely down or inaccessible
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Resources -->
+        <div class="resources-section">
+            <h2>Help Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>📚 Getting Started</h3>
+                    <p>New to PILLAR? Start here.</p>
+                    <ul>
+                        <li><a href="how-it-works.html">How the 14-day process works</a></li>
+                        <li><a href="get-started.html">Complete your intake form</a></li>
+                        <li><a href="domains.html">Browse available domains</a></li>
+                        <li><a href="faq.html#general">General FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🌐 Domain Help</h3>
+                    <p>Questions about your domain?</p>
+                    <ul>
+                        <li><a href="faq.html#domains">Domain rental FAQ</a></li>
+                        <li><a href="faq.html#domains">Transferring domains</a></li>
+                        <li><a href="faq.html#domains">DNS and email setup</a></li>
+                        <li><a href="faq.html#domains">Purchasing your domain</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🤖 AI Services</h3>
+                    <p>Learn about our AI capabilities.</p>
+                    <ul>
+                        <li><a href="ai-services.html">AI service options & pricing</a></li>
+                        <li><a href="faq.html#ai">What content AI can transform</a></li>
+                        <li><a href="faq.html#ai">How AI transformation works</a></li>
+                        <li><a href="get-started.html">Submit content for AI</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3>💳 Billing & Account</h3>
+                    <p>Manage your subscription.</p>
+                    <ul>
+                        <li><a href="faq.html#pricing">Pricing & what's included</a></li>
+                        <li><a href="faq.html#pricing">Payment methods</a></li>
+                        <li><a href="faq.html#pricing">Refund policy</a></li>
+                        <li><a href="faq.html#pricing">Upgrading your plan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Support -->
+        <div class="emergency-banner">
+            <div class="icon">🚨</div>
+            <div class="content">
+                <h3>Emergency Support</h3>
+                <p>Is your website completely down or inaccessible? For critical issues affecting your live site, email <a href="mailto:urgent@pillar.me">urgent@pillar.me</a> for priority response within 2 hours, 24/7.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 PILLAR. All rights reserved. | <a href="faq.html">FAQ</a> | <a href="get-started.html">Get Started</a></p>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('support-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+
+            // Collect form data
+            const formData = new FormData(form);
+            formData.append('_subject', 'New Support Request - PILLAR');
+
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Submit to Formspree
+            fetch('https://formspree.io/f/meejrnwe', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    form.style.display = 'none';
+                    document.getElementById('success-message').classList.add('show');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+                alert('Oops! There was a problem submitting your request. Please try again.');
+            });
+        });
+
+        // Live chat simulation (would connect to real chat service)
+        document.querySelector('[href="#"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Live chat would open here. In production, this would connect to your chat service like Intercom, Drift, or Zendesk Chat.');
+        });
+    </script>
+</body>
+</html>
