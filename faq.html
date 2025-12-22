@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - PILLAR | Frequently Asked Questions</title>
+    <meta name="description" content="Get answers to common questions about PILLAR's AI-powered website building, domain rentals, pricing, and content transformation services.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PILLAR FAQ - Your Questions Answered">
+    <meta property="og:description" content="Everything you need to know about PILLAR's AI website services.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PILLAR FAQ">
+    <meta name="twitter:description" content="Everything you need to know about PILLAR's AI website services.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6B46C1">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is PILLAR?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PILLAR is an AI-powered website building service that transforms your existing content (videos, podcasts, documents) into professionally designed, SEO-optimized websites. We combine premium domain rentals with cutting-edge AI to help creators and businesses establish their online presence quickly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does domain rental work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Instead of buying a domain outright for thousands of dollars, you rent premium domains starting at $25/month. Your domain stays active as long as you maintain your subscription. Cancel anytime with no long-term commitment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to build my website?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our standard timeline is 14 days from intake to launch. Day 1-3: Strategy and planning. Day 4-7: AI content transformation. Day 8-10: Review and revisions. Day 11-14: Final polish and launch."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What kind of content can your AI transform?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our AI works with YouTube videos, podcast episodes, social media content, blog posts, course materials, PDFs, documents, and more. The more content you provide, the richer your website becomes."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --purple: #6B46C1;
+            --purple-light: #9F7AEA;
+            --purple-dark: #553C9A;
+            --gold: #D69E2E;
+            --green: #38A169;
+            --nav-h: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-h);
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple-light);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple-light);
+        }
+
+        .nav-cta {
+            background: var(--purple);
+            color: #fff !important;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover {
+            background: var(--purple-light) !important;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: calc(var(--nav-h) + 2rem);
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--purple-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search Box */
+        .search-box {
+            max-width: 500px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem 1rem 3rem;
+            border: 2px solid rgba(107, 70, 193, 0.3);
+            border-radius: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--purple);
+            box-shadow: 0 0 20px rgba(107, 70, 193, 0.2);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Categories */
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--purple);
+            border-color: var(--purple);
+            color: #fff;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            color: var(--purple-light);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .faq-section h2 .icon {
+            font-size: 1.3rem;
+        }
+
+        /* Accordion */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(107, 70, 193, 0.3);
+        }
+
+        .faq-item.open {
+            border-color: var(--purple);
+            background: rgba(107, 70, 193, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .faq-question:hover {
+            color: var(--purple-light);
+        }
+
+        .faq-question .arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            color: var(--purple-light);
+        }
+
+        .faq-item.open .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 1000px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #bbb;
+        }
+
+        .faq-answer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer-content a {
+            color: var(--purple-light);
+            text-decoration: none;
+        }
+
+        .faq-answer-content a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-answer-content strong {
+            color: #fff;
+        }
+
+        /* Still Have Questions */
+        .contact-cta {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.2), rgba(214, 158, 46, 0.1));
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-cta h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .contact-cta p {
+            color: #aaa;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-cta .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-cta .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-cta .btn-primary {
+            background: var(--purple);
+            color: #fff;
+        }
+
+        .contact-cta .btn-primary:hover {
+            background: var(--purple-light);
+            transform: translateY(-2px);
+        }
+
+        .contact-cta .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-cta .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--purple-light);
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #888;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">PILLAR</a>
+        <div class="nav-links">
+            <a href="domains.html">Domains</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="ai-services.html">AI Services</a>
+            <a href="get-started.html">Get Started</a>
+            <a href="faq.html" class="active">FAQ</a>
+            <a href="domains.html" class="nav-cta">Browse Domains</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about PILLAR. Can't find your answer? We're just a message away.</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="faq-search" placeholder="Search for answers...">
+        </div>
+
+        <div class="faq-categories">
+            <button class="category-btn active" data-category="all">All Questions</button>
+            <button class="category-btn" data-category="general">General</button>
+            <button class="category-btn" data-category="domains">Domains</button>
+            <button class="category-btn" data-category="ai">AI Services</button>
+            <button class="category-btn" data-category="pricing">Pricing</button>
+            <button class="category-btn" data-category="process">Process</button>
+            <button class="category-btn" data-category="technical">Technical</button>
+        </div>
+
+        <div class="no-results">
+            <h3>No matching questions found</h3>
+            <p>Try a different search term or <a href="support.html">contact our support team</a>.</p>
+        </div>
+
+        <!-- General Questions -->
+        <div class="faq-section" data-category="general">
+            <h2><span class="icon">💡</span> General Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is PILLAR?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>PILLAR is an AI-powered website building service that transforms your existing content (videos, podcasts, documents) into professionally designed, SEO-optimized websites.</p>
+                        <p>We combine <strong>premium domain rentals</strong> with <strong>cutting-edge AI content transformation</strong> to help creators, coaches, and businesses establish their online presence quickly and affordably.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Who is PILLAR for?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>PILLAR is perfect for:</p>
+                        <ul>
+                            <li><strong>Content Creators</strong> - YouTubers, podcasters, and influencers who want a professional website</li>
+                            <li><strong>Coaches & Consultants</strong> - Professionals who need an online presence fast</li>
+                            <li><strong>Small Businesses</strong> - Companies that want a website without the hassle</li>
+                            <li><strong>Course Creators</strong> - Educators who want to expand their reach</li>
+                            <li><strong>Authors & Speakers</strong> - Thought leaders building their brand</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How is PILLAR different from other website builders?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Unlike DIY website builders where you start from scratch, PILLAR:</p>
+                        <ul>
+                            <li><strong>Transforms your existing content</strong> - We use AI to turn your videos, podcasts, and documents into website content</li>
+                            <li><strong>Provides premium domains</strong> - Rent brandable domains instead of settling for what's available</li>
+                            <li><strong>Does the work for you</strong> - Our AI and team handle everything; you just provide your content</li>
+                            <li><strong>Launches in 14 days</strong> - Much faster than building from scratch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domain Questions -->
+        <div class="faq-section" data-category="domains">
+            <h2><span class="icon">🌐</span> Domain Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does domain rental work?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Instead of buying a domain outright for thousands of dollars, you rent premium domains starting at <strong>$25/month</strong>.</p>
+                        <p>Your domain stays active as long as you maintain your subscription. Cancel anytime with no long-term commitment. It's like leasing a premium address instead of buying real estate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What happens if I cancel my domain rental?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>If you cancel:</p>
+                        <ul>
+                            <li>Your website will go offline at the end of your billing period</li>
+                            <li>The domain returns to our marketplace for others to rent</li>
+                            <li>You keep all your original content and can export your website files</li>
+                            <li>No cancellation fees or penalties</li>
+                        </ul>
+                        <p>We recommend giving us 30 days notice so we can help you transition smoothly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I buy the domain outright?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes! After renting for 12 months, you have the option to purchase your domain at a discounted rate. The purchase price varies by domain, but your rental payments may be partially credited toward the purchase.</p>
+                        <p><a href="support.html">Contact us</a> to discuss domain purchase options.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Why are some domains more expensive?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Domain pricing is based on:</p>
+                        <ul>
+                            <li><strong>$25/month</strong> - Standard premium domains</li>
+                            <li><strong>$100/month</strong> - Exceptional SEO potential, shorter length, or highly brandable</li>
+                            <li><strong>$500-$1000/month</strong> - Ultra-premium domains that are already developed with content, or extremely valuable one-word domains</li>
+                        </ul>
+                        <p>Premium domains often have better SEO potential and are more memorable for your audience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I use my own domain instead?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Absolutely! If you already own a domain, we can point it to your PILLAR-built website. Just select "I have my own domain" during the intake process, and we'll provide DNS configuration instructions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Services Questions -->
+        <div class="faq-section" data-category="ai">
+            <h2><span class="icon">🤖</span> AI Services</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What kind of content can your AI transform?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Our AI works with virtually any content type:</p>
+                        <ul>
+                            <li><strong>Video</strong> - YouTube videos, Vimeo, course recordings</li>
+                            <li><strong>Audio</strong> - Podcast episodes, interviews, speeches</li>
+                            <li><strong>Documents</strong> - PDFs, Word docs, presentations</li>
+                            <li><strong>Social Media</strong> - Your best posts and threads</li>
+                            <li><strong>Existing Websites</strong> - Content from your current site</li>
+                        </ul>
+                        <p>The more content you provide, the richer and more comprehensive your website becomes!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does the AI content transformation work?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Our AI analyzes your content to understand your voice, expertise, and key messages. Then it:</p>
+                        <ul>
+                            <li>Transcribes and processes all your media</li>
+                            <li>Identifies key themes and topics</li>
+                            <li>Generates SEO-optimized web pages</li>
+                            <li>Creates blog posts, landing pages, and marketing copy</li>
+                            <li>Maintains your authentic voice throughout</li>
+                        </ul>
+                        <p>You review everything before it goes live, so you're always in control.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I use AI services without renting a domain?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes! Our <a href="ai-services.html">standalone AI services</a> are available without domain rental:</p>
+                        <ul>
+                            <li><strong>One-Time Blast</strong> - $99 for a single project</li>
+                            <li><strong>Daily Power</strong> - $49/day for intensive content creation</li>
+                            <li><strong>Weekly Sprint</strong> - $199/week (best value)</li>
+                            <li><strong>Monthly Engine</strong> - $399/month for ongoing content</li>
+                        </ul>
+                        <p>Use these to get content for your existing website or other platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Questions -->
+        <div class="faq-section" data-category="pricing">
+            <h2><span class="icon">💰</span> Pricing & Billing</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's included in the domain rental price?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Every domain rental includes:</p>
+                        <ul>
+                            <li>Premium domain name usage</li>
+                            <li>SSL certificate (HTTPS)</li>
+                            <li>Hosting on fast, reliable servers</li>
+                            <li>Basic website template</li>
+                            <li>Email forwarding</li>
+                            <li>Basic analytics</li>
+                        </ul>
+                        <p>AI content transformation is additional based on your chosen plan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are there any hidden fees?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>No hidden fees. What you see is what you pay:</p>
+                        <ul>
+                            <li>Domain rental: $25-$1000/month depending on the domain</li>
+                            <li>AI services: As quoted on our <a href="ai-services.html">AI Services page</a></li>
+                            <li>No setup fees</li>
+                            <li>No cancellation fees</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer refunds?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>We want you to be completely satisfied:</p>
+                        <ul>
+                            <li><strong>Domain Rentals:</strong> 7-day money-back guarantee if you're not happy</li>
+                            <li><strong>AI Services:</strong> If you're not satisfied with the output, we'll revise it or refund your purchase within 14 days</li>
+                        </ul>
+                        <p><a href="support.html">Contact support</a> for any refund requests.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>We accept all major payment methods through Stripe:</p>
+                        <ul>
+                            <li>Credit/Debit cards (Visa, Mastercard, Amex, Discover)</li>
+                            <li>Apple Pay & Google Pay</li>
+                            <li>Bank transfers (for enterprise plans)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process Questions -->
+        <div class="faq-section" data-category="process">
+            <h2><span class="icon">⚡</span> The Process</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does it take to build my website?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Our standard timeline is <strong>14 days</strong> from intake to launch:</p>
+                        <ul>
+                            <li><strong>Day 1:</strong> Welcome & onboarding</li>
+                            <li><strong>Days 2-3:</strong> Strategy & content analysis</li>
+                            <li><strong>Days 4-7:</strong> AI content transformation</li>
+                            <li><strong>Days 8-10:</strong> Review & revisions</li>
+                            <li><strong>Days 11-14:</strong> Final polish & launch</li>
+                        </ul>
+                        <p>Need it faster? Ask about our rush options.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What do I need to provide?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>To get started, we need:</p>
+                        <ul>
+                            <li><strong>Your content</strong> - Links to videos, podcasts, or upload documents</li>
+                            <li><strong>Brand assets</strong> - Logo, headshot, any existing brand materials</li>
+                            <li><strong>Brief questionnaire</strong> - About your goals, audience, and preferences</li>
+                        </ul>
+                        <p>The more you share, the better your website will be. Complete our <a href="get-started.html">intake form</a> to begin.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I make changes after the website launches?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Absolutely! Your subscription includes:</p>
+                        <ul>
+                            <li>Ongoing content updates via AI services</li>
+                            <li>Basic text and image changes</li>
+                            <li>New blog posts and pages</li>
+                        </ul>
+                        <p>For major redesigns or new features, we'll provide a quote. Many clients use our monthly AI plan for continuous fresh content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Questions -->
+        <div class="faq-section" data-category="technical">
+            <h2><span class="icon">🔧</span> Technical Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Where is my website hosted?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Your website is hosted on fast, reliable cloud infrastructure with:</p>
+                        <ul>
+                            <li>Global CDN for fast loading worldwide</li>
+                            <li>99.9% uptime guarantee</li>
+                            <li>Automatic SSL certificates</li>
+                            <li>Daily backups</li>
+                            <li>DDoS protection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is my website mobile-friendly?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes! All PILLAR websites are:</p>
+                        <ul>
+                            <li>Fully responsive on all devices</li>
+                            <li>Optimized for mobile performance</li>
+                            <li>Touch-friendly navigation</li>
+                            <li>Fast-loading on mobile networks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I get email with my domain?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Your domain rental includes <strong>email forwarding</strong> - emails sent to your domain forward to your personal email.</p>
+                        <p>For full email hosting (multiple mailboxes, send from your domain), we can set you up with Google Workspace or Microsoft 365 for an additional fee.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I export my website if I leave?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Yes. If you cancel your subscription, you can:</p>
+                        <ul>
+                            <li>Export all website files (HTML, CSS, images)</li>
+                            <li>Download all AI-generated content</li>
+                            <li>Keep your original source content</li>
+                        </ul>
+                        <p>We believe in no lock-in. Your content is always yours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="contact-cta">
+            <h2>Still Have Questions?</h2>
+            <p>Our team is here to help. Reach out and we'll get back to you within 24 hours.</p>
+            <div class="cta-buttons">
+                <a href="support.html" class="btn btn-primary">Contact Support</a>
+                <a href="get-started.html" class="btn btn-secondary">Get Started</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 PILLAR. All rights reserved. | <a href="support.html">Support</a> | <a href="get-started.html">Get Started</a></p>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasOpen = item.classList.contains('open');
+
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+
+                // Open clicked item if it wasn't open
+                if (!wasOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        // Category filtering
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter sections
+                document.querySelectorAll('.faq-section').forEach(section => {
+                    if (category === 'all' || section.dataset.category === category) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+
+                // Hide no results
+                document.querySelector('.no-results').classList.remove('show');
+            });
+        });
+
+        // Search functionality
+        document.getElementById('faq-search').addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+
+            if (!query) {
+                // Show all
+                document.querySelectorAll('.faq-section').forEach(s => s.style.display = 'block');
+                document.querySelectorAll('.faq-item').forEach(i => i.style.display = 'block');
+                document.querySelector('.no-results').classList.remove('show');
+                return;
+            }
+
+            let hasResults = false;
+
+            document.querySelectorAll('.faq-section').forEach(section => {
+                let sectionHasMatch = false;
+
+                section.querySelectorAll('.faq-item').forEach(item => {
+                    const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+
+                    if (question.includes(query) || answer.includes(query)) {
+                        item.style.display = 'block';
+                        sectionHasMatch = true;
+                        hasResults = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                section.style.display = sectionHasMatch ? 'block' : 'none';
+            });
+
+            // Show/hide no results message
+            document.querySelector('.no-results').classList.toggle('show', !hasResults);
+
+            // Reset category buttons
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-category="all"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
