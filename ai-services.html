@@ -78,20 +78,32 @@
       --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
       --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
       --blue:#3B82F6;--orange:#F59E0B;--gold:#FFD700;
-      --nav-h:72px;--content-max:1200px;
+      --nav-h:64px;--content-max:1200px;
+      /* Theme-aware nav/footer variables (light theme) */
+      --nav-bg:rgba(255,255,255,.95);
+      --nav-border:var(--border-light);
+      --link-color:var(--black);
+      --link-hover:var(--purple);
+      --footer-bg:#000;
+      --footer-border:rgba(255,255,255,.1);
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#fff;color:#000;line-height:1.7;padding-top:var(--nav-h)}
 
-    /* Navigation */
-    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}
-    nav .container{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:1.5rem;font-weight:900;color:var(--purple);text-decoration:none}
-    nav ul{display:flex;list-style:none;gap:2rem}
-    nav a{color:var(--black);text-decoration:none;font-weight:500;transition:color .3s;padding:.5rem}
-    nav a:hover{color:var(--purple)}
-    .mobile-menu{display:none;cursor:pointer;background:none;border:none;font-size:1.5rem;color:var(--purple)}
+    /* Navigation (Unified Style) */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--nav-bg);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;border-bottom:1px solid var(--nav-border)}
+    .logo{font-size:1.5rem;font-weight:700;color:var(--purple);text-decoration:none;transition:transform .2s}
+    .logo:hover{transform:scale(1.05)}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{color:var(--link-color);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .3s;position:relative;padding:.5rem}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
+    .nav-links a:hover,.nav-links a.active{color:var(--link-hover)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:.5rem 1rem!important;border-radius:6px;font-weight:600}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--purple-dark)!important}
+    .mobile-menu-btn{display:none;background:none;border:none;color:var(--purple);font-size:1.5rem;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
 
     /* Hero */
     .hero{padding:6rem 2rem 4rem;text-align:center;background:linear-gradient(135deg,var(--black) 0%,#1a1a1a 100%);color:#fff;position:relative;overflow:hidden}
@@ -206,23 +218,30 @@
     .btn-ghost{background:transparent;border:2px solid #fff;color:#fff}
     .btn-ghost:hover{background:#fff;color:var(--purple)}
 
-    /* Footer */
-    footer{background:#000;color:#fff;padding:3rem 2rem}
-    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+    /* Footer (Unified Style) */
+    footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem;margin-top:4rem;border-top:1px solid var(--footer-border)}
+    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
     .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple)}
-    .footer-links{display:flex;gap:2rem}
-    .footer-links a{color:rgba(255,255,255,.9);text-decoration:none;transition:color .3s}
+    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem;margin-top:.25rem}
+    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+    .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:500;transition:all .3s;font-size:.9rem}
     .footer-links a:hover{color:var(--purple)}
+    .footer-copy{color:rgba(255,255,255,.4);font-size:.8rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--footer-border)}
 
     @media (max-width:768px){
-      nav ul{display:none}
-      .mobile-menu{display:block}
+      .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1rem 0;gap:0;z-index:998;border-bottom:1px solid var(--nav-border)}
+      .nav-links.active{display:flex}
+      .nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem}
+      .nav-links a::after{display:none}
+      .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}
+      .mobile-menu-btn{display:flex}
+      .mobile-menu-btn.active{transform:rotate(90deg);transition:transform .3s}
       .what-grid{grid-template-columns:1fr}
       .what-arrow{transform:rotate(90deg)}
       .process-flow{flex-direction:column}
       .process-arrow{transform:rotate(90deg)}
       .footer-container{flex-direction:column;text-align:center}
-      .footer-links{justify-content:center}
+      .footer-links{gap:1rem}
       .cta-buttons{flex-direction:column;align-items:center}
       .cta-buttons .btn{width:auto;padding:1rem 2rem}
     }
@@ -230,17 +249,17 @@
 </head>
 <body>
   <nav>
-    <div class="container">
-      <a href="/" class="logo">PILLAR</a>
-      <ul>
-        <li><a href="/#products">Products</a></li>
-        <li><a href="/ai-services">AI Services</a></li>
-        <li><a href="/domains">Domains</a></li>
-        <li><a href="/get-started">Get Started</a></li>
-        <li><a href="/faq">FAQ</a></li>
-      </ul>
-      <button class="mobile-menu" aria-label="Menu">☰</button>
+    <a href="index.html" class="logo">PILLAR</a>
+    <div class="nav-links">
+      <a href="domains.html">Domains</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="ai-services.html" class="active">AI Services</a>
+      <a href="get-started.html">Get Started</a>
+      <a href="faq.html">FAQ</a>
+      <a href="insights.html">Insights</a>
+      <a href="domains.html" class="nav-cta">Browse Domains</a>
     </div>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
   </nav>
 
   <header class="hero">
@@ -533,21 +552,36 @@
   <footer>
     <div class="footer-container">
       <div class="footer-logo">PILLAR</div>
+      <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
       <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/how-it-works">How It Works</a>
-        <a href="/ai-services">AI Services</a>
-        <a href="/domains">Domains</a>
-        <a href="/faq">FAQ</a>
-        <a href="/support">Support</a>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="ai-services.html">AI Services</a>
+        <a href="domains.html">Domains</a>
+        <a href="faq.html">FAQ</a>
+        <a href="support.html">Support</a>
       </div>
+      <p class="footer-copy">© 2025 PILLAR. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    document.querySelector('.mobile-menu')?.addEventListener('click', function() {
-      document.querySelector('nav ul').classList.toggle('active');
-    });
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   </script>
 </body>
 </html>
