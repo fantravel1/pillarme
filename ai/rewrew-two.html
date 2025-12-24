@@ -6,6 +6,7 @@
     <title>Expert Bookkeeping & Compliance Services | REW REW Financial</title>
     <meta name="description" content="Expert bookkeeping and compliance services for businesses. Professional financial management and regulatory compliance solutions.">
     <meta name="keywords" content="bookkeeping services, compliance, financial management, accounting services">
+    <link rel="canonical" href="https://pillarme.com/ai/rewrew-two">
 
     <!-- PWA / Mobile App -->
     <link rel="manifest" href="/manifest.json">
@@ -1071,6 +1072,21 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav');
+        const breadcrumb = document.querySelector('.breadcrumb');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isVisible = navMenu.style.display === 'block';
+                navMenu.style.display = isVisible ? 'none' : 'block';
+                if (breadcrumb) {
+                    breadcrumb.style.display = isVisible ? 'none' : 'block';
+                }
+            });
+        }
+
         // Form submission handler
         document.getElementById('consultation-form').addEventListener('submit', function(e) {
             e.preventDefault();
