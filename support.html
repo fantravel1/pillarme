@@ -609,15 +609,51 @@
             color: #fff;
             font-size: 1.5rem;
             cursor: pointer;
+            min-width: 48px;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: fixed;
+                top: var(--nav-h);
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+                z-index: 998;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem 2rem;
+                width: 100%;
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            .nav-cta {
+                margin: 1rem 2rem;
+                width: calc(100% - 4rem);
+                text-align: center;
             }
 
             .mobile-menu-btn {
-                display: block;
+                display: flex;
+            }
+
+            .mobile-menu-btn.active {
+                transform: rotate(90deg);
+                transition: transform 0.3s;
             }
 
             .hero h1 {
@@ -657,7 +693,7 @@
             <a href="faq.html">FAQ</a>
             <a href="domains.html" class="nav-cta">Browse Domains</a>
         </div>
-        <button class="mobile-menu-btn">☰</button>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
     </nav>
 
     <main>
@@ -895,6 +931,24 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const open = navLinks.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
         // Form submission
         document.getElementById('support-form').addEventListener('submit', function(e) {
             e.preventDefault();
