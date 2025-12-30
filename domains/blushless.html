@@ -488,12 +488,12 @@
       .nav-links{
         display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;
         background:var(--nav-bg);flex-direction:column;padding:2rem;gap:1.5rem;
-        overflow-y:auto;border-top:1px solid var(--nav-border)
+        overflow-y:auto;border-top:1px solid var(--nav-border);z-index:999
       }
       .nav-links.active{display:flex}
       .nav-links a{font-size:1.125rem;padding:.75rem}
       .nav-links .nav-cta{width:100%;text-align:center;padding:.875rem}
-      .mobile-menu-btn{display:block}
+      .mobile-menu-btn{display:flex;align-items:center;justify-content:center}
       .domain-hero{padding:2rem 1rem 3rem}
       .domain-hero-text h1{font-size:2.5rem;letter-spacing:-1px}
       .domain-hero-text .tagline{font-size:1.25rem}
