@@ -83,6 +83,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Individual Domain Pages - High Value SEO Content -->
+  <url>
+    <loc>https://pillarme.com/domains/blushless</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Insights Articles - High Value SEO Content -->
   <url>
     <loc>https://pillarme.com/insights/ai-search-website-future</loc>
