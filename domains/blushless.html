@@ -341,17 +341,44 @@
     /* Comparison Table */
     .comparison-section{background:var(--off-white);padding:4rem 2rem}
     .comparison-container{max-width:900px;margin:0 auto}
+    .table-wrapper{
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      margin:0 -1rem;padding:0 1rem
+    }
     .comparison-table{
       width:100%;border-collapse:collapse;background:#fff;
-      border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.05)
+      border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.05);
+      min-width:600px
     }
     .comparison-table th{
       background:var(--purple);color:#fff;padding:1.25rem;
-      text-align:left;font-weight:700;font-size:1rem
+      text-align:left;font-weight:700;font-size:1rem;white-space:nowrap
     }
     .comparison-table td{padding:1.25rem;border-bottom:1px solid var(--border-light)}
     .comparison-table tr:last-child td{border-bottom:none}
     .comparison-table .highlight{background:linear-gradient(135deg,rgba(255,215,0,.1) 0%,transparent 100%)}
+
+    /* Mobile comparison cards (hidden on desktop) */
+    .comparison-cards{display:none}
+    .comparison-card{
+      background:#fff;border-radius:12px;padding:1.5rem;margin-bottom:1rem;
+      box-shadow:0 2px 10px rgba(0,0,0,.05)
+    }
+    .comparison-card.highlight-card{
+      border:2px solid var(--gold);
+      background:linear-gradient(135deg,rgba(255,215,0,.05) 0%,#fff 100%)
+    }
+    .comparison-card h4{
+      font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--black);
+      padding-bottom:.75rem;border-bottom:1px solid var(--border-light)
+    }
+    .comparison-row{
+      display:flex;justify-content:space-between;padding:.5rem 0;
+      font-size:.9rem
+    }
+    .comparison-row .label{color:var(--gray);font-weight:500}
+    .comparison-row .buy-value{color:var(--gray)}
+    .comparison-row .rent-value{color:var(--purple);font-weight:600}
 
     /* FAQ Section */
     .faq-section{padding:4rem 2rem;background:#fff}
@@ -479,6 +506,8 @@
       .industry-grid{grid-template-columns:1fr}
       .industry-card{padding:1.5rem}
       .comparison-section{padding:3rem 1rem}
+      .table-wrapper{display:none}
+      .comparison-cards{display:block}
       .comparison-table{font-size:.9rem}
       .comparison-table th,.comparison-table td{padding:1rem .75rem}
       .faq-section{padding:3rem 1rem}
@@ -738,52 +767,136 @@
       <h2 style="text-align:center;margin-bottom:2rem">Renting vs. Buying: The Smart Economics</h2>
       <p style="text-align:center;color:var(--gray);margin-bottom:3rem;max-width:700px;margin-left:auto;margin-right:auto">Why lock up $250,000 in a single asset when you can access the same benefits for a fraction of the cost?</p>
 
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Factor</th>
-            <th>Buying Blushless.com</th>
-            <th>Renting Blushless.com</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="highlight">
-            <td><strong>Upfront Cost</strong></td>
-            <td>$250,000</td>
-            <td>$1,000</td>
-          </tr>
-          <tr>
-            <td><strong>Monthly Cost</strong></td>
-            <td>$0 (+ opportunity cost)</td>
-            <td>$1,000</td>
-          </tr>
-          <tr>
-            <td><strong>5-Year Total Cost</strong></td>
-            <td>$250,000</td>
-            <td>$60,000</td>
-          </tr>
-          <tr class="highlight">
-            <td><strong>Capital Available for Growth</strong></td>
-            <td>$0</td>
-            <td>$190,000+</td>
-          </tr>
-          <tr>
-            <td><strong>Flexibility to Pivot</strong></td>
-            <td>Limited (asset tied up)</td>
-            <td>High (cancel anytime)</td>
-          </tr>
-          <tr>
-            <td><strong>Tax Treatment</strong></td>
-            <td>15-year amortization</td>
-            <td>Immediate expense deduction</td>
-          </tr>
-          <tr class="highlight">
-            <td><strong>Risk Level</strong></td>
-            <td>High (market fluctuations)</td>
-            <td>Low (fixed monthly cost)</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Desktop/Tablet Table -->
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>Buying</th>
+              <th>Renting</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td><strong>Upfront Cost</strong></td>
+              <td>$250,000</td>
+              <td>$1,000</td>
+            </tr>
+            <tr>
+              <td><strong>Monthly Cost</strong></td>
+              <td>$0 (+ opportunity cost)</td>
+              <td>$1,000</td>
+            </tr>
+            <tr>
+              <td><strong>5-Year Total</strong></td>
+              <td>$250,000</td>
+              <td>$60,000</td>
+            </tr>
+            <tr class="highlight">
+              <td><strong>Growth Capital</strong></td>
+              <td>$0</td>
+              <td>$190,000+</td>
+            </tr>
+            <tr>
+              <td><strong>Flexibility</strong></td>
+              <td>Limited (asset tied up)</td>
+              <td>High (cancel anytime)</td>
+            </tr>
+            <tr>
+              <td><strong>Tax Treatment</strong></td>
+              <td>15-year amortization</td>
+              <td>Immediate deduction</td>
+            </tr>
+            <tr class="highlight">
+              <td><strong>Risk Level</strong></td>
+              <td>High (market fluctuations)</td>
+              <td>Low (fixed cost)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Cards -->
+      <div class="comparison-cards">
+        <div class="comparison-card highlight-card">
+          <h4>Upfront Cost</h4>
+          <div class="comparison-row">
+            <span class="label">Buying:</span>
+            <span class="buy-value">$250,000</span>
+          </div>
+          <div class="comparison-row">
+            <span class="label">Renting:</span>
+            <span class="rent-value">$1,000</span>
+          </div>
+        </div>
+        <div class="comparison-card">
+          <h4>Monthly Cost</h4>
+          <div class="comparison-row">
+            <span class="label">Buying:</span>
+            <span class="buy-value">$0 + opportunity cost</span>
+          </div>
+          <div class="comparison-row">
+            <span class="label">Renting:</span>
+            <span class="rent-value">$1,000</span>
+          </div>
+        </div>
+        <div class="comparison-card">
+          <h4>5-Year Total Cost</h4>
+          <div class="comparison-row">
+            <span class="label">Buying:</span>
+            <span class="buy-value">$250,000</span>
+          </div>
+          <div class="comparison-row">
+            <span class="label">Renting:</span>
+            <span class="rent-value">$60,000</span>
+          </div>
+        </div>
+        <div class="comparison-card highlight-card">
+          <h4>Capital Available for Growth</h4>
+          <div class="comparison-row">
+            <span class="label">Buying:</span>
+            <span class="buy-value">$0</span>
+          </div>
+          <div class="comparison-row">
+            <span class="label">Renting:</span>
+            <span class="rent-value">$190,000+</span>
+          </div>
+        </div>
+        <div class="comparison-card">
+          <h4>Flexibility to Pivot</h4>
+          <div class="comparison-row">
+            <span class="label">Buying:</span>
+            <span class="buy-value">Limited</span>
+          </div>
+          <div class="comparison-row">
+            <span class="label">Renting:</span>
+            <span class="rent-value">High (cancel anytime)</span>
+          </div>
+        </div>
+        <div class="comparison-card">
+          <h4>Tax Treatment</h4>
+          <div class="comparison-row">
+            <span class="label">Buying:</span>
+            <span class="buy-value">15-year amortization</span>
+          </div>
+          <div class="comparison-row">
+            <span class="label">Renting:</span>
+            <span class="rent-value">Immediate deduction</span>
+          </div>
+        </div>
+        <div class="comparison-card highlight-card">
+          <h4>Risk Level</h4>
+          <div class="comparison-row">
+            <span class="label">Buying:</span>
+            <span class="buy-value">High (market risk)</span>
+          </div>
+          <div class="comparison-row">
+            <span class="label">Renting:</span>
+            <span class="rent-value">Low (fixed cost)</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
