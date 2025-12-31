@@ -241,7 +241,7 @@
 
     @media(max-width:1024px){.domain-hero-content{gap:3rem}.stats-grid{gap:1.5rem;padding:2.5rem}}
     @media(max-width:968px){.domain-hero-content{grid-template-columns:1fr;text-align:center}.value-props{justify-content:center}.pricing-card{max-width:400px;margin:0 auto}.stats-grid{grid-template-columns:repeat(2,1fr)}.related-grid{grid-template-columns:1fr}.use-cases{grid-template-columns:1fr 1fr}}
-    @media(max-width:768px){nav{padding:0 1rem}.nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--nav-bg);flex-direction:column;padding:2rem;gap:1.5rem;z-index:9999;overflow-y:auto}.nav-links.active{display:flex}.nav-links a{font-size:1.1rem;padding:.75rem 0}.mobile-menu-btn{display:flex;align-items:center;justify-content:center}.domain-hero{padding:2rem 1rem 3rem}.domain-hero-text h1{font-size:3rem}.stats-grid{grid-template-columns:1fr 1fr;padding:2rem}.stat-value{font-size:2rem}.industry-grid{grid-template-columns:1fr}.table-wrapper{display:none}.comparison-cards{display:block}.footer-links{flex-direction:column;gap:1.25rem}.use-cases{grid-template-columns:1fr}}
+    @media(max-width:768px){nav{padding:0 1rem}.nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:#fff;flex-direction:column;padding:1rem 0;gap:0;box-shadow:0 10px 40px rgba(0,0,0,.15);border-bottom:1px solid var(--border-light)}.nav-links.active{display:flex}.nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem;border-bottom:1px solid var(--border-light)}.nav-links .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}.mobile-menu-btn{display:flex;align-items:center;justify-content:center}.domain-hero{padding:2rem 1rem 3rem}.domain-hero-text h1{font-size:3rem}.stats-grid{grid-template-columns:1fr 1fr;padding:2rem}.stat-value{font-size:2rem}.industry-grid{grid-template-columns:1fr}.table-wrapper{display:none}.comparison-cards{display:block}.footer-links{flex-direction:column;gap:1.25rem}.use-cases{grid-template-columns:1fr}}
     @media(max-width:480px){.domain-hero-text h1{font-size:2.5rem}.pricing-card .price{font-size:3rem}.stats-grid{grid-template-columns:1fr}.cta-section h2{font-size:1.75rem}.cta-btn{width:100%}}
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -454,8 +454,31 @@
   </footer>
 
   <script>
+    // Mobile menu
     const mobileMenuBtn=document.querySelector('.mobile-menu-btn'),navLinks=document.querySelector('.nav-links');
-    mobileMenuBtn?.addEventListener('click',()=>{const open=navLinks.classList.toggle('active');mobileMenuBtn.textContent=open?'✕':'☰'});
+    if(mobileMenuBtn&&navLinks){
+      mobileMenuBtn.addEventListener('click',function(e){
+        e.stopPropagation();
+        const open=navLinks.classList.toggle('active');
+        this.textContent=open?'✕':'☰';
+        this.setAttribute('aria-expanded',open);
+      });
+      document.querySelectorAll('.nav-links a').forEach(link=>{
+        link.addEventListener('click',()=>{
+          navLinks.classList.remove('active');
+          mobileMenuBtn.textContent='☰';
+          mobileMenuBtn.setAttribute('aria-expanded','false');
+        });
+      });
+      document.addEventListener('click',e=>{
+        if(!navLinks.contains(e.target)&&!mobileMenuBtn.contains(e.target)){
+          navLinks.classList.remove('active');
+          mobileMenuBtn.textContent='☰';
+          mobileMenuBtn.setAttribute('aria-expanded','false');
+        }
+      });
+    }
+    // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement,answer=item.querySelector('.faq-answer'),isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item){i.classList.remove('open');i.querySelector('.faq-answer').style.maxHeight='0'}});if(isOpen){item.classList.remove('open');answer.style.maxHeight='0'}else{item.classList.add('open');answer.style.maxHeight=answer.scrollHeight+'px'}})});
   </script>
 </body>

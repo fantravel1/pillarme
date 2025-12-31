@@ -486,13 +486,13 @@
     @media (max-width:768px){
       nav{padding:0 1rem}
       .nav-links{
-        display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;
-        background:var(--nav-bg);flex-direction:column;padding:2rem;gap:1.5rem;
-        overflow-y:auto;border-top:1px solid var(--nav-border);z-index:9999
+        display:none;position:absolute;top:var(--nav-h);left:0;right:0;
+        background:#fff;flex-direction:column;padding:1rem 0;gap:0;
+        box-shadow:0 10px 40px rgba(0,0,0,.15);border-bottom:1px solid var(--border-light)
       }
       .nav-links.active{display:flex}
-      .nav-links a{font-size:1.125rem;padding:.75rem}
-      .nav-links .nav-cta{width:100%;text-align:center;padding:.875rem}
+      .nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem;border-bottom:1px solid var(--border-light)}
+      .nav-links .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}
       .mobile-menu-btn{display:flex;align-items:center;justify-content:center}
       .domain-hero{padding:2rem 1rem 3rem}
       .domain-hero-text h1{font-size:2.5rem;letter-spacing:-1px}
@@ -1063,19 +1063,25 @@
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     if (mobileMenuBtn && navLinks) {
-      mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
         const open = navLinks.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-        mobileMenuBtn.textContent = open ? '✕' : '☰';
-        mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        this.textContent = open ? '✕' : '☰';
+        this.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           navLinks.classList.remove('active');
-          mobileMenuBtn.classList.remove('active');
           mobileMenuBtn.textContent = '☰';
           mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
+      });
+      document.addEventListener('click', e => {
+        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.textContent = '☰';
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
       });
     }
 
