@@ -743,10 +743,6 @@
                 <div class="metric-small-label">Traffic</div>
               </div>
               <div class="metric-small">
-                <div class="metric-small-value">$12K/mo</div>
-                <div class="metric-small-label">Revenue</div>
-              </div>
-              <div class="metric-small">
                 <div class="metric-small-value">2,400%</div>
                 <div class="metric-small-label">ROI</div>
               </div>
@@ -771,11 +767,7 @@
             <div class="testimonial-metrics">
               <div class="metric-small">
                 <div class="metric-small-value">+320%</div>
-                <div class="metric-small-label">Engagement</div>
-              </div>
-              <div class="metric-small">
-                <div class="metric-small-value">$5K/mo</div>
-                <div class="metric-small-label">Revenue</div>
+                <div class="metric-small-label">Traffic</div>
               </div>
               <div class="metric-small">
                 <div class="metric-small-value">98%</div>
@@ -803,10 +795,6 @@
               <div class="metric-small">
                 <div class="metric-small-value">48hrs</div>
                 <div class="metric-small-label">Launch Time</div>
-              </div>
-              <div class="metric-small">
-                <div class="metric-small-value">$8K/mo</div>
-                <div class="metric-small-label">Revenue</div>
               </div>
               <div class="metric-small">
                 <div class="metric-small-value">23x</div>
@@ -839,7 +827,7 @@
 
       .testimonials-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
         margin-top: 3rem;
       }
@@ -886,7 +874,7 @@
 
       .testimonial-metrics {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         padding: 1.5rem;
         background: #fafafa;
@@ -952,14 +940,31 @@
       }
 
       @media (max-width: 768px) {
+        .testimonials-section {
+          padding: 4rem 1rem;
+        }
         .testimonials-grid {
           grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .testimonial-card {
+          padding: 1.5rem;
         }
         .testimonial-metrics {
-          gap: .5rem;
+          gap: .75rem;
+          padding: 1rem;
         }
         .metric-small-value {
           font-size: 1.25rem;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .testimonials-section {
+          padding: 3rem 0.75rem;
+        }
+        .testimonial-card {
+          padding: 1.25rem;
         }
       }
     </style>
