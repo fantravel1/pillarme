@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Journey Starts Here | PILLAR Onboarding</title>
+    <meta name="description" content="Track your progress as we build your digital empire. From intake to launch in 14 days.">
+    <link rel="canonical" href="https://pillarme.com/onboarding">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --purple: #8B00FF;
+            --purple-dark: #6B00CC;
+            --purple-light: #A855F7;
+            --purple-glow: rgba(139,0,255,.15);
+            --green: #10B981;
+            --gold: #F59E0B;
+            --nav-h: 64px;
+            --black: #000;
+            --white: #fff;
+            --gray: #666;
+            --gray-light: #999;
+            --border: #E5E5E5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+            min-height: 100vh;
+            color: var(--black);
+            line-height: 1.6;
+            padding-top: var(--nav-h);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-h);
+            background: rgba(255,255,255,.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-links a:hover { color: var(--purple); }
+
+        .nav-cta {
+            background: var(--purple) !important;
+            color: #fff !important;
+            padding: .5rem 1rem !important;
+            border-radius: 6px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--purple);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .onboarding-hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .onboarding-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #000 0%, var(--purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .onboarding-hero p {
+            font-size: 1.125rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Timeline */
+        .progress-section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .progress-stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .progress-stat {
+            text-align: center;
+        }
+
+        .progress-stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--purple);
+        }
+
+        .progress-stat-label {
+            font-size: .75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Overall Progress Bar */
+        .overall-progress {
+            background: #fff;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 12px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--purple) 0%, var(--purple-light) 100%);
+            border-radius: 6px;
+            transition: width .5s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-percentage {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--purple);
+            min-width: 60px;
+        }
+
+        .progress-message {
+            font-size: .9rem;
+            color: var(--gray);
+        }
+
+        /* Timeline Steps */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-step {
+            position: relative;
+            padding: 2rem;
+            background: #fff;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            transition: all .3s;
+        }
+
+        .timeline-step:hover {
+            border-color: var(--purple);
+            transform: translateX(5px);
+        }
+
+        .timeline-step.completed {
+            border-color: var(--green);
+            background: linear-gradient(135deg, rgba(16,185,129,.05) 0%, #fff 100%);
+        }
+
+        .timeline-step.current {
+            border-color: var(--purple);
+            box-shadow: 0 10px 40px var(--purple-glow);
+        }
+
+        .timeline-step.upcoming {
+            opacity: .6;
+        }
+
+        .step-marker {
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .875rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .timeline-step.completed .step-marker {
+            background: var(--green);
+            border-color: var(--green);
+            color: #fff;
+        }
+
+        .timeline-step.current .step-marker {
+            background: var(--purple);
+            border-color: var(--purple);
+            color: #fff;
+            animation: pulse-marker 2s infinite;
+        }
+
+        @keyframes pulse-marker {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(139,0,255,.4); }
+            50% { box-shadow: 0 0 0 10px rgba(139,0,255,0); }
+        }
+
+        .step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .step-status {
+            font-size: .75rem;
+            padding: .25rem .75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-completed {
+            background: rgba(16,185,129,.1);
+            color: var(--green);
+        }
+
+        .status-current {
+            background: rgba(139,0,255,.1);
+            color: var(--purple);
+        }
+
+        .status-upcoming {
+            background: #f0f0f0;
+            color: var(--gray);
+        }
+
+        .step-description {
+            font-size: .9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .step-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .step-detail {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .85rem;
+        }
+
+        .step-detail-icon {
+            font-size: 1.25rem;
+        }
+
+        .step-action {
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--purple);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: .9rem;
+            border: none;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .btn:hover {
+            background: var(--purple-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--purple);
+            color: var(--purple);
+        }
+
+        .btn-secondary:hover {
+            background: var(--purple);
+            color: #fff;
+        }
+
+        /* Estimated Timeline */
+        .timeline-estimate {
+            background: linear-gradient(135deg, var(--purple) 0%, #6B00CC 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .timeline-estimate h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .estimate-days {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .estimate-day {
+            text-align: center;
+        }
+
+        .estimate-day-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+
+        .estimate-day-label {
+            font-size: .875rem;
+            opacity: .8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: #fff;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+            font-size: .875rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--purple);
+        }
+
+        .footer-copy {
+            font-size: .75rem;
+            color: rgba(255,255,255,.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .progress-stats { gap: 1rem; }
+            .timeline { padding-left: 2.5rem; }
+            .step-marker { left: -2.5rem; width: 28px; height: 28px; font-size: .75rem; }
+            .estimate-days { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">PILLAR</a>
+        <div class="nav-links">
+            <a href="topsites.html">Top Sites</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="ai-services.html">AI Services</a>
+            <a href="domains.html" class="nav-cta">Browse Domains</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+    </nav>
+
+    <main>
+        <section class="onboarding-hero">
+            <h1>Your Digital Empire is Being Built</h1>
+            <p>Track every step of your journey from idea to launch. We're building something amazing together.</p>
+        </section>
+
+        <section class="progress-section">
+            <div class="progress-header">
+                <h2>Your Progress</h2>
+                <div class="progress-stats">
+                    <div class="progress-stat">
+                        <div class="progress-stat-value">Day 3</div>
+                        <div class="progress-stat-label">Current Day</div>
+                    </div>
+                    <div class="progress-stat">
+                        <div class="progress-stat-value">11</div>
+                        <div class="progress-stat-label">Days Remaining</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overall-progress">
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                    <div class="progress-percentage">25%</div>
+                </div>
+                <p class="progress-message">🎨 Your website design is being finalized. Next: Content integration begins tomorrow.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Step 1: Completed -->
+                <div class="timeline-step completed">
+                    <div class="step-marker">✓</div>
+                    <div class="step-header">
+                        <h3 class="step-title">Discovery & Intake</h3>
+                        <span class="step-status status-completed">Completed</span>
+                    </div>
+                    <p class="step-description">We've captured your brand vision, goals, and content preferences. Your foundation is set.</p>
+                    <div class="step-details">
+                        <div class="step-detail">
+                            <span class="step-detail-icon">📋</span>
+                            <span>Intake form submitted</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🎯</span>
+                            <span>Goals defined</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🎨</span>
+                            <span>Brand colors selected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Completed -->
+                <div class="timeline-step completed">
+                    <div class="step-marker">✓</div>
+                    <div class="step-header">
+                        <h3 class="step-title">Domain Selection</h3>
+                        <span class="step-status status-completed">Completed</span>
+                    </div>
+                    <p class="step-description">Your premium domain has been reserved and configured. You're now the proud operator of a powerful digital address.</p>
+                    <div class="step-details">
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🌐</span>
+                            <span>GoldMadeEasy.com</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🔒</span>
+                            <span>SSL configured</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">✉️</span>
+                            <span>Email setup pending</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Current -->
+                <div class="timeline-step current">
+                    <div class="step-marker">3</div>
+                    <div class="step-header">
+                        <h3 class="step-title">Design & Layout</h3>
+                        <span class="step-status status-current">In Progress</span>
+                    </div>
+                    <p class="step-description">Our design team is crafting your website's visual identity. You'll receive a preview link within 24 hours.</p>
+                    <div class="step-details">
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🖼️</span>
+                            <span>Hero section: Done</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">📱</span>
+                            <span>Mobile layout: In progress</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🎨</span>
+                            <span>Color scheme: Applied</span>
+                        </div>
+                    </div>
+                    <div class="step-action">
+                        <a href="builder-demo.html" class="btn">Preview Your Site →</a>
+                    </div>
+                </div>
+
+                <!-- Step 4: Upcoming -->
+                <div class="timeline-step upcoming">
+                    <div class="step-marker">4</div>
+                    <div class="step-header">
+                        <h3 class="step-title">AI Content Creation</h3>
+                        <span class="step-status status-upcoming">Day 4-7</span>
+                    </div>
+                    <p class="step-description">Our AI will transform your expertise into compelling web content. Blog posts, service pages, and SEO-optimized copy.</p>
+                    <div class="step-details">
+                        <div class="step-detail">
+                            <span class="step-detail-icon">📝</span>
+                            <span>5 blog posts</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🏠</span>
+                            <span>Homepage copy</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">📄</span>
+                            <span>Service pages</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Upcoming -->
+                <div class="timeline-step upcoming">
+                    <div class="step-marker">5</div>
+                    <div class="step-header">
+                        <h3 class="step-title">Integration & Testing</h3>
+                        <span class="step-status status-upcoming">Day 8-11</span>
+                    </div>
+                    <p class="step-description">Content goes live, forms are connected, and we run comprehensive testing across all devices.</p>
+                    <div class="step-details">
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🔗</span>
+                            <span>Form integrations</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">📊</span>
+                            <span>Analytics setup</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🧪</span>
+                            <span>QA testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Upcoming -->
+                <div class="timeline-step upcoming">
+                    <div class="step-marker">6</div>
+                    <div class="step-header">
+                        <h3 class="step-title">SEO & Optimization</h3>
+                        <span class="step-status status-upcoming">Day 12-13</span>
+                    </div>
+                    <p class="step-description">Final SEO touches, performance optimization, and submission to search engines.</p>
+                    <div class="step-details">
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🔍</span>
+                            <span>Meta optimization</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">⚡</span>
+                            <span>Speed tuning</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🗺️</span>
+                            <span>Sitemap submission</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7: Launch -->
+                <div class="timeline-step upcoming">
+                    <div class="step-marker">🚀</div>
+                    <div class="step-header">
+                        <h3 class="step-title">Launch Day!</h3>
+                        <span class="step-status status-upcoming">Day 14</span>
+                    </div>
+                    <p class="step-description">Your digital empire goes live. We'll walk you through everything and celebrate your launch together.</p>
+                    <div class="step-details">
+                        <div class="step-detail">
+                            <span class="step-detail-icon">🎉</span>
+                            <span>Site goes live</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">📞</span>
+                            <span>Launch call</span>
+                        </div>
+                        <div class="step-detail">
+                            <span class="step-detail-icon">📚</span>
+                            <span>Training docs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-estimate">
+                <h3>Your Estimated Launch Date</h3>
+                <p>Based on your current progress, you're on track for an on-time launch</p>
+                <div class="estimate-days">
+                    <div class="estimate-day">
+                        <div class="estimate-day-number">Jan</div>
+                        <div class="estimate-day-label">Month</div>
+                    </div>
+                    <div class="estimate-day">
+                        <div class="estimate-day-number">27</div>
+                        <div class="estimate-day-label">Day</div>
+                    </div>
+                    <div class="estimate-day">
+                        <div class="estimate-day-number">2026</div>
+                        <div class="estimate-day-label">Year</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Questions About Your Project?</h2>
+            <p>Our team is here to help. Reach out anytime.</p>
+            <a href="support.html" class="btn">Contact Support</a>
+            <a href="builder-demo.html" class="btn btn-secondary" style="margin-left: 1rem;">Try AI Builder Demo</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="domains.html">Domains</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
+            <a href="support.html">Support</a>
+        </div>
+        <p class="footer-copy">© 2024-2026 PILLAR Media & Entertainment. All rights reserved.</p>
+    </footer>
+</body>
+</html>

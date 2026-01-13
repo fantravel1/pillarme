@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Builder Demo | PILLAR</title>
+    <meta name="description" content="Experience our AI website builder. Chat with our AI and watch it create your website in real-time.">
+    <link rel="canonical" href="https://pillarme.com/builder-demo">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --purple: #8B00FF;
+            --purple-dark: #6B00CC;
+            --purple-light: #A855F7;
+            --purple-glow: rgba(139,0,255,.15);
+            --green: #10B981;
+            --gold: #F59E0B;
+            --nav-h: 64px;
+            --black: #000;
+            --white: #fff;
+            --gray: #666;
+            --gray-light: #999;
+            --border: #E5E5E5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0f;
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-h);
+            background: rgba(10,10,15,.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--purple);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-links a:hover { color: #fff; }
+
+        .nav-cta {
+            background: var(--purple) !important;
+            color: #fff !important;
+            padding: .5rem 1rem !important;
+            border-radius: 6px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--purple);
+            cursor: pointer;
+        }
+
+        /* Main Layout */
+        .builder-container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            min-height: 100vh;
+            padding-top: var(--nav-h);
+        }
+
+        /* Chat Panel */
+        .chat-panel {
+            background: #111118;
+            border-right: 1px solid rgba(255,255,255,.1);
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - var(--nav-h));
+            position: sticky;
+            top: var(--nav-h);
+        }
+
+        .chat-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+        .chat-header h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .ai-badge {
+            background: var(--purple);
+            padding: .25rem .5rem;
+            border-radius: 4px;
+            font-size: .7rem;
+            font-weight: 600;
+        }
+
+        .chat-header p {
+            font-size: .875rem;
+            color: rgba(255,255,255,.5);
+            margin-top: .5rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 90%;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: .9rem;
+            line-height: 1.5;
+            animation: fadeIn .3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-ai {
+            background: rgba(139,0,255,.15);
+            border: 1px solid rgba(139,0,255,.3);
+            align-self: flex-start;
+        }
+
+        .message-user {
+            background: rgba(255,255,255,.1);
+            align-self: flex-end;
+        }
+
+        .message-typing {
+            display: flex;
+            gap: .3rem;
+            padding: 1rem 1.5rem;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--purple);
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: .2s; }
+        .typing-dot:nth-child(3) { animation-delay: .4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: .5; }
+            30% { transform: translateY(-5px); opacity: 1; }
+        }
+
+        .chat-input-container {
+            padding: 1rem;
+            border-top: 1px solid rgba(255,255,255,.1);
+            background: rgba(0,0,0,.3);
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: .5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: .9rem;
+            font-family: inherit;
+            resize: none;
+            outline: none;
+            transition: border-color .3s;
+        }
+
+        .chat-input:focus {
+            border-color: var(--purple);
+        }
+
+        .chat-input::placeholder {
+            color: rgba(255,255,255,.3);
+        }
+
+        .send-btn {
+            padding: 1rem 1.5rem;
+            background: var(--purple);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .send-btn:hover {
+            background: var(--purple-dark);
+        }
+
+        .send-btn:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: .75rem;
+        }
+
+        .quick-action {
+            padding: .5rem .75rem;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 20px;
+            color: rgba(255,255,255,.7);
+            font-size: .75rem;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .quick-action:hover {
+            background: var(--purple);
+            border-color: var(--purple);
+            color: #fff;
+        }
+
+        /* Preview Panel */
+        .preview-panel {
+            background: #1a1a24;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .preview-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,.7);
+        }
+
+        .preview-controls {
+            display: flex;
+            gap: .5rem;
+        }
+
+        .preview-control {
+            padding: .5rem 1rem;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 6px;
+            color: rgba(255,255,255,.7);
+            font-size: .75rem;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .preview-control:hover, .preview-control.active {
+            background: var(--purple);
+            border-color: var(--purple);
+            color: #fff;
+        }
+
+        /* Website Preview Frame */
+        .preview-frame {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,.5);
+            transition: all .5s;
+        }
+
+        .preview-frame.mobile {
+            max-width: 375px;
+            margin: 0 auto;
+        }
+
+        .preview-frame.tablet {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        /* Browser Chrome */
+        .browser-chrome {
+            background: #e8e8e8;
+            padding: .75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: .5rem;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .browser-dot.red { background: #ff5f57; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #28c940; }
+
+        .browser-url {
+            flex: 1;
+            background: #fff;
+            padding: .5rem 1rem;
+            border-radius: 6px;
+            font-size: .75rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .browser-url .lock {
+            color: var(--green);
+        }
+
+        /* Demo Website Content */
+        .demo-website {
+            min-height: 600px;
+            color: #000;
+        }
+
+        /* Demo Site Nav */
+        .demo-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .demo-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--purple);
+        }
+
+        .demo-nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .demo-nav-links span {
+            font-size: .875rem;
+            color: #666;
+        }
+
+        .demo-nav-cta {
+            background: var(--purple);
+            color: #fff;
+            padding: .5rem 1rem;
+            border-radius: 6px;
+            font-size: .875rem;
+            font-weight: 600;
+        }
+
+        /* Demo Hero */
+        .demo-hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all .8s ease;
+        }
+
+        .demo-hero.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .demo-hero h1 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .demo-hero p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .demo-hero-btn {
+            display: inline-block;
+            background: var(--purple);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Demo Features */
+        .demo-features {
+            padding: 3rem 2rem;
+            background: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all .8s ease .2s;
+        }
+
+        .demo-features.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .demo-features h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+
+        .demo-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .demo-feature {
+            text-align: center;
+            padding: 1.5rem;
+            background: #fafafa;
+            border-radius: 12px;
+        }
+
+        .demo-feature-icon {
+            font-size: 2rem;
+            margin-bottom: .75rem;
+        }
+
+        .demo-feature h3 {
+            font-size: .9rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            color: #000;
+        }
+
+        .demo-feature p {
+            font-size: .75rem;
+            color: #666;
+        }
+
+        /* Demo Testimonial */
+        .demo-testimonial {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--purple) 0%, #6B00CC 100%);
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all .8s ease .4s;
+        }
+
+        .demo-testimonial.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .demo-testimonial blockquote {
+            font-size: 1.125rem;
+            font-style: italic;
+            max-width: 500px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+        }
+
+        .demo-testimonial cite {
+            font-size: .875rem;
+            opacity: .8;
+        }
+
+        /* Demo CTA */
+        .demo-cta {
+            padding: 3rem 2rem;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all .8s ease .6s;
+        }
+
+        .demo-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .demo-cta h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .demo-cta p {
+            color: rgba(255,255,255,.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-cta-btn {
+            display: inline-block;
+            background: var(--purple);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Building Animation */
+        .building-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity .5s;
+        }
+
+        .building-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .building-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(139,0,255,.2);
+            border-top-color: var(--purple);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .building-text {
+            font-size: 1rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .building-progress {
+            width: 200px;
+            height: 4px;
+            background: rgba(255,255,255,.1);
+            border-radius: 2px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .building-progress-fill {
+            height: 100%;
+            background: var(--purple);
+            width: 0%;
+            transition: width .3s;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #111118 0%, #1a1a24 100%);
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .final-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            color: rgba(255,255,255,.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--purple);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all .3s;
+        }
+
+        .final-cta .btn:hover {
+            background: var(--purple-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .builder-container {
+                grid-template-columns: 1fr;
+            }
+            .chat-panel {
+                position: relative;
+                height: auto;
+                max-height: 50vh;
+            }
+            .preview-panel {
+                min-height: 60vh;
+            }
+            .demo-features-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">PILLAR</a>
+        <div class="nav-links">
+            <a href="topsites.html">Top Sites</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="onboarding.html">My Progress</a>
+            <a href="get-started.html" class="nav-cta">Get Started</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+    </nav>
+
+    <div class="builder-container">
+        <!-- Chat Panel -->
+        <div class="chat-panel">
+            <div class="chat-header">
+                <h2>PILLAR AI <span class="ai-badge">DEMO</span></h2>
+                <p>Chat with our AI to customize your website preview</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message message-ai">
+                    Hello! I'm your PILLAR AI assistant. I'll help you create a website preview. Let's start - what type of business or website would you like to build?
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Describe your website idea..." />
+                    <button class="send-btn" id="sendBtn">Send</button>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-action" data-action="coaching">Coaching Business</button>
+                    <button class="quick-action" data-action="ecommerce">E-commerce Store</button>
+                    <button class="quick-action" data-action="portfolio">Portfolio Site</button>
+                    <button class="quick-action" data-action="saas">SaaS Product</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Panel -->
+        <div class="preview-panel">
+            <div class="preview-header">
+                <h3>Live Preview</h3>
+                <div class="preview-controls">
+                    <button class="preview-control active" data-view="desktop">Desktop</button>
+                    <button class="preview-control" data-view="tablet">Tablet</button>
+                    <button class="preview-control" data-view="mobile">Mobile</button>
+                </div>
+            </div>
+
+            <div class="preview-frame" id="previewFrame">
+                <div class="browser-chrome">
+                    <div class="browser-dots">
+                        <div class="browser-dot red"></div>
+                        <div class="browser-dot yellow"></div>
+                        <div class="browser-dot green"></div>
+                    </div>
+                    <div class="browser-url">
+                        <span class="lock">🔒</span>
+                        <span id="previewUrl">your-website.com</span>
+                    </div>
+                </div>
+
+                <div class="demo-website" id="demoWebsite">
+                    <!-- Building Overlay -->
+                    <div class="building-overlay hidden" id="buildingOverlay">
+                        <div class="building-spinner"></div>
+                        <div class="building-text" id="buildingText">Generating your website...</div>
+                        <div class="building-progress">
+                            <div class="building-progress-fill" id="buildingProgress"></div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder State -->
+                    <div style="padding: 4rem 2rem; text-align: center; color: #666;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎨</div>
+                        <h2 style="color: #000; margin-bottom: 1rem;">Your Website Preview</h2>
+                        <p>Tell me about your business in the chat and I'll generate a live preview for you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-cta">
+                <h3>Love what you see?</h3>
+                <p>This is just a preview. Get the full experience with a real website built for you.</p>
+                <a href="get-started.html" class="btn">Start Building for Real →</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chat functionality
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const demoWebsite = document.getElementById('demoWebsite');
+        const buildingOverlay = document.getElementById('buildingOverlay');
+        const buildingText = document.getElementById('buildingText');
+        const buildingProgress = document.getElementById('buildingProgress');
+        const previewUrl = document.getElementById('previewUrl');
+        const previewFrame = document.getElementById('previewFrame');
+
+        let conversationState = 'initial';
+        let userBusiness = '';
+
+        // Quick actions
+        document.querySelectorAll('.quick-action').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const action = btn.dataset.action;
+                const messages = {
+                    coaching: "I want to build a coaching business website",
+                    ecommerce: "I want to create an e-commerce store",
+                    portfolio: "I need a portfolio website to showcase my work",
+                    saas: "I'm building a SaaS product website"
+                };
+                chatInput.value = messages[action];
+                sendMessage();
+            });
+        });
+
+        // Preview controls
+        document.querySelectorAll('.preview-control').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.preview-control').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const view = btn.dataset.view;
+                previewFrame.classList.remove('mobile', 'tablet');
+                if (view !== 'desktop') {
+                    previewFrame.classList.add(view);
+                }
+            });
+        });
+
+        // Send message
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            chatInput.value = '';
+            sendBtn.disabled = true;
+
+            // Show typing indicator
+            showTyping();
+
+            setTimeout(() => {
+                hideTyping();
+                processMessage(message);
+                sendBtn.disabled = false;
+            }, 1500);
+        }
+
+        function addMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = `message message-${type}`;
+            div.textContent = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const typing = document.createElement('div');
+            typing.className = 'message message-ai message-typing';
+            typing.id = 'typingIndicator';
+            typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            chatMessages.appendChild(typing);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        function processMessage(message) {
+            const lowerMessage = message.toLowerCase();
+
+            if (conversationState === 'initial') {
+                // Determine business type
+                if (lowerMessage.includes('coach') || lowerMessage.includes('consulting')) {
+                    userBusiness = 'coaching';
+                    addMessage("Great choice! A coaching business website needs to build trust and showcase your expertise. What's your coaching niche? (e.g., life coaching, business coaching, fitness)", 'ai');
+                    conversationState = 'niche';
+                } else if (lowerMessage.includes('ecommerce') || lowerMessage.includes('store') || lowerMessage.includes('shop')) {
+                    userBusiness = 'ecommerce';
+                    addMessage("E-commerce is exciting! What kind of products will you be selling? This helps me design the perfect layout.", 'ai');
+                    conversationState = 'niche';
+                } else if (lowerMessage.includes('portfolio') || lowerMessage.includes('showcase')) {
+                    userBusiness = 'portfolio';
+                    addMessage("A portfolio site - perfect for creatives! What's your specialty? (design, photography, writing, development)", 'ai');
+                    conversationState = 'niche';
+                } else if (lowerMessage.includes('saas') || lowerMessage.includes('software') || lowerMessage.includes('app')) {
+                    userBusiness = 'saas';
+                    addMessage("SaaS products need clear value propositions. What problem does your software solve?", 'ai');
+                    conversationState = 'niche';
+                } else {
+                    userBusiness = 'general';
+                    addMessage("Interesting! Let me create a versatile business website for you. What's the main goal of your website? (generate leads, sell products, build authority)", 'ai');
+                    conversationState = 'niche';
+                }
+            } else if (conversationState === 'niche') {
+                addMessage("Perfect! I'm now generating your custom website preview. This will take just a moment...", 'ai');
+                conversationState = 'building';
+                setTimeout(() => buildWebsite(userBusiness, message), 1000);
+            } else if (conversationState === 'complete') {
+                // Handle customization requests
+                if (lowerMessage.includes('color') || lowerMessage.includes('purple') || lowerMessage.includes('blue') || lowerMessage.includes('green')) {
+                    addMessage("I can customize colors for you! In the full version, you'd have complete control over your brand colors. For now, I've kept the professional purple theme. Want to try another customization?", 'ai');
+                } else if (lowerMessage.includes('section') || lowerMessage.includes('add')) {
+                    addMessage("Great thinking! In the full PILLAR experience, you can add unlimited sections - pricing tables, FAQ, team bios, and more. Ready to build the real thing?", 'ai');
+                } else {
+                    addMessage("I love your enthusiasm! This demo shows what's possible. The full PILLAR experience includes AI content writing, SEO optimization, and ongoing support. Click 'Start Building for Real' to get started!", 'ai');
+                }
+            }
+        }
+
+        function buildWebsite(type, niche) {
+            buildingOverlay.classList.remove('hidden');
+
+            const steps = [
+                { text: "Analyzing your requirements...", progress: 20 },
+                { text: "Designing hero section...", progress: 40 },
+                { text: "Creating feature blocks...", progress: 60 },
+                { text: "Adding social proof...", progress: 80 },
+                { text: "Finalizing design...", progress: 100 }
+            ];
+
+            let stepIndex = 0;
+            const interval = setInterval(() => {
+                if (stepIndex < steps.length) {
+                    buildingText.textContent = steps[stepIndex].text;
+                    buildingProgress.style.width = steps[stepIndex].progress + '%';
+                    stepIndex++;
+                } else {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        buildingOverlay.classList.add('hidden');
+                        renderWebsite(type, niche);
+                        addMessage("Your website preview is ready! Scroll through to see all sections. Feel free to ask me to make changes - like 'change the colors' or 'add a pricing section'.", 'ai');
+                        conversationState = 'complete';
+                    }, 500);
+                }
+            }, 800);
+        }
+
+        function renderWebsite(type, niche) {
+            const businessConfigs = {
+                coaching: {
+                    name: "Elite Coaching",
+                    headline: "Transform Your Life With Expert Guidance",
+                    subheadline: "Personal coaching that helps you achieve breakthrough results in business, relationships, and personal growth.",
+                    features: [
+                        { icon: "🎯", title: "1-on-1 Sessions", desc: "Personalized coaching tailored to your goals" },
+                        { icon: "📈", title: "Proven Methods", desc: "Strategies that have helped 500+ clients" },
+                        { icon: "🏆", title: "Results Driven", desc: "Track your progress with measurable outcomes" }
+                    ],
+                    testimonial: "Working with this coach changed my entire perspective. I doubled my income in 6 months!",
+                    cta: "Book Your Free Discovery Call"
+                },
+                ecommerce: {
+                    name: "StyleShop",
+                    headline: "Discover Your Perfect Style",
+                    subheadline: "Curated collections that blend quality, comfort, and contemporary design.",
+                    features: [
+                        { icon: "🚚", title: "Free Shipping", desc: "On all orders over $50" },
+                        { icon: "↩️", title: "Easy Returns", desc: "30-day hassle-free returns" },
+                        { icon: "💎", title: "Premium Quality", desc: "Handpicked for excellence" }
+                    ],
+                    testimonial: "Best online shopping experience ever. The quality exceeded my expectations!",
+                    cta: "Shop New Arrivals"
+                },
+                portfolio: {
+                    name: "Creative Studio",
+                    headline: "Design That Makes an Impact",
+                    subheadline: "Award-winning creative work for brands that dare to stand out.",
+                    features: [
+                        { icon: "🎨", title: "Brand Identity", desc: "Logos, guidelines, visual systems" },
+                        { icon: "🖥️", title: "Web Design", desc: "Beautiful, functional websites" },
+                        { icon: "📱", title: "Digital Products", desc: "Apps and digital experiences" }
+                    ],
+                    testimonial: "They transformed our brand completely. The results speak for themselves.",
+                    cta: "View My Work"
+                },
+                saas: {
+                    name: "FlowApp",
+                    headline: "Streamline Your Workflow",
+                    subheadline: "The all-in-one platform that helps teams collaborate better and ship faster.",
+                    features: [
+                        { icon: "⚡", title: "Lightning Fast", desc: "Built for speed and efficiency" },
+                        { icon: "🔗", title: "Integrations", desc: "Connect with 100+ tools" },
+                        { icon: "🔒", title: "Enterprise Security", desc: "SOC 2 compliant" }
+                    ],
+                    testimonial: "We cut our project delivery time by 40% after switching to this platform.",
+                    cta: "Start Free Trial"
+                },
+                general: {
+                    name: "Your Business",
+                    headline: "We Help You Succeed",
+                    subheadline: "Professional solutions tailored to your unique business needs.",
+                    features: [
+                        { icon: "✨", title: "Expert Team", desc: "Years of industry experience" },
+                        { icon: "🤝", title: "Client Focused", desc: "Your success is our priority" },
+                        { icon: "📊", title: "Data Driven", desc: "Decisions backed by insights" }
+                    ],
+                    testimonial: "An amazing partner to work with. They truly understand our business.",
+                    cta: "Get Started Today"
+                }
+            };
+
+            const config = businessConfigs[type] || businessConfigs.general;
+            const domainName = config.name.toLowerCase().replace(/\s+/g, '') + '.com';
+            previewUrl.textContent = domainName;
+
+            demoWebsite.innerHTML = `
+                <nav class="demo-nav">
+                    <div class="demo-logo">${config.name}</div>
+                    <div class="demo-nav-links">
+                        <span>Services</span>
+                        <span>About</span>
+                        <span>Contact</span>
+                    </div>
+                    <span class="demo-nav-cta">${config.cta.split(' ')[0]}</span>
+                </nav>
+
+                <div class="demo-hero" id="demoHero">
+                    <h1>${config.headline}</h1>
+                    <p>${config.subheadline}</p>
+                    <a href="#" class="demo-hero-btn">${config.cta}</a>
+                </div>
+
+                <div class="demo-features" id="demoFeatures">
+                    <h2>Why Choose Us</h2>
+                    <div class="demo-features-grid">
+                        ${config.features.map(f => `
+                            <div class="demo-feature">
+                                <div class="demo-feature-icon">${f.icon}</div>
+                                <h3>${f.title}</h3>
+                                <p>${f.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="demo-testimonial" id="demoTestimonial">
+                    <blockquote>"${config.testimonial}"</blockquote>
+                    <cite>— Happy Customer</cite>
+                </div>
+
+                <div class="demo-cta" id="demoCta">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Join hundreds of satisfied customers who chose us.</p>
+                    <a href="#" class="demo-cta-btn">${config.cta}</a>
+                </div>
+            `;
+
+            // Animate sections in
+            setTimeout(() => document.getElementById('demoHero').classList.add('visible'), 100);
+            setTimeout(() => document.getElementById('demoFeatures').classList.add('visible'), 300);
+            setTimeout(() => document.getElementById('demoTestimonial').classList.add('visible'), 500);
+            setTimeout(() => document.getElementById('demoCta').classList.add('visible'), 700);
+        }
+    </script>
+</body>
+</html>
