@@ -3,485 +3,870 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Empire Insights | PILLAR Media - Data-Driven Growth Strategies</title>
-  <meta name="description" content="Research-backed insights on monetization, premium domains, and building profitable web empires. Learn why websites outperform platforms by 10-40x.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <title>Insights | PILLAR Corporation - Perspectives & Research</title>
+  <meta name="description" content="Explore thought leadership, research, and strategic perspectives from PILLAR Corporation on digital infrastructure, domain strategy, and enterprise technology trends shaping the global digital economy.">
+  <meta name="keywords" content="PILLAR insights, digital infrastructure research, domain strategy, enterprise technology, thought leadership, industry analysis, digital transformation">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://pillarme.com/insights">
 
-  <!-- PWA / Mobile App -->
+  <!-- PWA -->
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="PILLAR Insights">
-  <meta name="theme-color" content="#8B00FF">
+  <meta name="apple-mobile-web-app-title" content="PILLAR">
 
-  <!-- Preload critical resources -->
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hjA.woff2" type="font/woff2" crossorigin>
-
-  <!-- Preconnect -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
-  <!-- Critical CSS (same as index plus article cards) -->
-  <style>
-    /* ===== Root + layout guards ===== */
-    :root{
-      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
-      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
-      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
-      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
-      --blue-future:#0066CC;--gold:#FFD700;
-      --nav-h:64px;--content-max:1200px;
-      /* Theme-aware nav/footer variables (light theme) */
-      --nav-bg:rgba(255,255,255,.95);
-      --nav-border:var(--border-light);
-      --link-color:var(--black);
-      --link-hover:var(--purple);
-      --footer-bg:#000;
-      --footer-border:rgba(255,255,255,.1);
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
-      padding-top:var(--nav-h);
-    }
-    section, header.hero, main, [id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
-
-    /* Navigation (Unified Style) */
-    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--nav-bg);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;border-bottom:1px solid var(--nav-border)}
-    .logo{font-size:1.5rem;font-weight:700;color:var(--purple);text-decoration:none;transition:transform .2s}
-    .logo:hover{transform:scale(1.05)}
-    .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-links a{color:var(--link-color);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .3s;position:relative;padding:.5rem}
-    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
-    .nav-links a:hover,.nav-links a.active{color:var(--link-hover)}
-    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:.5rem 1rem!important;border-radius:6px;font-weight:600}
-    .nav-cta::after{display:none!important}
-    .nav-cta:hover{background:var(--purple-dark)!important}
-    .mobile-menu-btn{display:none;background:none;border:none;color:var(--purple);font-size:1.5rem;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
-
-    /* ===== Insights Hero ===== */
-    .insights-hero{
-      min-height:40vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem 3rem;text-align:center;
-      background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative
-    }
-    .insights-hero::before{
-      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;
-      background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);pointer-events:none;opacity:.3
-    }
-    .insights-hero > div{position:relative;z-index:1}
-    h1{font-size:clamp(2.5rem,5vw,3.5rem);font-weight:900;letter-spacing:-2px;margin-bottom:1rem;background:linear-gradient(135deg,#000 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
-    .hero p{font-size:1.25rem;color:#666;max-width:650px;margin:0 auto}
-
-    /* ===== Main Content ===== */
-    h2{font-size:2.5rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
-    .section-subtitle{text-align:center;color:var(--gray);font-size:1.125rem;max-width:650px;margin:0 auto 3rem;line-height:1.7}
-
-    /* ===== Article Grid ===== */
-    .articles-section{padding:4rem 2rem 6rem}
-    .articles-grid{
-      max-width:var(--content-max);margin:0 auto;
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem
-    }
-    .article-card{
-      background:#fff;border:2px solid var(--border-light);border-radius:16px;padding:2rem;
-      transition:all .3s;text-decoration:none;display:flex;flex-direction:column;
-      position:relative;overflow:hidden
-    }
-    .article-card:hover{
-      border-color:var(--purple);transform:translateY(-8px);
-      box-shadow:0 20px 60px var(--purple-glow)
-    }
-    .article-card.featured{
-      grid-column:1 / -1;max-width:800px;margin:0 auto 2rem;
-      background:linear-gradient(135deg,rgba(139,0,255,.03) 0%,transparent 100%);
-      border:3px solid var(--purple)
-    }
-    .category-pill{
-      display:inline-block;padding:.375rem 1rem;border-radius:50px;font-size:.75rem;
-      font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff;
-      margin-bottom:1rem
-    }
-    .category-monetization{background:var(--purple)}
-    .category-domains{background:var(--gold);color:var(--black)}
-    .category-future{background:var(--blue-future)}
-    .article-title{
-      font-size:1.5rem;font-weight:800;color:var(--black);margin-bottom:.75rem;
-      line-height:1.3
-    }
-    .article-excerpt{
-      color:var(--gray);margin-bottom:1.5rem;flex:1;font-size:1rem;line-height:1.6
-    }
-    .article-meta{
-      display:flex;align-items:center;justify-content:space-between;
-      padding-top:1rem;border-top:1px solid var(--border-light)
-    }
-    .read-time{color:var(--gray-light);font-size:.875rem}
-    .read-link{
-      color:var(--purple);font-weight:600;font-size:.875rem;
-      display:flex;align-items:center;gap:.5rem;transition:all .3s
-    }
-    .article-card:hover .read-link{gap:.75rem}
-
-    /* Domain authority cards */
-    .article-card.domains:hover{
-      border-color:var(--gold);box-shadow:0 20px 60px rgba(255,215,0,.2)
-    }
-    /* Future-proof cards */
-    .article-card.future:hover{
-      border-color:var(--blue-future);box-shadow:0 20px 60px rgba(0,102,204,.15)
-    }
-
-    /* ===== Facts Section ===== */
-    .facts-section{
-      padding:6rem 2rem;background:var(--black);color:#fff;position:relative;overflow:hidden
-    }
-    .facts-section::before{
-      content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;
-      background:radial-gradient(circle,var(--purple-glow) 0%,transparent 50%);
-      pointer-events:none
-    }
-    .facts-container{
-      max-width:var(--content-max);margin:0 auto;position:relative;z-index:1
-    }
-    .facts-section h2{color:#fff;margin-bottom:3rem}
-    .facts-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:3rem 2rem;margin-bottom:4rem
-    }
-    .fact-group{padding:0 1rem}
-    .fact-group h3{
-      font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:var(--purple);
-      display:flex;align-items:center;gap:.5rem
-    }
-    .fact-icon{font-size:1.5rem}
-    .fact-list{list-style:none;padding:0}
-    .fact-list li{
-      margin-bottom:1rem;padding-left:1.5rem;position:relative;color:rgba(255,255,255,.9);
-      font-size:1rem;line-height:1.6
-    }
-    .fact-list li:before{
-      content:'→';position:absolute;left:0;color:var(--purple);font-weight:bold
-    }
-    .fact-highlight{
-      color:#fff;font-weight:700;background:rgba(139,0,255,.2);
-      padding:0 .25rem;border-radius:3px
-    }
-    .facts-cta{
-      text-align:center;padding:3rem;background:rgba(255,255,255,.05);
-      border-radius:20px;border:2px solid var(--purple)
-    }
-    .facts-cta p{
-      font-size:1.25rem;margin-bottom:2rem;color:rgba(255,255,255,.9)
-    }
-    .btn-facts{
-      background:var(--purple);color:#fff;padding:1.25rem 3rem;border-radius:10px;
-      text-decoration:none;font-weight:700;font-size:1.125rem;transition:all .3s;
-      display:inline-block
-    }
-    .btn-facts:hover{
-      background:var(--purple-darker);transform:translateY(-3px);
-      box-shadow:0 15px 40px var(--purple-glow-strong)
-    }
-
-    /* Footer (Unified Style) */
-    footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem;margin-top:4rem;border-top:1px solid var(--footer-border)}
-    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
-    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple)}
-    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem;margin-top:.25rem}
-    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
-    .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:500;transition:all .3s;font-size:.9rem}
-    .footer-links a:hover{color:var(--purple)}
-    .footer-copy{color:rgba(255,255,255,.4);font-size:.8rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--footer-border)}
-
-    /* Mobile Overflow Fix */
-    .insights-hero, .facts-section {
-      overflow: hidden;
-      position: relative;
-    }
-    
-    /* Mobile */
-    @media (max-width:768px){
-      .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1rem 0;gap:0;z-index:998;border-bottom:1px solid var(--nav-border)}
-      .nav-links.active{display:flex}
-      .nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem}
-      .nav-links a::after{display:none}
-      .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}
-      .mobile-menu-btn{display:flex}
-      .mobile-menu-btn.active{transform:rotate(90deg);transition:transform .3s}
-      .articles-grid{grid-template-columns:1fr;padding:0 1rem}
-      .article-card.featured{max-width:100%}
-      .category-pill{text-align:center;width:100%}
-      .facts-grid{grid-template-columns:1fr;gap:2rem}
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Digital Empire Insights | PILLAR Media">
-  <meta property="og:description" content="Research-backed strategies for building profitable web empires. Learn why websites outperform platforms by 10-40x.">
+  <meta property="og:title" content="Insights | PILLAR Corporation - Perspectives & Research">
+  <meta property="og:description" content="Thought leadership and research on digital infrastructure, domain strategy, and enterprise technology from PILLAR Corporation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pillarme.com/insights">
   <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PILLAR Media - Transform Your Expertise Into Digital Wealth">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:secure_url" content="https://pillarme.com/images/og-image.jpg">
   <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="PILLAR Media & Entertainment">
-  
+  <meta property="og:site_name" content="PILLAR Corporation">
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PILLAR Insights - Data-Driven Digital Success">
-  <meta name="twitter:description" content="Research-backed strategies for $50K+ digital assets. Platform vs website revenue data revealed.">
+  <meta name="twitter:title" content="Insights | PILLAR Corporation">
+  <meta name="twitter:description" content="Thought leadership and research on digital infrastructure and enterprise technology.">
   <meta name="twitter:image" content="https://pillarme.com/images/og-image.jpg">
-  <meta name="twitter:image:alt" content="PILLAR Media & Entertainment - Transform expertise into digital assets">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0A1628">
+
+  <style>
+    /* ===== Corporate Design Tokens ===== */
+    :root {
+      --corporate-navy: #0A1628;
+      --corporate-navy-light: #162544;
+      --corporate-charcoal: #2D3748;
+      --corporate-slate: #4A5568;
+      --corporate-steel: #718096;
+      --corporate-gold: #B8860B;
+      --corporate-gold-light: #D4A853;
+      --corporate-blue: #2563EB;
+      --corporate-teal: #0D9488;
+      --white: #FFFFFF;
+      --off-white: #FAFBFC;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --success: #059669;
+      --nav-height: 72px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--corporate-navy); }
+    .nav-links a.active { color: var(--corporate-navy); }
+    .nav-cta {
+      background: var(--corporate-navy) !important;
+      color: var(--white) !important;
+      padding: 0.625rem 1.5rem !important;
+      border-radius: 4px;
+    }
+    .nav-cta:hover { background: var(--corporate-navy-light) !important; }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--corporate-navy);
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      color: var(--white);
+      padding: 6rem 3rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(184, 134, 11, 0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .page-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold-light);
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .page-hero .lead {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* ===== Featured Article ===== */
+    .featured-section {
+      padding: 5rem 3rem;
+      background: var(--white);
+    }
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .featured-article {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .featured-article:hover {
+      border-color: var(--corporate-gold);
+      box-shadow: 0 12px 40px rgba(10, 22, 40, 0.1);
+    }
+    .featured-image {
+      height: 400px;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .featured-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(184, 134, 11, 0.15) 0%, transparent 50%);
+    }
+    .featured-image-icon {
+      font-size: 6rem;
+      opacity: 0.3;
+      position: relative;
+      z-index: 1;
+    }
+    .featured-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: var(--corporate-gold);
+      color: var(--white);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .featured-content {
+      padding: 3rem;
+    }
+    .featured-category {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold);
+      margin-bottom: 1rem;
+    }
+    .featured-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .featured-excerpt {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .meta-item {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--corporate-navy);
+      margin-top: 1.5rem;
+      transition: gap 0.2s;
+    }
+    .featured-article:hover .read-more {
+      gap: 0.75rem;
+    }
+
+    /* ===== Category Filters ===== */
+    .filters-section {
+      padding: 0 3rem 3rem;
+      background: var(--white);
+    }
+    .category-filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .filter-btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      color: var(--corporate-navy);
+      border-color: var(--gray-300);
+    }
+    .filter-btn.active {
+      color: var(--white);
+      background: var(--corporate-navy);
+      border-color: var(--corporate-navy);
+    }
+
+    /* ===== Insights Grid ===== */
+    .insights-section {
+      padding: 4rem 3rem 8rem;
+      background: var(--off-white);
+    }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .insight-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .insight-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+      transform: translateY(-4px);
+    }
+    .insight-image {
+      height: 180px;
+      background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-image-icon {
+      font-size: 3rem;
+      color: var(--gray-400);
+    }
+    .insight-category-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.375rem 0.75rem;
+      border-radius: 4px;
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .insight-category-badge.research { background: var(--corporate-blue); }
+    .insight-category-badge.technology { background: var(--corporate-teal); }
+    .insight-category-badge.industry { background: var(--corporate-charcoal); }
+    .insight-category-badge.strategy { background: var(--corporate-gold); }
+    .insight-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .insight-title {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+    .insight-excerpt {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .insight-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-100);
+    }
+    .insight-read-time {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+    .insight-arrow {
+      font-size: 0.875rem;
+      color: var(--corporate-navy);
+      transition: transform 0.2s;
+    }
+    .insight-card:hover .insight-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ===== Newsletter CTA ===== */
+    .newsletter-section {
+      padding: 6rem 3rem;
+      background: var(--corporate-navy);
+      text-align: center;
+    }
+    .newsletter-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .newsletter-section .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold-light);
+      margin-bottom: 1rem;
+    }
+    .newsletter-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .newsletter-section p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      font-family: var(--font-sans);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      transition: all 0.2s;
+    }
+    .newsletter-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .newsletter-input:focus {
+      outline: none;
+      border-color: var(--corporate-gold);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .newsletter-btn {
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--corporate-navy);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .newsletter-btn:hover {
+      background: var(--gray-100);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 5rem 3rem 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-container { max-width: 1400px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-brand { max-width: 280px; }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; }
+    .footer-nav h4 {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav ul { list-style: none; }
+    .footer-nav li { margin-bottom: 0.75rem; }
+    .footer-nav a { font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-legal { display: flex; gap: 2rem; }
+    .footer-legal a { font-size: 0.75rem; color: rgba(255, 255, 255, 0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255, 255, 255, 0.7); }
+    .footer-copyright { font-size: 0.75rem; color: rgba(255, 255, 255, 0.3); }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 1024px) {
+      .featured-article { grid-template-columns: 1fr; }
+      .featured-image { height: 280px; }
+      .insights-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+      .nav-container { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.5rem;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .nav-links.active a { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
+      .nav-cta { margin: 1rem 0 0 0; width: 100%; text-align: center; }
+      .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+      .page-hero { padding: 4rem 1.5rem 3rem; }
+      .featured-section,
+      .filters-section,
+      .insights-section,
+      .newsletter-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .featured-content { padding: 2rem; }
+      .featured-title { font-size: 1.5rem; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .category-filters { gap: 0.5rem; }
+      .filter-btn { padding: 0.625rem 1rem; font-size: 0.8125rem; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-btn { width: 100%; }
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ===== Accessibility ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--corporate-blue); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Blog",
-    "name":"PILLAR Media Insights",
-    "description":"Data-driven strategies for building profitable digital empires. Research-backed insights on monetization, premium domains, and creator success.",
-    "url":"https://pillarme.com/insights",
-    "publisher":{"@type":"Organization","name":"PILLAR Media & Entertainment","url":"https://pillarme.com"}
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "PILLAR Corporation Insights",
+    "url": "https://pillarme.com/insights",
+    "description": "Thought leadership, research, and strategic perspectives on digital infrastructure, domain strategy, and enterprise technology from PILLAR Corporation.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PILLAR Corporation",
+      "url": "https://pillarme.com"
+    }
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://pillarme.com/"},
-      {"@type":"ListItem","position":2,"name":"Insights","item":"https://pillarme.com/insights"}
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How much more do websites earn vs YouTube?","acceptedAnswer":{"@type":"Answer","text":"Websites generate $4.85-$9.70 per 1,000 visitors compared to YouTube's $1.65 per 1,000 views. That's 3-6x more revenue, plus you own your audience, content, and monetization."}},
-      {"@type":"Question","name":"Do premium domains increase conversion rates?","acceptedAnswer":{"@type":"Answer","text":"Yes. Research shows premium domains drive 14-40% higher conversion rates due to increased trust and memorability. They also improve direct type-in traffic and brand recall."}},
-      {"@type":"Question","name":"Why do websites outperform platforms like YouTube and Instagram?","acceptedAnswer":{"@type":"Answer","text":"Websites offer 94-97% revenue retention vs 30-70% on platforms, no algorithm dependency, multiple monetization streams, true asset ownership, and the ability to build an email list worth $1-3 per subscriber monthly."}},
-      {"@type":"Question","name":"What's the ROI of domain rental vs buying?","acceptedAnswer":{"@type":"Answer","text":"Renting a $50,000 domain for $500/month preserves capital for business growth. Over 5 years, rent totals $30,000 vs $66,000+ true cost of buying (including opportunity cost). You save 50%+ while accessing the same premium authority."}}
-    ]
-  }
-  </script>
-
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- ===== NAV ===== -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
   <nav role="navigation" aria-label="Main navigation">
-    <a href="index.html" class="logo" aria-label="PILLAR home">PILLAR</a>
-    <div class="nav-links">
-      <a href="domains.html">Domains</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="ai-services.html">AI Services</a>
-      <a href="get-started.html">Get Started</a>
-      <a href="faq.html">FAQ</a>
-      <a href="insights.html">Insights</a>
-      <a href="domains.html" class="nav-cta">Browse Domains</a>
+    <div class="nav-container">
+      <a href="/" class="logo">PILLAR</a>
+      <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/divisions">Divisions</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/domains">Domains</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/insights" class="active">Insights</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
     </div>
-    <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <header class="insights-hero" role="banner">
-    <div>
-      <h1>Insights That Build Digital Empires</h1>
-      <p>Data-driven strategies for thought leaders ready to monetize their expertise</p>
+  <!-- Page Hero -->
+  <header class="page-hero" role="banner">
+    <div class="page-hero-container">
+      <p class="eyebrow">Insights</p>
+      <h1>Perspectives & Research</h1>
+      <p class="lead">Strategic analysis, market intelligence, and thought leadership from our global team of domain specialists, technology strategists, and digital infrastructure experts.</p>
     </div>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
+  <!-- Main Content -->
   <main id="main-content">
-    <!-- Articles Grid -->
-    <section class="articles-section" aria-label="Research articles">
-      <div class="articles-grid">
-        <!-- Featured Article -->
-        <article class="article-card featured">
-          <span class="category-pill category-monetization">Monetization Strategies</span>
-          <h2 class="article-title">The $91,500 Question: Why YouTube Creators Leave Money on the Table</h2>
-          <p class="article-excerpt">YouTube creators earn $1.65 per 1,000 views while websites generate $4.85-$9.70. Discover why successful creators drive traffic from YouTube to owned properties for 73% more revenue and 38x higher conversions.</p>
-          <div class="article-meta">
-            <span class="read-time">12 min read</span>
-            <a href="/insights/youtube-website-monetization" class="read-link">Read Article →</a>
+    <!-- Featured Article -->
+    <section class="featured-section" aria-label="Featured insight">
+      <div class="section-container">
+        <a href="/insights/2026-domain-market-predictions" class="featured-article">
+          <div class="featured-image">
+            <span class="featured-badge">Featured Analysis</span>
+            <span class="featured-image-icon">&#128200;</span>
           </div>
-        </article>
-
-        <!-- Regular Articles -->
-        <article class="article-card domains">
-          <span class="category-pill category-domains">Domain Authority</span>
-          <h3 class="article-title">Premium Domain Mathematics: 14-40% Higher Conversions Guaranteed</h3>
-          <p class="article-excerpt">100% of single-word .com domains are taken, yet the data shows premium domains deliver 14-40% higher conversions, 50-70% direct traffic, and 3-5x customer lifetime value.</p>
-          <div class="article-meta">
-            <span class="read-time">8 min read</span>
-            <a href="/insights/premium-domain-conversion-data" class="read-link">Read Article →</a>
+          <div class="featured-content">
+            <span class="featured-category">Research</span>
+            <h2 class="featured-title">2026 Domain Market Predictions: Where Smart Money Is Going</h2>
+            <p class="featured-excerpt">Data-driven predictions for the 2026 domain market. Which TLDs will appreciate fastest? What industries are commanding premium prices? Our comprehensive analysis of the trends shaping digital real estate investment.</p>
+            <div class="featured-meta">
+              <span class="meta-item">&#128197; January 2026</span>
+              <span class="meta-item">&#128337; 12 min read</span>
+            </div>
+            <span class="read-more">Read Full Analysis <span>&rarr;</span></span>
           </div>
-        </article>
-
-        <article class="article-card">
-          <span class="category-pill category-monetization">Monetization Strategies</span>
-          <h3 class="article-title">Platform vs Website: The 10-40x Revenue Multiple Nobody Talks About</h3>
-          <p class="article-excerpt">Across every major platform, websites deliver 10-40x higher ad revenue while creators keep 94-97% versus platform cuts of 30-70%. See the exact mathematics.</p>
-          <div class="article-meta">
-            <span class="read-time">15 min read</span>
-            <a href="/insights/platform-website-revenue-comparison" class="read-link">Read Article →</a>
-          </div>
-        </article>
-
-        <article class="article-card domains">
-          <span class="category-pill category-domains">Domain Authority</span>
-          <h3 class="article-title">Domain Rental: Access $1M Domains for $1,000/Month</h3>
-          <p class="article-excerpt">With premium domains selling for $100K-$30M, rental provides 90% of ownership benefits at 1-5% of the cost. Learn how smart businesses leverage premium domains without capital investment.</p>
-          <div class="article-meta">
-            <span class="read-time">10 min read</span>
-            <a href="/insights/domain-rental-strategy" class="read-link">Read Article →</a>
-          </div>
-        </article>
-
-        <article class="article-card future">
-          <span class="category-pill category-future">Future-Proof Web</span>
-          <h3 class="article-title">AI Won't Replace Your Website: The Immutable Laws of Digital Ownership</h3>
-          <p class="article-excerpt">While others panic about AI, smart creators understand: AI needs websites as training data, can't replace direct customer relationships, and actually amplifies content creation opportunities.</p>
-          <div class="article-meta">
-            <span class="read-time">10 min read</span>
-            <a href="/insights/ai-search-website-future" class="read-link">Read Article →</a>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <span class="category-pill category-monetization">Monetization Strategies</span>
-          <h3 class="article-title">Creator Economy Truth: Why 91% Earn Under $100K</h3>
-          <p class="article-excerpt">Despite $212 billion in creator economy value, 91% of creators earn less than $100K. Discover why website-first strategies separate the 9% who succeed from those who struggle.</p>
-          <div class="article-meta">
-            <span class="read-time">10 min read</span>
-            <a href="/insights/creator-economy-website-strategy" class="read-link">Read Article →</a>
-          </div>
-        </article>
-
-        <!-- New Domain Market Research Articles -->
-        <article class="article-card domains">
-          <span class="category-pill category-domains">Market Research</span>
-          <h3 class="article-title">The $5 Billion Domain Market Nobody Talks About</h3>
-          <p class="article-excerpt">85% of premium domain sales happen under NDA. NameBio reports $244M—but the real market is 10-20x larger. Discover the hidden economy that powers billion-dollar brands.</p>
-          <div class="article-meta">
-            <span class="read-time">12 min read</span>
-            <a href="/insights/5-billion-domain-market.html" class="read-link">Read Article →</a>
-          </div>
-        </article>
-
-        <article class="article-card future">
-          <span class="category-pill category-future">2026 Predictions</span>
-          <h3 class="article-title">2026 Domain Market Predictions: Where Smart Money Is Going</h3>
-          <p class="article-excerpt">AI domains up 340%, .com premiums approaching $500K floor, and the rental model going mainstream. Our data-backed predictions for the year ahead.</p>
-          <div class="article-meta">
-            <span class="read-time">14 min read</span>
-            <a href="/insights/2026-domain-market-predictions.html" class="read-link">Read Article →</a>
-          </div>
-        </article>
-
-        <article class="article-card domains">
-          <span class="category-pill category-domains">ROI Analysis</span>
-          <h3 class="article-title">Premium Domain ROI: The Math Behind $49M Domain Names</h3>
-          <p class="article-excerpt">Why did QuinStreet pay $49.7M for CarInsurance.com? The mathematics of premium domain ROI, from conversion lifts to customer lifetime value multiplication.</p>
-          <div class="article-meta">
-            <span class="read-time">15 min read</span>
-            <a href="/insights/premium-domain-roi-math.html" class="read-link">Read Article →</a>
-          </div>
-        </article>
-
-        <article class="article-card">
-          <span class="category-pill category-monetization">Psychology</span>
-          <h3 class="article-title">The 50-Millisecond Judgment: Domain Psychology & First Impressions</h3>
-          <p class="article-excerpt">Users judge your domain in 50ms—before reading a single word. The cognitive science of domain names, from the fluency principle to the commitment effect.</p>
-          <div class="article-meta">
-            <span class="read-time">11 min read</span>
-            <a href="/insights/domain-psychology-first-impressions.html" class="read-link">Read Article →</a>
-          </div>
-        </article>
+        </a>
       </div>
     </section>
 
-    <!-- Facts Section -->
-    <section class="facts-section" aria-label="Key research findings">
-      <div class="facts-container">
-        <h2>The Data That Changes Everything</h2>
-        <div class="facts-grid">
-          <div class="fact-group">
-            <h3><span class="fact-icon">💰</span> YouTube vs Website Revenue</h3>
-            <ul class="fact-list">
-              <li>Websites generate <span class="fact-highlight">$4.85-$9.70</span> per 1,000 visitors vs YouTube's $1.65</li>
-              <li>Email marketing delivers <span class="fact-highlight">$36 ROI</span> per $1 spent vs social's $2.80</li>
-              <li>Website visitors convert at <span class="fact-highlight">38X higher rates</span> than YouTube viewers</li>
-            </ul>
-          </div>
+    <!-- Category Filters -->
+    <section class="filters-section" aria-label="Filter by category">
+      <div class="category-filters">
+        <button class="filter-btn active" data-category="all">All Insights</button>
+        <button class="filter-btn" data-category="research">Research</button>
+        <button class="filter-btn" data-category="technology">Technology</button>
+        <button class="filter-btn" data-category="industry">Industry</button>
+        <button class="filter-btn" data-category="strategy">Strategy</button>
+      </div>
+    </section>
 
-          <div class="fact-group">
-            <h3><span class="fact-icon">🌐</span> Premium Domain Impact</h3>
-            <ul class="fact-list">
-              <li><span class="fact-highlight">14-40% higher conversions</span> on premium domains vs generic URLs</li>
-              <li>Premium domains receive <span class="fact-highlight">50-70% direct traffic</span> (free visitors)</li>
-              <li>Users are <span class="fact-highlight">46% more likely to trust</span> businesses on premium domains</li>
-            </ul>
+    <!-- Insights Grid -->
+    <section class="insights-section" aria-label="All insights">
+      <div class="insights-grid">
+        <!-- Article 1 -->
+        <a href="/insights/premium-domain-roi-math" class="insight-card" data-category="research">
+          <div class="insight-image">
+            <span class="insight-category-badge research">Research</span>
+            <span class="insight-image-icon">&#128176;</span>
           </div>
-
-          <div class="fact-group">
-            <h3><span class="fact-icon">📊</span> Platform Reality Check</h3>
-            <ul class="fact-list">
-              <li>Facebook organic reach collapsed to <span class="fact-highlight">1.37%</span> of followers</li>
-              <li>Creators keep <span class="fact-highlight">94-97%</span> on websites vs 30-70% on platforms</li>
-              <li><span class="fact-highlight">42% of creators</span> would lose $50K+ if their platform disappeared</li>
-            </ul>
+          <div class="insight-content">
+            <h3 class="insight-title">Premium Domain ROI: The Math Behind $49M Domain Names</h3>
+            <p class="insight-excerpt">Why did CarInsurance.com sell for $49.7M? What makes Voice.com worth $30M? The data-driven ROI analysis that explains premium domain valuations.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">10 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
           </div>
+        </a>
 
-          <div class="fact-group">
-            <h3><span class="fact-icon">💎</span> Domain Rental Economics</h3>
-            <ul class="fact-list">
-              <li>Access premium domains at <span class="fact-highlight">1-5% of purchase price</span> annually</li>
-              <li>Premium domain benefits pay for themselves in <span class="fact-highlight">30-90 days</span></li>
-              <li><span class="fact-highlight">99% of two-word .coms</span> taken—rental is the only option</li>
-            </ul>
+        <!-- Article 2 -->
+        <a href="/insights/ai-search-website-future" class="insight-card" data-category="technology">
+          <div class="insight-image">
+            <span class="insight-category-badge technology">Technology</span>
+            <span class="insight-image-icon">&#129302;</span>
           </div>
-
-          <div class="fact-group">
-            <h3><span class="fact-icon">🤖</span> AI & Website Future</h3>
-            <ul class="fact-list">
-              <li>AI needs quality websites for training—<span class="fact-highlight">websites become MORE valuable</span></li>
-              <li>Email lists remain highest ROI channel—<span class="fact-highlight">AI can't replace ownership</span></li>
-              <li>Every "death of websites" prediction failed—<span class="fact-highlight">websites got stronger</span></li>
-            </ul>
+          <div class="insight-content">
+            <h3 class="insight-title">AI and Websites: Why AI Makes Digital Properties MORE Valuable</h3>
+            <p class="insight-excerpt">Discover how AI amplifies website value, needs quality content for training, and creates unprecedented opportunities for digital asset owners.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">8 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
           </div>
+        </a>
 
-          <div class="fact-group">
-            <h3><span class="fact-icon">🚀</span> Creator Success Patterns</h3>
-            <ul class="fact-list">
-              <li>Only <span class="fact-highlight">9% earn $100K+</span> relying on platforms alone</li>
-              <li>Pat Flynn: $7,906 → <span class="fact-highlight">$2.17M annually</span> with website strategy</li>
-              <li>Website-first creators see <span class="fact-highlight">3-10X revenue increase</span> post-transition</li>
-            </ul>
+        <!-- Article 3 -->
+        <a href="/insights/5-billion-domain-market" class="insight-card" data-category="industry">
+          <div class="insight-image">
+            <span class="insight-category-badge industry">Industry</span>
+            <span class="insight-image-icon">&#127760;</span>
           </div>
-        </div>
+          <div class="insight-content">
+            <h3 class="insight-title">The $5 Billion Domain Market Nobody Talks About</h3>
+            <p class="insight-excerpt">NameBio reports $244M in annual domain sales. The real number? $2.4-4.9 billion. Discover why 85% of premium domain deals happen under NDA.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">9 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
 
-        <div class="facts-cta">
-          <p>The evidence is overwhelming. Your expertise deserves better than platform dependency.</p>
-          <a href="/#products" class="btn-facts">Build Your $100K Website →</a>
-        </div>
+        <!-- Article 4 -->
+        <a href="/insights/domain-rental-strategy" class="insight-card" data-category="strategy">
+          <div class="insight-image">
+            <span class="insight-category-badge strategy">Strategy</span>
+            <span class="insight-image-icon">&#128273;</span>
+          </div>
+          <div class="insight-content">
+            <h3 class="insight-title">Domain Rental: Access $1M Domains for $1,000/Month</h3>
+            <p class="insight-excerpt">With premium domains selling for $100K-$30M, rental provides 90% of ownership benefits at 1-5% of the cost. The strategic alternative for enterprise growth.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">7 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Article 5 -->
+        <a href="/insights/premium-domain-conversion-data" class="insight-card" data-category="research">
+          <div class="insight-image">
+            <span class="insight-category-badge research">Research</span>
+            <span class="insight-image-icon">&#128202;</span>
+          </div>
+          <div class="insight-content">
+            <h3 class="insight-title">Premium Domain Mathematics: 14-40% Higher Conversions</h3>
+            <p class="insight-excerpt">100% of single-word .com domains are taken, yet premium domains deliver 14-40% higher conversions, 50-70% direct traffic, and 3-5x customer lifetime value.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">11 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Article 6 -->
+        <a href="/insights/domain-psychology-first-impressions" class="insight-card" data-category="research">
+          <div class="insight-image">
+            <span class="insight-category-badge research">Research</span>
+            <span class="insight-image-icon">&#129504;</span>
+          </div>
+          <div class="insight-content">
+            <h3 class="insight-title">The 50-Millisecond Judgment: Domain Psychology</h3>
+            <p class="insight-excerpt">We judge websites in 50 milliseconds, but the judgment starts with the domain. The neuroscience of why premium domains trigger instant trust.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">6 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Article 7 -->
+        <a href="/insights/platform-website-revenue-comparison" class="insight-card" data-category="strategy">
+          <div class="insight-image">
+            <span class="insight-category-badge strategy">Strategy</span>
+            <span class="insight-image-icon">&#128200;</span>
+          </div>
+          <div class="insight-content">
+            <h3 class="insight-title">Platform vs Website: The 10-40x Revenue Multiple</h3>
+            <p class="insight-excerpt">Across every major platform, websites deliver 10-40x higher ad revenue while creators keep 94-97% versus platform cuts of 30-70%. The mathematics of ownership.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">8 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Article 8 -->
+        <a href="/insights/creator-economy-website-strategy" class="insight-card" data-category="strategy">
+          <div class="insight-image">
+            <span class="insight-category-badge strategy">Strategy</span>
+            <span class="insight-image-icon">&#127775;</span>
+          </div>
+          <div class="insight-content">
+            <h3 class="insight-title">Creator Economy Truth: Why 91% Earn Under $100K</h3>
+            <p class="insight-excerpt">Despite $212 billion in creator economy value, 91% of creators earn less than $100K. Discover why website-first strategies separate the successful 9%.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">9 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Article 9 -->
+        <a href="/insights/youtube-website-monetization" class="insight-card" data-category="strategy">
+          <div class="insight-image">
+            <span class="insight-category-badge strategy">Strategy</span>
+            <span class="insight-image-icon">&#127909;</span>
+          </div>
+          <div class="insight-content">
+            <h3 class="insight-title">The $91,500 Question: Why YouTube Creators Leave Money on the Table</h3>
+            <p class="insight-excerpt">YouTube creators earn $1.65 per 1,000 views while websites generate $4.85-$9.70. Why successful creators drive traffic to owned properties for 73% more revenue.</p>
+            <div class="insight-meta">
+              <span class="insight-read-time">10 min read</span>
+              <span class="insight-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" aria-label="Newsletter signup">
+      <div class="newsletter-container">
+        <p class="eyebrow">Stay Informed</p>
+        <h2>Executive Briefing</h2>
+        <p>Receive monthly analysis on digital infrastructure trends, domain market intelligence, and strategic insights delivered directly to enterprise decision-makers.</p>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" class="newsletter-input" placeholder="Enter your corporate email" required aria-label="Email address">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
       </div>
     </section>
   </main>
@@ -489,36 +874,117 @@
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="footer-container">
-      <div class="footer-logo">PILLAR</div>
-      <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="ai-services.html">AI Services</a>
-        <a href="domains.html">Domains</a>
-        <a href="faq.html">FAQ</a>
-        <a href="support.html">Support</a>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">PILLAR</div>
+          <p class="footer-tagline">A global digital infrastructure and media corporation building the foundation of tomorrow's digital economy.</p>
+        </div>
+
+        <nav class="footer-nav">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/leadership">Leadership</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Divisions</h4>
+          <ul>
+            <li><a href="/divisions/technology">Technology</a></li>
+            <li><a href="/divisions/media">Media Holdings</a></li>
+            <li><a href="/domains">Premium Domains</a></li>
+            <li><a href="/divisions/ventures">Ventures</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/solutions#foundation">Foundation</a></li>
+            <li><a href="/solutions#growth">Growth</a></li>
+            <li><a href="/solutions#authority">Authority</a></li>
+            <li><a href="/solutions#enterprise">Enterprise</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <p class="footer-copy">© 2025 PILLAR. All rights reserved.</p>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/cookies">Cookie Policy</a>
+          <a href="/accessibility">Accessibility</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 PILLAR Corporation. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Main JS -->
-  <script defer>
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+
     if (mobileMenuBtn && navLinks) {
       mobileMenuBtn.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-        mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
       });
+
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           navLinks.classList.remove('active');
-          mobileMenuBtn.classList.remove('active');
           mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
+      });
+    }
+
+    // Category Filter Functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const insightCards = document.querySelectorAll('.insight-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+
+        // Filter cards
+        insightCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Newsletter Form
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        // In production, this would submit to your newsletter service
+        alert('Thank you for subscribing to the Executive Briefing. We will send insights to: ' + email);
+        newsletterForm.reset();
       });
     }
   </script>

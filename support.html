@@ -1,1000 +1,1226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - PILLAR | Get Help & Contact Us</title>
-    <meta name="description" content="Need help with PILLAR? Contact our support team, browse help resources, or check our service status. We're here to help you succeed.">
-    <meta name="keywords" content="PILLAR support, customer service, help center, contact us, website help, domain support">
-    <link rel="canonical" href="https://pillarme.com/support">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enterprise Support Center | PILLAR Corporation</title>
+  <meta name="description" content="PILLAR Enterprise Support Center provides world-class client services with dedicated support tiers, comprehensive documentation, and 24/7 global assistance for enterprise clients.">
+  <meta name="keywords" content="PILLAR support, enterprise support, client services, technical assistance, help center, SLA, corporate support">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="PILLAR Support - We're Here to Help">
-    <meta property="og:description" content="Get help with your PILLAR website, domain, or AI services.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pillarme.com/support">
-    <meta property="og:site_name" content="PILLAR">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/support">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PILLAR Support">
-    <meta name="twitter:description" content="Get help with your PILLAR website, domain, or AI services.">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PILLAR">
 
-    <!-- Schema.org ContactPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "name": "PILLAR Support",
-        "description": "Get help with your PILLAR website, domain, or AI services",
-        "url": "https://pillarme.com/support",
-        "mainEntity": {
-            "@type": "Organization",
-            "name": "PILLAR",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer support",
-                "email": "support@pillar.me",
-                "availableLanguage": "English"
-            }
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Enterprise Support Center | PILLAR Corporation">
+  <meta property="og:description" content="World-class client services with dedicated support tiers and 24/7 global assistance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/support">
+  <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="PILLAR Corporation">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enterprise Support Center | PILLAR Corporation">
+  <meta name="twitter:description" content="World-class client services with dedicated support tiers and 24/7 global assistance.">
+  <meta name="twitter:image" content="https://pillarme.com/images/og-image.jpg">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0A1628">
+
+  <style>
+    /* ===== Corporate Design Tokens ===== */
+    :root {
+      --corporate-navy: #0A1628;
+      --corporate-navy-light: #162544;
+      --corporate-charcoal: #2D3748;
+      --corporate-slate: #4A5568;
+      --corporate-steel: #718096;
+      --corporate-gold: #B8860B;
+      --corporate-gold-light: #D4A853;
+      --corporate-blue: #2563EB;
+      --corporate-teal: #0D9488;
+      --white: #FFFFFF;
+      --off-white: #FAFBFC;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --success: #059669;
+      --warning: #D97706;
+      --error: #DC2626;
+      --nav-height: 72px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-    </script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#8B00FF">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --purple: #8B00FF;
-            --purple-light: #A855F7;
-            --purple-dark: #6B00CC;
-            --gold: #D69E2E;
-            --green: #38A169;
-            --red: #E53E3E;
-            --nav-h: 64px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--nav-h);
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--purple-light);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--purple-light);
-        }
-
-        .nav-cta {
-            background: var(--purple);
-            color: #fff !important;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-
-        .nav-cta:hover {
-            background: var(--purple-light) !important;
-        }
-
-        /* Main Content */
-        main {
-            padding-top: calc(var(--nav-h) + 2rem);
-            max-width: 1100px;
-            margin: 0 auto;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-bottom: 4rem;
-        }
-
-        /* Hero */
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--purple-light), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Status Banner */
-        .status-banner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            background: rgba(56, 161, 105, 0.1);
-            border: 1px solid rgba(56, 161, 105, 0.3);
-            border-radius: 10px;
-            margin-bottom: 3rem;
-        }
-
-        .status-banner.degraded {
-            background: rgba(214, 158, 46, 0.1);
-            border-color: rgba(214, 158, 46, 0.3);
-        }
-
-        .status-banner.down {
-            background: rgba(229, 62, 62, 0.1);
-            border-color: rgba(229, 62, 62, 0.3);
-        }
-
-        .status-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--green);
-            animation: pulse 2s infinite;
-        }
-
-        .status-banner.degraded .status-dot {
-            background: var(--gold);
-        }
-
-        .status-banner.down .status-dot {
-            background: var(--red);
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .status-text {
-            color: var(--green);
-            font-weight: 500;
-        }
-
-        .status-banner.degraded .status-text {
-            color: var(--gold);
-        }
-
-        .status-banner.down .status-text {
-            color: var(--red);
-        }
-
-        /* Quick Help Cards */
-        .quick-help {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .help-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .help-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.2);
-        }
-
-        .help-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .help-card h3 {
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .help-card p {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Main Grid */
-        .support-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .support-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Contact Form */
-        .contact-section {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-        }
-
-        .contact-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--purple-light);
-        }
-
-        .contact-section > p {
-            color: #888;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #ccc;
-        }
-
-        .form-group label .required {
-            color: var(--red);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--purple);
-            box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-group select option {
-            background: #1a1a2e;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--purple);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: var(--purple-light);
-        }
-
-        /* Info Section */
-        .info-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .info-card h3 {
-            color: var(--purple-light);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .info-card h3 .icon {
-            font-size: 1.2rem;
-        }
-
-        /* Response Times */
-        .response-times {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .response-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-        }
-
-        .response-item .priority {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .priority-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-
-        .priority-dot.critical {
-            background: var(--red);
-        }
-
-        .priority-dot.high {
-            background: #ED8936;
-        }
-
-        .priority-dot.normal {
-            background: var(--gold);
-        }
-
-        .priority-dot.low {
-            background: var(--green);
-        }
-
-        .response-item .time {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Contact Methods */
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.75rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .contact-method:hover {
-            background: rgba(107, 70, 193, 0.2);
-            color: #fff;
-        }
-
-        .contact-method .icon {
-            font-size: 1.3rem;
-        }
-
-        .contact-method span {
-            flex: 1;
-        }
-
-        .contact-method .badge {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-            background: rgba(56, 161, 105, 0.2);
-            color: var(--green);
-            border-radius: 4px;
-        }
-
-        /* Hours */
-        .hours-list {
-            color: #ccc;
-            font-size: 0.95rem;
-        }
-
-        .hours-list p {
-            margin-bottom: 0.5rem;
-        }
-
-        .hours-list strong {
-            color: #fff;
-        }
-
-        /* Resources Section */
-        .resources-section {
-            margin-top: 3rem;
-        }
-
-        .resources-section h2 {
-            font-size: 1.5rem;
-            color: var(--purple-light);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .resource-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .resource-card:hover {
-            border-color: rgba(107, 70, 193, 0.3);
-        }
-
-        .resource-card h3 {
-            color: #fff;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .resource-card p {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .resource-card ul {
-            list-style: none;
-        }
-
-        .resource-card ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .resource-card ul li a {
-            color: var(--purple-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .resource-card ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .resource-card ul li a::before {
-            content: "→";
-        }
-
-        /* Emergency Banner */
-        .emergency-banner {
-            background: linear-gradient(135deg, rgba(229, 62, 62, 0.1), rgba(214, 158, 46, 0.1));
-            border: 1px solid rgba(229, 62, 62, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            margin-top: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .emergency-banner .icon {
-            font-size: 2.5rem;
-        }
-
-        .emergency-banner .content h3 {
-            color: var(--red);
-            margin-bottom: 0.25rem;
-        }
-
-        .emergency-banner .content p {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        .emergency-banner .content a {
-            color: var(--red);
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 4rem;
-        }
-
-        footer a {
-            color: var(--purple-light);
-            text-decoration: none;
-        }
-
-        /* Mobile */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            min-width: 48px;
-            min-height: 48px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: var(--nav-h);
-                left: 0;
-                right: 0;
-                background: rgba(26, 26, 46, 0.98);
-                flex-direction: column;
-                padding: 1rem 0;
-                gap: 0;
-                z-index: 998;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                padding: 1rem 2rem;
-                width: 100%;
-                text-align: center;
-                font-size: 1rem;
-            }
-
-            .nav-cta {
-                margin: 1rem 2rem;
-                width: calc(100% - 4rem);
-                text-align: center;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .mobile-menu-btn.active {
-                transform: rotate(90deg);
-                transition: transform 0.3s;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .emergency-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            padding: 1.5rem;
-            background: rgba(56, 161, 105, 0.1);
-            border: 1px solid var(--green);
-            border-radius: 8px;
-            text-align: center;
-            color: var(--green);
-        }
-
-        .success-message.show {
-            display: block;
-        }
-    </style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--corporate-navy); }
+    .nav-links a.active { color: var(--corporate-navy); }
+    .nav-cta {
+      background: var(--corporate-navy) !important;
+      color: var(--white) !important;
+      padding: 0.625rem 1.5rem !important;
+      border-radius: 4px;
+    }
+    .nav-cta:hover { background: var(--corporate-navy-light) !important; }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--corporate-navy);
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      color: var(--white);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+    .page-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold-light);
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .page-hero .lead {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== System Status Bar ===== */
+    .status-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 3rem;
+    }
+    .status-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--success);
+      animation: pulse 2s infinite;
+    }
+    .status-dot.warning { background: var(--warning); }
+    .status-dot.error { background: var(--error); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .status-text {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--success);
+    }
+    .status-text.warning { color: var(--warning); }
+    .status-text.error { color: var(--error); }
+    .status-link {
+      font-size: 0.875rem;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .status-link:hover { text-decoration: underline; }
+
+    /* ===== Section Styles ===== */
+    .section {
+      padding: 6rem 3rem;
+    }
+    .section-alt {
+      background: var(--off-white);
+    }
+    .section-navy {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .section-navy .section-eyebrow { color: var(--corporate-gold-light); }
+    .section-navy .section-title { color: var(--white); }
+    .section-navy .section-description { color: rgba(255, 255, 255, 0.7); }
+
+    /* ===== Quick Access Cards ===== */
+    .quick-access-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .quick-access-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .quick-access-card:hover {
+      border-color: var(--corporate-gold);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+      transform: translateY(-4px);
+    }
+    .quick-access-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin: 0 auto 1.5rem;
+      color: var(--white);
+    }
+    .quick-access-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .quick-access-desc {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    /* ===== Support Tiers ===== */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .tier-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .tier-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+    }
+    .tier-card.featured {
+      border-color: var(--corporate-gold);
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.03) 0%, transparent 100%);
+    }
+    .tier-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      background: var(--corporate-gold);
+      padding: 0.375rem 1rem;
+      border-radius: 4px;
+    }
+    .tier-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .tier-description {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      text-align: center;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .tier-sla {
+      background: var(--off-white);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .tier-sla-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-500);
+      margin-bottom: 0.75rem;
+    }
+    .tier-sla-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .tier-sla-item {
+      text-align: center;
+    }
+    .tier-sla-value {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--corporate-navy);
+      font-weight: 500;
+    }
+    .tier-sla-label {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+    .tier-features {
+      list-style: none;
+    }
+    .tier-features li {
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .tier-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+    }
+    .tier-cta {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 2rem;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .tier-cta-primary {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .tier-cta-primary:hover {
+      background: var(--corporate-navy-light);
+    }
+    .tier-cta-secondary {
+      background: transparent;
+      color: var(--corporate-navy);
+      border-color: var(--corporate-navy);
+    }
+    .tier-cta-secondary:hover {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+
+    /* ===== Contact Methods ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .contact-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .contact-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1.5rem;
+    }
+    .contact-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .contact-value {
+      font-size: 1rem;
+      color: var(--corporate-gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .contact-value a {
+      color: var(--corporate-gold-light);
+      text-decoration: none;
+    }
+    .contact-value a:hover { text-decoration: underline; }
+    .contact-hours {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ===== Knowledge Base ===== */
+    .kb-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .kb-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .kb-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+    }
+    .kb-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--off-white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .kb-title {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.75rem;
+    }
+    .kb-description {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+    .kb-links {
+      list-style: none;
+    }
+    .kb-links li {
+      margin-bottom: 0.5rem;
+    }
+    .kb-links a {
+      font-size: 0.8125rem;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .kb-links a:hover {
+      color: var(--corporate-gold);
+    }
+    .kb-links a::before {
+      content: '\2192';
+    }
+
+    /* ===== Emergency Support Banner ===== */
+    .emergency-banner {
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(217, 119, 6, 0.05) 100%);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+      border-radius: 8px;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 4rem auto 0;
+    }
+    .emergency-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(220, 38, 38, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .emergency-content h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--error);
+      margin-bottom: 0.5rem;
+    }
+    .emergency-content p {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    .emergency-content a {
+      color: var(--error);
+      font-weight: 600;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      padding: 6rem 3rem;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      text-align: center;
+    }
+    .cta-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-section .section-eyebrow { color: var(--corporate-gold-light); }
+    .cta-section .section-title { color: var(--white); margin-bottom: 1.5rem; }
+    .cta-section .section-description { color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem; }
+    .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .btn-white { background: var(--white); color: var(--corporate-navy); }
+    .btn-white:hover { background: var(--gray-100); }
+    .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.3); }
+    .btn-outline-white:hover { background: rgba(255, 255, 255, 0.1); }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 5rem 3rem 3rem;
+    }
+    .footer-container { max-width: 1400px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-brand { max-width: 280px; }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; }
+    .footer-nav h4 {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav ul { list-style: none; }
+    .footer-nav li { margin-bottom: 0.75rem; }
+    .footer-nav a { font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-legal { display: flex; gap: 2rem; }
+    .footer-legal a { font-size: 0.75rem; color: rgba(255, 255, 255, 0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255, 255, 255, 0.7); }
+    .footer-copyright { font-size: 0.75rem; color: rgba(255, 255, 255, 0.3); }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 1024px) {
+      .quick-access-grid { grid-template-columns: repeat(2, 1fr); }
+      .tiers-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .kb-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+      .nav-container { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.5rem;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .nav-links.active a { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
+      .nav-cta { margin: 1rem 0 0 0; width: 100%; text-align: center; }
+      .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+      .page-hero { padding: 4rem 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+      .status-bar { padding: 1rem 1.5rem; }
+      .quick-access-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .kb-grid { grid-template-columns: 1fr; }
+      .emergency-banner {
+        flex-direction: column;
+        text-align: center;
+        margin: 3rem 1.5rem 0;
+      }
+      .btn { padding: 0.875rem 1.5rem; width: 100%; justify-content: center; }
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ===== Accessibility ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--corporate-blue); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "PILLAR Enterprise Support Center",
+    "url": "https://pillarme.com/support",
+    "description": "World-class client services with dedicated support tiers, comprehensive documentation, and 24/7 global assistance for enterprise clients.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "PILLAR Corporation",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@pillarme.com",
+          "telephone": "+1-800-PILLAR-1",
+          "availableLanguage": ["English", "Spanish", "French", "German", "Japanese", "Chinese"],
+          "areaServed": "Worldwide"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "enterprise@pillarme.com",
+          "telephone": "+1-800-PILLAR-2",
+          "availableLanguage": "English",
+          "areaServed": "Worldwide"
+        }
+      ]
+    }
+  }
+  </script>
 </head>
+
 <body>
-    <nav>
-        <a href="index.html" class="logo">PILLAR</a>
-        <div class="nav-links">
-            <a href="domains.html">Domains</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="ai-services.html">AI Services</a>
-            <a href="get-started.html">Get Started</a>
-            <a href="faq.html">FAQ</a>
-            <a href="domains.html" class="nav-cta">Browse Domains</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="logo">PILLAR</a>
+      <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/divisions">Divisions</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/domains">Domains</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/insights">Insights</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero" role="banner">
+    <div class="page-hero-container">
+      <p class="eyebrow">Client Services</p>
+      <h1>Enterprise Support Center</h1>
+      <p class="lead">World-class client services designed for multinational organizations. Our dedicated support teams deliver exceptional service with guaranteed response times and comprehensive solutions across all time zones.</p>
+    </div>
+  </header>
+
+  <!-- System Status Bar -->
+  <div class="status-bar" aria-label="System status">
+    <div class="status-container">
+      <div class="status-indicator">
+        <div class="status-dot"></div>
+        <span class="status-text">All Systems Operational</span>
+      </div>
+      <span style="color: var(--gray-400);">|</span>
+      <a href="/status" class="status-link">View System Status Dashboard</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Quick Access Section -->
+    <section class="section section-alt" aria-label="Quick access">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Quick Access</p>
+          <h2 class="section-title">How Can We Assist You?</h2>
+          <p class="section-description">Access our comprehensive support resources, submit requests, or connect directly with our client services team.</p>
         </div>
-        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    </nav>
 
-    <main>
-        <div class="hero">
-            <h1>How Can We Help?</h1>
-            <p>Our team is here to support you every step of the way. Find answers, get in touch, or check our service status.</p>
+        <div class="quick-access-grid">
+          <a href="/documentation" class="quick-access-card">
+            <div class="quick-access-icon">&#128218;</div>
+            <h3 class="quick-access-title">Documentation</h3>
+            <p class="quick-access-desc">Comprehensive technical documentation, API references, integration guides, and implementation best practices.</p>
+          </a>
+
+          <a href="/submit-ticket" class="quick-access-card">
+            <div class="quick-access-icon">&#128221;</div>
+            <h3 class="quick-access-title">Submit Ticket</h3>
+            <p class="quick-access-desc">Open a new support request with our technical team. Priority routing based on your service tier and issue severity.</p>
+          </a>
+
+          <a href="/status" class="quick-access-card">
+            <div class="quick-access-icon">&#128200;</div>
+            <h3 class="quick-access-title">System Status</h3>
+            <p class="quick-access-desc">Real-time infrastructure monitoring, scheduled maintenance notifications, and historical uptime metrics.</p>
+          </a>
+
+          <a href="/account" class="quick-access-card">
+            <div class="quick-access-icon">&#128100;</div>
+            <h3 class="quick-access-title">Account Portal</h3>
+            <p class="quick-access-desc">Manage your account settings, view invoices, access service agreements, and configure user permissions.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Tiers Section -->
+    <section class="section" aria-label="Support tiers">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Service Tiers</p>
+          <h2 class="section-title">Enterprise Support Plans</h2>
+          <p class="section-description">Choose the support level that aligns with your organization's operational requirements and service level expectations.</p>
         </div>
 
-        <!-- System Status -->
-        <div class="status-banner">
-            <div class="status-dot"></div>
-            <span class="status-text">All Systems Operational</span>
-        </div>
+        <div class="tiers-grid">
+          <!-- Standard Support -->
+          <article class="tier-card">
+            <h3 class="tier-name">Standard Support</h3>
+            <p class="tier-description">Essential support services for organizations with standard operational requirements.</p>
 
-        <!-- Quick Help Links -->
-        <div class="quick-help">
-            <a href="faq.html" class="help-card">
-                <div class="icon">❓</div>
-                <h3>FAQ</h3>
-                <p>Find answers to common questions</p>
-            </a>
-            <a href="how-it-works.html" class="help-card">
-                <div class="icon">📖</div>
-                <h3>How It Works</h3>
-                <p>Understand our 14-day process</p>
-            </a>
-            <a href="get-started.html" class="help-card">
-                <div class="icon">🚀</div>
-                <h3>Get Started</h3>
-                <p>Begin your website journey</p>
-            </a>
-            <a href="ai-services.html" class="help-card">
-                <div class="icon">🤖</div>
-                <h3>AI Services</h3>
-                <p>Explore our AI content options</p>
-            </a>
-        </div>
-
-        <!-- Main Support Grid -->
-        <div class="support-grid">
-            <!-- Contact Form -->
-            <div class="contact-section">
-                <h2>Send Us a Message</h2>
-                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-
-                <form id="support-form" action="https://formspree.io/f/meejrnwe" method="POST">
-                    <div class="form-group">
-                        <label>Your Name <span class="required">*</span></label>
-                        <input type="text" name="name" required placeholder="John Doe">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email Address <span class="required">*</span></label>
-                        <input type="email" name="email" required placeholder="john@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Domain (if applicable)</label>
-                        <input type="text" name="domain" placeholder="yourdomain.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Topic <span class="required">*</span></label>
-                        <select name="topic" required>
-                            <option value="">Select a topic...</option>
-                            <option value="billing">Billing & Payments</option>
-                            <option value="domain">Domain Questions</option>
-                            <option value="website">Website Issues</option>
-                            <option value="ai">AI Services</option>
-                            <option value="technical">Technical Support</option>
-                            <option value="sales">Sales Inquiry</option>
-                            <option value="partnership">Partnership</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Priority</label>
-                        <select name="priority">
-                            <option value="normal">Normal</option>
-                            <option value="high">High - Affecting my business</option>
-                            <option value="critical">Critical - Site is down</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Message <span class="required">*</span></label>
-                        <textarea name="message" required placeholder="Please describe your question or issue in detail..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-
-                <div class="success-message" id="success-message">
-                    <strong>Message Sent!</strong><br>
-                    We've received your message and will respond within our SLA timeframe. Check your email for confirmation.
+            <div class="tier-sla">
+              <p class="tier-sla-title">Service Level Agreement</p>
+              <div class="tier-sla-grid">
+                <div class="tier-sla-item">
+                  <div class="tier-sla-value">24h</div>
+                  <div class="tier-sla-label">Initial Response</div>
                 </div>
+                <div class="tier-sla-item">
+                  <div class="tier-sla-value">99.5%</div>
+                  <div class="tier-sla-label">Uptime SLA</div>
+                </div>
+              </div>
             </div>
 
-            <!-- Info Sidebar -->
-            <div class="info-section">
-                <!-- Response Times -->
-                <div class="info-card">
-                    <h3><span class="icon">⏱️</span> Response Times</h3>
-                    <div class="response-times">
-                        <div class="response-item">
-                            <div class="priority">
-                                <span class="priority-dot critical"></span>
-                                <span>Critical</span>
-                            </div>
-                            <span class="time">< 2 hours</span>
-                        </div>
-                        <div class="response-item">
-                            <div class="priority">
-                                <span class="priority-dot high"></span>
-                                <span>High</span>
-                            </div>
-                            <span class="time">< 4 hours</span>
-                        </div>
-                        <div class="response-item">
-                            <div class="priority">
-                                <span class="priority-dot normal"></span>
-                                <span>Normal</span>
-                            </div>
-                            <span class="time">< 24 hours</span>
-                        </div>
-                        <div class="response-item">
-                            <div class="priority">
-                                <span class="priority-dot low"></span>
-                                <span>General</span>
-                            </div>
-                            <span class="time">< 48 hours</span>
-                        </div>
-                    </div>
-                </div>
+            <ul class="tier-features">
+              <li>Business hours support (Mon-Fri, 9AM-6PM)</li>
+              <li>Email and portal ticket submission</li>
+              <li>Access to documentation library</li>
+              <li>Quarterly account review</li>
+              <li>Standard issue resolution</li>
+            </ul>
 
-                <!-- Contact Methods -->
-                <div class="info-card">
-                    <h3><span class="icon">📞</span> Other Ways to Reach Us</h3>
-                    <div class="contact-methods">
-                        <a href="mailto:support@pillar.me" class="contact-method">
-                            <span class="icon">📧</span>
-                            <span>support@pillar.me</span>
-                            <span class="badge">24/7</span>
-                        </a>
-                        <a href="mailto:sales@pillar.me" class="contact-method">
-                            <span class="icon">💼</span>
-                            <span>sales@pillar.me</span>
-                        </a>
-                        <a href="#" class="contact-method">
-                            <span class="icon">💬</span>
-                            <span>Live Chat</span>
-                            <span class="badge">Online</span>
-                        </a>
-                    </div>
-                </div>
+            <a href="/contact?plan=standard" class="tier-cta tier-cta-secondary">Learn More</a>
+          </article>
 
-                <!-- Hours -->
-                <div class="info-card">
-                    <h3><span class="icon">🕐</span> Support Hours</h3>
-                    <div class="hours-list">
-                        <p><strong>Email Support:</strong> 24/7</p>
-                        <p><strong>Live Chat:</strong> Mon-Fri, 9am-6pm EST</p>
-                        <p><strong>Emergency Support:</strong> 24/7 for critical issues</p>
-                        <p style="margin-top: 1rem; color: #888; font-size: 0.85rem;">
-                            * Critical issues = site completely down or inaccessible
-                        </p>
-                    </div>
+          <!-- Priority Support -->
+          <article class="tier-card featured">
+            <span class="tier-badge">Most Popular</span>
+            <h3 class="tier-name">Priority Support</h3>
+            <p class="tier-description">Enhanced support for organizations requiring faster response times and extended coverage.</p>
+
+            <div class="tier-sla">
+              <p class="tier-sla-title">Service Level Agreement</p>
+              <div class="tier-sla-grid">
+                <div class="tier-sla-item">
+                  <div class="tier-sla-value">4h</div>
+                  <div class="tier-sla-label">Initial Response</div>
                 </div>
+                <div class="tier-sla-item">
+                  <div class="tier-sla-value">99.9%</div>
+                  <div class="tier-sla-label">Uptime SLA</div>
+                </div>
+              </div>
             </div>
+
+            <ul class="tier-features">
+              <li>Extended hours support (Mon-Sat, 6AM-10PM)</li>
+              <li>Phone, email, and portal access</li>
+              <li>Priority ticket queue routing</li>
+              <li>Monthly account review</li>
+              <li>Dedicated technical resources</li>
+              <li>Proactive monitoring alerts</li>
+            </ul>
+
+            <a href="/contact?plan=priority" class="tier-cta tier-cta-primary">Get Started</a>
+          </article>
+
+          <!-- Enterprise Support -->
+          <article class="tier-card">
+            <h3 class="tier-name">Enterprise Support</h3>
+            <p class="tier-description">Comprehensive support for mission-critical operations requiring guaranteed availability.</p>
+
+            <div class="tier-sla">
+              <p class="tier-sla-title">Service Level Agreement</p>
+              <div class="tier-sla-grid">
+                <div class="tier-sla-item">
+                  <div class="tier-sla-value">1h</div>
+                  <div class="tier-sla-label">Initial Response</div>
+                </div>
+                <div class="tier-sla-item">
+                  <div class="tier-sla-value">99.99%</div>
+                  <div class="tier-sla-label">Uptime SLA</div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="tier-features">
+              <li>24/7/365 global support coverage</li>
+              <li>Dedicated account manager</li>
+              <li>Direct engineering escalation</li>
+              <li>Custom SLA agreements</li>
+              <li>On-site support available</li>
+              <li>Executive business reviews</li>
+              <li>Early access to new features</li>
+            </ul>
+
+            <a href="/contact?plan=enterprise" class="tier-cta tier-cta-secondary">Contact Sales</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="section section-navy" aria-label="Contact methods">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Contact Methods</p>
+          <h2 class="section-title">Connect With Our Team</h2>
+          <p class="section-description">Multiple channels to reach our global support organization, available around the clock to serve your needs.</p>
         </div>
 
-        <!-- Help Resources -->
-        <div class="resources-section">
-            <h2>Help Resources</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h3>📚 Getting Started</h3>
-                    <p>New to PILLAR? Start here.</p>
-                    <ul>
-                        <li><a href="how-it-works.html">How the 14-day process works</a></li>
-                        <li><a href="get-started.html">Complete your intake form</a></li>
-                        <li><a href="domains.html">Browse available domains</a></li>
-                        <li><a href="faq.html#general">General FAQ</a></li>
-                    </ul>
-                </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">&#9993;</div>
+            <h3 class="contact-title">Email Support</h3>
+            <p class="contact-value"><a href="mailto:support@pillarme.com">support@pillarme.com</a></p>
+            <p class="contact-hours">Response within SLA timeframe</p>
+          </div>
 
-                <div class="resource-card">
-                    <h3>🌐 Domain Help</h3>
-                    <p>Questions about your domain?</p>
-                    <ul>
-                        <li><a href="faq.html#domains">Domain rental FAQ</a></li>
-                        <li><a href="faq.html#domains">Transferring domains</a></li>
-                        <li><a href="faq.html#domains">DNS and email setup</a></li>
-                        <li><a href="faq.html#domains">Purchasing your domain</a></li>
-                    </ul>
-                </div>
+          <div class="contact-card">
+            <div class="contact-icon">&#9742;</div>
+            <h3 class="contact-title">Global Hotline</h3>
+            <p class="contact-value"><a href="tel:+18007455271">+1 (800) PILLAR-1</a></p>
+            <p class="contact-hours">Priority &amp; Enterprise clients: 24/7</p>
+          </div>
 
-                <div class="resource-card">
-                    <h3>🤖 AI Services</h3>
-                    <p>Learn about our AI capabilities.</p>
-                    <ul>
-                        <li><a href="ai-services.html">AI service options & pricing</a></li>
-                        <li><a href="faq.html#ai">What content AI can transform</a></li>
-                        <li><a href="faq.html#ai">How AI transformation works</a></li>
-                        <li><a href="get-started.html">Submit content for AI</a></li>
-                    </ul>
-                </div>
-
-                <div class="resource-card">
-                    <h3>💳 Billing & Account</h3>
-                    <p>Manage your subscription.</p>
-                    <ul>
-                        <li><a href="faq.html#pricing">Pricing & what's included</a></li>
-                        <li><a href="faq.html#pricing">Payment methods</a></li>
-                        <li><a href="faq.html#pricing">Refund policy</a></li>
-                        <li><a href="faq.html#pricing">Upgrading your plan</a></li>
-                    </ul>
-                </div>
-            </div>
+          <div class="contact-card">
+            <div class="contact-icon">&#128187;</div>
+            <h3 class="contact-title">Client Portal</h3>
+            <p class="contact-value"><a href="/portal">portal.pillarme.com</a></p>
+            <p class="contact-hours">Ticket management &amp; real-time updates</p>
+          </div>
         </div>
 
-        <!-- Emergency Support -->
+        <!-- Regional Contacts -->
+        <div style="margin-top: 4rem; text-align: center;">
+          <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">Regional Support Centers</p>
+          <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
+            <div style="text-align: center;">
+              <p style="font-size: 0.9375rem; color: var(--white); font-weight: 500;">Americas</p>
+              <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.6);">New York &bull; San Francisco</p>
+            </div>
+            <div style="text-align: center;">
+              <p style="font-size: 0.9375rem; color: var(--white); font-weight: 500;">Europe</p>
+              <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.6);">London &bull; Frankfurt</p>
+            </div>
+            <div style="text-align: center;">
+              <p style="font-size: 0.9375rem; color: var(--white); font-weight: 500;">Asia Pacific</p>
+              <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.6);">Singapore &bull; Tokyo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Knowledge Base Section -->
+    <section class="section section-alt" aria-label="Knowledge base">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Knowledge Base</p>
+          <h2 class="section-title">Self-Service Resources</h2>
+          <p class="section-description">Comprehensive documentation and guides to help you maximize the value of your PILLAR solutions.</p>
+        </div>
+
+        <div class="kb-grid">
+          <article class="kb-card">
+            <div class="kb-icon">&#128640;</div>
+            <h3 class="kb-title">Getting Started</h3>
+            <p class="kb-description">Essential guides for new clients beginning their journey with PILLAR solutions.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/onboarding">Client Onboarding Guide</a></li>
+              <li><a href="/docs/quickstart">Platform Quick Start</a></li>
+              <li><a href="/docs/best-practices">Implementation Best Practices</a></li>
+            </ul>
+          </article>
+
+          <article class="kb-card">
+            <div class="kb-icon">&#128421;</div>
+            <h3 class="kb-title">Technical Documentation</h3>
+            <p class="kb-description">In-depth technical references for developers and system administrators.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/api">API Reference</a></li>
+              <li><a href="/docs/integrations">Integration Guides</a></li>
+              <li><a href="/docs/security">Security Documentation</a></li>
+            </ul>
+          </article>
+
+          <article class="kb-card">
+            <div class="kb-icon">&#128176;</div>
+            <h3 class="kb-title">Account &amp; Billing</h3>
+            <p class="kb-description">Manage your subscription, invoices, and account administration.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/billing">Billing FAQ</a></li>
+              <li><a href="/docs/invoices">Invoice Management</a></li>
+              <li><a href="/docs/enterprise-agreements">Enterprise Agreements</a></li>
+            </ul>
+          </article>
+
+          <article class="kb-card">
+            <div class="kb-icon">&#128274;</div>
+            <h3 class="kb-title">Security &amp; Compliance</h3>
+            <p class="kb-description">Security protocols, compliance certifications, and data protection policies.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/security-overview">Security Overview</a></li>
+              <li><a href="/docs/compliance">Compliance Certifications</a></li>
+              <li><a href="/docs/gdpr">GDPR &amp; Data Privacy</a></li>
+            </ul>
+          </article>
+
+          <article class="kb-card">
+            <div class="kb-icon">&#127760;</div>
+            <h3 class="kb-title">Domain Management</h3>
+            <p class="kb-description">Comprehensive guidance for managing your premium domain portfolio.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/dns">DNS Configuration</a></li>
+              <li><a href="/docs/domain-transfers">Domain Transfers</a></li>
+              <li><a href="/docs/ssl">SSL Certificate Setup</a></li>
+            </ul>
+          </article>
+
+          <article class="kb-card">
+            <div class="kb-icon">&#129302;</div>
+            <h3 class="kb-title">AI &amp; Content Services</h3>
+            <p class="kb-description">Leverage our AI-powered content transformation and optimization services.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/ai-overview">AI Services Overview</a></li>
+              <li><a href="/docs/content-optimization">Content Optimization</a></li>
+              <li><a href="/docs/automation">Workflow Automation</a></li>
+            </ul>
+          </article>
+
+          <article class="kb-card">
+            <div class="kb-icon">&#128200;</div>
+            <h3 class="kb-title">Analytics &amp; Reporting</h3>
+            <p class="kb-description">Insights, metrics, and reporting capabilities across your digital properties.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/analytics">Analytics Dashboard</a></li>
+              <li><a href="/docs/reports">Custom Reports</a></li>
+              <li><a href="/docs/data-export">Data Export Options</a></li>
+            </ul>
+          </article>
+
+          <article class="kb-card">
+            <div class="kb-icon">&#128736;</div>
+            <h3 class="kb-title">Troubleshooting</h3>
+            <p class="kb-description">Common issues, diagnostic procedures, and resolution guidance.</p>
+            <ul class="kb-links">
+              <li><a href="/docs/common-issues">Common Issues</a></li>
+              <li><a href="/docs/diagnostics">Diagnostic Tools</a></li>
+              <li><a href="/docs/status-codes">Error Code Reference</a></li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Emergency Support Banner -->
         <div class="emergency-banner">
-            <div class="icon">🚨</div>
-            <div class="content">
-                <h3>Emergency Support</h3>
-                <p>Is your website completely down or inaccessible? For critical issues affecting your live site, email <a href="mailto:urgent@pillar.me">urgent@pillar.me</a> for priority response within 2 hours, 24/7.</p>
-            </div>
+          <div class="emergency-icon">&#9888;</div>
+          <div class="emergency-content">
+            <h3>Critical Issue? Immediate Assistance Available</h3>
+            <p>For production-down scenarios or critical security incidents, contact our emergency response team directly at <a href="mailto:urgent@pillarme.com">urgent@pillarme.com</a> or call our 24/7 emergency hotline at <a href="tel:+18007455279">+1 (800) PILLAR-9</a>. Enterprise clients receive guaranteed 15-minute response for P1 incidents.</p>
+          </div>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-        <p>© 2025 PILLAR. All rights reserved. | <a href="faq.html">FAQ</a> | <a href="get-started.html">Get Started</a></p>
-    </footer>
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Contact us">
+      <div class="cta-container">
+        <p class="section-eyebrow">Get Support</p>
+        <h2 class="section-title">Ready to Speak With Our Team?</h2>
+        <p class="section-description">Whether you have questions about our support plans, need technical assistance, or want to discuss enterprise solutions, our client services team is here to help.</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-white">Contact Client Services</a>
+          <a href="/submit-ticket" class="btn btn-outline-white">Submit Support Request</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        if (mobileMenuBtn && navLinks) {
-            mobileMenuBtn.addEventListener('click', () => {
-                const open = navLinks.classList.toggle('active');
-                mobileMenuBtn.classList.toggle('active');
-                mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                });
-            });
-        }
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">PILLAR</div>
+          <p class="footer-tagline">A global digital infrastructure and media corporation building the foundation of tomorrow's digital economy.</p>
+        </div>
 
-        // Form submission
-        document.getElementById('support-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        <nav class="footer-nav">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/leadership">Leadership</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </nav>
 
-            const form = this;
-            const submitBtn = form.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.textContent;
+        <nav class="footer-nav">
+          <h4>Divisions</h4>
+          <ul>
+            <li><a href="/divisions/technology">Technology</a></li>
+            <li><a href="/divisions/media">Media Holdings</a></li>
+            <li><a href="/domains">Premium Domains</a></li>
+            <li><a href="/divisions/ventures">Ventures</a></li>
+          </ul>
+        </nav>
 
-            // Collect form data
-            const formData = new FormData(form);
-            formData.append('_subject', 'New Support Request - PILLAR');
+        <nav class="footer-nav">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/solutions#foundation">Foundation</a></li>
+            <li><a href="/solutions#growth">Growth</a></li>
+            <li><a href="/solutions#authority">Authority</a></li>
+            <li><a href="/solutions#enterprise">Enterprise</a></li>
+          </ul>
+        </nav>
 
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+        <nav class="footer-nav">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
 
-            // Submit to Formspree
-            fetch('https://formspree.io/f/meejrnwe', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Show success message
-                    form.style.display = 'none';
-                    document.getElementById('success-message').classList.add('show');
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                submitBtn.textContent = originalBtnText;
-                submitBtn.disabled = false;
-                alert('Oops! There was a problem submitting your request. Please try again.');
-            });
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/cookies">Cookie Policy</a>
+          <a href="/accessibility">Accessibility</a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 PILLAR Corporation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
-
-        // Live chat simulation (would connect to real chat service)
-        document.querySelector('[href="#"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Live chat would open here. In production, this would connect to your chat service like Intercom, Drift, or Zendesk Chat.');
-        });
-    </script>
+      });
+    }
+  </script>
 </body>
 </html>
