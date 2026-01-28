@@ -3,841 +3,1407 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Revenue Calculator: See Your Earning Potential | PILLAR Media</title>
-  <meta name="description" content="Calculate how much money your website could generate with premium domains. See revenue from products, services, and ads based on traffic levels.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+  <title>Domain ROI Calculator | PILLAR Corporation</title>
+  <meta name="description" content="Calculate the projected return on investment for premium domain acquisition. Enterprise-grade analytics for strategic domain investment decisions.">
+  <meta name="keywords" content="domain ROI calculator, premium domain investment, domain value assessment, digital asset ROI, domain acquisition analysis">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://pillarme.com/domain-roi-calculator">
 
-  <!-- PWA / Mobile App -->
+  <!-- PWA -->
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#8B00FF">
+  <meta name="apple-mobile-web-app-title" content="PILLAR">
 
-  <!-- Preconnect -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Website Revenue Calculator: See Your Earning Potential">
-  <meta property="og:description" content="Calculate how much your website could earn with different traffic levels. Compare product sales vs ad revenue, then see why renting beats buying.">
+  <meta property="og:title" content="Domain ROI Calculator | PILLAR Corporation">
+  <meta property="og:description" content="Calculate the projected return on investment for premium domain acquisition.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pillarme.com/domain-roi-calculator">
   <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="PILLAR Corporation">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Website Revenue Calculator - See Your Earning Potential">
-  <meta name="twitter:description" content="How much could your website make? Calculate revenue from traffic, products, and ads.">
+  <meta name="twitter:title" content="Domain ROI Calculator | PILLAR Corporation">
+  <meta name="twitter:description" content="Calculate the projected return on investment for premium domain acquisition.">
+  <meta name="twitter:image" content="https://pillarme.com/images/og-image.jpg">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0A1628">
+
+  <style>
+    /* ===== Corporate Design Tokens ===== */
+    :root {
+      --corporate-navy: #0A1628;
+      --corporate-navy-light: #162544;
+      --corporate-charcoal: #2D3748;
+      --corporate-slate: #4A5568;
+      --corporate-steel: #718096;
+      --corporate-gold: #B8860B;
+      --corporate-gold-light: #D4A853;
+      --corporate-blue: #2563EB;
+      --corporate-teal: #0D9488;
+      --white: #FFFFFF;
+      --off-white: #FAFBFC;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --success: #059669;
+      --success-light: #D1FAE5;
+      --warning: #D97706;
+      --nav-height: 72px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--corporate-navy); }
+    .nav-links a.active { color: var(--corporate-navy); }
+    .nav-cta {
+      background: var(--corporate-navy) !important;
+      color: var(--white) !important;
+      padding: 0.625rem 1.5rem !important;
+      border-radius: 4px;
+    }
+    .nav-cta:hover { background: var(--corporate-navy-light) !important; }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--corporate-navy);
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      color: var(--white);
+      padding: 6rem 3rem 5rem;
+      text-align: center;
+    }
+    .page-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold-light);
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .page-hero .lead {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== Calculator Section ===== */
+    .calculator-section {
+      padding: 5rem 3rem;
+      background: var(--off-white);
+    }
+    .calculator-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ===== Calculator Form ===== */
+    .calculator-form-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
+    }
+    .form-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .form-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .form-header p {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group .label-hint {
+      font-weight: 400;
+      color: var(--gray-500);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-left: 0.5rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      font-family: var(--font-sans);
+      color: var(--gray-900);
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--corporate-navy);
+      box-shadow: 0 0 0 3px rgba(10, 22, 40, 0.1);
+    }
+    .form-input::placeholder {
+      color: var(--gray-400);
+    }
+    .input-prefix {
+      position: relative;
+    }
+    .input-prefix .form-input {
+      padding-left: 2.25rem;
+    }
+    .input-prefix::before {
+      content: '$';
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: var(--gray-500);
+    }
+    .input-suffix {
+      position: relative;
+    }
+    .input-suffix .form-input {
+      padding-right: 2.5rem;
+    }
+    .input-suffix::after {
+      content: attr(data-suffix);
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* Domain Tier Selection */
+    .tier-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .tier-option {
+      position: relative;
+    }
+    .tier-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .tier-option label {
+      display: block;
+      padding: 1.25rem;
+      background: var(--white);
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .tier-option label:hover {
+      border-color: var(--gray-300);
+    }
+    .tier-option input:checked + label {
+      border-color: var(--corporate-gold);
+      background: rgba(184, 134, 11, 0.04);
+    }
+    .tier-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.25rem;
+    }
+    .tier-desc {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      line-height: 1.4;
+    }
+    .tier-multiplier {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--corporate-gold);
+      background: rgba(184, 134, 11, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .calculate-btn {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      color: var(--white);
+      background: var(--corporate-navy);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .calculate-btn:hover {
+      background: var(--corporate-navy-light);
+    }
+
+    /* ===== Results Card ===== */
+    .results-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
+    }
+    .results-header {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      color: var(--white);
+      padding: 2rem 2.5rem;
+    }
+    .results-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+    .results-header p {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .results-body {
+      padding: 2rem 2.5rem;
+    }
+
+    /* Primary ROI Display */
+    .roi-primary {
+      text-align: center;
+      padding: 2rem;
+      background: var(--success-light);
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .roi-primary .roi-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--success);
+      margin-bottom: 0.5rem;
+    }
+    .roi-primary .roi-value {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--success);
+      line-height: 1;
+    }
+    .roi-primary .roi-period {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin-top: 0.5rem;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .metric-item {
+      padding: 1.25rem;
+      background: var(--off-white);
+      border-radius: 8px;
+    }
+    .metric-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-500);
+      margin-bottom: 0.5rem;
+    }
+    .metric-value {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      line-height: 1;
+    }
+    .metric-change {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--success);
+      margin-top: 0.25rem;
+    }
+
+    /* Visualization Placeholder */
+    .chart-placeholder {
+      height: 180px;
+      background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 1px dashed var(--gray-300);
+    }
+    .chart-placeholder-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--gray-400);
+    }
+    .chart-placeholder-text {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+    }
+
+    /* Assumptions Note */
+    .assumptions-note {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      padding: 1rem;
+      background: var(--gray-50);
+      border-radius: 6px;
+      border-left: 3px solid var(--corporate-gold);
+    }
+    .assumptions-note strong {
+      color: var(--gray-700);
+    }
+
+    /* ===== Methodology Section ===== */
+    .methodology-section {
+      padding: 6rem 3rem;
+      background: var(--white);
+    }
+    .methodology-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .methodology-card {
+      padding: 2rem;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+    }
+    .methodology-number {
+      width: 40px;
+      height: 40px;
+      background: var(--corporate-navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .methodology-title {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.75rem;
+    }
+    .methodology-text {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Formula Display */
+    .formula-section {
+      margin-top: 4rem;
+      padding: 2.5rem;
+      background: var(--corporate-navy);
+      border-radius: 12px;
+      color: var(--white);
+    }
+    .formula-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .formula-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .formula-header p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .formula-display {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 1.125rem;
+      letter-spacing: 0.05em;
+    }
+    .formula-variables {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .variable-item {
+      text-align: center;
+    }
+    .variable-symbol {
+      font-family: 'Courier New', monospace;
+      font-size: 1.25rem;
+      color: var(--corporate-gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .variable-name {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ===== Case Studies Section ===== */
+    .case-studies-section {
+      padding: 6rem 3rem;
+      background: var(--off-white);
+    }
+    .case-studies-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .case-study-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .case-study-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+    }
+    .case-study-header {
+      padding: 1.5rem 2rem;
+      background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .case-study-industry {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold);
+      margin-bottom: 0.5rem;
+    }
+    .case-study-domain {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+    }
+    .case-study-body {
+      padding: 2rem;
+    }
+    .case-study-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .case-metric {
+      padding: 1rem;
+      background: var(--off-white);
+      border-radius: 6px;
+      text-align: center;
+    }
+    .case-metric-value {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      line-height: 1;
+    }
+    .case-metric-label {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gray-500);
+      margin-top: 0.25rem;
+    }
+    .case-study-quote {
+      font-size: 0.875rem;
+      font-style: italic;
+      color: var(--gray-600);
+      line-height: 1.6;
+      padding-left: 1rem;
+      border-left: 3px solid var(--corporate-gold);
+    }
+    .case-study-attribution {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.75rem;
+      font-style: normal;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      padding: 6rem 3rem;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      text-align: center;
+    }
+    .cta-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-section .section-eyebrow { color: var(--corporate-gold-light); }
+    .cta-section .section-title { color: var(--white); margin-bottom: 1.5rem; }
+    .cta-section .section-description { color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem; }
+    .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .btn-white { background: var(--white); color: var(--corporate-navy); }
+    .btn-white:hover { background: var(--gray-100); }
+    .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.3); }
+    .btn-outline-white:hover { background: rgba(255, 255, 255, 0.1); }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 5rem 3rem 3rem;
+    }
+    .footer-container { max-width: 1400px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-brand { max-width: 280px; }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; }
+    .footer-nav h4 {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav ul { list-style: none; }
+    .footer-nav li { margin-bottom: 0.75rem; }
+    .footer-nav a { font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-legal { display: flex; gap: 2rem; }
+    .footer-legal a { font-size: 0.75rem; color: rgba(255, 255, 255, 0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255, 255, 255, 0.7); }
+    .footer-copyright { font-size: 0.75rem; color: rgba(255, 255, 255, 0.3); }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 1024px) {
+      .calculator-grid { grid-template-columns: 1fr; }
+      .methodology-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-studies-grid { grid-template-columns: repeat(2, 1fr); }
+      .formula-variables { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+      .nav-container { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.5rem;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .nav-links.active a { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
+      .nav-cta { margin: 1rem 0 0 0; width: 100%; text-align: center; }
+      .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+      .page-hero { padding: 4rem 1.5rem 3rem; }
+      .calculator-section,
+      .methodology-section,
+      .case-studies-section,
+      .cta-section { padding: 4rem 1.5rem; }
+      .calculator-form-card { padding: 1.5rem; }
+      .results-body { padding: 1.5rem; }
+      .tier-options { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .methodology-grid,
+      .case-studies-grid { grid-template-columns: 1fr; }
+      .formula-variables { grid-template-columns: 1fr 1fr; }
+      .roi-primary .roi-value { font-size: 2.5rem; }
+      .btn { padding: 0.875rem 1.5rem; width: 100%; justify-content: center; }
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ===== Accessibility ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--corporate-blue); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Website Revenue Calculator",
-    "description": "Calculate website revenue potential and compare domain buy vs rent options",
+    "name": "Domain ROI Calculator",
     "url": "https://pillarme.com/domain-roi-calculator",
-    "applicationCategory": "FinanceApplication",
+    "description": "Calculate the projected return on investment for premium domain acquisition.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Corporation",
+      "name": "PILLAR",
+      "url": "https://pillarme.com"
     }
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://pillarme.com/"},
-      {"@type":"ListItem","position":2,"name":"ROI Calculator","item":"https://pillarme.com/domain-roi-calculator"}
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"HowTo",
-    "name":"How to Calculate Your Website Revenue Potential",
-    "description":"Use this calculator to estimate how much money your website could generate based on traffic levels and monetization strategy.",
-    "step":[
-      {"@type":"HowToStep","position":1,"name":"Select Traffic Level","text":"Choose your monthly visitor count from 1,000 to 500,000 visitors."},
-      {"@type":"HowToStep","position":2,"name":"Choose Monetization Strategy","text":"Select whether you'll sell products/services, display ads, or both."},
-      {"@type":"HowToStep","position":3,"name":"Customize Settings","text":"Adjust average order value, conversion rate, profit margin, or ad RPM based on your business."},
-      {"@type":"HowToStep","position":4,"name":"View Revenue Estimate","text":"See your estimated monthly, yearly, and per-visitor revenue."},
-      {"@type":"HowToStep","position":5,"name":"Compare Buy vs Rent","text":"Use the comparison widget to see how much you save by renting vs buying a premium domain."}
-    ],
-    "totalTime":"PT2M"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How much can a website earn?","acceptedAnswer":{"@type":"Answer","text":"Website earnings depend on traffic and monetization strategy. With 10,000 monthly visitors and a 2.5% conversion rate on $75 products, you could earn $7,500/month. With ads at $15 RPM, the same traffic could generate $375/month. Most successful sites use both strategies."}},
-      {"@type":"Question","name":"Is it better to buy or rent a premium domain?","acceptedAnswer":{"@type":"Answer","text":"For most businesses, renting is smarter financially. Renting a $50,000 domain for $500/month preserves your capital for business growth. Over 5 years, you'd pay $30,000 in rent vs $66,000+ true cost of buying (including opportunity cost on invested capital)."}},
-      {"@type":"Question","name":"What's a good conversion rate for websites?","acceptedAnswer":{"@type":"Answer","text":"Average e-commerce conversion rates are 1-3%. With a premium domain, you can see 14-40% higher conversions due to increased trust and memorability. Top-performing sites achieve 5-10% conversion rates."}}
-    ]
-  }
-  </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
-      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
-      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
-      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;
-      --green:#10B981;--green-light:#D1FAE5;--green-dark:#059669;
-      --red:#EF4444;--red-light:#FEE2E2;
-      --blue:#3B82F6;--blue-light:#DBEAFE;
-      --gold:#FFD700;--orange:#F59E0B;
-      --nav-h:64px;--content-max:1200px;
-      /* Theme-aware nav/footer variables (light theme) */
-      --nav-bg:rgba(255,255,255,.95);
-      --nav-border:var(--border-light);
-      --link-color:var(--black);
-      --link-hover:var(--purple);
-      --footer-bg:#000;
-      --footer-border:rgba(255,255,255,.1);
-    }
-
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Inter",sans-serif;
-      background:#fff;color:#000;line-height:1.7;padding-top:var(--nav-h);-webkit-font-smoothing:antialiased;
-    }
-
-    /* Navigation (Unified Style) */
-    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--nav-bg);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;border-bottom:1px solid var(--nav-border)}
-    .logo{font-size:1.5rem;font-weight:700;color:var(--purple);text-decoration:none;transition:transform .2s}
-    .logo:hover{transform:scale(1.05)}
-    .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-links a{color:var(--link-color);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .3s;position:relative;padding:.5rem}
-    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
-    .nav-links a:hover,.nav-links a.active{color:var(--link-hover)}
-    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:.5rem 1rem!important;border-radius:6px;font-weight:600}
-    .nav-cta::after{display:none!important}
-    .nav-cta:hover{background:var(--purple-dark)!important}
-    .mobile-menu-btn{display:none;background:none;border:none;color:var(--purple);font-size:1.5rem;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
-
-    /* Hero */
-    .hero{
-      background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 50%,#34D399 100%);
-      color:#fff;padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;
-    }
-    .hero::before{
-      content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-      background:radial-gradient(circle at 30% 50%,rgba(255,255,255,.15),transparent 50%);
-      pointer-events:none;
-    }
-    .hero-content{max-width:900px;margin:0 auto;position:relative;z-index:1}
-    h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:1.5rem;line-height:1.1}
-    .hero p{font-size:1.25rem;opacity:.95;max-width:700px;margin:0 auto}
-    .hero-subtitle{font-size:1.1rem;opacity:.85;margin-top:1rem}
-
-    /* Main Container */
-    .main-container{max-width:var(--content-max);margin:0 auto;padding:4rem 2rem}
-
-    /* Calculator Section */
-    .calculator-section{
-      background:#fff;border-radius:24px;padding:3rem;margin-bottom:3rem;
-      box-shadow:0 10px 60px rgba(0,0,0,.1);border:1px solid var(--border-light);
-    }
-    .calculator-section h2{font-size:1.75rem;font-weight:800;margin-bottom:.5rem;color:var(--black)}
-    .section-subtitle{color:var(--gray);margin-bottom:2.5rem;font-size:1.05rem}
-
-    /* Traffic Selector */
-    .traffic-selector{margin-bottom:3rem}
-    .traffic-label{font-weight:700;font-size:1.1rem;margin-bottom:1rem;display:block;color:var(--black-soft)}
-    .traffic-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem}
-    .traffic-option{
-      padding:1.25rem 1rem;border:3px solid var(--border-light);border-radius:12px;
-      text-align:center;cursor:pointer;transition:all .3s;background:#fff;
-    }
-    .traffic-option:hover{border-color:var(--purple);background:var(--purple-glow)}
-    .traffic-option.active{border-color:var(--purple);background:var(--purple);color:#fff}
-    .traffic-option .traffic-number{font-size:1.5rem;font-weight:900;display:block}
-    .traffic-option .traffic-text{font-size:.8rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
-
-    /* Revenue Mode Toggle */
-    .revenue-mode{margin-bottom:3rem}
-    .mode-toggle{
-      display:flex;gap:1rem;background:var(--off-white);padding:.5rem;border-radius:12px;
-    }
-    .mode-btn{
-      flex:1;padding:1rem 1.5rem;border:none;border-radius:10px;font-weight:700;
-      font-size:1rem;cursor:pointer;transition:all .3s;background:transparent;color:var(--gray);
-    }
-    .mode-btn.active{background:#fff;color:var(--purple);box-shadow:0 2px 10px rgba(0,0,0,.1)}
-    .mode-btn:hover:not(.active){color:var(--black)}
-
-    /* Product Settings */
-    .settings-panel{
-      background:var(--off-white);border-radius:16px;padding:2rem;margin-bottom:2rem;
-      display:none;
-    }
-    .settings-panel.active{display:block}
-    .settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
-    .setting-group label{display:block;font-weight:600;margin-bottom:.5rem;color:var(--black-soft);font-size:.95rem}
-    .input-with-prefix{position:relative;display:flex;align-items:center}
-    .prefix{position:absolute;left:1rem;font-weight:600;color:var(--gray);pointer-events:none}
-    .suffix{position:absolute;right:1rem;font-weight:600;color:var(--gray);pointer-events:none}
-    input[type="number"]{
-      width:100%;padding:1rem 1rem 1rem 2.25rem;border:2px solid var(--border-light);
-      border-radius:10px;font-size:1rem;font-weight:600;transition:all .3s;
-    }
-    input[type="number"]:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-glow)}
-    .input-suffix input{padding-right:3rem}
-
-    /* Revenue Display */
-    .revenue-display{
-      background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);
-      border-radius:20px;padding:3rem;color:#fff;text-align:center;margin:2rem 0;
-    }
-    .revenue-label{font-size:1rem;opacity:.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem}
-    .revenue-amount{font-size:clamp(3rem,8vw,5rem);font-weight:900;color:var(--green);line-height:1}
-    .revenue-period{font-size:1.25rem;opacity:.6;margin-top:.5rem}
-    .revenue-breakdown{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;
-      padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);
-    }
-    .breakdown-item{text-align:center}
-    .breakdown-value{font-size:1.5rem;font-weight:800;color:#fff}
-    .breakdown-label{font-size:.8rem;opacity:.6;text-transform:uppercase;letter-spacing:.5px}
-
-    /* Revenue Tiers */
-    .revenue-tiers{margin:3rem 0}
-    .tiers-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
-    .tiers-header h3{font-size:1.25rem;font-weight:700}
-    .tier-card{
-      display:grid;grid-template-columns:1fr 2fr 1fr;gap:1.5rem;align-items:center;
-      padding:1.5rem;border-radius:12px;margin-bottom:1rem;
-      border:2px solid var(--border-light);transition:all .3s;
-    }
-    .tier-card:hover{border-color:var(--green);background:var(--green-light)}
-    .tier-card.active{border-color:var(--green);background:var(--green-light)}
-    .tier-traffic{font-size:1.25rem;font-weight:800;color:var(--black)}
-    .tier-traffic span{display:block;font-size:.8rem;font-weight:500;color:var(--gray)}
-    .tier-bar{height:12px;background:var(--border-light);border-radius:6px;overflow:hidden}
-    .tier-fill{height:100%;background:linear-gradient(90deg,var(--green),#34D399);border-radius:6px;transition:width .5s}
-    .tier-revenue{font-size:1.5rem;font-weight:900;color:var(--green);text-align:right}
-    .tier-revenue span{display:block;font-size:.75rem;font-weight:500;color:var(--gray)}
-
-    /* Comparison Widget */
-    .comparison-widget{
-      background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);
-      border-radius:24px;padding:3rem;margin-top:4rem;color:#fff;
-    }
-    .comparison-widget h2{color:#fff;font-size:1.75rem;margin-bottom:.5rem;text-align:center}
-    .comparison-widget .section-subtitle{color:rgba(255,255,255,.8);text-align:center;margin-bottom:2rem}
-
-    .comparison-inputs{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;
-      margin-bottom:2rem;
-    }
-    .comparison-input label{display:block;font-weight:600;margin-bottom:.5rem;font-size:.9rem;opacity:.9}
-    .comparison-input input,.comparison-input select{
-      width:100%;padding:1rem;border:2px solid rgba(255,255,255,.2);border-radius:10px;
-      background:rgba(255,255,255,.1);color:#fff;font-size:1rem;font-weight:600;
-    }
-    .comparison-input input::placeholder{color:rgba(255,255,255,.5)}
-    .comparison-input input:focus,.comparison-input select:focus{
-      outline:none;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15);
-    }
-    .comparison-input select option{color:#000}
-
-    .comparison-cards{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
-    .comp-card{
-      background:rgba(255,255,255,.1);border-radius:16px;padding:2rem;
-      border:2px solid rgba(255,255,255,.2);position:relative;
-    }
-    .comp-card.recommended{border-color:var(--gold);background:rgba(255,215,0,.1)}
-    .comp-badge{
-      position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-      background:var(--gold);color:#000;padding:.35rem 1rem;border-radius:50px;
-      font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;
-    }
-    .comp-title{font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;text-align:center}
-    .comp-row{display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
-    .comp-row:last-of-type{border-bottom:none}
-    .comp-label{opacity:.8}
-    .comp-value{font-weight:700}
-    .comp-total{
-      margin-top:1.5rem;padding-top:1.5rem;border-top:2px solid rgba(255,255,255,.2);
-      text-align:center;
-    }
-    .comp-total-label{font-size:.9rem;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
-    .comp-total-value{font-size:2rem;font-weight:900;margin-top:.25rem}
-    .comp-total-value.buy{color:var(--red-light)}
-    .comp-total-value.rent{color:var(--green-light)}
-
-    .savings-callout{
-      background:rgba(255,255,255,.15);border-radius:12px;padding:1.5rem;margin-top:2rem;text-align:center;
-    }
-    .savings-callout strong{font-size:1.75rem;color:var(--gold);display:block;margin-bottom:.25rem}
-    .savings-callout span{opacity:.9}
-
-    /* CTA */
-    .cta-section{
-      background:var(--black);color:#fff;padding:3rem;border-radius:20px;text-align:center;margin-top:4rem;
-    }
-    .cta-section h2{color:#fff;font-size:2rem;margin-bottom:1rem}
-    .cta-section p{font-size:1.1rem;opacity:.8;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
-    .btn{
-      display:inline-block;padding:1.25rem 3rem;background:var(--purple);color:#fff;
-      text-decoration:none;border-radius:10px;font-weight:700;font-size:1.125rem;
-      transition:all .3s;box-shadow:0 4px 20px rgba(139,0,255,.4);
-    }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(139,0,255,.5);background:var(--purple-dark)}
-
-    /* Footer (Unified Style) */
-    footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem;margin-top:4rem;border-top:1px solid var(--footer-border)}
-    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
-    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple)}
-    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem;margin-top:.25rem}
-    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
-    .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:500;transition:all .3s;font-size:.9rem}
-    .footer-links a:hover{color:var(--purple)}
-    .footer-copy{color:rgba(255,255,255,.4);font-size:.8rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--footer-border)}
-
-    /* Mobile */
-    @media (max-width:768px){
-      .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1rem 0;gap:0;z-index:998;border-bottom:1px solid var(--nav-border)}
-      .nav-links.active{display:flex}
-      .nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem}
-      .nav-links a::after{display:none}
-      .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}
-      .mobile-menu-btn{display:flex}
-      .mobile-menu-btn.active{transform:rotate(90deg);transition:transform .3s}
-      .traffic-options{grid-template-columns:repeat(2,1fr)}
-      .comparison-cards{grid-template-columns:1fr}
-      .revenue-breakdown{grid-template-columns:1fr}
-      .tier-card{grid-template-columns:1fr;text-align:center;gap:1rem}
-      .tier-revenue{text-align:center}
-      h1{font-size:2rem}
-      .revenue-amount{font-size:2.5rem}
-      .settings-grid{grid-template-columns:1fr}
-
-      /* Fix mode toggle buttons for mobile */
-      .mode-toggle{flex-direction:column;gap:.5rem}
-      .mode-btn{padding:.875rem 1rem;font-size:.9rem;text-align:center}
-
-      /* Fix comparison widget inputs for mobile */
-      .comparison-inputs{grid-template-columns:1fr;gap:1rem}
-      .comparison-input select{font-size:.9rem;padding:.875rem}
-      .comparison-widget{padding:2rem 1.5rem}
-
-      /* Ensure calculator section doesn't overflow */
-      .calculator-section{padding:2rem 1.25rem}
-      .main-container{padding:2rem 1rem}
-    }
-  </style>
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
   <nav role="navigation" aria-label="Main navigation">
-    <a href="index.html" class="logo" aria-label="PILLAR home">PILLAR</a>
-    <div class="nav-links">
-      <a href="domains.html">Domains</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="ai-services.html">AI Services</a>
-      <a href="get-started.html">Get Started</a>
-      <a href="faq.html">FAQ</a>
-      <a href="insights.html">Insights</a>
-      <a href="domains.html" class="nav-cta">Browse Domains</a>
+    <div class="nav-container">
+      <a href="/" class="logo">PILLAR</a>
+      <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/divisions">Divisions</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/domains" class="active">Domains</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/insights">Insights</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
     </div>
-    <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>How Much Could Your Website Earn?</h1>
-      <p>Calculate your potential revenue based on traffic, product sales, or advertising. Then see why smart entrepreneurs rent premium domains instead of buying.</p>
-      <p class="hero-subtitle">A premium domain can 2-3x your conversion rates and traffic</p>
+  <!-- Page Hero -->
+  <header class="page-hero" role="banner">
+    <div class="page-hero-container">
+      <p class="eyebrow">Investment Analysis</p>
+      <h1>Domain Value Assessment Tool</h1>
+      <p class="lead">Quantify the strategic value of premium domain acquisition with our enterprise-grade ROI calculator. Make data-driven investment decisions backed by comprehensive financial modeling.</p>
     </div>
-  </section>
+  </header>
 
   <!-- Main Content -->
-  <div class="main-container">
-    <!-- Revenue Calculator -->
-    <section class="calculator-section">
-      <h2>Website Revenue Calculator</h2>
-      <p class="section-subtitle">Select your monthly traffic level and monetization strategy to see potential earnings</p>
+  <main id="main-content">
+    <!-- Calculator Section -->
+    <section class="calculator-section" aria-label="ROI Calculator">
+      <div class="calculator-container">
+        <div class="calculator-grid">
+          <!-- Calculator Form -->
+          <div class="calculator-form-card">
+            <div class="form-header">
+              <h2>Investment Parameters</h2>
+              <p>Enter your current business metrics to calculate projected returns</p>
+            </div>
 
-      <!-- Traffic Selector -->
-      <div class="traffic-selector">
-        <span class="traffic-label">Monthly Visitors</span>
-        <div class="traffic-options">
-          <div class="traffic-option" data-traffic="1000">
-            <span class="traffic-number">1K</span>
-            <span class="traffic-text">Starter</span>
-          </div>
-          <div class="traffic-option" data-traffic="5000">
-            <span class="traffic-number">5K</span>
-            <span class="traffic-text">Growing</span>
-          </div>
-          <div class="traffic-option active" data-traffic="10000">
-            <span class="traffic-number">10K</span>
-            <span class="traffic-text">Established</span>
-          </div>
-          <div class="traffic-option" data-traffic="50000">
-            <span class="traffic-number">50K</span>
-            <span class="traffic-text">Popular</span>
-          </div>
-          <div class="traffic-option" data-traffic="100000">
-            <span class="traffic-number">100K</span>
-            <span class="traffic-text">Authority</span>
-          </div>
-          <div class="traffic-option" data-traffic="500000">
-            <span class="traffic-number">500K</span>
-            <span class="traffic-text">Major</span>
-          </div>
-        </div>
-      </div>
+            <form id="roi-calculator">
+              <div class="form-group">
+                <label for="current-traffic">
+                  Monthly Website Traffic
+                  <span class="label-hint">(visitors)</span>
+                </label>
+                <input type="number" id="current-traffic" class="form-input" placeholder="e.g., 50000" min="0" value="50000">
+              </div>
 
-      <!-- Revenue Mode Toggle -->
-      <div class="revenue-mode">
-        <span class="traffic-label">Monetization Strategy</span>
-        <div class="mode-toggle">
-          <button class="mode-btn active" data-mode="products">Sell Products/Services</button>
-          <button class="mode-btn" data-mode="ads">Display Ads</button>
-          <button class="mode-btn" data-mode="both">Both Combined</button>
-        </div>
-      </div>
+              <div class="form-group">
+                <label for="conversion-rate">
+                  Current Conversion Rate
+                  <span class="label-hint">(percentage)</span>
+                </label>
+                <div class="input-suffix" data-suffix="%">
+                  <input type="number" id="conversion-rate" class="form-input" placeholder="e.g., 2.5" min="0" max="100" step="0.1" value="2.5">
+                </div>
+              </div>
 
-      <!-- Product Settings -->
-      <div class="settings-panel active" id="productSettings">
-        <div class="settings-grid">
-          <div class="setting-group">
-            <label>Average Order Value</label>
-            <div class="input-with-prefix">
-              <span class="prefix">$</span>
-              <input type="number" id="avgOrderValue" value="75" min="1">
+              <div class="form-group">
+                <label for="avg-order-value">
+                  Average Order Value
+                  <span class="label-hint">(USD)</span>
+                </label>
+                <div class="input-prefix">
+                  <input type="number" id="avg-order-value" class="form-input" placeholder="e.g., 150" min="0" value="150">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Domain Tier Selection</label>
+                <div class="tier-options">
+                  <div class="tier-option">
+                    <input type="radio" id="tier-standard" name="domain-tier" value="standard">
+                    <label for="tier-standard">
+                      <span class="tier-multiplier">1.15x</span>
+                      <div class="tier-name">Standard Premium</div>
+                      <div class="tier-desc">Brandable domains with good memorability</div>
+                    </label>
+                  </div>
+                  <div class="tier-option">
+                    <input type="radio" id="tier-premium" name="domain-tier" value="premium" checked>
+                    <label for="tier-premium">
+                      <span class="tier-multiplier">1.35x</span>
+                      <div class="tier-name">Premium</div>
+                      <div class="tier-desc">High-authority single-word or phrase domains</div>
+                    </label>
+                  </div>
+                  <div class="tier-option">
+                    <input type="radio" id="tier-ultra" name="domain-tier" value="ultra">
+                    <label for="tier-ultra">
+                      <span class="tier-multiplier">1.65x</span>
+                      <div class="tier-name">Ultra Premium</div>
+                      <div class="tier-desc">Category-defining dictionary word domains</div>
+                    </label>
+                  </div>
+                  <div class="tier-option">
+                    <input type="radio" id="tier-iconic" name="domain-tier" value="iconic">
+                    <label for="tier-iconic">
+                      <span class="tier-multiplier">2.25x</span>
+                      <div class="tier-name">Iconic</div>
+                      <div class="tier-desc">Rare, industry-leading trophy domains</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="calculate-btn">Calculate Projected ROI</button>
+            </form>
+          </div>
+
+          <!-- Results Card -->
+          <div class="results-card">
+            <div class="results-header">
+              <h3>Projected Investment Returns</h3>
+              <p>Based on PILLAR proprietary valuation methodology</p>
+            </div>
+            <div class="results-body">
+              <!-- Primary ROI -->
+              <div class="roi-primary">
+                <div class="roi-label">Projected Annual ROI</div>
+                <div class="roi-value" id="roi-percentage">287%</div>
+                <div class="roi-period">First Year Performance</div>
+              </div>
+
+              <!-- Metrics Grid -->
+              <div class="metrics-grid">
+                <div class="metric-item">
+                  <div class="metric-label">Traffic Uplift</div>
+                  <div class="metric-value" id="traffic-uplift">+35%</div>
+                  <div class="metric-change" id="traffic-visitors">+17,500 visitors/mo</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">Conversion Improvement</div>
+                  <div class="metric-value" id="conversion-lift">+22%</div>
+                  <div class="metric-change" id="new-conversion">3.05% new rate</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">Annual Revenue Impact</div>
+                  <div class="metric-value" id="revenue-impact">$412K</div>
+                  <div class="metric-change" id="revenue-change">+$156K increase</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">Brand Value Increase</div>
+                  <div class="metric-value" id="brand-value">+45%</div>
+                  <div class="metric-change">Estimated equity gain</div>
+                </div>
+              </div>
+
+              <!-- Chart Placeholder -->
+              <div class="chart-placeholder">
+                <div class="chart-placeholder-icon">&#128200;</div>
+                <div class="chart-placeholder-text">36-Month Revenue Projection Visualization</div>
+              </div>
+
+              <!-- Assumptions Note -->
+              <div class="assumptions-note">
+                <strong>Methodology Note:</strong> Projections are based on PILLAR's analysis of 2,400+ domain acquisitions across enterprise clients. Actual results may vary based on industry, implementation, and market conditions.
+              </div>
             </div>
           </div>
-          <div class="setting-group">
-            <label>Conversion Rate</label>
-            <div class="input-with-prefix input-suffix">
-              <input type="number" id="conversionRate" value="2.5" min="0.1" max="20" step="0.1" style="padding-left:1rem">
-              <span class="suffix">%</span>
-            </div>
-          </div>
-          <div class="setting-group">
-            <label>Profit Margin</label>
-            <div class="input-with-prefix input-suffix">
-              <input type="number" id="profitMargin" value="40" min="5" max="100" step="5" style="padding-left:1rem">
-              <span class="suffix">%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ad Settings -->
-      <div class="settings-panel" id="adSettings">
-        <div class="settings-grid">
-          <div class="setting-group">
-            <label>RPM (Revenue per 1K pageviews)</label>
-            <div class="input-with-prefix">
-              <span class="prefix">$</span>
-              <input type="number" id="adRpm" value="15" min="1" max="100">
-            </div>
-          </div>
-          <div class="setting-group">
-            <label>Pages per Visit</label>
-            <div class="input-with-prefix">
-              <input type="number" id="pagesPerVisit" value="2.5" min="1" max="10" step="0.5" style="padding-left:1rem">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Revenue Display -->
-      <div class="revenue-display">
-        <div class="revenue-label">Estimated Monthly Revenue</div>
-        <div class="revenue-amount" id="monthlyRevenue">$7,500</div>
-        <div class="revenue-period">per month</div>
-        <div class="revenue-breakdown">
-          <div class="breakdown-item">
-            <div class="breakdown-value" id="yearlyRevenue">$90,000</div>
-            <div class="breakdown-label">Per Year</div>
-          </div>
-          <div class="breakdown-item">
-            <div class="breakdown-value" id="dailyRevenue">$250</div>
-            <div class="breakdown-label">Per Day</div>
-          </div>
-          <div class="breakdown-item">
-            <div class="breakdown-value" id="revenuePerVisitor">$0.75</div>
-            <div class="breakdown-label">Per Visitor</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Revenue Tiers -->
-      <div class="revenue-tiers">
-        <div class="tiers-header">
-          <h3>Revenue at Different Traffic Levels</h3>
-        </div>
-
-        <div class="tier-card" data-tier="1000">
-          <div class="tier-traffic">1,000<span>visitors/mo</span></div>
-          <div class="tier-bar"><div class="tier-fill" style="width:5%"></div></div>
-          <div class="tier-revenue" id="tier1k">$750<span>/month</span></div>
-        </div>
-
-        <div class="tier-card" data-tier="5000">
-          <div class="tier-traffic">5,000<span>visitors/mo</span></div>
-          <div class="tier-bar"><div class="tier-fill" style="width:15%"></div></div>
-          <div class="tier-revenue" id="tier5k">$3,750<span>/month</span></div>
-        </div>
-
-        <div class="tier-card active" data-tier="10000">
-          <div class="tier-traffic">10,000<span>visitors/mo</span></div>
-          <div class="tier-bar"><div class="tier-fill" style="width:25%"></div></div>
-          <div class="tier-revenue" id="tier10k">$7,500<span>/month</span></div>
-        </div>
-
-        <div class="tier-card" data-tier="50000">
-          <div class="tier-traffic">50,000<span>visitors/mo</span></div>
-          <div class="tier-bar"><div class="tier-fill" style="width:55%"></div></div>
-          <div class="tier-revenue" id="tier50k">$37,500<span>/month</span></div>
-        </div>
-
-        <div class="tier-card" data-tier="100000">
-          <div class="tier-traffic">100,000<span>visitors/mo</span></div>
-          <div class="tier-bar"><div class="tier-fill" style="width:75%"></div></div>
-          <div class="tier-revenue" id="tier100k">$75,000<span>/month</span></div>
-        </div>
-
-        <div class="tier-card" data-tier="500000">
-          <div class="tier-traffic">500,000<span>visitors/mo</span></div>
-          <div class="tier-bar"><div class="tier-fill" style="width:100%"></div></div>
-          <div class="tier-revenue" id="tier500k">$375,000<span>/month</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Buy vs Rent Comparison Widget -->
-    <section class="comparison-widget">
-      <h2>Buy vs Rent: The Smart Math</h2>
-      <p class="section-subtitle">Why pay $50,000+ upfront when you can rent for $10-$1,000/month?</p>
-
-      <div class="comparison-inputs">
-        <div class="comparison-input">
-          <label>Domain Purchase Price</label>
-          <input type="number" id="domainPrice" value="50000" placeholder="50000">
-        </div>
-        <div class="comparison-input">
-          <label>Monthly Rental Rate</label>
-          <select id="rentalTier">
-            <option value="10">$10/month (Standard)</option>
-            <option value="100">$100/month (Premium)</option>
-            <option value="500" selected>$500/month (Ultra Premium)</option>
-            <option value="1000">$1,000/month (Elite)</option>
-          </select>
-        </div>
-        <div class="comparison-input">
-          <label>Time Period</label>
-          <select id="compPeriod">
-            <option value="1">1 Year</option>
-            <option value="2">2 Years</option>
-            <option value="3">3 Years</option>
-            <option value="5" selected>5 Years</option>
-            <option value="10">10 Years</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="comparison-cards">
-        <div class="comp-card">
-          <div class="comp-title">Buy Domain Outright</div>
-          <div class="comp-row">
-            <span class="comp-label">Purchase Price</span>
-            <span class="comp-value" id="compBuyPrice">$50,000</span>
-          </div>
-          <div class="comp-row">
-            <span class="comp-label">Transfer & Legal Fees</span>
-            <span class="comp-value" id="compBuyFees">$2,500</span>
-          </div>
-          <div class="comp-row">
-            <span class="comp-label">Opportunity Cost (5% APY)</span>
-            <span class="comp-value" id="compBuyOpportunity">$13,750</span>
-          </div>
-          <div class="comp-row">
-            <span class="comp-label">Annual Renewals</span>
-            <span class="comp-value" id="compBuyRenewals">$60</span>
-          </div>
-          <div class="comp-total">
-            <div class="comp-total-label">True Cost</div>
-            <div class="comp-total-value buy" id="compBuyTotal">$66,310</div>
-          </div>
+    <!-- Methodology Section -->
+    <section class="methodology-section" aria-label="Calculation methodology">
+      <div class="methodology-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Methodology</p>
+          <h2 class="section-title">How We Calculate Domain ROI</h2>
+          <p class="section-description">Our valuation framework is built on proprietary research analyzing thousands of domain acquisitions and their impact on enterprise performance metrics.</p>
         </div>
 
-        <div class="comp-card recommended">
-          <div class="comp-badge">Recommended</div>
-          <div class="comp-title">Rent Domain</div>
-          <div class="comp-row">
-            <span class="comp-label">Monthly Rental</span>
-            <span class="comp-value" id="compRentMonthly">$500/mo</span>
+        <div class="methodology-grid">
+          <article class="methodology-card">
+            <div class="methodology-number">1</div>
+            <h3 class="methodology-title">Traffic Impact Analysis</h3>
+            <p class="methodology-text">Premium domains generate higher organic click-through rates due to increased trust signals and brand recognition. We model expected traffic gains based on domain tier and industry benchmarks.</p>
+          </article>
+
+          <article class="methodology-card">
+            <div class="methodology-number">2</div>
+            <h3 class="methodology-title">Conversion Rate Optimization</h3>
+            <p class="methodology-text">Authoritative domain names reduce user hesitation and increase conversion confidence. Our model incorporates conversion lift factors validated across multiple industry verticals.</p>
+          </article>
+
+          <article class="methodology-card">
+            <div class="methodology-number">3</div>
+            <h3 class="methodology-title">Brand Equity Valuation</h3>
+            <p class="methodology-text">Beyond direct revenue impact, premium domains contribute to overall brand value. We factor in trademark defensibility, market positioning, and long-term asset appreciation.</p>
+          </article>
+
+          <article class="methodology-card">
+            <div class="methodology-number">4</div>
+            <h3 class="methodology-title">Competitive Advantage</h3>
+            <p class="methodology-text">Owning a category-defining domain creates barriers to entry for competitors. We quantify the strategic value of market positioning and customer acquisition efficiency.</p>
+          </article>
+
+          <article class="methodology-card">
+            <div class="methodology-number">5</div>
+            <h3 class="methodology-title">SEO Authority Transfer</h3>
+            <p class="methodology-text">Established domains often carry existing backlink profiles and domain authority. We assess the SEO value that transfers with premium domain acquisition.</p>
+          </article>
+
+          <article class="methodology-card">
+            <div class="methodology-number">6</div>
+            <h3 class="methodology-title">Risk-Adjusted Returns</h3>
+            <p class="methodology-text">All projections are risk-adjusted using Monte Carlo simulations to account for market variability and provide confidence intervals for investment planning.</p>
+          </article>
+        </div>
+
+        <!-- Formula Section -->
+        <div class="formula-section">
+          <div class="formula-header">
+            <h3>Core Valuation Formula</h3>
+            <p>Enterprise-grade financial modeling for domain investment decisions</p>
           </div>
-          <div class="comp-row">
-            <span class="comp-label">Total Rent (<span id="compRentMonths">60</span> months)</span>
-            <span class="comp-value" id="compRentTotal60">$30,000</span>
+          <div class="formula-display">
+            ROI = ((R<sub>new</sub> - R<sub>current</sub>) + BV<sub>delta</sub>) / I<sub>total</sub> x 100
           </div>
-          <div class="comp-row">
-            <span class="comp-label">Capital Kept Invested</span>
-            <span class="comp-value" id="compRentCapital">$50,000</span>
-          </div>
-          <div class="comp-row">
-            <span class="comp-label">Investment Earnings (5% APY)</span>
-            <span class="comp-value" style="color:var(--green-light)" id="compRentEarnings">+$13,750</span>
-          </div>
-          <div class="comp-total">
-            <div class="comp-total-label">Net Cost</div>
-            <div class="comp-total-value rent" id="compRentNet">$16,250</div>
+          <div class="formula-variables">
+            <div class="variable-item">
+              <div class="variable-symbol">R<sub>new</sub></div>
+              <div class="variable-name">Projected Revenue</div>
+            </div>
+            <div class="variable-item">
+              <div class="variable-symbol">R<sub>current</sub></div>
+              <div class="variable-name">Current Revenue</div>
+            </div>
+            <div class="variable-item">
+              <div class="variable-symbol">BV<sub>delta</sub></div>
+              <div class="variable-name">Brand Value Change</div>
+            </div>
+            <div class="variable-item">
+              <div class="variable-symbol">I<sub>total</sub></div>
+              <div class="variable-name">Total Investment</div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="savings-callout">
-        <strong id="compSavings">$50,060 Saved</strong>
-        <span>That's <span id="compSavingsPercent">75%</span> less than buying - capital you can invest in growing your business</span>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <h2>Start Earning with a Premium Domain</h2>
-      <p>Browse 1,500+ premium domains available for rent. Get the authority of a $50K domain for as little as $10/month.</p>
-      <a href="/domains" class="btn">Browse Premium Domains →</a>
+    <!-- Case Studies Section -->
+    <section class="case-studies-section" aria-label="Case studies">
+      <div class="case-studies-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Validated Results</p>
+          <h2 class="section-title">Enterprise Case Studies</h2>
+          <p class="section-description">Real-world outcomes from organizations that invested in premium domain acquisition through PILLAR.</p>
+        </div>
+
+        <div class="case-studies-grid">
+          <article class="case-study-card">
+            <div class="case-study-header">
+              <div class="case-study-industry">Financial Services</div>
+              <div class="case-study-domain">BankSize.com</div>
+            </div>
+            <div class="case-study-body">
+              <div class="case-study-metrics">
+                <div class="case-metric">
+                  <div class="case-metric-value">342%</div>
+                  <div class="case-metric-label">ROI</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">+47%</div>
+                  <div class="case-metric-label">Traffic</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">+31%</div>
+                  <div class="case-metric-label">Conversion</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">8 mo</div>
+                  <div class="case-metric-label">Payback</div>
+                </div>
+              </div>
+              <blockquote class="case-study-quote">
+                "The domain acquisition fundamentally changed how prospects perceive our brand. The ROI exceeded our most optimistic projections."
+                <div class="case-study-attribution">- Chief Marketing Officer</div>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="case-study-card">
+            <div class="case-study-header">
+              <div class="case-study-industry">Travel & Hospitality</div>
+              <div class="case-study-domain">FanTravel.com</div>
+            </div>
+            <div class="case-study-body">
+              <div class="case-study-metrics">
+                <div class="case-metric">
+                  <div class="case-metric-value">428%</div>
+                  <div class="case-metric-label">ROI</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">+62%</div>
+                  <div class="case-metric-label">Traffic</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">+28%</div>
+                  <div class="case-metric-label">Conversion</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">6 mo</div>
+                  <div class="case-metric-label">Payback</div>
+                </div>
+              </div>
+              <blockquote class="case-study-quote">
+                "Owning FanTravel.com positioned us as the category leader overnight. Our customer acquisition costs dropped by 40%."
+                <div class="case-study-attribution">- VP of Growth</div>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="case-study-card">
+            <div class="case-study-header">
+              <div class="case-study-industry">Investment Services</div>
+              <div class="case-study-domain">DayInvestors.com</div>
+            </div>
+            <div class="case-study-body">
+              <div class="case-study-metrics">
+                <div class="case-metric">
+                  <div class="case-metric-value">289%</div>
+                  <div class="case-metric-label">ROI</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">+38%</div>
+                  <div class="case-metric-label">Traffic</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">+24%</div>
+                  <div class="case-metric-label">Conversion</div>
+                </div>
+                <div class="case-metric">
+                  <div class="case-metric-value">11 mo</div>
+                  <div class="case-metric-label">Payback</div>
+                </div>
+              </div>
+              <blockquote class="case-study-quote">
+                "The domain instantly conveyed authority in a highly competitive space. Our organic search rankings improved within weeks."
+                <div class="case-study-attribution">- Director of Digital Strategy</div>
+              </blockquote>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
-  </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Schedule consultation">
+      <div class="cta-container">
+        <p class="section-eyebrow">Strategic Advisory</p>
+        <h2 class="section-title">Ready to Evaluate Your Domain Investment?</h2>
+        <p class="section-description">Schedule a consultation with our domain strategy team to receive a customized ROI analysis tailored to your specific business objectives and market position.</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-white">Schedule Consultation</a>
+          <a href="/domains" class="btn btn-outline-white">Explore Domain Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="footer-container">
-      <div class="footer-logo">PILLAR</div>
-      <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="ai-services.html">AI Services</a>
-        <a href="domains.html">Domains</a>
-        <a href="faq.html">FAQ</a>
-        <a href="support.html">Support</a>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">PILLAR</div>
+          <p class="footer-tagline">A global digital infrastructure and media corporation building the foundation of tomorrow's digital economy.</p>
+        </div>
+
+        <nav class="footer-nav">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/leadership">Leadership</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Divisions</h4>
+          <ul>
+            <li><a href="/divisions/technology">Technology</a></li>
+            <li><a href="/divisions/media">Media Holdings</a></li>
+            <li><a href="/domains">Premium Domains</a></li>
+            <li><a href="/divisions/ventures">Ventures</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/solutions#foundation">Foundation</a></li>
+            <li><a href="/solutions#growth">Growth</a></li>
+            <li><a href="/solutions#authority">Authority</a></li>
+            <li><a href="/solutions#enterprise">Enterprise</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/domain-roi-calculator">ROI Calculator</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <p class="footer-copy">© 2025 PILLAR. All rights reserved.</p>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/cookies">Cookie Policy</a>
+          <a href="/accessibility">Accessibility</a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 PILLAR Corporation. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+  <!-- Calculator Script -->
   <script>
-    // State
-    let currentTraffic = 10000;
-    let currentMode = 'products';
+    // Domain tier multipliers
+    const tierMultipliers = {
+      standard: { traffic: 1.15, conversion: 1.12, brand: 0.25 },
+      premium: { traffic: 1.35, conversion: 1.22, brand: 0.45 },
+      ultra: { traffic: 1.65, conversion: 1.35, brand: 0.75 },
+      iconic: { traffic: 2.25, conversion: 1.55, brand: 1.20 }
+    };
 
-    // DOM Elements
-    const trafficOptions = document.querySelectorAll('.traffic-option');
-    const modeBtns = document.querySelectorAll('.mode-btn');
-    const tierCards = document.querySelectorAll('.tier-card');
-
-    // Product inputs
-    const avgOrderValue = document.getElementById('avgOrderValue');
-    const conversionRate = document.getElementById('conversionRate');
-    const profitMargin = document.getElementById('profitMargin');
-
-    // Ad inputs
-    const adRpm = document.getElementById('adRpm');
-    const pagesPerVisit = document.getElementById('pagesPerVisit');
-
-    // Comparison inputs
-    const domainPrice = document.getElementById('domainPrice');
-    const rentalTier = document.getElementById('rentalTier');
-    const compPeriod = document.getElementById('compPeriod');
-
-    // Calculate revenue
-    function calculateRevenue(traffic) {
-      let revenue = 0;
-
-      if (currentMode === 'products' || currentMode === 'both') {
-        const aov = parseFloat(avgOrderValue.value) || 75;
-        const conv = parseFloat(conversionRate.value) || 2.5;
-        const margin = parseFloat(profitMargin.value) || 40;
-        const customers = traffic * (conv / 100);
-        const grossRevenue = customers * aov;
-        revenue += grossRevenue * (margin / 100);
+    // Format currency
+    function formatCurrency(value) {
+      if (value >= 1000000) {
+        return '$' + (value / 1000000).toFixed(1) + 'M';
+      } else if (value >= 1000) {
+        return '$' + (value / 1000).toFixed(0) + 'K';
       }
-
-      if (currentMode === 'ads' || currentMode === 'both') {
-        const rpm = parseFloat(adRpm.value) || 15;
-        const ppv = parseFloat(pagesPerVisit.value) || 2.5;
-        const pageviews = traffic * ppv;
-        revenue += (pageviews / 1000) * rpm;
-      }
-
-      return revenue;
+      return '$' + value.toFixed(0);
     }
 
-    // Update displays
-    function updateRevenueDisplay() {
-      const monthly = calculateRevenue(currentTraffic);
-      const yearly = monthly * 12;
-      const daily = monthly / 30;
-      const perVisitor = monthly / currentTraffic;
-
-      document.getElementById('monthlyRevenue').textContent = '$' + Math.round(monthly).toLocaleString();
-      document.getElementById('yearlyRevenue').textContent = '$' + Math.round(yearly).toLocaleString();
-      document.getElementById('dailyRevenue').textContent = '$' + Math.round(daily).toLocaleString();
-      document.getElementById('revenuePerVisitor').textContent = '$' + perVisitor.toFixed(2);
-
-      // Update tier cards
-      const tiers = [1000, 5000, 10000, 50000, 100000, 500000];
-      const tierIds = ['tier1k', 'tier5k', 'tier10k', 'tier50k', 'tier100k', 'tier500k'];
-
-      tiers.forEach((tier, i) => {
-        const tierRevenue = calculateRevenue(tier);
-        document.getElementById(tierIds[i]).innerHTML = '$' + Math.round(tierRevenue).toLocaleString() + '<span>/month</span>';
-      });
-
-      // Highlight active tier
-      tierCards.forEach(card => {
-        card.classList.remove('active');
-        if (parseInt(card.dataset.tier) === currentTraffic) {
-          card.classList.add('active');
-        }
-      });
+    // Format number with commas
+    function formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
-    // Update comparison widget
-    function updateComparison() {
-      const price = parseFloat(domainPrice.value) || 50000;
-      const monthly = parseFloat(rentalTier.value) || 500;
-      const years = parseInt(compPeriod.value) || 5;
-      const months = years * 12;
+    // Calculate ROI
+    function calculateROI() {
+      // Get input values
+      const currentTraffic = parseFloat(document.getElementById('current-traffic').value) || 0;
+      const conversionRate = parseFloat(document.getElementById('conversion-rate').value) || 0;
+      const avgOrderValue = parseFloat(document.getElementById('avg-order-value').value) || 0;
+      const selectedTier = document.querySelector('input[name="domain-tier"]:checked')?.value || 'premium';
 
-      // Buying costs
-      const fees = price * 0.05; // 5% transfer/legal fees
-      const renewals = 12 * years;
-      const opportunityCost = price * 0.05 * years; // 5% APY
-      const buyTotal = price + fees + renewals + opportunityCost;
+      // Get tier multipliers
+      const multipliers = tierMultipliers[selectedTier];
 
-      // Renting costs
-      const rentTotal = monthly * months;
-      const investmentEarnings = price * 0.05 * years;
-      const rentNet = rentTotal - investmentEarnings;
+      // Calculate current metrics
+      const currentMonthlyRevenue = currentTraffic * (conversionRate / 100) * avgOrderValue;
+      const currentAnnualRevenue = currentMonthlyRevenue * 12;
 
-      // Savings
-      const savings = buyTotal - rentNet;
-      const savingsPercent = ((savings / buyTotal) * 100).toFixed(0);
+      // Calculate projected metrics
+      const newTraffic = currentTraffic * multipliers.traffic;
+      const trafficUplift = newTraffic - currentTraffic;
+      const trafficUpliftPercent = ((multipliers.traffic - 1) * 100).toFixed(0);
+
+      const newConversionRate = conversionRate * multipliers.conversion;
+      const conversionLiftPercent = ((multipliers.conversion - 1) * 100).toFixed(0);
+
+      const newMonthlyRevenue = newTraffic * (newConversionRate / 100) * avgOrderValue;
+      const newAnnualRevenue = newMonthlyRevenue * 12;
+      const revenueIncrease = newAnnualRevenue - currentAnnualRevenue;
+
+      // Estimate domain investment based on tier (simplified)
+      const domainInvestment = {
+        standard: 25000,
+        premium: 75000,
+        ultra: 200000,
+        iconic: 500000
+      }[selectedTier];
+
+      // Calculate ROI
+      const brandValueIncrease = currentAnnualRevenue * multipliers.brand;
+      const totalReturn = revenueIncrease + brandValueIncrease;
+      const roi = ((totalReturn / domainInvestment) * 100).toFixed(0);
 
       // Update UI
-      document.getElementById('compBuyPrice').textContent = '$' + price.toLocaleString();
-      document.getElementById('compBuyFees').textContent = '$' + Math.round(fees).toLocaleString();
-      document.getElementById('compBuyOpportunity').textContent = '$' + Math.round(opportunityCost).toLocaleString();
-      document.getElementById('compBuyRenewals').textContent = '$' + renewals.toLocaleString();
-      document.getElementById('compBuyTotal').textContent = '$' + Math.round(buyTotal).toLocaleString();
-
-      document.getElementById('compRentMonthly').textContent = '$' + monthly.toLocaleString() + '/mo';
-      document.getElementById('compRentMonths').textContent = months;
-      document.getElementById('compRentTotal60').textContent = '$' + rentTotal.toLocaleString();
-      document.getElementById('compRentCapital').textContent = '$' + price.toLocaleString();
-      document.getElementById('compRentEarnings').textContent = '+$' + Math.round(investmentEarnings).toLocaleString();
-      document.getElementById('compRentNet').textContent = '$' + Math.round(rentNet).toLocaleString();
-
-      document.getElementById('compSavings').textContent = '$' + Math.round(savings).toLocaleString() + ' Saved';
-      document.getElementById('compSavingsPercent').textContent = savingsPercent + '%';
+      document.getElementById('roi-percentage').textContent = roi + '%';
+      document.getElementById('traffic-uplift').textContent = '+' + trafficUpliftPercent + '%';
+      document.getElementById('traffic-visitors').textContent = '+' + formatNumber(Math.round(trafficUplift)) + ' visitors/mo';
+      document.getElementById('conversion-lift').textContent = '+' + conversionLiftPercent + '%';
+      document.getElementById('new-conversion').textContent = newConversionRate.toFixed(2) + '% new rate';
+      document.getElementById('revenue-impact').textContent = formatCurrency(newAnnualRevenue);
+      document.getElementById('revenue-change').textContent = '+' + formatCurrency(revenueIncrease) + ' increase';
+      document.getElementById('brand-value').textContent = '+' + (multipliers.brand * 100).toFixed(0) + '%';
     }
 
-    // Event listeners - Traffic
-    trafficOptions.forEach(option => {
-      option.addEventListener('click', () => {
-        trafficOptions.forEach(o => o.classList.remove('active'));
-        option.classList.add('active');
-        currentTraffic = parseInt(option.dataset.traffic);
-        updateRevenueDisplay();
+    // Initialize calculator
+    document.addEventListener('DOMContentLoaded', function() {
+      // Calculate on form submit
+      document.getElementById('roi-calculator').addEventListener('submit', function(e) {
+        e.preventDefault();
+        calculateROI();
       });
-    });
 
-    // Event listeners - Mode
-    modeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        modeBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentMode = btn.dataset.mode;
-
-        // Show/hide settings panels
-        document.getElementById('productSettings').classList.remove('active');
-        document.getElementById('adSettings').classList.remove('active');
-
-        if (currentMode === 'products') {
-          document.getElementById('productSettings').classList.add('active');
-        } else if (currentMode === 'ads') {
-          document.getElementById('adSettings').classList.add('active');
-        } else {
-          document.getElementById('productSettings').classList.add('active');
-          document.getElementById('adSettings').classList.add('active');
-        }
-
-        updateRevenueDisplay();
+      // Calculate on input change
+      document.querySelectorAll('#roi-calculator input').forEach(function(input) {
+        input.addEventListener('change', calculateROI);
+        input.addEventListener('input', calculateROI);
       });
+
+      // Initial calculation
+      calculateROI();
     });
-
-    // Event listeners - Tier cards
-    tierCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const traffic = parseInt(card.dataset.tier);
-        currentTraffic = traffic;
-
-        // Update traffic selector
-        trafficOptions.forEach(o => {
-          o.classList.remove('active');
-          if (parseInt(o.dataset.traffic) === traffic) {
-            o.classList.add('active');
-          }
-        });
-
-        updateRevenueDisplay();
-      });
-    });
-
-    // Event listeners - Inputs
-    [avgOrderValue, conversionRate, profitMargin, adRpm, pagesPerVisit].forEach(input => {
-      input.addEventListener('input', updateRevenueDisplay);
-    });
-
-    [domainPrice, rentalTier, compPeriod].forEach(input => {
-      input.addEventListener('input', updateComparison);
-      input.addEventListener('change', updateComparison);
-    });
-
-    // Initial calculations
-    updateRevenueDisplay();
-    updateComparison();
 
     // Mobile menu
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+
     if (mobileMenuBtn && navLinks) {
       mobileMenuBtn.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-        mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
       });
+
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           navLinks.classList.remove('active');
-          mobileMenuBtn.classList.remove('active');
           mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
       });

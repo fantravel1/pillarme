@@ -1,1059 +1,1145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Website Builder Demo | PILLAR</title>
-    <meta name="description" content="Experience our AI website builder. Chat with our AI and watch it create your website in real-time.">
-    <link rel="canonical" href="https://pillarme.com/builder-demo">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --purple: #8B00FF;
-            --purple-dark: #6B00CC;
-            --purple-light: #A855F7;
-            --purple-glow: rgba(139,0,255,.15);
-            --green: #10B981;
-            --gold: #F59E0B;
-            --nav-h: 64px;
-            --black: #000;
-            --white: #fff;
-            --gray: #666;
-            --gray-light: #999;
-            --border: #E5E5E5;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0f;
-            min-height: 100vh;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--nav-h);
-            background: rgba(10,10,15,.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--purple);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: rgba(255,255,255,.7);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color .3s;
-        }
-
-        .nav-links a:hover { color: #fff; }
-
-        .nav-cta {
-            background: var(--purple) !important;
-            color: #fff !important;
-            padding: .5rem 1rem !important;
-            border-radius: 6px;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--purple);
-            cursor: pointer;
-        }
-
-        /* Main Layout */
-        .builder-container {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            min-height: 100vh;
-            padding-top: var(--nav-h);
-        }
-
-        /* Chat Panel */
-        .chat-panel {
-            background: #111118;
-            border-right: 1px solid rgba(255,255,255,.1);
-            display: flex;
-            flex-direction: column;
-            height: calc(100vh - var(--nav-h));
-            position: sticky;
-            top: var(--nav-h);
-        }
-
-        .chat-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,.1);
-        }
-
-        .chat-header h2 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        .ai-badge {
-            background: var(--purple);
-            padding: .25rem .5rem;
-            border-radius: 4px;
-            font-size: .7rem;
-            font-weight: 600;
-        }
-
-        .chat-header p {
-            font-size: .875rem;
-            color: rgba(255,255,255,.5);
-            margin-top: .5rem;
-        }
-
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .message {
-            max-width: 90%;
-            padding: 1rem;
-            border-radius: 12px;
-            font-size: .9rem;
-            line-height: 1.5;
-            animation: fadeIn .3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .message-ai {
-            background: rgba(139,0,255,.15);
-            border: 1px solid rgba(139,0,255,.3);
-            align-self: flex-start;
-        }
-
-        .message-user {
-            background: rgba(255,255,255,.1);
-            align-self: flex-end;
-        }
-
-        .message-typing {
-            display: flex;
-            gap: .3rem;
-            padding: 1rem 1.5rem;
-        }
-
-        .typing-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--purple);
-            border-radius: 50%;
-            animation: typing 1.4s infinite;
-        }
-
-        .typing-dot:nth-child(2) { animation-delay: .2s; }
-        .typing-dot:nth-child(3) { animation-delay: .4s; }
-
-        @keyframes typing {
-            0%, 60%, 100% { transform: translateY(0); opacity: .5; }
-            30% { transform: translateY(-5px); opacity: 1; }
-        }
-
-        .chat-input-container {
-            padding: 1rem;
-            border-top: 1px solid rgba(255,255,255,.1);
-            background: rgba(0,0,0,.3);
-        }
-
-        .chat-input-wrapper {
-            display: flex;
-            gap: .5rem;
-        }
-
-        .chat-input {
-            flex: 1;
-            padding: 1rem;
-            background: rgba(255,255,255,.05);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 8px;
-            color: #fff;
-            font-size: .9rem;
-            font-family: inherit;
-            resize: none;
-            outline: none;
-            transition: border-color .3s;
-        }
-
-        .chat-input:focus {
-            border-color: var(--purple);
-        }
-
-        .chat-input::placeholder {
-            color: rgba(255,255,255,.3);
-        }
-
-        .send-btn {
-            padding: 1rem 1.5rem;
-            background: var(--purple);
-            border: none;
-            border-radius: 8px;
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all .3s;
-        }
-
-        .send-btn:hover {
-            background: var(--purple-dark);
-        }
-
-        .send-btn:disabled {
-            opacity: .5;
-            cursor: not-allowed;
-        }
-
-        /* Quick Actions */
-        .quick-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: .5rem;
-            margin-top: .75rem;
-        }
-
-        .quick-action {
-            padding: .5rem .75rem;
-            background: rgba(255,255,255,.05);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 20px;
-            color: rgba(255,255,255,.7);
-            font-size: .75rem;
-            cursor: pointer;
-            transition: all .3s;
-        }
-
-        .quick-action:hover {
-            background: var(--purple);
-            border-color: var(--purple);
-            color: #fff;
-        }
-
-        /* Preview Panel */
-        .preview-panel {
-            background: #1a1a24;
-            padding: 2rem;
-            overflow-y: auto;
-        }
-
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .preview-header h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: rgba(255,255,255,.7);
-        }
-
-        .preview-controls {
-            display: flex;
-            gap: .5rem;
-        }
-
-        .preview-control {
-            padding: .5rem 1rem;
-            background: rgba(255,255,255,.05);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 6px;
-            color: rgba(255,255,255,.7);
-            font-size: .75rem;
-            cursor: pointer;
-            transition: all .3s;
-        }
-
-        .preview-control:hover, .preview-control.active {
-            background: var(--purple);
-            border-color: var(--purple);
-            color: #fff;
-        }
-
-        /* Website Preview Frame */
-        .preview-frame {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,.5);
-            transition: all .5s;
-        }
-
-        .preview-frame.mobile {
-            max-width: 375px;
-            margin: 0 auto;
-        }
-
-        .preview-frame.tablet {
-            max-width: 768px;
-            margin: 0 auto;
-        }
-
-        /* Browser Chrome */
-        .browser-chrome {
-            background: #e8e8e8;
-            padding: .75rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .browser-dots {
-            display: flex;
-            gap: .5rem;
-        }
-
-        .browser-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .browser-dot.red { background: #ff5f57; }
-        .browser-dot.yellow { background: #ffbd2e; }
-        .browser-dot.green { background: #28c940; }
-
-        .browser-url {
-            flex: 1;
-            background: #fff;
-            padding: .5rem 1rem;
-            border-radius: 6px;
-            font-size: .75rem;
-            color: #666;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        .browser-url .lock {
-            color: var(--green);
-        }
-
-        /* Demo Website Content */
-        .demo-website {
-            min-height: 600px;
-            color: #000;
-        }
-
-        /* Demo Site Nav */
-        .demo-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-        }
-
-        .demo-logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--purple);
-        }
-
-        .demo-nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .demo-nav-links span {
-            font-size: .875rem;
-            color: #666;
-        }
-
-        .demo-nav-cta {
-            background: var(--purple);
-            color: #fff;
-            padding: .5rem 1rem;
-            border-radius: 6px;
-            font-size: .875rem;
-            font-weight: 600;
-        }
-
-        /* Demo Hero */
-        .demo-hero {
-            padding: 4rem 2rem;
-            text-align: center;
-            background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all .8s ease;
-        }
-
-        .demo-hero.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .demo-hero h1 {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 900;
-            color: #000;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .demo-hero p {
-            font-size: 1rem;
-            color: #666;
-            max-width: 500px;
-            margin: 0 auto 2rem;
-        }
-
-        .demo-hero-btn {
-            display: inline-block;
-            background: var(--purple);
-            color: #fff;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* Demo Features */
-        .demo-features {
-            padding: 3rem 2rem;
-            background: #fff;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all .8s ease .2s;
-        }
-
-        .demo-features.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .demo-features h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #000;
-        }
-
-        .demo-features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .demo-feature {
-            text-align: center;
-            padding: 1.5rem;
-            background: #fafafa;
-            border-radius: 12px;
-        }
-
-        .demo-feature-icon {
-            font-size: 2rem;
-            margin-bottom: .75rem;
-        }
-
-        .demo-feature h3 {
-            font-size: .9rem;
-            font-weight: 700;
-            margin-bottom: .5rem;
-            color: #000;
-        }
-
-        .demo-feature p {
-            font-size: .75rem;
-            color: #666;
-        }
-
-        /* Demo Testimonial */
-        .demo-testimonial {
-            padding: 3rem 2rem;
-            background: linear-gradient(135deg, var(--purple) 0%, #6B00CC 100%);
-            color: #fff;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all .8s ease .4s;
-        }
-
-        .demo-testimonial.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .demo-testimonial blockquote {
-            font-size: 1.125rem;
-            font-style: italic;
-            max-width: 500px;
-            margin: 0 auto 1rem;
-            line-height: 1.6;
-        }
-
-        .demo-testimonial cite {
-            font-size: .875rem;
-            opacity: .8;
-        }
-
-        /* Demo CTA */
-        .demo-cta {
-            padding: 3rem 2rem;
-            background: #000;
-            color: #fff;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all .8s ease .6s;
-        }
-
-        .demo-cta.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .demo-cta h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .demo-cta p {
-            color: rgba(255,255,255,.7);
-            margin-bottom: 1.5rem;
-        }
-
-        .demo-cta-btn {
-            display: inline-block;
-            background: var(--purple);
-            color: #fff;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* Building Animation */
-        .building-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,.9);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: opacity .5s;
-        }
-
-        .building-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .building-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(139,0,255,.2);
-            border-top-color: var(--purple);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 1.5rem;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .building-text {
-            font-size: 1rem;
-            color: #fff;
-            text-align: center;
-        }
-
-        .building-progress {
-            width: 200px;
-            height: 4px;
-            background: rgba(255,255,255,.1);
-            border-radius: 2px;
-            margin-top: 1rem;
-            overflow: hidden;
-        }
-
-        .building-progress-fill {
-            height: 100%;
-            background: var(--purple);
-            width: 0%;
-            transition: width .3s;
-        }
-
-        /* Final CTA */
-        .final-cta {
-            padding: 3rem 2rem;
-            background: linear-gradient(135deg, #111118 0%, #1a1a24 100%);
-            text-align: center;
-            margin-top: 2rem;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,.1);
-        }
-
-        .final-cta h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .final-cta p {
-            color: rgba(255,255,255,.6);
-            margin-bottom: 1.5rem;
-        }
-
-        .final-cta .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--purple);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all .3s;
-        }
-
-        .final-cta .btn:hover {
-            background: var(--purple-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .builder-container {
-                grid-template-columns: 1fr;
-            }
-            .chat-panel {
-                position: relative;
-                height: auto;
-                max-height: 50vh;
-            }
-            .preview-panel {
-                min-height: 60vh;
-            }
-            .demo-features-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform Demonstration | PILLAR Technology Division</title>
+  <meta name="description" content="Experience PILLAR's enterprise technology platform. Explore our AI-powered content generation, SEO optimization, advanced analytics, and seamless integrations capabilities.">
+  <meta name="keywords" content="PILLAR platform demo, enterprise technology, AI content generation, SEO optimization, digital transformation, technology platform">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/builder-demo">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PILLAR">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Platform Demonstration | PILLAR Technology Division">
+  <meta property="og:description" content="Experience PILLAR's enterprise technology platform capabilities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/builder-demo">
+  <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="PILLAR Corporation">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Platform Demonstration | PILLAR Technology Division">
+  <meta name="twitter:description" content="Experience PILLAR's enterprise technology platform capabilities.">
+  <meta name="twitter:image" content="https://pillarme.com/images/og-image.jpg">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0A1628">
+
+  <style>
+    /* ===== Corporate Design Tokens ===== */
+    :root {
+      --corporate-navy: #0A1628;
+      --corporate-navy-light: #162544;
+      --corporate-charcoal: #2D3748;
+      --corporate-slate: #4A5568;
+      --corporate-steel: #718096;
+      --corporate-gold: #B8860B;
+      --corporate-gold-light: #D4A853;
+      --corporate-blue: #2563EB;
+      --corporate-teal: #0D9488;
+      --white: #FFFFFF;
+      --off-white: #FAFBFC;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --success: #059669;
+      --nav-height: 72px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--corporate-navy); }
+    .nav-links a.active { color: var(--corporate-navy); }
+    .nav-cta {
+      background: var(--corporate-navy) !important;
+      color: var(--white) !important;
+      padding: 0.625rem 1.5rem !important;
+      border-radius: 4px;
+    }
+    .nav-cta:hover { background: var(--corporate-navy-light) !important; }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--corporate-navy);
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      color: var(--white);
+      padding: 8rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .page-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold-light);
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .page-hero .lead {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== Section Styles ===== */
+    .section {
+      padding: 6rem 3rem;
+    }
+    .section-alt {
+      background: var(--off-white);
+    }
+    .section-navy {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .section-navy .section-eyebrow { color: var(--corporate-gold-light); }
+    .section-navy .section-title { color: var(--white); }
+    .section-navy .section-description { color: rgba(255, 255, 255, 0.7); }
+
+    /* ===== Demo Overview Section ===== */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .overview-content h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1.5rem;
+    }
+    .overview-content p {
+      font-size: 1.0625rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .overview-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+    .overview-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .overview-list li:last-child {
+      border-bottom: none;
+    }
+    .overview-list-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--off-white);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--corporate-gold);
+      font-size: 1rem;
+    }
+    .overview-list-text {
+      font-size: 0.9375rem;
+      color: var(--gray-700);
+      line-height: 1.5;
+    }
+    .overview-list-text strong {
+      color: var(--corporate-navy);
+    }
+    .overview-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .overview-stat {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .overview-stat:hover {
+      border-color: var(--corporate-gold);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+    }
+    .overview-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      line-height: 1;
+    }
+    .overview-stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== Interactive Demo Area ===== */
+    .demo-area {
+      background: var(--off-white);
+      padding: 6rem 3rem;
+    }
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .demo-wrapper {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(10, 22, 40, 0.1);
+    }
+    .demo-toolbar {
+      background: var(--corporate-navy);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .demo-toolbar-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .demo-toolbar-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .demo-toolbar-dot:nth-child(1) { background: #FF5F57; }
+    .demo-toolbar-dot:nth-child(2) { background: #FFBD2E; }
+    .demo-toolbar-dot:nth-child(3) { background: #28CA41; }
+    .demo-toolbar-title {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+    }
+    .demo-toolbar-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    .demo-toolbar-btn {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      padding: 0.375rem 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .demo-toolbar-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--white);
+    }
+    .demo-content {
+      position: relative;
+      min-height: 500px;
+      background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .demo-placeholder {
+      text-align: center;
+      padding: 4rem;
+    }
+    .demo-placeholder-icon {
+      width: 120px;
+      height: 120px;
+      background: var(--white);
+      border: 2px dashed var(--gray-300);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 3rem;
+      color: var(--gray-400);
+    }
+    .demo-placeholder-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 0.75rem;
+    }
+    .demo-placeholder-text {
+      font-size: 0.9375rem;
+      color: var(--gray-500);
+      max-width: 400px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .demo-placeholder-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      background: var(--corporate-navy);
+      color: var(--white);
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .demo-placeholder-btn:hover {
+      background: var(--corporate-navy-light);
+    }
+
+    /* ===== Feature Highlights Grid ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .feature-card {
+      padding: 2.5rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--corporate-gold) 0%, var(--corporate-gold-light) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .feature-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 12px 40px rgba(10, 22, 40, 0.1);
+      transform: translateY(-4px);
+    }
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+    }
+    .feature-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.75rem;
+    }
+    .feature-description {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .feature-list {
+      list-style: none;
+    }
+    .feature-list li {
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+      padding: 0.375rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .feature-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 6px;
+      height: 6px;
+      background: var(--success);
+      border-radius: 50%;
+    }
+
+    /* ===== Technical Specifications ===== */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .spec-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .spec-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .spec-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .spec-list {
+      list-style: none;
+    }
+    .spec-list li {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .spec-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      padding: 8rem 3rem;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section .section-eyebrow { color: var(--corporate-gold-light); }
+    .cta-section .section-title {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+    }
+    .cta-section .section-description {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2.5rem;
+      font-size: 1.125rem;
+    }
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .btn-white { background: var(--white); color: var(--corporate-navy); }
+    .btn-white:hover { background: var(--gray-100); }
+    .btn-gold {
+      background: var(--corporate-gold);
+      color: var(--white);
+    }
+    .btn-gold:hover {
+      background: var(--corporate-gold-light);
+    }
+    .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.3); }
+    .btn-outline-white:hover { background: rgba(255, 255, 255, 0.1); }
+    .cta-note {
+      margin-top: 2rem;
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 5rem 3rem 3rem;
+    }
+    .footer-container { max-width: 1400px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-brand { max-width: 280px; }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; }
+    .footer-nav h4 {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav ul { list-style: none; }
+    .footer-nav li { margin-bottom: 0.75rem; }
+    .footer-nav a { font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-legal { display: flex; gap: 2rem; }
+    .footer-legal a { font-size: 0.75rem; color: rgba(255, 255, 255, 0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255, 255, 255, 0.7); }
+    .footer-copyright { font-size: 0.75rem; color: rgba(255, 255, 255, 0.3); }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .specs-grid { grid-template-columns: repeat(2, 1fr); }
+      .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+      .nav-container { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.5rem;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .nav-links.active a { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
+      .nav-cta { margin: 1rem 0 0 0; width: 100%; text-align: center; }
+      .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+      .page-hero { padding: 5rem 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+      .demo-area { padding: 4rem 1.5rem; }
+      .features-grid,
+      .specs-grid { grid-template-columns: 1fr; }
+      .overview-stats { grid-template-columns: 1fr; }
+      .demo-toolbar { flex-wrap: wrap; gap: 1rem; }
+      .demo-toolbar-title { order: -1; width: 100%; text-align: center; }
+      .demo-content { min-height: 350px; }
+      .btn { padding: 0.875rem 1.5rem; width: 100%; justify-content: center; }
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ===== Accessibility ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--corporate-blue); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Platform Demonstration | PILLAR Technology Division",
+    "url": "https://pillarme.com/builder-demo",
+    "description": "Experience PILLAR's enterprise technology platform capabilities including AI content generation, SEO optimization, analytics, and integrations.",
+    "publisher": {
+      "@type": "Corporation",
+      "name": "PILLAR",
+      "url": "https://pillarme.com"
+    }
+  }
+  </script>
 </head>
+
 <body>
-    <nav>
-        <a href="index.html" class="logo">PILLAR</a>
-        <div class="nav-links">
-            <a href="topsites.html">Top Sites</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="onboarding.html">My Progress</a>
-            <a href="get-started.html" class="nav-cta">Get Started</a>
-        </div>
-        <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
-    </nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="builder-container">
-        <!-- Chat Panel -->
-        <div class="chat-panel">
-            <div class="chat-header">
-                <h2>PILLAR AI <span class="ai-badge">DEMO</span></h2>
-                <p>Chat with our AI to customize your website preview</p>
-            </div>
-
-            <div class="chat-messages" id="chatMessages">
-                <div class="message message-ai">
-                    Hello! I'm your PILLAR AI assistant. I'll help you create a website preview. Let's start - what type of business or website would you like to build?
-                </div>
-            </div>
-
-            <div class="chat-input-container">
-                <div class="chat-input-wrapper">
-                    <input type="text" class="chat-input" id="chatInput" placeholder="Describe your website idea..." />
-                    <button class="send-btn" id="sendBtn">Send</button>
-                </div>
-                <div class="quick-actions">
-                    <button class="quick-action" data-action="coaching">Coaching Business</button>
-                    <button class="quick-action" data-action="ecommerce">E-commerce Store</button>
-                    <button class="quick-action" data-action="portfolio">Portfolio Site</button>
-                    <button class="quick-action" data-action="saas">SaaS Product</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Preview Panel -->
-        <div class="preview-panel">
-            <div class="preview-header">
-                <h3>Live Preview</h3>
-                <div class="preview-controls">
-                    <button class="preview-control active" data-view="desktop">Desktop</button>
-                    <button class="preview-control" data-view="tablet">Tablet</button>
-                    <button class="preview-control" data-view="mobile">Mobile</button>
-                </div>
-            </div>
-
-            <div class="preview-frame" id="previewFrame">
-                <div class="browser-chrome">
-                    <div class="browser-dots">
-                        <div class="browser-dot red"></div>
-                        <div class="browser-dot yellow"></div>
-                        <div class="browser-dot green"></div>
-                    </div>
-                    <div class="browser-url">
-                        <span class="lock">🔒</span>
-                        <span id="previewUrl">your-website.com</span>
-                    </div>
-                </div>
-
-                <div class="demo-website" id="demoWebsite">
-                    <!-- Building Overlay -->
-                    <div class="building-overlay hidden" id="buildingOverlay">
-                        <div class="building-spinner"></div>
-                        <div class="building-text" id="buildingText">Generating your website...</div>
-                        <div class="building-progress">
-                            <div class="building-progress-fill" id="buildingProgress"></div>
-                        </div>
-                    </div>
-
-                    <!-- Placeholder State -->
-                    <div style="padding: 4rem 2rem; text-align: center; color: #666;">
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎨</div>
-                        <h2 style="color: #000; margin-bottom: 1rem;">Your Website Preview</h2>
-                        <p>Tell me about your business in the chat and I'll generate a live preview for you.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="final-cta">
-                <h3>Love what you see?</h3>
-                <p>This is just a preview. Get the full experience with a real website built for you.</p>
-                <a href="get-started.html" class="btn">Start Building for Real →</a>
-            </div>
-        </div>
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="logo">PILLAR</a>
+      <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/divisions">Divisions</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/domains">Domains</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/insights">Insights</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
     </div>
+  </nav>
 
-    <script>
-        // Chat functionality
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const sendBtn = document.getElementById('sendBtn');
-        const demoWebsite = document.getElementById('demoWebsite');
-        const buildingOverlay = document.getElementById('buildingOverlay');
-        const buildingText = document.getElementById('buildingText');
-        const buildingProgress = document.getElementById('buildingProgress');
-        const previewUrl = document.getElementById('previewUrl');
-        const previewFrame = document.getElementById('previewFrame');
+  <!-- Page Hero -->
+  <header class="page-hero" role="banner">
+    <div class="page-hero-container">
+      <p class="eyebrow">Technology Division</p>
+      <h1>Platform Demonstration</h1>
+      <p class="lead">Experience the enterprise-grade technology platform powering digital transformation for organizations worldwide. Explore our comprehensive suite of tools designed to accelerate your digital presence and operational efficiency.</p>
+    </div>
+  </header>
 
-        let conversationState = 'initial';
-        let userBusiness = '';
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Demo Overview Section -->
+    <section class="section" aria-label="Platform overview">
+      <div class="section-container">
+        <div class="overview-grid">
+          <div class="overview-content">
+            <h2>Enterprise Technology Platform</h2>
+            <p>The PILLAR Platform represents a paradigm shift in digital infrastructure management. Our proprietary technology stack enables organizations to deploy, manage, and scale their digital presence with unprecedented efficiency and precision.</p>
+            <p>Built on a foundation of artificial intelligence and machine learning, the platform automates complex workflows while maintaining the quality and consistency that enterprise clients demand.</p>
 
-        // Quick actions
-        document.querySelectorAll('.quick-action').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const action = btn.dataset.action;
-                const messages = {
-                    coaching: "I want to build a coaching business website",
-                    ecommerce: "I want to create an e-commerce store",
-                    portfolio: "I need a portfolio website to showcase my work",
-                    saas: "I'm building a SaaS product website"
-                };
-                chatInput.value = messages[action];
-                sendMessage();
-            });
+            <ul class="overview-list">
+              <li>
+                <div class="overview-list-icon">&#9881;</div>
+                <div class="overview-list-text"><strong>Automated Deployment</strong> - Launch complete digital properties in minutes, not months, with our intelligent site builder and content management system.</div>
+              </li>
+              <li>
+                <div class="overview-list-icon">&#128202;</div>
+                <div class="overview-list-text"><strong>Real-Time Analytics</strong> - Monitor performance metrics, user engagement, and business intelligence through our comprehensive dashboard suite.</div>
+              </li>
+              <li>
+                <div class="overview-list-icon">&#128274;</div>
+                <div class="overview-list-text"><strong>Enterprise Security</strong> - Bank-grade encryption, compliance certifications, and multi-factor authentication protect your digital assets.</div>
+              </li>
+              <li>
+                <div class="overview-list-icon">&#127760;</div>
+                <div class="overview-list-text"><strong>Global Infrastructure</strong> - Distributed across 12 regions with 99.99% uptime SLA and automatic failover capabilities.</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="overview-stats">
+            <div class="overview-stat">
+              <div class="overview-stat-number">99.99%</div>
+              <div class="overview-stat-label">Platform Uptime</div>
+            </div>
+            <div class="overview-stat">
+              <div class="overview-stat-number">&lt;200ms</div>
+              <div class="overview-stat-label">Global Latency</div>
+            </div>
+            <div class="overview-stat">
+              <div class="overview-stat-number">7,000+</div>
+              <div class="overview-stat-label">Active Deployments</div>
+            </div>
+            <div class="overview-stat">
+              <div class="overview-stat-number">500M+</div>
+              <div class="overview-stat-label">Monthly Requests</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo Area -->
+    <section class="demo-area" aria-label="Interactive demonstration">
+      <div class="demo-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Live Environment</p>
+          <h2 class="section-title">Interactive Platform Preview</h2>
+          <p class="section-description">Explore the PILLAR Platform interface and experience our technology capabilities firsthand.</p>
+        </div>
+
+        <div class="demo-wrapper">
+          <div class="demo-toolbar">
+            <div class="demo-toolbar-dots">
+              <span class="demo-toolbar-dot"></span>
+              <span class="demo-toolbar-dot"></span>
+              <span class="demo-toolbar-dot"></span>
+            </div>
+            <span class="demo-toolbar-title">PILLAR Platform - Builder Interface</span>
+            <div class="demo-toolbar-actions">
+              <button class="demo-toolbar-btn">Preview</button>
+              <button class="demo-toolbar-btn">Settings</button>
+            </div>
+          </div>
+          <div class="demo-content">
+            <div class="demo-placeholder">
+              <div class="demo-placeholder-icon">&#9881;</div>
+              <h3 class="demo-placeholder-title">Platform Demo Environment</h3>
+              <p class="demo-placeholder-text">Request access to our interactive demonstration environment and experience the full capabilities of the PILLAR Platform with guided assistance from our solutions team.</p>
+              <a href="/contact" class="demo-placeholder-btn">Request Demo Access</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="section" aria-label="Platform features">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Platform Capabilities</p>
+          <h2 class="section-title">Comprehensive Feature Suite</h2>
+          <p class="section-description">Our technology platform delivers end-to-end solutions for digital presence management, from content creation to performance optimization.</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">&#129302;</div>
+            <h3 class="feature-title">AI Content Generation</h3>
+            <p class="feature-description">Leverage advanced natural language processing to generate high-quality, SEO-optimized content at scale.</p>
+            <ul class="feature-list">
+              <li>Multilingual content support</li>
+              <li>Brand voice consistency</li>
+              <li>Automated fact-checking</li>
+              <li>Plagiarism detection</li>
+              <li>Tone and style customization</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">&#128200;</div>
+            <h3 class="feature-title">SEO Optimization</h3>
+            <p class="feature-description">Comprehensive search engine optimization tools that improve visibility and drive organic traffic growth.</p>
+            <ul class="feature-list">
+              <li>Keyword research and analysis</li>
+              <li>Technical SEO auditing</li>
+              <li>Backlink monitoring</li>
+              <li>SERP tracking dashboard</li>
+              <li>Competitor analysis</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">&#128202;</div>
+            <h3 class="feature-title">Advanced Analytics</h3>
+            <p class="feature-description">Real-time business intelligence and performance metrics to inform strategic decision-making.</p>
+            <ul class="feature-list">
+              <li>Custom dashboard builder</li>
+              <li>Predictive analytics</li>
+              <li>User behavior tracking</li>
+              <li>Conversion optimization</li>
+              <li>Automated reporting</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">&#128279;</div>
+            <h3 class="feature-title">Integrations</h3>
+            <p class="feature-description">Seamless connectivity with enterprise systems and third-party applications through our robust API infrastructure.</p>
+            <ul class="feature-list">
+              <li>RESTful API access</li>
+              <li>Webhook automation</li>
+              <li>CRM integrations</li>
+              <li>Marketing platforms</li>
+              <li>Custom connectors</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="section section-navy" aria-label="Technical specifications">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Technical Specifications</p>
+          <h2 class="section-title">Built for Enterprise Performance</h2>
+          <p class="section-description">Our platform architecture is designed to meet the most demanding enterprise requirements for security, scalability, and reliability.</p>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-card">
+            <h3 class="spec-title">
+              <span class="spec-icon">&#128274;</span>
+              Security and Compliance
+            </h3>
+            <ul class="spec-list">
+              <li>SOC 2 Type II certified</li>
+              <li>GDPR compliant</li>
+              <li>256-bit AES encryption</li>
+              <li>SSO / SAML integration</li>
+              <li>Role-based access control</li>
+              <li>Audit logging</li>
+            </ul>
+          </div>
+
+          <div class="spec-card">
+            <h3 class="spec-title">
+              <span class="spec-icon">&#9881;</span>
+              Infrastructure
+            </h3>
+            <ul class="spec-list">
+              <li>Multi-region deployment</li>
+              <li>Auto-scaling architecture</li>
+              <li>CDN integration</li>
+              <li>99.99% uptime SLA</li>
+              <li>Disaster recovery</li>
+              <li>Daily backups</li>
+            </ul>
+          </div>
+
+          <div class="spec-card">
+            <h3 class="spec-title">
+              <span class="spec-icon">&#128202;</span>
+              Performance
+            </h3>
+            <ul class="spec-list">
+              <li>Sub-200ms response time</li>
+              <li>Unlimited bandwidth</li>
+              <li>Edge caching</li>
+              <li>Image optimization</li>
+              <li>Lazy loading</li>
+              <li>HTTP/3 support</li>
+            </ul>
+          </div>
+
+          <div class="spec-card">
+            <h3 class="spec-title">
+              <span class="spec-icon">&#128279;</span>
+              API and Development
+            </h3>
+            <ul class="spec-list">
+              <li>RESTful API</li>
+              <li>GraphQL support</li>
+              <li>Webhooks</li>
+              <li>SDK libraries</li>
+              <li>Sandbox environment</li>
+              <li>API rate limiting</li>
+            </ul>
+          </div>
+
+          <div class="spec-card">
+            <h3 class="spec-title">
+              <span class="spec-icon">&#127760;</span>
+              Global Reach
+            </h3>
+            <ul class="spec-list">
+              <li>12 global regions</li>
+              <li>200+ edge locations</li>
+              <li>Multi-language support</li>
+              <li>Geo-routing</li>
+              <li>Local compliance</li>
+              <li>24/7 global support</li>
+            </ul>
+          </div>
+
+          <div class="spec-card">
+            <h3 class="spec-title">
+              <span class="spec-icon">&#129302;</span>
+              AI and Automation
+            </h3>
+            <ul class="spec-list">
+              <li>GPT-4 integration</li>
+              <li>Custom model training</li>
+              <li>Workflow automation</li>
+              <li>Smart scheduling</li>
+              <li>Predictive analytics</li>
+              <li>Content recommendations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Demo CTA -->
+    <section class="cta-section" aria-label="Request demonstration">
+      <div class="cta-container">
+        <p class="section-eyebrow">Get Started</p>
+        <h2 class="section-title">Request a Full Platform Demonstration</h2>
+        <p class="section-description">Schedule a personalized demonstration with our solutions engineering team. We will walk you through the complete platform capabilities and discuss how PILLAR can address your specific requirements.</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-gold">Request Full Demo</a>
+          <a href="/solutions" class="btn btn-outline-white">View Solutions</a>
+        </div>
+        <p class="cta-note">Enterprise demonstrations typically include a technical deep-dive, integration assessment, and custom pricing consultation.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">PILLAR</div>
+          <p class="footer-tagline">A global digital infrastructure and media corporation building the foundation of tomorrow's digital economy.</p>
+        </div>
+
+        <nav class="footer-nav">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/leadership">Leadership</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Divisions</h4>
+          <ul>
+            <li><a href="/divisions/technology">Technology</a></li>
+            <li><a href="/divisions/media">Media Holdings</a></li>
+            <li><a href="/domains">Premium Domains</a></li>
+            <li><a href="/divisions/ventures">Ventures</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/solutions#foundation">Foundation</a></li>
+            <li><a href="/solutions#growth">Growth</a></li>
+            <li><a href="/solutions#authority">Authority</a></li>
+            <li><a href="/solutions#enterprise">Enterprise</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/cookies">Cookie Policy</a>
+          <a href="/accessibility">Accessibility</a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 PILLAR Corporation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
-
-        // Preview controls
-        document.querySelectorAll('.preview-control').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.preview-control').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const view = btn.dataset.view;
-                previewFrame.classList.remove('mobile', 'tablet');
-                if (view !== 'desktop') {
-                    previewFrame.classList.add(view);
-                }
-            });
-        });
-
-        // Send message
-        sendBtn.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-
-        function sendMessage() {
-            const message = chatInput.value.trim();
-            if (!message) return;
-
-            addMessage(message, 'user');
-            chatInput.value = '';
-            sendBtn.disabled = true;
-
-            // Show typing indicator
-            showTyping();
-
-            setTimeout(() => {
-                hideTyping();
-                processMessage(message);
-                sendBtn.disabled = false;
-            }, 1500);
-        }
-
-        function addMessage(text, type) {
-            const div = document.createElement('div');
-            div.className = `message message-${type}`;
-            div.textContent = text;
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function showTyping() {
-            const typing = document.createElement('div');
-            typing.className = 'message message-ai message-typing';
-            typing.id = 'typingIndicator';
-            typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-            chatMessages.appendChild(typing);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function hideTyping() {
-            const typing = document.getElementById('typingIndicator');
-            if (typing) typing.remove();
-        }
-
-        function processMessage(message) {
-            const lowerMessage = message.toLowerCase();
-
-            if (conversationState === 'initial') {
-                // Determine business type
-                if (lowerMessage.includes('coach') || lowerMessage.includes('consulting')) {
-                    userBusiness = 'coaching';
-                    addMessage("Great choice! A coaching business website needs to build trust and showcase your expertise. What's your coaching niche? (e.g., life coaching, business coaching, fitness)", 'ai');
-                    conversationState = 'niche';
-                } else if (lowerMessage.includes('ecommerce') || lowerMessage.includes('store') || lowerMessage.includes('shop')) {
-                    userBusiness = 'ecommerce';
-                    addMessage("E-commerce is exciting! What kind of products will you be selling? This helps me design the perfect layout.", 'ai');
-                    conversationState = 'niche';
-                } else if (lowerMessage.includes('portfolio') || lowerMessage.includes('showcase')) {
-                    userBusiness = 'portfolio';
-                    addMessage("A portfolio site - perfect for creatives! What's your specialty? (design, photography, writing, development)", 'ai');
-                    conversationState = 'niche';
-                } else if (lowerMessage.includes('saas') || lowerMessage.includes('software') || lowerMessage.includes('app')) {
-                    userBusiness = 'saas';
-                    addMessage("SaaS products need clear value propositions. What problem does your software solve?", 'ai');
-                    conversationState = 'niche';
-                } else {
-                    userBusiness = 'general';
-                    addMessage("Interesting! Let me create a versatile business website for you. What's the main goal of your website? (generate leads, sell products, build authority)", 'ai');
-                    conversationState = 'niche';
-                }
-            } else if (conversationState === 'niche') {
-                addMessage("Perfect! I'm now generating your custom website preview. This will take just a moment...", 'ai');
-                conversationState = 'building';
-                setTimeout(() => buildWebsite(userBusiness, message), 1000);
-            } else if (conversationState === 'complete') {
-                // Handle customization requests
-                if (lowerMessage.includes('color') || lowerMessage.includes('purple') || lowerMessage.includes('blue') || lowerMessage.includes('green')) {
-                    addMessage("I can customize colors for you! In the full version, you'd have complete control over your brand colors. For now, I've kept the professional purple theme. Want to try another customization?", 'ai');
-                } else if (lowerMessage.includes('section') || lowerMessage.includes('add')) {
-                    addMessage("Great thinking! In the full PILLAR experience, you can add unlimited sections - pricing tables, FAQ, team bios, and more. Ready to build the real thing?", 'ai');
-                } else {
-                    addMessage("I love your enthusiasm! This demo shows what's possible. The full PILLAR experience includes AI content writing, SEO optimization, and ongoing support. Click 'Start Building for Real' to get started!", 'ai');
-                }
-            }
-        }
-
-        function buildWebsite(type, niche) {
-            buildingOverlay.classList.remove('hidden');
-
-            const steps = [
-                { text: "Analyzing your requirements...", progress: 20 },
-                { text: "Designing hero section...", progress: 40 },
-                { text: "Creating feature blocks...", progress: 60 },
-                { text: "Adding social proof...", progress: 80 },
-                { text: "Finalizing design...", progress: 100 }
-            ];
-
-            let stepIndex = 0;
-            const interval = setInterval(() => {
-                if (stepIndex < steps.length) {
-                    buildingText.textContent = steps[stepIndex].text;
-                    buildingProgress.style.width = steps[stepIndex].progress + '%';
-                    stepIndex++;
-                } else {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        buildingOverlay.classList.add('hidden');
-                        renderWebsite(type, niche);
-                        addMessage("Your website preview is ready! Scroll through to see all sections. Feel free to ask me to make changes - like 'change the colors' or 'add a pricing section'.", 'ai');
-                        conversationState = 'complete';
-                    }, 500);
-                }
-            }, 800);
-        }
-
-        function renderWebsite(type, niche) {
-            const businessConfigs = {
-                coaching: {
-                    name: "Elite Coaching",
-                    headline: "Transform Your Life With Expert Guidance",
-                    subheadline: "Personal coaching that helps you achieve breakthrough results in business, relationships, and personal growth.",
-                    features: [
-                        { icon: "🎯", title: "1-on-1 Sessions", desc: "Personalized coaching tailored to your goals" },
-                        { icon: "📈", title: "Proven Methods", desc: "Strategies that have helped 500+ clients" },
-                        { icon: "🏆", title: "Results Driven", desc: "Track your progress with measurable outcomes" }
-                    ],
-                    testimonial: "Working with this coach changed my entire perspective. I doubled my income in 6 months!",
-                    cta: "Book Your Free Discovery Call"
-                },
-                ecommerce: {
-                    name: "StyleShop",
-                    headline: "Discover Your Perfect Style",
-                    subheadline: "Curated collections that blend quality, comfort, and contemporary design.",
-                    features: [
-                        { icon: "🚚", title: "Free Shipping", desc: "On all orders over $50" },
-                        { icon: "↩️", title: "Easy Returns", desc: "30-day hassle-free returns" },
-                        { icon: "💎", title: "Premium Quality", desc: "Handpicked for excellence" }
-                    ],
-                    testimonial: "Best online shopping experience ever. The quality exceeded my expectations!",
-                    cta: "Shop New Arrivals"
-                },
-                portfolio: {
-                    name: "Creative Studio",
-                    headline: "Design That Makes an Impact",
-                    subheadline: "Award-winning creative work for brands that dare to stand out.",
-                    features: [
-                        { icon: "🎨", title: "Brand Identity", desc: "Logos, guidelines, visual systems" },
-                        { icon: "🖥️", title: "Web Design", desc: "Beautiful, functional websites" },
-                        { icon: "📱", title: "Digital Products", desc: "Apps and digital experiences" }
-                    ],
-                    testimonial: "They transformed our brand completely. The results speak for themselves.",
-                    cta: "View My Work"
-                },
-                saas: {
-                    name: "FlowApp",
-                    headline: "Streamline Your Workflow",
-                    subheadline: "The all-in-one platform that helps teams collaborate better and ship faster.",
-                    features: [
-                        { icon: "⚡", title: "Lightning Fast", desc: "Built for speed and efficiency" },
-                        { icon: "🔗", title: "Integrations", desc: "Connect with 100+ tools" },
-                        { icon: "🔒", title: "Enterprise Security", desc: "SOC 2 compliant" }
-                    ],
-                    testimonial: "We cut our project delivery time by 40% after switching to this platform.",
-                    cta: "Start Free Trial"
-                },
-                general: {
-                    name: "Your Business",
-                    headline: "We Help You Succeed",
-                    subheadline: "Professional solutions tailored to your unique business needs.",
-                    features: [
-                        { icon: "✨", title: "Expert Team", desc: "Years of industry experience" },
-                        { icon: "🤝", title: "Client Focused", desc: "Your success is our priority" },
-                        { icon: "📊", title: "Data Driven", desc: "Decisions backed by insights" }
-                    ],
-                    testimonial: "An amazing partner to work with. They truly understand our business.",
-                    cta: "Get Started Today"
-                }
-            };
-
-            const config = businessConfigs[type] || businessConfigs.general;
-            const domainName = config.name.toLowerCase().replace(/\s+/g, '') + '.com';
-            previewUrl.textContent = domainName;
-
-            demoWebsite.innerHTML = `
-                <nav class="demo-nav">
-                    <div class="demo-logo">${config.name}</div>
-                    <div class="demo-nav-links">
-                        <span>Services</span>
-                        <span>About</span>
-                        <span>Contact</span>
-                    </div>
-                    <span class="demo-nav-cta">${config.cta.split(' ')[0]}</span>
-                </nav>
-
-                <div class="demo-hero" id="demoHero">
-                    <h1>${config.headline}</h1>
-                    <p>${config.subheadline}</p>
-                    <a href="#" class="demo-hero-btn">${config.cta}</a>
-                </div>
-
-                <div class="demo-features" id="demoFeatures">
-                    <h2>Why Choose Us</h2>
-                    <div class="demo-features-grid">
-                        ${config.features.map(f => `
-                            <div class="demo-feature">
-                                <div class="demo-feature-icon">${f.icon}</div>
-                                <h3>${f.title}</h3>
-                                <p>${f.desc}</p>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div class="demo-testimonial" id="demoTestimonial">
-                    <blockquote>"${config.testimonial}"</blockquote>
-                    <cite>— Happy Customer</cite>
-                </div>
-
-                <div class="demo-cta" id="demoCta">
-                    <h2>Ready to Get Started?</h2>
-                    <p>Join hundreds of satisfied customers who chose us.</p>
-                    <a href="#" class="demo-cta-btn">${config.cta}</a>
-                </div>
-            `;
-
-            // Animate sections in
-            setTimeout(() => document.getElementById('demoHero').classList.add('visible'), 100);
-            setTimeout(() => document.getElementById('demoFeatures').classList.add('visible'), 300);
-            setTimeout(() => document.getElementById('demoTestimonial').classList.add('visible'), 500);
-            setTimeout(() => document.getElementById('demoCta').classList.add('visible'), 700);
-        }
-    </script>
+      });
+    }
+  </script>
 </body>
 </html>
