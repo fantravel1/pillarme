@@ -1,0 +1,843 @@
+/**
+ * PILLAR Corporate Design System
+ * Version: 2.0.0
+ *
+ * Enterprise-grade design system for multinational corporation aesthetic.
+ * Sophisticated, professional, and authoritative styling.
+ */
+
+/* ============================================
+   1. CSS CUSTOM PROPERTIES (Corporate Tokens)
+   ============================================ */
+
+:root {
+  /* === Corporate Brand Colors === */
+  --corporate-navy: #0A1628;
+  --corporate-navy-light: #162544;
+  --corporate-navy-lighter: #1E3A5F;
+  --corporate-charcoal: #2D3748;
+  --corporate-slate: #4A5568;
+  --corporate-steel: #718096;
+
+  /* === Accent Colors === */
+  --corporate-gold: #B8860B;
+  --corporate-gold-light: #D4A853;
+  --corporate-gold-muted: rgba(184, 134, 11, 0.15);
+  --corporate-blue: #2563EB;
+  --corporate-blue-light: #3B82F6;
+  --corporate-teal: #0D9488;
+
+  /* === Neutral Palette === */
+  --white: #FFFFFF;
+  --off-white: #FAFBFC;
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+  --black: #000000;
+
+  /* === Semantic Colors === */
+  --success: #059669;
+  --success-light: rgba(5, 150, 105, 0.1);
+  --warning: #D97706;
+  --warning-light: rgba(217, 119, 6, 0.1);
+  --error: #DC2626;
+  --error-light: rgba(220, 38, 38, 0.1);
+
+  /* === Theme Colors === */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--off-white);
+  --bg-tertiary: var(--gray-100);
+  --bg-corporate: var(--corporate-navy);
+  --bg-corporate-gradient: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-tertiary: var(--gray-500);
+  --text-inverse: var(--white);
+  --text-corporate: var(--corporate-navy);
+
+  --border-color: var(--gray-200);
+  --border-color-strong: var(--gray-300);
+  --border-corporate: rgba(10, 22, 40, 0.1);
+
+  /* === Typography === */
+  --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', 'Consolas', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 1.75;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* === Spacing === */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+
+  /* === Shadows === */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-corporate: 0 4px 20px rgba(10, 22, 40, 0.08);
+  --shadow-corporate-lg: 0 10px 40px rgba(10, 22, 40, 0.12);
+
+  /* === Border Radius === */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;
+  --radius-base: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+
+  /* === Transitions === */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-slower: 500ms ease;
+
+  /* === Z-Index === */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-nav: 1000;
+
+  /* === Layout === */
+  --nav-height: 72px;
+  --container-max: 1400px;
+  --container-narrow: 900px;
+  --container-wide: 1600px;
+}
+
+/* ============================================
+   2. BASE STYLES
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   3. CORPORATE TYPOGRAPHY
+   ============================================ */
+
+.corporate-display {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.corporate-heading-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.corporate-heading-1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.015em;
+}
+
+.corporate-heading-2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+}
+
+.corporate-heading-3 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.corporate-heading-4 {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.corporate-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--corporate-gold);
+}
+
+.corporate-lead {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+}
+
+.corporate-body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-loose);
+  color: var(--text-secondary);
+}
+
+.corporate-caption {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+}
+
+/* ============================================
+   4. CORPORATE NAVIGATION
+   ============================================ */
+
+.corporate-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: var(--z-nav);
+  transition: all var(--transition-slow);
+}
+
+.corporate-nav.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.corporate-nav-container {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-8);
+}
+
+.corporate-logo {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--corporate-navy);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  transition: opacity var(--transition-fast);
+}
+
+.corporate-logo:hover {
+  opacity: 0.8;
+}
+
+.corporate-nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.corporate-nav-link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.corporate-nav-link:hover {
+  color: var(--corporate-navy);
+}
+
+.corporate-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--corporate-navy);
+  transition: width var(--transition-base);
+}
+
+.corporate-nav-link:hover::after {
+  width: 100%;
+}
+
+.corporate-nav-cta {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--white);
+  background: var(--corporate-navy);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-base);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.corporate-nav-cta:hover {
+  background: var(--corporate-navy-light);
+}
+
+/* ============================================
+   5. CORPORATE BUTTONS
+   ============================================ */
+
+.corporate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-height: 48px;
+}
+
+.corporate-btn-primary {
+  background: var(--corporate-navy);
+  color: var(--white);
+  border-color: var(--corporate-navy);
+}
+
+.corporate-btn-primary:hover {
+  background: var(--corporate-navy-light);
+  border-color: var(--corporate-navy-light);
+}
+
+.corporate-btn-secondary {
+  background: transparent;
+  color: var(--corporate-navy);
+  border-color: var(--corporate-navy);
+}
+
+.corporate-btn-secondary:hover {
+  background: var(--corporate-navy);
+  color: var(--white);
+}
+
+.corporate-btn-ghost {
+  background: transparent;
+  color: var(--corporate-navy);
+  border-color: transparent;
+}
+
+.corporate-btn-ghost:hover {
+  background: var(--gray-100);
+}
+
+.corporate-btn-gold {
+  background: var(--corporate-gold);
+  color: var(--white);
+  border-color: var(--corporate-gold);
+}
+
+.corporate-btn-gold:hover {
+  background: var(--corporate-gold-light);
+  border-color: var(--corporate-gold-light);
+}
+
+.corporate-btn-lg {
+  padding: var(--space-5) var(--space-10);
+  font-size: var(--font-size-base);
+  min-height: 56px;
+}
+
+.corporate-btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-xs);
+  min-height: 36px;
+}
+
+/* ============================================
+   6. CORPORATE CARDS
+   ============================================ */
+
+.corporate-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: all var(--transition-slow);
+}
+
+.corporate-card:hover {
+  border-color: var(--border-color-strong);
+  box-shadow: var(--shadow-corporate);
+}
+
+.corporate-card-featured {
+  border-color: var(--corporate-gold);
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.02) 0%, transparent 100%);
+}
+
+.corporate-card-dark {
+  background: var(--corporate-navy);
+  border-color: transparent;
+  color: var(--white);
+}
+
+.corporate-card-title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.corporate-card-description {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================
+   7. CORPORATE SECTIONS
+   ============================================ */
+
+.corporate-section {
+  padding: var(--space-24) var(--space-8);
+}
+
+.corporate-section-sm {
+  padding: var(--space-16) var(--space-8);
+}
+
+.corporate-section-lg {
+  padding: var(--space-32) var(--space-8);
+}
+
+.corporate-section-dark {
+  background: var(--corporate-navy);
+  color: var(--white);
+}
+
+.corporate-section-dark .corporate-eyebrow {
+  color: var(--corporate-gold-light);
+}
+
+.corporate-section-dark .corporate-lead,
+.corporate-section-dark .corporate-body {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.corporate-section-alt {
+  background: var(--off-white);
+}
+
+.corporate-section-gradient {
+  background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
+}
+
+.corporate-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.corporate-container-narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.corporate-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-16);
+}
+
+.corporate-section-header .corporate-eyebrow {
+  margin-bottom: var(--space-4);
+}
+
+.corporate-section-header .corporate-heading-1,
+.corporate-section-header .corporate-heading-2 {
+  margin-bottom: var(--space-6);
+}
+
+/* ============================================
+   8. CORPORATE GRID LAYOUTS
+   ============================================ */
+
+.corporate-grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.corporate-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.corporate-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.corporate-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.corporate-grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ============================================
+   9. CORPORATE STATS
+   ============================================ */
+
+.corporate-stat {
+  text-align: center;
+}
+
+.corporate-stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: var(--font-weight-normal);
+  color: var(--corporate-navy);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.corporate-stat-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.corporate-section-dark .corporate-stat-number {
+  color: var(--white);
+}
+
+.corporate-section-dark .corporate-stat-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   10. CORPORATE FOOTER
+   ============================================ */
+
+.corporate-footer {
+  background: var(--corporate-navy);
+  color: var(--white);
+  padding: var(--space-20) var(--space-8) var(--space-12);
+}
+
+.corporate-footer-top {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: var(--space-12);
+  padding-bottom: var(--space-16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.corporate-footer-brand {
+  max-width: 300px;
+}
+
+.corporate-footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--white);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-4);
+}
+
+.corporate-footer-tagline {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: var(--line-height-relaxed);
+}
+
+.corporate-footer-nav h4 {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: var(--space-6);
+}
+
+.corporate-footer-nav ul {
+  list-style: none;
+}
+
+.corporate-footer-nav li {
+  margin-bottom: var(--space-3);
+}
+
+.corporate-footer-nav a {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.corporate-footer-nav a:hover {
+  color: var(--white);
+}
+
+.corporate-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-8);
+}
+
+.corporate-footer-legal {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.corporate-footer-legal a {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.corporate-footer-legal a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.corporate-footer-copyright {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================
+   11. CORPORATE DIVIDERS
+   ============================================ */
+
+.corporate-divider {
+  border: none;
+  height: 1px;
+  background: var(--border-color);
+  margin: var(--space-16) 0;
+}
+
+.corporate-divider-dark {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   12. RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .corporate-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .corporate-footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .corporate-footer-brand {
+    grid-column: 1 / -1;
+    max-width: none;
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .corporate-section {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .corporate-section-lg {
+    padding: var(--space-20) var(--space-6);
+  }
+
+  .corporate-nav-links {
+    display: none;
+  }
+
+  .corporate-grid-2,
+  .corporate-grid-3,
+  .corporate-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .corporate-footer-bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .corporate-footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   13. UTILITY CLASSES
+   ============================================ */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-0 { margin-top: 0; }
+.mt-4 { margin-top: var(--space-4); }
+.mt-8 { margin-top: var(--space-8); }
+.mt-12 { margin-top: var(--space-12); }
+.mt-16 { margin-top: var(--space-16); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-12 { margin-bottom: var(--space-12); }
+.mb-16 { margin-bottom: var(--space-16); }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* ============================================
+   14. ACCESSIBILITY
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--corporate-navy);
+  color: var(--white);
+  padding: var(--space-3) var(--space-6);
+  text-decoration: none;
+  z-index: 9999;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--corporate-blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   15. PRINT STYLES
+   ============================================ */
+
+@media print {
+  .corporate-nav,
+  .corporate-footer {
+    display: none;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+}

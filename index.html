@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Turn Your Expertise Into a Thriving Online Business | PILLAR</title>
-  <meta name="description" content="Launch your professional website in 14 days. Premium web development, AI-powered content, and 850+ premium domain rentals. Trusted by creators worldwide.">
-  <meta name="keywords" content="Pillar Media, PILLAR Media Entertainment, domain rent, how much do domains cost, how much is a domain, premium domains, domain rental, web development, AI content creation, digital transformation">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <title>PILLAR | Global Digital Infrastructure & Media Corporation</title>
+  <meta name="description" content="PILLAR is a global digital infrastructure and media corporation. We develop enterprise technology platforms, manage premium digital assets, and operate media properties across 40+ countries.">
+  <meta name="keywords" content="PILLAR Corporation, digital infrastructure, enterprise technology, media holdings, premium domains, global corporation, digital transformation">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://pillarme.com/">
@@ -14,1902 +14,1364 @@
   <!-- PWA / Mobile App -->
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="PILLAR">
 
-  <!-- Preload critical resources -->
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="/images/hero.webp" type="image/webp">
-
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://js.stripe.com">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Critical CSS -->
   <style>
-    /* ===== Root + layout guards (fixes "footer in header" look) ===== */
-    :root{
-      --white:#FFFFFF;--off-white:#FAFAFA;--black:#000;--black-soft:#1a1a1a;
-      --purple:#8B00FF;--purple-dark:#6B00CC;--purple-darker:#5500AA;
-      --purple-glow:rgba(139,0,255,.15);--purple-glow-strong:rgba(139,0,255,.25);
-      --gray:#666;--gray-light:#999;--border-light:#E5E5E5;--green-success:#10B981;
-      --nav-h:64px;      /* << fixed nav height for offsets */
-      --content-max:1200px;
-      /* Theme-aware nav/footer variables (light theme) */
-      --nav-bg:rgba(255,255,255,.95);
-      --nav-border:var(--border-light);
-      --link-color:var(--black);
-      --link-hover:var(--purple);
-      --footer-bg:#000;
-      --footer-border:rgba(255,255,255,.1);
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-      background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
-      padding-top:var(--nav-h); /* << prevent hero from hiding under fixed nav */
-    }
-    /* Ensure anchor targets are visible below fixed nav */
-    section, header.hero, main, [id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
-
-    /* ===== Navigation (Unified Style) ===== */
-    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--nav-bg);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;border-bottom:1px solid var(--nav-border)}
-    .logo{font-size:1.5rem;font-weight:700;color:var(--purple);text-decoration:none;transition:transform .2s}
-    .logo:hover{transform:scale(1.05)}
-    .nav-links{display:flex;gap:2rem;align-items:center}
-    .nav-links a{color:var(--link-color);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .3s;position:relative;padding:.5rem}
-    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--purple);transition:width .3s}
-    .nav-links a:hover,.nav-links a.active{color:var(--link-hover)}
-    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:.5rem 1rem!important;border-radius:6px;font-weight:600}
-    .nav-cta::after{display:none!important}
-    .nav-cta:hover{background:var(--purple-dark)!important}
-    .mobile-menu-btn{display:none;background:none;border:none;color:var(--purple);font-size:1.5rem;cursor:pointer;min-width:48px;min-height:48px;align-items:center;justify-content:center}
-
-    /* ===== Hero (header) ===== */
-    header.hero{
-      min-height:calc(100vh - var(--nav-h)); /* << don’t swallow the footer visually */
-      display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;
-      background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative
-    }
-    header.hero::before{
-      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;
-      background:radial-gradient(circle,var(--purple-glow) 0%,transparent 60%);pointer-events:none;opacity:.3
-    }
-    header.hero > div{position:relative;z-index:1}
-    h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;letter-spacing:-2px;margin-bottom:1.5rem;background:linear-gradient(135deg,#000 0%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2}
-    .hero p{font-size:1.375rem;color:#666;max-width:650px;margin:0 auto 3rem}
-    .trust-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;color:var(--green-success);margin-bottom:2rem;padding:.5rem 1rem;background:rgba(16,185,129,.1);border-radius:50px}
-    .trust-badge::before{content:'✔';display:inline-block;width:20px;height:20px;background:var(--green-success);color:#fff;border-radius:50%;text-align:center;line-height:20px;font-weight:bold}
-
-    /* ===== Buttons ===== */
-    .btn{display:inline-block;padding:1.25rem 3rem;background:var(--purple);color:#fff;text-decoration:none;border-radius:10px;font-weight:700;font-size:1.125rem;transition:all .3s;border:none;cursor:pointer;min-height:48px;position:relative;overflow:hidden;box-shadow:0 4px 15px var(--purple-glow)}
-    .btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}
-    .btn:hover{background:var(--purple-darker);transform:translateY(-3px);box-shadow:0 8px 30px var(--purple-glow-strong)}
-    .btn:hover::before{left:100%}
-    .btn-secondary{background:transparent;border:3px solid var(--purple);color:var(--purple);box-shadow:none}
-    .btn-secondary:hover{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 8px 30px var(--purple-glow-strong)}
-
-    /* ===== Sections / shared ===== */
-    h2{font-size:3rem;font-weight:900;text-align:center;margin-bottom:1rem;letter-spacing:-1.5px;color:var(--black)}
-    .section-subtitle{text-align:center;color:var(--gray);font-size:1.25rem;max-width:650px;margin:0 auto 3rem;line-height:1.7}
-
-    /* First Launch Package Section */
-    .first-launch-section{background:linear-gradient(135deg,var(--black) 0%,#1a1a1a 100%);padding:4rem 2rem;position:relative;overflow:hidden}
-    .first-launch-section::before{content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;background:radial-gradient(circle at center,rgba(139,0,255,.15) 0%,transparent 50%);animation:launchGlow 20s ease-in-out infinite}
-    @keyframes launchGlow{0%,100%{transform:translateX(0) scale(1);opacity:0.5}50%{transform:translateX(25%) scale(1.2);opacity:0.8}}
-    .first-launch-container{max-width:var(--content-max);margin:0 auto;position:relative;z-index:1}
-    .first-launch-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .launch-left{text-align:center}
-    .launch-right{background:rgba(255,255,255,.05);padding:2rem;border-radius:16px;border:1px solid rgba(139,0,255,.1)}
-    .first-launch-section h2{font-size:2.5rem;color:#fff;margin-bottom:2rem;text-align:center}
-    .launch-price{color:var(--purple);font-weight:900;text-shadow:0 0 20px var(--purple-glow)}
-    .cost-comparison{display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;margin:2rem 0;padding:2rem;background:rgba(139,0,255,.05);border-radius:16px;border:1px solid rgba(139,0,255,.2)}
-    .comparison-item{text-align:center}
-    .comparison-label{display:block;font-size:0.875rem;color:rgba(255,255,255,.7);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.5px}
-    .comparison-price{display:block;font-size:2.5rem;font-weight:900;margin-bottom:0.25rem}
-    .comparison-price.old{color:#ff4444;text-decoration:line-through;opacity:0.8}
-    .comparison-price.new{color:var(--green-success);text-shadow:0 0 20px rgba(16,185,129,.5)}
-    .comparison-detail{display:block;font-size:0.875rem;color:rgba(255,255,255,.6)}
-    .vs{font-weight:700;color:rgba(255,255,255,.3);font-size:1.25rem}
-    .comparison-item.highlight{transform:scale(1.1)}
-    .launch-features{display:grid;gap:1rem;margin-bottom:2rem}
-    .feature-item{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.9);font-size:1.05rem}
-    .feature-item .check{display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--green-success);color:#fff;border-radius:50%;font-weight:bold;flex-shrink:0}
-    .btn-launch{background:linear-gradient(135deg,var(--purple) 0%,var(--purple-darker) 100%);padding:1.25rem 3rem;font-size:1.25rem;box-shadow:0 10px 30px var(--purple-glow-strong);width:100%}
-    .btn-launch:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 40px var(--purple-glow-strong)}
-    .launch-note{color:rgba(255,255,255,.6);font-size:0.875rem;margin-top:1rem;text-align:center}
-    @media (max-width:768px){.first-launch-content{grid-template-columns:1fr;gap:2rem}.first-launch-section h2{font-size:2rem}.cost-comparison{grid-template-columns:1fr;gap:1.5rem}.vs{text-align:center}.comparison-item.highlight{transform:scale(1);padding:1rem;background:rgba(16,185,129,.1);border-radius:12px}}
-        
-    /* How it Works Video Section */
-    .how-it-works-video{padding:6rem 2rem 3rem;background:#fff}
-    .video-container{max-width:900px;margin:0 auto}
-    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);margin-top:3rem}
-    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px}
-    
-    /* Video placeholder if no iframe yet */
-    .video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:#000;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column}
-    .video-placeholder .play-button{width:80px;height:80px;background:var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;cursor:pointer;transition:all .3s;box-shadow:0 8px 30px var(--purple-glow)}
-    .video-placeholder .play-button:hover{transform:scale(1.1);box-shadow:0 12px 40px var(--purple-glow-strong)}
-    .video-placeholder p{color:#fff;margin-top:1.5rem;font-size:1.125rem}
-
-    /* Transformation */
-    .transformation-visual{max-width:900px;margin:2rem auto 4rem;padding:0 2rem;text-align:center}
-    .no-skills{font-size:1.125rem;color:var(--gray);margin-bottom:3rem;line-height:1.7}
-    .transformation-flow{display:flex;align-items:center;justify-content:center;gap:2rem;margin:3rem 0}
-    .transform-box{background:var(--off-white);border:2px solid var(--border-light);border-radius:16px;padding:2rem;max-width:250px;transition:all .3s}
-    .transform-box:hover{border-color:var(--purple);transform:translateY(-5px);box-shadow:0 10px 30px var(--purple-glow)}
-    .transform-icon{font-size:3rem;margin-bottom:1rem}
-    .transform-box h4{font-size:1.25rem;font-weight:800;margin-bottom:1rem;color:var(--black)}
-    .transform-box ul{list-style:none;padding:0;text-align:left}
-    .transform-box ul li{margin-bottom:.5rem;color:var(--black-soft);font-size:.95rem;padding-left:1rem;position:relative}
-    .transform-box ul li:before{content:'•';position:absolute;left:0;color:var(--purple);font-weight:bold}
-    .transform-arrow{display:flex;flex-direction:column;align-items:center;gap:.5rem}
-    .transform-arrow span{font-size:.875rem;color:var(--purple);font-weight:700}
-    .arrow{font-size:2rem;color:var(--purple);font-weight:bold}
-
-    /* Top Sites Showcase Banner */
-    .top-sites-banner{background:linear-gradient(135deg,var(--black) 0%,#1a1a1a 100%);padding:4rem 0;margin:4rem 0;position:relative;overflow:hidden}
-    .top-sites-banner::before{content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;background:radial-gradient(circle,rgba(139,0,255,.1) 0%,transparent 50%);pointer-events:none}
-    .sites-container{max-width:var(--content-max);margin:0 auto;text-align:center;position:relative;z-index:1;padding:0 2rem}
-    .sites-header h2{font-size:2.5rem;font-weight:900;color:#fff;margin-bottom:.5rem;letter-spacing:-1px}
-    .sites-subtitle{font-size:1.125rem;color:rgba(255,255,255,.7);margin-bottom:3rem}
-    .sites-scroll-wrapper{overflow:hidden;margin-bottom:3rem;padding:10px 0;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}
-    .sites-scroll{display:flex;gap:1.5rem;animation:sitesScroll 30s linear infinite;width:fit-content}
-    @keyframes sitesScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .site-card{background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);border-radius:16px;padding:2rem 1.5rem;text-decoration:none;transition:all .3s;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:200px;flex-shrink:0}
-    .site-card:hover{background:rgba(139,0,255,.1);border-color:var(--purple);transform:translateY(-5px);box-shadow:0 15px 40px rgba(139,0,255,.3)}
-    .site-icon{font-size:2.5rem;margin-bottom:1rem}
-    .site-card h3{font-size:1.125rem;font-weight:700;color:#fff;margin-bottom:.25rem;white-space:nowrap}
-    .site-card p{font-size:.875rem;color:rgba(255,255,255,.6);white-space:nowrap}
-    .btn-view-all{display:inline-block;background:var(--purple);color:#fff;padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s}
-    .btn-view-all:hover{background:var(--purple-darker);transform:translateY(-2px);box-shadow:0 10px 30px var(--purple-glow-strong)}
-    .sites-scroll-wrapper:hover .sites-scroll{animation-play-state:paused}
-    @media (max-width:768px){.sites-header h2{font-size:2rem}.site-card{min-width:160px;padding:1.5rem 1rem}}
-
-    /* Products / Pricing */
-    .products{padding:6rem 2rem;max-width:var(--content-max);margin:0 auto}
-    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem}
-    .product-card{background:var(--off-white);border:1px solid var(--border-light);border-radius:16px;padding:2rem;transition:all .3s;cursor:pointer;position:relative}
-    .product-card:hover{border-color:var(--purple);box-shadow:0 20px 60px var(--purple-glow);transform:translateY(-8px)}
-    .product-card.featured{grid-column:1 / -1;background:linear-gradient(135deg,rgba(139,0,255,.05) 0%,rgba(139,0,255,.02) 100%);text-align:center;padding:4rem 3rem;border:2px solid var(--purple);position:relative;overflow:hidden}
-    .product-card.featured::before{content:'MOST POPULAR';position:absolute;top:35px;right:-45px;background:var(--purple);color:#fff;padding:.25rem 3rem;font-size:.75rem;font-weight:700;letter-spacing:1px;transform:rotate(45deg)}
-    .product-card h3{font-size:1.75rem;font-weight:800;margin-bottom:.75rem;color:var(--black)}
-    .product-card p{color:var(--gray);margin-bottom:1.5rem;font-size:1.05rem}
-    .product-card ul{color:var(--black-soft);list-style:none;padding:0}
-    .product-card ul li{margin-bottom:.75rem;font-size:1rem}
-    .price{font-size:2.5rem;font-weight:900;color:var(--purple);margin:1.5rem 0;position:relative;display:inline-block}
-    .price small{font-size:1.125rem;color:var(--gray);font-weight:500}
-    .price.pulse{animation:pricePulse 2s ease-in-out infinite}
-    .recommended-badge{position:absolute;top:-10px;right:20px;background:var(--green-success);color:#fff;padding:.25rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;box-shadow:0 2px 10px rgba(16, 185, 129, .3)}
-    @keyframes pricePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-
-    /* Premium Domains banner */
-    .premium-domains-banner{background:var(--black);padding:1.5rem 0;margin:4rem 0 0 0;position:relative;overflow:hidden;border-top:1px solid var(--purple);border-bottom:1px solid var(--purple)}
-    .domains-container{max-width:var(--content-max);margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:3rem}
-    .domains-header{flex-shrink:0;display:flex;align-items:center;gap:2rem}
-    .domains-header h2{font-size:1.5rem;margin:0;color:#fff;font-weight:700;text-align:left;letter-spacing:-.5px}
-    .highlight-price{color:var(--purple);font-weight:900}
-    .btn-domains{background:var(--purple);color:#fff;padding:.75rem 2rem;font-size:.875rem;border-radius:50px;text-decoration:none;display:inline-block;transition:all .3s;font-weight:700;white-space:nowrap}
-    .btn-domains:hover{background:var(--purple-darker);transform:scale(1.05)}
-    .domains-scroll-wrapper{flex:1;overflow:hidden;padding:10px 0;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}    
-    .domains-scroll{display:flex;gap:1.5rem;animation:scroll 40s linear infinite;width:fit-content}
-    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .domain-item{background:rgba(255,255,255,.05);border:1px solid rgba(139,0,255,.3);color:#fff;padding:.5rem 1.5rem;border-radius:50px;font-weight:600;font-size:.875rem;white-space:nowrap;transition:all .3s;flex-shrink:0}
-    .domain-item:hover{border-color:var(--purple);background:var(--purple);transform:scale(1.05)}
-    .domains-scroll-wrapper:hover .domains-scroll{animation-play-state:paused}
-
-    /* Alternative pricing (custom domain) */
-    .alt-pricing{padding:10rem 2rem;background:var(--off-white)}
-    .alt-pricing-container{max-width:var(--content-max);margin:0 auto}
-    .alt-grid{margin-top:3rem}
-    .custom-badge{display:inline-block;background:linear-gradient(135deg,#666,#444);color:#fff;padding:.25rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:1px;margin-bottom:1rem}
-    .product-card.featured-alt{grid-column:1 / -1;background:linear-gradient(135deg,rgba(102,102,102,.05) 0%,rgba(102,102,102,.02) 100%);text-align:center;padding:4rem 3rem;border:2px solid var(--gray)}
-    .comparison-note{text-align:center;margin-top:4rem;padding:2rem;background:#fff;border-radius:16px;border:1px solid var(--border-light)}
-    .comparison-note p{font-size:1.125rem;margin-bottom:1rem}
-    .link-back{color:var(--purple);text-decoration:none;font-weight:600;transition:all .3s}
-    .link-back:hover{text-decoration:underline}
-
-    /* Ultra-premium banner */
-    .ultra-premium-banner{background:linear-gradient(135deg,#1a1a1a 0%,#000 100%);padding:2rem 0;margin:0 0 6rem;position:relative;overflow:hidden;border-top:2px solid #FFD700;border-bottom:2px solid #FFD700}
-    .ultra-premium-banner::before{content:'';position:absolute;top:0;left:-100%;width:200%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,215,0,.1),transparent);animation:shimmer 8s infinite}
-    @keyframes shimmer{0%{left:-100%}100%{left:100%}}
-    .highlight-price-gold{color:#FFD700;font-weight:900;text-shadow:0 0 20px rgba(255,215,0,.5)}
-    .btn-domains-gold{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000;padding:.875rem 2.5rem;font-size:.9rem;border-radius:50px;text-decoration:none;display:inline-block;transition:all .3s;font-weight:800;white-space:nowrap;box-shadow:0 4px 15px rgba(255,215,0,.4)}
-    .btn-domains-gold:hover{transform:scale(1.05);box-shadow:0 6px 25px rgba(255,215,0,.6)}
-    .domains-scroll-ultra{display:flex;gap:2rem;animation:scrollUltra 35s linear infinite;width:fit-content}
-    @keyframes scrollUltra{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .domain-item-gold{background:linear-gradient(135deg,rgba(255,215,0,.15) 0%,rgba(255,215,0,.05) 100%);border:1px solid #FFD700;color:#FFD700;padding:.625rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;white-space:nowrap;transition:all .3s;flex-shrink:0;text-shadow:0 0 10px rgba(255,215,0,.3)}
-    .domain-item-gold:hover{background:#FFD700;color:#000;transform:scale(1.1);box-shadow:0 0 20px rgba(255,215,0,.8)}
-    .ultra-premium-note{text-align:center;color:rgba(255,215,0,.8);font-size:.875rem;margin:1rem 0 0;font-style:italic}
-    .domains-scroll-wrapper:hover .domains-scroll-ultra{animation-play-state:paused}
-
-    /* DIY Toolkits */
-    .diy-toolkits{padding:8rem 2rem 6rem;background:linear-gradient(180deg,var(--white) 0%,var(--off-white) 100%);position:relative}
-    .toolkit-container{max-width:var(--content-max);margin:0 auto}
-    .toolkit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin-top:3rem}
-    .toolkit-card{background:#fff;border:2px solid var(--border-light);border-radius:20px;padding:2.5rem;transition:all .3s;position:relative;display:flex;flex-direction:column}
-    .toolkit-card:hover{border-color:var(--purple);transform:translateY(-8px);box-shadow:0 20px 60px var(--purple-glow)}
-    .toolkit-card.featured-toolkit{border-color:var(--purple);background:linear-gradient(135deg,rgba(139,0,255,.03) 0%,rgba(139,0,255,.01) 100%)}
-    .toolkit-badge{position:absolute;top:-10px;right:20px;background:var(--purple);color:#fff;padding:.25rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:1px}
-    .toolkit-icon{font-size:3rem;margin-bottom:1rem;display:block}
-    .toolkit-card h3{font-size:1.75rem;font-weight:800;margin-bottom:.5rem;color:var(--black)}
-    .toolkit-tagline{color:var(--gray);font-size:1rem;margin-bottom:1rem}
-    .toolkit-price{font-size:2.5rem;font-weight:900;color:var(--purple);margin:1rem 0 1.5rem}
-    .toolkit-price small{font-size:1rem;color:var(--gray);font-weight:500}
-    .toolkit-description{flex:1;margin-bottom:2rem}
-    .toolkit-description h4{font-size:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:.5rem}
-    .toolkit-description p{font-size:.95rem;color:var(--black-soft);margin-bottom:1rem;line-height:1.6}
-    .toolkit-description ol{list-style:none;padding:0;margin:0;counter-reset:item}
-    .toolkit-description ol li{counter-increment:item;margin-bottom:.5rem;font-size:.875rem;color:var(--black-soft);padding-left:1.75rem;position:relative;line-height:1.5}
-    .toolkit-description ol li:before{content:counter(item);position:absolute;left:0;top:0;background:var(--purple);color:#fff;width:20px;height:20px;border-radius:50%;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
-    .btn-toolkit{background:var(--purple);color:#fff;padding:1rem 2rem;border-radius:10px;text-decoration:none;font-weight:700;text-align:center;transition:all .3s;display:inline-block}
-    .btn-toolkit:hover{background:var(--purple-darker);transform:translateY(-2px);box-shadow:0 10px 30px var(--purple-glow-strong)}
-    .toolkit-cta{margin-top:4rem;text-align:center;padding:3rem;background:#fff;border-radius:20px;border:2px dashed var(--purple)}
-    .toolkit-cta p{font-size:1.125rem;margin-bottom:2rem;color:var(--black)}
-
-    /* SEO content */
-    .seo-content{padding:6rem 2rem;background:#fff;border-top:1px solid var(--border-light)}
-    .seo-container{max-width:var(--content-max);margin:0 auto}
-    .seo-content h2{font-size:2.5rem;text-align:center;margin-bottom:3rem;color:var(--black)}
-    .seo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-    .seo-block h3{font-size:1.5rem;font-weight:700;color:var(--black);margin-bottom:1rem}
-    .seo-block p{font-size:1rem;line-height:1.8;color:var(--black-soft)}
-    .inline-link{color:var(--purple);text-decoration:none;border-bottom:1px solid var(--purple);transition:all .3s;font-weight:600}
-    .inline-link:hover{border-bottom-width:2px;color:var(--purple-darker)}
-
-    /* Skip link + focus */
-    .skip-link{position:absolute;top:-40px;left:0;background:var(--purple);color:#fff;padding:8px;text-decoration:none;z-index:100}
-    .skip-link:focus{top:0}
-    :focus-visible{outline:3px solid var(--purple);outline-offset:2px}
-
-    /* Footer - Unified Style */
-    footer{background:var(--footer-bg);color:#fff;padding:3rem 2rem;margin-top:4rem;border-top:1px solid var(--footer-border)}
-    .footer-container{max-width:var(--content-max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center}
-    .footer-logo{font-size:1.5rem;font-weight:900;color:var(--purple);letter-spacing:1px}
-    .footer-tagline{color:rgba(255,255,255,.7);font-size:.875rem;margin-top:.25rem}
-    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
-    .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:500;transition:all .3s;font-size:.9rem}
-    .footer-links a:hover{color:var(--purple)}
-    .footer-copy{color:rgba(255,255,255,.4);font-size:.8rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--footer-border)}
-    
-    /* Mobile - Fixed centering */
-    @media (max-width:768px){
-      .footer-container{flex-direction:column;text-align:center}
-      .footer-links{gap:1rem}
+    /* ===== Corporate Design Tokens ===== */
+    :root {
+      --corporate-navy: #0A1628;
+      --corporate-navy-light: #162544;
+      --corporate-charcoal: #2D3748;
+      --corporate-slate: #4A5568;
+      --corporate-steel: #718096;
+      --corporate-gold: #B8860B;
+      --corporate-gold-light: #D4A853;
+      --corporate-blue: #2563EB;
+      --corporate-teal: #0D9488;
+      --white: #FFFFFF;
+      --off-white: #FAFBFC;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --success: #059669;
+      --nav-height: 72px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* Loading */
-    .loading{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem 3rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);color:var(--purple);font-size:1.2rem;z-index:2000}
-
-    /* Mobile Overflow Fix */
-    .hero, .first-launch-section, .top-sites-banner, .ultra-premium-banner{overflow:hidden;position:relative}    
-    
-    /* Mobile Responsive */
-    @media (max-width:768px){
-      /* Hide desktop nav links */
-      .nav-links{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--nav-bg);flex-direction:column;padding:1rem 0;gap:0;z-index:998;border-bottom:1px solid var(--nav-border)}
-      .nav-links.active{display:flex}
-      .nav-links a{padding:1rem 2rem;width:100%;text-align:center;font-size:1rem}
-      .nav-links a::after{display:none}
-      .nav-cta{margin:1rem 2rem;width:calc(100% - 4rem)}
-      /* Mobile menu button */
-      .mobile-menu-btn{display:flex}
-      .mobile-menu-btn.active{transform:rotate(90deg);transition:transform .3s}
-      .product-card.featured{grid-column:1;padding:3rem 2rem}
-      header.hero::before{width:400px;height:400px}
-      .btn{padding:1rem 2rem;font-size:1rem}
-      .domains-container{flex-direction:column;gap:1.5rem;text-align:center}
-      .domains-header{flex-direction:column}
-      .domains-header h2{font-size:1.25rem;text-align:center}
-      .domains-scroll{animation-duration:30s}
-      .product-card.featured-alt{padding:3rem 2rem}
-      .comparison-note{padding:1.5rem}
-      .transformation-flow{flex-direction:column;gap:1.5rem}
-      .transform-arrow{transform:rotate(90deg);margin:1rem 0}
-      .transform-box{max-width:100%;width:100%}
-      .seo-grid{grid-template-columns:1fr}
-      .seo-content h2{font-size:2rem}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
     }
 
-    /* Mobile touch optimizations */
-    button, a, input, textarea, select{touch-action:manipulation;-webkit-tap-highlight-color:rgba(139,0,255,.1)}
-    @supports (-webkit-touch-callout:none){body{-webkit-text-size-adjust:100%}}
-
-    /* Ensure minimum touch targets on mobile */
-    @media (max-width:768px){
-      button, a, input[type="submit"], input[type="button"]{min-height:44px;min-width:44px}
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--corporate-navy); }
+    .nav-cta {
+      background: var(--corporate-navy) !important;
+      color: var(--white) !important;
+      padding: 0.625rem 1.5rem !important;
+      border-radius: 4px;
+    }
+    .nav-cta:hover { background: var(--corporate-navy-light) !important; }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--corporate-navy);
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
     }
 
-    /* Print / a11y prefs */
-    @media print{nav,.btn,.loading{display:none !important} body{color:#000;background:#fff}}
-    @media (prefers-contrast:high){:root{--purple:#6B00CC;--gray:#333}}
-    @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+    /* ===== Hero Section ===== */
+    .hero {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 50%, var(--gray-50) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(10, 22, 40, 0.02) 100%);
+      pointer-events: none;
+    }
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .hero-content { max-width: 600px; }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--corporate-navy);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-description {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--gray-600);
+      margin-bottom: 2.5rem;
+      max-width: 540px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--corporate-navy-light);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--corporate-navy);
+      border-color: var(--corporate-navy);
+    }
+    .btn-secondary:hover {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 3rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
+    }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== Trust Bar ===== */
+    .trust-bar {
+      background: var(--corporate-navy);
+      padding: 2rem 0;
+    }
+    .trust-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .trust-text {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .trust-logos {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .trust-logo {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== Divisions Section ===== */
+    .divisions {
+      padding: 8rem 3rem;
+      background: var(--white);
+    }
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 5rem;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .division-card {
+      padding: 2.5rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .division-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+    }
+    .division-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--off-white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .division-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.75rem;
+    }
+    .division-description {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .division-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--corporate-navy);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.2s;
+    }
+    .division-link:hover { gap: 0.75rem; }
+
+    /* ===== Global Presence ===== */
+    .global-presence {
+      padding: 8rem 3rem;
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .presence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .presence-content .section-eyebrow { color: var(--corporate-gold-light); }
+    .presence-content .section-title { color: var(--white); }
+    .presence-content .section-description { color: rgba(255, 255, 255, 0.7); }
+    .presence-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+    .presence-stat-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+    }
+    .presence-stat-label {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+    .regions-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .region-tag {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== Solutions Section ===== */
+    .solutions {
+      padding: 8rem 3rem;
+      background: var(--off-white);
+    }
+    .solutions-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+    .solution-tab {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .solution-tab:hover,
+    .solution-tab.active {
+      color: var(--white);
+      background: var(--corporate-navy);
+      border-color: var(--corporate-navy);
+    }
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .solution-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .solution-card:hover {
+      border-color: var(--corporate-gold);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+    }
+    .solution-card.featured {
+      border-color: var(--corporate-gold);
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.03) 0%, transparent 100%);
+    }
+    .solution-badge {
+      display: inline-block;
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold);
+      background: rgba(184, 134, 11, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .solution-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .solution-desc {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .solution-price {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--corporate-navy);
+    }
+    .solution-price span {
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+    .solution-features {
+      list-style: none;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+    .solution-features li {
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+      margin-bottom: 0.5rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .solution-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 6px;
+      height: 6px;
+      background: var(--success);
+      border-radius: 50%;
+    }
+
+    /* ===== Portfolio Section ===== */
+    .portfolio {
+      padding: 8rem 3rem;
+      background: var(--white);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .portfolio-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .portfolio-card:hover {
+      border-color: var(--gray-300);
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+      transform: translateY(-4px);
+    }
+    .portfolio-category {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-500);
+      margin-bottom: 0.75rem;
+    }
+    .portfolio-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .portfolio-desc {
+      font-size: 0.8125rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    /* ===== Leadership Section ===== */
+    .leadership {
+      padding: 8rem 3rem;
+      background: var(--off-white);
+    }
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .leader-card {
+      text-align: center;
+    }
+    .leader-avatar {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      border-radius: 8px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 2rem;
+    }
+    .leader-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.25rem;
+    }
+    .leader-title {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== Insights Section ===== */
+    .insights {
+      padding: 8rem 3rem;
+      background: var(--white);
+    }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .insight-card {
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .insight-card:hover {
+      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+    }
+    .insight-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .insight-content {
+      padding: 1.5rem;
+    }
+    .insight-category {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold);
+      margin-bottom: 0.75rem;
+    }
+    .insight-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .insight-excerpt {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      padding: 8rem 3rem;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      text-align: center;
+    }
+    .cta-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-section .section-eyebrow { color: var(--corporate-gold-light); }
+    .cta-section .section-title {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .cta-section .section-description {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2.5rem;
+    }
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--corporate-navy);
+    }
+    .btn-white:hover {
+      background: var(--gray-100);
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 5rem 3rem 3rem;
+    }
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-brand {
+      max-width: 280px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+    }
+    .footer-nav h4 {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav ul {
+      list-style: none;
+    }
+    .footer-nav li {
+      margin-bottom: 0.75rem;
+    }
+    .footer-nav a {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-legal a {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: rgba(255, 255, 255, 0.7); }
+    .footer-copyright {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 1024px) {
+      .divisions-grid,
+      .solutions-grid,
+      .portfolio-grid,
+      .leadership-grid { grid-template-columns: repeat(2, 1fr); }
+      .presence-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+      .nav-container { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.5rem;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .nav-links.active a {
+        padding: 1rem;
+        border-bottom: 1px solid var(--gray-100);
+      }
+      .nav-cta { margin: 1rem 0 0 0; width: 100%; text-align: center; }
+      .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+      .hero { min-height: auto; }
+      .hero-container {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
+      }
+      .hero-stats { order: -1; }
+      .btn { padding: 0.875rem 1.5rem; width: 100%; justify-content: center; }
+      .divisions,
+      .global-presence,
+      .solutions,
+      .portfolio,
+      .leadership,
+      .insights,
+      .cta-section { padding: 5rem 1.5rem; }
+      .divisions-grid,
+      .solutions-grid,
+      .portfolio-grid,
+      .leadership-grid,
+      .insights-grid { grid-template-columns: 1fr; }
+      .section-header { margin-bottom: 3rem; }
+      .trust-container { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .trust-logos { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ===== Accessibility ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 9999;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--corporate-blue); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
   </style>
 
- <!-- Open Graph -->
-  <meta property="og:title" content="Turn Your Expertise Into a Thriving Online Business | PILLAR">
-  <meta property="og:description" content="Launch your professional website in 14 days. Premium web development, AI-powered content, and 850+ premium domain rentals.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="PILLAR | Global Digital Infrastructure & Media Corporation">
+  <meta property="og:description" content="PILLAR is a global digital infrastructure and media corporation operating across 40+ countries.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pillarme.com/">
   <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PILLAR Media - Transform Your Expertise Into Digital Wealth">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:secure_url" content="https://pillarme.com/images/og-image.jpg">
   <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="PILLAR Media & Entertainment">
+  <meta property="og:site_name" content="PILLAR Corporation">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Turn Your Expertise Into a Thriving Online Business | PILLAR">
-  <meta name="twitter:description" content="Launch your professional website in 14 days. Premium web development, AI-powered content, and 850+ premium domain rentals.">
+  <meta name="twitter:title" content="PILLAR | Global Digital Infrastructure & Media Corporation">
+  <meta name="twitter:description" content="A global digital infrastructure and media corporation.">
   <meta name="twitter:image" content="https://pillarme.com/images/og-image.jpg">
-  <meta name="twitter:image:alt" content="Pillar Media - PILLAR Media & Entertainment digital transformation company">
-  <meta name="twitter:site" content="@pillarmedia">
-
-  <!-- Robots/Sitemap -->
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="PILLAR Media & Entertainment">
-  <meta name="keywords" content="web development, digital assets, thought leadership, content monetization, website builder, expert websites">
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-  <!-- Additional Metadata -->
-  <meta name="format-detection" content="telephone=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Theme color -->
-  <meta name="theme-color" content="#8B00FF">
+  <meta name="theme-color" content="#0A1628">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"PILLAR Media & Entertainment",
-    "alternateName":["Pillar Media","PILLAR Media","Pillar Media Entertainment","pillarme","PILLAR"],
-    "url":"https://pillarme.com",
-    "logo":"https://pillarme.com/images/logo.png",
-    "description":"PILLAR helps creators, consultants, and experts launch professional websites. Premium web development, AI-powered content, and 850+ domain rentals. Launch in 14 days with ongoing support.",
-    "slogan":"Where Expertise Meets Excellence",
-    "contactPoint":{"@type":"ContactPoint","contactType":"sales","availableLanguage":"English","email":"hello@pillarme.com"},
-    "sameAs":["https://twitter.com/pillarmedia","https://linkedin.com/company/pillarme","https://www.facebook.com/pillarmedia"],
-    "address":{"@type":"PostalAddress","addressCountry":"US"},
-    "founder":{"@type":"Person","name":"PILLAR Leadership"},
-    "foundingDate":"2024",
-    "knowsAbout":["Web Development","Digital Marketing","Premium Domains","AI Content Creation","SEO","Content Transformation"],
-    "brand":{
-      "@type":"Brand",
-      "name":"Pillar Media",
-      "alternateName":"PILLAR Media & Entertainment",
-      "logo":"https://pillarme.com/images/logo.png",
-      "slogan":"Where Expertise Meets Excellence"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Pillar Media",
-    "alternateName":"PILLAR Media & Entertainment",
-    "url":"https://pillarme.com",
-    "description":"Pillar Media official website - premium web development, AI content transformation, and digital empire building services.",
-    "publisher":{"@type":"Organization","name":"PILLAR Media & Entertainment"},
-    "potentialAction":{"@type":"SearchAction","target":"https://pillarme.com/search?q={search_term_string}","query-input":"required name=search_term_string"}
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"How much does a PILLAR website cost?",
-        "acceptedAnswer":{"@type":"Answer","text":"PILLAR websites start at $100 setup + $25/month for premium domain rental. Our First Launch Package is just $50/month and includes everything you need to get started."}
-      },
-      {
-        "@type":"Question",
-        "name":"How long does it take to launch a website?",
-        "acceptedAnswer":{"@type":"Answer","text":"We guarantee your website launches within 14 days. Many sites go live within 24-48 hours with our First Launch Package."}
-      },
-      {
-        "@type":"Question",
-        "name":"Do I need technical skills to use PILLAR?",
-        "acceptedAnswer":{"@type":"Answer","text":"No technical skills required. We handle all the coding, design, and deployment. You just share your expertise and we transform it into a professional website."}
-      },
-      {
-        "@type":"Question",
-        "name":"What's included in the premium domain rental?",
-        "acceptedAnswer":{"@type":"Answer","text":"Premium domain rental includes access to 7,000+ high-value domains (worth $500-$50,000+), full DNS management, SSL certificate, and professional email setup. Rent premium domains starting at $10/month."}
-      },
-      {
-        "@type":"Question",
-        "name":"Can I use my own domain?",
-        "acceptedAnswer":{"@type":"Answer","text":"Yes! We offer custom domain packages starting at $500 one-time setup. However, our premium domain rental option provides instant authority at a fraction of the cost."}
-      }
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "PILLAR",
+    "alternateName": "PILLAR Corporation",
+    "url": "https://pillarme.com",
+    "logo": "https://pillarme.com/images/logo.png",
+    "description": "PILLAR is a global digital infrastructure and media corporation. We develop enterprise technology platforms, manage premium digital assets, and operate media properties across 40+ countries.",
+    "foundingDate": "2024",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 50,
+      "maxValue": 200
+    },
+    "areaServed": "Worldwide",
+    "knowsAbout": ["Digital Infrastructure", "Media Holdings", "Premium Domains", "Enterprise Technology", "Content Platforms"],
+    "sameAs": [
+      "https://twitter.com/pillarcorp",
+      "https://linkedin.com/company/pillarme"
     ]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "serviceType":"Professional Website Development",
-    "provider":{"@type":"Organization","name":"PILLAR Media & Entertainment"},
-    "areaServed":"Worldwide",
-    "hasOfferCatalog":{
-      "@type":"OfferCatalog",
-      "name":"Web Development Services",
-      "itemListElement":[
-        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Foundation Package"},"price":"125","priceCurrency":"USD"},
-        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Growth Accelerator"},"price":"425","priceCurrency":"USD"},
-        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Authority Builder"},"price":"1000","priceCurrency":"USD"}
-      ]
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://pillarme.com/"}
-    ]
-  }
-  </script>
-
-  <!-- Async non-critical CSS -->
-  <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
-
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Skip to main content -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ===== NAV ===== -->
+  <!-- Navigation -->
   <nav role="navigation" aria-label="Main navigation">
-    <a href="index.html" class="logo" aria-label="PILLAR home">PILLAR</a>
-    <div class="nav-links">
-      <a href="domains.html">Domains</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="builder-demo.html">AI Demo</a>
-      <a href="get-started.html">Get Started</a>
-      <a href="faq.html">FAQ</a>
-      <a href="insights.html">Insights</a>
-      <a href="domains.html" class="nav-cta">Browse Domains</a>
-      <button class="theme-toggle-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark/light mode">
-        <span class="theme-icon-sun">☀️</span>
-        <span class="theme-icon-moon" style="display:none;">🌙</span>
-      </button>
+    <div class="nav-container">
+      <a href="/" class="logo">PILLAR</a>
+      <div class="nav-links">
+        <a href="/about">About</a>
+        <a href="/divisions">Divisions</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/domains">Domains</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/insights">Insights</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
     </div>
-    <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
   </nav>
 
-  <!-- ===== HEADER / HERO ===== -->
-  <header class="hero" role="banner" id="hero">
-    <div>
-      <div class="trust-badge">Trusted by 12,000+ Content Creators & Industry Experts</div>
-      <h1 id="rotating-headline">Your Ideas Deserve a Home That Works as Hard as You Do</h1>
-      <p><strong>PILLAR</strong> transforms your expertise into professional websites that attract clients, build authority, and grow your business. We handle the tech so you can focus on what you do best.</p>
-      <a href="#first-launch" class="btn" aria-label="View First Launch Package">Start Today - $50/month</a>
+  <!-- Hero Section -->
+  <header class="hero" role="banner">
+    <div class="hero-container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Global Digital Infrastructure</p>
+        <h1 class="hero-title">Building the Foundation of Tomorrow's Digital Economy</h1>
+        <p class="hero-description">PILLAR is a multinational corporation developing enterprise technology platforms, managing premium digital assets, and operating media properties that shape how the world connects and communicates.</p>
+        <div class="hero-actions">
+          <a href="/about" class="btn btn-primary">Learn More</a>
+          <a href="/contact" class="btn btn-secondary">Partner With Us</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">$2.4B</div>
+          <div class="stat-label">Assets Under Management</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">40+</div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7,000+</div>
+          <div class="stat-label">Digital Properties</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500M+</div>
+          <div class="stat-label">Annual Reach</div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- First Launch Package Section -->
-  <section class="first-launch-section" id="first-launch" aria-label="First Launch Package special offer">
-    <div class="first-launch-container">
-      <div class="first-launch-content">
-        <div class="launch-left">
-          <h2>First Launch Package: <span class="launch-price">$50/month</span></h2>
-          
-          <div class="cost-comparison">
-            <div class="comparison-item">
-              <span class="comparison-label">Typical Website Cost</span>
-              <span class="comparison-price old">$5,000+</span>
-              <span class="comparison-detail">Upfront payment required</span>
-            </div>
-            <div class="vs">VS</div>
-            <div class="comparison-item highlight">
-              <span class="comparison-label">First Launch Package</span>
-              <span class="comparison-price new">$600/year</span>
-              <span class="comparison-detail">Just $50/month</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="launch-right">
-          <div class="launch-features">
-            <div class="feature-item">
-              <span class="check">✓</span>
-              <span>Complete website in 24 hours</span>
-            </div>
-            <div class="feature-item">
-              <span class="check">✓</span>
-              <span>Premium domain name rental</span>
-            </div>
-            <div class="feature-item">
-              <span class="check">✓</span>
-              <span>Professional design included</span>
-            </div>
-            <div class="feature-item">
-              <span class="check">✓</span>
-              <span>Mobile + SEO ready</span>
-            </div>
-            <div class="feature-item">
-              <span class="check">✓</span>
-              <span>No technical skills needed</span>
-            </div>
-          </div>
-          
-          <div class="launch-cta">
-            <button class="btn btn-launch" id="first-launch-checkout">
-              Start Today →
-            </button>
-            <p class="launch-note">30-day money-back guarantee • No hidden fees</p>
-          </div>
-        </div>
+  <!-- Trust Bar -->
+  <section class="trust-bar" aria-label="Trusted partners">
+    <div class="trust-container">
+      <span class="trust-text">Trusted by leading organizations worldwide</span>
+      <div class="trust-logos">
+        <span class="trust-logo">Fortune 500</span>
+        <span class="trust-logo">Enterprise</span>
+        <span class="trust-logo">Government</span>
+        <span class="trust-logo">Media Groups</span>
+        <span class="trust-logo">Financial Services</span>
       </div>
     </div>
   </section>
 
-  <!-- How it Works Video Section -->
-  <section class="how-it-works-video" id="how-it-works-video" aria-label="How PILLAR works video">
-    <div class="video-container">
-      <h2>How it Works?</h2>
-      <p class="section-subtitle">Transform knowledge into digital assets with just a click</p>
-
-      <div style="padding:56.25% 0 0 0;position:relative;">
-        <iframe 
-          src="https://player.vimeo.com/video/1117429737?h=d65c1667c1&badge=0&autopause=0&player_id=0&app_id=58479" 
-          frameborder="0" 
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-          allowfullscreen 
-          title="How Pillar Works?">
-        </iframe>
-      </div>
-      <script src="https://player.vimeo.com/api/player.js"></script>
-      <!--
-      <div class="video-wrapper">
-         <iframe 
-          src="https://player.vimeo.com/video/1117429737?h=d65c1667c1&badge=0&autopause=0&player_id=0&app_id=58479" 
-          frameborder="0" 
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen 
-          title="How Pillar Works?">
-        </iframe>
-      </div>
-      <script src="https://player.vimeo.com/api/player.js"></script>
-      -->
-    </div>
-  </section>
-
-  <!-- ===== MAIN ===== -->
+  <!-- Main Content -->
   <main id="main-content">
-    <!-- Content Transformation -->
-    <section class="transformation-visual" aria-label="How it works" id="how-it-works">
-      <div class="transformation-flow">
-        <div class="transform-box">
-          <div class="transform-icon">🎥</div>
-          <h4>Your Content</h4>
-          <ul>
-            <li>1 hour video interview</li>
-            <li>Podcast episode</li>
-            <li>Webinar recording</li>
-            <li>Course materials</li>
-            <li>30 min voice note</li>
-          </ul>
-        </div>
-        <div class="transform-arrow">
-          <span>WITHIN 24 HOURS</span>
-          <div class="arrow">→</div>
-        </div>
-        <div class="transform-box">
-          <div class="transform-icon">🌐</div>
-          <h4>Your Website</h4>
-          <ul>
-            <li>Premium Domain</li>
-            <li>10+ SEO pages</li>
-            <li>Mobile optimized</li>
-            <li>Fully deployed</li>
-            <li>& Revenue ready!</li>
-          </ul>
-        </div>
-      </div>
-      <p class="no-skills">✨ No website design, coding, or technical skills required - we take care of all the hard stuff - you just share and guide the process</p>
-    </section>
-
-    <!-- Top Sites Showcase Banner -->
-    <section class="top-sites-banner" aria-label="Featured websites built by PILLAR">
-      <div class="sites-container">
-        <div class="sites-header">
-          <h2>See Our Work in Action</h2>
-          <p class="sites-subtitle">Real websites generating real results for real experts</p>
-        </div>
-        
-        <div class="sites-scroll-wrapper">
-          <div class="sites-scroll">
-            <a href="https://www.viewsgrowth.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">📈</div>
-              <h3>ViewsGrowth</h3>
-              <p>Marketing & Analytics</p>
-            </a>
-            
-            <a href="https://www.fantravel.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">✈️</div>
-              <h3>FanTravel</h3>
-              <p>Sports & Entertainment</p>
-            </a>
-            
-            <a href="https://www.banksize.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">💰</div>
-              <h3>BankSize</h3>
-              <p>Finance & Investment</p>
-            </a>
-
-            <a href="https://www.play4tomorrow.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">🎬</div>
-              <h3>Play4tomorrow</h3>
-              <p>Media & Storytelling</p>
-            </a>
-            
-            <a href="https://www.dayinvestors.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">📊</div>
-              <h3>Day Investors</h3>
-              <p>Trading & Markets</p>
-            </a>
-            
-            <a href="https://www.globalfirstnations.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">🌍</div>
-              <h3>Global First Nations</h3>
-              <p>Culture & Heritage</p>
-            </a>
-            
-            <a href="https://www.freedesignthinking.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">💡</div>
-              <h3>Free Design Thinking</h3>
-              <p>Innovation & Science</p>
-            </a>
-            
-            <a href="https://www.jamesfrancisthorpe.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">👔</div>
-              <h3>James Francis Thorpe</h3>
-              <p>Historical Figures</p>
-            </a>
-            
-            <!-- Duplicate set for continuous scroll -->
-            <a href="https://www.viewsgrowth.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">📈</div>
-              <h3>ViewsGrowth</h3>
-              <p>Marketing & Analytics</p>
-            </a>
-            
-            <a href="https://www.fantravel.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">✈️</div>
-              <h3>FanTravel</h3>
-              <p>Sports & Entertainment</p>
-            </a>
-            
-            <a href="https://www.banksize.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">💰</div>
-              <h3>BankSize</h3>
-              <p>Finance & Investment</p>
-            </a>
-            
-            <a href="https://www.dayinvestors.com" class="site-card" target="_blank" rel="noopener">
-              <div class="site-icon">📊</div>
-              <h3>Day Investors</h3>
-              <p>Trading & Markets</p>
-            </a>
-          </div>
-        </div>
-        
-        <a href="/topsites" class="btn-view-all">View All Success Stories →</a>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" aria-label="Customer testimonials and success stories">
-      <div class="testimonials-container">
-        <h2>Trusted by Industry Leaders</h2>
-        <p class="section-subtitle">Real results from real websites built with PILLAR</p>
-
-        <div class="testimonials-grid">
-          <!-- Testimonial 1 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-logo">✈️</div>
-              <div class="testimonial-site">FanTravel.com</div>
-            </div>
-
-            <div class="testimonial-quote">
-              "Renting FanTravel.com for $500/month instead of buying it for $150K was the best decision. We invested that capital into marketing and hit profitability in month 3."
-            </div>
-
-            <div class="testimonial-metrics">
-              <div class="metric-small">
-                <div class="metric-small-value">+450%</div>
-                <div class="metric-small-label">Traffic</div>
-              </div>
-              <div class="metric-small">
-                <div class="metric-small-value">2,400%</div>
-                <div class="metric-small-label">ROI</div>
-              </div>
-            </div>
-
-            <div class="testimonial-savings">
-              <strong>Saved $149,500</strong> by renting vs. buying
-            </div>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-logo">💰</div>
-              <div class="testimonial-site">BankSize.com</div>
-            </div>
-
-            <div class="testimonial-quote">
-              "We were quoted $15,000 for a custom website. PILLAR delivered better results for $125/month with BankSize.com—and we own the revenue stream."
-            </div>
-
-            <div class="testimonial-metrics">
-              <div class="metric-small">
-                <div class="metric-small-value">+320%</div>
-                <div class="metric-small-label">Traffic</div>
-              </div>
-              <div class="metric-small">
-                <div class="metric-small-value">98%</div>
-                <div class="metric-small-label">Lower Cost</div>
-              </div>
-            </div>
-
-            <div class="testimonial-savings">
-              <strong>Saved $14,875</strong> vs. traditional agency
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-logo">📈</div>
-              <div class="testimonial-site">ViewsGrowth.com</div>
-            </div>
-
-            <div class="testimonial-quote">
-              "Launched in 48 hours. First client in week 2. Now generating $8K/month passive income. ViewsGrowth.com paid for itself in days."
-            </div>
-
-            <div class="testimonial-metrics">
-              <div class="metric-small">
-                <div class="metric-small-value">48hrs</div>
-                <div class="metric-small-label">Launch Time</div>
-              </div>
-              <div class="metric-small">
-                <div class="metric-small-value">23x</div>
-                <div class="metric-small-label">ROI</div>
-              </div>
-            </div>
-
-            <div class="testimonial-savings">
-              <strong>$96K annual revenue</strong> from $350/month investment
-            </div>
-          </div>
+    <!-- Divisions Section -->
+    <section class="divisions" aria-label="Our divisions">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Our Divisions</p>
+          <h2 class="section-title">Six Pillars of Digital Excellence</h2>
+          <p class="section-description">Our integrated business units work in concert to deliver comprehensive digital solutions across technology, media, and infrastructure.</p>
         </div>
 
-        <div class="testimonials-cta">
-          <a href="/domain-roi-calculator" class="btn-testimonial">Calculate Your ROI →</a>
+        <div class="divisions-grid">
+          <article class="division-card">
+            <div class="division-icon">&#9881;</div>
+            <h3 class="division-title">Technology</h3>
+            <p class="division-description">Enterprise software platforms, AI systems, and proprietary technology solutions powering digital transformation at scale.</p>
+            <a href="/divisions/technology" class="division-link">Explore Technology <span>&rarr;</span></a>
+          </article>
+
+          <article class="division-card">
+            <div class="division-icon">&#9729;</div>
+            <h3 class="division-title">Media Holdings</h3>
+            <p class="division-description">A portfolio of digital media properties, content platforms, and publishing assets reaching global audiences.</p>
+            <a href="/divisions/media" class="division-link">Explore Media <span>&rarr;</span></a>
+          </article>
+
+          <article class="division-card">
+            <div class="division-icon">&#9733;</div>
+            <h3 class="division-title">Premium Domains</h3>
+            <p class="division-description">One of the world's largest portfolios of premium domain names, providing instant digital authority to enterprises worldwide.</p>
+            <a href="/domains" class="division-link">Explore Domains <span>&rarr;</span></a>
+          </article>
+
+          <article class="division-card">
+            <div class="division-icon">&#9878;</div>
+            <h3 class="division-title">Infrastructure</h3>
+            <p class="division-description">Global hosting infrastructure, CDN services, and managed technology operations ensuring 99.99% uptime.</p>
+            <a href="/divisions/infrastructure" class="division-link">Explore Infrastructure <span>&rarr;</span></a>
+          </article>
+
+          <article class="division-card">
+            <div class="division-icon">&#9830;</div>
+            <h3 class="division-title">Ventures</h3>
+            <p class="division-description">Strategic investments in emerging digital businesses, creator economies, and next-generation content platforms.</p>
+            <a href="/divisions/ventures" class="division-link">Explore Ventures <span>&rarr;</span></a>
+          </article>
+
+          <article class="division-card">
+            <div class="division-icon">&#9998;</div>
+            <h3 class="division-title">Consulting</h3>
+            <p class="division-description">Advisory services for digital transformation, domain strategy, and enterprise technology implementation.</p>
+            <a href="/divisions/consulting" class="division-link">Explore Consulting <span>&rarr;</span></a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Video Testimonials Section -->
-    <section class="video-testimonials" aria-label="Video testimonials from clients">
-      <div class="video-testimonials-container">
-        <h2>Hear From Our Clients</h2>
-        <p class="section-subtitle">Real stories from creators and experts who launched successful online businesses</p>
-
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-thumbnail">
-              <div class="play-button">▶</div>
-              <div class="video-duration">2:34</div>
-            </div>
-            <div class="video-info">
-              <h4>From Side Project to $15K/Month</h4>
-              <p class="video-author">Marcus Chen • TravelGambling.com</p>
-              <p class="video-desc">"I had the expertise but no tech skills. PILLAR gave me a platform that converts."</p>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-thumbnail">
-              <div class="play-button">▶</div>
-              <div class="video-duration">3:12</div>
-            </div>
-            <div class="video-info">
-              <h4>How We 10X'd Our Consulting Practice</h4>
-              <p class="video-author">Sarah & David Park • GoldMadeEasy.com</p>
-              <p class="video-desc">"The domain alone gave us instant credibility. Clients started finding us."</p>
+    <!-- Global Presence -->
+    <section class="global-presence" aria-label="Global presence">
+      <div class="section-container">
+        <div class="presence-grid">
+          <div class="presence-content">
+            <p class="section-eyebrow">Global Presence</p>
+            <h2 class="section-title">Operating Across Continents, Delivering Locally</h2>
+            <p class="section-description">With regional headquarters in North America, Europe, and Asia-Pacific, PILLAR combines global scale with local expertise to serve clients in over 40 countries.</p>
+            <div class="regions-list">
+              <span class="region-tag">North America</span>
+              <span class="region-tag">Europe</span>
+              <span class="region-tag">Asia Pacific</span>
+              <span class="region-tag">Latin America</span>
+              <span class="region-tag">Middle East</span>
+              <span class="region-tag">Africa</span>
             </div>
           </div>
-
-          <div class="video-card">
-            <div class="video-thumbnail">
-              <div class="play-button">▶</div>
-              <div class="video-duration">4:08</div>
+          <div class="presence-stats">
+            <div class="stat-item">
+              <div class="presence-stat-number">12</div>
+              <div class="presence-stat-label">Regional Offices</div>
             </div>
-            <div class="video-info">
-              <h4>Building a Sports Media Empire</h4>
-              <p class="video-author">James Rodriguez • FanTravel.com</p>
-              <p class="video-desc">"Renting instead of buying the domain freed up $150K for growth."</p>
+            <div class="stat-item">
+              <div class="presence-stat-number">180+</div>
+              <div class="presence-stat-label">Team Members</div>
             </div>
-          </div>
-        </div>
-
-        <p class="video-coming-soon">🎬 Full video testimonials coming soon. <a href="/get-started">Be our next success story →</a></p>
-      </div>
-    </section>
-
-    <style>
-      .video-testimonials {
-        padding: 6rem 2rem;
-        background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
-      }
-      .video-testimonials-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-      .video-card {
-        background: #fff;
-        border: 2px solid #E5E5E5;
-        border-radius: 16px;
-        overflow: hidden;
-        transition: all .3s;
-      }
-      .video-card:hover {
-        border-color: #8B00FF;
-        transform: translateY(-5px);
-        box-shadow: 0 20px 60px rgba(139,0,255,.15);
-      }
-      .video-thumbnail {
-        position: relative;
-        aspect-ratio: 16/9;
-        background: linear-gradient(135deg, #1a1a2e 0%, #8B00FF 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .play-button {
-        width: 80px;
-        height: 80px;
-        background: rgba(255,255,255,.95);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: #8B00FF;
-        cursor: pointer;
-        transition: all .3s;
-        box-shadow: 0 10px 40px rgba(0,0,0,.3);
-      }
-      .video-card:hover .play-button {
-        transform: scale(1.1);
-        background: #fff;
-      }
-      .video-duration {
-        position: absolute;
-        bottom: 12px;
-        right: 12px;
-        background: rgba(0,0,0,.8);
-        color: #fff;
-        padding: .25rem .5rem;
-        border-radius: 4px;
-        font-size: .75rem;
-        font-weight: 600;
-      }
-      .video-info {
-        padding: 1.5rem;
-      }
-      .video-info h4 {
-        font-size: 1.125rem;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: .5rem;
-      }
-      .video-author {
-        font-size: .875rem;
-        color: #8B00FF;
-        font-weight: 600;
-        margin-bottom: .75rem;
-      }
-      .video-desc {
-        font-size: .875rem;
-        color: #666;
-        font-style: italic;
-        line-height: 1.5;
-      }
-      .video-coming-soon {
-        text-align: center;
-        margin-top: 2rem;
-        padding: 1rem;
-        background: rgba(139,0,255,.05);
-        border-radius: 8px;
-        font-size: .9rem;
-        color: #666;
-      }
-      .video-coming-soon a {
-        color: #8B00FF;
-        font-weight: 600;
-      }
-      @media (max-width: 768px) {
-        .video-testimonials { padding: 4rem 1rem; }
-        .video-grid { grid-template-columns: 1fr; }
-      }
-    </style>
-
-    <!-- As Featured In / Press Section -->
-    <section class="press-section" aria-label="Press and media features">
-      <div class="press-container">
-        <p class="press-label">Trusted by entrepreneurs building the next generation of digital businesses</p>
-        <div class="press-logos">
-          <div class="press-logo">
-            <span class="press-icon">📰</span>
-            <span class="press-name">TechCrunch</span>
-            <span class="press-status">Featured</span>
-          </div>
-          <div class="press-logo">
-            <span class="press-icon">💼</span>
-            <span class="press-name">Forbes</span>
-            <span class="press-status">Coming Soon</span>
-          </div>
-          <div class="press-logo">
-            <span class="press-icon">🚀</span>
-            <span class="press-name">Product Hunt</span>
-            <span class="press-status">#3 Product</span>
-          </div>
-          <div class="press-logo">
-            <span class="press-icon">🎙️</span>
-            <span class="press-name">Creator Economy Pod</span>
-            <span class="press-status">Guest</span>
-          </div>
-          <div class="press-logo">
-            <span class="press-icon">📊</span>
-            <span class="press-name">Business Insider</span>
-            <span class="press-status">Quoted</span>
-          </div>
-        </div>
-        <div class="press-quote">
-          <blockquote>"PILLAR is democratizing premium domain access in a way that could reshape how entrepreneurs build online brands."</blockquote>
-          <cite>— Industry Observer, Domain Investment Weekly</cite>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .press-section {
-        padding: 4rem 2rem;
-        background: #000;
-        color: #fff;
-      }
-      .press-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .press-label {
-        font-size: .875rem;
-        color: rgba(255,255,255,.6);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 2rem;
-      }
-      .press-logos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        flex-wrap: wrap;
-        margin-bottom: 3rem;
-      }
-      .press-logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: .5rem;
-        opacity: .7;
-        transition: opacity .3s;
-      }
-      .press-logo:hover {
-        opacity: 1;
-      }
-      .press-icon {
-        font-size: 2rem;
-      }
-      .press-name {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #fff;
-      }
-      .press-status {
-        font-size: .7rem;
-        color: #8B00FF;
-        background: rgba(139,0,255,.2);
-        padding: .25rem .5rem;
-        border-radius: 4px;
-        font-weight: 600;
-      }
-      .press-quote {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        border-top: 1px solid rgba(255,255,255,.1);
-      }
-      .press-quote blockquote {
-        font-size: 1.25rem;
-        font-style: italic;
-        color: rgba(255,255,255,.9);
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-      .press-quote cite {
-        font-size: .875rem;
-        color: rgba(255,255,255,.5);
-      }
-      @media (max-width: 768px) {
-        .press-section { padding: 3rem 1rem; }
-        .press-logos { gap: 2rem; }
-        .press-logo { min-width: 120px; }
-        .press-quote blockquote { font-size: 1rem; }
-      }
-    </style>
-
-    <style>
-      .testimonials-section {
-        padding: 6rem 2rem;
-        background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
-      }
-
-      .testimonials-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .testimonial-card {
-        background: #fff;
-        border: 2px solid #E5E5E5;
-        border-radius: 20px;
-        padding: 2rem;
-        transition: all .3s;
-        position: relative;
-      }
-
-      .testimonial-card:hover {
-        border-color: #8B00FF;
-        transform: translateY(-5px);
-        box-shadow: 0 20px 60px rgba(139,0,255,.15);
-      }
-
-      .testimonial-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .testimonial-logo {
-        font-size: 2.5rem;
-      }
-
-      .testimonial-site {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #000;
-      }
-
-      .testimonial-quote {
-        font-size: 1rem;
-        line-height: 1.7;
-        color: #1a1a1a;
-        margin-bottom: 1.5rem;
-        font-style: italic;
-      }
-
-      .testimonial-metrics {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 1.5rem;
-        background: #fafafa;
-        border-radius: 12px;
-        margin-bottom: 1rem;
-      }
-
-      .metric-small {
-        text-align: center;
-      }
-
-      .metric-small-value {
-        font-size: 1.5rem;
-        font-weight: 900;
-        color: #8B00FF;
-        line-height: 1;
-      }
-
-      .metric-small-label {
-        font-size: .75rem;
-        color: #666;
-        text-transform: uppercase;
-        letter-spacing: .5px;
-        margin-top: .25rem;
-      }
-
-      .testimonial-savings {
-        text-align: center;
-        padding: 1rem;
-        background: linear-gradient(135deg, rgba(16,185,129,.1) 0%, rgba(16,185,129,.05) 100%);
-        border-radius: 8px;
-        color: #10B981;
-        font-size: .875rem;
-      }
-
-      .testimonial-savings strong {
-        color: #059669;
-        font-weight: 700;
-      }
-
-      .testimonials-cta {
-        text-align: center;
-        margin-top: 3rem;
-      }
-
-      .btn-testimonial {
-        display: inline-block;
-        background: #8B00FF;
-        color: #fff;
-        padding: 1.25rem 3rem;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.125rem;
-        transition: all .3s;
-        box-shadow: 0 4px 15px rgba(139,0,255,.15);
-      }
-
-      .btn-testimonial:hover {
-        background: #5500AA;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(139,0,255,.25);
-      }
-
-      @media (max-width: 768px) {
-        .testimonials-section {
-          padding: 4rem 1rem;
-        }
-        .testimonials-grid {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-        .testimonial-card {
-          padding: 1.5rem;
-        }
-        .testimonial-metrics {
-          gap: .75rem;
-          padding: 1rem;
-        }
-        .metric-small-value {
-          font-size: 1.25rem;
-        }
-      }
-
-      @media (max-width: 400px) {
-        .testimonials-section {
-          padding: 3rem 0.75rem;
-        }
-        .testimonial-card {
-          padding: 1.25rem;
-        }
-      }
-    </style>
-
-    <!-- Products / Pricing -->
-    <section class="products" id="products" aria-label="Our products and pricing">
-      <h2>Choose Your Growth Path</h2>
-      <p class="section-subtitle">Professional packages designed to amplify your expertise and build lasting digital wealth</p>
-
-      <div class="product-grid">
-        <!-- Featured Starter Package -->
-        <article class="product-card featured">
-          <h3>Foundation Package</h3>
-          <p>The perfect starting point for creators ready to establish their professional online presence.</p>
-          <div class="price pulse">
-            <span>$100 <small>AI-Content</small></span>
-            <span class="price-plus">+ $25 <small>Premium Domain</small></span>
-          </div>
-          <p style="font-size:1.125rem;margin-bottom:2rem;">✓ Professional website setup<br>✓ SEO & mobile optimization<br>✓ 1 AI content push/month</p>✓ 30-day money-back guarantee</p>
-          <button class="btn" id="foundation-checkout" aria-label="Get started with Foundation Package">Get Started Now →</button>
-          <p style="font-size:.875rem;color:var(--gray);margin-top:.5rem;">*Monthly Subscription</p>
-        </article>
-
-        <!-- Growth Packages -->
-        <article class="product-card">
-          <div class="recommended-badge">RECOMMENDED</div>
-          <h3>Growth Accelerator</h3>
-          <p>Scale your impact with AI-powered content and expert guidance</p>
-          <div class="price">$425<small>/month</small></div>
-          <ul>
-            <li>✓ 4 AI content pushes/month</li>
-            <li>✓ Premium Domain Name</li>
-            <li>✓ 3-hour consultation ($500 Value)</li>
-            <li>✓ Priority support & updates</li>
-          </ul>
-          <button class="btn btn-secondary" id="growth-checkout" aria-label="Subscribe to Growth Accelerator">Subscribe Now →</button>
-          <p style="font-size:.8rem;color:var(--gray);margin-top:.5rem;">*6-month commitment for money-back guarantee</p>
-        </article>
-
-        <article class="product-card">
-          <h3>Authority Builder</h3>
-          <p>Dominate your industry with multi-site presence</p>
-          <div class="price">$1000<small>/month</small></div>
-          <ul>
-            <li>✓ 8 AI content pushes/month</li>
-            <li>✓ 2 Consultations ($1000 Value)</li>
-            <li>✓ Multi-site management</li>
-            <li>✓ White-glove service</li>
-          </ul>
-          <button class="btn btn-secondary" id="authority-checkout" aria-label="Subscribe to Authority Builder">Subscribe Now →</button>
-        </article>
-
-        <article class="product-card">
-          <h3>Empire Package</h3>
-          <p>Maximum reach across all channels</p>
-          <div class="price">$5000<small>/month</small></div>
-          <ul>
-            <li>✓ Daily AI content creation</li>
-            <li>✓ Weekly social media content</li>
-            <li>✓ Dedicated growth team</li>
-            <li>✓ Unlimited consultations</li>
-          </ul>
-          <button class="btn btn-secondary" id="empire-checkout" aria-label="Subscribe to Empire Package">Subscribe Now →</button>
-        </article>
-      </div>
-    </section>
-
-    <!-- Premium Domains -->
-    <section class="premium-domains-banner" aria-label="Premium domain rental">
-      <div class="domains-container">
-        <div class="domains-header">
-          <h2>Premium Domains from <span class="highlight-price">$25/month</span></h2>
-          <a href="/domains" class="btn-domains" aria-label="View all premium domains">View All Domains →</a>
-        </div>
-
-        <div class="domains-scroll-wrapper">
-          <div class="domains-scroll" aria-label="Premium domain examples">
-            <div class="domain-item">NYCPremium.com</div>
-            <div class="domain-item">GoldMadeEasy.com</div>
-            <div class="domain-item">TVCeleb.com</div>
-            <div class="domain-item">FanTravel.com</div>
-            <div class="domain-item">GoToDad.com</div>
-            <div class="domain-item">NFTDL.com</div>
-            <div class="domain-item">RunPlayer.com</div>
-            <div class="domain-item">HerClip.com</div>
-            <div class="domain-item">VideoGameLive.com</div>
-            <div class="domain-item">SelectMovie.com</div>
-            <div class="domain-item">FastConcert.com</div>
-            <div class="domain-item">SmallExpenses.com</div>
-            <div class="domain-item">BankSize.com</div>
-            <div class="domain-item">TravelGambling.com</div>
-            <div class="domain-item">MenuTopics.com</div>
-            <div class="domain-item">HotParks.com</div>
-            <div class="domain-item">DailyBeaches.com</div>
-            <div class="domain-item">GameLibraries.com</div>
-            <div class="domain-item">TeamworkFitness.com</div>
-            <div class="domain-item">HikeFan.com</div>
-            <div class="domain-item">TokyoCeleb.com</div>
-            <div class="domain-item">WeatherTests.com</div>
-            <div class="domain-item">HistoryAwards.com</div>
-            <div class="domain-item">FreeConvention.com</div>
-            <div class="domain-item">ThriftHotels.com</div>
-            <div class="domain-item">DJCeleb.com</div>
-            <div class="domain-item">Guuru.com</div>
-            <div class="domain-item">HotVenues.com</div>
-            <div class="domain-item">DJMeet.com</div>
-            <div class="domain-item">Aeroo.com</div>
+            <div class="stat-item">
+              <div class="presence-stat-number">24/7</div>
+              <div class="presence-stat-label">Global Support</div>
+            </div>
+            <div class="stat-item">
+              <div class="presence-stat-number">15+</div>
+              <div class="presence-stat-label">Languages Supported</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Alternative Pricing (Custom Domain) -->
-    <section class="alt-pricing" id="custom-domain-pricing" aria-label="Custom domain pricing">
-      <div class="alt-pricing-container">
-        <h2>Prefer Your Own Domain? No Problem!</h2>
-        <p class="section-subtitle">Build on your existing domain with our competitive custom pricing. Same powerful features, on a domain you own, host, update, and maintain.</p>
+    <!-- Solutions Section -->
+    <section class="solutions" id="solutions" aria-label="Enterprise solutions">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Enterprise Solutions</p>
+          <h2 class="section-title">Comprehensive Digital Solutions</h2>
+          <p class="section-description">From domain acquisition to full-scale digital transformation, our solutions are designed for organizations of every size.</p>
+        </div>
 
-        <div class="product-grid alt-grid">
-          <article class="product-card">
-            <div class="custom-badge">CUSTOM DOMAIN</div>
-            <h3>Foundation Custom</h3>
-            <p>Professional setup on your domain</p>
-            <div class="price"><span>$500 <small>one-time setup</small></span></div>
-            <ul>
-              <li>✓ Your domain configuration</li>
-              <li>✓ Professional website setup</li>
-              <li>✓ SEO & mobile optimization</li>
-              <li>✓ Usage-based analytics</li>
+        <div class="solutions-tabs">
+          <button class="solution-tab active">All Solutions</button>
+          <button class="solution-tab">Domains</button>
+          <button class="solution-tab">Technology</button>
+          <button class="solution-tab">Media</button>
+          <button class="solution-tab">Enterprise</button>
+        </div>
+
+        <div class="solutions-grid">
+          <article class="solution-card">
+            <span class="solution-badge">Essential</span>
+            <h3 class="solution-name">Foundation</h3>
+            <p class="solution-desc">Essential digital presence with premium domain and professional web infrastructure.</p>
+            <div class="solution-price">$125<span>/month</span></div>
+            <ul class="solution-features">
+              <li>Premium domain rental</li>
+              <li>Professional website</li>
+              <li>SSL certificate</li>
+              <li>Basic analytics</li>
             </ul>
-            <button class="btn btn-secondary" id="custom-foundation" aria-label="Get started with custom domain foundation">Start with Your Domain</button>
           </article>
 
-          <article class="product-card">
-            <div class="custom-badge">CUSTOM DOMAIN</div>
-            <h3>Growth Custom</h3>
-            <p>Scale faster on your own domain</p>
-            <div class="price">$2,000<small>/month</small></div>
-            <ul>
-              <li>✓ 4 AI content pushes/month</li>
-              <li>✓ Advanced SEO for your domain</li>
-              <li>✓ FREE consultation ($500 value)</li>
-              <li>✓ Priority custom support</li>
+          <article class="solution-card featured">
+            <span class="solution-badge">Recommended</span>
+            <h3 class="solution-name">Growth</h3>
+            <p class="solution-desc">Accelerated growth with AI-powered content and advanced optimization.</p>
+            <div class="solution-price">$425<span>/month</span></div>
+            <ul class="solution-features">
+              <li>Everything in Foundation</li>
+              <li>AI content generation</li>
+              <li>SEO optimization</li>
+              <li>Monthly analytics reports</li>
             </ul>
-            <button class="btn btn-secondary" id="growth-custom-checkout" aria-label="Subscribe to Growth Custom">Subscribe Now →</button>
           </article>
 
-          <article class="product-card">
-            <div class="custom-badge">CUSTOM DOMAIN</div>
-            <h3>Authority Custom</h3>
-            <p>Multi-domain empire builder</p>
-            <div class="price">$5,000<small>/month</small></div>
-            <ul>
-              <li>✓ 8 AI content pushes/month</li>
-              <li>✓ Multiple domain management</li>
-              <li>✓ Unlimited consultations</li>
-              <li>✓ White-glove custom service</li>
+          <article class="solution-card">
+            <span class="solution-badge">Professional</span>
+            <h3 class="solution-name">Authority</h3>
+            <p class="solution-desc">Full-service digital authority building with dedicated support.</p>
+            <div class="solution-price">$1,000<span>/month</span></div>
+            <ul class="solution-features">
+              <li>Everything in Growth</li>
+              <li>Priority support</li>
+              <li>Custom integrations</li>
+              <li>White-glove onboarding</li>
             </ul>
-            <button class="btn btn-secondary" id="authority-custom-checkout" aria-label="Subscribe to Authority Custom">Subscribe Now →</button>
           </article>
 
-          <article class="product-card featured-alt">
-            <h3>Empire Custom</h3>
-            <p>Ultimate custom domain solution</p>
-            <div class="price">$25,000<small>/month</small></div>
-            <ul>
-              <li>✓ Daily AI content creation</li>
-              <li>✓ Weekly social media content</li>
-              <li>✓ Dedicated growth team</li>
-              <li>✓ Complete brand domination</li>
+          <article class="solution-card">
+            <span class="solution-badge">Enterprise</span>
+            <h3 class="solution-name">Enterprise</h3>
+            <p class="solution-desc">Custom solutions for large organizations with complex requirements.</p>
+            <div class="solution-price">Custom</div>
+            <ul class="solution-features">
+              <li>Dedicated account team</li>
+              <li>SLA guarantees</li>
+              <li>Custom development</li>
+              <li>On-premise options</li>
             </ul>
-            <button class="btn btn-secondary" id="empire-custom-checkout" aria-label="Subscribe to Empire Custom">Subscribe Now →</button>
           </article>
-        </div>
-
-        <div class="comparison-note">
-          <p>💡 <strong>Smart Tip:</strong> Save up to 80% by using our premium domains. Get instant authority and better SEO results!</p>
-          <a href="#products" class="link-back">See Premium Domain Pricing →</a>
         </div>
       </div>
     </section>
 
-    <!-- Ultra-Premium Domains -->
-    <section class="ultra-premium-banner" aria-label="Ultra-premium domain rental">
-      <div class="domains-container">
-        <div class="domains-header">
-          <h2>ULTRA-PREMIUM RENTALS from <span class="highlight-price-gold">$500/month</span></h2>
-          <a href="/domains#ultra-premium" class="btn-domains-gold" aria-label="View ultra-premium domains">View Ultra-Premium →</a>
+    <!-- Portfolio Section -->
+    <section class="portfolio" aria-label="Portfolio companies">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Portfolio</p>
+          <h2 class="section-title">Our Digital Properties</h2>
+          <p class="section-description">A selection of properties from our portfolio of digital assets spanning media, finance, travel, and technology.</p>
         </div>
 
-        <div class="domains-scroll-wrapper">
-          <div class="domains-scroll-ultra" aria-label="Ultra-premium domain examples">
-            <div class="domain-item-gold">Guuru.com</div>
-            <div class="domain-item-gold">Aeroo.com</div>
-            <div class="domain-item-gold">NFTDL.com</div>
-            <div class="domain-item-gold">Fantravel.com</div>
-            <div class="domain-item-gold">TVCeleb.com</div>
-            <div class="domain-item-gold">DJMeet.com</div>
-            <div class="domain-item-gold">Guuru.com</div>
-            <div class="domain-item-gold">Aeroo.com</div>
-            <div class="domain-item-gold">NFTDL.com</div>
-            <div class="domain-item-gold">Fantravel.com</div>
-            <div class="domain-item-gold">TVCeleb.com</div>
-            <div class="domain-item-gold">DJMeet.com</div>
-          </div>
-        </div>
-      </div>
-      <p class="ultra-premium-note">*5-letter domains & existing high-traffic mega-sites</p>
-    </section>
+        <div class="portfolio-grid">
+          <a href="https://www.fantravel.com" class="portfolio-card" target="_blank" rel="noopener">
+            <span class="portfolio-category">Travel & Sports</span>
+            <h3 class="portfolio-name">FanTravel.com</h3>
+            <p class="portfolio-desc">Premier sports travel platform connecting fans with experiences worldwide.</p>
+          </a>
 
-    <!-- DIY AI Toolkits -->
-    <section class="diy-toolkits" aria-label="Do-It-Yourself AI Toolkits">
-      <div class="toolkit-container">
-        <h2>Do-It-Yourself AI Toolkits & Design</h2>
-        <p class="section-subtitle">Professional tools to build your online presence yourself — or enhance what we build for you</p>
+          <a href="https://www.banksize.com" class="portfolio-card" target="_blank" rel="noopener">
+            <span class="portfolio-category">Finance</span>
+            <h3 class="portfolio-name">BankSize.com</h3>
+            <p class="portfolio-desc">Financial education and banking insights for informed decisions.</p>
+          </a>
 
-        <div class="toolkit-grid">
-          <!-- Jasper -->
-          <article class="toolkit-card featured-toolkit">
-            <div class="toolkit-badge">MOST POPULAR</div>
-            <div class="toolkit-icon">✏️</div>
-            <h3>Jasper AI</h3>
-            <p class="toolkit-tagline">AI Content Creation Platform</p>
-            <div class="toolkit-price">$59<small>/month</small></div>
-            <div class="toolkit-description">
-              <h4>Perfect For:</h4>
-              <p>Blog posts, marketing copy, social media content at scale</p>
-              <h4>Quick Start:</h4>
-              <ol>
-                <li>Choose a template (blog, ads, etc.)</li>
-                <li>Input your topic and tone</li>
-                <li>Generate multiple variations</li>
-                <li>Edit and publish anywhere</li>
-              </ol>
-            </div>
-            <a href="https://jasper.ai" class="btn-toolkit" target="_blank" rel="noopener">Try Jasper →</a>
-          </article>
+          <a href="https://www.viewsgrowth.com" class="portfolio-card" target="_blank" rel="noopener">
+            <span class="portfolio-category">Marketing</span>
+            <h3 class="portfolio-name">ViewsGrowth.com</h3>
+            <p class="portfolio-desc">Digital marketing intelligence and audience growth strategies.</p>
+          </a>
 
-          <!-- Freepik -->
-          <article class="toolkit-card">
-            <div class="toolkit-icon">🎨</div>
-            <h3>Freepik</h3>
-            <p class="toolkit-tagline">Premium Stock & AI Images</p>
-            <div class="toolkit-price">$30<small>/month</small></div>
-            <div class="toolkit-description">
-              <h4>Perfect For:</h4>
-              <p>Professional images, vectors, videos, and AI-generated visuals</p>
-              <h4>Quick Start:</h4>
-              <ol>
-                <li>Search or use AI image generator</li>
-                <li>Download in multiple formats</li>
-                <li>Edit colors/elements directly</li>
-                <li>Use commercially everywhere</li>
-              </ol>
-            </div>
-            <a href="https://freepik.com" class="btn-toolkit" target="_blank" rel="noopener">Try Freepik →</a>
-          </article>
+          <a href="https://www.dayinvestors.com" class="portfolio-card" target="_blank" rel="noopener">
+            <span class="portfolio-category">Investment</span>
+            <h3 class="portfolio-name">DayInvestors.com</h3>
+            <p class="portfolio-desc">Trading insights and market analysis for active investors.</p>
+          </a>
 
-          <!-- Canva -->
-          <article class="toolkit-card">
-            <div class="toolkit-icon">🖼️</div>
-            <h3>Canva Pro</h3>
-            <p class="toolkit-tagline">All-in-One Design Platform</p>
-            <div class="toolkit-price">$15<small>/month</small></div>
-            <div class="toolkit-description">
-              <h4>Perfect For:</h4>
-              <p>Social media graphics, presentations, videos, and brand kits</p>
-              <h4>Quick Start:</h4>
-              <ol>
-                <li>Pick from 600K+ templates</li>
-                <li>Customize with drag-and-drop</li>
-                <li>Use Magic AI tools</li>
-                <li>Export or schedule posts</li>
-              </ol>
-            </div>
-            <a href="https://canva.com" class="btn-toolkit" target="_blank" rel="noopener">Try Canva →</a>
-          </article>
+          <a href="https://www.globalfirstnations.com" class="portfolio-card" target="_blank" rel="noopener">
+            <span class="portfolio-category">Culture & Heritage</span>
+            <h3 class="portfolio-name">GlobalFirstNations.com</h3>
+            <p class="portfolio-desc">Indigenous cultures and heritage preservation platform.</p>
+          </a>
 
-          <!-- Dynadot -->
-          <article class="toolkit-card">
-            <div class="toolkit-icon">🌍</div>
-            <h3>Dynadot</h3>
-            <p class="toolkit-tagline">Premium Domain Registration</p>
-            <div class="toolkit-price">$11<small>/year .com</small></div>
-            <div class="toolkit-description">
-              <h4>Perfect For:</h4>
-              <p>Securing your own premium domains with advanced tools</p>
-              <h4>Quick Start:</h4>
-              <ol>
-                <li>Search available domains</li>
-                <li>Use bulk search for ideas</li>
-                <li>Set up forwarding/hosting</li>
-                <li>Enable privacy protection</li>
-              </ol>
-            </div>
-            <a href="https://dynadot.com" class="btn-toolkit" target="_blank" rel="noopener">Try Dynadot →</a>
-          </article>
-        </div>
+          <a href="https://www.freedesignthinking.com" class="portfolio-card" target="_blank" rel="noopener">
+            <span class="portfolio-category">Innovation</span>
+            <h3 class="portfolio-name">FreeDesignThinking.com</h3>
+            <p class="portfolio-desc">Design thinking methodology and innovation resources.</p>
+          </a>
 
-        <div class="toolkit-cta">
-          <p>💡 <strong>Pro Tip:</strong> Why spend $500+ per month on AI tools you'll struggle to master when our Growth Accelerator package gives you done-for-you results for just $400/month?</p>
-          <a href="#products" class="btn">Skip the Line - Get Growth Accelerator →</a>
+          <a href="https://www.play4tomorrow.com" class="portfolio-card" target="_blank" rel="noopener">
+            <span class="portfolio-category">Entertainment</span>
+            <h3 class="portfolio-name">Play4Tomorrow.com</h3>
+            <p class="portfolio-desc">Interactive media and entertainment experiences.</p>
+          </a>
+
+          <a href="/portfolio" class="portfolio-card">
+            <span class="portfolio-category">Explore</span>
+            <h3 class="portfolio-name">View All Properties</h3>
+            <p class="portfolio-desc">Browse our complete portfolio of 7,000+ digital assets.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- SEO Content -->
-    <section class="seo-content" aria-label="About Pillar Media">
-      <div class="seo-container">
-        <h2>About Pillar Media: Your Partner in Digital Transformation</h2>
-        <div class="seo-grid">
-          <div class="seo-block">
-            <h3>Who is Pillar Media?</h3>
-            <p><strong>Pillar Media</strong> (PILLAR Media & Entertainment) is a digital transformation company helping thought leaders, experts, and creators build profitable online businesses. Since 2024, Pillar Media has helped 12,000+ experts transform their knowledge into revenue-generating digital assets. <a href="/about" class="inline-link">Learn more about Pillar Media</a>.</p>
-          </div>
-          <div class="seo-block">
-            <h3>Why Choose Pillar Media for Web Development?</h3>
-            <p>Pillar Media offers professional websites from $100 setup + $25/month. Skip the $10,000+ agency fees and launch on premium domains for instant authority. Everything included: mobile design, SEO optimization, content management, and analytics.</p>
-          </div>
-          <div class="seo-block">
-            <h3>Pillar Media's AI Content Transformation</h3>
-            <p>Pillar Media's proprietary AI transforms your videos, podcasts, and courses into SEO-optimized web assets working 24/7. Transform any content into 10+ pages within 14 days. No coding required. <a href="/insights/content-transformation-guide" class="inline-link">Learn how Pillar Media works</a>.</p>
-          </div>
-          <div class="seo-block">
-            <h3>Pillar Media Entertainment Services</h3>
-            <p>Join thousands already earning with Pillar Media & Entertainment. Perfect for consultants, coaches, and industry veterans ready to scale. Start with our Foundation Package today. <a href="/about" class="inline-link">See Pillar Media success stories</a>.</p>
-          </div>
-          <div class="seo-block">
-            <h3>Pillar Media: Launch in 14 Days</h3>
-            <p>Traditional agencies take months and charge $10K+. Pillar Media delivers your complete website in 14 days flat. Our AI-powered system transforms your existing content instantly—no endless revisions or committee meetings. <a href="/insights" class="inline-link">Read Pillar Media insights</a>.</p>
-          </div>
-          <div class="seo-block">
-            <h3>Contact Pillar Media Today</h3>
-            <p>Whether you're a $500/hour coach or launching your first website, Pillar Media scales with you. Our Growth Accelerator adds 4 AI content updates monthly, keeping your site fresh and ranking. Experience why experts trust PILLAR Media & Entertainment.</p>
-          </div>
+    <!-- Leadership Section -->
+    <section class="leadership" aria-label="Leadership team">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Leadership</p>
+          <h2 class="section-title">Executive Team</h2>
+          <p class="section-description">Seasoned leaders with decades of experience in technology, media, and digital infrastructure.</p>
+        </div>
+
+        <div class="leadership-grid">
+          <article class="leader-card">
+            <div class="leader-avatar">CEO</div>
+            <h3 class="leader-name">Executive Leadership</h3>
+            <p class="leader-title">Chief Executive Officer</p>
+          </article>
+
+          <article class="leader-card">
+            <div class="leader-avatar">CTO</div>
+            <h3 class="leader-name">Technology Leadership</h3>
+            <p class="leader-title">Chief Technology Officer</p>
+          </article>
+
+          <article class="leader-card">
+            <div class="leader-avatar">COO</div>
+            <h3 class="leader-name">Operations Leadership</h3>
+            <p class="leader-title">Chief Operating Officer</p>
+          </article>
+
+          <article class="leader-card">
+            <div class="leader-avatar">CFO</div>
+            <h3 class="leader-name">Financial Leadership</h3>
+            <p class="leader-title">Chief Financial Officer</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights" aria-label="Latest insights">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="section-eyebrow">Insights</p>
+          <h2 class="section-title">Perspectives & Research</h2>
+          <p class="section-description">Thought leadership on digital transformation, domain strategy, and the evolving digital economy.</p>
+        </div>
+
+        <div class="insights-grid">
+          <a href="/insights/premium-domain-roi" class="insight-card">
+            <div class="insight-image">&#128200;</div>
+            <div class="insight-content">
+              <span class="insight-category">Research</span>
+              <h3 class="insight-title">The ROI of Premium Domains: 2025 Analysis</h3>
+              <p class="insight-excerpt">Comprehensive study on how premium domains impact brand value and conversion rates.</p>
+            </div>
+          </a>
+
+          <a href="/insights/ai-content-transformation" class="insight-card">
+            <div class="insight-image">&#129302;</div>
+            <div class="insight-content">
+              <span class="insight-category">Technology</span>
+              <h3 class="insight-title">AI-Driven Content at Enterprise Scale</h3>
+              <p class="insight-excerpt">How organizations are leveraging AI to transform content operations.</p>
+            </div>
+          </a>
+
+          <a href="/insights/digital-infrastructure-trends" class="insight-card">
+            <div class="insight-image">&#127760;</div>
+            <div class="insight-content">
+              <span class="insight-category">Industry</span>
+              <h3 class="insight-title">Digital Infrastructure Trends 2025</h3>
+              <p class="insight-excerpt">Key trends shaping the future of global digital infrastructure.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Contact us">
+      <div class="cta-container">
+        <p class="section-eyebrow">Get Started</p>
+        <h2 class="section-title">Ready to Transform Your Digital Presence?</h2>
+        <p class="section-description">Whether you're seeking premium digital assets, enterprise technology solutions, or strategic partnerships, our team is ready to help you achieve your goals.</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-white">Contact Our Team</a>
+          <a href="/solutions" class="btn btn-outline-white">View Solutions</a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer role="contentinfo" aria-label="Site footer">
+  <footer role="contentinfo">
     <div class="footer-container">
-      <div class="footer-logo">PILLAR</div>
-      <p class="footer-tagline">Transform Expertise Into Digital Wealth</p>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="ai-services.html">AI Services</a>
-        <a href="domains.html">Domains</a>
-        <a href="faq.html">FAQ</a>
-        <a href="support.html">Support</a>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">PILLAR</div>
+          <p class="footer-tagline">A global digital infrastructure and media corporation building the foundation of tomorrow's digital economy.</p>
+        </div>
+
+        <nav class="footer-nav">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/leadership">Leadership</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Divisions</h4>
+          <ul>
+            <li><a href="/divisions/technology">Technology</a></li>
+            <li><a href="/divisions/media">Media Holdings</a></li>
+            <li><a href="/domains">Premium Domains</a></li>
+            <li><a href="/divisions/ventures">Ventures</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/solutions#foundation">Foundation</a></li>
+            <li><a href="/solutions#growth">Growth</a></li>
+            <li><a href="/solutions#authority">Authority</a></li>
+            <li><a href="/solutions#enterprise">Enterprise</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <p class="footer-copy">© 2025 PILLAR. All rights reserved.</p>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/cookies">Cookie Policy</a>
+          <a href="/accessibility">Accessibility</a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 PILLAR Corporation. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Loading State -->
-  <div class="loading" role="status" aria-live="polite" aria-hidden="true">Processing your order...</div>
-
-  <!-- Stripe -->
-  <script src="https://js.stripe.com/v3/" async></script>
-
-  <!-- Main JS -->
-  <script defer>
-    // Stripe initialization
-    let stripeLoaded = false;
-    const checkStripe = setInterval(() => {
-      if (typeof Stripe !== 'undefined') { 
-        stripeLoaded = true; 
-        clearInterval(checkStripe); 
-      }
-    }, 100);
-  
-    // Your Stripe configuration
-    const STRIPE_PUBLISHABLE_KEY = 'pk_live_51S2vUCJeHAducPhTXzQLx1XrXhJUMz9eEgrRAHDRToxyveueEeLRARfLYhZQu57r4JD253keBGfdDTSidfeMzE2H009wOgUuEB';
-    
-    // Your actual Stripe Price IDs
-    const STRIPE_PRICE_IDS = {
-
-      // First Launch Package
-      first_launch: 'price_1S6LxjJeHAducPhTV7PQJrYX',      //$50/month
-      
-      // Standard subscriptions
-      foundation: 'price_1S5lA9JeHAducPhTJ8d5wW52',         // $125/month
-      growth: 'price_1S5lDiJeHAducPhT4z9OsKuf',             // $425/month
-      authority: 'price_1S5lEZJeHAducPhTpCvsGoVJ',          // $1000/month
-      empire: 'price_1S5lFIJeHAducPhTKgBGKVWE',             // $5000/month
-      
-      // Custom pricing
-      custom_foundation: 'price_1S5lIxJeHAducPhTn5319Pgr',   // $500 one-time
-      custom_growth: 'price_1S5lGUJeHAducPhTFSC6ECWz',       // $2000/month
-      custom_authority: 'price_1S5lHDJeHAducPhT2hFMEgP2',    // $5000/month (same as regular authority)
-      custom_empire: 'price_1S5lHsJeHAducPhTNUosbrsv'        // $25000/month
-    };
-  
-    // Smooth scroll for same-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        const href = anchor.getAttribute('href');
-        const target = href && document.querySelector(href);
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({behavior: 'smooth', block: 'start'});
-      });
-    });
-  
-    // Mobile menu toggle
+  <!-- Mobile Menu Script -->
+  <script>
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    mobileMenuBtn?.addEventListener('click', function() {
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!isExpanded));
-      navLinks.classList.toggle('active');
-      this.classList.toggle('active');
-    });
 
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
       });
-    });
-  
-    // Generic subscription checkout handler
-    async function handleSubscriptionCheckout(priceId) {
-      if (!stripeLoaded || !priceId) { 
-        alert('Payment system is loading. Please try again in a moment.'); 
-        return; 
-      }
-      
-      const loadingEl = document.querySelector('.loading');
-      if (loadingEl) { 
-        loadingEl.style.display = 'block'; 
-        loadingEl.setAttribute('aria-hidden', 'false'); 
-      }
-      
-      try {
-        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
-        const { error } = await stripe.redirectToCheckout({
-          lineItems: [{ price: priceId, quantity: 1 }],
-          mode: 'subscription',
-          successUrl: window.location.origin + '/success?session_id={CHECKOUT_SESSION_ID}',
-          cancelUrl: window.location.origin,
-          billingAddressCollection: 'required',
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
-        
-        if (error) { 
-          console.error('Stripe checkout error:', error); 
-          alert('Checkout error: ' + (error.message || 'Please try again.')); 
-        }
-      } catch(err) {
-        console.error('Checkout error:', err); 
-        alert('Something went wrong. Please try again.');
-      } finally {
-        if (loadingEl) { 
-          loadingEl.style.display = 'none'; 
-          loadingEl.setAttribute('aria-hidden', 'true'); 
-        }
-      }
-    }
-  
-    // One-time payment handler (Custom Foundation Setup)
-    async function handleOneTimeCheckout(priceId) {
-      if (!stripeLoaded || !priceId) { 
-        alert('Payment system is loading. Please try again in a moment.'); 
-        return; 
-      }
-      
-      const loadingEl = document.querySelector('.loading');
-      if (loadingEl) { 
-        loadingEl.style.display = 'block'; 
-        loadingEl.setAttribute('aria-hidden', 'false'); 
-      }
-      
-      try {
-        const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
-        const { error } = await stripe.redirectToCheckout({
-          lineItems: [{ price: priceId, quantity: 1 }],
-          mode: 'payment', // Note: 'payment' for one-time charges
-          successUrl: window.location.origin + '/success?session_id={CHECKOUT_SESSION_ID}&type=custom',
-          cancelUrl: window.location.origin + '#custom-domain-pricing',
-          billingAddressCollection: 'required'
-        });
-        
-        if (error) { 
-          console.error('Stripe checkout error:', error); 
-          alert('Checkout error: ' + (error.message || 'Please try again.')); 
-        }
-      } catch(err) {
-        console.error('Checkout error:', err); 
-        alert('Something went wrong. Please try again.');
-      } finally {
-        if (loadingEl) { 
-          loadingEl.style.display = 'none'; 
-          loadingEl.setAttribute('aria-hidden', 'true'); 
-        }
-      }
-    }
-    
-    // First Launch Package handler
-    document.getElementById('first-launch-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.first_launch));
-    
-    // Button click handlers - Foundation Package ($125/month)
-    document.getElementById('starter-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.foundation));
-    document.getElementById('foundation-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.foundation));
-    
-    // Other subscription packages
-    document.getElementById('growth-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.growth));
-    document.getElementById('authority-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.authority));
-    document.getElementById('empire-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.empire));
-    
-    // Custom domain options
-    document.getElementById('custom-foundation')?.addEventListener('click', () => handleOneTimeCheckout(STRIPE_PRICE_IDS.custom_foundation));
-    document.getElementById('growth-custom-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.custom_growth));
-    document.getElementById('authority-custom-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.custom_authority));
-    document.getElementById('empire-custom-checkout')?.addEventListener('click', () => handleSubscriptionCheckout(STRIPE_PRICE_IDS.custom_empire));
-    
-    // Back link smooth scroll
-    document.querySelector('.link-back')?.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector('#products')?.scrollIntoView({behavior: 'smooth'});
-    });
-  
-    // Rotating headlines
-    const headlines = [
-      "Your Ideas Deserve a Home That Works as Hard as You Do",
-      "Stop Being the Internet's Best-Kept Secret",
-      "Build Once. Grow Forever. That's the PILLAR Way.",
-      "From Expert to Authority in 14 Days",
-      "Your Knowledge Deserves a Premium Platform",
-      "Great Ideas Need Great Websites. We Build Both.",
-      "The Hardest Part of Success? Getting Started. We Make It Easy.",
-      "Turn Your Expertise Into Your Business Card to the World",
-      "Premium Domains. Professional Design. Personal Touch.",
-      "Your Future Clients Are Searching. Will They Find You?",
-      "We Don't Just Build Websites. We Build Foundations."
-    ];
-    let currentHeadline = 0;
-    const headlineElement = document.getElementById('rotating-headline');
-    
-    function rotateHeadline() {
-      if (!headlineElement) return;
-      currentHeadline = (currentHeadline + 1) % headlines.length;
-      headlineElement.style.opacity = '0';
-      setTimeout(() => { 
-        headlineElement.textContent = headlines[currentHeadline]; 
-        headlineElement.style.opacity = '1'; 
-      }, 500);
-    }
-    
-    setInterval(rotateHeadline, 4000);
-  
-    // Lazy-load helper
-    if ('loading' in HTMLImageElement.prototype) {
-      const images = document.querySelectorAll('img[loading="lazy"]');
-      images.forEach(img => { 
-        img.src = img.dataset.src || img.src; 
       });
     }
+
+    // Smooth scroll for nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
   </script>
-
-  <!-- Social Proof Scripts -->
-  <script src="/social-proof.js" defer></script>
-
-  <!-- Theme Toggle Script -->
-  <script src="/js/theme-toggle.js" defer></script>
-
-  <style>
-    /* Theme Toggle Button */
-    .theme-toggle-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      font-size: 1.25rem;
-      line-height: 1;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .theme-toggle-btn:hover {
-      background: rgba(139, 0, 255, 0.1);
-      transform: scale(1.1);
-    }
-    .theme-toggle-btn:focus {
-      outline: 2px solid var(--purple);
-      outline-offset: 2px;
-    }
-
-    /* Dark mode styles */
-    [data-theme="dark"] body,
-    .dark-mode body {
-      background: #0a0a0f;
-      color: #fff;
-    }
-    [data-theme="dark"] nav,
-    .dark-mode nav {
-      background: rgba(10, 10, 15, 0.95);
-      border-bottom-color: rgba(255, 255, 255, 0.1);
-    }
-    [data-theme="dark"] .nav-links a,
-    .dark-mode .nav-links a {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    [data-theme="dark"] .nav-links a:hover,
-    .dark-mode .nav-links a:hover {
-      color: #fff;
-    }
-    [data-theme="dark"] header.hero,
-    .dark-mode header.hero {
-      background: linear-gradient(180deg, #0a0a0f 0%, #111118 100%);
-    }
-    [data-theme="dark"] h1,
-    .dark-mode h1 {
-      background: linear-gradient(135deg, #fff 0%, var(--purple) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-    [data-theme="dark"] .hero p,
-    .dark-mode .hero p {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    [data-theme="dark"] section,
-    .dark-mode section {
-      background: #0a0a0f;
-    }
-    [data-theme="dark"] h2,
-    .dark-mode h2 {
-      color: #fff;
-    }
-    [data-theme="dark"] .section-subtitle,
-    .dark-mode .section-subtitle {
-      color: rgba(255, 255, 255, 0.6);
-    }
-    [data-theme="dark"] .testimonial-card,
-    [data-theme="dark"] .video-card,
-    [data-theme="dark"] .product-card,
-    .dark-mode .testimonial-card,
-    .dark-mode .video-card,
-    .dark-mode .product-card {
-      background: #111118;
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-    [data-theme="dark"] .testimonial-card:hover,
-    [data-theme="dark"] .video-card:hover,
-    [data-theme="dark"] .product-card:hover,
-    .dark-mode .testimonial-card:hover,
-    .dark-mode .video-card:hover,
-    .dark-mode .product-card:hover {
-      border-color: var(--purple);
-    }
-    [data-theme="dark"] .testimonial-quote,
-    [data-theme="dark"] .video-desc,
-    .dark-mode .testimonial-quote,
-    .dark-mode .video-desc {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    [data-theme="dark"] .testimonial-site,
-    [data-theme="dark"] .video-info h4,
-    .dark-mode .testimonial-site,
-    .dark-mode .video-info h4 {
-      color: #fff;
-    }
-    [data-theme="dark"] footer,
-    .dark-mode footer {
-      background: #000;
-    }
-  </style>
 </body>
 </html>
-
