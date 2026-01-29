@@ -391,15 +391,6 @@
       border-radius: 50%;
     }
 
-    /* ===== Global Offices Section ===== */
-    .offices-section {
-      padding: 6rem 3rem;
-      background: var(--off-white);
-    }
-    .offices-container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
     .section-header {
       text-align: center;
       max-width: 700px;
@@ -426,62 +417,6 @@
       color: var(--gray-600);
       line-height: 1.7;
     }
-    .offices-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .office-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 8px;
-      padding: 2rem;
-      transition: all 0.3s;
-    }
-    .office-card:hover {
-      border-color: var(--gray-300);
-      box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
-    }
-    .office-card.headquarters {
-      border-color: var(--corporate-gold);
-      background: linear-gradient(135deg, rgba(184, 134, 11, 0.03) 0%, transparent 100%);
-    }
-    .office-badge {
-      display: inline-block;
-      font-size: 0.625rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--corporate-gold);
-      background: rgba(184, 134, 11, 0.1);
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-    .office-region {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--corporate-navy);
-      margin-bottom: 0.5rem;
-    }
-    .office-city {
-      font-size: 0.9375rem;
-      color: var(--gray-600);
-      margin-bottom: 1.5rem;
-    }
-    .office-details {
-      font-size: 0.875rem;
-      color: var(--gray-600);
-      line-height: 1.6;
-    }
-    .office-details p {
-      margin-bottom: 0.5rem;
-    }
-    .office-details strong {
-      color: var(--gray-700);
-      font-weight: 500;
-    }
-
     /* ===== Additional Contact Options ===== */
     .additional-section {
       padding: 6rem 3rem;
@@ -654,7 +589,6 @@
     /* ===== Mobile Responsive ===== */
     @media (max-width: 1024px) {
       .contact-container { grid-template-columns: 1fr; gap: 4rem; }
-      .offices-grid { grid-template-columns: repeat(2, 1fr); }
       .additional-grid { grid-template-columns: repeat(2, 1fr); }
       .faq-container { grid-template-columns: 1fr; gap: 3rem; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
@@ -682,11 +616,9 @@
       #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
       .page-hero { padding: 4rem 1.5rem; }
       .contact-section,
-      .offices-section,
       .additional-section,
       .faq-section { padding: 4rem 1.5rem; }
       .form-row { grid-template-columns: 1fr; }
-      .offices-grid,
       .additional-grid { grid-template-columns: 1fr; }
       .section-header { margin-bottom: 3rem; }
       .btn { padding: 0.875rem 1.5rem; width: 100%; justify-content: center; }
@@ -923,7 +855,7 @@
           <div class="form-success" id="formSuccess">
             <div class="form-success-icon">&#10003;</div>
             <h3>Thank You for Reaching Out</h3>
-            <p>Your inquiry has been received. A member of our team will review your message and respond within one business day. For urgent matters, please contact our regional offices directly.</p>
+            <p>Your inquiry has been received. A member of our team will review your message and respond within one business day.</p>
           </div>
         </div>
 
@@ -987,52 +919,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Global Offices Section -->
-    <section class="offices-section" aria-label="Global offices">
-      <div class="offices-container">
-        <div class="section-header">
-          <p class="section-eyebrow">Global Presence</p>
-          <h2 class="section-title">Regional Offices</h2>
-          <p class="section-description">With headquarters in New York and regional offices across three continents, PILLAR provides localized support to clients worldwide.</p>
-        </div>
-
-        <div class="offices-grid">
-          <article class="office-card headquarters">
-            <span class="office-badge">Global Headquarters</span>
-            <h3 class="office-region">North America</h3>
-            <p class="office-city">New York, United States</p>
-            <div class="office-details">
-              <p><strong>Address:</strong> One World Trade Center, Suite 8500, New York, NY 10007</p>
-              <p><strong>Phone:</strong> +1 (888) PILLAR-1</p>
-              <p><strong>Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM ET</p>
-            </div>
-          </article>
-
-          <article class="office-card">
-            <span class="office-badge">Regional HQ</span>
-            <h3 class="office-region">Europe</h3>
-            <p class="office-city">London, United Kingdom</p>
-            <div class="office-details">
-              <p><strong>Address:</strong> 30 St Mary Axe, London EC3A 8BF, United Kingdom</p>
-              <p><strong>Phone:</strong> +44 20 7946 0958</p>
-              <p><strong>Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM GMT</p>
-            </div>
-          </article>
-
-          <article class="office-card">
-            <span class="office-badge">Regional HQ</span>
-            <h3 class="office-region">Asia Pacific</h3>
-            <p class="office-city">Singapore</p>
-            <div class="office-details">
-              <p><strong>Address:</strong> Marina Bay Financial Centre, Tower 1, Level 32, Singapore 018981</p>
-              <p><strong>Phone:</strong> +65 6789 1234</p>
-              <p><strong>Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM SGT</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -1120,57 +1006,66 @@
         <div class="footer-brand">
           <div class="footer-logo">PILLAR</div>
           <p class="footer-tagline">A global digital infrastructure and media corporation building the foundation of tomorrow's digital economy.</p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <span style="font-size: 0.6875rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em;">Global Presence</span>
+          </div>
+          <div style="margin-top: 0.5rem; font-size: 0.8125rem; color: rgba(255,255,255,0.6);">
+            95 Countries &bull; 7,000+ Digital Properties &bull; $140M Portfolio
+          </div>
         </div>
 
         <nav class="footer-nav">
           <h4>Company</h4>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/leadership">Leadership</a></li>
-            <li><a href="/careers">Careers</a></li>
-            <li><a href="/press">Press</a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer-nav">
-          <h4>Divisions</h4>
-          <ul>
-            <li><a href="/divisions/technology">Technology</a></li>
-            <li><a href="/divisions/media">Media Holdings</a></li>
-            <li><a href="/domains">Premium Domains</a></li>
-            <li><a href="/divisions/ventures">Ventures</a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer-nav">
-          <h4>Solutions</h4>
-          <ul>
-            <li><a href="/solutions#foundation">Foundation</a></li>
-            <li><a href="/solutions#growth">Growth</a></li>
-            <li><a href="/solutions#authority">Authority</a></li>
-            <li><a href="/solutions#enterprise">Enterprise</a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer-nav">
-          <h4>Resources</h4>
-          <ul>
+            <li><a href="/about">About PILLAR</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/insights">Insights</a></li>
+            <li><a href="/get-started">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/domains">Premium Domains</a></li>
+            <li><a href="/ai-services">AI Platform</a></li>
+            <li><a href="/how-it-works">Enterprise Solutions</a></li>
+            <li><a href="/builder-demo">Platform Demo</a></li>
+            <li><a href="/domain-roi-calculator">ROI Calculator</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Support</h4>
+          <ul>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/support">Support</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/support">Help Center</a></li>
+            <li><a href="/support">Documentation</a></li>
+            <li><a href="/support">System Status</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.webuildpillars.com" target="_blank" rel="noopener">We Build Pillars</a></li>
+            <li><a href="/get-started">Partner With Us</a></li>
+            <li><a href="/get-started">Enterprise Inquiries</a></li>
+            <li><a href="/get-started">Media Inquiries</a></li>
           </ul>
         </nav>
       </div>
 
       <div class="footer-bottom">
         <div class="footer-legal">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
-          <a href="/cookies">Cookie Policy</a>
-          <a href="/accessibility">Accessibility</a>
+          <a href="/faq">Privacy Policy</a>
+          <a href="/faq">Terms of Service</a>
+          <a href="/faq">Cookie Policy</a>
+          <a href="/support">Accessibility</a>
+          <a href="/faq">Legal</a>
         </div>
-        <p class="footer-copyright">&copy; 2025 PILLAR Corporation. All rights reserved.</p>
+        <p class="footer-copyright">&copy; 2025 PILLAR Corporation. All rights reserved. PILLAR and the PILLAR logo are registered trademarks.</p>
       </div>
     </div>
   </footer>
