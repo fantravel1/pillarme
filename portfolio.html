@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Digital Assets & Client Success | PILLAR</title>
+  <meta name="description" content="Explore PILLAR's portfolio of 7,000+ premium digital properties and discover how we've helped organizations from governments to startups build their digital presence.">
+  <meta name="keywords" content="premium domains, digital portfolio, client success, digital assets, enterprise clients">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
+  <link rel="canonical" href="https://pillarme.com/portfolio">
+
+  <meta property="og:title" content="Portfolio | Digital Assets & Client Success | PILLAR">
+  <meta property="og:description" content="Explore our portfolio of premium digital properties and client success stories.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/portfolio">
+  <meta property="og:site_name" content="PILLAR Corporation">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio | PILLAR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0A1628">
+
+  <style>
+    :root {
+      --corporate-navy: #0A1628;
+      --corporate-navy-light: #162544;
+      --corporate-gold: #B8860B;
+      --corporate-gold-light: #D4A853;
+      --white: #FFFFFF;
+      --off-white: #FAFBFC;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-900: #111827;
+      --success: #059669;
+      --nav-height: 72px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+    }
+
+    /* ===== Header ===== */
+    #site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
+      z-index: 9999;
+    }
+    #header-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+    }
+    #site-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #0A1628;
+      text-decoration: none;
+      letter-spacing: 0.2em;
+    }
+    #main-menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    #main-menu a {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #4B5563;
+      text-decoration: none;
+    }
+    #main-menu a:hover { color: #0A1628; }
+    #main-menu a.active { color: #0A1628; }
+    #contact-btn {
+      background-color: #0A1628 !important;
+      color: #FFFFFF !important;
+      padding: 10px 24px;
+      border-radius: 4px;
+    }
+    #mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #0A1628;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      color: var(--white);
+      padding: 8rem 3rem;
+      text-align: center;
+    }
+    .page-hero-container { max-width: 900px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold-light);
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .lead {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--corporate-gold-light);
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.25rem;
+    }
+
+    /* ===== Sections ===== */
+    .section { padding: 6rem 3rem; }
+    .section-alt { background: var(--off-white); }
+    .section-dark { background: var(--corporate-navy); color: var(--white); }
+    .section-container { max-width: 1400px; margin: 0 auto; }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold);
+      margin-bottom: 1rem;
+    }
+    .section-dark .section-eyebrow { color: var(--corporate-gold-light); }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1rem;
+    }
+    .section-dark .section-title { color: var(--white); }
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .section-dark .section-description { color: rgba(255,255,255,0.7); }
+
+    /* ===== Featured Properties ===== */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .property-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+    }
+    .property-card:hover {
+      border-color: var(--corporate-gold);
+      box-shadow: 0 12px 24px rgba(10, 22, 40, 0.08);
+      transform: translateY(-2px);
+    }
+    .property-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      border: none;
+      color: var(--white);
+    }
+    .property-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold);
+      margin-bottom: 0.75rem;
+    }
+    .property-card.featured .property-category { color: var(--corporate-gold-light); }
+    .property-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .property-card.featured .property-name { color: var(--white); font-size: 2rem; }
+    .property-desc {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    .property-card.featured .property-desc { color: rgba(255,255,255,0.7); }
+
+    /* ===== Client Success ===== */
+    .success-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .success-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+    }
+    .success-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--corporate-gold);
+    }
+    .success-sector {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold-light);
+      background: rgba(184, 134, 11, 0.15);
+      padding: 0.375rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .success-quote {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .success-result {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .result-item { }
+    .result-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--corporate-gold-light);
+    }
+    .result-label {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== Sectors Grid ===== */
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .sector-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .sector-card:hover {
+      border-color: var(--corporate-gold);
+      box-shadow: 0 8px 16px rgba(10, 22, 40, 0.06);
+    }
+    .sector-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .sector-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .sector-count {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    /* ===== Domain Categories ===== */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .category-pill {
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      transition: all 0.2s;
+    }
+    .category-pill:hover {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .category-pill strong {
+      display: block;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.25rem;
+    }
+    .category-pill:hover strong { color: var(--white); }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+    .cta-container { max-width: 700px; margin: 0 auto; }
+    .cta-section .section-title { color: var(--white); margin-bottom: 1.5rem; }
+    .cta-section .section-description { color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--corporate-gold);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--corporate-gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 5rem 3rem 2rem;
+    }
+    .footer-container { max-width: 1400px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand { max-width: 280px; }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+    .footer-nav h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav ul { list-style: none; }
+    .footer-nav li { margin-bottom: 0.75rem; }
+    .footer-nav a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-legal { display: flex; gap: 2rem; }
+    .footer-legal a {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+    .footer-copyright {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== Mobile Responsive ===== */
+    @media (max-width: 1024px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .property-card.featured { grid-column: span 1; }
+      .success-grid { grid-template-columns: 1fr; }
+      .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar { gap: 2rem; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+      #header-inner { padding: 0 1.5rem; height: 64px; }
+      #site-header { height: 64px; }
+      #main-menu { display: none; }
+      #main-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        padding: 1.5rem;
+        border-bottom: 1px solid #E5E7EB;
+      }
+      #main-menu.active a { padding: 1rem; border-bottom: 1px solid #F3F4F6; }
+      #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+      .page-hero { padding: 5rem 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+      .stats-bar { flex-direction: column; gap: 1.5rem; }
+      .sectors-grid { grid-template-columns: 1fr; }
+      .categories-grid { grid-template-columns: 1fr; }
+      .success-result { flex-direction: column; gap: 1rem; }
+      .cta-actions { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand { max-width: none; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="site-header">
+    <div id="header-inner">
+      <a href="/" id="site-logo">PILLAR</a>
+      <nav id="main-menu">
+        <a href="/about">About</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/portfolio" class="active">Portfolio</a>
+        <a href="/insights">Insights</a>
+        <a href="/get-started" id="contact-btn">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-container">
+      <p class="eyebrow">Our Portfolio</p>
+      <h1>World-Class Digital Assets</h1>
+      <p class="lead">Explore our portfolio of premium digital properties and discover the organizations we've helped transform their digital presence.</p>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">7,000+</div>
+          <div class="stat-label">Premium Domains</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">$140M</div>
+          <div class="stat-label">Portfolio Value</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">95</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100M+</div>
+          <div class="stat-label">Annual Reach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Properties -->
+  <section class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Featured Assets</p>
+        <h2 class="section-title">Premium Digital Properties</h2>
+        <p class="section-description">A selection of our most valuable digital assets, each representing instant brand authority in their respective markets.</p>
+      </div>
+
+      <div class="featured-grid">
+        <a href="https://www.fantravel.com" target="_blank" class="property-card featured">
+          <span class="property-category">Travel & Sports</span>
+          <h3 class="property-name">FanTravel.com</h3>
+          <p class="property-desc">Premium travel domain powering sports fan experiences worldwide. Generating 85K+ monthly visitors with 2,400% ROI.</p>
+        </a>
+        <a href="/domains" class="property-card">
+          <span class="property-category">Finance</span>
+          <h3 class="property-name">BankSize.com</h3>
+          <p class="property-desc">Authority domain in financial services vertical.</p>
+        </a>
+        <a href="/domains" class="property-card">
+          <span class="property-category">Technology</span>
+          <h3 class="property-name">FreeDesignThinking.com</h3>
+          <p class="property-desc">Innovation and methodology resource platform.</p>
+        </a>
+        <a href="https://www.play4tomorrow.com" target="_blank" class="property-card">
+          <span class="property-category">Entertainment</span>
+          <h3 class="property-name">Play4Tomorrow.com</h3>
+          <p class="property-desc">Interactive media and entertainment experiences.</p>
+        </a>
+        <a href="/domains" class="property-card featured">
+          <span class="property-category">Explore All</span>
+          <h3 class="property-name">7,000+ Premium Domains</h3>
+          <p class="property-desc">Browse our complete portfolio spanning travel, finance, technology, health, entertainment, and more. Flexible lease or purchase options available.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Sectors -->
+  <section class="section section-alt">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Who We've Helped</p>
+        <h2 class="section-title">Organizations We Serve</h2>
+        <p class="section-description">From government agencies to celebrity entrepreneurs, we've empowered organizations across every sector.</p>
+      </div>
+
+      <div class="sectors-grid">
+        <div class="sector-card">
+          <div class="sector-icon">&#127963;</div>
+          <h3 class="sector-title">Government & Public Sector</h3>
+          <p class="sector-count">Federal, state, and local agencies</p>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">&#127970;</div>
+          <h3 class="sector-title">Enterprise & Fortune 500</h3>
+          <p class="sector-count">Global corporations</p>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">&#9917;</div>
+          <h3 class="sector-title">Professional Sports</h3>
+          <p class="sector-count">Teams, leagues, and athletes</p>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">&#11088;</div>
+          <h3 class="sector-title">Celebrities & Influencers</h3>
+          <p class="sector-count">Personal brands and public figures</p>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">&#128640;</div>
+          <h3 class="sector-title">Startups & Scale-ups</h3>
+          <p class="sector-count">Emerging companies</p>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">&#128156;</div>
+          <h3 class="sector-title">Nonprofits & NGOs</h3>
+          <p class="sector-count">Mission-driven organizations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="section section-dark">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Client Success</p>
+        <h2 class="section-title">Results That Speak</h2>
+        <p class="section-description">Real outcomes from organizations that partnered with PILLAR.</p>
+      </div>
+
+      <div class="success-grid">
+        <div class="success-card">
+          <span class="success-sector">Sports & Entertainment</span>
+          <p class="success-quote">"The premium domain gave us instant credibility in a competitive market. Our conversion rates increased 34% within the first month."</p>
+          <div class="success-result">
+            <div class="result-item">
+              <div class="result-value">+34%</div>
+              <div class="result-label">Conversion Rate</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">85K</div>
+              <div class="result-label">Monthly Visitors</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">2,400%</div>
+              <div class="result-label">ROI</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-card">
+          <span class="success-sector">Nonprofit Organization</span>
+          <p class="success-quote">"PILLAR's platform is preserving our cultural stories for future generations. The premium domain lending credibility was crucial for partnerships."</p>
+          <div class="success-result">
+            <div class="result-item">
+              <div class="result-value">40+</div>
+              <div class="result-label">Countries Reached</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">120+</div>
+              <div class="result-label">Stories Preserved</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">25</div>
+              <div class="result-label">Partner Orgs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-card">
+          <span class="success-sector">Financial Services</span>
+          <p class="success-quote">"In finance, trust is everything. The premium .com domain was critical for establishing authority in our vertical."</p>
+          <div class="success-result">
+            <div class="result-item">
+              <div class="result-value">+89%</div>
+              <div class="result-label">Trust Score</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">$28K</div>
+              <div class="result-label">Monthly Revenue</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">2 mo</div>
+              <div class="result-label">Break-even</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-card">
+          <span class="success-sector">Startup</span>
+          <p class="success-quote">"The SEO is incredible. We rank #1 for 15+ keywords in our niche. Direct traffic from the premium domain is 60% of our visitors."</p>
+          <div class="success-result">
+            <div class="result-item">
+              <div class="result-value">15+</div>
+              <div class="result-label">#1 Rankings</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">60%</div>
+              <div class="result-label">Direct Traffic</div>
+            </div>
+            <div class="result-item">
+              <div class="result-value">280</div>
+              <div class="result-label">Leads/Month</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domain Categories -->
+  <section class="section">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Browse by Category</p>
+        <h2 class="section-title">Domains Across Every Industry</h2>
+        <p class="section-description">Our portfolio spans virtually every market and vertical.</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-pill"><strong>Travel</strong>500+ domains</div>
+        <div class="category-pill"><strong>Finance</strong>400+ domains</div>
+        <div class="category-pill"><strong>Technology</strong>600+ domains</div>
+        <div class="category-pill"><strong>Health</strong>350+ domains</div>
+        <div class="category-pill"><strong>Food & Beverage</strong>300+ domains</div>
+        <div class="category-pill"><strong>Sports</strong>450+ domains</div>
+        <div class="category-pill"><strong>Entertainment</strong>400+ domains</div>
+        <div class="category-pill"><strong>Education</strong>250+ domains</div>
+        <div class="category-pill"><strong>Real Estate</strong>200+ domains</div>
+        <div class="category-pill"><strong>Fashion</strong>300+ domains</div>
+        <div class="category-pill"><strong>Lifestyle</strong>500+ domains</div>
+        <div class="category-pill"><strong>Business</strong>600+ domains</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <p class="section-eyebrow" style="color: var(--corporate-gold-light);">Get Started</p>
+      <h2 class="section-title">Find Your Perfect Domain</h2>
+      <p class="section-description">Let us help you discover the right digital asset for your organization.</p>
+      <div class="cta-actions">
+        <a href="/domains" class="btn btn-primary">Browse All Domains</a>
+        <a href="/get-started" class="btn btn-outline">Contact Our Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">PILLAR</div>
+          <p class="footer-tagline">Global digital infrastructure powering organizations across 95 countries.</p>
+        </div>
+        <nav class="footer-nav">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/insights">Insights</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/solutions">Premium Domains</a></li>
+            <li><a href="/solutions">AI Platform</a></li>
+            <li><a href="/solutions">Technology</a></li>
+            <li><a href="/solutions">Consulting</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/get-started">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="/get-started">Get Started</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="mailto:hello@pillarme.com">Email Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="/faq">Privacy Policy</a>
+          <a href="/faq">Terms of Service</a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 PILLAR Corporation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (mobileMenuBtn && mainMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mainMenu.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('active'));
+      });
+
+      document.querySelectorAll('#main-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainMenu.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
