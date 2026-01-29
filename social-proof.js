@@ -201,7 +201,7 @@ const testimonials = [
     role: 'Director, Global First Nations',
     quote: 'This platform is preserving our cultural stories for future generations. The premium domain lending credibility was crucial for partnerships.',
     metrics: {
-      reach: '40 countries',
+      reach: '95 countries',
       stories: '120+',
       partners: '25 orgs'
     }
