@@ -73,11 +73,12 @@
       top: 0;
       left: 0;
       right: 0;
+      width: 100%;
       height: var(--nav-height);
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(12px);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--gray-200);
-      z-index: 1000;
+      z-index: 9999;
+      display: block;
     }
     .nav-container {
       max-width: 1600px;
@@ -90,11 +91,12 @@
     }
     .logo {
       font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 400;
+      font-size: 1.75rem;
+      font-weight: 600;
       color: var(--corporate-navy);
       text-decoration: none;
       letter-spacing: 0.2em;
+      display: block;
     }
     .nav-links {
       display: flex;
@@ -885,7 +887,7 @@
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number">$140M</div>
-          <div class="stat-label">Portfolio Value</div>
+          <div class="stat-label">Portfolio</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">95</div>
