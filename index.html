@@ -67,66 +67,63 @@
       padding-top: var(--nav-height);
     }
 
-    /* ===== Navigation ===== */
-    nav {
+    /* ===== Header ===== */
+    #site-header {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
       width: 100%;
-      height: var(--nav-height);
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--gray-200);
+      height: 72px;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
       z-index: 9999;
-      display: block;
     }
-    .nav-container {
+    #header-inner {
       max-width: 1600px;
       margin: 0 auto;
-      height: 100%;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 3rem;
+      padding: 0 48px;
     }
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
+    #site-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
       font-weight: 600;
-      color: var(--corporate-navy);
+      color: #0A1628;
       text-decoration: none;
       letter-spacing: 0.2em;
-      display: block;
     }
-    .nav-links {
+    #main-menu {
       display: flex;
       align-items: center;
-      gap: 2.5rem;
+      gap: 40px;
     }
-    .nav-links a {
-      font-size: 0.875rem;
+    #main-menu a {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
       font-weight: 500;
-      color: var(--gray-600);
+      color: #4B5563;
       text-decoration: none;
-      transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--corporate-navy); }
-    .nav-cta {
-      background: var(--corporate-navy) !important;
-      color: var(--white) !important;
-      padding: 0.625rem 1.5rem !important;
+    #main-menu a:hover {
+      color: #0A1628;
+    }
+    #contact-btn {
+      background-color: #0A1628 !important;
+      color: #FFFFFF !important;
+      padding: 10px 24px;
       border-radius: 4px;
     }
-    .nav-cta:hover { background: var(--corporate-navy-light) !important; }
-    .mobile-menu-btn {
+    #mobile-menu-btn {
       display: none;
       background: none;
       border: none;
-      font-size: 1.5rem;
-      color: var(--corporate-navy);
+      font-size: 24px;
+      color: #0A1628;
       cursor: pointer;
-      min-width: 44px;
-      min-height: 44px;
+      padding: 8px;
     }
 
     /* ===== Hero Section ===== */
@@ -744,26 +741,27 @@
 
     @media (max-width: 768px) {
       :root { --nav-height: 64px; }
-      .nav-container { padding: 0 1.5rem; }
-      .nav-links { display: none; }
-      .nav-links.active {
+      #header-inner { padding: 0 1.5rem; height: 64px; }
+      #site-header { height: 64px; }
+      #main-menu { display: none; }
+      #main-menu.active {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: var(--nav-height);
+        top: 64px;
         left: 0;
         right: 0;
-        background: var(--white);
+        background: #FFFFFF;
         padding: 1.5rem;
         gap: 0;
-        border-bottom: 1px solid var(--gray-200);
+        border-bottom: 1px solid #E5E7EB;
       }
-      .nav-links.active a {
+      #main-menu.active a {
         padding: 1rem;
-        border-bottom: 1px solid var(--gray-100);
+        border-bottom: 1px solid #F3F4F6;
       }
-      .nav-cta { margin: 1rem 0 0 0; width: 100%; text-align: center; }
-      .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+      #contact-btn { margin: 1rem 0 0 0; width: 100%; text-align: center; }
+      #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
       .hero { min-height: auto; }
       .hero-container {
         grid-template-columns: 1fr;
@@ -856,21 +854,21 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Navigation -->
-  <nav role="navigation" aria-label="Main navigation" style="position: fixed; top: 0; left: 0; right: 0; width: 100%; height: 72px; background: #FFFFFF; border-bottom: 1px solid #E5E7EB; z-index: 9999; display: flex; align-items: center;">
-    <div class="nav-container" style="max-width: 1600px; margin: 0 auto; width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem;">
-      <a href="/" class="logo" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.75rem; font-weight: 600; color: #0A1628; text-decoration: none; letter-spacing: 0.2em;">PILLAR</a>
-      <div class="nav-links" style="display: flex; align-items: center; gap: 2.5rem;">
-        <a href="/about" style="font-size: 0.875rem; font-weight: 500; color: #4B5563; text-decoration: none;">About</a>
-        <a href="/how-it-works" style="font-size: 0.875rem; font-weight: 500; color: #4B5563; text-decoration: none;">How It Works</a>
-        <a href="/ai-services" style="font-size: 0.875rem; font-weight: 500; color: #4B5563; text-decoration: none;">Services</a>
-        <a href="/domains" style="font-size: 0.875rem; font-weight: 500; color: #4B5563; text-decoration: none;">Domains</a>
-        <a href="/insights" style="font-size: 0.875rem; font-weight: 500; color: #4B5563; text-decoration: none;">Insights</a>
-        <a href="/get-started" class="nav-cta" style="font-size: 0.875rem; font-weight: 500; background: #0A1628; color: #FFFFFF; text-decoration: none; padding: 0.625rem 1.5rem; border-radius: 4px;">Contact</a>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Toggle menu" style="display: none;">&#9776;</button>
+  <!-- Header -->
+  <header id="site-header">
+    <div id="header-inner">
+      <a href="/" id="site-logo">PILLAR</a>
+      <nav id="main-menu">
+        <a href="/about">About</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/ai-services">Services</a>
+        <a href="/domains">Domains</a>
+        <a href="/insights">Insights</a>
+        <a href="/get-started" id="contact-btn">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
     </div>
-  </nav>
+  </header>
 
   <!-- Hero Section -->
   <header class="hero" role="banner">
@@ -1267,18 +1265,18 @@
 
   <!-- Mobile Menu Script -->
   <script>
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mainMenu = document.getElementById('main-menu');
 
-    if (mobileMenuBtn && navLinks) {
+    if (mobileMenuBtn && mainMenu) {
       mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        mainMenu.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('active'));
       });
 
-      document.querySelectorAll('.nav-links a').forEach(link => {
+      document.querySelectorAll('#main-menu a').forEach(link => {
         link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
+          mainMenu.classList.remove('active');
           mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
       });
