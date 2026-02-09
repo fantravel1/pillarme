@@ -43,7 +43,7 @@
       --footer-border:rgba(255,255,255,.1);
     }
     *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;overflow-x:hidden}
     body{
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
       background:#fff;color:#000;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
@@ -238,6 +238,12 @@
       .filter-btn{padding:.5rem 1rem;font-size:.75rem}
       .cta-buttons{flex-direction:column;width:100%;padding:0 2rem}
       .btn-white,.btn-outline{width:100%}
+    }
+
+    @media (max-width: 480px) {
+      .page-hero { padding: 2.5rem 0.75rem; }
+      .section { padding: 2.5rem 0.75rem; }
+      footer { padding: 2rem 0.75rem 1.5rem; }
     }
 
     /* Skip link styles (hidden) */

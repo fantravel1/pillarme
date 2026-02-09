@@ -46,7 +46,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--font-sans);
       background: var(--white);
@@ -54,6 +54,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       padding-top: var(--nav-height);
+      overflow-x: hidden;
     }
 
     /* ===== Header ===== */
@@ -481,7 +482,7 @@
 
     @media (max-width: 768px) {
       :root { --nav-height: 64px; }
-      #header-inner { padding: 0 1.5rem; height: 64px; }
+      #header-inner { padding: 0 1rem; height: 64px; }
       #site-header { height: 64px; }
       #main-menu { display: none; }
       #main-menu.active {
@@ -494,21 +495,28 @@
         background: #FFFFFF;
         padding: 1.5rem;
         border-bottom: 1px solid #E5E7EB;
+        z-index: 9998;
       }
       #main-menu.active a { padding: 1rem; border-bottom: 1px solid #F3F4F6; }
       #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
-      .page-hero { padding: 5rem 1.5rem; }
-      .section { padding: 4rem 1.5rem; }
+      .page-hero { padding: 5rem 1rem; }
+      .section { padding: 4rem 1rem; }
       .sectors-showcase { gap: 1.5rem; }
       .sector-badge-icon { width: 60px; height: 60px; font-size: 1.5rem; }
       .articles-grid { grid-template-columns: 1fr; }
       .cta-actions { flex-direction: column; }
       .btn { width: 100%; justify-content: center; }
-      .footer { padding: 3rem 1.5rem 2rem; }
-      .footer-top { grid-template-columns: 1fr; text-align: center; }
-      .footer-brand { max-width: none; }
+      footer { padding: 3rem 1rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+      .footer-brand { max-width: none; text-align: center; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-legal { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero { padding: 2.5rem 0.75rem; }
+      .section { padding: 2.5rem 0.75rem; }
+      footer { padding: 2rem 0.75rem 1.5rem; }
     }
   </style>
 </head>
