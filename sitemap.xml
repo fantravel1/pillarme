@@ -5252,6 +5252,14 @@
   </url>
 
 
+  <!-- Insights: AI.com Article -->
+  <url>
+    <loc>https://pillarme.com/insights/ai-com-70m-dotcom-dominance</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Portfolio Categories Section -->
   <url>
     <loc>https://pillarme.com/portfolio/categories</loc>
