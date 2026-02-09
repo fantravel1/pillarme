@@ -340,32 +340,167 @@
       color: var(--gray-500);
     }
 
-    /* ===== Domain Categories ===== */
-    .categories-grid {
+    /* ===== Portfolio Categories ===== */
+    .cat-featured {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      border-radius: 16px;
+      padding: 2.5rem 3rem;
+      margin-bottom: 3rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .cat-featured:hover {
+      box-shadow: 0 20px 40px rgba(10, 22, 40, 0.15);
+      transform: translateY(-2px);
+    }
+    .cat-featured-text { color: var(--white); }
+    .cat-featured-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold-light);
+      background: rgba(184, 134, 11, 0.2);
+      padding: 0.375rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+    .cat-featured-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+    .cat-featured-text p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .cat-featured-domains {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+    }
+    .cat-featured-domains span {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.3rem 0.625rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .cat-featured-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .cat-featured-stats .fs-val {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--corporate-gold-light);
+    }
+    .cat-featured-stats .fs-lbl {
+      font-size: 0.6875rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .cat-featured-icon { text-align: center; }
+    .cat-featured-icon svg { opacity: 0.12; }
+
+    .market-group { margin-bottom: 2.5rem; }
+    .market-group:last-child { margin-bottom: 0; }
+    .market-group-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .market-group-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .market-group-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+    }
+    .market-tag {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      background: var(--corporate-navy);
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+    }
+    .market-group-header .view-more {
+      font-size: 0.875rem;
+      color: var(--corporate-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .market-group-header .view-more:hover { text-decoration: underline; }
+    .cat-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
     }
-    .category-pill {
-      background: var(--gray-100);
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      text-align: center;
-      font-size: 0.9375rem;
-      color: var(--gray-600);
-      transition: all 0.2s;
-    }
-    .category-pill:hover {
-      background: var(--corporate-navy);
-      color: var(--white);
-    }
-    .category-pill strong {
+    .cat-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
       display: block;
+    }
+    .cat-card:hover {
+      border-color: var(--corporate-gold);
+      box-shadow: 0 8px 16px rgba(10, 22, 40, 0.06);
+      transform: translateY(-2px);
+    }
+    .cat-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .cat-card h4 {
+      font-size: 0.9375rem;
       font-weight: 600;
       color: var(--corporate-navy);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.375rem;
     }
-    .category-pill:hover strong { color: var(--white); }
+    .cat-card .cat-card-preview {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+    .portfolio-view-all {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .portfolio-view-all a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      background: var(--corporate-gold);
+      color: var(--white);
+      transition: all 0.2s;
+    }
+    .portfolio-view-all a:hover { background: var(--corporate-gold-light); }
 
     /* ===== CTA Section ===== */
     .cta-section {
@@ -464,7 +599,9 @@
       .property-card.featured { grid-column: span 1; }
       .success-grid { grid-template-columns: 1fr; }
       .sectors-grid { grid-template-columns: repeat(2, 1fr); }
-      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .cat-featured { grid-template-columns: 1fr; }
+      .cat-featured-icon { display: none; }
       .footer-top { grid-template-columns: repeat(2, 1fr); }
       .stats-bar { gap: 2rem; flex-wrap: wrap; }
     }
@@ -491,7 +628,7 @@
       .section { padding: 4rem 1.5rem; }
       .stats-bar { flex-direction: column; gap: 1.5rem; }
       .sectors-grid { grid-template-columns: 1fr; }
-      .categories-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: 1fr; }
       .success-result { flex-direction: column; gap: 1rem; }
       .cta-actions { flex-direction: column; }
       .btn { width: 100%; justify-content: center; }
@@ -720,41 +857,202 @@
     </div>
   </section>
 
-  <!-- Domain Categories -->
+  <!-- Portfolio Categories -->
   <section class="section">
     <div class="section-container">
       <div class="section-header">
-        <p class="section-eyebrow">Browse by Category</p>
-        <h2 class="section-title">Domains Across Every Industry</h2>
-        <p class="section-description">Our portfolio spans virtually every market and vertical.</p>
+        <p class="section-eyebrow">Portfolio Categories</p>
+        <h2 class="section-title">60+ Curated Domain Collections</h2>
+        <p class="section-description">Our portfolio is organized into thematic categories across English, French, and Spanish markets. Each category is a strategic grouping of premium domains spanning an entire industry vertical.</p>
       </div>
 
-      <div class="categories-grid">
-        <div class="category-pill"><strong>Travel</strong>500+ domains</div>
-        <div class="category-pill"><strong>Finance</strong>400+ domains</div>
-        <div class="category-pill"><strong>Technology</strong>600+ domains</div>
-        <div class="category-pill"><strong>Health</strong>350+ domains</div>
-        <div class="category-pill"><strong>Food & Beverage</strong>300+ domains</div>
-        <div class="category-pill"><strong>Sports</strong>450+ domains</div>
-        <div class="category-pill"><strong>Entertainment</strong>400+ domains</div>
-        <div class="category-pill"><strong>Education</strong>250+ domains</div>
-        <div class="category-pill"><strong>Real Estate</strong>200+ domains</div>
-        <div class="category-pill"><strong>Fashion</strong>300+ domains</div>
-        <div class="category-pill"><strong>Lifestyle</strong>500+ domains</div>
-        <div class="category-pill"><strong>Business</strong>600+ domains</div>
-      </div>
-    </div>
-  </section>
+      <!-- Featured: Travel Experience -->
+      <a href="/portfolio/categories/travel-experience" class="cat-featured">
+        <div class="cat-featured-text">
+          <span class="cat-featured-badge">Featured Category</span>
+          <h3>Travel Experience</h3>
+          <p>Our flagship collection with 75+ premium domains spanning sports fan travel, cultural tourism, adventure travel, and destination brands worldwide.</p>
+          <div class="cat-featured-domains">
+            <span>FanTravel.com</span>
+            <span>AfricanBeaches.com</span>
+            <span>BarcelonaVibe.com</span>
+            <span>CelebVacations.com</span>
+            <span>ThisIsAmsterdam.com</span>
+            <span>+70 more</span>
+          </div>
+          <div class="cat-featured-stats">
+            <div><div class="fs-val">75+</div><div class="fs-lbl">Domains</div></div>
+            <div><div class="fs-val">Massive</div><div class="fs-lbl">TAM Signal</div></div>
+            <div><div class="fs-val">Broad</div><div class="fs-lbl">Monetization</div></div>
+          </div>
+        </div>
+        <div class="cat-featured-icon">
+          <svg viewBox="0 0 200 200" width="220"><text x="100" y="110" font-size="120" text-anchor="middle" fill="white">&#9992;</text></svg>
+        </div>
+      </a>
 
-  <!-- Portfolio Categories -->
-  <section class="section section-alt" style="text-align: center;">
-    <div class="section-container">
-      <div class="section-header">
-        <p class="section-eyebrow">Deep Dive</p>
-        <h2 class="section-title">Explore Portfolio Categories</h2>
-        <p class="section-description">Our domains are organized into 60+ thematic categories across English, French, and Spanish markets. Explore curated collections spanning travel, health, finance, technology, and more.</p>
+      <!-- English Market -->
+      <div class="market-group">
+        <div class="market-group-header">
+          <div class="market-group-left">
+            <span class="market-tag">EN</span>
+            <h3>English Market &mdash; North America</h3>
+          </div>
+          <a href="/portfolio/categories#english" class="view-more">View all 15 categories &rarr;</a>
+        </div>
+        <div class="cat-grid">
+          <a href="/portfolio/categories/womens-health" class="cat-card">
+            <div class="cat-card-icon">&#129657;</div>
+            <h4>Women's Health</h4>
+            <p class="cat-card-preview">StopMyCancer.com, HowToBeYoung.com, HormonalPain.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/mens-health" class="cat-card">
+            <div class="cat-card-icon">&#128170;</div>
+            <h4>Men's Health</h4>
+            <p class="cat-card-preview">ProstateAdvice.com, HeartClot.com, FixACL.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/home-cooking" class="cat-card">
+            <div class="cat-card-icon">&#127858;</div>
+            <h4>Home Cooking</h4>
+            <p class="cat-card-preview">FoodWatchlist.com, LearnToChef.com, Vegmaster.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/entertainment" class="cat-card">
+            <div class="cat-card-icon">&#127902;</div>
+            <h4>Entertainment</h4>
+            <p class="cat-card-preview">TVCeleb.com, DJCeleb.com, MovieCeleb.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/dating-marriage" class="cat-card">
+            <div class="cat-card-icon">&#128149;</div>
+            <h4>Dating &amp; Marriage</h4>
+            <p class="cat-card-preview">RatherYou.com, ThriftyDates.com, MarryIQ.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/womens-fashion" class="cat-card">
+            <div class="cat-card-icon">&#128087;</div>
+            <h4>Women's Fashion</h4>
+            <p class="cat-card-preview">Blushless.com, SelfTailored.com, WhatsPosh.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/womens-finance" class="cat-card">
+            <div class="cat-card-icon">&#128176;</div>
+            <h4>Women's Finance</h4>
+            <p class="cat-card-preview">DayInvestors.com, BankMade.com, YourBestMoney.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/new-parents" class="cat-card">
+            <div class="cat-card-icon">&#128118;</div>
+            <h4>New Parents</h4>
+            <p class="cat-card-preview">FamilyWorkouts.com, DanceWithKids.com, ChildsFood.com&hellip;</p>
+          </a>
+        </div>
       </div>
-      <a href="/portfolio/sleeves" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2.5rem; font-size: 1rem; font-weight: 600; text-decoration: none; border-radius: 6px; background: var(--corporate-gold); color: var(--white); transition: all 0.2s;">View All 60+ Portfolio Categories &rarr;</a>
+
+      <!-- French Market -->
+      <div class="market-group">
+        <div class="market-group-header">
+          <div class="market-group-left">
+            <span class="market-tag">FR</span>
+            <h3>French Market &mdash; Africa &amp; Europe</h3>
+          </div>
+          <a href="/portfolio/categories#french" class="view-more">View all 17 categories &rarr;</a>
+        </div>
+        <div class="cat-grid">
+          <a href="/portfolio/categories/finance-fr" class="cat-card">
+            <div class="cat-card-icon">&#127975;</div>
+            <h4>Finance (FR)</h4>
+            <p class="cat-card-preview">BanqueIA.com, FinancesIA.com, ComptableIA.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/law-fr" class="cat-card">
+            <div class="cat-card-icon">&#9878;</div>
+            <h4>Law (FR)</h4>
+            <p class="cat-card-preview">JuridiqueIA.com, Contractualiser.com, Defendeur.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/cooking-fr" class="cat-card">
+            <div class="cat-card-icon">&#127859;</div>
+            <h4>Cooking (FR)</h4>
+            <p class="cat-card-preview">Mijoteuse.com, Bouillir.com, Eplucher.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/women-stem-fr" class="cat-card">
+            <div class="cat-card-icon">&#128300;</div>
+            <h4>Women STEM (FR)</h4>
+            <p class="cat-card-preview">Programmatrice.com, Roboticienne.com, Geologiste.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/mental-health-fr" class="cat-card">
+            <div class="cat-card-icon">&#128156;</div>
+            <h4>Mental Health (FR)</h4>
+            <p class="cat-card-preview">Anxieuse.com, Apaisante.com, Cathartique.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/space-fr" class="cat-card">
+            <div class="cat-card-icon">&#128640;</div>
+            <h4>Space (FR)</h4>
+            <p class="cat-card-preview">Cosmologique.com, Subatomique.com, Relativiste.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/business-fr" class="cat-card">
+            <div class="cat-card-icon">&#128188;</div>
+            <h4>Business (FR)</h4>
+            <p class="cat-card-preview">EntrepriseIA.com, Standardiser.com, Systematiser.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/cinema-art-fr" class="cat-card">
+            <div class="cat-card-icon">&#127916;</div>
+            <h4>Cinema &amp; Art (FR)</h4>
+            <p class="cat-card-preview">CinemaIA.com, Scenariser.com, Declamer.com&hellip;</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Spanish Market -->
+      <div class="market-group">
+        <div class="market-group-header">
+          <div class="market-group-left">
+            <span class="market-tag">ES</span>
+            <h3>Spanish Market &mdash; The Americas</h3>
+          </div>
+          <a href="/portfolio/categories#spanish" class="view-more">View all 29 categories &rarr;</a>
+        </div>
+        <div class="cat-grid">
+          <a href="/portfolio/categories/fintech-es" class="cat-card">
+            <div class="cat-card-icon">&#128179;</div>
+            <h4>Fintech (ES)</h4>
+            <p class="cat-card-preview">FintechLatino.com, BancosInteligentes.com, CreditoBueno.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/real-estate-es" class="cat-card">
+            <div class="cat-card-icon">&#127968;</div>
+            <h4>Real Estate (ES)</h4>
+            <p class="cat-card-preview">FinanciarCasas.com, RemodelarCasas.com, HipotecaIA.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/health-es" class="cat-card">
+            <div class="cat-card-icon">&#129657;</div>
+            <h4>Health (ES)</h4>
+            <p class="cat-card-preview">ConsultarDoctor.com, DiagnosticoOnline.com, EncontrarTerapia.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/food-es" class="cat-card">
+            <div class="cat-card-icon">&#127789;</div>
+            <h4>Food (ES)</h4>
+            <p class="cat-card-preview">DeliveryComida.com, AntojoYa.com, ComidaIA.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/direct-travel-es" class="cat-card">
+            <div class="cat-card-icon">&#9992;</div>
+            <h4>Direct Travel (ES)</h4>
+            <p class="cat-card-preview">ViajeNYC.com, ViajeMiami.com, ViajeTokio.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/mental-health-es" class="cat-card">
+            <div class="cat-card-icon">&#128156;</div>
+            <h4>Mental Health (ES)</h4>
+            <p class="cat-card-preview">Relajarme.com, Calmarme.com, Inspirarme.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/fashion-es" class="cat-card">
+            <div class="cat-card-icon">&#128087;</div>
+            <h4>Fashion (ES)</h4>
+            <p class="cat-card-preview">FresaStyle.com, PonerseBella.com, SerGuapa.com&hellip;</p>
+          </a>
+          <a href="/portfolio/categories/girl-power-es" class="cat-card">
+            <div class="cat-card-icon">&#128170;</div>
+            <h4>Girl Power (ES)</h4>
+            <p class="cat-card-preview">SerJefa.com, SerGuerrera.com, HacersePoderosa.com&hellip;</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="portfolio-view-all">
+        <a href="/portfolio/categories">View All 60+ Portfolio Categories &rarr;</a>
+      </div>
     </div>
   </section>
 
@@ -792,6 +1090,7 @@
             <li><a href="/about">About PILLAR</a></li>
             <li><a href="/solutions">Solutions</a></li>
             <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/portfolio/categories">Portfolio Categories</a></li>
             <li><a href="/insights">Insights</a></li>
             <li><a href="/get-started">Contact</a></li>
           </ul>
