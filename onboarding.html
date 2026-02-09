@@ -30,7 +30,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -39,6 +39,7 @@
             color: var(--black);
             line-height: 1.6;
             padding-top: var(--nav-h);
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -493,6 +494,12 @@
             .timeline { padding-left: 2.5rem; }
             .step-marker { left: -2.5rem; width: 28px; height: 28px; font-size: .75rem; }
             .estimate-days { gap: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero { padding: 2.5rem 0.75rem; }
+            .section { padding: 2.5rem 0.75rem; }
+            footer { padding: 2rem 0.75rem 1.5rem; }
         }
     </style>
 </head>

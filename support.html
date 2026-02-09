@@ -74,7 +74,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--font-sans);
       background: var(--white);
@@ -82,6 +82,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       padding-top: var(--nav-height);
+      overflow-x: hidden;
     }
 
     /* ===== Header ===== */
@@ -691,7 +692,7 @@
 
     @media (max-width: 768px) {
       :root { --nav-height: 64px; }
-      #header-inner { padding: 0 1.5rem; }
+      #header-inner { padding: 0 1rem; }
       #main-menu { display: none; }
       #main-menu.active {
         display: flex;
@@ -704,13 +705,14 @@
         padding: 1.5rem;
         gap: 0;
         border-bottom: 1px solid var(--gray-200);
+        z-index: 9998;
       }
       #main-menu.active a { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
       #contact-btn { margin: 1rem 0 0 0; width: 100%; text-align: center; }
       #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
-      .page-hero { padding: 4rem 1.5rem; }
-      .section { padding: 4rem 1.5rem; }
-      .status-bar { padding: 1rem 1.5rem; }
+      .page-hero { padding: 4rem 1rem; }
+      .section { padding: 4rem 1rem; }
+      .status-bar { padding: 1rem 1rem; }
       .quick-access-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .kb-grid { grid-template-columns: 1fr; }
@@ -720,10 +722,17 @@
         margin: 3rem 1.5rem 0;
       }
       .btn { padding: 0.875rem 1.5rem; width: 100%; justify-content: center; }
-      .footer { padding: 3rem 1.5rem 2rem; }
-      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      footer { padding: 3rem 1rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+      .footer-brand { max-width: none; text-align: center; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-legal { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero { padding: 2.5rem 0.75rem; }
+      .section { padding: 2.5rem 0.75rem; }
+      footer { padding: 2rem 0.75rem 1.5rem; }
     }
 
     /* ===== Accessibility ===== */
