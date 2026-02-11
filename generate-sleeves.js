@@ -7,8 +7,8 @@ const path = require('path');
 const sleeves = [
   {
     name: 'Travel Experience', slug: 'travel-experience', market: 'EN', region: 'North America',
-    lifecycle: 'Early', tam: 'Massive', monetization: 'Broad', icon: '&#9992;',
-    description: 'A flagship collection of premium travel and experience domains covering destinations, accommodations, and fan-driven travel across the globe. This sleeve captures the massive opportunity in experiential tourism, from African beaches to Asian capitals.',
+    lifecycle: 'Growth', tam: 'Massive', monetization: 'Broad', icon: '&#9992;',
+    description: 'A flagship collection of premium travel and experience domains covering destinations, accommodations, and fan-driven travel across the globe. Now a live, thriving vertical generating tens of millions of monthly views across 100+ properties worldwide.',
     domains: ['AfricanBeaches.com','AmazonSolo.com','AngolaTrip.com','BallparkFan.com','BarcelonaVibe.com','BeachSwimmer.com','BikeMontreal.com','BleacherBeds.com','CairoVibe.com','CarpoolFree.com','CelebEats.com','CelebVacations.com','ChampionshipsGuide.com','ChadTrip.com','CheapFan.com','CheapRetreats.com','CommunityHostels.com','ConcertBet.com','CougarTravel.com','CzechiaTrip.com','DayOfTheDeadTravel.com','DepartMe.com','DiasporaDays.com','DinosaurTravel.com','DormTravel.com','DownloadEat.com','DownloadHotels.com','DraculaExperience.com','EarlyNightOut.com','EcoRenter.com','EiffelTowerTravel.com','FanBookings.com','FanHaeng.com','FanHostel.com','FanPremiere.com','FantasyThemePark.com','FastConcert.com','FitnessBeaches.com','GirlFestival.com','GoToMontreal.com','HinchaViajero.com','HongKongVilla.com','HotelCarRentals.com','HotelDownload.com','HotIslands.com','HotParks.com','HotVenues.com','IntiraymiTravel.com','IslandDetox.com','ItsAdventure.com','KidHostels.com','KumbhmelaTravel.com','LimitedTicket.com','LocalWeekends.com','MobileHostel.com','MtFujiTravel.com','OttawaHolidays.com','ParkviewHotels.com','OldResorts.com','PartyBusTravel.com','PartyConcerts.com','PartyInsiders.com','PremiumTrains.com','ReggaeTravel.com','SharmElSheikhTravel.com','SoloNightOut.com','StayFanatic.com','StockholmVibe.com','SurferTours.com','TailgateExperts.com','TennisOpens.com','ThisIsAmsterdam.com','ThisIsBeijing.com','ThisIsCapeTown.com','ThisIsIstanbul.com','ThisIsVietnam.com']
   },
   {
@@ -510,6 +510,9 @@ function generateSleevePage(sleeve) {
     .meta-tags { display: flex; gap: 1rem; flex-wrap: wrap; }
     .meta-tag { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.8125rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 6px; }
     .meta-tag.lifecycle { background: rgba(184,134,11,0.2); color: var(--corporate-gold-light); }
+    .meta-tag.lifecycle-growth { background: rgba(5,150,105,0.25); color: #6EE7B7; }
+    .live-dot { display: inline-block; width: 8px; height: 8px; background: #10B981; border-radius: 50%; animation: pulse-live 2s infinite; }
+    @keyframes pulse-live { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16,185,129,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(16,185,129,0); } }
     .meta-tag.tam-massive { background: rgba(5,150,105,0.2); color: #6EE7B7; }
     .meta-tag.tam-large { background: rgba(59,130,246,0.2); color: #93C5FD; }
     .meta-tag.tam-emerging { background: rgba(245,158,11,0.2); color: #FCD34D; }
@@ -614,7 +617,7 @@ function generateSleevePage(sleeve) {
       <h1>${sleeve.icon} ${escHtml(sleeve.name)}</h1>
       <p class="lead">${sleeve.description}</p>
       <div class="meta-tags">
-        <span class="meta-tag lifecycle">Life Cycle: ${sleeve.lifecycle}</span>
+        <span class="meta-tag ${sleeve.lifecycle === 'Growth' ? 'lifecycle-growth' : 'lifecycle'}">${sleeve.lifecycle === 'Growth' ? '<span class="live-dot"></span> ' : ''}Life Cycle: ${sleeve.lifecycle}</span>
         <span class="meta-tag tam-${tamClass}">TAM Signal: ${sleeve.tam}</span>
         <span class="meta-tag monetization">Monetization: ${sleeve.monetization}</span>
       </div>
