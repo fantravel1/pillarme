@@ -79,7 +79,7 @@
     {
       "name": "View Domains",
       "short_name": "Domains",
-      "description": "Browse premium domain rentals",
+      "description": "Browse premium domain partnerships",
       "url": "/domains",
       "icons": [{ "src": "/images/icon-192x192.png", "sizes": "192x192" }]
     },

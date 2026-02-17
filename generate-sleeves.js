@@ -410,15 +410,15 @@ function marketFlag(market) {
 function estimatePrice(domain) {
   const name = domain.replace('.com', '');
   const len = name.length;
-  if (len <= 5) return { value: 150000, rent: 350 };
-  if (len <= 8) return { value: 80000, rent: 200 };
-  if (len <= 12) return { value: 40000, rent: 100 };
-  if (len <= 16) return { value: 20000, rent: 50 };
-  return { value: 10000, rent: 25 };
+  if (len <= 5) return { value: 150000, monthly: 350 };
+  if (len <= 8) return { value: 80000, monthly: 200 };
+  if (len <= 12) return { value: 40000, monthly: 100 };
+  if (len <= 16) return { value: 20000, monthly: 50 };
+  return { value: 10000, monthly: 25 };
 }
 
-function savings(value, rent) {
-  return (((value - rent * 12) / value) * 100).toFixed(1);
+function savings(value, monthly) {
+  return (((value - monthly * 12) / value) * 100).toFixed(1);
 }
 
 function escHtml(s) {
@@ -652,7 +652,7 @@ ${sleeve.domains.map(d => {
     <div class="cta-container">
       <p class="section-eyebrow" style="color: var(--corporate-gold-light);">Interested in this sleeve?</p>
       <h2 class="section-title">Explore ${escHtml(sleeve.name)} Domains</h2>
-      <p class="section-description">Browse the full collection or contact our team to discuss acquisition and leasing options for this portfolio sleeve.</p>
+      <p class="section-description">Browse the full collection or contact our team to discuss partnership opportunities for this portfolio sleeve.</p>
       <div class="cta-actions">
         <a href="/domains" class="btn btn-primary">Browse Domains</a>
         <a href="/get-started" class="btn btn-outline">Contact Us</a>
@@ -699,7 +699,7 @@ ${sleeve.domains.map(d => {
 function generateDomainPage(domain, sleeve) {
   const ds = domainSlug(domain);
   const pricing = estimatePrice(domain);
-  const save = savings(pricing.value, pricing.rent);
+  const save = savings(pricing.value, pricing.monthly);
   const lang = langCode(sleeve.market);
   const mLabel = marketLabel(sleeve.market);
 
@@ -729,44 +729,55 @@ function generateDomainPage(domain, sleeve) {
   const defaultUseCases = ['Content platform','E-commerce store','Community forum','Educational resource','Service marketplace','Brand website'];
   const useCases = useCaseMap[sleeve.slug] || defaultUseCases;
 
+  // Partnership description based on sleeve category
+  const partnershipBenefitsMap = {
+    'travel-experience': 'domain leasing, travel content licensing, ad placement & revenue sharing, affiliate partnerships, destination marketing collaborations, and tourism board sponsorships',
+    'womens-health': 'domain leasing, health content licensing, wellness brand partnerships, telehealth integrations, nonprofit health initiatives, and ad-supported health education',
+    'womens-sports': 'domain leasing, sports content licensing, athletic brand partnerships, event sponsorships, nonprofit sports initiatives, and fitness community monetization',
+    'entertainment': 'domain leasing, entertainment content licensing, celebrity brand partnerships, event promotions, media sponsorships, and fan community monetization',
+    'website-creation': 'domain leasing, content licensing, SaaS partnerships, creator tool integrations, educational content monetization, and digital marketing collaborations',
+  };
+  const defaultPartnerBenefits = 'domain leasing, content licensing, ad placement & revenue sharing, creative brand partnerships, nonprofit collaborations, and future monetization opportunities for all parties';
+  const partnerBenefits = partnershipBenefitsMap[sleeve.slug] || defaultPartnerBenefits;
+
   // Generate FAQ answers
-  const faq1Answer = `${domain} rents for $${pricing.rent} per month. This premium domain is valued at $${pricing.value.toLocaleString()}, meaning you save ${save}% compared to purchasing outright. The rental includes full DNS control, email forwarding, and immediate activation.`;
+  const faq1Answer = `${domain} is available for partnership at $${pricing.monthly} per month. This premium domain is valued at $${pricing.value.toLocaleString()}, meaning you save ${save}% compared to purchasing outright. The partnership includes full DNS control, email forwarding, and immediate activation.`;
   const faq2Answer = `${domain} is part of the ${sleeve.name} portfolio sleeve, making it ideal for businesses in the ${sleeve.region} market. It works perfectly for ${useCases.slice(0, 3).join(', ').toLowerCase()}, and similar ventures.`;
-  const faq3Answer = `Yes, you can cancel your ${domain} rental at any time with no long-term commitment. We also offer lease-to-own options if you decide to acquire the domain permanently.`;
+  const faq3Answer = `Yes, you can cancel your ${domain} partnership at any time with no long-term commitment. We also offer lease-to-own options if you decide to acquire the domain permanently.`;
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${escHtml(domain)} Domain For Rent | Premium ${escHtml(sleeve.name)} Domain | PILLAR</title>
-  <meta name="description" content="Rent ${escHtml(domain)} for just $${pricing.rent}/month. Premium domain perfect for ${escHtml(sleeve.name.toLowerCase())} businesses. Save ${save}% vs buying. Instant activation, cancel anytime.">
+  <title>${escHtml(domain)} Domain Partnership | Premium ${escHtml(sleeve.name)} Domain | PILLAR</title>
+  <meta name="description" content="Partner on ${escHtml(domain)} for just $${pricing.monthly}/month. Premium domain perfect for ${escHtml(sleeve.name.toLowerCase())} businesses. Save ${save}% vs buying. Includes ${partnerBenefits}.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
   <link rel="canonical" href="https://pillarme.com/domains/${ds}">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0A1628">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta property="og:title" content="${escHtml(domain)} - Premium Domain For Rent | PILLAR">
-  <meta property="og:description" content="Rent this $${pricing.value.toLocaleString()} premium domain for just $${pricing.rent}/month. Part of the ${escHtml(sleeve.name)} portfolio sleeve.">
+  <meta property="og:title" content="${escHtml(domain)} - Premium Domain Partnership | PILLAR">
+  <meta property="og:description" content="Partner on this $${pricing.value.toLocaleString()} premium domain for just $${pricing.monthly}/month. Part of the ${escHtml(sleeve.name)} portfolio sleeve.">
   <meta property="og:type" content="product">
   <meta property="og:url" content="https://pillarme.com/domains/${ds}">
   <meta property="og:site_name" content="PILLAR Corporation">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="${escHtml(domain)} - Premium Domain For Rent | $${pricing.rent}/mo">
+  <meta name="twitter:title" content="${escHtml(domain)} - Premium Domain Partnership | $${pricing.monthly}/mo">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "${escHtml(domain)} Domain Rental",
-    "description": "Premium domain in the ${escHtml(sleeve.name)} portfolio sleeve. Ideal for ${escHtml(sleeve.region)} market businesses.",
+    "name": "${escHtml(domain)} Domain Partnership",
+    "description": "Premium domain partnership in the ${escHtml(sleeve.name)} portfolio sleeve. Ideal for ${escHtml(sleeve.region)} market businesses.",
     "brand": {"@type": "Brand", "name": "PILLAR"},
     "offers": {
       "@type": "Offer",
       "url": "https://pillarme.com/domains/${ds}",
       "priceCurrency": "USD",
-      "price": "${pricing.rent}",
+      "price": "${pricing.monthly}",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
       "seller": {"@type": "Organization", "name": "PILLAR Corporation"}
@@ -779,9 +790,9 @@ function generateDomainPage(domain, sleeve) {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type": "Question", "name": "What is the monthly rental cost for ${escHtml(domain)}?", "acceptedAnswer": {"@type": "Answer", "text": "${escHtml(faq1Answer)}"}},
+      {"@type": "Question", "name": "What is the monthly partnership cost for ${escHtml(domain)}?", "acceptedAnswer": {"@type": "Answer", "text": "${escHtml(faq1Answer)}"}},
       {"@type": "Question", "name": "What industries is ${escHtml(domain)} best suited for?", "acceptedAnswer": {"@type": "Answer", "text": "${escHtml(faq2Answer)}"}},
-      {"@type": "Question", "name": "Can I cancel my ${escHtml(domain)} rental?", "acceptedAnswer": {"@type": "Answer", "text": "${escHtml(faq3Answer)}"}}
+      {"@type": "Question", "name": "Can I cancel my ${escHtml(domain)} partnership?", "acceptedAnswer": {"@type": "Answer", "text": "${escHtml(faq3Answer)}"}}
     ]
   }
   </script>
@@ -832,8 +843,20 @@ function generateDomainPage(domain, sleeve) {
     .pricing-card .price { font-size: 3.5rem; font-weight: 900; color: #fff; line-height: 1; }
     .pricing-card .price span { font-size: 1.25rem; color: rgba(255,255,255,0.6); font-weight: 500; }
     .pricing-card .savings-badge { display: inline-block; background: var(--success); color: #fff; padding: 0.375rem 1rem; border-radius: 50px; font-size: 0.875rem; font-weight: 700; margin: 1rem 0 1.5rem; }
-    .rent-btn { display: block; width: 100%; background: var(--corporate-gold); color: #fff; padding: 1.125rem 2rem; border-radius: 12px; font-size: 1.125rem; font-weight: 800; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; }
-    .rent-btn:hover { background: var(--corporate-gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(184,134,11,0.3); }
+    .partner-btn { display: block; width: 100%; background: var(--corporate-gold); color: #fff; padding: 1.125rem 2rem; border-radius: 12px; font-size: 1.125rem; font-weight: 800; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; text-align: center; }
+    .partner-btn:hover { background: var(--corporate-gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(184,134,11,0.3); }
+    .visit-site-btn { display: none; width: 100%; background: transparent; color: #fff; padding: 0.875rem 2rem; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: all 0.3s; border: 2px solid rgba(255,255,255,0.3); text-align: center; margin-top: 0.75rem; }
+    .visit-site-btn:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    .live-screenshot { display: none; margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .live-screenshot img { width: 100%; height: auto; display: block; }
+    .live-badge { display: none; align-items: center; gap: 0.5rem; background: rgba(5,150,105,0.2); border: 1px solid var(--success); padding: 0.375rem 1rem; border-radius: 50px; font-size: 0.8125rem; font-weight: 600; color: #fff; margin-bottom: 1rem; }
+    .live-badge .pulse { width: 8px; height: 8px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .partnership-includes { margin-top: 2rem; padding: 2rem; background: var(--off-white); border-radius: 12px; border: 1px solid var(--gray-200); }
+    .partnership-includes h3 { font-family: var(--font-display); font-size: 1.375rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--corporate-navy); }
+    .partnership-includes ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .partnership-includes li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.95rem; color: var(--gray-600); line-height: 1.5; }
+    .partnership-includes li::before { content: '\\2713'; color: var(--success); font-weight: 700; flex-shrink: 0; }
     .pricing-card .guarantee { margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.6); }
 
     .content-section { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
@@ -889,28 +912,66 @@ function generateDomainPage(domain, sleeve) {
     .footer-legal a { font-size: 0.8125rem; color: rgba(255,255,255,0.5); text-decoration: none; }
     .footer-copyright { font-size: 0.8125rem; color: rgba(255,255,255,0.5); }
 
-    @media (max-width: 968px) { .domain-hero-content { grid-template-columns: 1fr; text-align: center; } .value-props { justify-content: center; } .pricing-card { max-width: 400px; margin: 0 auto; } .use-cases { grid-template-columns: 1fr 1fr; } .related-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 968px) { .domain-hero-content { grid-template-columns: 1fr; text-align: center; } .value-props { justify-content: center; } .pricing-card { max-width: 400px; margin: 0 auto; } .use-cases { grid-template-columns: 1fr 1fr; } .related-grid { grid-template-columns: 1fr; } .partnership-includes ul { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       :root { --nav-height: 64px; }
-      #header-inner { padding: 0 1.5rem; height: 64px; }
+      #header-inner { padding: 0 1rem; height: 64px; }
       #site-header { height: 64px; }
       #main-menu { display: none; }
-      #main-menu.active { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: #FFFFFF; padding: 1.5rem; border-bottom: 1px solid #E5E7EB; z-index: 9998; }
-      #main-menu.active a { padding: 1rem; border-bottom: 1px solid #F3F4F6; }
-      #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
-      .domain-hero { padding: 2rem 1.5rem 3rem; }
-      .domain-hero-text h1 { font-size: 2.5rem; }
-      .pricing-card .price { font-size: 2.75rem; }
-      .content-section { padding: 3rem 1.5rem; }
-      .use-cases { grid-template-columns: 1fr; }
-      .faq-section { padding: 3rem 1.5rem; }
-      .cta-section { padding: 3rem 1.5rem; }
-      .cta-section h2 { font-size: 1.75rem; }
-      footer { padding: 3rem 1.5rem 2rem; }
-      .footer-top { grid-template-columns: 1fr; text-align: center; }
+      #main-menu.active { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: #FFFFFF; padding: 1.5rem; overflow-y: auto; z-index: 9998; -webkit-overflow-scrolling: touch; }
+      #main-menu.active a { padding: 1rem; border-bottom: 1px solid #F3F4F6; display: block; }
+      #contact-btn { margin-top: 1rem; width: 100%; text-align: center; display: block !important; }
+      #mobile-menu-btn { display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+      .domain-hero { padding: 1.5rem 1rem 2rem; }
+      .domain-hero-text h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+      .domain-hero-text .tagline { font-size: 1rem; margin-bottom: 1.25rem; }
+      .value-props { gap: 0.5rem; }
+      .value-prop { font-size: 0.75rem; padding: 0.375rem 0.75rem; }
+      .pricing-card { padding: 1.75rem 1.25rem; max-width: 100%; }
+      .pricing-card .domain-display { font-size: 1.125rem; }
+      .pricing-card .price { font-size: 2.5rem; }
+      .pricing-card .savings-badge { font-size: 0.75rem; }
+      .breadcrumb { padding: 1rem; font-size: 0.8125rem; }
+      .content-section { padding: 2.5rem 1rem; }
+      .content-section h2 { font-size: 1.5rem; }
+      .content-section h3 { font-size: 1.125rem; }
+      .content-section p { font-size: 1rem; }
+      .use-cases { grid-template-columns: 1fr; gap: 0.5rem; }
+      .use-case { padding: 0.875rem 1rem; font-size: 0.875rem; }
+      .faq-section { padding: 2.5rem 1rem; }
+      .faq-section h2 { font-size: 1.5rem; }
+      .faq-question { padding: 1rem; font-size: 0.9375rem; }
+      .cta-section { padding: 2.5rem 1rem; }
+      .cta-section h2 { font-size: 1.5rem; }
+      .cta-btn { width: 100%; text-align: center; display: block; padding: 1rem 1.5rem; }
+      .related-section { padding: 2.5rem 1rem; }
+      .related-section h2 { font-size: 1.5rem; }
+      .related-card { padding: 1rem; }
+      .partnership-includes { padding: 1.5rem 1rem; }
+      .partnership-includes ul { grid-template-columns: 1fr; }
+      footer { padding: 2.5rem 1rem 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
       .footer-brand { max-width: none; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .footer-legal { justify-content: center; flex-wrap: wrap; }
+      .footer-legal { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .domain-hero { padding: 1rem 0.75rem 1.5rem; }
+      .domain-hero-text h1 { font-size: 1.5rem; }
+      .pricing-card { padding: 1.5rem 1rem; border-width: 2px; }
+      .pricing-card .price { font-size: 2rem; }
+      .pricing-card::before { font-size: 0.625rem; padding: 0.25rem 1rem; }
+      .content-section { padding: 2rem 0.75rem; }
+      .faq-section { padding: 2rem 0.75rem; }
+      .cta-section { padding: 2rem 0.75rem; }
+      .related-section { padding: 2rem 0.75rem; }
+      footer { padding: 2rem 0.75rem 1rem; }
+    }
+    @media (max-width: 360px) {
+      .domain-hero-text h1 { font-size: 1.25rem; }
+      .pricing-card .domain-display { font-size: 0.9375rem; }
+      .pricing-card .price { font-size: 1.75rem; }
+      .value-prop { font-size: 0.6875rem; padding: 0.25rem 0.5rem; }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -940,7 +1001,7 @@ function generateDomainPage(domain, sleeve) {
     <div class="domain-hero-content">
       <div class="domain-hero-text">
         <h1>${escHtml(domain)}</h1>
-        <p class="tagline">Premium ${escHtml(sleeve.name)} Domain for Rent</p>
+        <p class="tagline">Premium ${escHtml(sleeve.name)} Domain Partnership</p>
         <div class="value-props">
           <span class="value-prop">${sleeve.icon} ${escHtml(sleeve.name)}</span>
           <span class="value-prop">${marketFlag(sleeve.market)} ${mLabel}</span>
@@ -948,11 +1009,14 @@ function generateDomainPage(domain, sleeve) {
         </div>
       </div>
       <div class="pricing-card">
+        <div class="live-badge" id="liveBadge"><span class="pulse"></span> Live Website</div>
+        <div class="live-screenshot" id="liveScreenshot"><a href="https://${domain.toLowerCase()}" target="_blank" rel="noopener"><img src="" alt="${escHtml(domain)} live website screenshot" id="screenshotImg"></a></div>
         <div class="domain-display">${escHtml(domain)}</div>
         <div class="valuation">Domain Value: <strong>$${pricing.value.toLocaleString()}</strong></div>
-        <div class="price">$${pricing.rent}<span>/month</span></div>
+        <div class="price">$${pricing.monthly}<span>/month</span></div>
         <div class="savings-badge">Save ${save}% vs. Purchase</div>
-        <a href="/get-started?domain=${encodeURIComponent(domain.toLowerCase())}" class="rent-btn">Rent This Domain</a>
+        <a href="/get-started?domain=${encodeURIComponent(domain.toLowerCase())}" class="partner-btn">Start Partnership</a>
+        <a href="https://${domain.toLowerCase()}" target="_blank" rel="noopener" class="visit-site-btn" id="visitSiteBtn">Visit Live Website</a>
         <p class="guarantee">Cancel anytime &bull; No long-term commitment</p>
       </div>
     </div>
@@ -967,13 +1031,25 @@ function generateDomainPage(domain, sleeve) {
     <div class="use-cases">
 ${useCases.map(uc => `      <div class="use-case">${escHtml(uc)}</div>`).join('\n')}
     </div>
+
+    <div class="partnership-includes">
+      <h3>What the Partnership Includes</h3>
+      <ul>
+        <li>Domain leasing with full DNS control and email forwarding</li>
+        <li>Content licensing and co-branded creative opportunities</li>
+        <li>Ad placement, revenue sharing, and monetization strategy</li>
+        <li>Creative brand partnership and co-marketing initiatives</li>
+        <li>Nonprofit collaboration and cause-driven campaign support</li>
+        <li>Future monetization opportunities and equity-path options</li>
+      </ul>
+    </div>
   </section>
 
   <section class="faq-section" id="faq">
     <div class="faq-container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
-        <div class="faq-question"><span>What is the monthly rental cost for ${escHtml(domain)}?</span><span class="faq-icon">+</span></div>
+        <div class="faq-question"><span>What is the monthly partnership cost for ${escHtml(domain)}?</span><span class="faq-icon">+</span></div>
         <div class="faq-answer"><div class="faq-answer-content">${faq1Answer}</div></div>
       </div>
       <div class="faq-item">
@@ -981,7 +1057,7 @@ ${useCases.map(uc => `      <div class="use-case">${escHtml(uc)}</div>`).join('\
         <div class="faq-answer"><div class="faq-answer-content">${faq2Answer}</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-question"><span>Can I cancel my ${escHtml(domain)} rental?</span><span class="faq-icon">+</span></div>
+        <div class="faq-question"><span>Can I cancel my ${escHtml(domain)} partnership?</span><span class="faq-icon">+</span></div>
         <div class="faq-answer"><div class="faq-answer-content">${faq3Answer}</div></div>
       </div>
     </div>
@@ -990,7 +1066,7 @@ ${useCases.map(uc => `      <div class="use-case">${escHtml(uc)}</div>`).join('\
   <section class="cta-section">
     <h2>Ready to Claim ${escHtml(domain)}?</h2>
     <p>This premium domain is available now. Secure it before your competitor does.</p>
-    <a href="/get-started?domain=${encodeURIComponent(domain.toLowerCase())}" class="cta-btn">Rent ${escHtml(domain)} Today</a>
+    <a href="/get-started?domain=${encodeURIComponent(domain.toLowerCase())}" class="cta-btn">Partner on ${escHtml(domain)} Today</a>
   </section>
 
   <section class="related-section">
@@ -1000,7 +1076,7 @@ ${useCases.map(uc => `      <div class="use-case">${escHtml(uc)}</div>`).join('\
 ${related.map(rd => {
   const rds = domainSlug(rd);
   const rp = estimatePrice(rd);
-  return `        <a href="/domains/${rds}" class="related-card"><div><div class="domain-name">${escHtml(rd)}</div><div style="color:var(--gray-500);font-size:.875rem">${escHtml(sleeve.name)}</div></div><span class="domain-price">$${rp.rent}/mo</span></a>`;
+  return `        <a href="/domains/${rds}" class="related-card"><div><div class="domain-name">${escHtml(rd)}</div><div style="color:var(--gray-500);font-size:.875rem">${escHtml(sleeve.name)}</div></div><span class="domain-price">$${rp.monthly}/mo</span></a>`;
 }).join('\n')}
         <a href="/portfolio/sleeves/${sleeve.slug}" class="related-card"><div><div class="domain-name">${escHtml(sleeve.name)} Sleeve</div><div style="color:var(--gray-500);font-size:.875rem">View all domains in this sleeve</div></div><span class="domain-price">${sleeve.domains.length} domains</span></a>
       </div>
@@ -1045,6 +1121,27 @@ ${related.map(rd => {
         else { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
       });
     });
+
+    // Live website detection and screenshot
+    (function() {
+      var domainName = '${domain.toLowerCase()}';
+      var screenshotUrl = 'https://image.thum.io/get/width/600/crop/400/https://' + domainName;
+      var img = new Image();
+      img.onload = function() {
+        var screenshotEl = document.getElementById('liveScreenshot');
+        var screenshotImg = document.getElementById('screenshotImg');
+        var liveBadge = document.getElementById('liveBadge');
+        var visitBtn = document.getElementById('visitSiteBtn');
+        if (screenshotEl && screenshotImg) {
+          screenshotImg.src = screenshotUrl;
+          screenshotEl.style.display = 'block';
+        }
+        if (liveBadge) liveBadge.style.display = 'inline-flex';
+        if (visitBtn) visitBtn.style.display = 'block';
+      };
+      img.onerror = function() { /* Domain not live or screenshot unavailable - keep hidden */ };
+      img.src = screenshotUrl;
+    })();
   </script>
 </body>
 </html>`;

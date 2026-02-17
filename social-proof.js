@@ -163,7 +163,7 @@ const testimonials = [
     logo: '💰',
     name: 'Marcus Chen',
     role: 'CEO, BankSize',
-    quote: 'The premium domain gave us instant credibility in finance. Conversion rate jumped 34% immediately after launch. Worth every penny of the $1K/month rental.',
+    quote: 'The premium domain gave us instant credibility in finance. Conversion rate jumped 34% immediately after launch. Worth every penny of the $1K/month partnership.',
     metrics: {
       conversions: '+34%',
       trust: '+89%',
@@ -226,7 +226,7 @@ const caseStudies = [
     site: 'FanTravel.com',
     icon: '✈️',
     domain: 'Premium Travel Domain',
-    rental: '$500/month',
+    partnership: '$500/month',
     results: [
       { label: 'Launch Time', value: '24 hours' },
       { label: 'Monthly Traffic', value: '85K visitors' },
@@ -239,7 +239,7 @@ const caseStudies = [
     site: 'BankSize.com',
     icon: '💰',
     domain: 'Finance Authority Domain',
-    rental: '$1,000/month',
+    partnership: '$1,000/month',
     results: [
       { label: 'Conversion Rate', value: '+34%' },
       { label: 'Trust Score', value: '+89%' },
@@ -252,7 +252,7 @@ const caseStudies = [
     site: 'ViewsGrowth.com',
     icon: '📈',
     domain: 'Marketing Domain',
-    rental: '$300/month',
+    partnership: '$300/month',
     results: [
       { label: 'Build Time', value: '48 hours' },
       { label: 'Monthly Visitors', value: '50K' },
