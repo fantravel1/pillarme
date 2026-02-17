@@ -42,7 +42,7 @@ const categoryKeywords = {
   africa: ['African', 'Africa', 'African culture', 'African heritage', 'Pan-African', 'African community', 'African diaspora', 'African history', 'African business', 'African development'],
   asia: ['Asian', 'Asia', 'Asian culture', 'Asian heritage', 'Asian community', 'Asian market', 'Asian business', 'Asian travel', 'Asian cuisine', 'Asian entertainment'],
   kpop: ['K-pop', 'Korean pop', 'K-pop idols', 'Korean entertainment', 'K-pop music', 'K-pop fans', 'Korean music', 'K-pop groups', 'K-pop news', 'Korean wave'],
-  default: ['premium domain', 'brandable domain', 'domain rental', 'online business', 'digital brand', 'web presence', 'domain name', 'business domain', 'startup domain', 'professional website']
+  default: ['premium domain', 'brandable domain', 'domain partnership', 'online business', 'digital brand', 'web presence', 'domain name', 'business domain', 'startup domain', 'professional website']
 };
 
 // Detect category from keywords and content
@@ -120,15 +120,15 @@ function generateMetaDescription(domainName, tagline, price, category) {
   };
 
   const phrase = categoryPhrases[category] || categoryPhrases.default;
-  return `Rent ${domainName} for just $${price}/month. Premium domain perfect for ${phrase}. Save 99%+ vs buying. Instant activation, cancel anytime.`;
+  return `Partner on ${domainName} for just $${price}/month. Premium domain perfect for ${phrase}. Save 99%+ vs buying. Includes domain leasing, content licensing, ad revenue sharing, and creative partnership opportunities.`;
 }
 
 // Generate natural language FAQ questions
 function generateFAQSchema(domainName, price, value, category, industries, useCases) {
   const faqs = [
     {
-      question: `What is the monthly rental cost for ${domainName}?`,
-      answer: `${domainName} rents for $${price} per month. This premium domain is valued at $${value}, meaning you save over 99% compared to purchasing outright. The rental includes full DNS control, email forwarding, and immediate activation with no long-term commitment required.`
+      question: `What is the monthly partnership cost for ${domainName}?`,
+      answer: `${domainName} is available for partnership at $${price} per month. This premium domain is valued at $${value}, meaning you save over 99% compared to purchasing outright. The partnership includes full DNS control, email forwarding, content licensing, ad revenue sharing, and immediate activation with no long-term commitment required.`
     },
     {
       question: `What type of business is ${domainName} best suited for?`,
@@ -139,12 +139,12 @@ function generateFAQSchema(domainName, price, value, category, industries, useCa
       answer: `You can start using ${domainName} immediately after signup. DNS propagation typically takes 24-48 hours, but many users see their site live within hours. We provide full DNS control so you can point the domain to any hosting provider.`
     },
     {
-      question: `Can I cancel my ${domainName} rental at any time?`,
-      answer: `Yes, all PILLAR domain rentals are month-to-month with no long-term contracts. You can cancel your ${domainName} rental at any time without penalty. Your domain will remain active until the end of your current billing period.`
+      question: `Can I cancel my ${domainName} partnership at any time?`,
+      answer: `Yes, all PILLAR domain partnerships are month-to-month with no long-term contracts. You can cancel your ${domainName} partnership at any time without penalty. Your domain will remain active until the end of your current billing period.`
     },
     {
-      question: `Why rent ${domainName} instead of buying it?`,
-      answer: `Renting ${domainName} at $${price}/month instead of purchasing for $${value} preserves your capital for marketing and growth. Over 5 years, you'd spend $${price * 60} renting vs $${value} buying—a savings of $${parseInt(value.replace(/,/g, '')) - (price * 60)} that can be invested in your business.`
+      question: `Why partner on ${domainName} instead of buying it?`,
+      answer: `Partnering on ${domainName} at $${price}/month instead of purchasing for $${value} preserves your capital for marketing and growth. The partnership also includes content licensing, ad placement, revenue sharing, and creative collaboration opportunities. Over 5 years, you'd invest $${price * 60} in partnership vs $${value} buying—a savings of $${parseInt(value.replace(/,/g, '')) - (price * 60)} that can fuel your business.`
     }
   ];
 
@@ -167,7 +167,7 @@ function generateProductSchema(domainName, description, price, category) {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": `${domainName} Domain Rental`,
+    "name": `${domainName} Domain Partnership`,
     "description": description,
     "image": `https://pillarme.com/images/domains/${domainName.toLowerCase().replace('.com', '')}-og.jpg`,
     "brand": {
@@ -313,8 +313,8 @@ function generateEnhancedKeywords(domainName, category, existingKeywords) {
   const enhanced = [
     `${domainBase} domain`,
     `${domainBase}.com`,
-    `rent ${domainBase}`,
-    `${domainBase} domain for rent`,
+    `partner ${domainBase}`,
+    `${domainBase} domain partnership`,
     domainWords,
     ...catKeywords.slice(0, 5),
     existingKeywords
@@ -374,14 +374,14 @@ function processDomainFile(filePath) {
   // Enhanced OG tags
   const ogTags = `
   <!-- Open Graph -->
-  <meta property="og:title" content="${data.domainName} - Premium Domain For Rent | $${data.price}/mo">
+  <meta property="og:title" content="${data.domainName} - Premium Domain Partnership | $${data.price}/mo">
   <meta property="og:description" content="${enhancedDescription}">
   <meta property="og:type" content="product">
   <meta property="og:url" content="https://pillarme.com/domains/${domainSlug}">
   <meta property="og:image" content="https://pillarme.com/images/domains/${domainSlug}-og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${data.domainName} Premium Domain For Rent">
+  <meta property="og:image:alt" content="${data.domainName} Premium Domain Partnership">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="PILLAR Media & Entertainment">
   <meta property="product:price:amount" content="${data.price}">
@@ -391,7 +391,7 @@ function processDomainFile(filePath) {
   const twitterTags = `
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${data.domainName} - Premium Domain For Rent | $${data.price}/mo">
+  <meta name="twitter:title" content="${data.domainName} - Premium Domain Partnership | $${data.price}/mo">
   <meta name="twitter:description" content="${enhancedDescription}">
   <meta name="twitter:image" content="https://pillarme.com/images/domains/${domainSlug}-og.jpg">
   <meta name="twitter:image:alt" content="${data.domainName} Premium Domain">`;
@@ -445,7 +445,7 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
   // Enhance FAQ questions from "Cost?" to full natural language
   html = html.replace(
     /<span>Cost\?<\/span>/g,
-    `<span>What is the monthly rental cost for ${data.domainName}?</span>`
+    `<span>What is the monthly partnership cost for ${data.domainName}?</span>`
   );
 
   html = html.replace(
@@ -457,7 +457,7 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
   const industries = data.industries || ['various businesses'];
   html = html.replace(
     /<div class="faq-answer-content">\$\d+\/month(?:, saving 99%\+ vs purchase price)?\.?<\/div>/,
-    `<div class="faq-answer-content">${data.domainName} rents for $${data.price}/month. This premium domain is valued at $${data.value || (data.price * 1000).toLocaleString()}, meaning you save over 99% compared to purchasing. The rental includes full DNS control, email forwarding, and immediate activation.</div>`
+    `<div class="faq-answer-content">${data.domainName} is available for partnership at $${data.price}/month. This premium domain is valued at $${data.value || (data.price * 1000).toLocaleString()}, meaning you save over 99% compared to purchasing. The partnership includes full DNS control, email forwarding, content licensing, revenue sharing, and immediate activation.</div>`
   );
 
   // Write the enhanced file
