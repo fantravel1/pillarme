@@ -584,39 +584,23 @@
       border-radius: 100px;
     }
 
-    /* ===== Questionnaire Section ===== */
-    .questionnaire-section {
-      background: var(--gray-50);
-      border: 1px solid var(--gray-200);
-      border-radius: 8px;
-      padding: 2.5rem;
-      margin-top: 2.5rem;
-      text-align: center;
-    }
-    .questionnaire-section h4 {
-      font-family: var(--font-display);
-      font-size: 1.375rem;
-      font-weight: 400;
-      color: var(--corporate-navy);
-      margin-bottom: 0.75rem;
-    }
-    .questionnaire-section p {
+    /* ===== Questionnaire Link ===== */
+    .questionnaire-link {
       font-size: 1rem;
       color: var(--gray-600);
-      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      margin-top: 2.5rem;
+      font-style: italic;
     }
-    .form-embed {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto;
-      border: 1px solid var(--gray-200);
-      border-radius: 6px;
-      overflow: hidden;
+    .questionnaire-link a {
+      color: var(--corporate-gold);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
     }
-    .form-embed iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
+    .questionnaire-link a:hover {
+      color: var(--corporate-navy);
     }
 
     /* ===== CTA Section ===== */
@@ -921,13 +905,7 @@
             </div>
 
             <!-- Questionnaire -->
-            <div class="questionnaire-section">
-              <h4>Sent by Your Organization?</h4>
-              <p>If your organization has sent you to this training, please fill out the questionnaire below so we can tailor your experience.</p>
-              <div class="form-embed">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeaBQ57L7iZFhr4WYuThhuwV-3IwKfhWSOwEDaRFS5KZ8l1oA/viewform?embedded=true" title="Training Questionnaire" loading="lazy">Loading form...</iframe>
-              </div>
-            </div>
+            <p class="questionnaire-link">If your organization has sent you to this training, please fill out the questionnaire <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaBQ57L7iZFhr4WYuThhuwV-3IwKfhWSOwEDaRFS5KZ8l1oA/viewform" target="_blank" rel="noopener">here</a>.</p>
 
             <!-- Contact CTA -->
             <div class="offering-cta">
