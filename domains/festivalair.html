@@ -183,17 +183,51 @@
     
 
   
+    
+    /* Mobile overflow prevention */
+    .domain-display, .domain-hero-text h1, .r-domain-name, .content-section h2,
+    .cta-section h2, .faq-section h2, .cta-btn, .partner-btn, .faq-question span {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .pricing-card, .related-card, .industry-card, .use-case, .faq-item {
+      min-width: 0;
+      overflow: hidden;
+    }
     @media (max-width: 480px) {
       .domain-hero { padding: 1rem 0.75rem 1.5rem !important; }
+      .domain-hero-text h1 { font-size: 1.5rem !important; }
+      .tagline { font-size: 1rem !important; }
+      .value-props { gap: 0.5rem !important; }
+      .value-prop { font-size: 0.75rem !important; padding: 0.375rem 0.75rem !important; }
+      .pricing-card { padding: 1.5rem 1rem !important; max-width: 100% !important; }
       .pricing-card .price { font-size: 2rem !important; }
+      .pricing-card .domain-display { font-size: 1rem !important; }
       .content-section, .faq-section, .cta-section { padding: 2rem 0.75rem !important; }
+      .content-section h2, .faq-section h2 { font-size: 1.5rem !important; }
+      .cta-section h2 { font-size: 1.5rem !important; }
+      .cta-section p { font-size: 1rem !important; }
+      .cta-btn { padding: 1rem 1.5rem !important; font-size: 1rem !important; }
+      .partner-btn { font-size: 1rem !important; padding: 1rem !important; }
+      .related-grid, .industry-grid, .use-cases { grid-template-columns: 1fr !important; }
+      .related-section { padding: 2rem 0.75rem !important; }
+      .stats-grid { grid-template-columns: 1fr 1fr !important; }
+      .stat-value { font-size: 1.75rem !important; }
+      .faq-question { font-size: 1rem !important; padding: 1rem !important; }
+      .content-section ul { grid-template-columns: 1fr !important; }
       footer { padding: 2rem 0.75rem 1rem !important; }
+      .footer-top { grid-template-columns: 1fr !important; gap: 2rem !important; text-align: center !important; }
+      .footer-brand { max-width: none !important; }
+      .footer-bottom { flex-direction: column !important; text-align: center !important; }
+      .footer-legal { justify-content: center !important; }
     }
     @media (max-width: 360px) {
-      .domain-hero-text h1 { font-size: 1.25rem !important; }
+      .domain-hero-text h1 { font-size: 1.125rem !important; }
       .pricing-card .price { font-size: 1.75rem !important; }
-      .pricing-card .domain-display { font-size: 0.9375rem !important; }
+      .pricing-card .domain-display { font-size: 0.875rem !important; }
+      .stats-grid { grid-template-columns: 1fr !important; }
     }
+
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
