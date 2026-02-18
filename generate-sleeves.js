@@ -594,7 +594,7 @@ function generateSleevePage(sleeve) {
     <div id="header-inner">
       <a href="/" id="site-logo">PILLAR</a>
       <nav id="main-menu">
-        <a href="/about">About</a>
+        <a href="/training">Training</a>
         <a href="/solutions">Solutions</a>
         <a href="/portfolio" class="active">Portfolio</a>
         <a href="/insights">Insights</a>
@@ -981,7 +981,7 @@ function generateDomainPage(domain, sleeve) {
     <div id="header-inner">
       <a href="/" id="site-logo">PILLAR</a>
       <nav id="main-menu">
-        <a href="/about">About</a>
+        <a href="/training">Training</a>
         <a href="/solutions">Solutions</a>
         <a href="/portfolio" class="active">Portfolio</a>
         <a href="/insights">Insights</a>

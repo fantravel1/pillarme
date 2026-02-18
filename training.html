@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training | PILLAR - Zero To Hero AI, Advanced Problem Solving & More</title>
+  <meta name="description" content="PILLAR Training programs: Virtual, Live Small Groups, and Live Large Groups. Master AI, build websites, videos, startups, nonprofits, and social movements in less than three months. 12,000+ people trained worldwide.">
+  <meta name="keywords" content="PILLAR Training, AI training, Zero To Hero AI, Advanced Problem Solving, design thinking, no-code hackathon, corporate training, startup training, nonprofit training">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>P</text></svg>">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pillarme.com/training">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PILLAR">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Training | PILLAR - AI, Websites, Startups & More">
+  <meta property="og:description" content="12,000+ people trained worldwide. Master AI, build websites, videos, startups, nonprofits, and social movements. Virtual and live training available.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillarme.com/training">
+  <meta property="og:image" content="https://pillarme.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="PILLAR Corporation">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Training | PILLAR - AI, Websites, Startups & More">
+  <meta name="twitter:description" content="12,000+ people trained worldwide. Master AI, build websites, videos, startups, nonprofits, and social movements.">
+  <meta name="twitter:image" content="https://pillarme.com/images/og-image.jpg">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0A1628">
+
+  <style>
+    /* ===== Corporate Design Tokens ===== */
+    :root {
+      --corporate-navy: #0A1628;
+      --corporate-navy-light: #162544;
+      --corporate-charcoal: #2D3748;
+      --corporate-slate: #4A5568;
+      --corporate-steel: #718096;
+      --corporate-gold: #B8860B;
+      --corporate-gold-light: #D4A853;
+      --corporate-blue: #2563EB;
+      --corporate-teal: #0D9488;
+      --white: #FFFFFF;
+      --off-white: #FAFBFC;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --success: #059669;
+      --nav-height: 72px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--nav-height);
+      overflow-x: hidden;
+    }
+
+    /* ===== Header ===== */
+    #site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
+      z-index: 9999;
+    }
+    #header-inner {
+      max-width: 1600px;
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+    }
+    #site-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #0A1628;
+      text-decoration: none;
+      letter-spacing: 0.2em;
+    }
+    #main-menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    #main-menu a {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #4B5563;
+      text-decoration: none;
+    }
+    #main-menu a:hover {
+      color: #0A1628;
+    }
+    #main-menu a.active {
+      color: #0A1628;
+    }
+    #contact-btn {
+      background-color: #0A1628 !important;
+      color: #FFFFFF !important;
+      padding: 10px 24px;
+      border-radius: 4px;
+    }
+    #mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #0A1628;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      color: var(--white);
+      padding: 8rem 3rem;
+      text-align: center;
+    }
+    .page-hero-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold-light);
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .page-hero .lead {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== Metrics Bar ===== */
+    .metrics-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 3rem;
+    }
+    .metrics-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .metric-item {
+      text-align: center;
+    }
+    .metric-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== Section Styles ===== */
+    .section {
+      padding: 6rem 3rem;
+    }
+    .section-alt {
+      background: var(--off-white);
+    }
+    .section-navy {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--corporate-gold);
+      margin-bottom: 1rem;
+    }
+    .section-navy .section-eyebrow {
+      color: var(--corporate-gold-light);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-navy .section-title {
+      color: var(--white);
+    }
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .section-navy .section-description {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ===== Training Offering Cards ===== */
+    .offering-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 3rem;
+      margin-bottom: 4rem;
+      transition: box-shadow 0.3s;
+    }
+    .offering-card:hover {
+      box-shadow: 0 8px 32px rgba(10, 22, 40, 0.08);
+    }
+    .offering-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .offering-title-group {
+      flex: 1;
+    }
+    .offering-badge {
+      display: inline-block;
+      background: var(--corporate-navy);
+      color: var(--white);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .offering-badge.virtual { background: var(--corporate-blue); }
+    .offering-badge.small-group { background: var(--corporate-teal); }
+    .offering-badge.large-group { background: var(--corporate-gold); }
+    .offering-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .offering-subtitle {
+      font-size: 1.0625rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .offering-capacity {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .capacity-number {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      color: var(--corporate-navy);
+      line-height: 1;
+    }
+    .capacity-label {
+      font-size: 0.6875rem;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.25rem;
+    }
+    .offering-body {
+      margin-bottom: 2rem;
+    }
+    .offering-body p {
+      font-size: 1.0625rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .offering-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+    }
+    .offering-body h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+    .offering-body ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+    .offering-body ul li {
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      position: relative;
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    .offering-body ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--corporate-gold);
+    }
+
+    /* ===== Audience Tags ===== */
+    .audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .audience-tag {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.375rem 0.875rem;
+      border-radius: 100px;
+    }
+
+    /* ===== Live Sites Grid ===== */
+    .sites-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .site-item {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 1.25rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: block;
+    }
+    .site-item:hover {
+      border-color: var(--corporate-navy);
+      box-shadow: 0 4px 12px rgba(10, 22, 40, 0.06);
+      transform: translateY(-2px);
+    }
+    .site-category {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--corporate-gold);
+      margin-bottom: 0.25rem;
+    }
+    .site-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      margin-bottom: 0.25rem;
+    }
+    .site-desc {
+      font-size: 0.8125rem;
+      color: var(--gray-500);
+    }
+
+    /* ===== Core Programming ===== */
+    .program-card {
+      background: var(--corporate-navy);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .program-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .program-card .program-tagline {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--corporate-gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .program-card p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .program-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .program-card ul li {
+      padding: 0.375rem 0 0.375rem 1.5rem;
+      position: relative;
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .program-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.875rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--corporate-gold-light);
+    }
+
+    /* ===== CTA Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.875rem 2rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--corporate-navy-light);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--corporate-navy);
+      border: 2px solid var(--corporate-navy);
+    }
+    .btn-outline:hover {
+      background: var(--corporate-navy);
+      color: var(--white);
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--corporate-navy);
+    }
+    .btn-white:hover {
+      background: var(--gray-100);
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .offering-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    /* ===== Youth Section ===== */
+    .youth-callout {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .youth-callout p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .youth-callout p:last-child {
+      margin-bottom: 0;
+    }
+    .youth-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .youth-project-tag {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      color: var(--gray-700);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    /* ===== Questionnaire Section ===== */
+    .questionnaire-section {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .questionnaire-section h4 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 0.75rem;
+    }
+    .questionnaire-section p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+    }
+    .form-embed {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .form-embed iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      padding: 6rem 3rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-section .section-title {
+      color: var(--white);
+    }
+    .cta-section .section-description {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--corporate-navy);
+      color: var(--white);
+      padding: 5rem 3rem 3rem;
+    }
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr repeat(5, 1fr);
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-brand {
+      max-width: 280px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+    }
+    .footer-nav h4 {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1.5rem;
+    }
+    .footer-nav ul {
+      list-style: none;
+    }
+    .footer-nav li {
+      margin-bottom: 0.75rem;
+    }
+    .footer-nav a {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-legal a {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: rgba(255, 255, 255, 0.7); }
+    .footer-copyright {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .sites-showcase { grid-template-columns: repeat(2, 1fr); }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+      #header-inner { padding: 0 1rem; height: 64px; }
+      #site-header { height: 64px; }
+      #main-menu { display: none; }
+      #main-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        padding: 1.5rem;
+        gap: 0;
+        border-bottom: 1px solid #E5E7EB;
+        z-index: 9998;
+      }
+      #main-menu.active a {
+        padding: 1rem;
+        border-bottom: 1px solid #F3F4F6;
+      }
+      #contact-btn { margin: 1rem 0 0 0; width: 100%; text-align: center; }
+      #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
+
+      .page-hero { padding: 4rem 1.5rem; }
+      .section { padding: 3rem 1.5rem; }
+      .offering-card { padding: 2rem 1.5rem; }
+      .offering-header { flex-direction: column; }
+      .sites-showcase { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .btn { width: 100%; justify-content: center; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      .offering-cta { flex-direction: column; }
+
+      footer { padding: 3rem 1rem 2rem; }
+      .footer-top { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+      .footer-brand { max-width: none; text-align: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero { padding: 3rem 1rem; }
+      .section { padding: 2.5rem 1rem; }
+      .offering-card { padding: 1.5rem 1rem; }
+      .program-card { padding: 1.5rem; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .metric-number { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header id="site-header">
+    <div id="header-inner">
+      <a href="/" id="site-logo">PILLAR</a>
+      <nav id="main-menu">
+        <a href="/training" class="active">Training</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/insights">Insights</a>
+        <a href="/get-started" id="contact-btn">Contact</a>
+      </nav>
+      <button id="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero" aria-label="Training overview">
+    <div class="page-hero-container">
+      <p class="eyebrow">PILLAR Training</p>
+      <h1>Build Anything. Master Everything.</h1>
+      <p class="lead">In less than three months, learn how to build websites, videos, AI tools, startups, nonprofits, and social movements &mdash; with training programs designed for executives, organizations, and changemakers worldwide.</p>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <div class="metrics-bar" aria-label="Training impact metrics">
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-number">12,000+</div>
+        <div class="metric-label">People Trained Worldwide</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">100M+</div>
+        <div class="metric-label">People Reached by Projects</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">95</div>
+        <div class="metric-label">Countries Served</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">3</div>
+        <div class="metric-label">Training Formats</div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===== TRAINING 1: VIRTUAL ===== -->
+    <section id="virtual" class="section" aria-label="Virtual Training">
+      <div class="section-container">
+        <article class="offering-card">
+          <div class="offering-header">
+            <div class="offering-title-group">
+              <span class="offering-badge virtual">Virtual</span>
+              <h2 class="offering-title">Training (Virtual)</h2>
+              <p class="offering-subtitle">Made to fit your schedule and timing. Flexible virtual sessions designed for individuals, teams, and organizations around the world.</p>
+            </div>
+            <div class="offering-capacity">
+              <div class="capacity-number">Flexible</div>
+              <div class="capacity-label">Schedule &amp; Timing</div>
+            </div>
+          </div>
+
+          <div class="audience-tags">
+            <span class="audience-tag">Top Executives</span>
+            <span class="audience-tag">Industry Leaders</span>
+            <span class="audience-tag">Nonprofit Organizations</span>
+            <span class="audience-tag">Government</span>
+            <span class="audience-tag">University Faculty &amp; Students</span>
+            <span class="audience-tag">Private &amp; Public Schools</span>
+            <span class="audience-tag">Startup Founders</span>
+            <span class="audience-tag">VC / LP</span>
+            <span class="audience-tag">Investors</span>
+          </div>
+
+          <div class="offering-body">
+            <p>Over 12,000 people worldwide have completed PILLAR training &mdash; from top executives and industry leaders to nonprofit organizations, government officials, university faculty and students, private and public school educators, startup founders, VCs, LPs, investors, and more.</p>
+
+            <p>Our projects have reached over 100 million people, serving communities and generating profits. Participants walk away with real, launched projects &mdash; not just theory.</p>
+
+            <h3>What You Will Build</h3>
+            <p>In less than three months, you will learn how to build any of the following: <strong>Websites, Videos, AI Tools, Startups, Nonprofits, and Social Movements.</strong> Here are recent live projects built through PILLAR training, one from each category:</p>
+
+            <div class="sites-showcase">
+              <a href="https://www.viewsgrowth.com" target="_blank" rel="noopener" class="site-item">
+                <div class="site-category">Websites</div>
+                <div class="site-name">ViewsGrowth.com</div>
+                <div class="site-desc">Marketing &amp; analytics platform &mdash; 250K monthly visitors</div>
+              </a>
+              <a href="https://www.play4tomorrow.com" target="_blank" rel="noopener" class="site-item">
+                <div class="site-category">Videos</div>
+                <div class="site-name">Play4Tomorrow.com</div>
+                <div class="site-desc">Media production &amp; interactive storytelling</div>
+              </a>
+              <a href="https://www.eldoaai.com" target="_blank" rel="noopener" class="site-item">
+                <div class="site-category">AI</div>
+                <div class="site-name">EldoaAI.com</div>
+                <div class="site-desc">AI-powered wellness &amp; health platform</div>
+              </a>
+              <a href="https://www.banksize.com" target="_blank" rel="noopener" class="site-item">
+                <div class="site-category">Startups</div>
+                <div class="site-name">BankSize.com</div>
+                <div class="site-desc">Global banking awareness &amp; financial literacy</div>
+              </a>
+              <a href="https://www.globalfirstnations.com" target="_blank" rel="noopener" class="site-item">
+                <div class="site-category">Nonprofits</div>
+                <div class="site-name">GlobalFirstNations.com</div>
+                <div class="site-desc">Indigenous cultures &amp; heritage preservation</div>
+              </a>
+              <a href="https://www.aclheal.com" target="_blank" rel="noopener" class="site-item">
+                <div class="site-category">Social Movements</div>
+                <div class="site-name">ACLHeal.com</div>
+                <div class="site-desc">Health recovery awareness &amp; community</div>
+              </a>
+            </div>
+
+            <h3>Core Programming</h3>
+
+            <div class="program-card">
+              <h4>Zero To Hero AI Program</h4>
+              <p class="program-tagline">Master Working with AI in Less than 24 Hours</p>
+              <p>The AI revolution is not linear &mdash; it is exponential. What took companies years to build five years ago can now be prototyped in hours. The Zero To Hero AI Program puts you on the right side of this exponential curve. You will go from zero AI experience to confidently building AI-powered tools, workflows, and products in a single day.</p>
+              <p>Think about the compounding effect: if AI capability doubles every few months, the gap between those who understand it and those who don't grows not by addition but by multiplication. Participants who completed this program have gone on to launch AI-powered businesses, automate entire departments, and create products reaching millions &mdash; all within weeks of finishing. The difference between starting today and starting six months from now isn't six months of progress. It's an entire generation of capability.</p>
+              <ul>
+                <li>Build and deploy AI-powered tools and workflows from scratch</li>
+                <li>Automate complex processes that previously required entire teams</li>
+                <li>Understand prompt engineering, model selection, and AI architecture</li>
+                <li>Create AI products that serve real users on day one</li>
+              </ul>
+            </div>
+
+            <div class="program-card">
+              <h4>Advanced Problem Solving</h4>
+              <p class="program-tagline">Beyond Design Thinking</p>
+              <p>Design thinking opened the door. Advanced Problem Solving walks through it and keeps going. This program teaches you to dismantle complex, entrenched problems &mdash; the kind that have resisted conventional approaches for years &mdash; and replace them with breakthrough solutions that actually ship.</p>
+              <p>Our graduates have tackled problems that Fortune 500 consultants couldn't crack: redesigning healthcare delivery systems, creating financial inclusion tools for underserved populations, building education platforms that reach rural communities across continents, and launching advocacy campaigns that shifted public policy. The method works because it combines rapid prototyping, systems-level thinking, and relentless bias toward action. You won't just analyze the problem. You will solve it and launch the solution before the workshop is over.</p>
+              <ul>
+                <li>Dismantle complex, systemic problems using structured breakthrough frameworks</li>
+                <li>Move from insight to shipped solution in days, not quarters</li>
+                <li>Combine systems thinking with rapid prototyping for real-world impact</li>
+                <li>Build solutions that scale across organizations and communities</li>
+              </ul>
+            </div>
+
+            <!-- Questionnaire -->
+            <div class="questionnaire-section">
+              <h4>Sent by Your Organization?</h4>
+              <p>If your organization has sent you to this training, please fill out the questionnaire below so we can tailor your experience.</p>
+              <div class="form-embed">
+                <iframe src="https://docs.google.com/forms/d/e/PLACEHOLDER/viewform?embedded=true" title="Training Questionnaire" loading="lazy">Loading form...</iframe>
+              </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="offering-cta">
+              <a href="/get-started" class="btn btn-primary">Contact Us for Engagement Timing, Scope &amp; Cost</a>
+            </div>
+
+            <!-- Youth Development -->
+            <div class="youth-callout">
+              <p>If you want to create youth-facing content, please check out our partner <a href="https://www.play4tomorrow.com/about" target="_blank" rel="noopener" style="color: var(--corporate-gold); font-weight: 600;">Play4Tomorrow</a> for references in coloring books, music videos, animation, interactive stories, comics, games, and live experiences using AI.</p>
+              <div class="youth-projects">
+                <span class="youth-project-tag">Lenin Video</span>
+                <span class="youth-project-tag">WISG</span>
+                <span class="youth-project-tag">Academy</span>
+                <span class="youth-project-tag">Coloring Books</span>
+                <span class="youth-project-tag">Animation</span>
+                <span class="youth-project-tag">Interactive Stories</span>
+                <span class="youth-project-tag">Comics</span>
+                <span class="youth-project-tag">Games</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== TRAINING 2: LIVE - SMALL GROUPS ===== -->
+    <section id="small-groups" class="section section-alt" aria-label="Live Small Group Training">
+      <div class="section-container">
+        <article class="offering-card">
+          <div class="offering-header">
+            <div class="offering-title-group">
+              <span class="offering-badge small-group">Live &mdash; Small Groups</span>
+              <h2 class="offering-title">Training (Live &mdash; Small Groups)</h2>
+              <p class="offering-subtitle">Corporate, Startup, Nonprofit, and Classroom Engagements. Intensive workshops that transform how your team thinks, builds, and ships.</p>
+            </div>
+            <div class="offering-capacity">
+              <div class="capacity-number">Up to 100</div>
+              <div class="capacity-label">People at a Time</div>
+            </div>
+          </div>
+
+          <div class="audience-tags">
+            <span class="audience-tag">Corporate Teams</span>
+            <span class="audience-tag">Startup Teams</span>
+            <span class="audience-tag">Nonprofit Organizations</span>
+            <span class="audience-tag">Classrooms</span>
+          </div>
+
+          <div class="offering-body">
+            <p>Same world-class deliverables and core programming as our virtual training &mdash; compressed into an intensive 24&ndash;72 hour experience. This is where a hands-on workshop meets a no-code hackathon: your team arrives with real organizational challenges and leaves with real, working solutions. Problems that have lingered for months get solved. Bottlenecks that have slowed your team down get eliminated. Ideas that have been stuck on whiteboards get launched.</p>
+
+            <p>This format is built for organizations that need results now. Your team will build websites, AI tools, and digital products together in real time &mdash; learning by doing, not by watching slides. Every participant leaves with a live, deployed project and the skills to build the next one on their own.</p>
+
+            <h3>Core Programming</h3>
+
+            <div class="program-card">
+              <h4>Zero To Hero AI Program</h4>
+              <p class="program-tagline">Master Working with AI in Less than 24 Hours</p>
+              <p>The AI revolution is exponential, not linear. What took teams months can now be built in hours. In this intensive format, your entire group goes from zero AI experience to building and deploying AI-powered tools together &mdash; creating solutions specific to your organization's challenges.</p>
+              <ul>
+                <li>Build and deploy AI-powered tools and workflows as a team</li>
+                <li>Solve real organizational problems with AI in real time</li>
+                <li>Leave with deployed, working AI solutions &mdash; not just prototypes</li>
+              </ul>
+            </div>
+
+            <div class="program-card">
+              <h4>Advanced Problem Solving</h4>
+              <p class="program-tagline">Beyond Design Thinking</p>
+              <p>Tackle your organization's most entrenched problems head-on. This intensive format brings your team together to dismantle complex challenges using breakthrough frameworks, rapid prototyping, and a relentless bias toward action. Solutions get built and launched before the workshop ends.</p>
+              <ul>
+                <li>Address real organizational challenges with structured breakthrough methods</li>
+                <li>Ship working solutions within the workshop timeframe</li>
+                <li>Build team capacity for ongoing innovation and problem solving</li>
+              </ul>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="offering-cta">
+              <a href="/get-started" class="btn btn-primary">Contact Us for Engagement Timing, Scope &amp; Cost</a>
+            </div>
+
+            <!-- Youth Development -->
+            <div class="youth-callout">
+              <p>If you want to create youth-facing content, please check out our partner <a href="https://www.play4tomorrow.com/about" target="_blank" rel="noopener" style="color: var(--corporate-gold); font-weight: 600;">Play4Tomorrow</a> for references in coloring books, music videos, animation, interactive stories, comics, games, and live experiences using AI.</p>
+              <div class="youth-projects">
+                <span class="youth-project-tag">Lenin Video</span>
+                <span class="youth-project-tag">WISG</span>
+                <span class="youth-project-tag">Academy</span>
+                <span class="youth-project-tag">Coloring Books</span>
+                <span class="youth-project-tag">Animation</span>
+                <span class="youth-project-tag">Interactive Stories</span>
+                <span class="youth-project-tag">Comics</span>
+                <span class="youth-project-tag">Games</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== TRAINING 3: LIVE - LARGE GROUPS ===== -->
+    <section id="large-groups" class="section" aria-label="Live Large Group Training">
+      <div class="section-container">
+        <article class="offering-card">
+          <div class="offering-header">
+            <div class="offering-title-group">
+              <span class="offering-badge large-group">Live &mdash; Large Groups</span>
+              <h2 class="offering-title">Training (Live &mdash; Large Groups)</h2>
+              <p class="offering-subtitle">Large Events, Government, and Universities. High-impact training at scale for thousands of participants simultaneously.</p>
+            </div>
+            <div class="offering-capacity">
+              <div class="capacity-number">Up to 10,000</div>
+              <div class="capacity-label">People at a Time</div>
+            </div>
+          </div>
+
+          <div class="audience-tags">
+            <span class="audience-tag">Large Events</span>
+            <span class="audience-tag">Government</span>
+            <span class="audience-tag">Universities</span>
+          </div>
+
+          <div class="offering-body">
+            <p>Same world-class deliverables and core programming &mdash; engineered for massive impact within a tight 2&ndash;12 hour timeframe. This is a high-energy workshop meets no-code hackathon at scale: thousands of participants tackle real problems, build real solutions, and leave with deployed projects &mdash; all in a single session. Organizational bottlenecks get dismantled. Community challenges get addressed. Ideas that seemed impossible at scale get launched in front of everyone.</p>
+
+            <p>Designed for large events, government initiatives, and university-wide programs, this format proves that scale doesn't have to mean sacrifice. Every participant &mdash; whether there are 500 or 10,000 &mdash; gets hands-on building experience and walks away with working, live projects.</p>
+
+            <h3>Core Programming</h3>
+
+            <div class="program-card">
+              <h4>Zero To Hero AI Program</h4>
+              <p class="program-tagline">Master Working with AI in Less than 24 Hours</p>
+              <p>Bring the exponential power of AI to thousands simultaneously. Participants go from zero experience to building and deploying AI-powered tools &mdash; together, in real time, at scale. The energy of a room with thousands of people all creating at once is something that has to be experienced.</p>
+              <ul>
+                <li>Thousands of participants building AI tools simultaneously</li>
+                <li>Scalable workshop structure that maintains hands-on quality</li>
+                <li>Deployed AI solutions from every participant group</li>
+              </ul>
+            </div>
+
+            <div class="program-card">
+              <h4>Advanced Problem Solving</h4>
+              <p class="program-tagline">Beyond Design Thinking</p>
+              <p>Large-scale breakthrough problem solving for governments, universities, and major organizations. Hundreds of teams work in parallel to dismantle complex challenges, prototype solutions, and launch them &mdash; all within a single event. The collective intelligence of thousands focused on a shared problem produces results that no individual team could achieve alone.</p>
+              <ul>
+                <li>Hundreds of parallel teams solving interconnected challenges</li>
+                <li>Real-time solution deployment at event scale</li>
+                <li>Collective intelligence applied to systemic problems</li>
+              </ul>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="offering-cta">
+              <a href="/get-started" class="btn btn-primary">Contact Us for Engagement Timing, Scope &amp; Cost</a>
+            </div>
+
+            <!-- Youth Development -->
+            <div class="youth-callout">
+              <p>If you want to create youth-facing content, please check out our partner <a href="https://www.play4tomorrow.com/about" target="_blank" rel="noopener" style="color: var(--corporate-gold); font-weight: 600;">Play4Tomorrow</a> for references in coloring books, music videos, animation, interactive stories, comics, games, and live experiences using AI.</p>
+              <div class="youth-projects">
+                <span class="youth-project-tag">Lenin Video</span>
+                <span class="youth-project-tag">WISG</span>
+                <span class="youth-project-tag">Academy</span>
+                <span class="youth-project-tag">Coloring Books</span>
+                <span class="youth-project-tag">Animation</span>
+                <span class="youth-project-tag">Interactive Stories</span>
+                <span class="youth-project-tag">Comics</span>
+                <span class="youth-project-tag">Games</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Get started with training">
+      <div class="cta-container">
+        <p class="section-eyebrow" style="color: var(--corporate-gold-light);">Get Started</p>
+        <h2 class="section-title">Ready to Transform Your Team?</h2>
+        <p class="section-description">Whether you're curious about training for yourself, your organization, or a company or nonprofit that you govern or assist, we'd like to hear from you.</p>
+        <div class="cta-actions">
+          <a href="/get-started" class="btn btn-white">Contact Us for Engagement Timing, Scope &amp; Cost</a>
+          <a href="#virtual" class="btn btn-outline-white">Explore Training Options</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">PILLAR</div>
+          <p class="footer-tagline">A global digital infrastructure and media corporation building the foundation of tomorrow's digital economy.</p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <span style="font-size: 0.6875rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em;">Global Presence</span>
+          </div>
+          <div style="margin-top: 0.5rem; font-size: 0.8125rem; color: rgba(255,255,255,0.6);">
+            95 Countries &bull; 7,000+ Digital Properties &bull; $1.25B Portfolio
+          </div>
+        </div>
+
+        <nav class="footer-nav">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About PILLAR</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/portfolio/categories">Portfolio Categories</a></li>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/get-started">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Training</h4>
+          <ul>
+            <li><a href="/training">Training Overview</a></li>
+            <li><a href="/training#virtual">Training (Virtual)</a></li>
+            <li><a href="/training#small-groups">Training (Live - Small Groups)</a></li>
+            <li><a href="/training#large-groups">Training (Live - Large Groups)</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/domains">Premium Domains</a></li>
+            <li><a href="/ai-services">AI Platform</a></li>
+            <li><a href="/how-it-works">Enterprise Solutions</a></li>
+            <li><a href="/builder-demo">Platform Demo</a></li>
+            <li><a href="/domain-roi-calculator">ROI Calculator</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Help Center</a></li>
+            <li><a href="/support">Documentation</a></li>
+            <li><a href="/support">System Status</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.webuildpillars.com" target="_blank" rel="noopener">We Build Pillars</a></li>
+            <li><a href="/get-started">Partner With Us</a></li>
+            <li><a href="/get-started">Enterprise Inquiries</a></li>
+            <li><a href="/get-started">Media Inquiries</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="/faq">Privacy Policy</a>
+          <a href="/faq">Terms of Service</a>
+          <a href="/faq">Cookie Policy</a>
+          <a href="/support">Accessibility</a>
+          <a href="/faq">Legal</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 PILLAR Corporation. All rights reserved. PILLAR and the PILLAR logo are registered trademarks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (mobileMenuBtn && mainMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mainMenu.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', mainMenu.classList.contains('active'));
+      });
+
+      document.querySelectorAll('#main-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainMenu.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
