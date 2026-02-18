@@ -145,16 +145,41 @@
       padding: 8px;
     }
 
-    /* ===== Page Hero ===== */
+    /* ===== Page Hero (Enhanced) ===== */
     .page-hero {
-      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 100%);
+      background: linear-gradient(135deg, var(--corporate-navy) 0%, var(--corporate-navy-light) 50%, #1a3a5c 100%);
       color: var(--white);
-      padding: 8rem 3rem;
+      padding: 10rem 3rem 8rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(184, 134, 11, 0.08) 0%, rgba(37, 99, 235, 0.04) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.06) 0%, transparent 60%);
+      pointer-events: none;
     }
     .page-hero-container {
       max-width: 900px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     .page-hero .eyebrow {
       font-size: 0.75rem;
@@ -178,6 +203,36 @@
       line-height: 1.7;
       max-width: 700px;
       margin: 0 auto;
+    }
+    .hero-anchors {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+    .hero-anchor {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .hero-anchor:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+    .hero-anchor .anchor-icon {
+      font-size: 1.125rem;
     }
 
     /* ===== Metrics Bar ===== */
@@ -210,6 +265,97 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-top: 0.5rem;
+    }
+
+    /* ===== Overview Strip ===== */
+    .overview-strip {
+      padding: 5rem 3rem;
+      background: var(--off-white);
+    }
+    .overview-strip .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .overview-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .overview-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-top: 3px solid var(--gray-300);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      position: relative;
+    }
+    .overview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(10, 22, 40, 0.1);
+    }
+    .overview-card.card-blue { border-top-color: var(--corporate-blue); }
+    .overview-card.card-blue:hover { box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12); }
+    .overview-card.card-teal { border-top-color: var(--corporate-teal); }
+    .overview-card.card-teal:hover { box-shadow: 0 20px 40px rgba(13, 148, 136, 0.12); }
+    .overview-card.card-gold { border-top-color: var(--corporate-gold); }
+    .overview-card.card-gold:hover { box-shadow: 0 20px 40px rgba(184, 134, 11, 0.12); }
+    .overview-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .overview-icon.icon-blue { background: linear-gradient(135deg, #EBF2FF, #DBEAFE); }
+    .overview-icon.icon-teal { background: linear-gradient(135deg, #E6FAF8, #CCFBF1); }
+    .overview-icon.icon-gold { background: linear-gradient(135deg, #FEF7E6, #FDE68A); }
+    .overview-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
+      margin-bottom: 0.5rem;
+    }
+    .overview-meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .overview-meta-item {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .overview-card p {
+      font-size: 0.9375rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .overview-link {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--corporate-navy);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      transition: gap 0.2s;
+    }
+    .overview-card:hover .overview-link {
+      gap: 0.625rem;
     }
 
     /* ===== Section Styles ===== */
@@ -271,10 +417,29 @@
       padding: 3rem;
       margin-bottom: 4rem;
       transition: box-shadow 0.3s;
+      border-top: 3px solid var(--gray-300);
+    }
+    .offering-card:last-child {
+      margin-bottom: 0;
     }
     .offering-card:hover {
       box-shadow: 0 8px 32px rgba(10, 22, 40, 0.08);
     }
+    .offering-card.accent-blue { border-top-color: var(--corporate-blue); }
+    .offering-card.accent-teal { border-top-color: var(--corporate-teal); }
+    .offering-card.accent-gold { border-top-color: var(--corporate-gold); }
+
+    /* Navy section offering card override */
+    .section-navy .offering-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 3px solid var(--corporate-teal);
+    }
+    .section-navy .offering-card:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
     .offering-header {
       display: flex;
       align-items: flex-start;
@@ -285,6 +450,23 @@
     }
     .offering-title-group {
       flex: 1;
+    }
+    .offering-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .offering-icon.icon-blue { background: linear-gradient(135deg, #2563EB, #1D4ED8); }
+    .offering-icon.icon-teal { background: linear-gradient(135deg, #0D9488, #0F766E); }
+    .offering-icon.icon-gold { background: linear-gradient(135deg, #B8860B, #92690A); }
+    .section-navy .offering-icon.icon-teal {
+      background: linear-gradient(135deg, #14B8A6, #0D9488);
+      box-shadow: 0 4px 16px rgba(13, 148, 136, 0.3);
     }
     .offering-badge {
       display: inline-block;
@@ -308,10 +490,16 @@
       color: var(--corporate-navy);
       margin-bottom: 0.5rem;
     }
+    .section-navy .offering-title {
+      color: var(--white);
+    }
     .offering-subtitle {
       font-size: 1.0625rem;
       color: var(--gray-600);
       line-height: 1.7;
+    }
+    .section-navy .offering-subtitle {
+      color: rgba(255, 255, 255, 0.7);
     }
     .offering-capacity {
       background: var(--gray-50);
@@ -321,11 +509,18 @@
       text-align: center;
       white-space: nowrap;
     }
+    .section-navy .offering-capacity {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
     .capacity-number {
       font-family: var(--font-display);
       font-size: 1.75rem;
       color: var(--corporate-navy);
       line-height: 1;
+    }
+    .section-navy .capacity-number {
+      color: var(--white);
     }
     .capacity-label {
       font-size: 0.6875rem;
@@ -333,6 +528,9 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-top: 0.25rem;
+    }
+    .section-navy .capacity-label {
+      color: rgba(255, 255, 255, 0.5);
     }
     .offering-body {
       margin-bottom: 2rem;
@@ -343,6 +541,9 @@
       line-height: 1.8;
       margin-bottom: 1.5rem;
     }
+    .section-navy .offering-body p {
+      color: rgba(255, 255, 255, 0.75);
+    }
     .offering-body h3 {
       font-family: var(--font-display);
       font-size: 1.5rem;
@@ -350,6 +551,9 @@
       color: var(--corporate-navy);
       margin-bottom: 1rem;
       margin-top: 2.5rem;
+    }
+    .section-navy .offering-body h3 {
+      color: var(--white);
     }
     .offering-body h4 {
       font-size: 1rem;
@@ -370,6 +574,9 @@
       color: var(--gray-600);
       line-height: 1.6;
     }
+    .section-navy .offering-body ul li {
+      color: rgba(255, 255, 255, 0.75);
+    }
     .offering-body ul li::before {
       content: '';
       position: absolute;
@@ -379,6 +586,9 @@
       height: 6px;
       border-radius: 50%;
       background: var(--corporate-gold);
+    }
+    .section-navy .offering-body ul li::before {
+      background: var(--corporate-gold-light);
     }
 
     /* ===== Audience Tags ===== */
@@ -396,6 +606,22 @@
       padding: 0.375rem 0.875rem;
       border-radius: 100px;
     }
+    .audience-tag-blue {
+      background: rgba(37, 99, 235, 0.08);
+      color: #1D4ED8;
+    }
+    .audience-tag-teal {
+      background: rgba(13, 148, 136, 0.1);
+      color: #0F766E;
+    }
+    .section-navy .audience-tag-teal {
+      background: rgba(20, 184, 166, 0.15);
+      color: #5EEAD4;
+    }
+    .audience-tag-gold {
+      background: rgba(184, 134, 11, 0.08);
+      color: #92690A;
+    }
 
     /* ===== Live Sites Grid ===== */
     .sites-showcase {
@@ -407,16 +633,17 @@
     .site-item {
       background: var(--gray-50);
       border: 1px solid var(--gray-200);
+      border-left: 3px solid var(--corporate-gold);
       border-radius: 6px;
-      padding: 1.25rem;
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all 0.3s;
       display: block;
     }
     .site-item:hover {
-      border-color: var(--corporate-navy);
-      box-shadow: 0 4px 12px rgba(10, 22, 40, 0.06);
-      transform: translateY(-2px);
+      border-color: var(--corporate-gold);
+      box-shadow: 0 8px 24px rgba(184, 134, 11, 0.1);
+      transform: translateY(-3px);
     }
     .site-category {
       font-size: 0.6875rem;
@@ -436,6 +663,15 @@
       font-size: 0.8125rem;
       color: var(--gray-500);
     }
+    .site-arrow {
+      display: inline-block;
+      margin-left: 0.25rem;
+      transition: transform 0.2s;
+      font-size: 0.75rem;
+    }
+    .site-item:hover .site-arrow {
+      transform: translateX(3px);
+    }
 
     /* ===== Core Programming ===== */
     .program-card {
@@ -444,13 +680,53 @@
       border-radius: 8px;
       padding: 2.5rem;
       margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
     }
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .program-card.program-ai::before {
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+    }
+    .program-card.program-aps::before {
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 70%);
+    }
+    .section-navy .program-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .program-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .program-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .program-icon.icon-ai { background: linear-gradient(135deg, #2563EB, #1D4ED8); }
+    .program-icon.icon-aps { background: linear-gradient(135deg, #0D9488, #0F766E); }
     .program-card h4 {
       font-family: var(--font-display);
       font-size: 1.375rem;
       font-weight: 400;
       color: var(--white);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.25rem;
     }
     .program-card .program-tagline {
       font-size: 0.875rem;
@@ -458,17 +734,18 @@
       color: var(--corporate-gold-light);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 1rem;
     }
     .program-card p {
       font-size: 1rem;
       color: rgba(255, 255, 255, 0.8);
       line-height: 1.8;
       margin-bottom: 1rem;
+      position: relative;
     }
     .program-card ul {
       list-style: none;
       padding: 0;
+      position: relative;
     }
     .program-card ul li {
       padding: 0.375rem 0 0.375rem 1.5rem;
@@ -485,6 +762,76 @@
       height: 6px;
       border-radius: 50%;
       background: var(--corporate-gold-light);
+    }
+
+    /* ===== Same Program Reference ===== */
+    .same-program-ref {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .section:not(.section-navy) .same-program-ref {
+      background: var(--gray-50);
+      border-color: var(--gray-200);
+    }
+    .same-program-ref p {
+      font-size: 1.0625rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+    .section:not(.section-navy) .same-program-ref p {
+      color: var(--gray-600);
+    }
+    .same-program-ref .program-highlights {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.25rem 0;
+      flex-wrap: wrap;
+    }
+    .program-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .program-highlight-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+    }
+    .program-highlight-icon.icon-ai { background: linear-gradient(135deg, #2563EB, #1D4ED8); }
+    .program-highlight-icon.icon-aps { background: linear-gradient(135deg, #0D9488, #0F766E); }
+    .program-highlight-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .section:not(.section-navy) .program-highlight-name {
+      color: var(--corporate-navy);
+    }
+    .same-program-ref a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--corporate-gold-light);
+      text-decoration: none;
+      transition: gap 0.2s;
+      margin-top: 0.5rem;
+    }
+    .section:not(.section-navy) .same-program-ref a {
+      color: var(--corporate-gold);
+    }
+    .same-program-ref a:hover {
+      gap: 0.625rem;
     }
 
     /* ===== CTA Buttons ===== */
@@ -508,6 +855,13 @@
     }
     .btn-primary:hover {
       background: var(--corporate-navy-light);
+    }
+    .section-navy .btn-primary {
+      background: var(--white);
+      color: var(--corporate-navy);
+    }
+    .section-navy .btn-primary:hover {
+      background: var(--gray-100);
     }
     .btn-outline {
       background: transparent;
@@ -549,30 +903,57 @@
       padding-top: 2rem;
       border-top: 1px solid var(--gray-200);
     }
-
-    /* ===== Youth Section ===== */
-    .youth-callout {
-      background: var(--gray-50);
-      border: 1px solid var(--gray-200);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-top: 2rem;
+    .section-navy .offering-cta {
+      border-top-color: rgba(255, 255, 255, 0.1);
     }
-    .youth-callout p {
-      font-size: 1rem;
-      color: var(--gray-600);
-      line-height: 1.7;
-      font-style: italic;
+
+    /* ===== Youth Section (Standalone) ===== */
+    .youth-band {
+      padding: 5rem 3rem;
+      background: var(--off-white);
+    }
+    .youth-band-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .youth-band-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+    }
+    .youth-band h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--corporate-navy);
       margin-bottom: 1rem;
     }
-    .youth-callout p:last-child {
-      margin-bottom: 0;
+    .youth-band p {
+      font-size: 1.0625rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
     }
+    .youth-band p a {
+      color: var(--corporate-gold);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .youth-band p a:hover { color: var(--corporate-navy); }
     .youth-projects {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.75rem;
+      justify-content: center;
     }
     .youth-project-tag {
       background: var(--white);
@@ -609,10 +990,25 @@
       padding: 6rem 3rem;
       text-align: center;
       color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(184, 134, 11, 0.06) 0%, transparent 70%);
+      pointer-events: none;
     }
     .cta-container {
       max-width: 700px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     .cta-section .section-title {
       color: var(--white);
@@ -620,6 +1016,30 @@
     .cta-section .section-description {
       color: rgba(255, 255, 255, 0.7);
     }
+
+    /* ===== Scroll Reveal Animation ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
 
     /* ===== Footer ===== */
     footer {
@@ -700,6 +1120,7 @@
 
     /* ===== Responsive ===== */
     @media (max-width: 1024px) {
+      .overview-grid { grid-template-columns: repeat(3, 1fr); }
       .sites-showcase { grid-template-columns: repeat(2, 1fr); }
       .metrics-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
@@ -731,8 +1152,11 @@
       #contact-btn { margin: 1rem 0 0 0; width: 100%; text-align: center; }
       #mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
 
-      .page-hero { padding: 4rem 1.5rem; }
+      .page-hero { padding: 5rem 1.5rem 4rem; }
+      .hero-anchors { flex-direction: column; align-items: center; }
       .section { padding: 3rem 1.5rem; }
+      .overview-strip { padding: 3rem 1.5rem; }
+      .overview-grid { grid-template-columns: 1fr; }
       .offering-card { padding: 2rem 1.5rem; }
       .offering-header { flex-direction: column; }
       .sites-showcase { grid-template-columns: 1fr; }
@@ -740,6 +1164,8 @@
       .btn { width: 100%; justify-content: center; }
       .cta-actions { flex-direction: column; align-items: center; }
       .offering-cta { flex-direction: column; }
+      .same-program-ref .program-highlights { flex-direction: column; align-items: center; }
+      .youth-band { padding: 3rem 1.5rem; }
 
       footer { padding: 3rem 1rem 2rem; }
       .footer-top { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
@@ -749,12 +1175,14 @@
     }
 
     @media (max-width: 480px) {
-      .page-hero { padding: 3rem 1rem; }
+      .page-hero { padding: 3.5rem 1rem 3rem; }
       .section { padding: 2.5rem 1rem; }
+      .overview-strip { padding: 2.5rem 1rem; }
       .offering-card { padding: 1.5rem 1rem; }
       .program-card { padding: 1.5rem; }
       .metrics-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
       .metric-number { font-size: 2rem; }
+      .youth-band { padding: 2.5rem 1rem; }
     }
   </style>
 </head>
@@ -775,12 +1203,23 @@
     </div>
   </header>
 
-  <!-- Page Hero -->
+  <!-- Page Hero (Enhanced with glow & anchor nav) -->
   <section class="page-hero" aria-label="Training overview">
     <div class="page-hero-container">
       <p class="eyebrow">PILLAR Training</p>
       <h1>Build Anything. Master Everything.</h1>
       <p class="lead">In less than three months, learn how to build websites, videos, AI tools, startups, nonprofits, and social movements &mdash; with training programs designed for executives, organizations, and changemakers worldwide.</p>
+      <div class="hero-anchors">
+        <a href="#virtual" class="hero-anchor">
+          <span class="anchor-icon">&#128187;</span> Virtual
+        </a>
+        <a href="#small-groups" class="hero-anchor">
+          <span class="anchor-icon">&#128101;</span> Live &mdash; Small Groups
+        </a>
+        <a href="#large-groups" class="hero-anchor">
+          <span class="anchor-icon">&#127967;</span> Live &mdash; Large Groups
+        </a>
+      </div>
     </div>
   </section>
 
@@ -806,13 +1245,57 @@
     </div>
   </div>
 
+  <!-- Overview Strip: Compare All Three at a Glance -->
+  <section class="overview-strip" aria-label="Training format comparison">
+    <div class="section-container">
+      <div class="overview-header">
+        <p class="section-eyebrow">Choose Your Format</p>
+        <h2 class="section-title">Three Ways to Train</h2>
+        <p class="section-description">Same world-class curriculum. Different formats to fit your scale, schedule, and style.</p>
+      </div>
+      <div class="overview-grid">
+        <a href="#virtual" class="overview-card card-blue reveal">
+          <div class="overview-icon icon-blue">&#128187;</div>
+          <h3>Virtual</h3>
+          <div class="overview-meta">
+            <span class="overview-meta-item">Flexible Schedule</span>
+            <span class="overview-meta-item">&lt; 3 Months</span>
+          </div>
+          <p>Made to fit your schedule and timing. Flexible virtual sessions designed for individuals, teams, and organizations around the world.</p>
+          <span class="overview-link">Learn more &#8594;</span>
+        </a>
+        <a href="#small-groups" class="overview-card card-teal reveal reveal-delay-1">
+          <div class="overview-icon icon-teal">&#128101;</div>
+          <h3>Live &mdash; Small Groups</h3>
+          <div class="overview-meta">
+            <span class="overview-meta-item">Up to 100 People</span>
+            <span class="overview-meta-item">24&ndash;72 Hours</span>
+          </div>
+          <p>Intensive workshops for corporate teams, startups, nonprofits, and classrooms. Hands-on building meets no-code hackathon.</p>
+          <span class="overview-link">Learn more &#8594;</span>
+        </a>
+        <a href="#large-groups" class="overview-card card-gold reveal reveal-delay-2">
+          <div class="overview-icon icon-gold">&#127967;</div>
+          <h3>Live &mdash; Large Groups</h3>
+          <div class="overview-meta">
+            <span class="overview-meta-item">Up to 10,000 People</span>
+            <span class="overview-meta-item">2&ndash;12 Hours</span>
+          </div>
+          <p>High-impact training at scale for large events, government initiatives, and university-wide programs.</p>
+          <span class="overview-link">Learn more &#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <main>
     <!-- ===== TRAINING 1: VIRTUAL ===== -->
     <section id="virtual" class="section" aria-label="Virtual Training">
       <div class="section-container">
-        <article class="offering-card">
+        <article class="offering-card accent-blue reveal">
           <div class="offering-header">
             <div class="offering-title-group">
+              <div class="offering-icon icon-blue">&#128187;</div>
               <span class="offering-badge virtual">Virtual</span>
               <h2 class="offering-title">Training (Virtual)</h2>
               <p class="offering-subtitle">Made to fit your schedule and timing. Flexible virtual sessions designed for individuals, teams, and organizations around the world.</p>
@@ -824,15 +1307,15 @@
           </div>
 
           <div class="audience-tags">
-            <span class="audience-tag">Top Executives</span>
-            <span class="audience-tag">Industry Leaders</span>
-            <span class="audience-tag">Nonprofit Organizations</span>
-            <span class="audience-tag">Government</span>
-            <span class="audience-tag">University Faculty &amp; Students</span>
-            <span class="audience-tag">Private &amp; Public Schools</span>
-            <span class="audience-tag">Startup Founders</span>
-            <span class="audience-tag">VC / LP</span>
-            <span class="audience-tag">Investors</span>
+            <span class="audience-tag audience-tag-blue">Top Executives</span>
+            <span class="audience-tag audience-tag-blue">Industry Leaders</span>
+            <span class="audience-tag audience-tag-blue">Nonprofit Organizations</span>
+            <span class="audience-tag audience-tag-blue">Government</span>
+            <span class="audience-tag audience-tag-blue">University Faculty &amp; Students</span>
+            <span class="audience-tag audience-tag-blue">Private &amp; Public Schools</span>
+            <span class="audience-tag audience-tag-blue">Startup Founders</span>
+            <span class="audience-tag audience-tag-blue">VC / LP</span>
+            <span class="audience-tag audience-tag-blue">Investors</span>
           </div>
 
           <div class="offering-body">
@@ -844,43 +1327,48 @@
             <p>In less than three months, you will learn how to build any of the following: <strong>Websites, Videos, AI Tools, Startups, Nonprofits, and Social Movements.</strong> Here are recent live projects built through PILLAR training, one from each category:</p>
 
             <div class="sites-showcase">
-              <a href="https://www.viewsgrowth.com" target="_blank" rel="noopener" class="site-item">
+              <a href="https://www.viewsgrowth.com" target="_blank" rel="noopener" class="site-item reveal">
                 <div class="site-category">Websites</div>
-                <div class="site-name">ViewsGrowth.com</div>
+                <div class="site-name">ViewsGrowth.com <span class="site-arrow">&#8594;</span></div>
                 <div class="site-desc">Marketing &amp; analytics platform &mdash; 250K monthly visitors</div>
               </a>
-              <a href="https://www.play4tomorrow.com" target="_blank" rel="noopener" class="site-item">
+              <a href="https://www.play4tomorrow.com" target="_blank" rel="noopener" class="site-item reveal reveal-delay-1">
                 <div class="site-category">Videos</div>
-                <div class="site-name">Play4Tomorrow.com</div>
+                <div class="site-name">Play4Tomorrow.com <span class="site-arrow">&#8594;</span></div>
                 <div class="site-desc">Media production &amp; interactive storytelling</div>
               </a>
-              <a href="https://www.eldoaai.com" target="_blank" rel="noopener" class="site-item">
+              <a href="https://www.eldoaai.com" target="_blank" rel="noopener" class="site-item reveal reveal-delay-2">
                 <div class="site-category">AI</div>
-                <div class="site-name">EldoaAI.com</div>
+                <div class="site-name">EldoaAI.com <span class="site-arrow">&#8594;</span></div>
                 <div class="site-desc">AI-powered wellness &amp; health platform</div>
               </a>
-              <a href="https://www.banksize.com" target="_blank" rel="noopener" class="site-item">
+              <a href="https://www.banksize.com" target="_blank" rel="noopener" class="site-item reveal">
                 <div class="site-category">Startups</div>
-                <div class="site-name">BankSize.com</div>
+                <div class="site-name">BankSize.com <span class="site-arrow">&#8594;</span></div>
                 <div class="site-desc">Global banking awareness &amp; financial literacy</div>
               </a>
-              <a href="https://www.globalfirstnations.com" target="_blank" rel="noopener" class="site-item">
+              <a href="https://www.globalfirstnations.com" target="_blank" rel="noopener" class="site-item reveal reveal-delay-1">
                 <div class="site-category">Nonprofits</div>
-                <div class="site-name">GlobalFirstNations.com</div>
+                <div class="site-name">GlobalFirstNations.com <span class="site-arrow">&#8594;</span></div>
                 <div class="site-desc">Indigenous cultures &amp; heritage preservation</div>
               </a>
-              <a href="https://www.aclheal.com" target="_blank" rel="noopener" class="site-item">
+              <a href="https://www.aclheal.com" target="_blank" rel="noopener" class="site-item reveal reveal-delay-2">
                 <div class="site-category">Social Movements</div>
-                <div class="site-name">ACLHeal.com</div>
+                <div class="site-name">ACLHeal.com <span class="site-arrow">&#8594;</span></div>
                 <div class="site-desc">Health recovery awareness &amp; community</div>
               </a>
             </div>
 
-            <h3>Core Programming</h3>
+            <h3 id="core-programming">Core Programming</h3>
 
-            <div class="program-card">
-              <h4>Zero To Hero AI Program</h4>
-              <p class="program-tagline">Master Working with AI in Less than 24 Hours</p>
+            <div class="program-card program-ai reveal">
+              <div class="program-card-header">
+                <div class="program-icon icon-ai">&#9889;</div>
+                <div>
+                  <h4>Zero To Hero AI Program</h4>
+                  <p class="program-tagline">Master Working with AI in Less than 24 Hours</p>
+                </div>
+              </div>
               <p>The AI revolution is not linear &mdash; it is exponential. What took companies years to build five years ago can now be prototyped in hours. The Zero To Hero AI Program puts you on the right side of this exponential curve. You will go from zero AI experience to confidently building AI-powered tools, workflows, and products in a single day.</p>
               <p>Think about the compounding effect: if AI capability doubles every few months, the gap between those who understand it and those who don't grows not by addition but by multiplication. Participants who completed this program have gone on to launch AI-powered businesses, automate entire departments, and create products reaching millions &mdash; all within weeks of finishing. The difference between starting today and starting six months from now isn't six months of progress. It's an entire generation of capability.</p>
               <ul>
@@ -891,9 +1379,14 @@
               </ul>
             </div>
 
-            <div class="program-card">
-              <h4>Advanced Problem Solving</h4>
-              <p class="program-tagline">Beyond Design Thinking</p>
+            <div class="program-card program-aps reveal">
+              <div class="program-card-header">
+                <div class="program-icon icon-aps">&#129504;</div>
+                <div>
+                  <h4>Advanced Problem Solving</h4>
+                  <p class="program-tagline">Beyond Design Thinking</p>
+                </div>
+              </div>
               <p>Design thinking opened the door. Advanced Problem Solving walks through it and keeps going. This program teaches you to dismantle complex, entrenched problems &mdash; the kind that have resisted conventional approaches for years &mdash; and replace them with breakthrough solutions that actually ship.</p>
               <p>Our graduates have tackled problems that Fortune 500 consultants couldn't crack: redesigning healthcare delivery systems, creating financial inclusion tools for underserved populations, building education platforms that reach rural communities across continents, and launching advocacy campaigns that shifted public policy. The method works because it combines rapid prototyping, systems-level thinking, and relentless bias toward action. You won't just analyze the problem. You will solve it and launch the solution before the workshop is over.</p>
               <ul>
@@ -911,32 +1404,18 @@
             <div class="offering-cta">
               <a href="/get-started" class="btn btn-primary">Contact Us for Engagement Timing, Scope &amp; Cost</a>
             </div>
-
-            <!-- Youth Development -->
-            <div class="youth-callout">
-              <p>If you want to create youth-facing content, please check out our partner <a href="https://www.play4tomorrow.com/about" target="_blank" rel="noopener" style="color: var(--corporate-gold); font-weight: 600;">Play4Tomorrow</a> for references in coloring books, music videos, animation, interactive stories, comics, games, and live experiences using AI.</p>
-              <div class="youth-projects">
-                <span class="youth-project-tag">Lenin Video</span>
-                <span class="youth-project-tag">WISG</span>
-                <span class="youth-project-tag">Academy</span>
-                <span class="youth-project-tag">Coloring Books</span>
-                <span class="youth-project-tag">Animation</span>
-                <span class="youth-project-tag">Interactive Stories</span>
-                <span class="youth-project-tag">Comics</span>
-                <span class="youth-project-tag">Games</span>
-              </div>
-            </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- ===== TRAINING 2: LIVE - SMALL GROUPS ===== -->
-    <section id="small-groups" class="section section-alt" aria-label="Live Small Group Training">
+    <!-- ===== TRAINING 2: LIVE - SMALL GROUPS (Navy Background) ===== -->
+    <section id="small-groups" class="section section-navy" aria-label="Live Small Group Training">
       <div class="section-container">
-        <article class="offering-card">
+        <article class="offering-card reveal">
           <div class="offering-header">
             <div class="offering-title-group">
+              <div class="offering-icon icon-teal">&#128101;</div>
               <span class="offering-badge small-group">Live &mdash; Small Groups</span>
               <h2 class="offering-title">Training (Live &mdash; Small Groups)</h2>
               <p class="offering-subtitle">Corporate, Startup, Nonprofit, and Classroom Engagements. Intensive workshops that transform how your team thinks, builds, and ships.</p>
@@ -948,10 +1427,10 @@
           </div>
 
           <div class="audience-tags">
-            <span class="audience-tag">Corporate Teams</span>
-            <span class="audience-tag">Startup Teams</span>
-            <span class="audience-tag">Nonprofit Organizations</span>
-            <span class="audience-tag">Classrooms</span>
+            <span class="audience-tag audience-tag-teal">Corporate Teams</span>
+            <span class="audience-tag audience-tag-teal">Startup Teams</span>
+            <span class="audience-tag audience-tag-teal">Nonprofit Organizations</span>
+            <span class="audience-tag audience-tag-teal">Classrooms</span>
           </div>
 
           <div class="offering-body">
@@ -961,46 +1440,24 @@
 
             <h3>Core Programming</h3>
 
-            <div class="program-card">
-              <h4>Zero To Hero AI Program</h4>
-              <p class="program-tagline">Master Working with AI in Less than 24 Hours</p>
-              <p>The AI revolution is exponential, not linear. What took teams months can now be built in hours. In this intensive format, your entire group goes from zero AI experience to building and deploying AI-powered tools together &mdash; creating solutions specific to your organization's challenges.</p>
-              <ul>
-                <li>Build and deploy AI-powered tools and workflows as a team</li>
-                <li>Solve real organizational problems with AI in real time</li>
-                <li>Leave with deployed, working AI solutions &mdash; not just prototypes</li>
-              </ul>
-            </div>
-
-            <div class="program-card">
-              <h4>Advanced Problem Solving</h4>
-              <p class="program-tagline">Beyond Design Thinking</p>
-              <p>Tackle your organization's most entrenched problems head-on. This intensive format brings your team together to dismantle complex challenges using breakthrough frameworks, rapid prototyping, and a relentless bias toward action. Solutions get built and launched before the workshop ends.</p>
-              <ul>
-                <li>Address real organizational challenges with structured breakthrough methods</li>
-                <li>Ship working solutions within the workshop timeframe</li>
-                <li>Build team capacity for ongoing innovation and problem solving</li>
-              </ul>
+            <div class="same-program-ref reveal">
+              <p>This format delivers the same world-class core programming &mdash; adapted for intensive team-based delivery.</p>
+              <div class="program-highlights">
+                <div class="program-highlight-item">
+                  <div class="program-highlight-icon icon-ai">&#9889;</div>
+                  <span class="program-highlight-name">Zero To Hero AI</span>
+                </div>
+                <div class="program-highlight-item">
+                  <div class="program-highlight-icon icon-aps">&#129504;</div>
+                  <span class="program-highlight-name">Advanced Problem Solving</span>
+                </div>
+              </div>
+              <a href="#core-programming">See full program details &#8594;</a>
             </div>
 
             <!-- Contact CTA -->
             <div class="offering-cta">
               <a href="/get-started" class="btn btn-primary">Contact Us for Engagement Timing, Scope &amp; Cost</a>
-            </div>
-
-            <!-- Youth Development -->
-            <div class="youth-callout">
-              <p>If you want to create youth-facing content, please check out our partner <a href="https://www.play4tomorrow.com/about" target="_blank" rel="noopener" style="color: var(--corporate-gold); font-weight: 600;">Play4Tomorrow</a> for references in coloring books, music videos, animation, interactive stories, comics, games, and live experiences using AI.</p>
-              <div class="youth-projects">
-                <span class="youth-project-tag">Lenin Video</span>
-                <span class="youth-project-tag">WISG</span>
-                <span class="youth-project-tag">Academy</span>
-                <span class="youth-project-tag">Coloring Books</span>
-                <span class="youth-project-tag">Animation</span>
-                <span class="youth-project-tag">Interactive Stories</span>
-                <span class="youth-project-tag">Comics</span>
-                <span class="youth-project-tag">Games</span>
-              </div>
             </div>
           </div>
         </article>
@@ -1010,9 +1467,10 @@
     <!-- ===== TRAINING 3: LIVE - LARGE GROUPS ===== -->
     <section id="large-groups" class="section" aria-label="Live Large Group Training">
       <div class="section-container">
-        <article class="offering-card">
+        <article class="offering-card accent-gold reveal">
           <div class="offering-header">
             <div class="offering-title-group">
+              <div class="offering-icon icon-gold">&#127967;</div>
               <span class="offering-badge large-group">Live &mdash; Large Groups</span>
               <h2 class="offering-title">Training (Live &mdash; Large Groups)</h2>
               <p class="offering-subtitle">Large Events, Government, and Universities. High-impact training at scale for thousands of participants simultaneously.</p>
@@ -1024,9 +1482,9 @@
           </div>
 
           <div class="audience-tags">
-            <span class="audience-tag">Large Events</span>
-            <span class="audience-tag">Government</span>
-            <span class="audience-tag">Universities</span>
+            <span class="audience-tag audience-tag-gold">Large Events</span>
+            <span class="audience-tag audience-tag-gold">Government</span>
+            <span class="audience-tag audience-tag-gold">Universities</span>
           </div>
 
           <div class="offering-body">
@@ -1036,49 +1494,46 @@
 
             <h3>Core Programming</h3>
 
-            <div class="program-card">
-              <h4>Zero To Hero AI Program</h4>
-              <p class="program-tagline">Master Working with AI in Less than 24 Hours</p>
-              <p>Bring the exponential power of AI to thousands simultaneously. Participants go from zero experience to building and deploying AI-powered tools &mdash; together, in real time, at scale. The energy of a room with thousands of people all creating at once is something that has to be experienced.</p>
-              <ul>
-                <li>Thousands of participants building AI tools simultaneously</li>
-                <li>Scalable workshop structure that maintains hands-on quality</li>
-                <li>Deployed AI solutions from every participant group</li>
-              </ul>
-            </div>
-
-            <div class="program-card">
-              <h4>Advanced Problem Solving</h4>
-              <p class="program-tagline">Beyond Design Thinking</p>
-              <p>Large-scale breakthrough problem solving for governments, universities, and major organizations. Hundreds of teams work in parallel to dismantle complex challenges, prototype solutions, and launch them &mdash; all within a single event. The collective intelligence of thousands focused on a shared problem produces results that no individual team could achieve alone.</p>
-              <ul>
-                <li>Hundreds of parallel teams solving interconnected challenges</li>
-                <li>Real-time solution deployment at event scale</li>
-                <li>Collective intelligence applied to systemic problems</li>
-              </ul>
+            <div class="same-program-ref reveal">
+              <p>This format delivers the same world-class core programming &mdash; engineered for massive-scale delivery.</p>
+              <div class="program-highlights">
+                <div class="program-highlight-item">
+                  <div class="program-highlight-icon icon-ai">&#9889;</div>
+                  <span class="program-highlight-name">Zero To Hero AI</span>
+                </div>
+                <div class="program-highlight-item">
+                  <div class="program-highlight-icon icon-aps">&#129504;</div>
+                  <span class="program-highlight-name">Advanced Problem Solving</span>
+                </div>
+              </div>
+              <a href="#core-programming">See full program details &#8594;</a>
             </div>
 
             <!-- Contact CTA -->
             <div class="offering-cta">
               <a href="/get-started" class="btn btn-primary">Contact Us for Engagement Timing, Scope &amp; Cost</a>
             </div>
-
-            <!-- Youth Development -->
-            <div class="youth-callout">
-              <p>If you want to create youth-facing content, please check out our partner <a href="https://www.play4tomorrow.com/about" target="_blank" rel="noopener" style="color: var(--corporate-gold); font-weight: 600;">Play4Tomorrow</a> for references in coloring books, music videos, animation, interactive stories, comics, games, and live experiences using AI.</p>
-              <div class="youth-projects">
-                <span class="youth-project-tag">Lenin Video</span>
-                <span class="youth-project-tag">WISG</span>
-                <span class="youth-project-tag">Academy</span>
-                <span class="youth-project-tag">Coloring Books</span>
-                <span class="youth-project-tag">Animation</span>
-                <span class="youth-project-tag">Interactive Stories</span>
-                <span class="youth-project-tag">Comics</span>
-                <span class="youth-project-tag">Games</span>
-              </div>
-            </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- Youth Development (Single standalone section) -->
+    <section class="youth-band" aria-label="Youth development">
+      <div class="youth-band-container reveal">
+        <div class="youth-band-icon">&#127912;</div>
+        <h2>Youth Development</h2>
+        <p>If you want to create youth-facing content, please check out our partner <a href="https://www.play4tomorrow.com/about" target="_blank" rel="noopener">Play4Tomorrow</a> for references in coloring books, music videos, animation, interactive stories, comics, games, and live experiences using AI.</p>
+        <div class="youth-projects">
+          <span class="youth-project-tag">Lenin Video</span>
+          <span class="youth-project-tag">WISG</span>
+          <span class="youth-project-tag">Academy</span>
+          <span class="youth-project-tag">Coloring Books</span>
+          <span class="youth-project-tag">Animation</span>
+          <span class="youth-project-tag">Interactive Stories</span>
+          <span class="youth-project-tag">Comics</span>
+          <span class="youth-project-tag">Games</span>
+        </div>
       </div>
     </section>
 
@@ -1178,8 +1633,9 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu Script -->
+  <!-- Mobile Menu + Scroll Reveal Script -->
   <script>
+    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mainMenu = document.getElementById('main-menu');
 
@@ -1195,6 +1651,24 @@
           mobileMenuBtn.setAttribute('aria-expanded', 'false');
         });
       });
+    }
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
     }
   </script>
 </body>
