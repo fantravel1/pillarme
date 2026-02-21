@@ -436,12 +436,15 @@ function findSleeveForDomain(domainName) {
 // ============================================================
 // SLEEVE PAGE TEMPLATE
 // ============================================================
+const travelSlugs = ['travel-experience', 'direct-travel-es', 'open-travel-es'];
+
 function generateSleevePage(sleeve) {
   const domainCount = sleeve.domains.length;
   const lang = langCode(sleeve.market);
   const mLabel = marketLabel(sleeve.market);
   const flag = marketFlag(sleeve.market);
   const tamClass = sleeve.tam.toLowerCase();
+  const isTravel = travelSlugs.includes(sleeve.slug);
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -531,6 +534,9 @@ function generateSleevePage(sleeve) {
     .domain-card h4 { font-size: 1rem; font-weight: 600; color: var(--corporate-navy); margin-bottom: 0.5rem; word-break: break-all; }
     .domain-card .view-link { font-size: 0.8125rem; color: var(--corporate-gold); font-weight: 600; margin-top: 0.75rem; }
     .domain-card:hover .view-link { text-decoration: underline; }
+    .more-card { align-items: center; justify-content: center; background: var(--gray-50); border: 2px dashed var(--gray-300); cursor: default; }
+    .more-card:hover { border-color: var(--gray-300); box-shadow: none; transform: none; }
+    .more-card h4 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--corporate-navy); margin-bottom: 0; text-align: center; word-break: normal; }
 
     .back-section { padding: 4rem 3rem; background: var(--off-white); text-align: center; }
     .back-section p { font-size: 1rem; color: var(--gray-600); margin-bottom: 1rem; }
@@ -639,6 +645,9 @@ ${sleeve.domains.map(d => {
           <span class="view-link">View Details &rarr;</span>
         </a>`;
 }).join('\n')}
+${!isTravel ? `        <div class="domain-card more-card">
+          <h4>+100 More</h4>
+        </div>` : ''}
       </div>
     </div>
   </section>
